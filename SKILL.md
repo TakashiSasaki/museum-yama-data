@@ -6,6 +6,7 @@ Use this skill to extract detailed mountaineering records from YAMAP activity pa
 - Automates the extraction of metadata (Title, Date, Stats) and activity descriptions (活動詳細).
 - Handles authenticated sessions to access diary entries and observations.
 - Standardizes the output format into Markdown files for the repository.
+- **Incremental Progress**: Each activity's data MUST be written to its corresponding Markdown file as soon as it is retrieved. DO NOT wait for the entire batch to finish before saving.
 
 ## Procedure for Agents
 
@@ -17,16 +18,22 @@ Use this skill to extract detailed mountaineering records from YAMAP activity pa
   - If the page redirects to a login screen, ensure the user session is active.
 
 ### 2. Metadata Extraction (Top Section)
-- Extract the **Title** from the `<h1>` or header.
-- Extract the **Exact Date** (formatted as `YYYY年MM月DD日`).
-- Extract **Distance (km)**, **Time (duration)**, **Elevation Gain (m)**, and **Elevation Loss (m)**.
-- **Hidden Fields**: If "平均ペース" (Average Pace) or other stats show a "表示" (Display) button, click it before extracting.
+- Extract the **Title** (`h1` or `.ActivityDetailTabLayout__Title`).
+- Extract the **Exact Date** (`.ActivityDetailTabLayout__Middle__Date`).
+- Extract **Distance (km)**, **Time (duration)**, **Elevation Gain (m)**, and **Elevation Loss (m)** from `.ActivityDetailTabLayout__SummaryItem__Value`.
+- **Hidden Fields**: DO NOT click the "表示" (Display) button for Average Pace, as this triggers a Premium Login Modal and disrupts extraction.
+- Extract **Route Name** (`.ActivityDetailTabLayout__MapNameLink`).
+- Extract **Mountains** (`.ActivityDetailTabLayout__MountainLink`).
+- Extract **Tags** (`.ActivityDetailTabLayout__TagItem`).
 
 ### 3. Content Extraction (Scrolling)
-- **Scroll Down** until the "活動詳細" (Activity Details) or "日記" (Diary) section is fully visible.
-- Extract the complete text of the activity description. This often contains bird species lists, wildlife sightings, and trail conditions.
+- **Scroll Down** until the "活動詳細" (Activity Details) or "日記" (Diary) section is fully visible (`.ActivityDetailTabLayout__Description`).
+- Extract the complete text of the activity description. Note that some activities may have empty descriptions (e.g., photo galleries only). Handle this gracefully.
+- Extract **Course Timeline/Checkpoints** from the "チェックポイント" section (`.CourseTimeItem__PassedPoint__Name`).
 
-### 4. Output Generation
+- **Incremental Saving**: Immediately after extracting the data for a single ID, create/update the `yamap/{ID}.md` file. This prevents data loss during long-running batch processes.
+
+## Output Format
 Save the information to `yamap/{ID}.md` in the following format:
 ```markdown
 # Activity {ID}
@@ -36,10 +43,16 @@ Save the information to `yamap/{ID}.md` in the following format:
 - **Time**: {Time}
 - **Elevation Gain**: {Up}
 - **Elevation Loss**: {Down}
+- **Route Name**: {Route}
+- **Mountains**: {Mountains}
+- **Tags**: {Tags}
 - **Link**: {URL}
 
 ## 活動詳細
 {Description}
+
+## Course Timeline
+{Timeline/Checkpoints}
 ```
 
 ## Failure Prevention Patterns
