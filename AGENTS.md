@@ -24,7 +24,8 @@ Processes YAMAP data files located in the `gpx/` directory.
 - Automatically converts all sheets from any `.xlsx` files in `gpx/` into individual `.csv` files.
 - **Flattening**: ZIP contents are extracted directly to the root of `gpx/`.
 - **Cleanup**: Temporary extraction folders are deleted automatically.
-- **Archiving**: Original ZIP and XLSX files are moved to `processed/` upon completion.
+- **Archiving**: Moves original ZIP and XLSX files to the `processed/` directory after successful handling.
+- **Automatically deduplicates GPX files**: Detects files with suffixes like ` (1)` and deletes them if their content matches the original via MD5 hash verification.
 
 #### How to use
 When new ZIP or Excel files are placed in the `gpx/` directory, ask the agent:

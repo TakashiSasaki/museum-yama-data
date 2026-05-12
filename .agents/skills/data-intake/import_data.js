@@ -2,6 +2,7 @@ const XLSX = require('xlsx');
 const AdmZip = require('adm-zip');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const ROOT_DIR = path.resolve(__dirname, '../../../');
 const GPX_DIR = path.join(ROOT_DIR, 'gpx');
@@ -14,6 +15,11 @@ function ensureDir(dir) {
     }
 }
 
+function getHash(filePath) {
+    const fileBuffer = fs.readFileSync(filePath);
+    return crypto.createHash('md5').update(fileBuffer).digest('hex');
+}
+
 function moveFilesRecursive(src, dest) {
     const items = fs.readdirSync(src);
     for (const item of items) {
@@ -23,14 +29,39 @@ function moveFilesRecursive(src, dest) {
             ensureDir(destPath);
             moveFilesRecursive(srcPath, destPath);
         } else {
-            // Move file (overwrite if exists)
             fs.renameSync(srcPath, destPath);
         }
     }
 }
 
+function deduplicateGpx() {
+    console.log('Scanning for duplicate GPX files...');
+    const files = fs.readdirSync(GPX_DIR).filter(f => f.toLowerCase().endsWith('.gpx'));
+    
+    files.forEach(f => {
+        const match = f.match(/^(.*)\s\(\d+\)\.gpx$/i);
+        if (match) {
+            const baseName = `${match[1]}.gpx`;
+            const basePath = path.join(GPX_DIR, baseName);
+            const dupPath = path.join(GPX_DIR, f);
+            
+            if (fs.existsSync(basePath)) {
+                const baseHash = getHash(basePath);
+                const dupHash = getHash(dupPath);
+                
+                if (baseHash === dupHash) {
+                    console.log(`Deleting identical duplicate: ${f}`);
+                    fs.unlinkSync(dupPath);
+                } else {
+                    console.warn(`Duplicate found but content differs: ${f}`);
+                }
+            }
+        }
+    });
+}
+
 async function main() {
-    console.log('Starting automated data intake...');
+    console.log('Starting automated data intake (v2 with deduplication)...');
 
     ensureDir(GPX_DIR);
     ensureDir(CSV_DIR);
@@ -48,16 +79,10 @@ async function main() {
             ensureDir(tempDir);
             const zip = new AdmZip(filePath);
             zip.extractAllTo(tempDir, true);
-            
-            // Move extracted contents to GPX_DIR and flatten
             moveFilesRecursive(tempDir, GPX_DIR);
-            
-            // Cleanup temp dir
             fs.rmSync(tempDir, { recursive: true, force: true });
-            
-            // Move ZIP to processed
             fs.renameSync(filePath, path.join(PROCESSED_DIR, file));
-            console.log(`Finished extracting ${file} and moved to processed.`);
+            console.log(`Finished extracting ${file} and archived.`);
         } catch (err) {
             console.error(`Error extracting ${file}:`, err.message);
         }
@@ -78,14 +103,15 @@ async function main() {
                 fs.writeFileSync(outputPath, csv, 'utf8');
                 console.log(`Saved sheet ${sheetName} to ${outputFileName}`);
             });
-            
-            // Move Excel to processed
             fs.renameSync(filePath, path.join(PROCESSED_DIR, file));
-            console.log(`Finished processing ${file} and moved to processed.`);
+            console.log(`Finished processing ${file} and archived.`);
         } catch (err) {
             console.error(`Error processing Excel ${file}:`, err.message);
         }
     }
+
+    // 3. Deduplicate
+    deduplicateGpx();
 
     console.log('Data intake completed.');
 }
