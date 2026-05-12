@@ -3,7 +3,7 @@ name: merge-tracks
 description: >
   Use this skill to consolidate multiple individual GPX track files into
   yearly merged files for importing into Google My Maps (which has a 10-layer
-  limit). Groups tracks by year extracted from the filename.
+  limit). Groups tracks by year extracted from the filename. Reads from gpx/raw/.
 ---
 
 # Merge Tracks Skill
@@ -13,7 +13,7 @@ Run this skill when you need to prepare GPX files for import into Google My Maps
 or other visualization tools that have layer or file count limits.
 
 ## Steps
-1. Scan all `.gpx` files in the `gpx/` directory (excluding `merged/` and `annotated/`).
+1. Scan all `.gpx` files in the `gpx/raw/` directory.
 2. Extract the year from each filename (e.g., `2024` from `yamap_2024-06-16_07_27.gpx`).
 3. Group all tracks by year.
 4. For each year, combine all `<trk>` elements into a single GPX file.

@@ -10,7 +10,9 @@ You can view the consolidated mountaineering traces and points on our official G
 The GPX data and activity logs in this repository are based on the mountaineering records of **Professor Yoshitomi of Ehime University**.
 
 ## Project Structure
-- `gpx/`: Raw track files (.gpx).
+- `gpx/raw/`: Raw track files (.gpx).
+- `gpx/annotated/`: GPX files with detected peak waypoints.
+- `gpx/merged/`: Yearly consolidated GPX files for My Maps.
 - `csv/`: Processed activity records (.csv).
 - `processed/`: Archive of original ZIP/XLSX files.
 - `.agents/`: Automation skills and agent instructions.

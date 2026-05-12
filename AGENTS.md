@@ -8,7 +8,10 @@ The goal is to build a web application that visualizes and analyzes GPX tracks a
 
 ## Directory Structure
 
-- `gpx/`: **Active Data Area**. Contains raw `.gpx` track files. New ZIP or XLSX files should be placed here before processing.
+- `gpx/`: **GPX Data Root**. New ZIP or XLSX files should be placed here before processing.
+  - `raw/`: Raw `.gpx` track files extracted from ZIP archives. This is where unprocessed individual tracks live.
+  - `annotated/`: GPX files with `<wpt>` waypoint elements marking detected mountain summits.
+  - `merged/`: Yearly consolidated GPX files for Google My Maps import.
 - `csv/`: **Processed Records**. Contains `.csv` files extracted from Excel activity logs. Used as the primary data source for the web app.
 - `processed/`: **Archive**. Stores original `.zip` and `.xlsx` files after they have been processed by the intake skill.
 - `.agents/`: **Automation Center**. Contains repository-specific skills and configurations for AI agents.
@@ -16,14 +19,14 @@ The goal is to build a web application that visualizes and analyzes GPX tracks a
 
 ## Agent Skills
 
-### Skill: Data Intake (`import-data`)
+### Skill: Data Intake (`data-intake`)
 
 Processes YAMAP data files located in the `gpx/` directory.
 
 #### Purpose
 - Automatically extracts GPX files from any ZIP archives in `gpx/`.
 - Automatically converts all sheets from any `.xlsx` files in `gpx/` into individual `.csv` files.
-- **Flattening**: ZIP contents are extracted directly to the root of `gpx/`.
+- **Flattening**: ZIP contents are extracted directly to `gpx/raw/`.
 - **Cleanup**: Temporary extraction folders are deleted automatically.
 - **Archiving**: Moves original ZIP and XLSX files to the `processed/` directory after successful handling.
 - **Automatically deduplicates GPX files**: Detects files with suffixes like ` (1)` and deletes them if their content matches the original via MD5 hash verification.
@@ -47,7 +50,7 @@ cd .agents/skills/data-intake; node import_data.js
 Consolidates multiple GPX files into larger files grouped by year for easier map visualization.
 
 #### Purpose
-- Groups individual GPX files into yearly archives (e.g., `2024_merged.gpx`).
+- Groups individual GPX files from `gpx/raw/` into yearly archives (e.g., `2024_merged.gpx`).
 - Makes it easy to import hundreds of tracks into Google My Maps within the 10-layer limit.
 - Output is saved to `gpx/merged/`.
 
@@ -72,7 +75,7 @@ Analyzes GPX track elevation profiles to detect summit points and generates anno
 - Detects peaks using **local maxima detection** with **prominence filtering** on smoothed elevation data.
 - Matches detected peaks to known mountain names from CSV records (e.g., `csv/えひめの山_愛媛県の山.csv`).
 - Generates new GPX files with `<wpt>` (waypoint) elements marking each detected summit.
-- Original GPX files are **never modified**; annotated versions are saved to `gpx/annotated/`.
+- Original GPX files in `gpx/raw/` are **never modified**; annotated versions are saved to `gpx/annotated/`.
 
 #### Algorithm
 1. Smooth elevation data (moving average, window=5).
@@ -97,4 +100,4 @@ node .agents/skills/annotate-peaks/annotate_peaks.js
 ## Development Guidelines
 - Always use the **Data Intake Skill** for new data to maintain the directory structure.
 - The `csv/` directory is the source of truth for activity metadata.
-- The `gpx/` directory should only contain individual `.gpx` files (no subfolders).
+- The `gpx/raw/` directory should only contain individual `.gpx` files (no subfolders).

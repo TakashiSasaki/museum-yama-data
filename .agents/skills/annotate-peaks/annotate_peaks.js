@@ -7,7 +7,7 @@
  * 
  * Usage: node annotate_peaks.js
  * 
- * Input:  gpx/*.gpx (original tracks), csv/*.csv (mountain records)
+ * Input:  gpx/raw/*.gpx (original tracks), csv/*.csv (mountain records)
  * Output: gpx/annotated/*.gpx (tracks with peak waypoints)
  */
 
@@ -17,6 +17,7 @@ const path = require('path');
 // === Configuration ===
 const ROOT_DIR = path.resolve(__dirname, '../../../');
 const GPX_DIR = path.join(ROOT_DIR, 'gpx');
+const RAW_DIR = path.join(GPX_DIR, 'raw');
 const CSV_DIR = path.join(ROOT_DIR, 'csv');
 const OUTPUT_DIR = path.join(GPX_DIR, 'annotated');
 
@@ -379,7 +380,7 @@ function main() {
     console.log(`Loaded ${mountainDb.size} mountains from CSV.`);
 
     // Process GPX files
-    const gpxFiles = fs.readdirSync(GPX_DIR).filter(f =>
+    const gpxFiles = fs.readdirSync(RAW_DIR).filter(f =>
         f.toLowerCase().endsWith('.gpx') && !f.includes('merged')
     );
     console.log(`Found ${gpxFiles.length} GPX files to process.\n`);
@@ -390,7 +391,7 @@ function main() {
     let skipped = 0;
 
     for (const file of gpxFiles) {
-        const filePath = path.join(GPX_DIR, file);
+        const filePath = path.join(RAW_DIR, file);
         const content = fs.readFileSync(filePath, 'utf8');
 
         // Parse

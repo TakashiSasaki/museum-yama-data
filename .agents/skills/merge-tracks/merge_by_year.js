@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const GPX_DIR = path.resolve(__dirname, '../../../gpx');
+const RAW_DIR = path.join(GPX_DIR, 'raw');
 const MERGED_DIR = path.join(GPX_DIR, 'merged');
 
 function ensureDir(dir) {
@@ -14,7 +15,7 @@ async function mergeGpxByYear() {
     console.log('Starting GPX merge by year...');
     ensureDir(MERGED_DIR);
 
-    const files = fs.readdirSync(GPX_DIR).filter(f => f.toLowerCase().endsWith('.gpx'));
+    const files = fs.readdirSync(RAW_DIR).filter(f => f.toLowerCase().endsWith('.gpx'));
     const groups = {};
 
     files.forEach(file => {
@@ -37,7 +38,7 @@ async function mergeGpxByYear() {
   </metadata>`;
 
         groups[year].forEach(file => {
-            const content = fs.readFileSync(path.join(GPX_DIR, file), 'utf8');
+            const content = fs.readFileSync(path.join(RAW_DIR, file), 'utf8');
             // Extract everything between <trk> and </trk>
             const trkMatch = content.match(/<trk>([\s\S]*?)<\/trk>/);
             if (trkMatch) {

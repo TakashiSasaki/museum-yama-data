@@ -3,13 +3,14 @@ name: annotate-peaks
 description: >
   Use this skill to detect mountain summit points in GPX tracks using
   elevation profile analysis and generate annotated GPX files with waypoint
-  markers. Matches detected peaks to known mountain names from CSV records.
+  markers. Reads raw tracks from gpx/raw/ and matches detected peaks to
+  known mountain names from CSV records.
 ---
 
 # Annotate Peaks Skill
 
 ## When to Use
-Run this skill after new GPX files have been added (via the `import-data` skill)
+Run this skill after new GPX files have been added (via the `data-intake` skill)
 to generate annotated versions with peak waypoints for visualization.
 
 ## Algorithm
@@ -22,7 +23,7 @@ to generate annotated versions with peak waypoints for visualization.
 
 ## Steps
 1. Load mountain database from all CSV files in `csv/`.
-2. For each GPX file in `gpx/`:
+2. For each GPX file in `gpx/raw/`:
    a. Parse track points (lat, lon, ele, time).
    b. Run peak detection algorithm.
    c. Match detected peaks to known mountain names.
@@ -51,4 +52,4 @@ Edit the `CONFIG` object in `annotate_peaks.js`:
 
 ## Output
 - `gpx/annotated/*.gpx` — Annotated GPX files with `<wpt>` summit markers.
-- Original GPX files in `gpx/` are never modified.
+- Original GPX files in `gpx/raw/` are never modified.

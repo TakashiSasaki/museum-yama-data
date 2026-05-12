@@ -6,6 +6,7 @@ const crypto = require('crypto');
 
 const ROOT_DIR = path.resolve(__dirname, '../../../');
 const GPX_DIR = path.join(ROOT_DIR, 'gpx');
+const RAW_DIR = path.join(GPX_DIR, 'raw');
 const CSV_DIR = path.join(ROOT_DIR, 'csv');
 const PROCESSED_DIR = path.join(ROOT_DIR, 'processed');
 
@@ -36,14 +37,14 @@ function moveFilesRecursive(src, dest) {
 
 function deduplicateGpx() {
     console.log('Scanning for duplicate GPX files...');
-    const files = fs.readdirSync(GPX_DIR).filter(f => f.toLowerCase().endsWith('.gpx'));
+    const files = fs.readdirSync(RAW_DIR).filter(f => f.toLowerCase().endsWith('.gpx'));
     
     files.forEach(f => {
         const match = f.match(/^(.*)\s\(\d+\)\.gpx$/i);
         if (match) {
             const baseName = `${match[1]}.gpx`;
-            const basePath = path.join(GPX_DIR, baseName);
-            const dupPath = path.join(GPX_DIR, f);
+            const basePath = path.join(RAW_DIR, baseName);
+            const dupPath = path.join(RAW_DIR, f);
             
             if (fs.existsSync(basePath)) {
                 const baseHash = getHash(basePath);
@@ -64,6 +65,7 @@ async function main() {
     console.log('Starting automated data intake (v2 with deduplication)...');
 
     ensureDir(GPX_DIR);
+    ensureDir(RAW_DIR);
     ensureDir(CSV_DIR);
     ensureDir(PROCESSED_DIR);
 
@@ -79,7 +81,7 @@ async function main() {
             ensureDir(tempDir);
             const zip = new AdmZip(filePath);
             zip.extractAllTo(tempDir, true);
-            moveFilesRecursive(tempDir, GPX_DIR);
+            moveFilesRecursive(tempDir, RAW_DIR);
             fs.rmSync(tempDir, { recursive: true, force: true });
             fs.renameSync(filePath, path.join(PROCESSED_DIR, file));
             console.log(`Finished extracting ${file} and archived.`);
