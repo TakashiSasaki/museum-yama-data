@@ -1,6 +1,6 @@
 # Yama Museum - Agent & Collaborator Guide
 
-This repository contains tools and data for analyzing mountaineering location data obtained from the **YAMAP** app.
+This repository contains tools and data for analyzing mountaineering location data obtained from the **YAMAP** app, based on the records of **Professor Yoshitomi of Ehime University**.
 
 ## Project Overview
 The goal is to build a web application that visualizes and analyzes GPX tracks and activity logs. 
