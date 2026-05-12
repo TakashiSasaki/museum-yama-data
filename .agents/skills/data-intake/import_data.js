@@ -3,10 +3,15 @@ const AdmZip = require('adm-zip');
 const fs = require('fs');
 const path = require('path');
 
-const GPX_DIR = path.resolve(__dirname, '../gpx');
+const GPX_DIR = path.resolve(__dirname, '../../../gpx');
+const CSV_DIR = path.resolve(__dirname, '../../../csv');
 
 async function main() {
     console.log('Starting data intake process...');
+
+    if (!fs.existsSync(CSV_DIR)) {
+        fs.mkdirSync(CSV_DIR, { recursive: true });
+    }
 
     const files = fs.readdirSync(GPX_DIR);
 
@@ -35,9 +40,9 @@ async function main() {
                 const worksheet = workbook.Sheets[sheetName];
                 const csv = XLSX.utils.sheet_to_csv(worksheet);
                 const outputFileName = `${path.basename(file, '.xlsx')}_${sheetName}.csv`;
-                const outputPath = path.join(GPX_DIR, outputFileName);
+                const outputPath = path.join(CSV_DIR, outputFileName);
                 fs.writeFileSync(outputPath, csv, 'utf8');
-                console.log(`Saved sheet ${sheetName} to ${outputFileName}`);
+                console.log(`Saved sheet ${sheetName} to ${outputFileName} in ${CSV_DIR}`);
             });
         } catch (err) {
             console.error(`Error processing Excel ${file}:`, err.message);
