@@ -3,7 +3,8 @@
 This repository contains tools and data for analyzing mountaineering location data obtained from the **YAMAP** app.
 
 ## Project Overview
-The goal is to build a web application that visualizes and analyzes GPX tracks and activity logs.
+The goal is to build a web application that visualizes and analyzes GPX tracks and activity logs. 
+- **Visualization Link**: [Google My Maps](https://www.google.com/maps/d/edit?mid=1-hJRCtAmD6DF9-nMQOwftdz7v5vVTWo&usp=sharing)
 
 ## Directory Structure
 

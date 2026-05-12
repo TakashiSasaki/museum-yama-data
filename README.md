@@ -1,0 +1,16 @@
+# Yama Museum
+
+A web application for visualizing and analyzing mountaineering location data (GPX) and activity logs from the YAMAP app.
+
+## Interactive Map
+You can view the consolidated mountaineering traces and points on our official Google My Maps:
+**[Yama Museum - Google My Maps](https://www.google.com/maps/d/edit?mid=1-hJRCtAmD6DF9-nMQOwftdz7v5vVTWo&usp=sharing)**
+
+## Project Structure
+- `gpx/`: Raw track files (.gpx).
+- `csv/`: Processed activity records (.csv).
+- `processed/`: Archive of original ZIP/XLSX files.
+- `.agents/`: Automation skills and agent instructions.
+
+## For Developers & AI Agents
+Please refer to **[AGENTS.md](AGENTS.md)** for detailed directory descriptions and automated skill instructions.
