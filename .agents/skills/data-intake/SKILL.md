@@ -1,5 +1,5 @@
 ---
-name: import-data
+name: data-intake
 description: >
   Use this skill when new ZIP archives or Excel (.xlsx) files have been placed
   in the gpx/ directory and need to be processed. This skill extracts GPX files
