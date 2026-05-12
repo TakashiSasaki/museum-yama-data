@@ -64,6 +64,36 @@ Ask the agent:
 node .agents/skills/merge-tracks/merge_by_year.js
 ```
 
+### Skill: Annotate Peaks (`annotate-peaks`)
+
+Analyzes GPX track elevation profiles to detect summit points and generates annotated GPX files.
+
+#### Purpose
+- Detects peaks using **local maxima detection** with **prominence filtering** on smoothed elevation data.
+- Matches detected peaks to known mountain names from CSV records (e.g., `csv/えひめの山_愛媛県の山.csv`).
+- Generates new GPX files with `<wpt>` (waypoint) elements marking each detected summit.
+- Original GPX files are **never modified**; annotated versions are saved to `gpx/annotated/`.
+
+#### Algorithm
+1. Smooth elevation data (moving average, window=5).
+2. Find local maxima (radius=10 points).
+3. Filter by prominence (≥30m).
+4. Merge nearby peaks (<100m).
+5. Assign mountain names from CSV by track name and elevation matching (±50m tolerance).
+
+#### How to use
+Ask the agent:
+> "Run the peak annotation skill to detect and label summits in GPX tracks."
+
+#### Implementation
+- **Script**: `.agents/skills/annotate-peaks/annotate_peaks.js`
+- **Engine**: Node.js (no external dependencies)
+
+#### Execution Command
+```powershell
+node .agents/skills/annotate-peaks/annotate_peaks.js
+```
+
 ## Development Guidelines
 - Always use the **Data Intake Skill** for new data to maintain the directory structure.
 - The `csv/` directory is the source of truth for activity metadata.
