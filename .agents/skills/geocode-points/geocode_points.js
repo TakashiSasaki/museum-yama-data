@@ -22,9 +22,17 @@ for (let i = 0; i < args.length; i++) {
         i++;
     } else if (args[i] === '--skip' && i + 1 < args.length) {
         skip = parseInt(args[i + 1], 10);
+        if (!Number.isInteger(skip) || skip < 0) {
+            console.error("Invalid value for --skip. Expected a non-negative integer.");
+            process.exit(1);
+        }
         i++;
     } else if (args[i] === '--limit' && i + 1 < args.length) {
         limit = parseInt(args[i + 1], 10);
+        if (!Number.isInteger(limit) || limit <= 0) {
+            console.error("Invalid value for --limit. Expected a positive integer.");
+            process.exit(1);
+        }
         i++;
     }
 }
