@@ -3998,5 +3998,2005 @@
         "local": "新居浜別子山線"
       }
     }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.9465925,
+    "lon": 132.896379,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "今治市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Imabari",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5404689,
+    "lon": 132.7754857,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5926584,
+    "lon": 132.8486131,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.7912411,
+    "lon": 133.0215447,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": "明河"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": "明河"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6859182,
+    "lon": 132.7609047,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "伊予市",
+        "local": "中山町栗田"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Iyo",
+        "local": "中山町栗田"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.798558,
+    "lon": 133.0173655,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": "滑川"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": "滑川"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.7052794,
+    "lon": 132.7652806,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "伊予郡",
+        "city": "砥部町",
+        "local": "鵜崎"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Iyo County",
+        "city": "Tobe",
+        "local": "鵜崎"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.8581024,
+    "lon": 132.9583176,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.0409924,
+    "lon": 132.624637,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "南宇和郡",
+        "city": "愛南町",
+        "local": "三森林道"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Minami-Uwa County",
+        "city": "Ainan",
+        "local": "三森林道"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.1177367,
+    "lon": 132.6239642,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "宇和島市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Uwajima",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.8717799,
+    "lon": 132.8815633,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "川の郷町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Kawanogomachi"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6118803,
+    "lon": 132.8524765,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.155717,
+    "lon": 132.6258832,
+    "geocode": {
+      "ja": {
+        "prefecture": "高知県",
+        "county": "",
+        "city": "四万十市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Kochi Prefecture",
+        "county": "",
+        "city": "Shimanto",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.9019921,
+    "lon": 133.6396523,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "四国中央市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Shikokuchuo",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.1131437,
+    "lon": 132.6235455,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "宇和島市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Uwajima",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6828739,
+    "lon": 132.9084423,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "上浮穴郡",
+        "city": "久万高原町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kamiukena County",
+        "city": "Kumakogen",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.9483028,
+    "lon": 132.9785604,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "今治市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Imabari",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5324276,
+    "lon": 132.7604222,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.9710941,
+    "lon": 133.6468525,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "四国中央市",
+        "local": "林道呉石境目線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Shikokuchuo",
+        "local": "林道呉石境目線"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.8793776,
+    "lon": 133.3116827,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "新居浜市",
+        "local": "市道河又東平線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Niihama",
+        "local": "市道河又東平線"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5133814,
+    "lon": 132.7770265,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": "河辺町川上"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": "Kawabecho-Kawakami"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6297301,
+    "lon": 132.7781689,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "伊予郡",
+        "city": "砥部町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Iyo County",
+        "city": "Tobe",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5350475,
+    "lon": 132.4654448,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.9017492,
+    "lon": 132.9949732,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西条市",
+        "local": "丹原町関屋"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Saijō",
+        "local": "Tanbaracho-Sekiya"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.034531,
+    "lon": 132.6236886,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "南宇和郡",
+        "city": "愛南町",
+        "local": "山出林道"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Minami-Uwa County",
+        "city": "Ainan",
+        "local": "山出林道"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.7502454,
+    "lon": 132.9097454,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.525575,
+    "lon": 132.750723,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "大洲市",
+        "local": "池田川崎線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Ozu",
+        "local": "池田川崎線"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.3926301,
+    "lon": 132.5594513,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西予市",
+        "local": "宇和町窪"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Seiyo",
+        "local": "宇和町窪"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5358155,
+    "lon": 132.4487801,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.0210963,
+    "lon": 132.6156053,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "南宇和郡",
+        "city": "愛南町",
+        "local": "緑丙"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Minami-Uwa County",
+        "city": "Ainan",
+        "local": "Midorihei"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5225161,
+    "lon": 132.4288807,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "八幡浜市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Yawatahama",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.0342378,
+    "lon": 132.5322872,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "宇和島市",
+        "local": "緑資源幹線林道　広見・篠川線　小岩道・鳥越区間"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Uwajima",
+        "local": "緑資源幹線林道　広見・篠川線　小岩道・鳥越区間"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.9422285,
+    "lon": 132.9779374,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "今治市",
+        "local": "玉川町木地"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Imabari",
+        "local": "Tamagawacho-Kiji"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6581301,
+    "lon": 132.974538,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "上浮穴郡",
+        "city": "久万高原町",
+        "local": "西条久万線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kamiukena County",
+        "city": "Kumakogen",
+        "local": "西条久万線"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.7374797,
+    "lon": 133.0312873,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "上浮穴郡",
+        "city": "久万高原町",
+        "local": "笠方"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kamiukena County",
+        "city": "Kumakogen",
+        "local": "笠方"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.2597751,
+    "lon": 132.6071981,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "宇和島市",
+        "local": "柿原"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Uwajima",
+        "local": "Kakihara"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5381203,
+    "lon": 132.4689665,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.9835402,
+    "lon": 133.681909,
+    "geocode": {
+      "ja": {
+        "prefecture": "徳島県",
+        "county": "",
+        "city": "三好市",
+        "local": "山城町佐連"
+      },
+      "en": {
+        "prefecture": "Tokushima Prefecture",
+        "county": "",
+        "city": "Miyoshi",
+        "local": "Yamashirocho-Sare"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5171137,
+    "lon": 132.7257366,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6808914,
+    "lon": 132.7938736,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "伊予郡",
+        "city": "砥部町",
+        "local": "玉谷"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Iyo County",
+        "city": "Tobe",
+        "local": "玉谷"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6137407,
+    "lon": 132.5447284,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": "長浜町今坊"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": "Nagahamacho-Konbo"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.7134297,
+    "lon": 132.824108,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "久谷町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Kutanimachi"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.0274144,
+    "lon": 132.6396303,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "南宇和郡",
+        "city": "愛南町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Minami-Uwa County",
+        "city": "Ainan",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.8423734,
+    "lon": 132.8811963,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": "樋口"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": "樋口"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6509595,
+    "lon": 132.7915875,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "伊予郡",
+        "city": "砥部町",
+        "local": "中野川"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Iyo County",
+        "city": "Tobe",
+        "local": "中野川"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5174638,
+    "lon": 132.6333302,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6848511,
+    "lon": 132.7812374,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "伊予郡",
+        "city": "砥部町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Iyo County",
+        "city": "Tobe",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6062894,
+    "lon": 132.5155614,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": "長浜町大越"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": "Nagahamacho-Ogoshi"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.654334,
+    "lon": 132.6895797,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "伊予市",
+        "local": "中山町中山"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Iyo",
+        "local": "中山町中山"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6926089,
+    "lon": 132.8062765,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "伊予郡",
+        "city": "砥部町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Iyo County",
+        "city": "Tobe",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.54274,
+    "lon": 132.4754911,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.8503146,
+    "lon": 132.9103674,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6034415,
+    "lon": 132.6564373,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6204803,
+    "lon": 132.6529617,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "伊予市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Iyo",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.4376592,
+    "lon": 132.6335849,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.0072084,
+    "lon": 132.5866268,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "南宇和郡",
+        "city": "愛南町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Minami-Uwa County",
+        "city": "Ainan",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5194593,
+    "lon": 132.6057323,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": "新谷町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": "Niiyamachi"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.590232,
+    "lon": 132.798511,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": "日野川"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": "日野川"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.4130019,
+    "lon": 132.7969092,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西予市",
+        "local": "城川町窪野"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Seiyo",
+        "local": "城川町窪野"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6157929,
+    "lon": 132.5364783,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": "長浜町今坊"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": "Nagahamacho-Konbo"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.7661685,
+    "lon": 132.9049612,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.7646004,
+    "lon": 132.900658,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.4309452,
+    "lon": 132.482212,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西予市",
+        "local": "宇和町伊延"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Seiyo",
+        "local": "宇和町伊延"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6988091,
+    "lon": 132.6831717,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "伊予市",
+        "local": "双海町高野川"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Iyo",
+        "local": "双海町高野川"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.3270345,
+    "lon": 132.5414704,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "宇和島市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Uwajima",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.8233656,
+    "lon": 132.9413939,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": "松瀬川"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": "松瀬川"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.887339,
+    "lon": 132.9480065,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.692167,
+    "lon": 132.6731896,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "伊予市",
+        "local": "双海町高野川"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Iyo",
+        "local": "双海町高野川"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5995314,
+    "lon": 132.5168274,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": "長浜町大越"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": "Nagahamacho-Ogoshi"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.4883211,
+    "lon": 132.4618686,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "八幡浜市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Yawatahama",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.454717,
+    "lon": 132.7240857,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西予市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Seiyo",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6266981,
+    "lon": 132.6808191,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "伊予市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Iyo",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.9386003,
+    "lon": 133.5857961,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "四国中央市",
+        "local": "金砂町小川山"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Shikokuchuo",
+        "local": "Kinshacho-Ogawayama"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.9725881,
+    "lon": 132.924821,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "今治市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Imabari",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.4530897,
+    "lon": 132.7168465,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西予市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Seiyo",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.7736953,
+    "lon": 132.9019215,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": "南方"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": "南方"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6093279,
+    "lon": 132.8006087,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.8761667,
+    "lon": 132.9651395,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西条市",
+        "local": "丹原町関屋"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Saijō",
+        "local": "Tanbaracho-Sekiya"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.3653822,
+    "lon": 132.4528183,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西予市",
+        "local": "宇和町山田"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Seiyo",
+        "local": "宇和町山田"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 34.0123819,
+    "lon": 133.6793921,
+    "geocode": {
+      "ja": {
+        "prefecture": "徳島県",
+        "county": "",
+        "city": "三好市",
+        "local": "大野原町海老済"
+      },
+      "en": {
+        "prefecture": "Tokushima Prefecture",
+        "county": "",
+        "city": "Miyoshi",
+        "local": "Onohara-cho Ebisukui"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6968367,
+    "lon": 132.7954997,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "伊予郡",
+        "city": "砥部町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Iyo County",
+        "city": "Tobe",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 34.0275511,
+    "lon": 133.6441984,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "四国中央市",
+        "local": "金生町山田井"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Shikokuchuo",
+        "local": "Kinseicho-Yamadai"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 34.0272665,
+    "lon": 133.6616846,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "四国中央市",
+        "local": "金生町山田井"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Shikokuchuo",
+        "local": "Kinseicho-Yamadai"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.384401,
+    "lon": 132.5180668,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西予市",
+        "local": "宇和町常定寺"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Seiyo",
+        "local": "宇和町常定寺"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.7246538,
+    "lon": 132.8569052,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "窪野町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Kubonomachi"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.8560644,
+    "lon": 132.8432176,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "杉立町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Sugitatemachi"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.5055365,
+    "lon": 132.6868759,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "大洲市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Ozu",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.9047167,
+    "lon": 133.3174422,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "新居浜市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Niihama",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.3425963,
+    "lon": 132.4607227,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西予市",
+        "local": "宇和町野田"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Seiyo",
+        "local": "宇和町野田"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.8843866,
+    "lon": 132.8629961,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "川の郷町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Kawanogomachi"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.3475127,
+    "lon": 132.4815915,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西予市",
+        "local": "宇和町野田"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Seiyo",
+        "local": "宇和町野田"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.8887442,
+    "lon": 132.8659698,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "河中町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Kawanakamachi"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.9890249,
+    "lon": 132.8891658,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "今治市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Imabari",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.6910161,
+    "lon": 132.6669514,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "伊予市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Iyo",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.7794142,
+    "lon": 132.9091359,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.8680685,
+    "lon": 133.1174852,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西条市",
+        "local": "小松町新屋敷"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Saijō",
+        "local": "Komatsucho-Shinyashiki"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.7190577,
+    "lon": 132.7591133,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "伊予郡",
+        "city": "伊予市",
+        "local": "鵜崎"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Iyo County",
+        "city": "Iyo",
+        "local": "鵜崎"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.9910002,
+    "lon": 132.9850803,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "今治市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Imabari",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 33.8922068,
+    "lon": 132.8273765,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "湯山柳"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Yuyamayanagi"
+      }
+    }
+  },
+  {
+    "type": "peak",
+    "source_file": "all_unique_summits.gpx",
+    "lat": 34.0356467,
+    "lon": 133.6297572,
+    "geocode": {
+      "ja": {
+        "prefecture": "香川県",
+        "county": "",
+        "city": "観音寺市",
+        "local": "大野原町田野々"
+      },
+      "en": {
+        "prefecture": "Kagawa Prefecture",
+        "county": "",
+        "city": "Kan-onji",
+        "local": "Onohara-cho Tanono"
+      }
+    }
   }
 ]
