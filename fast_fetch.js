@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ids = process.argv.slice(2);
-const OUT_DIR = path.join(__dirname, '../../../yamap');
+const OUT_DIR = path.join(process.cwd(), 'yamap');
 
 if (!fs.existsSync(OUT_DIR)) {
     fs.mkdirSync(OUT_DIR, { recursive: true });
