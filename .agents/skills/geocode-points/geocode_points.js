@@ -7,7 +7,6 @@ const args = process.argv.slice(2);
 let summitsFile = null;
 let rawDir = null;
 let outputFile = null;
-let skip = 0;
 let limit = 100;
 
 for (let i = 0; i < args.length; i++) {
@@ -20,9 +19,6 @@ for (let i = 0; i < args.length; i++) {
     } else if (args[i] === '--out' && i + 1 < args.length) {
         outputFile = path.resolve(process.cwd(), args[i + 1]);
         i++;
-    } else if (args[i] === '--skip' && i + 1 < args.length) {
-        skip = parseInt(args[i + 1], 10);
-        i++;
     } else if (args[i] === '--limit' && i + 1 < args.length) {
         limit = parseInt(args[i + 1], 10);
         i++;
@@ -30,7 +26,7 @@ for (let i = 0; i < args.length; i++) {
 }
 
 if (!summitsFile || !rawDir || !outputFile) {
-    console.error("Usage: node geocode_points.js --summits <path_to_summits_gpx> --raw-dir <path_to_raw_gpx_dir> --out <path_to_output_json> [--skip <skip_count>] [--limit <limit_count>]");
+    console.error("Usage: node geocode_points.js --summits <path_to_summits_gpx> --raw-dir <path_to_raw_gpx_dir> --out <path_to_output_json> [--limit <limit_count>]");
     process.exit(1);
 }
 
@@ -144,20 +140,23 @@ async function main() {
     }
 
     console.log(`Total points collected: ${points.length}`);
-    const targetPoints = points.slice(skip, skip + limit);
-    console.log(`Geocoding ${targetPoints.length} points (skipping ${skip})...`);
 
-    // Load existing results if output file exists
+    // Load existing results if output file exists to determine skip count
     let results = [];
+    let skip = 0;
     if (fs.existsSync(outputFile)) {
         try {
             const existingContent = fs.readFileSync(outputFile, 'utf-8');
             results = JSON.parse(existingContent);
-            console.log(`Loaded ${results.length} existing results from ${outputFile}`);
+            skip = results.length;
+            console.log(`Loaded ${results.length} existing results from ${outputFile}. Automatically skipping ${skip} points.`);
         } catch (e) {
             console.warn(`Warning: Could not parse existing output file ${outputFile}, starting fresh.`);
         }
     }
+
+    const targetPoints = points.slice(skip, skip + limit);
+    console.log(`Geocoding ${targetPoints.length} points (skipping ${skip})...`);
 
     for (let i = 0; i < targetPoints.length; i++) {
         const pt = targetPoints[i];
@@ -188,9 +187,11 @@ async function main() {
             lon: pt.lon,
             geocode: geocode
         });
+
+        // Save progressively
+        fs.writeFileSync(outputFile, JSON.stringify(results, null, 2), 'utf-8');
     }
 
-    fs.writeFileSync(outputFile, JSON.stringify(results, null, 2), 'utf-8');
     console.log(`Done! Results saved to ${outputFile}`);
 }
 

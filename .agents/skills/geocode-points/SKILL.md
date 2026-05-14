@@ -28,16 +28,15 @@ node .agents/skills/geocode-points/geocode_points.js --summits <path_to_summits_
 - `--summits`: Path to the GPX file containing mountain peak waypoints (e.g., `gpx/all_unique_summits.gpx`).
 - `--raw-dir`: Path to the directory containing raw GPX files representing climbing routes (e.g., `gpx/raw`). Start and end points will be extracted from these traces.
 - `--out`: Path to save the resulting JSON file (e.g., `geocoded_points.json`).
-- `--skip`: (Optional) Number of points to skip before processing. Defaults to `0`.
 - `--limit`: (Optional) Maximum number of points to process in one run. Defaults to `100`.
 
-### Incremental Processing
+### Incremental Processing / Auto-Resume
 
-The script supports incremental processing using `--skip` and `--limit`. If the output file specified by `--out` already exists, the script will append the new results to the existing JSON array instead of overwriting it.
+The script supports incremental processing using the `--limit` option. It features an **auto-resume capability**: if the output file specified by `--out` already exists, the script will automatically read the number of already geocoded points in the file and skip exactly that many items. It will then geocode the next batch of points (up to the given `--limit`) and append the new results to the existing JSON array.
 
-Example for processing the next 100 items (after the first 100):
+Example for processing the next 100 items (the script will automatically detect how many points have already been processed and start from the next un-processed point):
 ```bash
-node .agents/skills/geocode-points/geocode_points.js --summits gpx/all_unique_summits.gpx --raw-dir gpx/raw --out geocoded_points.json --skip 100 --limit 100
+node .agents/skills/geocode-points/geocode_points.js --summits gpx/all_unique_summits.gpx --raw-dir gpx/raw --out geocoded_points.json --limit 100
 ```
 
 ### JSON Output Format
