@@ -8,6 +8,7 @@ let inputPaths = [];
 let outputFile = null;
 let limit = 100;
 let allTrkpt = false;
+let requestInterval = 2500; // default 2.5s
 
 for (let i = 0; i < args.length; i++) {
     if (args[i] === '--input') {
@@ -25,11 +26,19 @@ for (let i = 0; i < args.length; i++) {
         i++;
     } else if (args[i] === '--all-trkpt') {
         allTrkpt = true;
+    } else if (args[i] === '--interval' && i + 1 < args.length) {
+        requestInterval = parseInt(args[i + 1], 10);
+        i++;
     }
 }
 
+if (requestInterval < 1000) {
+    console.error("Error: --interval cannot be less than 1000ms (1 second) due to server guidelines.");
+    process.exit(1);
+}
+
 if (inputPaths.length === 0 || !outputFile) {
-    console.error("Usage: node reverse_geocode_points.js --input <file_or_dir> [<file_or_dir> ...] --out <path_to_output_json> [--limit <limit_count>] [--all-trkpt]");
+    console.error("Usage: node reverse_geocode_points.js --input <path1> [<path2> ...] --out <output_json> [--limit <num>] [--all-trkpt] [--interval <ms>]");
     process.exit(1);
 }
 
@@ -201,10 +210,10 @@ async function main() {
         let geocode = null;
         try {
             const resJa = await fetchGeocode(pt.lat, pt.lon, 'ja');
-            await sleep(3500); // Wait > 3 seconds
+            await sleep(requestInterval);
 
             const resEn = await fetchGeocode(pt.lat, pt.lon, 'en');
-            await sleep(3500); // Wait > 3 seconds
+            await sleep(requestInterval);
 
             if (resJa && resEn && !resJa.error && !resEn.error) {
                 geocode = {
