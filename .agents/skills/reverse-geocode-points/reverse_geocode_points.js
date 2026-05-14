@@ -4,29 +4,32 @@ const https = require('https');
 
 // Parse command-line arguments
 const args = process.argv.slice(2);
-let summitsFile = null;
-let rawDir = null;
+let inputPaths = [];
 let outputFile = null;
 let limit = 100;
+let allTrkpt = false;
 
 for (let i = 0; i < args.length; i++) {
-    if (args[i] === '--summits' && i + 1 < args.length) {
-        summitsFile = path.resolve(process.cwd(), args[i + 1]);
+    if (args[i] === '--input') {
         i++;
-    } else if (args[i] === '--raw-dir' && i + 1 < args.length) {
-        rawDir = path.resolve(process.cwd(), args[i + 1]);
-        i++;
+        while (i < args.length && !args[i].startsWith('--')) {
+            inputPaths.push(path.resolve(process.cwd(), args[i]));
+            i++;
+        }
+        i--; // Adjust index back to process the next flag correctly
     } else if (args[i] === '--out' && i + 1 < args.length) {
         outputFile = path.resolve(process.cwd(), args[i + 1]);
         i++;
     } else if (args[i] === '--limit' && i + 1 < args.length) {
         limit = parseInt(args[i + 1], 10);
         i++;
+    } else if (args[i] === '--all-trkpt') {
+        allTrkpt = true;
     }
 }
 
-if (!summitsFile || !rawDir || !outputFile) {
-    console.error("Usage: node geocode_points.js --summits <path_to_summits_gpx> --raw-dir <path_to_raw_gpx_dir> --out <path_to_output_json> [--limit <limit_count>]");
+if (inputPaths.length === 0 || !outputFile) {
+    console.error("Usage: node reverse_geocode_points.js --input <file_or_dir> [<file_or_dir> ...] --out <path_to_output_json> [--limit <limit_count>] [--all-trkpt]");
     process.exit(1);
 }
 
@@ -40,7 +43,7 @@ function parseWpt(xmlStr, filename) {
     let match;
     while ((match = regex.exec(xmlStr)) !== null) {
         points.push({
-            type: 'peak',
+            type: 'waypoint',
             source_file: filename,
             lat: parseFloat(match[1]),
             lon: parseFloat(match[2])
@@ -49,7 +52,7 @@ function parseWpt(xmlStr, filename) {
     return points;
 }
 
-function parseTrkpt(xmlStr, filename) {
+function parseTrkpt(xmlStr, filename, allTrkpt) {
     const regex = /<trkpt lat="([^"]+)" lon="([^"]+)">/g;
     let match;
     const pts = [];
@@ -61,18 +64,29 @@ function parseTrkpt(xmlStr, filename) {
     }
     const results = [];
     if (pts.length > 0) {
-        results.push({
-            type: 'start_point',
-            source_file: filename,
-            lat: pts[0].lat,
-            lon: pts[0].lon
-        });
-        results.push({
-            type: 'end_point',
-            source_file: filename,
-            lat: pts[pts.length - 1].lat,
-            lon: pts[pts.length - 1].lon
-        });
+        if (allTrkpt) {
+            pts.forEach(pt => {
+                results.push({
+                    type: 'trackpoint',
+                    source_file: filename,
+                    lat: pt.lat,
+                    lon: pt.lon
+                });
+            });
+        } else {
+            results.push({
+                type: 'trackpoint_start',
+                source_file: filename,
+                lat: pts[0].lat,
+                lon: pts[0].lon
+            });
+            results.push({
+                type: 'trackpoint_end',
+                source_file: filename,
+                lat: pts[pts.length - 1].lat,
+                lon: pts[pts.length - 1].lon
+            });
+        }
     }
     return results;
 }
@@ -119,24 +133,46 @@ function extractAddressInfo(address) {
 async function main() {
     console.log("Reading data...");
     let points = [];
+    const gpxFiles = [];
 
-    // 1. Read peaks
-    if (fs.existsSync(summitsFile)) {
-        const content = fs.readFileSync(summitsFile, 'utf-8');
-        points = points.concat(parseWpt(content, path.basename(summitsFile)));
-    } else {
-        console.warn(`Warning: Summits file not found at ${summitsFile}`);
+    for (const inputPath of inputPaths) {
+        if (!fs.existsSync(inputPath)) {
+            console.error(`Error: The specified input path does not exist: ${inputPath}`);
+            process.exit(1);
+        }
+
+        const stats = fs.statSync(inputPath);
+        if (stats.isDirectory()) {
+            const files = fs.readdirSync(inputPath);
+            for (const file of files) {
+                if (file.toLowerCase().endsWith('.gpx')) {
+                    const fullPath = path.join(inputPath, file);
+                    if (fs.statSync(fullPath).isFile()) {
+                        gpxFiles.push(fullPath);
+                    }
+                }
+            }
+        } else if (stats.isFile() && inputPath.toLowerCase().endsWith('.gpx')) {
+            gpxFiles.push(inputPath);
+        } else {
+            console.warn(`Warning: Skipping non-GPX file: ${inputPath}`);
+        }
     }
 
-    // 2. Read start/end points
-    if (fs.existsSync(rawDir)) {
-        const files = fs.readdirSync(rawDir).filter(f => f.endsWith('.gpx'));
-        for (const file of files) {
-            const content = fs.readFileSync(path.join(rawDir, file), 'utf-8');
-            points = points.concat(parseTrkpt(content, file));
+    if (gpxFiles.length === 0) {
+        console.error("Error: No GPX files found in the specified input paths.");
+        process.exit(1);
+    }
+
+    for (const file of gpxFiles) {
+        try {
+            const content = fs.readFileSync(file, 'utf-8');
+            const filename = path.basename(file);
+            points = points.concat(parseWpt(content, filename));
+            points = points.concat(parseTrkpt(content, filename, allTrkpt));
+        } catch (err) {
+            console.error(`Error reading file ${file}:`, err.message);
         }
-    } else {
-        console.warn(`Warning: Raw GPX directory not found at ${rawDir}`);
     }
 
     console.log(`Total points collected: ${points.length}`);
@@ -195,4 +231,7 @@ async function main() {
     console.log(`Done! Results saved to ${outputFile}`);
 }
 
-main().catch(console.error);
+main().catch((err) => {
+    console.error("Fatal error:", err);
+    process.exit(1);
+});
