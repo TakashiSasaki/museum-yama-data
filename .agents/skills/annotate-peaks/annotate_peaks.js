@@ -15,7 +15,8 @@ const fs = require('fs');
 const path = require('path');
 
 // === Configuration ===
-const ROOT_DIR = path.resolve(__dirname, '../../../');
+const args = process.argv.slice(2);
+const ROOT_DIR = args[0] ? path.resolve(args[0]) : process.cwd();
 const GPX_DIR = path.join(ROOT_DIR, 'gpx');
 const RAW_DIR = path.join(GPX_DIR, 'raw');
 const CSV_DIR = path.join(ROOT_DIR, 'csv');
