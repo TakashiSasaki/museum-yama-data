@@ -2,3 +2,7 @@ commit_message.txt
 node_modules/
 .DS_Store
 *.efu
+geocoded_points.json
+geocode.log
+test_nom.json
+test_nom_en.json
