@@ -7,6 +7,8 @@ const args = process.argv.slice(2);
 let summitsFile = null;
 let rawDir = null;
 let outputFile = null;
+let skip = 0;
+let limit = 100;
 
 for (let i = 0; i < args.length; i++) {
     if (args[i] === '--summits' && i + 1 < args.length) {
@@ -18,11 +20,17 @@ for (let i = 0; i < args.length; i++) {
     } else if (args[i] === '--out' && i + 1 < args.length) {
         outputFile = path.resolve(process.cwd(), args[i + 1]);
         i++;
+    } else if (args[i] === '--skip' && i + 1 < args.length) {
+        skip = parseInt(args[i + 1], 10);
+        i++;
+    } else if (args[i] === '--limit' && i + 1 < args.length) {
+        limit = parseInt(args[i + 1], 10);
+        i++;
     }
 }
 
 if (!summitsFile || !rawDir || !outputFile) {
-    console.error("Usage: node geocode_points.js --summits <path_to_summits_gpx> --raw-dir <path_to_raw_gpx_dir> --out <path_to_output_json>");
+    console.error("Usage: node geocode_points.js --summits <path_to_summits_gpx> --raw-dir <path_to_raw_gpx_dir> --out <path_to_output_json> [--skip <skip_count>] [--limit <limit_count>]");
     process.exit(1);
 }
 
@@ -136,14 +144,24 @@ async function main() {
     }
 
     console.log(`Total points collected: ${points.length}`);
-    const limit = Math.min(100, points.length);
-    const targetPoints = points.slice(0, limit);
-    console.log(`Geocoding first ${targetPoints.length} points...`);
+    const targetPoints = points.slice(skip, skip + limit);
+    console.log(`Geocoding ${targetPoints.length} points (skipping ${skip})...`);
 
-    const results = [];
+    // Load existing results if output file exists
+    let results = [];
+    if (fs.existsSync(outputFile)) {
+        try {
+            const existingContent = fs.readFileSync(outputFile, 'utf-8');
+            results = JSON.parse(existingContent);
+            console.log(`Loaded ${results.length} existing results from ${outputFile}`);
+        } catch (e) {
+            console.warn(`Warning: Could not parse existing output file ${outputFile}, starting fresh.`);
+        }
+    }
+
     for (let i = 0; i < targetPoints.length; i++) {
         const pt = targetPoints[i];
-        console.log(`[${i+1}/${limit}] Geocoding ${pt.type} at ${pt.lat}, ${pt.lon} (Source: ${pt.source_file})`);
+        console.log(`[${i+1}/${targetPoints.length}] Geocoding ${pt.type} at ${pt.lat}, ${pt.lon} (Source: ${pt.source_file})`);
 
         let geocode = null;
         try {
