@@ -30,3 +30,9 @@ Process the next 100 unprocessed points from the unique summits and raw GPX fold
 ```bash
 node .agents/skills/reverse-geocode-points/reverse_geocode_points.js --input gpx/all_unique_summits.gpx gpx/raw/ --out reverse_geocoding/ --limit 100
 ```
+
+## Important Note regarding Nominatim API Data Accuracy
+
+*   The Nominatim OpenStreetMap API may return incomplete, incorrectly formatted, or inaccurate information for certain regions, especially for the English translations of Japanese addresses.
+*   Administrative boundaries (e.g., mismatching cities as counties) or missing local town names can occasionally happen due to the underlying open-source database.
+*   If you find that the English translation contains Japanese characters or differs from reality, you may need to use an external script to patch the `.json` output files, or refer to the Japanese text as the source of truth ("正本").
