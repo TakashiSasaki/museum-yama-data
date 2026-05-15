@@ -1,0 +1,1002 @@
+[
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-02-14_13_33.gpx",
+    "lat": 33.4577407,
+    "lon": 132.4066335,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "八幡浜市",
+        "local": "向灘"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Yawatahama",
+        "local": "Mukainada"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-02-22_06_23.gpx",
+    "lat": 33.5120548,
+    "lon": 132.7190633,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "大洲市",
+        "local": "山鳥坂"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Ozu",
+        "local": "山鳥坂"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-02-22_06_23.gpx",
+    "lat": 33.5119795,
+    "lon": 132.7190679,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "大洲市",
+        "local": "山鳥坂"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Ozu",
+        "local": "山鳥坂"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-02-22_07_32.gpx",
+    "lat": 33.5148362,
+    "lon": 132.7593842,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "大洲市",
+        "local": "南山"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Ozu",
+        "local": "南山"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-02-22_07_32.gpx",
+    "lat": 33.5148398,
+    "lon": 132.7591286,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "大洲市",
+        "local": "南山"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Ozu",
+        "local": "南山"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-02-23_14_06.gpx",
+    "lat": 33.9001795,
+    "lon": 132.7520321,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "堀江町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Horiecho"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-02-23_14_06.gpx",
+    "lat": 33.9001679,
+    "lon": 132.7520797,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "堀江町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Horiecho"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-01_06_45.gpx",
+    "lat": 33.9267243,
+    "lon": 133.6849721,
+    "geocode": {
+      "ja": {
+        "prefecture": "徳島県",
+        "county": "",
+        "city": "三好市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Tokushima Prefecture",
+        "county": "",
+        "city": "Miyoshi",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-01_06_45.gpx",
+    "lat": 33.9267249,
+    "lon": 133.6850822,
+    "geocode": {
+      "ja": {
+        "prefecture": "徳島県",
+        "county": "",
+        "city": "三好市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Tokushima Prefecture",
+        "county": "",
+        "city": "Miyoshi",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-04_06_40.gpx",
+    "lat": 33.5958509,
+    "lon": 132.7856117,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": "中田渡"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": "中田渡"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-04_06_40.gpx",
+    "lat": 33.5957725,
+    "lon": 132.7855189,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": "中田渡"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": "中田渡"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-04_09_46.gpx",
+    "lat": 33.5740776,
+    "lon": 132.8385456,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": "美川小田線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": "美川小田線"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-04_09_46.gpx",
+    "lat": 33.5742538,
+    "lon": 132.8385708,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": "美川小田線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": "美川小田線"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-06_09_00.gpx",
+    "lat": 33.9844668,
+    "lon": 133.0367406,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "今治市",
+        "local": "朝倉南"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Imabari",
+        "local": "Asakura-minami"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-06_09_00.gpx",
+    "lat": 33.9843972,
+    "lon": 133.0368069,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "今治市",
+        "local": "朝倉南"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Imabari",
+        "local": "Asakura-minami"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-07_09_28.gpx",
+    "lat": 33.1967088,
+    "lon": 132.6088765,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "宇和島市",
+        "local": "野川"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Uwajima",
+        "local": "Nogawa"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-07_09_28.gpx",
+    "lat": 33.1969423,
+    "lon": 132.6086895,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "宇和島市",
+        "local": "野川"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Uwajima",
+        "local": "Nogawa"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-07_11_08.gpx",
+    "lat": 33.1882332,
+    "lon": 132.6031119,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "宇和島市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Uwajima",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-07_11_08.gpx",
+    "lat": 33.1881432,
+    "lon": 132.6030737,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "宇和島市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Uwajima",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-08_07_27.gpx",
+    "lat": 33.9712654,
+    "lon": 133.6440584,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "四国中央市",
+        "local": "林道呉石境目線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Shikokuchuo",
+        "local": "林道呉石境目線"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-08_07_27.gpx",
+    "lat": 33.9712251,
+    "lon": 133.6442139,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "四国中央市",
+        "local": "林道呉石境目線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Shikokuchuo",
+        "local": "林道呉石境目線"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-08_08_05.gpx",
+    "lat": 33.9780059,
+    "lon": 133.6624026,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "四国中央市",
+        "local": "林道呉石境目線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Shikokuchuo",
+        "local": "林道呉石境目線"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-08_08_05.gpx",
+    "lat": 33.9780521,
+    "lon": 133.6624671,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "四国中央市",
+        "local": "林道呉石境目線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Shikokuchuo",
+        "local": "林道呉石境目線"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-08_10_45.gpx",
+    "lat": 33.9442022,
+    "lon": 133.5836473,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "四国中央市",
+        "local": "金砂町小川山"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Shikokuchuo",
+        "local": "Kinshacho-Ogawayama"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-08_10_45.gpx",
+    "lat": 33.9441851,
+    "lon": 133.5836445,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "四国中央市",
+        "local": "金砂町小川山"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Shikokuchuo",
+        "local": "Kinshacho-Ogawayama"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-11_10_35.gpx",
+    "lat": 33.8670603,
+    "lon": 132.7639944,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "祝谷西町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Iwaidani-nishimachi"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-11_10_35.gpx",
+    "lat": 33.8670442,
+    "lon": 132.7637861,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "祝谷西町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Iwaidani-nishimachi"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-15_06_14.gpx",
+    "lat": 33.3147512,
+    "lon": 132.8227481,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "北宇和郡",
+        "city": "鬼北町",
+        "local": "父野川下"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita-Uwa County",
+        "city": "Kihoku",
+        "local": "Chichinokawashimo"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-15_06_14.gpx",
+    "lat": 33.3147364,
+    "lon": 132.8228025,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "北宇和郡",
+        "city": "鬼北町",
+        "local": "父野川下"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita-Uwa County",
+        "city": "Kihoku",
+        "local": "Chichinokawashimo"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-15_10_21.gpx",
+    "lat": 33.377792,
+    "lon": 132.8534821,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "北宇和郡",
+        "city": "鬼北町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita-Uwa County",
+        "city": "Kihoku",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-15_10_21.gpx",
+    "lat": 33.3778797,
+    "lon": 132.8534438,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "北宇和郡",
+        "city": "鬼北町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita-Uwa County",
+        "city": "Kihoku",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-17_06_58.gpx",
+    "lat": 33.7332212,
+    "lon": 133.0444083,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "上浮穴郡",
+        "city": "久万高原町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kamiukena County",
+        "city": "Kumakogen",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-17_06_58.gpx",
+    "lat": 33.7331779,
+    "lon": 133.0444327,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "上浮穴郡",
+        "city": "久万高原町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kamiukena County",
+        "city": "Kumakogen",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-21_07_01.gpx",
+    "lat": 33.5443765,
+    "lon": 132.8446845,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": "本川"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": "本川"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-21_07_01.gpx",
+    "lat": 33.5443637,
+    "lon": 132.844731,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": "本川"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": "本川"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-21_13_44.gpx",
+    "lat": 33.5433622,
+    "lon": 132.8052263,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "大洲市",
+        "local": "南山"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Ozu",
+        "local": "南山"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-21_13_44.gpx",
+    "lat": 33.5433875,
+    "lon": 132.8051534,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "大洲市",
+        "local": "南山"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Ozu",
+        "local": "南山"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-03-21_14_58.gpx",
+    "lat": 33.5577166,
+    "lon": 132.8647499,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-03-21_14_58.gpx",
+    "lat": 33.5577224,
+    "lon": 132.8648143,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-04-11_09_14.gpx",
+    "lat": 33.6315927,
+    "lon": 132.8515831,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": "久万中山線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": "久万中山線"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-04-11_09_14.gpx",
+    "lat": 33.6315836,
+    "lon": 132.8515622,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "喜多郡",
+        "city": "内子町",
+        "local": "久万中山線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Kita County",
+        "city": "Uchiko",
+        "local": "久万中山線"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-04-12_11_03.gpx",
+    "lat": 33.8408995,
+    "lon": 132.7224509,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "北斎院町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Kitasayacho"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-04-12_11_03.gpx",
+    "lat": 33.840517,
+    "lon": 132.72235,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "松山市",
+        "local": "北斎院町"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Matsuyama",
+        "local": "Kitasayacho"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-04-19_07_43.gpx",
+    "lat": 33.5188299,
+    "lon": 132.3756876,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "八幡浜市",
+        "local": "保内町広早"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Yawatahama",
+        "local": "Honaicho-Hirohaya"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-04-19_07_43.gpx",
+    "lat": 33.5188711,
+    "lon": 132.3757976,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "八幡浜市",
+        "local": "保内町広早"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Yawatahama",
+        "local": "Honaicho-Hirohaya"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-04-19_10_27.gpx",
+    "lat": 33.5866488,
+    "lon": 132.499763,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": "長浜町下須戒"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": "Nagahamacho-Shimosukai"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-04-19_10_27.gpx",
+    "lat": 33.5863912,
+    "lon": 132.4999183,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "大洲市",
+        "local": "長浜町下須戒"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Ozu",
+        "local": "Nagahamacho-Shimosukai"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-04-29_06_34.gpx",
+    "lat": 33.8021575,
+    "lon": 132.9953458,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": "滑川"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": "滑川"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-04-29_06_34.gpx",
+    "lat": 33.8017868,
+    "lon": 132.9953705,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "東温市",
+        "local": "明河"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Toon",
+        "local": "明河"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-05-02_09_29.gpx",
+    "lat": 33.7858302,
+    "lon": 133.1904143,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "吾川郡",
+        "city": "西条市",
+        "local": "町道瓶ヶ森線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Agawa County",
+        "city": "Saijō",
+        "local": "町道瓶ヶ森線"
+      }
+    }
+  }
+]
