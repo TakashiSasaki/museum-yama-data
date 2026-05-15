@@ -6,6 +6,7 @@ const https = require('https');
 const args = process.argv.slice(2);
 let inputPaths = [];
 let outArg = null;
+    let originalOutArg = null;
 let limit = 100;
 let allTrkpt = false;
 let requestInterval = 2500; // default 2.5s
@@ -19,7 +20,8 @@ for (let i = 0; i < args.length; i++) {
         }
         i--; // Adjust index back to process the next flag correctly
     } else if (args[i] === '--out' && i + 1 < args.length) {
-        outArg = path.resolve(process.cwd(), args[i + 1]);
+        originalOutArg = args[i + 1];
+        outArg = path.resolve(process.cwd(), originalOutArg);
         i++;
     } else if (args[i] === '--limit' && i + 1 < args.length) {
         limit = parseInt(args[i + 1], 10);
@@ -191,7 +193,13 @@ async function main() {
     const processedSet = new Set();
     let outputFile = outArg;
 
-    if (fs.existsSync(outArg) && fs.statSync(outArg).isDirectory()) {
+    const isDirectoryIntent = originalOutArg.endsWith('/') || originalOutArg.endsWith('\\') || (fs.existsSync(outArg) && fs.statSync(outArg).isDirectory());
+
+    if (isDirectoryIntent) {
+        if (!fs.existsSync(outArg)) {
+            console.error(`Error: Output directory does not exist: ${outArg}`);
+            process.exit(1);
+        }
         const files = fs.readdirSync(outArg);
         for (const file of files) {
             if (file.toLowerCase().endsWith('.json')) {
