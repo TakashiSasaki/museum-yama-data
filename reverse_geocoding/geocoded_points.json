@@ -95,7 +95,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Agawa County",
         "city": "Ino",
-        "local": "町道瓶ヶ森線"
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -195,7 +195,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Agawa County",
         "city": "Ino",
-        "local": "町道瓶ヶ森線"
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -215,7 +215,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Agawa County",
         "city": "Ino",
-        "local": "寺川"
+        "local": "Teragawa"
       }
     }
   },
@@ -254,8 +254,8 @@
       "en": {
         "prefecture": "Ehime Prefecture",
         "county": "Agawa County",
-        "city": "Saijō",
-        "local": "町道瓶ヶ森線"
+        "city": "Saijo",
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -275,7 +275,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Agawa County",
         "city": "Ino",
-        "local": "町道瓶ヶ森線"
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -294,8 +294,8 @@
       "en": {
         "prefecture": "Ehime Prefecture",
         "county": "Agawa County",
-        "city": "Saijō",
-        "local": "町道瓶ヶ森線"
+        "city": "Saijo",
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -315,7 +315,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Agawa County",
         "city": "Ino",
-        "local": "町道瓶ヶ森線"
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -375,7 +375,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Agawa County",
         "city": "Ino",
-        "local": "町道瓶ヶ森線"
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -414,8 +414,8 @@
       "en": {
         "prefecture": "Ehime Prefecture",
         "county": "Agawa County",
-        "city": "Saijō",
-        "local": "町道瓶ヶ森線"
+        "city": "Saijo",
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -455,7 +455,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Agawa County",
         "city": "Ino",
-        "local": "町道瓶ヶ森線"
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -595,7 +595,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Agawa County",
         "city": "Ino",
-        "local": "町道瓶ヶ森線"
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -655,7 +655,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },
@@ -695,7 +695,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Agawa County",
         "city": "Ino",
-        "local": "町道瓶ヶ森線"
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -795,7 +795,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Tosa County",
         "city": "Okawa",
-        "local": "大平"
+        "local": "Ohira"
       }
     }
   },
@@ -895,7 +895,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },
@@ -935,7 +935,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Tosa County",
         "city": "Okawa",
-        "local": "大平"
+        "local": "Ohira"
       }
     }
   },
@@ -994,8 +994,8 @@
       "en": {
         "prefecture": "Ehime Prefecture",
         "county": "Agawa County",
-        "city": "Saijō",
-        "local": "町道瓶ヶ森線"
+        "city": "Saijo",
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -1035,7 +1035,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Takaoka County",
         "city": "Tsuno",
-        "local": "セラピーロード"
+        "local": "Therapy Road"
       }
     }
   },
@@ -1515,7 +1515,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },
@@ -1594,7 +1594,7 @@
       "en": {
         "prefecture": "Ehime Prefecture",
         "county": "",
-        "city": "Saijō",
+        "city": "Saijo",
         "local": "蔭地林道"
       }
     }
@@ -3253,7 +3253,7 @@
       },
       "en": {
         "prefecture": "Ehime Prefecture",
-        "county": "Minami-Uwa County",
+        "county": "Minami-uwa County",
         "city": "Ainan",
         "local": "篠山公園線"
       }
@@ -3995,7 +3995,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "",
         "city": "Niihama",
-        "local": "新居浜別子山線"
+        "local": "Niihama Besshiyama Line"
       }
     }
   },
@@ -4173,7 +4173,7 @@
       },
       "en": {
         "prefecture": "Ehime Prefecture",
-        "county": "Minami-Uwa County",
+        "county": "Minami-uwa County",
         "city": "Ainan",
         "local": "三森林道"
       }
@@ -4493,7 +4493,7 @@
       },
       "en": {
         "prefecture": "Ehime Prefecture",
-        "county": "Minami-Uwa County",
+        "county": "Minami-uwa County",
         "city": "Ainan",
         "local": "山出林道"
       }
@@ -4895,7 +4895,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Iyo County",
         "city": "Tobe",
-        "local": "中野川"
+        "local": "Nakanogawa"
       }
     }
   },
@@ -6315,7 +6315,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Iyo County",
         "city": "Tobe",
-        "local": "中野川"
+        "local": "Nakanogawa"
       }
     }
   },
@@ -6775,7 +6775,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "",
         "city": "Seiyo",
-        "local": "宇和町さくら"
+        "local": "Uwasakura"
       }
     }
   },
@@ -7275,7 +7275,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Iyo County",
         "city": "Tobe",
-        "local": "宮内"
+        "local": "Miyauchi"
       }
     }
   },

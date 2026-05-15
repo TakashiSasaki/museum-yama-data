@@ -188,14 +188,14 @@
       "ja": {
         "prefecture": "愛媛県",
         "county": "伊予郡",
-        "city": "松山市",
+        "city": "砥部町",
         "local": "宮内"
       },
       "en": {
         "prefecture": "Ehime Prefecture",
         "county": "Iyo County",
-        "city": "Matsuyama",
-        "local": "宮内"
+        "city": "Tobe",
+        "local": "Miyauchi"
       }
     }
   },
@@ -615,7 +615,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },
@@ -635,7 +635,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },

@@ -15,7 +15,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "",
         "city": "Niihama",
-        "local": "新居浜別子山線"
+        "local": "Niihama Besshiyama Line"
       }
     }
   },
@@ -1475,7 +1475,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "",
         "city": "Toon",
-        "local": "上林"
+        "local": "Kanbayashi"
       }
     }
   },
@@ -1495,7 +1495,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "",
         "city": "Toon",
-        "local": "上林"
+        "local": "Kanbayashi"
       }
     }
   },
@@ -1595,7 +1595,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },
@@ -1615,7 +1615,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },
@@ -1793,9 +1793,9 @@
       },
       "en": {
         "prefecture": "Ehime Prefecture",
-        "county": "Minami-Uwa County",
+        "county": "Minami-uwa County",
         "city": "Ainan",
-        "local": "緑資源幹線林道　広見・篠川線　笹郷・小岩道区間"
+        "local": "Green Resource Trunk Forest Road Hiromi-Shinokawa Line Sasago-Koiwamichi Section"
       }
     }
   },
@@ -1813,9 +1813,9 @@
       },
       "en": {
         "prefecture": "Ehime Prefecture",
-        "county": "Minami-Uwa County",
+        "county": "Minami-uwa County",
         "city": "Ainan",
-        "local": "緑資源幹線林道　広見・篠川線　笹郷・小岩道区間"
+        "local": "Green Resource Trunk Forest Road Hiromi-Shinokawa Line Sasago-Koiwamichi Section"
       }
     }
   },
@@ -1835,7 +1835,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Iyo County",
         "city": "Tobe",
-        "local": "総津"
+        "local": "Souzu"
       }
     }
   },
@@ -1855,7 +1855,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Iyo County",
         "city": "Tobe",
-        "local": "中野川"
+        "local": "Nakanogawa"
       }
     }
   },

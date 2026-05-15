@@ -535,7 +535,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },
@@ -555,7 +555,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },
@@ -815,7 +815,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },
@@ -835,7 +835,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },
@@ -855,7 +855,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Agawa County",
         "city": "Ino",
-        "local": "町道瓶ヶ森線"
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -875,7 +875,7 @@
         "prefecture": "Kochi Prefecture",
         "county": "Agawa County",
         "city": "Ino",
-        "local": "町道瓶ヶ森線"
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -1173,7 +1173,7 @@
       },
       "en": {
         "prefecture": "Kochi Prefecture",
-        "county": "Minami-Uwa County",
+        "county": "Minami-uwa County",
         "city": "Sukumo",
         "local": "宿毛篠山公園線"
       }
@@ -1193,7 +1193,7 @@
       },
       "en": {
         "prefecture": "Kochi Prefecture",
-        "county": "Minami-Uwa County",
+        "county": "Minami-uwa County",
         "city": "Sukumo",
         "local": "宿毛篠山公園線"
       }
@@ -1255,7 +1255,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },
@@ -1275,7 +1275,7 @@
         "prefecture": "Ehime Prefecture",
         "county": "Kamiukena County",
         "city": "Kumakogen",
-        "local": "石鎚スカイライン"
+        "local": "Ishizuchi Skyline"
       }
     }
   },
@@ -1294,8 +1294,8 @@
       "en": {
         "prefecture": "Ehime Prefecture",
         "county": "Agawa County",
-        "city": "Saijō",
-        "local": "町道瓶ヶ森線"
+        "city": "Saijo",
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
@@ -1314,8 +1314,8 @@
       "en": {
         "prefecture": "Ehime Prefecture",
         "county": "Agawa County",
-        "city": "Saijō",
-        "local": "町道瓶ヶ森線"
+        "city": "Saijo",
+        "local": "Chodo Kamegamori Line"
       }
     }
   },
