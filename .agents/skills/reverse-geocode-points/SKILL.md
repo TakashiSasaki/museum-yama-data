@@ -12,7 +12,7 @@ This skill extracts geographic coordinates (latitude and longitude) from GPX fil
 - **Flexible Input Support:** Accepts one or multiple GPX files, as well as entire directories containing GPX files.
 - **Comprehensive Parsing:** Extracts `<wpt>` (waypoints) and `<trkpt>` (trackpoints). By default, it grabs all waypoints and only the first and last trackpoints (start and end). An optional flag allows extracting all trackpoints.
 - **Reverse Geocoding:** Uses the free Nominatim (OpenStreetMap) API (`https://nominatim.openstreetmap.org/reverse`).
-- **Rate Limit Compliance:** Automatically respects Nominatim's strict usage policies by inserting delays of at least 3.5 seconds between API requests to avoid overloading the server.
+- **Rate Limit Compliance:** Automatically respects Nominatim's usage policies by inserting delays of at least 2.5 seconds (by default) between API requests to avoid overloading the server.
 - **Multilingual Support:** Queries for both Japanese (`ja`) and English (`en`) address components.
 - **Robust and Portable:** Validates input existence, provides descriptive error messages, and gracefully handles file paths across different operating systems.
 
@@ -30,6 +30,7 @@ node .agents/skills/reverse-geocode-points/reverse_geocode_points.js --input <pa
 - `--out`: Path to save the resulting JSON file (e.g., `geocoded_points.json`).
 - `--limit`: (Optional) Maximum number of points to process in one run. Defaults to `100`.
 - `--all-trkpt`: (Optional) If specified, the script will extract and geocode *every* trackpoint (`<trkpt>`) found in the GPX files. Without this flag, only the first and last trackpoints of each file are processed.
+- `--interval`: (Optional) The delay in milliseconds between API requests. Defaults to `2500` (2.5 seconds). Must be at least `1000`.
 
 ### Incremental Processing / Auto-Resume
 
