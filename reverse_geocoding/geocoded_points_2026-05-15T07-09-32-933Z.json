@@ -1,0 +1,62 @@
+[
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-05-02_09_29.gpx",
+    "lat": 33.7858363,
+    "lon": 133.1904415,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "吾川郡",
+        "city": "西条市",
+        "local": "町道瓶ヶ森線"
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "Agawa County",
+        "city": "Saijō",
+        "local": "町道瓶ヶ森線"
+      }
+    }
+  },
+  {
+    "type": "trackpoint_start",
+    "source_file": "yamap_2026-05-06_07_28.gpx",
+    "lat": 33.8395083,
+    "lon": 133.2590971,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西条市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Saijō",
+        "local": ""
+      }
+    }
+  },
+  {
+    "type": "trackpoint_end",
+    "source_file": "yamap_2026-05-06_07_28.gpx",
+    "lat": 33.8395894,
+    "lon": 133.2592479,
+    "geocode": {
+      "ja": {
+        "prefecture": "愛媛県",
+        "county": "",
+        "city": "西条市",
+        "local": ""
+      },
+      "en": {
+        "prefecture": "Ehime Prefecture",
+        "county": "",
+        "city": "Saijō",
+        "local": ""
+      }
+    }
+  }
+]
