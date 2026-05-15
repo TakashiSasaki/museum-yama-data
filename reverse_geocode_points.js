@@ -5,7 +5,7 @@ const https = require('https');
 // Parse command-line arguments
 const args = process.argv.slice(2);
 let inputPaths = [];
-let outputFile = null;
+let outArg = null;
 let limit = 100;
 let allTrkpt = false;
 let requestInterval = 2500; // default 2.5s
@@ -19,7 +19,7 @@ for (let i = 0; i < args.length; i++) {
         }
         i--; // Adjust index back to process the next flag correctly
     } else if (args[i] === '--out' && i + 1 < args.length) {
-        outputFile = path.resolve(process.cwd(), args[i + 1]);
+        outArg = path.resolve(process.cwd(), args[i + 1]);
         i++;
     } else if (args[i] === '--limit' && i + 1 < args.length) {
         limit = parseInt(args[i + 1], 10);
@@ -37,8 +37,8 @@ if (requestInterval < 1000) {
     process.exit(1);
 }
 
-if (inputPaths.length === 0 || !outputFile) {
-    console.error("Usage: node reverse_geocode_points.js --input <path1> [<path2> ...] --out <output_json> [--limit <num>] [--all-trkpt] [--interval <ms>]");
+if (inputPaths.length === 0 || !outArg) {
+    console.error("Usage: node reverse_geocode_points.js --input <path1> [<path2> ...] --out <output_path> [--limit <num>] [--all-trkpt] [--interval <ms>]");
     process.exit(1);
 }
 
@@ -186,22 +186,59 @@ async function main() {
 
     console.log(`Total points collected: ${points.length}`);
 
-    // Load existing results if output file exists to determine skip count
+    // Load existing results based on whether outArg is a directory or file
     let results = [];
-    let skip = 0;
-    if (fs.existsSync(outputFile)) {
-        try {
-            const existingContent = fs.readFileSync(outputFile, 'utf-8');
-            results = JSON.parse(existingContent);
-            skip = results.length;
-            console.log(`Loaded ${results.length} existing results from ${outputFile}. Automatically skipping ${skip} points.`);
-        } catch (e) {
-            console.warn(`Warning: Could not parse existing output file ${outputFile}, starting fresh.`);
+    const processedSet = new Set();
+    let outputFile = outArg;
+
+    if (fs.existsSync(outArg) && fs.statSync(outArg).isDirectory()) {
+        const files = fs.readdirSync(outArg);
+        for (const file of files) {
+            if (file.toLowerCase().endsWith('.json')) {
+                try {
+                    const existingContent = fs.readFileSync(path.join(outArg, file), 'utf-8');
+                    const json = JSON.parse(existingContent);
+                    for (const pt of json) {
+                        processedSet.add(`${pt.lat},${pt.lon}`);
+                    }
+                } catch (e) {
+                    console.warn(`Warning: Could not parse existing output file ${file}.`);
+                }
+            }
+        }
+        console.log(`Loaded existing results from directory. Previously processed unique points: ${processedSet.size}.`);
+
+        // Output to a new timestamped file in the directory
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        outputFile = path.join(outArg, `geocoded_points_${timestamp}.json`);
+        results = []; // Ensure results are empty when outputting to a directory so we only save new points
+    } else {
+        if (fs.existsSync(outArg)) {
+            try {
+                const existingContent = fs.readFileSync(outArg, 'utf-8');
+                results = JSON.parse(existingContent);
+                for (const pt of results) {
+                    processedSet.add(`${pt.lat},${pt.lon}`);
+                }
+                console.log(`Loaded ${results.length} existing results from ${outArg}. Previously processed unique points: ${processedSet.size}.`);
+            } catch (e) {
+                console.warn(`Warning: Could not parse existing output file ${outArg}, starting fresh.`);
+            }
         }
     }
 
-    const targetPoints = points.slice(skip, skip + limit);
-    console.log(`Geocoding ${targetPoints.length} points (skipping ${skip})...`);
+    const targetPoints = [];
+    for (const pt of points) {
+        if (!processedSet.has(`${pt.lat},${pt.lon}`)) {
+            targetPoints.push(pt);
+            processedSet.add(`${pt.lat},${pt.lon}`); // Prevent duplicates within the targetPoints array itself
+        }
+        if (targetPoints.length >= limit) {
+            break;
+        }
+    }
+
+    console.log(`Geocoding ${targetPoints.length} new points...`);
 
     for (let i = 0; i < targetPoints.length; i++) {
         const pt = targetPoints[i];
