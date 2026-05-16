@@ -37,7 +37,7 @@ function projectAddressVocabularies(extracted, lang, rawAddress) {
     const notes = [];
 
     // Base defaults
-    const countryStr = lang === 'ja' ? "JP" : "JP";
+    const countryStr = "JP";
     locn.adminUnitL1 = countryStr;
     schema.addressCountry = countryStr;
     ic["国コード"] = countryStr;
