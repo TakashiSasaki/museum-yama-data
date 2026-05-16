@@ -1,38 +1,55 @@
 ---
 name: reverse-geocode-points
-description: Takes GPX files and fetches reverse geocoding data for all waypoints and the start/end trackpoints, exporting to a JSON file. Now supports outputting to directories.
+description: Takes GPX files and fetches reverse geocoding data for all waypoints and the start/end trackpoints. The process is split into three layers (raw, extracted, derived) to retain data without loss.
 ---
 
-# Reverse Geocode Points
+# Reverse Geocode Points (3-Layer Architecture)
 
-This script parses GPX files (waypoints and optionally trackpoints) and fetches reverse geocoding data using the Nominatim OpenStreetMap API.
-To comply with the Nominatim usage policy, requests are rate-limited to 2.5 seconds per request by default.
+The reverse geocoding pipeline uses Nominatim OpenStreetMap API and is divided into three consecutive scripts to prevent information loss, separate fetching from processing, and allow rules to be reapplied to raw data in the future.
 
-## Usage
+## Pipeline Usage
+
+### 1. Fetch Raw Data
+
+Reads GPX files, makes network requests, and outputs raw Nominatim responses.
 
 ```bash
-node reverse_geocode_points.js --input <path1> [<path2> ...] --out <output_path> [--limit <num>] [--all-trkpt] [--interval <ms>]
+node .agents/skills/reverse-geocode-points/reverse_geocode_points.js --input <path1> [<path2> ...] --out <output_dir> [--limit <num>] [--all-trkpt] [--interval <ms>]
 ```
 
-### Arguments
-* `--input`: One or more paths to `.gpx` files or directories containing `.gpx` files.
-* `--out`: The path to output the JSON results.
-    * If a **directory** is specified, all `.json` files in the directory are read to skip already processed points. A new file named `geocoded_points_<timestamp>.json` will be created for the new points.
-    * If a **file** is specified, that file is read to skip already processed points, and new points will be appended to the same file.
-* `--limit`: (Optional) The maximum number of points to process in a single run. Defaults to 100.
-* `--all-trkpt`: (Optional) If provided, geocodes all trackpoints. By default, only the first and last trackpoints of a segment are geocoded.
-* `--interval`: (Optional) The wait time between API requests in milliseconds. Defaults to 2500ms. Minimum is 1000ms.
+**Example:**
+```bash
+node .agents/skills/reverse-geocode-points/reverse_geocode_points.js --input gpx/all_unique_summits.gpx gpx/raw/ --out reverse_geocoding/raw/nominatim --limit 100
+```
 
-## Example
+### 2. Extract Fields
 
-Process the next 100 unprocessed points from the unique summits and raw GPX folders, and output to the `reverse_geocoding` directory:
+Reads the raw output files and extracts basic address components (prefecture, county, city, local) while recording the exact source keys.
 
 ```bash
-node .agents/skills/reverse-geocode-points/reverse_geocode_points.js --input gpx/all_unique_summits.gpx gpx/raw/ --out reverse_geocoding/ --limit 100
+node .agents/skills/reverse-geocode-points/extract_address_from_raw.js --input <raw_dir> --out <extracted_dir>
+```
+
+**Example:**
+```bash
+node .agents/skills/reverse-geocode-points/extract_address_from_raw.js --input reverse_geocoding/raw/nominatim --out reverse_geocoding/extracted/nominatim
+```
+
+### 3. Project to Vocabularies
+
+Reads extracted files and projects the data into standard vocabularies (locn:, schema:, ic:) based on source keys, generating derived JSON output.
+
+```bash
+node .agents/skills/reverse-geocode-points/project_address_vocabularies.js --input <extracted_dir> --out <derived_dir>
+```
+
+**Example:**
+```bash
+node .agents/skills/reverse-geocode-points/project_address_vocabularies.js --input reverse_geocoding/extracted/nominatim --out reverse_geocoding/derived/address_projection
 ```
 
 ## Important Note regarding Nominatim API Data Accuracy
 
 *   The Nominatim OpenStreetMap API may return incomplete, incorrectly formatted, or inaccurate information for certain regions, especially for the English translations of Japanese addresses.
 *   Administrative boundaries (e.g., mismatching cities as counties) or missing local town names can occasionally happen due to the underlying open-source database.
-*   If you find that the English translation contains Japanese characters or differs from reality, you may need to use an external script to patch the `.json` output files, or refer to the Japanese text as the source of truth ("正本").
+*   By retaining the `raw` response and splitting the extraction and derivation phases, the system handles database errors more robustly. You can patch or regenerate the derived representation without re-querying the API.
