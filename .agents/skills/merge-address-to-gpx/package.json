@@ -1,0 +1,9 @@
+{
+  "name": "merge-address-to-gpx",
+  "version": "1.0.0",
+  "description": "Merges reverse geocoded JSON data into a GPX file's extensions and descriptions.",
+  "main": "merge_address.js",
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  }
+}

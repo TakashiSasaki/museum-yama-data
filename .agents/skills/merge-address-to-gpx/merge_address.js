@@ -1,0 +1,187 @@
+const fs = require('fs');
+const path = require('path');
+const xml2js = require('xml2js');
+
+const MATCH_DISTANCE_SQUARED_THRESHOLD_DEGREES = 0.00000001; // squared degrees; sqrt(1e-8) = 1e-4 degrees, roughly 11 meters
+const MATCH_GRID_SIZE_DEGREES = 2 * Math.sqrt(MATCH_DISTANCE_SQUARED_THRESHOLD_DEGREES);
+
+// Helper to calculate distance between two coordinates to handle slight float precision differences
+function distanceSq(lat1, lon1, lat2, lon2) {
+    return Math.pow(lat1 - lat2, 2) + Math.pow(lon1 - lon2, 2);
+}
+
+// Quantize geographic coordinates into fixed-size grid buckets for spatial indexing.
+function toGridCoord(value) {
+    return Math.round(value / MATCH_GRID_SIZE_DEGREES);
+}
+
+function makeBucketKey(lat, lon) {
+    return `${toGridCoord(lat)},${toGridCoord(lon)}`;
+}
+
+function makeCoordKey(lat, lon) {
+    return `${lat},${lon}`;
+}
+
+function buildGeocodedIndex(geocodedPoints) {
+    const index = new Map();
+
+    for (const pt of geocodedPoints) {
+        const bucketKey = makeBucketKey(pt.lat, pt.lon);
+        const coordKey = makeCoordKey(pt.lat, pt.lon);
+
+        if (!index.has(bucketKey)) {
+            index.set(bucketKey, new Map());
+        }
+
+        // Keep the latest point when duplicate coordinates exist across multiple JSON files
+        index.get(bucketKey).set(coordKey, pt);
+    }
+
+    return index;
+}
+
+// Function to find the closest geocoded point within a small squared-distance tolerance in degrees
+function findMatchingPoint(lat, lon, geocodedIndex) {
+    const latNum = parseFloat(lat);
+    const lonNum = parseFloat(lon);
+    const latGrid = toGridCoord(latNum);
+    const lonGrid = toGridCoord(lonNum);
+    let closestMatch = null;
+    let minDistance = MATCH_DISTANCE_SQUARED_THRESHOLD_DEGREES;
+
+    for (let latBucketOffset = -1; latBucketOffset <= 1; latBucketOffset++) {
+        for (let lonBucketOffset = -1; lonBucketOffset <= 1; lonBucketOffset++) {
+            const bucket = geocodedIndex.get(`${latGrid + latBucketOffset},${lonGrid + lonBucketOffset}`);
+            if (!bucket) continue;
+
+            for (const pt of bucket.values()) {
+                const d = distanceSq(latNum, lonNum, pt.lat, pt.lon);
+                if (d < minDistance) {
+                    minDistance = d;
+                    closestMatch = pt;
+                }
+            }
+        }
+    }
+
+    return closestMatch;
+}
+
+// Main execution function
+async function main() {
+    const args = process.argv.slice(2);
+    let gpxInput = null;
+    let jsonDir = null;
+    let gpxOutput = null;
+
+    for (let i = 0; i < args.length; i++) {
+        if (args[i] === '--gpx' && i + 1 < args.length) gpxInput = args[++i];
+        else if (args[i] === '--json-dir' && i + 1 < args.length) jsonDir = args[++i];
+        else if (args[i] === '--out' && i + 1 < args.length) gpxOutput = args[++i];
+    }
+
+    if (!gpxInput || !jsonDir || !gpxOutput) {
+        console.error("Usage: node merge_address.js --gpx <input.gpx> --json-dir <reverse_geocoding_dir> --out <output.gpx>");
+        process.exit(1);
+    }
+
+    console.log(`Input GPX: ${gpxInput}`);
+    console.log(`JSON Dir: ${jsonDir}`);
+    console.log(`Output GPX: ${gpxOutput}`);
+
+    // Load and merge all JSON files
+    let allGeocodedPoints = [];
+    const files = fs.readdirSync(jsonDir, { withFileTypes: true })
+        .filter(entry => entry.isFile() && entry.name.endsWith('.json'))
+        .map(entry => {
+            const fullPath = path.join(jsonDir, entry.name);
+            return {
+                file: entry.name,
+                fullPath,
+                mtimeMs: fs.statSync(fullPath).mtimeMs
+            };
+        })
+        .sort((a, b) => a.mtimeMs - b.mtimeMs);
+
+    for (const { file, fullPath } of files) {
+        const content = fs.readFileSync(fullPath, 'utf8');
+        try {
+            const points = JSON.parse(content);
+            allGeocodedPoints = allGeocodedPoints.concat(points);
+        } catch (e) {
+            console.error(`Error parsing JSON file ${file}:`, e.message);
+        }
+    }
+    const geocodedIndex = buildGeocodedIndex(allGeocodedPoints);
+    console.log(`Loaded ${allGeocodedPoints.length} geocoded points into ${geocodedIndex.size} coordinate buckets.`);
+
+    // Load GPX
+    const gpxContent = fs.readFileSync(gpxInput, 'utf8');
+    const parser = new xml2js.Parser();
+    const builder = new xml2js.Builder({ renderOpts: { pretty: true, indent: '  ', newline: '\n' } });
+
+    try {
+        const gpxObj = await parser.parseStringPromise(gpxContent);
+
+        // Add namespace for extensions
+        if (!gpxObj.gpx['$']['xmlns:address']) {
+            gpxObj.gpx['$']['xmlns:address'] = "http://example.com/address";
+        }
+
+        let updatedCount = 0;
+
+        if (gpxObj.gpx.wpt) {
+            for (let wpt of gpxObj.gpx.wpt) {
+                const lat = wpt['$'].lat;
+                const lon = wpt['$'].lon;
+
+                const match = findMatchingPoint(lat, lon, geocodedIndex);
+                if (match && match.geocode && match.geocode.ja) {
+                    const ja = match.geocode.ja;
+
+                    // Build address string
+                    const addrParts = [];
+                    if (ja.prefecture) addrParts.push(ja.prefecture);
+                    if (ja.county) addrParts.push(ja.county);
+                    if (ja.city) addrParts.push(ja.city);
+                    if (ja.local) addrParts.push(ja.local);
+                    const addrStr = addrParts.join('');
+
+                    // Update description
+                    if (wpt.desc && wpt.desc.length > 0) {
+                        wpt.desc[0] = wpt.desc[0] + `\n[Address] ${addrStr}`;
+                    } else {
+                        wpt.desc = [`[Address] ${addrStr}`];
+                    }
+
+                    // Update extensions
+                    if (!wpt.extensions) {
+                        wpt.extensions = [{}];
+                    }
+                    if (!wpt.extensions[0]) {
+                        wpt.extensions[0] = {};
+                    }
+
+                    if (ja.prefecture) wpt.extensions[0]['address:prefecture'] = [ja.prefecture];
+                    if (ja.county) wpt.extensions[0]['address:county'] = [ja.county];
+                    if (ja.city) wpt.extensions[0]['address:city'] = [ja.city];
+                    if (ja.local) wpt.extensions[0]['address:local'] = [ja.local];
+
+                    updatedCount++;
+                }
+            }
+        }
+
+        const newGpxXml = builder.buildObject(gpxObj);
+        fs.writeFileSync(gpxOutput, newGpxXml, 'utf8');
+        console.log(`Successfully updated ${updatedCount} waypoints.`);
+        console.log(`Saved new GPX to ${gpxOutput}`);
+
+    } catch (err) {
+        console.error("Error processing GPX file:", err);
+        process.exit(1);
+    }
+}
+
+main();
