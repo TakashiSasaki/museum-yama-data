@@ -37,7 +37,7 @@ function extractAddressInfoWithSourceKeys(address) {
     const prefCandidates = ['province', 'state'];
     const countyCandidates = ['county'];
     const cityCandidates = ['city', 'town', 'village'];
-    const localCandidates = ['city_district', 'suburb', 'quarter', 'neighbourhood', 'hamlet', 'road', 'local'];
+    const localCandidates = ['suburb', 'quarter', 'neighbourhood', 'road', 'local', 'hamlet', 'city_district'];
 
     const getExtractedField = (candidates) => {
         const result = { value: null, source_key: null, candidates: {} };
