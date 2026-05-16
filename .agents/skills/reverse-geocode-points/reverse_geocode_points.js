@@ -162,7 +162,18 @@ function fetchGeocode(lat, lon, lang) {
                 resolve(responseObj);
             });
         }).on('error', (err) => {
-            resolve(null);
+            resolve({
+                requested_at: requested_at,
+                request: {
+                    endpoint: endpoint,
+                    params: params
+                },
+                response: {
+                    status: 0,
+                    content_type: null,
+                    body: { error: err.message }
+                }
+            });
         });
     });
 }
@@ -295,10 +306,8 @@ async function main() {
             const resEn = await fetchGeocode(pt.lat, pt.lon, 'en');
             await sleep(requestInterval);
 
-            if (resJa && resEn) {
-                reverse_geocoding.requests.ja = resJa;
-                reverse_geocoding.requests.en = resEn;
-            }
+            reverse_geocoding.requests.ja = resJa;
+            reverse_geocoding.requests.en = resEn;
         } catch (e) {
             console.error(`Error geocoding point ${i}:`, e.message);
         }
