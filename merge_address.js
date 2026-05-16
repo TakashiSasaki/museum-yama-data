@@ -2,16 +2,17 @@ const fs = require('fs');
 const path = require('path');
 const xml2js = require('xml2js');
 
-const MATCH_DISTANCE_SQ_THRESHOLD = 0.00000001; // squared degrees; sqrt(1e-8) = 1e-4 degrees, roughly 11 meters
-const MATCH_GRID_SIZE = 2 * Math.sqrt(MATCH_DISTANCE_SQ_THRESHOLD);
+const MATCH_DISTANCE_SQUARED_THRESHOLD_DEGREES = 0.00000001; // squared degrees; sqrt(1e-8) = 1e-4 degrees, roughly 11 meters
+const MATCH_GRID_SIZE_DEGREES = 2 * Math.sqrt(MATCH_DISTANCE_SQUARED_THRESHOLD_DEGREES);
 
 // Helper to calculate distance between two coordinates to handle slight float precision differences
 function distanceSq(lat1, lon1, lat2, lon2) {
     return Math.pow(lat1 - lat2, 2) + Math.pow(lon1 - lon2, 2);
 }
 
+// Quantize geographic coordinates into fixed-size grid buckets for spatial indexing.
 function toGridCoord(value) {
-    return Math.round(value / MATCH_GRID_SIZE);
+    return Math.round(value / MATCH_GRID_SIZE_DEGREES);
 }
 
 function makeBucketKey(lat, lon) {
@@ -47,11 +48,11 @@ function findMatchingPoint(lat, lon, geocodedIndex) {
     const latGrid = toGridCoord(latNum);
     const lonGrid = toGridCoord(lonNum);
     let closestMatch = null;
-    let minDistance = MATCH_DISTANCE_SQ_THRESHOLD;
+    let minDistance = MATCH_DISTANCE_SQUARED_THRESHOLD_DEGREES;
 
-    for (let latOffset = -1; latOffset <= 1; latOffset++) {
-        for (let lonOffset = -1; lonOffset <= 1; lonOffset++) {
-            const bucket = geocodedIndex.get(`${latGrid + latOffset},${lonGrid + lonOffset}`);
+    for (let latBucketOffset = -1; latBucketOffset <= 1; latBucketOffset++) {
+        for (let lonBucketOffset = -1; lonBucketOffset <= 1; lonBucketOffset++) {
+            const bucket = geocodedIndex.get(`${latGrid + latBucketOffset},${lonGrid + lonBucketOffset}`);
             if (!bucket) continue;
 
             for (const pt of bucket.values()) {
@@ -91,17 +92,20 @@ async function main() {
 
     // Load and merge all JSON files
     let allGeocodedPoints = [];
-    const files = fs.readdirSync(jsonDir)
-        .filter(file => file.endsWith('.json'))
-        .map(file => ({
-            file,
-            mtimeMs: fs.statSync(path.join(jsonDir, file)).mtimeMs
-        }))
-        .sort((a, b) => a.mtimeMs - b.mtimeMs)
-        .map(entry => entry.file);
+    const files = fs.readdirSync(jsonDir, { withFileTypes: true })
+        .filter(entry => entry.isFile() && entry.name.endsWith('.json'))
+        .map(entry => {
+            const fullPath = path.join(jsonDir, entry.name);
+            return {
+                file: entry.name,
+                fullPath,
+                mtimeMs: fs.statSync(fullPath).mtimeMs
+            };
+        })
+        .sort((a, b) => a.mtimeMs - b.mtimeMs);
 
-    for (const file of files) {
-        const content = fs.readFileSync(path.join(jsonDir, file), 'utf8');
+    for (const { file, fullPath } of files) {
+        const content = fs.readFileSync(fullPath, 'utf8');
         try {
             const points = JSON.parse(content);
             allGeocodedPoints = allGeocodedPoints.concat(points);
