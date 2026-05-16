@@ -50,15 +50,29 @@ function sleep(ms) {
 
 function parseWpt(xmlStr, filename) {
     const points = [];
-    const regex = /<wpt lat="([^"]+)" lon="([^"]+)">/g;
+    // We match the full wpt block first to avoid matching tags from subsequent waypoints
+    const blockRegex = /<wpt lat="([^"]+)" lon="([^"]+)">([\s\S]*?)<\/wpt>/g;
     let match;
-    while ((match = regex.exec(xmlStr)) !== null) {
-        points.push({
+    while ((match = blockRegex.exec(xmlStr)) !== null) {
+        const pt = {
             type: 'waypoint',
             source_file: filename,
             lat: parseFloat(match[1]),
             lon: parseFloat(match[2])
-        });
+        };
+        const innerContent = match[3];
+
+        const eleMatch = /<ele>([^<]+)<\/ele>/.exec(innerContent);
+        if (eleMatch) {
+            pt.ele = parseFloat(eleMatch[1]);
+        }
+
+        const nameMatch = /<name>([^<]+)<\/name>/.exec(innerContent);
+        if (nameMatch) {
+            pt.name = nameMatch[1];
+        }
+
+        points.push(pt);
     }
     return points;
 }
@@ -104,25 +118,48 @@ function parseTrkpt(xmlStr, filename, allTrkpt) {
 
 function fetchGeocode(lat, lon, lang) {
     return new Promise((resolve, reject) => {
-        const url = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&zoom=18&addressdetails=1&accept-language=${lang}`;
+        const endpoint = "https://nominatim.openstreetmap.org/reverse";
+        const params = {
+            lat: lat,
+            lon: lon,
+            format: "json",
+            zoom: 18,
+            addressdetails: 1,
+            "accept-language": lang
+        };
+        const queryParams = new URLSearchParams(params).toString();
+        const url = `${endpoint}?${queryParams}`;
+
         const options = {
             headers: { 'User-Agent': 'YamaMuseumGeocodingAgent/1.0' }
         };
+
+        const requested_at = new Date().toISOString();
 
         https.get(url, options, (res) => {
             let data = '';
             res.on('data', chunk => data += chunk);
             res.on('end', () => {
-                if (res.statusCode === 200) {
-                    try {
-                        const json = JSON.parse(data);
-                        resolve(json);
-                    } catch (e) {
-                        resolve(null);
-                    }
-                } else {
-                    resolve(null);
+                let body = null;
+                try {
+                    body = JSON.parse(data);
+                } catch (e) {
+                    body = data;
                 }
+
+                const responseObj = {
+                    requested_at: requested_at,
+                    request: {
+                        endpoint: endpoint,
+                        params: params
+                    },
+                    response: {
+                        status: res.statusCode,
+                        content_type: res.headers['content-type'],
+                        body: body
+                    }
+                };
+                resolve(responseObj);
             });
         }).on('error', (err) => {
             resolve(null);
@@ -130,16 +167,7 @@ function fetchGeocode(lat, lon, lang) {
     });
 }
 
-function extractAddressInfo(address) {
-    if (!address) return { prefecture: "", county: "", city: "", local: "" };
-
-    const prefecture = address.province || address.state || "";
-    const county = address.county || "";
-    const city = address.city || address.town || address.village || "";
-    const local = address.suburb || address.quarter || address.neighbourhood || address.road || address.local || address.hamlet || address.city_district || "";
-
-    return { prefecture, county, city, local };
-}
+// extractAddressInfo removed
 
 async function main() {
     console.log("Reading data...");
@@ -207,7 +235,9 @@ async function main() {
                     const existingContent = fs.readFileSync(path.join(outArg, file), 'utf-8');
                     const json = JSON.parse(existingContent);
                     for (const pt of json) {
-                        processedSet.add(`${pt.lat},${pt.lon}`);
+                        const lat = pt.source_point ? pt.source_point.lat : pt.lat;
+                        const lon = pt.source_point ? pt.source_point.lon : pt.lon;
+                        processedSet.add(`${lat},${lon}`);
                     }
                 } catch (e) {
                     console.warn(`Warning: Could not parse existing output file ${file}.`);
@@ -226,7 +256,9 @@ async function main() {
                 const existingContent = fs.readFileSync(outArg, 'utf-8');
                 results = JSON.parse(existingContent);
                 for (const pt of results) {
-                    processedSet.add(`${pt.lat},${pt.lon}`);
+                    const lat = pt.source_point ? pt.source_point.lat : pt.lat;
+                    const lon = pt.source_point ? pt.source_point.lon : pt.lon;
+                    processedSet.add(`${lat},${lon}`);
                 }
                 console.log(`Loaded ${results.length} existing results from ${outArg}. Previously processed unique points: ${processedSet.size}.`);
             } catch (e) {
@@ -252,7 +284,10 @@ async function main() {
         const pt = targetPoints[i];
         console.log(`[${i+1}/${targetPoints.length}] Geocoding ${pt.type} at ${pt.lat}, ${pt.lon} (Source: ${pt.source_file})`);
 
-        let geocode = null;
+        let reverse_geocoding = {
+            provider: "nominatim.openstreetmap.org",
+            requests: {}
+        };
         try {
             const resJa = await fetchGeocode(pt.lat, pt.lon, 'ja');
             await sleep(requestInterval);
@@ -260,23 +295,34 @@ async function main() {
             const resEn = await fetchGeocode(pt.lat, pt.lon, 'en');
             await sleep(requestInterval);
 
-            if (resJa && resEn && !resJa.error && !resEn.error) {
-                geocode = {
-                    ja: extractAddressInfo(resJa.address),
-                    en: extractAddressInfo(resEn.address)
-                };
+            if (resJa && resEn) {
+                reverse_geocoding.requests.ja = resJa;
+                reverse_geocoding.requests.en = resEn;
             }
         } catch (e) {
             console.error(`Error geocoding point ${i}:`, e.message);
         }
 
-        results.push({
+        const pointData = {
             type: pt.type,
             source_file: pt.source_file,
-            lat: pt.lat,
-            lon: pt.lon,
-            geocode: geocode
-        });
+            source_point: {
+                lat: pt.lat,
+                lon: pt.lon
+            },
+            reverse_geocoding: reverse_geocoding,
+            metadata: {
+                script: "reverse_geocode_points.js",
+                script_version: "2026-05-16-draft",
+                cache_status: "fresh",
+                request_interval_ms: requestInterval
+            }
+        };
+
+        if (pt.name) pointData.source_point.name = pt.name;
+        if (pt.ele !== undefined) pointData.source_point.ele = pt.ele;
+
+        results.push(pointData);
 
         // Save progressively
         fs.writeFileSync(outputFile, JSON.stringify(results, null, 2), 'utf-8');
