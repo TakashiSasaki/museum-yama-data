@@ -1,0 +1,5765 @@
+[
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7675949,
+      "lon": 133.1152818,
+      "name": "天狗岳",
+      "ele": 1979.1701508543217
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:01:46.134Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7675949,
+              "lon": 133.1152818,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268435788,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1314145926,
+              "lat": "33.7689484",
+              "lon": "133.1136317",
+              "class": "amenity",
+              "type": "place_of_worship",
+              "place_rank": 30,
+              "importance": 0.000055398641947005685,
+              "addresstype": "amenity",
+              "name": "石鎚神社",
+              "display_name": "石鎚神社, 三の鎖, 西条市, 愛媛県, 日本",
+              "address": {
+                "amenity": "石鎚神社",
+                "road": "三の鎖",
+                "city": "西条市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7689193",
+                "33.7689775",
+                "133.1135964",
+                "133.1136671"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:01:49.603Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7675949,
+              "lon": 133.1152818,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268435788,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1314145926,
+              "lat": "33.7689484",
+              "lon": "133.1136317",
+              "class": "amenity",
+              "type": "place_of_worship",
+              "place_rank": 30,
+              "importance": 0.000055398641947005685,
+              "addresstype": "amenity",
+              "name": "石鎚神社",
+              "display_name": "石鎚神社, Third Chain, Saijō, Ehime Prefecture, Japan",
+              "address": {
+                "amenity": "石鎚神社",
+                "road": "Third Chain",
+                "city": "Saijō",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7689193",
+                "33.7689775",
+                "133.1135964",
+                "133.1136671"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7688125,
+      "lon": 133.1135435,
+      "name": "石鎚山",
+      "ele": 1967.3733333333332
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:01:52.982Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7688125,
+              "lon": 133.1135435,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268435788,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1314145926,
+              "lat": "33.7689484",
+              "lon": "133.1136317",
+              "class": "amenity",
+              "type": "place_of_worship",
+              "place_rank": 30,
+              "importance": 0.000055398641947005685,
+              "addresstype": "amenity",
+              "name": "石鎚神社",
+              "display_name": "石鎚神社, 三の鎖, 西条市, 愛媛県, 日本",
+              "address": {
+                "amenity": "石鎚神社",
+                "road": "三の鎖",
+                "city": "西条市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7689193",
+                "33.7689775",
+                "133.1135964",
+                "133.1136671"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:02:00.927Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7688125,
+              "lon": 133.1135435,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268435788,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1314145926,
+              "lat": "33.7689484",
+              "lon": "133.1136317",
+              "class": "amenity",
+              "type": "place_of_worship",
+              "place_rank": 30,
+              "importance": 0.000055398641947005685,
+              "addresstype": "amenity",
+              "name": "石鎚神社",
+              "display_name": "石鎚神社, Third Chain, Saijō, Ehime Prefecture, Japan",
+              "address": {
+                "amenity": "石鎚神社",
+                "road": "Third Chain",
+                "city": "Saijō",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7689193",
+                "33.7689775",
+                "133.1135964",
+                "133.1136671"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7585064,
+      "lon": 133.093322,
+      "name": "西ノ冠岳",
+      "ele": 1924.4866666666667
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:02:04.304Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7585064,
+              "lon": 133.093322,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268499295,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050306,
+              "lat": "33.9194466",
+              "lon": "133.1813268",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.49991345568413953,
+              "addresstype": "city",
+              "name": "西条市",
+              "display_name": "西条市, 愛媛県, 日本",
+              "address": {
+                "city": "西条市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7502950",
+                "34.0089483",
+                "132.9567110",
+                "133.2773570"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:02:07.644Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7585064,
+              "lon": 133.093322,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 249583854,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050306,
+              "lat": "33.9194466",
+              "lon": "133.1813268",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.49991345568413953,
+              "addresstype": "city",
+              "name": "Saijō",
+              "display_name": "Saijō, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Saijō",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7502950",
+                "34.0089483",
+                "132.9567110",
+                "133.2773570"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7697167,
+      "lon": 133.1131197,
+      "name": "二ノ森",
+      "ele": 1920.7933333333333
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:02:10.849Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7697167,
+              "lon": 133.1131197,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268661169,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1314145927,
+              "lat": "33.7691158",
+              "lon": "133.1134072",
+              "class": "tourism",
+              "type": "alpine_hut",
+              "place_rank": 30,
+              "importance": 0.000055398641947005685,
+              "addresstype": "tourism",
+              "name": "石鎚神社頂上山荘",
+              "display_name": "石鎚神社頂上山荘, 三の鎖, 西条市, 愛媛県, 日本",
+              "address": {
+                "tourism": "石鎚神社頂上山荘",
+                "road": "三の鎖",
+                "city": "西条市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7690070",
+                "33.7691865",
+                "133.1132761",
+                "133.1135383"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:02:14.206Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7697167,
+              "lon": 133.1131197,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 278456700,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1314145927,
+              "lat": "33.7691158",
+              "lon": "133.1134072",
+              "class": "tourism",
+              "type": "alpine_hut",
+              "place_rank": 30,
+              "importance": 0.000055398641947005685,
+              "addresstype": "tourism",
+              "name": "石鎚神社頂上山荘",
+              "display_name": "石鎚神社頂上山荘, Third Chain, Saijō, Ehime Prefecture, Japan",
+              "address": {
+                "tourism": "石鎚神社頂上山荘",
+                "road": "Third Chain",
+                "city": "Saijō",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7690070",
+                "33.7691865",
+                "133.1132761",
+                "133.1135383"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7943958,
+      "lon": 133.1932944,
+      "name": "瓶ヶ森",
+      "ele": 1892.6599999999999
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:02:17.563Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7943958,
+              "lon": 133.1932944,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 266978420,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1067541032,
+              "lat": "33.7920700",
+              "lon": "133.1944988",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338873197528035,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7575148",
+                "33.7935913",
+                "133.1703951",
+                "133.2151536"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:02:20.751Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7943958,
+              "lon": 133.1932944,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 265651636,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1067541032,
+              "lat": "33.7920700",
+              "lon": "133.1944988",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338873197528035,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7575148",
+                "33.7935913",
+                "133.1703951",
+                "133.2151536"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7578996,
+      "lon": 133.086527,
+      "name": "鞍瀬ノ頭",
+      "ele": 1879.8966666666665
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:02:24.026Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7578996,
+              "lon": 133.086527,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269881353,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050306,
+              "lat": "33.9194466",
+              "lon": "133.1813268",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.49991345568413953,
+              "addresstype": "city",
+              "name": "西条市",
+              "display_name": "西条市, 愛媛県, 日本",
+              "address": {
+                "city": "西条市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7502950",
+                "34.0089483",
+                "132.9567110",
+                "133.2773570"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:02:27.387Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7578996,
+              "lon": 133.086527,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269881353,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050306,
+              "lat": "33.9194466",
+              "lon": "133.1813268",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.49991345568413953,
+              "addresstype": "city",
+              "name": "Saijō",
+              "display_name": "Saijō, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Saijō",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7502950",
+                "34.0089483",
+                "132.9567110",
+                "133.2773570"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.732243,
+      "lon": 133.160912,
+      "name": "筒上山",
+      "ele": 1863.226432016608
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:02:30.786Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.732243,
+              "lon": 133.160912,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268772983,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "久万高原町",
+              "display_name": "久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:02:33.950Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.732243,
+              "lon": 133.160912,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269967732,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "Kumakogen",
+              "display_name": "Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8280769,
+      "lon": 133.2743948,
+      "name": "ちち山",
+      "ele": 1856.6633333333332
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:02:37.114Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8280769,
+              "lon": 133.2743948,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269881353,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050306,
+              "lat": "33.9194466",
+              "lon": "133.1813268",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.49991345568413953,
+              "addresstype": "city",
+              "name": "西条市",
+              "display_name": "西条市, 愛媛県, 日本",
+              "address": {
+                "city": "西条市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7502950",
+                "34.0089483",
+                "132.9567110",
+                "133.2773570"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:02:40.466Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8280769,
+              "lon": 133.2743948,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 266973363,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050306,
+              "lat": "33.9194466",
+              "lon": "133.1813268",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.49991345568413953,
+              "addresstype": "city",
+              "name": "Saijō",
+              "display_name": "Saijō, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Saijō",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7502950",
+                "34.0089483",
+                "132.9567110",
+                "133.2773570"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8318164,
+      "lon": 133.2841218,
+      "name": "ちち山",
+      "ele": 1850.97
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:02:43.884Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8318164,
+              "lon": 133.2841218,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269832417,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4028444,
+              "lat": "33.5456773",
+              "lon": "133.4284048",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.44834032972390014,
+              "addresstype": "town",
+              "name": "いの町",
+              "display_name": "いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5100560",
+                "33.8320020",
+                "133.1576880",
+                "133.4745490"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:02:47.239Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8318164,
+              "lon": 133.2841218,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 266918397,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4028444,
+              "lat": "33.5456773",
+              "lon": "133.4284048",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.44834032972390014,
+              "addresstype": "town",
+              "name": "Ino",
+              "display_name": "Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5100560",
+                "33.8320020",
+                "133.1576880",
+                "133.4745490"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7942477,
+      "lon": 133.2060388,
+      "name": "西黒森",
+      "ele": 1850.4420465524036
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:02:50.422Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7942477,
+              "lon": 133.2060388,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 265651636,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1067541032,
+              "lat": "33.7930472",
+              "lon": "133.2039316",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338873197528035,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7575148",
+                "33.7935913",
+                "133.1703951",
+                "133.2151536"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:02:53.776Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7942477,
+              "lon": 133.2060388,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269409308,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1067541032,
+              "lat": "33.7930472",
+              "lon": "133.2039316",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338873197528035,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7575148",
+                "33.7935913",
+                "133.1703951",
+                "133.2151536"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7288641,
+      "lon": 133.1784766,
+      "name": "手箱山",
+      "ele": 1808.4700055808014
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:02:56.940Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7288641,
+              "lon": 133.1784766,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 266913690,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "node",
+              "osm_id": 8681542747,
+              "lat": "33.7291560",
+              "lon": "133.1733910",
+              "class": "place",
+              "type": "quarter",
+              "place_rank": 20,
+              "importance": 0.13338362172884716,
+              "addresstype": "quarter",
+              "name": "寺川",
+              "display_name": "寺川, いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "quarter": "寺川",
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7191560",
+                "33.7391560",
+                "133.1633910",
+                "133.1833910"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:03:00.335Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7288641,
+              "lon": 133.1784766,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268652825,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "node",
+              "osm_id": 8681542747,
+              "lat": "33.7291560",
+              "lon": "133.1733910",
+              "class": "place",
+              "type": "quarter",
+              "place_rank": 20,
+              "importance": 0.13338362172884716,
+              "addresstype": "quarter",
+              "name": "寺川",
+              "display_name": "寺川, Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "quarter": "寺川",
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7191560",
+                "33.7391560",
+                "133.1633910",
+                "133.1833910"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8116552,
+      "lon": 133.2616339,
+      "name": "寒風山",
+      "ele": 1758.0533333333333
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:03:03.722Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8116552,
+              "lon": 133.2616339,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269832417,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4028444,
+              "lat": "33.5456773",
+              "lon": "133.4284048",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.44834032972390014,
+              "addresstype": "town",
+              "name": "いの町",
+              "display_name": "いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5100560",
+                "33.8320020",
+                "133.1576880",
+                "133.4745490"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:03:06.887Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8116552,
+              "lon": 133.2616339,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268478650,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4028444,
+              "lat": "33.5456773",
+              "lon": "133.4284048",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.44834032972390014,
+              "addresstype": "town",
+              "name": "Ino",
+              "display_name": "Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5100560",
+                "33.8320020",
+                "133.1576880",
+                "133.4745490"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7507578,
+      "lon": 133.1571706,
+      "name": "岩黒山",
+      "ele": 1749.5652002309682
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:03:10.072Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7507578,
+              "lon": 133.1571706,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 246911536,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 140807283,
+              "lat": "33.7539390",
+              "lon": "133.1587332",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338362172884715,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, 西条市, 吾川郡, 愛媛県, 日本",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "city": "西条市",
+                "county": "吾川郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7536731",
+                "33.7565267",
+                "133.1479059",
+                "133.1639890"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:03:13.338Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7507578,
+              "lon": 133.1571706,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268587017,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 140807283,
+              "lat": "33.7539390",
+              "lon": "133.1587332",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338362172884715,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, Saijō, Agawa County, Ehime Prefecture, Japan",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "city": "Saijō",
+                "county": "Agawa County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7536731",
+                "33.7565267",
+                "133.1479059",
+                "133.1639890"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7882403,
+      "lon": 133.2475791,
+      "name": "伊予富士",
+      "ele": 1746.743333333333
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:03:16.566Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7882403,
+              "lon": 133.2475791,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269446600,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 81346941,
+              "lat": "33.7863804",
+              "lon": "133.2452049",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338362172884715,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7824446",
+                "33.7864138",
+                "133.2451312",
+                "133.2521417"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:03:19.938Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7882403,
+              "lon": 133.2475791,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268619420,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 81346941,
+              "lat": "33.7863804",
+              "lon": "133.2452049",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338362172884715,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7824446",
+                "33.7864138",
+                "133.2451312",
+                "133.2521417"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7913501,
+      "lon": 133.1887871,
+      "name": "Peak (1733m)",
+      "ele": 1732.5766666666666
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:03:23.312Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7913501,
+              "lon": 133.1887871,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268641622,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1065372279,
+              "lat": "33.7924302",
+              "lon": "133.1882863",
+              "class": "amenity",
+              "type": "toilets",
+              "place_rank": 30,
+              "importance": 0.000055398641947005685,
+              "addresstype": "amenity",
+              "name": "",
+              "display_name": "町道瓶ヶ森線, 西条市, 吾川郡, 愛媛県, 日本",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "city": "西条市",
+                "county": "吾川郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7924126",
+                "33.7924477",
+                "133.1882655",
+                "133.1883070"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:03:27.718Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7913501,
+              "lon": 133.1887871,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268523966,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1065372279,
+              "lat": "33.7924302",
+              "lon": "133.1882863",
+              "class": "amenity",
+              "type": "toilets",
+              "place_rank": 30,
+              "importance": 0.000055398641947005685,
+              "addresstype": "amenity",
+              "name": "",
+              "display_name": "町道瓶ヶ森線, Saijō, Agawa County, Ehime Prefecture, Japan",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "city": "Saijō",
+                "county": "Agawa County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7924126",
+                "33.7924477",
+                "133.1882655",
+                "133.1883070"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7826057,
+      "lon": 133.2367653,
+      "name": "東黒森",
+      "ele": 1731.0666666666668
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:03:31.030Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7826057,
+              "lon": 133.2367653,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 266981904,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 294441215,
+              "lat": "33.7809674",
+              "lon": "133.2362269",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338362172884715,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7783831",
+                "33.7838819",
+                "133.2150312",
+                "133.2400042"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:03:35.451Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7826057,
+              "lon": 133.2367653,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 266981904,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 294441215,
+              "lat": "33.7809674",
+              "lon": "133.2362269",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338362172884715,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7783831",
+                "33.7838819",
+                "133.2150312",
+                "133.2400042"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8159575,
+      "lon": 133.3107033,
+      "name": "平家平",
+      "ele": 1729.61
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:03:38.807Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8159575,
+              "lon": 133.3107033,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 270428496,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "新居浜市",
+              "display_name": "新居浜市, 愛媛県, 日本",
+              "address": {
+                "city": "新居浜市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:03:42.201Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8159575,
+              "lon": 133.3107033,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268812739,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "Niihama",
+              "display_name": "Niihama, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Niihama",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8285796,
+      "lon": 133.2937377,
+      "name": "冠山",
+      "ele": 1719.1733333333334
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:03:45.577Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8285796,
+              "lon": 133.2937377,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268478650,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4028444,
+              "lat": "33.5456773",
+              "lon": "133.4284048",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.44834032972390014,
+              "addresstype": "town",
+              "name": "いの町",
+              "display_name": "いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5100560",
+                "33.8320020",
+                "133.1576880",
+                "133.4745490"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:03:48.741Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8285796,
+              "lon": 133.2937377,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268478650,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4028444,
+              "lat": "33.5456773",
+              "lon": "133.4284048",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.44834032972390014,
+              "addresstype": "town",
+              "name": "Ino",
+              "display_name": "Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5100560",
+                "33.8320020",
+                "133.1576880",
+                "133.4745490"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7890862,
+      "lon": 133.1926167,
+      "name": "Peak (1712m)",
+      "ele": 1711.8700000000001
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:03:52.097Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7890862,
+              "lon": 133.1926167,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 266978420,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1067541032,
+              "lat": "33.7889457",
+              "lon": "133.1926483",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338873197528035,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7575148",
+                "33.7935913",
+                "133.1703951",
+                "133.2151536"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:03:55.450Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7890862,
+              "lon": 133.1926167,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268474298,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1067541032,
+              "lat": "33.7889457",
+              "lon": "133.1926483",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338873197528035,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7575148",
+                "33.7935913",
+                "133.1703951",
+                "133.2151536"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7367329,
+      "lon": 133.0832761,
+      "name": "五代ヶ森",
+      "ele": 1709.1566666666668
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:03:58.805Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7367329,
+              "lon": 133.0832761,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 267037802,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "久万高原町",
+              "display_name": "久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:04:02.182Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7367329,
+              "lon": 133.0832761,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 267037802,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "Kumakogen",
+              "display_name": "Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7876019,
+      "lon": 133.1885096,
+      "name": "Peak (1708m)",
+      "ele": 1708.05
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:04:05.556Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7876019,
+              "lon": 133.1885096,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268706274,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1065359933,
+              "lat": "33.7855511",
+              "lon": "133.1903555",
+              "class": "amenity",
+              "type": "parking",
+              "place_rank": 30,
+              "importance": 0.000055398641947005685,
+              "addresstype": "amenity",
+              "name": "",
+              "display_name": "町道瓶ヶ森線, 西条市, 吾川郡, 愛媛県, 日本",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "city": "西条市",
+                "county": "吾川郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7849570",
+                "33.7861374",
+                "133.1899314",
+                "133.1905550"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:04:08.911Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7876019,
+              "lon": 133.1885096,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268433746,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1065359933,
+              "lat": "33.7855511",
+              "lon": "133.1903555",
+              "class": "amenity",
+              "type": "parking",
+              "place_rank": 30,
+              "importance": 0.000055398641947005685,
+              "addresstype": "amenity",
+              "name": "",
+              "display_name": "町道瓶ヶ森線, Saijō, Agawa County, Ehime Prefecture, Japan",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "city": "Saijō",
+                "county": "Agawa County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7849570",
+                "33.7861374",
+                "133.1899314",
+                "133.1905550"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8752971,
+      "lon": 133.3737015,
+      "name": "八巻山",
+      "ele": 1699.1266666666668
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:04:12.266Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8752971,
+              "lon": 133.3737015,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269124174,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "新居浜市",
+              "display_name": "新居浜市, 愛媛県, 日本",
+              "address": {
+                "city": "新居浜市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:04:15.523Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8752971,
+              "lon": 133.3737015,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268812739,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "Niihama",
+              "display_name": "Niihama, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Niihama",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7805717,
+      "lon": 133.2216507,
+      "name": "自念子ノ頭",
+      "ele": 1698.7424939329492
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:04:18.876Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7805717,
+              "lon": 133.2216507,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 265714846,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 294441215,
+              "lat": "33.7792783",
+              "lon": "133.2228030",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338362172884715,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7783831",
+                "33.7838819",
+                "133.2150312",
+                "133.2400042"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:04:22.132Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7805717,
+              "lon": 133.2216507,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268619089,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 294441215,
+              "lat": "33.7792783",
+              "lon": "133.2228030",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338362172884715,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7783831",
+                "33.7838819",
+                "133.2150312",
+                "133.2400042"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8146236,
+      "lon": 133.3260701,
+      "name": "平家平",
+      "ele": 1691.2766666666666
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:04:25.509Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8146236,
+              "lon": 133.3260701,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268478650,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4028444,
+              "lat": "33.5456773",
+              "lon": "133.4284048",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.44834032972390014,
+              "addresstype": "town",
+              "name": "いの町",
+              "display_name": "いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5100560",
+                "33.8320020",
+                "133.1576880",
+                "133.4745490"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:04:28.885Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8146236,
+              "lon": 133.3260701,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268478650,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4028444,
+              "lat": "33.5456773",
+              "lon": "133.4284048",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.44834032972390014,
+              "addresstype": "town",
+              "name": "Ino",
+              "display_name": "Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5100560",
+                "33.8320020",
+                "133.1576880",
+                "133.4745490"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8493229,
+      "lon": 133.2701244,
+      "name": "沓掛山",
+      "ele": 1690.4033333333334
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:04:32.074Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8493229,
+              "lon": 133.2701244,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268978637,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050306,
+              "lat": "33.9194466",
+              "lon": "133.1813268",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.49991345568413953,
+              "addresstype": "city",
+              "name": "西条市",
+              "display_name": "西条市, 愛媛県, 日本",
+              "address": {
+                "city": "西条市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7502950",
+                "34.0089483",
+                "132.9567110",
+                "133.2773570"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:04:35.320Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8493229,
+              "lon": 133.2701244,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 266973363,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050306,
+              "lat": "33.9194466",
+              "lon": "133.1813268",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.49991345568413953,
+              "addresstype": "city",
+              "name": "Saijō",
+              "display_name": "Saijō, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Saijō",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7502950",
+                "34.0089483",
+                "132.9567110",
+                "133.2773570"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7557226,
+      "lon": 133.066955,
+      "name": "堂ヶ森",
+      "ele": 1682.5333333333335
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:04:38.718Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7557226,
+              "lon": 133.066955,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268772983,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "久万高原町",
+              "display_name": "久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:04:41.903Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7557226,
+              "lon": 133.066955,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268772983,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "Kumakogen",
+              "display_name": "Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8858865,
+      "lon": 133.4078131,
+      "name": "エビラ山",
+      "ele": 1672.3333333333333
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:04:45.261Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8858865,
+              "lon": 133.4078131,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 270428496,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "新居浜市",
+              "display_name": "新居浜市, 愛媛県, 日本",
+              "address": {
+                "city": "新居浜市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:04:48.651Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8858865,
+              "lon": 133.4078131,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268812739,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "Niihama",
+              "display_name": "Niihama, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Niihama",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8551537,
+      "lon": 133.2686747,
+      "name": "黒森山",
+      "ele": 1666.7
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:04:51.863Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8551537,
+              "lon": 133.2686747,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 249583854,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050306,
+              "lat": "33.9194466",
+              "lon": "133.1813268",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.49991345568413953,
+              "addresstype": "city",
+              "name": "西条市",
+              "display_name": "西条市, 愛媛県, 日本",
+              "address": {
+                "city": "西条市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7502950",
+                "34.0089483",
+                "132.9567110",
+                "133.2773570"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:04:55.201Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8551537,
+              "lon": 133.2686747,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268499295,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050306,
+              "lat": "33.9194466",
+              "lon": "133.1813268",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.49991345568413953,
+              "addresstype": "city",
+              "name": "Saijō",
+              "display_name": "Saijō, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Saijō",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7502950",
+                "34.0089483",
+                "132.9567110",
+                "133.2773570"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8894776,
+      "lon": 133.4182784,
+      "name": "二ッ岳",
+      "ele": 1664.1233333333332
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:04:58.608Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8894776,
+              "lon": 133.4182784,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268812739,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "新居浜市",
+              "display_name": "新居浜市, 愛媛県, 日本",
+              "address": {
+                "city": "新居浜市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:05:01.980Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8894776,
+              "lon": 133.4182784,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269124174,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "Niihama",
+              "display_name": "Niihama, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Niihama",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7802626,
+      "lon": 133.1879064,
+      "name": "子持権現山",
+      "ele": 1661.57
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:05:05.134Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7802626,
+              "lon": 133.1879064,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 265651636,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1067541032,
+              "lat": "33.7804748",
+              "lon": "133.1889992",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338873197528035,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7575148",
+                "33.7935913",
+                "133.1703951",
+                "133.2151536"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:05:08.381Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7802626,
+              "lon": 133.1879064,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268474298,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1067541032,
+              "lat": "33.7804748",
+              "lon": "133.1889992",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338873197528035,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7575148",
+                "33.7935913",
+                "133.1703951",
+                "133.2151536"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8762013,
+      "lon": 133.3626992,
+      "name": "前赤石山",
+      "ele": 1651.7766666666666
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:05:11.738Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8762013,
+              "lon": 133.3626992,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269124174,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "新居浜市",
+              "display_name": "新居浜市, 愛媛県, 日本",
+              "address": {
+                "city": "新居浜市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:05:14.856Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8762013,
+              "lon": 133.3626992,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268812739,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "Niihama",
+              "display_name": "Niihama, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Niihama",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7605415,
+      "lon": 133.1358584,
+      "name": "鶴ノ子ノ頭",
+      "ele": 1647.683322091346
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:05:18.216Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7605415,
+              "lon": 133.1358584,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268772983,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "久万高原町",
+              "display_name": "久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:05:21.607Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7605415,
+              "lon": 133.1358584,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268772983,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "Kumakogen",
+              "display_name": "Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7457474,
+      "lon": 133.1572601,
+      "name": "Peak (1638m)",
+      "ele": 1638.4079336000111
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:05:24.781Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7457474,
+              "lon": 133.1572601,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269019744,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1204081433,
+              "lat": "33.7485657",
+              "lon": "133.1508713",
+              "class": "highway",
+              "type": "primary",
+              "place_rank": 26,
+              "importance": 0.05338559777218277,
+              "addresstype": "road",
+              "name": "石鎚スカイライン",
+              "display_name": "石鎚スカイライン, 久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "road": "石鎚スカイライン",
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7477275",
+                "33.7550042",
+                "133.1444947",
+                "133.1508964"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:05:28.047Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7457474,
+              "lon": 133.1572601,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268525573,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1204081433,
+              "lat": "33.7485657",
+              "lon": "133.1508713",
+              "class": "highway",
+              "type": "primary",
+              "place_rank": 26,
+              "importance": 0.05338559777218277,
+              "addresstype": "road",
+              "name": "石鎚スカイライン",
+              "display_name": "石鎚スカイライン, Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "road": "石鎚スカイライン",
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7477275",
+                "33.7550042",
+                "133.1444947",
+                "133.1508964"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.879673,
+      "lon": 133.3538898,
+      "name": "物住頭",
+      "ele": 1631.9833333333333
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:05:31.425Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.879673,
+              "lon": 133.3538898,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268812739,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "新居浜市",
+              "display_name": "新居浜市, 愛媛県, 日本",
+              "address": {
+                "city": "新居浜市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:05:34.798Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.879673,
+              "lon": 133.3538898,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269124174,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "Niihama",
+              "display_name": "Niihama, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Niihama",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7910786,
+      "lon": 133.2533442,
+      "name": "Peak (1629m)",
+      "ele": 1628.8633333333335
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:05:38.049Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7910786,
+              "lon": 133.2533442,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269065252,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 294484315,
+              "lat": "33.7893092",
+              "lon": "133.2541113",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338362172884715,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, いの町, 吾川郡, 高知県, 日本",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "いの町",
+                "county": "吾川郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7866934",
+                "33.7908103",
+                "133.2516109",
+                "133.2600695"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:05:41.298Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7910786,
+              "lon": 133.2533442,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268435171,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 294484315,
+              "lat": "33.7893092",
+              "lon": "133.2541113",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338362172884715,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, Ino, Agawa County, Kochi Prefecture, Japan",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "town": "Ino",
+                "county": "Agawa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7866934",
+                "33.7908103",
+                "133.2516109",
+                "133.2600695"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7755639,
+      "lon": 133.1209272,
+      "name": "剣山",
+      "ele": 1627.0833333333333
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:05:44.652Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7755639,
+              "lon": 133.1209272,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 265752381,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1381888185,
+              "lat": "33.7767976",
+              "lon": "133.1207825",
+              "class": "highway",
+              "type": "path",
+              "place_rank": 27,
+              "importance": 0.04005539864194704,
+              "addresstype": "road",
+              "name": "試しの鎖",
+              "display_name": "試しの鎖, 西条市, 愛媛県, 日本",
+              "address": {
+                "road": "試しの鎖",
+                "city": "西条市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7767976",
+                "33.7774391",
+                "133.1207056",
+                "133.1208802"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:05:47.877Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7755639,
+              "lon": 133.1209272,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 265752381,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1381888185,
+              "lat": "33.7767976",
+              "lon": "133.1207825",
+              "class": "highway",
+              "type": "path",
+              "place_rank": 27,
+              "importance": 0.04005539864194704,
+              "addresstype": "road",
+              "name": "Trial Chain",
+              "display_name": "Trial Chain, Saijō, Ehime Prefecture, Japan",
+              "address": {
+                "road": "Trial Chain",
+                "city": "Saijō",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7767976",
+                "33.7774391",
+                "133.1207056",
+                "133.1208802"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8869696,
+      "lon": 133.4012543,
+      "name": "黒岳",
+      "ele": 1626.996666666667
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:05:51.128Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8869696,
+              "lon": 133.4012543,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 248544267,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "新居浜市",
+              "display_name": "新居浜市, 愛媛県, 日本",
+              "address": {
+                "city": "新居浜市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:05:54.420Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8869696,
+              "lon": 133.4012543,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268812739,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "Niihama",
+              "display_name": "Niihama, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Niihama",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8754953,
+      "lon": 133.3399899,
+      "name": "西赤石山",
+      "ele": 1621.9866666666667
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:05:57.583Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8754953,
+              "lon": 133.3399899,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268812739,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "新居浜市",
+              "display_name": "新居浜市, 愛媛県, 日本",
+              "address": {
+                "city": "新居浜市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:06:00.939Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8754953,
+              "lon": 133.3399899,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268812739,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "Niihama",
+              "display_name": "Niihama, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Niihama",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7159431,
+      "lon": 133.1399924,
+      "name": "椿山",
+      "ele": 1600.17
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:06:04.321Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7159431,
+              "lon": 133.1399924,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268772983,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "久万高原町",
+              "display_name": "久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:06:07.676Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7159431,
+              "lon": 133.1399924,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269101737,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "Kumakogen",
+              "display_name": "Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8212475,
+      "lon": 133.3941804,
+      "name": "大座礼山",
+      "ele": 1586.6333333333332
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:06:10.930Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8212475,
+              "lon": 133.3941804,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268606531,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "node",
+              "osm_id": 8681528850,
+              "lat": "33.8133700",
+              "lon": "133.3807170",
+              "class": "place",
+              "type": "quarter",
+              "place_rank": 20,
+              "importance": 0.13338060502021817,
+              "addresstype": "quarter",
+              "name": "大平",
+              "display_name": "大平, 大川村, 土佐郡, 高知県, 日本",
+              "address": {
+                "quarter": "大平",
+                "village": "大川村",
+                "county": "土佐郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8033700",
+                "33.8233700",
+                "133.3707170",
+                "133.3907170"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:06:14.304Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8212475,
+              "lon": 133.3941804,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 249168726,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "node",
+              "osm_id": 8681528850,
+              "lat": "33.8133700",
+              "lon": "133.3807170",
+              "class": "place",
+              "type": "quarter",
+              "place_rank": 20,
+              "importance": 0.13338060502021817,
+              "addresstype": "quarter",
+              "name": "大平",
+              "display_name": "大平, Okawa, Tosa County, Kochi Prefecture, 799-0650, Japan",
+              "address": {
+                "quarter": "大平",
+                "village": "Okawa",
+                "county": "Tosa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "postcode": "799-0650",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8033700",
+                "33.8233700",
+                "133.3707170",
+                "133.3907170"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.8793374,
+      "lon": 133.3915368,
+      "name": "Peak (1584m)",
+      "ele": 1584.2533333333333
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:06:17.575Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8793374,
+              "lon": 133.3915368,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268812739,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "新居浜市",
+              "display_name": "新居浜市, 愛媛県, 日本",
+              "address": {
+                "city": "新居浜市",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:06:20.969Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.8793374,
+              "lon": 133.3915368,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269124174,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4050290,
+              "lat": "33.9603497",
+              "lon": "133.2835899",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.4972281131815571,
+              "addresstype": "city",
+              "name": "Niihama",
+              "display_name": "Niihama, Ehime Prefecture, Japan",
+              "address": {
+                "city": "Niihama",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8146840",
+                "34.0846956",
+                "133.1814311",
+                "133.4554530"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7033183,
+      "lon": 133.1423731,
+      "name": "Peak (1580m)",
+      "ele": 1579.6733333333332
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:06:24.224Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7033183,
+              "lon": 133.1423731,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269101737,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "久万高原町",
+              "display_name": "久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:06:27.470Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7033183,
+              "lon": 133.1423731,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 267037802,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "Kumakogen",
+              "display_name": "Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.5552593,
+      "lon": 132.9223115,
+      "name": "笠取山",
+      "ele": 1567.7094910140197
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:06:30.871Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.5552593,
+              "lon": 132.9223115,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 248608508,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 155872235,
+              "lat": "33.5540852",
+              "lon": "132.9235196",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.053383865873197496,
+              "addresstype": "road",
+              "name": "",
+              "display_name": "久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5540203",
+                "33.5667000",
+                "132.9235196",
+                "132.9289024"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:06:34.169Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.5552593,
+              "lon": 132.9223115,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268689290,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 155872235,
+              "lat": "33.5540852",
+              "lon": "132.9235196",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.053383865873197496,
+              "addresstype": "road",
+              "name": "",
+              "display_name": "Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5540203",
+                "33.5667000",
+                "132.9235196",
+                "132.9289024"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7195139,
+      "lon": 133.1457476,
+      "name": "丸笹山",
+      "ele": 1567.1366666666665
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:06:37.549Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7195139,
+              "lon": 133.1457476,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269101737,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "久万高原町",
+              "display_name": "久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:06:40.777Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7195139,
+              "lon": 133.1457476,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 250729427,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "Kumakogen",
+              "display_name": "Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7465829,
+      "lon": 133.1513298,
+      "name": "丸滝山",
+      "ele": 1542.9666666666665
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:06:43.923Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7465829,
+              "lon": 133.1513298,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269019744,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1204081433,
+              "lat": "33.7484616",
+              "lon": "133.1507622",
+              "class": "highway",
+              "type": "primary",
+              "place_rank": 26,
+              "importance": 0.05338559777218277,
+              "addresstype": "road",
+              "name": "石鎚スカイライン",
+              "display_name": "石鎚スカイライン, 久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "road": "石鎚スカイライン",
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7477275",
+                "33.7550042",
+                "133.1444947",
+                "133.1508964"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:06:47.151Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7465829,
+              "lon": 133.1513298,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269019744,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1204081433,
+              "lat": "33.7484616",
+              "lon": "133.1507622",
+              "class": "highway",
+              "type": "primary",
+              "place_rank": 26,
+              "importance": 0.05338559777218277,
+              "addresstype": "road",
+              "name": "石鎚スカイライン",
+              "display_name": "石鎚スカイライン, Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "road": "石鎚スカイライン",
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7477275",
+                "33.7550042",
+                "133.1444947",
+                "133.1508964"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.5755696,
+      "lon": 133.0461981,
+      "name": "Peak (1540m)",
+      "ele": 1539.5333333333335
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:06:50.380Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.5755696,
+              "lon": 133.0461981,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268392931,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 155865822,
+              "lat": "33.5752625",
+              "lon": "133.0460112",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338137102311738,
+              "addresstype": "road",
+              "name": "",
+              "display_name": "久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5646651",
+                "33.5772594",
+                "133.0447112",
+                "133.0620731"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:06:53.732Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.5755696,
+              "lon": 133.0461981,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 266094243,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 155865822,
+              "lat": "33.5752625",
+              "lon": "133.0460112",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338137102311738,
+              "addresstype": "road",
+              "name": "",
+              "display_name": "Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5646651",
+                "33.5772594",
+                "133.0447112",
+                "133.0620731"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.824185,
+      "lon": 133.391598,
+      "name": "Peak (1533m)",
+      "ele": 1532.5633333333333
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:06:56.964Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.824185,
+              "lon": 133.391598,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269065829,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "node",
+              "osm_id": 8681528850,
+              "lat": "33.8133700",
+              "lon": "133.3807170",
+              "class": "place",
+              "type": "quarter",
+              "place_rank": 20,
+              "importance": 0.13338060502021817,
+              "addresstype": "quarter",
+              "name": "大平",
+              "display_name": "大平, 大川村, 土佐郡, 高知県, 日本",
+              "address": {
+                "quarter": "大平",
+                "village": "大川村",
+                "county": "土佐郡",
+                "province": "高知県",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8033700",
+                "33.8233700",
+                "133.3707170",
+                "133.3907170"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:07:00.194Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.824185,
+              "lon": 133.391598,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 269065829,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "node",
+              "osm_id": 8681528850,
+              "lat": "33.8133700",
+              "lon": "133.3807170",
+              "class": "place",
+              "type": "quarter",
+              "place_rank": 20,
+              "importance": 0.13338060502021817,
+              "addresstype": "quarter",
+              "name": "大平",
+              "display_name": "大平, Okawa, Tosa County, Kochi Prefecture, Japan",
+              "address": {
+                "quarter": "大平",
+                "village": "Okawa",
+                "county": "Tosa County",
+                "province": "Kochi Prefecture",
+                "ISO3166-2-lvl4": "JP-39",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.8033700",
+                "33.8233700",
+                "133.3707170",
+                "133.3907170"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.5604174,
+      "lon": 132.9270238,
+      "name": "大川嶺",
+      "ele": 1532.1452947696732
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:07:03.324Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.5604174,
+              "lon": 132.9270238,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 266235168,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 155872235,
+              "lat": "33.5604173",
+              "lon": "132.9270239",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.053383865873197496,
+              "addresstype": "road",
+              "name": "",
+              "display_name": "久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5540203",
+                "33.5667000",
+                "132.9235196",
+                "132.9289024"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:07:06.568Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.5604174,
+              "lon": 132.9270238,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 267037530,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 155872235,
+              "lat": "33.5604173",
+              "lon": "132.9270239",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.053383865873197496,
+              "addresstype": "road",
+              "name": "",
+              "display_name": "Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.5540203",
+                "33.5667000",
+                "132.9235196",
+                "132.9289024"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7513188,
+      "lon": 133.1115977,
+      "name": "面河山",
+      "ele": 1519.8633333333335
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:07:09.931Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7513188,
+              "lon": 133.1115977,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 250729427,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "久万高原町",
+              "display_name": "久万高原町, 上浮穴郡, 愛媛県, 日本",
+              "address": {
+                "town": "久万高原町",
+                "county": "上浮穴郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:07:13.241Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7513188,
+              "lon": 133.1115977,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 268772983,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "relation",
+              "osm_id": 4048226,
+              "lat": "33.6602974",
+              "lon": "132.9008253",
+              "class": "boundary",
+              "type": "administrative",
+              "place_rank": 16,
+              "importance": 0.46137459912200807,
+              "addresstype": "town",
+              "name": "Kumakogen",
+              "display_name": "Kumakogen, Kamiukena County, Ehime Prefecture, Japan",
+              "address": {
+                "town": "Kumakogen",
+                "county": "Kamiukena County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.4662810",
+                "33.7728390",
+                "132.8216140",
+                "133.1612100"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  },
+  {
+    "type": "waypoint",
+    "source_file": "all_unique_summits.gpx",
+    "source_point": {
+      "lat": 33.7638082,
+      "lon": 133.1769575,
+      "name": "伊吹山",
+      "ele": 1506.6639933943752
+    },
+    "reverse_geocoding": {
+      "provider": "nominatim.openstreetmap.org",
+      "requests": {
+        "ja": {
+          "requested_at": "2026-05-16T08:07:16.623Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7638082,
+              "lon": 133.1769575,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "ja"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 266978420,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1067541032,
+              "lat": "33.7652850",
+              "lon": "133.1771863",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338873197528035,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, 西条市, 吾川郡, 愛媛県, 日本",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "city": "西条市",
+                "county": "吾川郡",
+                "province": "愛媛県",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "日本",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7575148",
+                "33.7935913",
+                "133.1703951",
+                "133.2151536"
+              ]
+            }
+          }
+        },
+        "en": {
+          "requested_at": "2026-05-16T08:07:19.995Z",
+          "request": {
+            "endpoint": "https://nominatim.openstreetmap.org/reverse",
+            "params": {
+              "lat": 33.7638082,
+              "lon": 133.1769575,
+              "format": "json",
+              "zoom": 18,
+              "addressdetails": 1,
+              "accept-language": "en"
+            }
+          },
+          "response": {
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body": {
+              "place_id": 265651636,
+              "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+              "osm_type": "way",
+              "osm_id": 1067541032,
+              "lat": "33.7652850",
+              "lon": "133.1771863",
+              "class": "highway",
+              "type": "unclassified",
+              "place_rank": 26,
+              "importance": 0.05338873197528035,
+              "addresstype": "road",
+              "name": "町道瓶ヶ森線",
+              "display_name": "町道瓶ヶ森線, Saijō, Agawa County, Ehime Prefecture, Japan",
+              "address": {
+                "road": "町道瓶ヶ森線",
+                "city": "Saijō",
+                "county": "Agawa County",
+                "province": "Ehime Prefecture",
+                "ISO3166-2-lvl4": "JP-38",
+                "country": "Japan",
+                "country_code": "jp"
+              },
+              "boundingbox": [
+                "33.7575148",
+                "33.7935913",
+                "133.1703951",
+                "133.2151536"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "script": "reverse_geocode_points.js",
+      "script_version": "2026-05-16-draft",
+      "cache_status": "fresh",
+      "request_interval_ms": 3000
+    }
+  }
+]
