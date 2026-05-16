@@ -7,10 +7,10 @@ function distanceSq(lat1, lon1, lat2, lon2) {
     return Math.pow(lat1 - lat2, 2) + Math.pow(lon1 - lon2, 2);
 }
 
-// Function to find the closest geocoded point within a very small tolerance
+// Function to find the closest geocoded point within a small squared-distance tolerance in degrees
 function findMatchingPoint(lat, lon, geocodedPoints) {
     let closestMatch = null;
-    let minDistance = 0.00000001; // extremely small tolerance (~1 meter)
+    let minDistance = 0.00000001; // squared degrees; sqrt(1e-8) = 1e-4 degrees, roughly 11 meters
 
     for (const pt of geocodedPoints) {
         const d = distanceSq(parseFloat(lat), parseFloat(lon), pt.lat, pt.lon);
