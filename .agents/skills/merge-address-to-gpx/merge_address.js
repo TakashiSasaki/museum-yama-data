@@ -2,23 +2,68 @@ const fs = require('fs');
 const path = require('path');
 const xml2js = require('xml2js');
 
+const MATCH_DISTANCE_SQ_THRESHOLD = 0.00000001; // squared degrees; sqrt(1e-8) = 1e-4 degrees, roughly 11 meters
+const MATCH_GRID_SIZE = Math.sqrt(MATCH_DISTANCE_SQ_THRESHOLD);
+
 // Helper to calculate distance between two coordinates to handle slight float precision differences
 function distanceSq(lat1, lon1, lat2, lon2) {
     return Math.pow(lat1 - lat2, 2) + Math.pow(lon1 - lon2, 2);
 }
 
-// Function to find the closest geocoded point within a small squared-distance tolerance in degrees
-function findMatchingPoint(lat, lon, geocodedPoints) {
-    let closestMatch = null;
-    let minDistance = 0.00000001; // squared degrees; sqrt(1e-8) = 1e-4 degrees, roughly 11 meters
+function toGridCoord(value) {
+    return Math.round(value / MATCH_GRID_SIZE);
+}
+
+function makeBucketKey(lat, lon) {
+    return `${toGridCoord(lat)},${toGridCoord(lon)}`;
+}
+
+function makeCoordKey(lat, lon) {
+    return `${lat},${lon}`;
+}
+
+function buildGeocodedIndex(geocodedPoints) {
+    const index = new Map();
 
     for (const pt of geocodedPoints) {
-        const d = distanceSq(parseFloat(lat), parseFloat(lon), pt.lat, pt.lon);
-        if (d < minDistance) {
-            minDistance = d;
-            closestMatch = pt;
+        const bucketKey = makeBucketKey(pt.lat, pt.lon);
+        const coordKey = makeCoordKey(pt.lat, pt.lon);
+
+        if (!index.has(bucketKey)) {
+            index.set(bucketKey, new Map());
+        }
+
+        // Keep the latest point when duplicate coordinates exist across multiple JSON files
+        index.get(bucketKey).set(coordKey, pt);
+    }
+
+    return index;
+}
+
+// Function to find the closest geocoded point within a small squared-distance tolerance in degrees
+function findMatchingPoint(lat, lon, geocodedIndex) {
+    const latNum = parseFloat(lat);
+    const lonNum = parseFloat(lon);
+    const latGrid = toGridCoord(latNum);
+    const lonGrid = toGridCoord(lonNum);
+    let closestMatch = null;
+    let minDistance = MATCH_DISTANCE_SQ_THRESHOLD;
+
+    for (let latOffset = -1; latOffset <= 1; latOffset++) {
+        for (let lonOffset = -1; lonOffset <= 1; lonOffset++) {
+            const bucket = geocodedIndex.get(`${latGrid + latOffset},${lonGrid + lonOffset}`);
+            if (!bucket) continue;
+
+            for (const pt of bucket.values()) {
+                const d = distanceSq(latNum, lonNum, pt.lat, pt.lon);
+                if (d < minDistance) {
+                    minDistance = d;
+                    closestMatch = pt;
+                }
+            }
         }
     }
+
     return closestMatch;
 }
 
@@ -46,19 +91,25 @@ async function main() {
 
     // Load and merge all JSON files
     let allGeocodedPoints = [];
-    const files = fs.readdirSync(jsonDir);
+    const files = fs.readdirSync(jsonDir)
+        .filter(file => file.endsWith('.json'))
+        .sort((a, b) => {
+            const aMtime = fs.statSync(path.join(jsonDir, a)).mtimeMs;
+            const bMtime = fs.statSync(path.join(jsonDir, b)).mtimeMs;
+            return aMtime - bMtime;
+        });
+
     for (const file of files) {
-        if (file.endsWith('.json')) {
-            const content = fs.readFileSync(path.join(jsonDir, file), 'utf8');
-            try {
-                const points = JSON.parse(content);
-                allGeocodedPoints = allGeocodedPoints.concat(points);
-            } catch (e) {
-                console.error(`Error parsing JSON file ${file}:`, e.message);
-            }
+        const content = fs.readFileSync(path.join(jsonDir, file), 'utf8');
+        try {
+            const points = JSON.parse(content);
+            allGeocodedPoints = allGeocodedPoints.concat(points);
+        } catch (e) {
+            console.error(`Error parsing JSON file ${file}:`, e.message);
         }
     }
-    console.log(`Loaded ${allGeocodedPoints.length} geocoded points.`);
+    const geocodedIndex = buildGeocodedIndex(allGeocodedPoints);
+    console.log(`Loaded ${allGeocodedPoints.length} geocoded points into ${geocodedIndex.size} coordinate buckets.`);
 
     // Load GPX
     const gpxContent = fs.readFileSync(gpxInput, 'utf8');
@@ -80,7 +131,7 @@ async function main() {
                 const lat = wpt['$'].lat;
                 const lon = wpt['$'].lon;
 
-                const match = findMatchingPoint(lat, lon, allGeocodedPoints);
+                const match = findMatchingPoint(lat, lon, geocodedIndex);
                 if (match && match.geocode && match.geocode.ja) {
                     const ja = match.geocode.ja;
 
