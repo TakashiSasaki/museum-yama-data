@@ -3,7 +3,7 @@ const path = require('path');
 const xml2js = require('xml2js');
 
 const MATCH_DISTANCE_SQ_THRESHOLD = 0.00000001; // squared degrees; sqrt(1e-8) = 1e-4 degrees, roughly 11 meters
-const MATCH_GRID_SIZE = Math.sqrt(MATCH_DISTANCE_SQ_THRESHOLD);
+const MATCH_GRID_SIZE = 2 * Math.sqrt(MATCH_DISTANCE_SQ_THRESHOLD);
 
 // Helper to calculate distance between two coordinates to handle slight float precision differences
 function distanceSq(lat1, lon1, lat2, lon2) {
@@ -93,11 +93,12 @@ async function main() {
     let allGeocodedPoints = [];
     const files = fs.readdirSync(jsonDir)
         .filter(file => file.endsWith('.json'))
-        .sort((a, b) => {
-            const aMtime = fs.statSync(path.join(jsonDir, a)).mtimeMs;
-            const bMtime = fs.statSync(path.join(jsonDir, b)).mtimeMs;
-            return aMtime - bMtime;
-        });
+        .map(file => ({
+            file,
+            mtimeMs: fs.statSync(path.join(jsonDir, file)).mtimeMs
+        }))
+        .sort((a, b) => a.mtimeMs - b.mtimeMs)
+        .map(entry => entry.file);
 
     for (const file of files) {
         const content = fs.readFileSync(path.join(jsonDir, file), 'utf8');
