@@ -111,13 +111,25 @@ module.exports = async function intake(options) {
                 // Track filenames to detect intra-zip collisions before extracting
                 const extractedFilenames = new Set();
 
-                // Pre-flight check for duplicate filenames in different directories inside the zip
+                // Pre-flight check for duplicate filenames inside the zip and
+                // for collisions with the flattened destination in RAW_DIR.
                 for (const entry of zipEntries) {
                     if (!entry.isDirectory) {
                         const fileName = path.basename(entry.entryName);
+                        const rawTargetPath = path.join(RAW_DIR, fileName);
+
                         if (extractedFilenames.has(fileName)) {
                             throw new Error(`Filename collision detected inside ZIP: ${fileName}`);
                         }
+
+                        if (!isSafePath(RAW_DIR, rawTargetPath)) {
+                            throw new Error(`Unsafe destination path detected for ZIP entry: ${entry.entryName}`);
+                        }
+
+                        if (fs.existsSync(rawTargetPath)) {
+                            throw new Error(`Filename collision detected in RAW_DIR: ${fileName}`);
+                        }
+
                         extractedFilenames.add(fileName);
                     }
                 }
