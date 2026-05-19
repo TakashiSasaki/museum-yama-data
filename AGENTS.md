@@ -42,10 +42,10 @@ Ask the agent:
 
 #### Execution Commands
 ```powershell
-node .agents/skills/yama-data-pipeline/cli.js intake
-node .agents/skills/yama-data-pipeline/cli.js merge
-node .agents/skills/yama-data-pipeline/cli.js annotate
-node .agents/skills/yama-data-pipeline/cli.js validate
+node .agents/skills/yama-data-pipeline/cli.js intake --root .
+node .agents/skills/yama-data-pipeline/cli.js merge --root .
+node .agents/skills/yama-data-pipeline/cli.js annotate --root .
+node .agents/skills/yama-data-pipeline/cli.js validate --root . [--strict]
 ```
 
 ### Skill: Fetch YAMAP Data (`fetch-yamap-data`)
@@ -67,7 +67,7 @@ Ask the agent:
 - **Tooling**: AI Browser Tool (Agent-internal)
 
 ## Development Guidelines
-- Always use the **Data Intake Skill** for new data to maintain the directory structure. It now handles collisions safely by renaming files with different content.
+- Always use the **yama-data-pipeline intake** skill for new data to maintain the directory structure. It now handles collisions safely by renaming files with different content.
 - The `csv/` directory is the source of truth for activity metadata.
 - The `gpx/raw/` directory should only contain individual `.gpx` files (no subfolders). These are considered **source data** and must not be mutated.
 - The `gpx/annotated/` and `gpx/merged/` directories contain **generated artifacts**.
