@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const { parseGpx, extractTrackPoints } = require('../.agents/skills/lib/gpx');
-const log = require('../.agents/skills/lib/log');
-
 const ROOT_DIR = process.cwd();
+const { parseGpx, extractTrackPoints } = require(path.join(ROOT_DIR, '.agents/skills/lib/gpx'));
+const log = require(path.join(ROOT_DIR, '.agents/skills/lib/log'));
+
 const GPX_DIR = path.join(ROOT_DIR, 'gpx');
 const RAW_DIR = path.join(GPX_DIR, 'raw');
 const MERGED_DIR = path.join(GPX_DIR, 'merged');
