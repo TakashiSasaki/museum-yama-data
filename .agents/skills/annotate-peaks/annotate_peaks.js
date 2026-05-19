@@ -118,17 +118,18 @@ function loadMountainDatabase() {
 // === Peak Detection ===
 
 function detectPeaks(points) {
-    if (points.length < 3) return [];
+    // Only use points that have a valid elevation value
+    const validPoints = points.filter(p => !isNaN(p.ele));
 
-    const elevations = points.map(p => p.ele);
-    // Ignore points without elevation
-    if (elevations.some(isNaN)) return [];
+    if (validPoints.length < 3) return [];
+
+    const elevations = validPoints.map(p => p.ele);
 
     const smoothed = smooth(elevations, CONFIG.SMOOTH_WINDOW);
     const candidates = [];
-    const radius = Math.min(CONFIG.PEAK_RADIUS, Math.floor(points.length / 3));
+    const radius = Math.min(CONFIG.PEAK_RADIUS, Math.floor(validPoints.length / 3));
 
-    for (let i = radius; i < points.length - radius; i++) {
+    for (let i = radius; i < validPoints.length - radius; i++) {
         let isMax = true;
         for (let j = 1; j <= radius; j++) {
             if (smoothed[i] <= smoothed[i - j] || smoothed[i] <= smoothed[i + j]) {
@@ -137,7 +138,7 @@ function detectPeaks(points) {
             }
         }
         if (isMax) {
-            candidates.push({ index: i, smoothedEle: smoothed[i], ...points[i] });
+            candidates.push({ index: i, smoothedEle: smoothed[i], ...validPoints[i] });
         }
     }
 
@@ -147,7 +148,7 @@ function detectPeaks(points) {
     }
     const maxAlreadyIncluded = candidates.some(c => Math.abs(c.index - maxIdx) < radius);
     if (!maxAlreadyIncluded) {
-        candidates.push({ index: maxIdx, smoothedEle: smoothed[maxIdx], ...points[maxIdx] });
+        candidates.push({ index: maxIdx, smoothedEle: smoothed[maxIdx], ...validPoints[maxIdx] });
     }
 
     const peaks = [];
