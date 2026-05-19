@@ -115,8 +115,8 @@ async function main() {
                 zipEntries.forEach(entry => {
                     if (!entry.isDirectory) {
                         const entryPath = path.normalize(entry.entryName);
-                        // Prevent path traversal
-                        if (entryPath.includes('..') || path.isAbsolute(entryPath)) {
+                        // Prevent absolute-path extraction; resolved-path validation below handles traversal safely
+                        if (path.isAbsolute(entryPath)) {
                             log.warn(`Skipping potentially unsafe zip entry: ${entry.entryName}`);
                             return;
                         }
