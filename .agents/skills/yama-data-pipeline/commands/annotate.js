@@ -65,7 +65,13 @@ function loadMountainDatabase(CSV_DIR) {
 
     for (const csvFile of csvFiles) {
         const content = fs.readFileSync(path.join(CSV_DIR, csvFile), 'utf8');
-        const rows = parseCSV(content);
+        let rows;
+        try {
+            rows = parseCSV(content);
+        } catch (e) {
+            log.warn(`Skipping CSV file due to parse error (${csvFile}): ${e.message}`);
+            continue;
+        }
         if (rows.length < 2) continue;
 
         const header = rows[0];

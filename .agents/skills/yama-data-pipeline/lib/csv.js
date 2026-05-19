@@ -6,8 +6,14 @@
  * Parses a full CSV string into an array of arrays (rows of columns).
  * Handles quoted fields, escaped quotes (""), commas within quotes,
  * embedded newlines, CRLF, LF, and optional UTF-8 BOM.
+ *
+ * @param {string} content - The CSV string to parse.
+ * @param {object} [options]
+ * @param {boolean} [options.strictColumns=false] - When true, throws if any row
+ *   has a different number of columns than the header row.
  */
-function parseCSV(content) {
+function parseCSV(content, options = {}) {
+    const strictColumns = options.strictColumns === true;
     // Remove UTF-8 BOM if present
     if (content.charCodeAt(0) === 0xFEFF) {
         content = content.slice(1);
@@ -62,8 +68,8 @@ function parseCSV(content) {
     // Filter out completely empty rows (e.g. trailing newlines)
     const validRows = rows.filter(row => row.length > 1 || (row.length === 1 && row[0] !== ''));
 
-    // Validate consistent column count
-    if (validRows.length > 0) {
+    // Optionally validate consistent column count
+    if (strictColumns && validRows.length > 0) {
         const expectedCols = validRows[0].length;
         for (let i = 1; i < validRows.length; i++) {
             if (validRows[i].length !== expectedCols) {
