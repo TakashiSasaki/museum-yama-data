@@ -53,12 +53,15 @@ function extractTrackPoints(doc) {
         const lon = parseFloat(node.getAttribute('lon'));
 
         const eleNode = node.getElementsByTagName('ele')[0];
-        const ele = eleNode && eleNode.textContent ? parseFloat(eleNode.textContent) : NaN;
+        const hasEle = !!eleNode;
+        const ele = (eleNode && eleNode.textContent !== undefined && eleNode.textContent !== null)
+                    ? parseFloat(eleNode.textContent)
+                    : undefined;
 
         const timeNode = node.getElementsByTagName('time')[0];
         const time = timeNode && timeNode.textContent ? timeNode.textContent : '';
 
-        points.push({ lat, lon, ele, time });
+        points.push({ lat, lon, hasEle, ele, time });
     }
     return points;
 }

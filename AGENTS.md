@@ -15,7 +15,7 @@ The goal is to build a web application that visualizes and analyzes GPX tracks a
 - `csv/`: **Processed Records**. Contains `.csv` files extracted from Excel activity logs. Used as the primary data source for the web app.
 - `processed/`: **Archive**. Stores original `.zip` and `.xlsx` files after they have been processed by the intake skill.
 - `.agents/`: **Automation Center**. Contains repository-specific skills and configurations for AI agents.
-  - `skills/`: Logic for automated tasks (e.g., `data-intake`).
+  - `skills/`: Logic for automated tasks.
 
 ## Agent Skills
 
@@ -32,8 +32,8 @@ A consolidated CLI tool that handles local mountaineering data processing includ
 
 #### How to use
 Ask the agent:
-> "Run the yama-data-pipeline intake command to process new files."
-> "Run the yama-data-pipeline merge command."
+> "Run the yama-data-pipeline intake subcommand to process new files."
+> "Run the yama-data-pipeline merge subcommand."
 
 #### Implementation
 - **Directory**: `.agents/skills/yama-data-pipeline/`
@@ -45,7 +45,7 @@ Ask the agent:
 node .agents/skills/yama-data-pipeline/cli.js intake --root .
 node .agents/skills/yama-data-pipeline/cli.js merge --root .
 node .agents/skills/yama-data-pipeline/cli.js annotate --root .
-node .agents/skills/yama-data-pipeline/cli.js validate --root . [--strict]
+node .agents/skills/yama-data-pipeline/cli.js validate --root .
 ```
 
 ### Skill: Fetch YAMAP Data (`fetch-yamap-data`)

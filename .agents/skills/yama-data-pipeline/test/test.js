@@ -100,11 +100,31 @@ async function runTests() {
         runAssert(rows[0][2] === 'col,3', 'Handled comma in quotes');
         runAssert(rows[1][1] === 'val"2', 'Handled escaped quote');
 
+        const csvTextWithNewlines = `col1,col2\n"val\n1",val2`;
+        const rowsWithNewlines = parseCSV(csvTextWithNewlines);
+        runAssert(rowsWithNewlines.length === 2, 'CSV parsed two rows with embedded newline');
+        runAssert(rowsWithNewlines[1][0] === 'val\n1', 'Handled embedded newline in quotes');
+
+        let caughtCsvError = false;
+        try {
+            parseCSV(`col1,col2\nval1`, { strictColumns: true });
+        } catch (e) {
+            caughtCsvError = e.message.includes('expected 2');
+        }
+        runAssert(caughtCsvError, 'CSV parser caught mismatched column count with strictColumns=true');
+
+        // Confirm lenient mode (default) does NOT throw on column mismatch
+        const lenientRows = parseCSV(`col1,col2\nval1`);
+        runAssert(lenientRows.length === 2, 'CSV lenient mode returns rows even on column count mismatch');
+
         console.log('--- Testing lib/fs_safe.js ---');
         runAssert(isSafePath('/foo/bar', 'baz') === true, 'Safe relative path');
         runAssert(isSafePath('/foo/bar', 'baz/qux') === true, 'Safe nested relative path');
         runAssert(isSafePath('/foo/bar', '../baz') === false, 'Unsafe traversal path');
         runAssert(isSafePath('/foo/bar', '/etc/passwd') === false, 'Unsafe absolute path');
+        runAssert(isSafePath('/foo/bar', '') === true, 'Safe base path itself');
+        runAssert(isSafePath('/tmp/base', '/tmp/base-other') === false, 'Unsafe sibling-prefix case');
+        runAssert(isSafePath('/foo/bar', '/foo/bar/baz') === true, 'Safe nested absolute path');
 
         console.log('--- Testing lib/gpx.js (XML Parser Safety) ---');
         try {
@@ -118,23 +138,55 @@ async function runTests() {
         const maliciousZip = new AdmZip();
         maliciousZip.addFile('safe.txt', Buffer.from('safe'));
         maliciousZip.addFile('../unsafe.txt', Buffer.from('unsafe'));
+        maliciousZip.addFile('nested/nested_safe.txt', Buffer.from('nested safe'));
         const zipPath = path.join(TEMP_TEST_DIR, 'gpx', 'malicious.zip');
         maliciousZip.writeZip(zipPath);
 
         await intake({ root: TEMP_TEST_DIR });
 
         runAssert(fs.existsSync(path.join(RAW_DIR, 'safe.txt')), 'Safe file extracted');
+        runAssert(fs.existsSync(path.join(RAW_DIR, 'nested_safe.txt')), 'Nested safe file extracted in flat structure');
         runAssert(!fs.existsSync(path.join(RAW_DIR, '..', 'unsafe.txt')), 'Unsafe file was NOT extracted into raw/..');
         runAssert(!fs.existsSync(path.join(TEMP_TEST_DIR, 'gpx', 'unsafe.txt')), 'Unsafe file did not escape temp directory');
 
-        console.log('--- Testing validate.js (Negative Cases) ---');
-        const strictOptions = { root: TEMP_TEST_DIR, strict: true };
+        console.log('--- Testing intake zip collision detection ---');
+        const collisionZip = new AdmZip();
+        collisionZip.addFile('dir1/collision.txt', Buffer.from('file1'));
+        collisionZip.addFile('dir2/collision.txt', Buffer.from('file2'));
+        const collisionZipPath = path.join(TEMP_TEST_DIR, 'gpx', 'collision.zip');
+        collisionZip.writeZip(collisionZipPath);
+
+        let caughtCollision = false;
+        try {
+            await intake({ root: TEMP_TEST_DIR });
+        } catch (e) {
+            caughtCollision = e.message.includes('failed with errors');
+        }
+        runAssert(caughtCollision, 'Intake correctly threw an error due to filename collision inside ZIP');
+
+        console.log('--- Testing intake cross-zip collision detection ---');
+        // Prerequisite: 'safe.txt' was placed in RAW_DIR by the 'malicious.zip' test above.
+        // A new ZIP containing any file whose basename is already present in RAW_DIR must be
+        // rejected, regardless of whether the file contents differ.
+        const crossZip = new AdmZip();
+        crossZip.addFile('safe.txt', Buffer.from('any content — basename collision is what matters'));
+        const crossZipPath = path.join(TEMP_TEST_DIR, 'gpx', 'cross_zip.zip');
+        crossZip.writeZip(crossZipPath);
+
+        let caughtCrossZipCollision = false;
+        try {
+            await intake({ root: TEMP_TEST_DIR });
+        } catch (e) {
+            caughtCrossZipCollision = e.message.includes('failed with errors');
+        }
+        runAssert(caughtCrossZipCollision, 'Intake correctly rejected cross-zip collision (same basename already in RAW_DIR)');
+        const validationOptions = { root: TEMP_TEST_DIR };
 
         // Test malformed XML
         const badGpxPath = path.join(RAW_DIR, 'bad_xml.gpx');
         fs.writeFileSync(badGpxPath, '<gpx><bad>', 'utf8');
         try {
-            await validate(strictOptions);
+            await validate(validationOptions);
             runAssert(false, 'Validate should fail on malformed GPX');
         } catch (e) {
             runAssert(e.message === 'Validation failed.', 'Validate failed correctly on malformed XML');
@@ -145,7 +197,7 @@ async function runTests() {
         const emptyGpxPath = path.join(RAW_DIR, 'empty.gpx');
         fs.writeFileSync(emptyGpxPath, '<gpx></gpx>', 'utf8');
         try {
-            await validate(strictOptions);
+            await validate(validationOptions);
             runAssert(false, 'Validate should fail on empty GPX');
         } catch (e) {
             runAssert(e.message === 'Validation failed.', 'Validate failed correctly on missing geospatial elements');
@@ -156,7 +208,7 @@ async function runTests() {
         const badCsvPath = path.join(TEMP_TEST_DIR, 'csv', 'bad.csv');
         fs.writeFileSync(badCsvPath, 'a,b,c\n1,2', 'utf8');
         try {
-            await validate(strictOptions);
+            await validate(validationOptions);
             runAssert(false, 'Validate should fail on bad CSV row length');
         } catch (e) {
             runAssert(e.message === 'Validation failed.', 'Validate failed correctly on CSV row length mismatch');
@@ -165,9 +217,9 @@ async function runTests() {
 
         // Test invalid latitude / longitude
         const badCoordsGpxPath = path.join(RAW_DIR, 'bad_coords.gpx');
-        fs.writeFileSync(badCoordsGpxPath, '<gpx><trk><trkseg><trkpt lat="900" lon="1800"></trkpt></trkseg></trk></gpx>', 'utf8');
+        fs.writeFileSync(badCoordsGpxPath, '<gpx><trk><trkseg><trkpt lat="900" lon="1800"><ele>100</ele></trkpt></trkseg></trk></gpx>', 'utf8');
         try {
-            await validate(strictOptions);
+            await validate(validationOptions);
             runAssert(false, 'Validate should fail on bad coordinates GPX');
         } catch (e) {
             runAssert(e.message === 'Validation failed.', 'Validate failed correctly on bad coordinates');
@@ -176,20 +228,31 @@ async function runTests() {
 
         // Test invalid latitude / longitude as NaN
         const nanCoordsGpxPath = path.join(RAW_DIR, 'nan_coords.gpx');
-        fs.writeFileSync(nanCoordsGpxPath, '<gpx><trk><trkseg><trkpt lat="invalid" lon="1.0"></trkpt></trkseg></trk></gpx>', 'utf8');
+        fs.writeFileSync(nanCoordsGpxPath, '<gpx><trk><trkseg><trkpt lat="invalid" lon="1.0"><ele>100</ele></trkpt></trkseg></trk></gpx>', 'utf8');
         try {
-            await validate(strictOptions);
+            await validate(validationOptions);
             runAssert(false, 'Validate should fail on NaN coordinates GPX');
         } catch (e) {
             runAssert(e.message === 'Validation failed.', 'Validate failed correctly on NaN coordinates');
         }
         fs.unlinkSync(nanCoordsGpxPath);
 
+        // Test missing elevation
+        const missingEleGpxPath = path.join(RAW_DIR, 'missing_ele.gpx');
+        fs.writeFileSync(missingEleGpxPath, '<gpx><trk><trkseg><trkpt lat="1.0" lon="1.0"></trkpt></trkseg></trk></gpx>', 'utf8');
+        try {
+            await validate(validationOptions);
+            runAssert(false, 'Validate should fail on missing elevation GPX');
+        } catch (e) {
+            runAssert(e.message === 'Validation failed.', 'Validate failed correctly on missing elevation');
+        }
+        fs.unlinkSync(missingEleGpxPath);
+
         // Test invalid elevation
         const badEleGpxPath = path.join(RAW_DIR, 'bad_ele.gpx');
         fs.writeFileSync(badEleGpxPath, '<gpx><trk><trkseg><trkpt lat="1.0" lon="1.0"><ele>bad_ele</ele></trkpt></trkseg></trk></gpx>', 'utf8');
         try {
-            await validate(strictOptions);
+            await validate(validationOptions);
             runAssert(false, 'Validate should fail on bad elevation GPX');
         } catch (e) {
             runAssert(e.message === 'Validation failed.', 'Validate failed correctly on bad elevation');

@@ -105,22 +105,46 @@ module.exports = async function intake(options) {
                 ensureDir(tempDir);
                 const zip = new AdmZip(filePath);
 
-                // Safe extraction
+                // Safe extraction - flatten structure and check collisions
                 const zipEntries = zip.getEntries();
+
+                // Track filenames to detect intra-zip collisions before extracting
+                const extractedFilenames = new Set();
+
+                // Pre-flight check for duplicate filenames inside the zip and
+                // for collisions with the flattened destination in RAW_DIR.
+                for (const entry of zipEntries) {
+                    if (!entry.isDirectory) {
+                        const fileName = path.basename(entry.entryName);
+                        const rawTargetPath = path.join(RAW_DIR, fileName);
+
+                        if (extractedFilenames.has(fileName)) {
+                            throw new Error(`Filename collision detected inside ZIP: ${fileName}`);
+                        }
+
+                        if (!isSafePath(RAW_DIR, rawTargetPath)) {
+                            throw new Error(`Unsafe destination path detected for ZIP entry: ${entry.entryName}`);
+                        }
+
+                        if (fs.existsSync(rawTargetPath)) {
+                            throw new Error(`Filename collision detected in RAW_DIR: ${fileName}`);
+                        }
+
+                        extractedFilenames.add(fileName);
+                    }
+                }
+
                 zipEntries.forEach(entry => {
                     if (!entry.isDirectory) {
-                        // We use `entry.entryName` exactly as is to compute the target path
-                        const targetPath = path.join(tempDir, entry.entryName);
+                        const fileName = path.basename(entry.entryName);
+                        const targetPath = path.join(tempDir, fileName);
 
-                        // Let `isSafePath` handle the rigorous checks against absolute paths
-                        // and path traversals (`../`) by ensuring the final `targetPath`
-                        // strictly resides within `tempDir`.
                         if (!isSafePath(tempDir, targetPath)) {
                             log.warn(`Skipping unsafe path: ${entry.entryName}`);
                             return;
                         }
 
-                        zip.extractEntryTo(entry, tempDir, true, true);
+                        fs.writeFileSync(targetPath, entry.getData());
                     }
                 });
 
