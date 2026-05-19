@@ -66,10 +66,12 @@ function runTests() {
     fs.rmSync(ANNOTATED_DIR, { recursive: true, force: true });
 
     // Find and delete the renamed collision file
-    const files = fs.readdirSync(rawDir);
-    for (const f of files) {
-        if (f.startsWith('yamap_2024-02-15_10_00_')) {
-            fs.unlinkSync(path.join(rawDir, f));
+    if (fs.existsSync(rawDir)) {
+        const files = fs.readdirSync(rawDir);
+        for (const f of files) {
+            if (f.startsWith('yamap_2024-02-15_10_00_')) {
+                fs.unlinkSync(path.join(rawDir, f));
+            }
         }
     }
 
