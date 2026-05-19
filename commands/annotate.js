@@ -48,25 +48,6 @@ function smooth(data, window) {
     });
 }
 
-function parseCSVLine(line) {
-    const fields = [];
-    let current = '';
-    let inQuotes = false;
-    for (let i = 0; i < line.length; i++) {
-        const ch = line[i];
-        if (ch === '"') {
-            inQuotes = !inQuotes;
-        } else if (ch === ',' && !inQuotes) {
-            fields.push(current.trim());
-            current = '';
-        } else {
-            current += ch;
-        }
-    }
-    fields.push(current.trim());
-    return fields;
-}
-
 function parseElevation(s) {
     if (!s) return NaN;
     const cleaned = s.replace(/,/g, '').replace(/\s*m\s*/gi, '').trim();
@@ -80,20 +61,21 @@ function loadMountainDatabase(CSV_DIR) {
         return db;
     }
     const csvFiles = fs.readdirSync(CSV_DIR).filter(f => f.toLowerCase().endsWith('.csv'));
+    const { parseCSV } = require('../lib/csv');
 
     for (const csvFile of csvFiles) {
         const content = fs.readFileSync(path.join(CSV_DIR, csvFile), 'utf8');
-        const lines = content.split('\n').filter(l => l.trim());
-        if (lines.length < 2) continue;
+        const rows = parseCSV(content);
+        if (rows.length < 2) continue;
 
-        const header = parseCSVLine(lines[0]);
+        const header = rows[0];
         const nameIdx = header.findIndex(h => h.includes('山名'));
         const elevIdx = header.findIndex(h => h.includes('標高'));
 
         if (nameIdx === -1 || elevIdx === -1) continue;
 
-        for (let i = 1; i < lines.length; i++) {
-            const cols = parseCSVLine(lines[i]);
+        for (let i = 1; i < rows.length; i++) {
+            const cols = rows[i];
             const name = cols[nameIdx];
             const elev = parseElevation(cols[elevIdx]);
             if (name && !isNaN(elev)) {
