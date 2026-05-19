@@ -20,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/TakashiSasaki/museum-yama-data/issues"
   },
-  "homepage": "https://github.com/TakashiSasaki/museum-yama-data#readme",
-  "dependencies": {
-    "@xmldom/xmldom": "^0.9.10"
-  }
+  "homepage": "https://github.com/TakashiSasaki/museum-yama-data#readme"
 }
