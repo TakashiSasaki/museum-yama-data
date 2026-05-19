@@ -1,10 +1,6 @@
 #!/usr/bin/env node
 
 const log = require('./lib/log');
-const intake = require('./commands/intake');
-const merge = require('./commands/merge');
-const annotate = require('./commands/annotate');
-const validate = require('./commands/validate');
 
 const command = process.argv[2];
 const args = process.argv.slice(3);
@@ -26,18 +22,20 @@ async function run() {
     try {
         switch (command) {
             case 'intake':
-                await intake(options);
+                await require('./commands/intake')(options);
                 break;
             case 'merge':
-                await merge(options);
+                await require('./commands/merge')(options);
                 break;
             case 'annotate':
-                await annotate(options);
+                await require('./commands/annotate')(options);
                 break;
             case 'validate':
-                await validate(options);
+                await require('./commands/validate')(options);
                 break;
             case 'test':
+                require('child_process').execSync('npm test', { stdio: 'inherit', cwd: __dirname });
+                break;
                 require('child_process').execSync('npm test', { stdio: 'inherit', cwd: __dirname });
                 break;
             default:
