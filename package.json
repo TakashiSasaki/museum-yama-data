@@ -1,0 +1,25 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "A web application for visualizing and analyzing mountaineering location data (GPX) and activity logs from the YAMAP app.",
+  "main": "patch_extract.js",
+  "scripts": {
+    "test": "node scripts/test.js",
+    "validate": "node scripts/validate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TakashiSasaki/museum-yama-data.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/TakashiSasaki/museum-yama-data/issues"
+  },
+  "homepage": "https://github.com/TakashiSasaki/museum-yama-data#readme",
+  "dependencies": {
+    "@xmldom/xmldom": "^0.9.10"
+  }
+}

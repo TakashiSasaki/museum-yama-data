@@ -42,7 +42,7 @@ When new ZIP or Excel files are placed in the `gpx/` directory, ask the agent:
 
 #### Execution Command
 ```powershell
-cd .agents/skills/data-intake; node import_data.js
+node .agents/skills/data-intake/import_data.js [--root <path>]
 ```
 
 ### Skill: Merge Tracks (`merge-tracks`)
@@ -64,7 +64,7 @@ Ask the agent:
 
 #### Execution Command
 ```powershell
-node .agents/skills/merge-tracks/merge_by_year.js
+node .agents/skills/merge-tracks/merge_by_year.js [--root <path>]
 ```
 
 ### Skill: Annotate Peaks (`annotate-peaks`)
@@ -94,7 +94,7 @@ Ask the agent:
 
 #### Execution Command
 ```powershell
-node .agents/skills/annotate-peaks/annotate_peaks.js
+node .agents/skills/annotate-peaks/annotate_peaks.js [--root <path>]
 ```
 
 ### Skill: Fetch YAMAP Data (`fetch-yamap-data`)
@@ -116,6 +116,9 @@ Ask the agent:
 - **Tooling**: AI Browser Tool (Agent-internal)
 
 ## Development Guidelines
-- Always use the **Data Intake Skill** for new data to maintain the directory structure.
+- Always use the **Data Intake Skill** for new data to maintain the directory structure. It now handles collisions safely by renaming files with different content.
 - The `csv/` directory is the source of truth for activity metadata.
-- The `gpx/raw/` directory should only contain individual `.gpx` files (no subfolders).
+- The `gpx/raw/` directory should only contain individual `.gpx` files (no subfolders). These are considered **source data** and must not be mutated.
+- The `gpx/annotated/` and `gpx/merged/` directories contain **generated artifacts**.
+- When editing scripts, utilize shared utilities under `.agents/skills/lib/` for safe file writes, XML parsing, and logging.
+- **Validation**: After running intake or generating new artifacts, run `npm run validate` from the repository root to ensure all GPX files are well-formed XML and contain valid location data.

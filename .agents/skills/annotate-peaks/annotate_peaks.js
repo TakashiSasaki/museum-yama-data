@@ -5,44 +5,38 @@
  * matches them against known mountain names from CSV records,
  * and generates annotated GPX files with <wpt> waypoint markers.
  * 
- * Usage: node annotate_peaks.js
- * 
- * Input:  gpx/raw/*.gpx (original tracks), csv/*.csv (mountain records)
- * Output: gpx/annotated/*.gpx (tracks with peak waypoints)
+ * Usage: node annotate_peaks.js [--root <path>]
  */
 
 const fs = require('fs');
 const path = require('path');
+const { parseGpx, serializeGpx, extractTrackPoints, extractTrackName, appendWaypoint } = require('../lib/gpx');
+const { ensureDir, atomicWriteSync } = require('../lib/fs_safe');
+const log = require('../lib/log');
 
-// === Configuration ===
 const args = process.argv.slice(2);
-const ROOT_DIR = args[0] ? path.resolve(args[0]) : process.cwd();
+const rootArgIndex = args.indexOf('--root');
+const ROOT_DIR = (rootArgIndex !== -1 && args[rootArgIndex + 1])
+    ? path.resolve(args[rootArgIndex + 1])
+    : path.resolve(__dirname, '../../..');
+
 const GPX_DIR = path.join(ROOT_DIR, 'gpx');
 const RAW_DIR = path.join(GPX_DIR, 'raw');
 const CSV_DIR = path.join(ROOT_DIR, 'csv');
 const OUTPUT_DIR = path.join(GPX_DIR, 'annotated');
 
 const CONFIG = {
-    SMOOTH_WINDOW: 5,       // Moving average window for elevation smoothing
-    PEAK_RADIUS: 10,        // Number of neighboring points to check for local max
-    MIN_PROMINENCE: 30,     // Minimum prominence in meters
-    MERGE_DISTANCE: 100,    // Merge peaks closer than this (meters)
-    ELEV_TOLERANCE: 50,     // Max elevation diff for CSV name matching (meters)
+    SMOOTH_WINDOW: 5,
+    PEAK_RADIUS: 10,
+    MIN_PROMINENCE: 30,
+    MERGE_DISTANCE: 100,
+    ELEV_TOLERANCE: 50,
 };
 
 // === Utility Functions ===
 
-function ensureDir(dir) {
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
-    }
-}
-
-/**
- * Calculate distance between two lat/lon points in meters (Haversine formula)
- */
 function haversineDistance(lat1, lon1, lat2, lon2) {
-    const R = 6371000; // Earth radius in meters
+    const R = 6371000;
     const dLat = (lat2 - lat1) * Math.PI / 180;
     const dLon = (lon2 - lon1) * Math.PI / 180;
     const a = Math.sin(dLat / 2) ** 2 +
@@ -51,9 +45,6 @@ function haversineDistance(lat1, lon1, lat2, lon2) {
     return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-/**
- * Apply moving average smoothing to an array of numbers
- */
 function smooth(data, window) {
     const half = Math.floor(window / 2);
     return data.map((_, i) => {
@@ -66,11 +57,6 @@ function smooth(data, window) {
     });
 }
 
-// === CSV Parsing ===
-
-/**
- * Parse CSV with proper handling of quoted fields containing commas
- */
 function parseCSVLine(line) {
     const fields = [];
     let current = '';
@@ -90,21 +76,18 @@ function parseCSVLine(line) {
     return fields;
 }
 
-/**
- * Parse elevation string from CSV (handles "1,151" format)
- */
 function parseElevation(s) {
     if (!s) return NaN;
     const cleaned = s.replace(/,/g, '').replace(/\s*m\s*/gi, '').trim();
     return parseFloat(cleaned);
 }
 
-/**
- * Load mountain database from CSV files
- * Returns: Map<mountainName, {name, elevation}>
- */
 function loadMountainDatabase() {
     const db = new Map();
+    if (!fs.existsSync(CSV_DIR)) {
+        log.warn(`CSV directory not found: ${CSV_DIR}`);
+        return db;
+    }
     const csvFiles = fs.readdirSync(CSV_DIR).filter(f => f.toLowerCase().endsWith('.csv'));
 
     for (const csvFile of csvFiles) {
@@ -123,7 +106,6 @@ function loadMountainDatabase() {
             const name = cols[nameIdx];
             const elev = parseElevation(cols[elevIdx]);
             if (name && !isNaN(elev)) {
-                // Remove parenthetical suffixes like (島根) for matching
                 const cleanName = name.replace(/\s*\(.*?\)\s*/g, '').trim();
                 db.set(cleanName, { name: cleanName, elevation: elev });
             }
@@ -133,50 +115,21 @@ function loadMountainDatabase() {
     return db;
 }
 
-// === GPX Parsing ===
-
-/**
- * Parse track points from GPX content
- */
-function parseTrackPoints(gpxContent) {
-    const points = [];
-    const regex = /<trkpt\s+lat="([^"]+)"\s+lon="([^"]+)"[^>]*>[\s\S]*?<ele>([\d.]+)<\/ele>[\s\S]*?(?:<time>([^<]+)<\/time>)?[\s\S]*?<\/trkpt>/g;
-    let match;
-    while ((match = regex.exec(gpxContent)) !== null) {
-        points.push({
-            lat: parseFloat(match[1]),
-            lon: parseFloat(match[2]),
-            ele: parseFloat(match[3]),
-            time: match[4] || ''
-        });
-    }
-    return points;
-}
-
-/**
- * Extract track name from GPX content
- */
-function extractTrackName(gpxContent) {
-    const match = gpxContent.match(/<trk>[\s\S]*?<name>([^<]+)<\/name>/);
-    return match ? match[1] : '';
-}
-
 // === Peak Detection ===
 
-/**
- * Detect peaks in a track point array using local maxima + prominence
- */
 function detectPeaks(points) {
-    if (points.length < 3) return [];
+    // Only use points that have a valid elevation value
+    const validPoints = points.filter(p => !isNaN(p.ele));
 
-    const elevations = points.map(p => p.ele);
+    if (validPoints.length < 3) return [];
+
+    const elevations = validPoints.map(p => p.ele);
+
     const smoothed = smooth(elevations, CONFIG.SMOOTH_WINDOW);
-
-    // Step 1: Find local maxima
     const candidates = [];
-    const radius = Math.min(CONFIG.PEAK_RADIUS, Math.floor(points.length / 3));
+    const radius = Math.min(CONFIG.PEAK_RADIUS, Math.floor(validPoints.length / 3));
 
-    for (let i = radius; i < points.length - radius; i++) {
+    for (let i = radius; i < validPoints.length - radius; i++) {
         let isMax = true;
         for (let j = 1; j <= radius; j++) {
             if (smoothed[i] <= smoothed[i - j] || smoothed[i] <= smoothed[i + j]) {
@@ -185,21 +138,19 @@ function detectPeaks(points) {
             }
         }
         if (isMax) {
-            candidates.push({ index: i, smoothedEle: smoothed[i], ...points[i] });
+            candidates.push({ index: i, smoothedEle: smoothed[i], ...validPoints[i] });
         }
     }
 
-    // Also consider the absolute maximum point as a candidate
     let maxIdx = 0;
     for (let i = 1; i < smoothed.length; i++) {
         if (smoothed[i] > smoothed[maxIdx]) maxIdx = i;
     }
     const maxAlreadyIncluded = candidates.some(c => Math.abs(c.index - maxIdx) < radius);
     if (!maxAlreadyIncluded) {
-        candidates.push({ index: maxIdx, smoothedEle: smoothed[maxIdx], ...points[maxIdx] });
+        candidates.push({ index: maxIdx, smoothedEle: smoothed[maxIdx], ...validPoints[maxIdx] });
     }
 
-    // Step 2: Calculate prominence and filter
     const peaks = [];
     for (const candidate of candidates) {
         const prominence = calculateProminence(smoothed, candidate.index);
@@ -208,48 +159,31 @@ function detectPeaks(points) {
         }
     }
 
-    // Step 3: Merge nearby peaks
     return mergeNearbyPeaks(peaks);
 }
 
-/**
- * Calculate the topographic prominence of a peak
- */
 function calculateProminence(elevations, peakIdx) {
     const peakElev = elevations[peakIdx];
-
-    // Find the lowest point between this peak and any higher peak on each side
     let leftMin = peakElev;
     let rightMin = peakElev;
 
-    // Scan left
     for (let i = peakIdx - 1; i >= 0; i--) {
-        if (elevations[i] > peakElev) {
-            break; // Found a higher peak
-        }
+        if (elevations[i] > peakElev) break;
         leftMin = Math.min(leftMin, elevations[i]);
     }
 
-    // Scan right
     for (let i = peakIdx + 1; i < elevations.length; i++) {
-        if (elevations[i] > peakElev) {
-            break; // Found a higher peak
-        }
+        if (elevations[i] > peakElev) break;
         rightMin = Math.min(rightMin, elevations[i]);
     }
 
-    // Prominence is the drop from the peak to the higher of the two minimums
     const keyCol = Math.max(leftMin, rightMin);
     return peakElev - keyCol;
 }
 
-/**
- * Merge peaks that are too close together, keeping the higher one
- */
 function mergeNearbyPeaks(peaks) {
     if (peaks.length <= 1) return peaks;
 
-    // Sort by elevation descending
     const sorted = [...peaks].sort((a, b) => b.ele - a.ele);
     const merged = [];
     const used = new Set();
@@ -257,7 +191,6 @@ function mergeNearbyPeaks(peaks) {
     for (const peak of sorted) {
         if (used.has(peak.index)) continue;
 
-        // Mark all lower nearby peaks as used
         for (const other of sorted) {
             if (other.index === peak.index) continue;
             if (used.has(other.index)) continue;
@@ -270,33 +203,22 @@ function mergeNearbyPeaks(peaks) {
         merged.push(peak);
     }
 
-    // Sort by track order (index)
     return merged.sort((a, b) => a.index - b.index);
 }
 
-// === Name Matching ===
-
-/**
- * Match detected peaks to known mountain names
- * Uses the track name and CSV elevation data
- */
 function assignPeakNames(peaks, trackName, mountainDb) {
     if (!trackName || peaks.length === 0) {
         return peaks.map(p => ({ ...p, name: `Peak (${Math.round(p.ele)}m)` }));
     }
 
-    // Extract individual mountain names from track name (split by ・ or /)
     const trackMountains = trackName.split(/[・\/〜～→]/).map(s => s.trim()).filter(s => s);
-
-    // Find matching entries in the database
     const knownPeaks = [];
+
     for (const mName of trackMountains) {
-        // Try exact match first
         if (mountainDb.has(mName)) {
             knownPeaks.push(mountainDb.get(mName));
             continue;
         }
-        // Try partial match
         for (const [dbName, dbEntry] of mountainDb.entries()) {
             if (mName.includes(dbName) || dbName.includes(mName)) {
                 knownPeaks.push(dbEntry);
@@ -305,7 +227,6 @@ function assignPeakNames(peaks, trackName, mountainDb) {
         }
     }
 
-    // Assign names to detected peaks by closest elevation match
     const usedKnown = new Set();
     const namedPeaks = peaks.map(peak => {
         let bestMatch = null;
@@ -331,110 +252,99 @@ function assignPeakNames(peaks, trackName, mountainDb) {
     return namedPeaks;
 }
 
-// === GPX Generation ===
-
-/**
- * Generate annotated GPX content with waypoints for detected peaks
- */
-function generateAnnotatedGpx(originalContent, namedPeaks) {
-    // Build waypoint XML
-    let waypointsXml = '';
-    for (const peak of namedPeaks) {
-        waypointsXml += `  <wpt lat="${peak.lat}" lon="${peak.lon}">
-    <ele>${peak.ele}</ele>
-    <name>${escapeXml(peak.name)}</name>
-    <desc>Peak detected at ${Math.round(peak.ele)}m (prominence: ${Math.round(peak.prominence)}m)</desc>
-    <sym>Summit</sym>
-  </wpt>\n`;
-    }
-
-    // Insert waypoints before the first <trk> element
-    let annotated = originalContent;
-
-    // Find insertion point (before <trk>)
-    const trkIndex = annotated.indexOf('<trk>');
-    if (trkIndex !== -1) {
-        annotated = annotated.slice(0, trkIndex) + waypointsXml + annotated.slice(trkIndex);
-    }
-
-    // Update creator attribute
-    annotated = annotated.replace(/creator="[^"]*"/, 'creator="Yama Museum Peak Annotator"');
-
-    return annotated;
-}
-
-function escapeXml(str) {
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
 // === Main ===
 
 function main() {
-    console.log('=== Yama Museum Peak Detection ===');
-    console.log(`Config: ${JSON.stringify(CONFIG)}`);
+    log.info('=== Yama Museum Peak Detection ===');
+    log.info(`Root Directory: ${ROOT_DIR}`);
+
+    if (!fs.existsSync(RAW_DIR)) {
+        log.error(`Raw GPX directory not found: ${RAW_DIR}`);
+        process.exit(1);
+    }
 
     ensureDir(OUTPUT_DIR);
 
-    // Load mountain database
-    console.log('\nLoading mountain database from CSV...');
+    log.info('Loading mountain database from CSV...');
     const mountainDb = loadMountainDatabase();
-    console.log(`Loaded ${mountainDb.size} mountains from CSV.`);
+    log.info(`Loaded ${mountainDb.size} mountains from CSV.`);
 
-    // Process GPX files
     const gpxFiles = fs.readdirSync(RAW_DIR).filter(f =>
         f.toLowerCase().endsWith('.gpx') && !f.includes('merged')
     );
-    console.log(`Found ${gpxFiles.length} GPX files to process.\n`);
+    log.info(`Found ${gpxFiles.length} GPX files to process.`);
 
     let totalPeaks = 0;
     let totalNamed = 0;
     let processed = 0;
     let skipped = 0;
+    let hasErrors = false;
 
     for (const file of gpxFiles) {
         const filePath = path.join(RAW_DIR, file);
-        const content = fs.readFileSync(filePath, 'utf8');
 
-        // Parse
-        const points = parseTrackPoints(content);
-        const trackName = extractTrackName(content);
+        try {
+            const content = fs.readFileSync(filePath, 'utf8');
+            const doc = parseGpx(content);
+            const points = extractTrackPoints(doc);
+            const trackName = extractTrackName(doc);
 
-        if (points.length < 3) {
-            console.log(`[SKIP] ${file}: Too few track points (${points.length})`);
-            skipped++;
-            continue;
-        }
+            if (points.length < 3) {
+                log.info(`[SKIP] ${file}: Too few track points (${points.length})`);
+                skipped++;
+                continue;
+            }
 
-        // Detect peaks
-        const peaks = detectPeaks(points);
+            const peaks = detectPeaks(points);
+            const namedPeaks = assignPeakNames(peaks, trackName, mountainDb);
 
-        // Assign names
-        const namedPeaks = assignPeakNames(peaks, trackName, mountainDb);
+            // Add waypoints to the parsed document
+            namedPeaks.forEach(peak => {
+                appendWaypoint(doc, {
+                    lat: peak.lat,
+                    lon: peak.lon,
+                    ele: Math.round(peak.ele),
+                    name: peak.name,
+                    desc: `Peak detected at ${Math.round(peak.ele)}m (prominence: ${Math.round(peak.prominence)}m)`,
+                    sym: 'Summit'
+                });
+            });
 
-        // Generate annotated GPX
-        const annotated = generateAnnotatedGpx(content, namedPeaks);
-        fs.writeFileSync(path.join(OUTPUT_DIR, file), annotated, 'utf8');
+            // Update creator attribute
+            if (doc.documentElement) {
+                doc.documentElement.setAttribute('creator', 'Yama Museum Peak Annotator');
+            }
 
-        const named = namedPeaks.filter(p => !p.name.startsWith('Peak (')).length;
-        totalPeaks += namedPeaks.length;
-        totalNamed += named;
-        processed++;
+            const annotatedContent = serializeGpx(doc);
+            atomicWriteSync(path.join(OUTPUT_DIR, file), annotatedContent);
 
-        if (namedPeaks.length > 0) {
-            const peakList = namedPeaks.map(p => `${p.name} (${Math.round(p.ele)}m)`).join(', ');
-            console.log(`[OK] ${file}: ${namedPeaks.length} peak(s) → ${peakList}`);
-        } else {
-            console.log(`[OK] ${file}: No significant peaks detected`);
+            const named = namedPeaks.filter(p => !p.name.startsWith('Peak (')).length;
+            totalPeaks += namedPeaks.length;
+            totalNamed += named;
+            processed++;
+
+            if (namedPeaks.length > 0) {
+                const peakList = namedPeaks.map(p => `${p.name} (${Math.round(p.ele)}m)`).join(', ');
+                log.info(`[OK] ${file}: ${namedPeaks.length} peak(s) -> ${peakList}`);
+            } else {
+                log.info(`[OK] ${file}: No significant peaks detected`);
+            }
+        } catch (err) {
+            log.error(`Failed to process ${file}:`, err.message);
+            hasErrors = true;
         }
     }
 
-    console.log('\n=== Summary ===');
-    console.log(`Processed: ${processed} files`);
-    console.log(`Skipped: ${skipped} files`);
-    console.log(`Total peaks detected: ${totalPeaks}`);
-    console.log(`Named peaks (matched to CSV): ${totalNamed}`);
-    console.log(`Unnamed peaks: ${totalPeaks - totalNamed}`);
-    console.log(`Output directory: ${OUTPUT_DIR}`);
+    log.info('=== Summary ===');
+    log.info(`Processed: ${processed} files`);
+    log.info(`Skipped: ${skipped} files`);
+    log.info(`Total peaks detected: ${totalPeaks}`);
+    log.info(`Named peaks: ${totalNamed}`);
+    log.info(`Unnamed peaks: ${totalPeaks - totalNamed}`);
+
+    if (hasErrors) {
+        process.exit(1);
+    }
 }
 
 main();

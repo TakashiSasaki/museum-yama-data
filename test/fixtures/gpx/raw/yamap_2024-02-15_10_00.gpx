@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Test Fixture Generator" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>yamap_2024-02-15_10_00.gpx</name>
+  </metadata>
+  <trk>
+    <name>Multi Track Peak / 複数トラック山</name>
+    <trkseg>
+      <trkpt lat="34.00" lon="133.00"><ele>50.0</ele></trkpt>
+      <trkpt lat="34.01" lon="133.01"><ele>800.0</ele></trkpt>
+      <trkpt lat="34.02" lon="133.02"><ele>40.0</ele></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Segment 2</name>
+    <trkseg>
+      <trkpt lat="34.03" lon="133.03"><ele>200.0</ele></trkpt>
+      <trkpt lat="34.04" lon="133.04"><ele>900.0</ele></trkpt>
+      <trkpt lat="34.05" lon="133.05"><ele>100.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
