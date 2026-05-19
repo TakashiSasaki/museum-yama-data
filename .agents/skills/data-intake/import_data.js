@@ -8,29 +8,14 @@ const log = require('../lib/log');
 
 const args = process.argv.slice(2);
 const rootArgIndex = args.indexOf('--root');
-if (rootArgIndex === -1 || !args[rootArgIndex + 1]) {
-    log.error('Missing required argument: --root <path>');
-    process.exit(1);
-}
-const ROOT_DIR = path.resolve(args[rootArgIndex + 1]);
+const ROOT_DIR = (rootArgIndex !== -1 && args[rootArgIndex + 1])
+    ? path.resolve(args[rootArgIndex + 1])
+    : path.resolve(__dirname, '../../..');
 
 const GPX_DIR = path.join(ROOT_DIR, 'gpx');
 const RAW_DIR = path.join(GPX_DIR, 'raw');
 const CSV_DIR = path.join(ROOT_DIR, 'csv');
 const PROCESSED_DIR = path.join(ROOT_DIR, 'processed');
-let collisionCounter = 0;
-
-function getUniqueCollisionPath(destPath) {
-    const ext = path.extname(destPath);
-    const base = path.basename(destPath, ext);
-    const dir = path.dirname(destPath);
-    let candidate;
-    do {
-        collisionCounter += 1;
-        candidate = path.join(dir, `${base}_${Date.now()}_${process.pid}_${collisionCounter}${ext}`);
-    } while (fs.existsSync(candidate));
-    return candidate;
-}
 
 function moveFilesRecursive(src, dest) {
     const items = fs.readdirSync(src);
@@ -62,7 +47,9 @@ function handleCollisionAndMove(srcPath, destPath) {
             fs.unlinkSync(srcPath); // remove redundant temp file
         } else {
             // Collision: same name but different content
-            const newDestPath = getUniqueCollisionPath(destPath);
+            const ext = path.extname(destPath);
+            const base = path.basename(destPath, ext);
+            const newDestPath = path.join(path.dirname(destPath), `${base}_${Date.now()}${ext}`);
             log.warn(`Collision detected for ${path.basename(destPath)}. Different content. Renaming to ${path.basename(newDestPath)}`);
             fs.renameSync(srcPath, newDestPath);
         }
@@ -93,7 +80,7 @@ function deduplicateExistingGpx() {
                 } else {
                     log.warn(`Duplicate found but content differs, resolving collision: ${f}`);
                     // Same pattern but different content, let's rename it to something safe
-                    const newDupPath = getUniqueCollisionPath(path.join(RAW_DIR, `${match[1]}.gpx`));
+                    const newDupPath = path.join(RAW_DIR, `${match[1]}_${Date.now()}.gpx`);
                     fs.renameSync(dupPath, newDupPath);
                 }
             }
@@ -128,8 +115,8 @@ async function main() {
                 zipEntries.forEach(entry => {
                     if (!entry.isDirectory) {
                         const entryPath = path.normalize(entry.entryName);
-                        // Prevent absolute-path extraction; resolved-path validation below handles traversal safely
-                        if (path.isAbsolute(entryPath)) {
+                        // Prevent path traversal
+                        if (entryPath.includes('..') || path.isAbsolute(entryPath)) {
                             log.warn(`Skipping potentially unsafe zip entry: ${entry.entryName}`);
                             return;
                         }

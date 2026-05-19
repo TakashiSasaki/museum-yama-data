@@ -303,7 +303,7 @@ function main() {
                 appendWaypoint(doc, {
                     lat: peak.lat,
                     lon: peak.lon,
-                    ele: peak.ele,
+                    ele: Math.round(peak.ele),
                     name: peak.name,
                     desc: `Peak detected at ${Math.round(peak.ele)}m (prominence: ${Math.round(peak.prominence)}m)`,
                     sym: 'Summit'

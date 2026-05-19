@@ -31,7 +31,7 @@ copies after verifying content identity via MD5 hash comparison.
 
 ## Execution
 ```powershell
-cd .agents/skills/data-intake; node import_data.js --root <path>
+cd .agents/skills/data-intake; node import_data.js
 ```
 
 ## Dependencies

@@ -1,4 +1,4 @@
-const { execFileSync } = require('child_process');
+const { execSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 const assert = require('assert');
@@ -8,9 +8,9 @@ const FIXTURES_DIR = path.join(ROOT_DIR, 'test', 'fixtures');
 const MERGED_DIR = path.join(FIXTURES_DIR, 'gpx', 'merged');
 const ANNOTATED_DIR = path.join(FIXTURES_DIR, 'gpx', 'annotated');
 
-function runCommand(command, args) {
-    console.log(`Running: ${command} ${args.join(' ')}`);
-    execFileSync(command, args, { stdio: 'inherit' });
+function runCommand(command) {
+    console.log(`Running: ${command}`);
+    execSync(command, { stdio: 'inherit' });
 }
 
 function runTests() {
@@ -21,7 +21,7 @@ function runTests() {
     if (fs.existsSync(ANNOTATED_DIR)) fs.rmSync(ANNOTATED_DIR, { recursive: true, force: true });
 
     // 1. Test annotate-peaks
-    runCommand('node', ['.agents/skills/annotate-peaks/annotate_peaks.js', '--root', FIXTURES_DIR]);
+    runCommand(`node .agents/skills/annotate-peaks/annotate_peaks.js --root ${FIXTURES_DIR}`);
 
     // Validate output
     assert.ok(fs.existsSync(path.join(ANNOTATED_DIR, 'yamap_2024-01-01_08_00.gpx')), 'Annotated file 1 should exist');
@@ -32,7 +32,7 @@ function runTests() {
     assert.ok(annotatedContent.includes('Peak (200m)'), 'Annotated file should contain detected peak name');
 
     // 2. Test merge-tracks
-    runCommand('node', ['.agents/skills/merge-tracks/merge_by_year.js', '--root', FIXTURES_DIR]);
+    runCommand(`node .agents/skills/merge-tracks/merge_by_year.js --root ${FIXTURES_DIR}`);
 
     // Validate output
     assert.ok(fs.existsSync(path.join(MERGED_DIR, '2024_merged.gpx')), 'Merged file for 2024 should exist');
@@ -54,7 +54,7 @@ function runTests() {
     // Create diff content duplicate
     fs.writeFileSync(differentContentDupFile, '<?xml version="1.0"?><gpx></gpx>');
 
-    runCommand('node', ['.agents/skills/data-intake/import_data.js', '--root', FIXTURES_DIR]);
+    runCommand(`node .agents/skills/data-intake/import_data.js --root ${FIXTURES_DIR}`);
 
     // Exact duplicate should be removed
     assert.ok(!fs.existsSync(exactDupFile), 'Exact duplicate should be deleted');
