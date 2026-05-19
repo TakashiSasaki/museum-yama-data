@@ -11,6 +11,8 @@ Use this skill to extract detailed mountaineering records from YAMAP activity pa
 
 To fetch data, you MUST use the `browser_subagent` tool. Do NOT use unauthenticated Node.js scripts.
 
+*(Note: A deprecated `fast_fetch.js` script may exist in this directory, but it is unauthenticated and unreliable for private/deleted records. Rely on the browser subagent as instructed below.)*
+
 ### Optimization & Speed
 To make the `browser_subagent` faster:
 - Instruct it to navigate and extract data in the fewest steps possible.
