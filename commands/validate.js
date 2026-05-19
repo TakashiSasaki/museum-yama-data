@@ -4,14 +4,10 @@ const { parseGpx, extractTrackPoints } = require('../lib/gpx');
 const { parseCSV } = require('../lib/csv');
 const log = require('../lib/log');
 
-function validateDirExists(dir, context, strictMode) {
+function validateDirExists(dir, context) {
     if (!fs.existsSync(dir)) {
-        if (strictMode) {
-            log.error(`[Required directory missing] ${dir}`);
-            context.hasErrors = true;
-        } else {
-            log.warn(`[Required directory missing] ${dir}`);
-        }
+        log.error(`[Required directory missing] ${dir}`);
+        context.hasErrors = true;
         return false;
     }
     return true;
@@ -48,7 +44,12 @@ function validateGpxFile(filePath, context, dirType) {
                 context.hasErrors = true;
                 return;
             }
-            if (pt.ele !== undefined && isNaN(pt.ele)) {
+            if (!pt.hasEle) {
+                log.error(`[Missing Elevation] ${filePath}: <ele> is strictly required`);
+                context.hasErrors = true;
+                return;
+            }
+            if (pt.hasEle && Number.isNaN(pt.ele)) {
                 log.error(`[Invalid Elevation] ${filePath}: ele=${pt.ele} is NaN`);
                 context.hasErrors = true;
                 return;
@@ -95,8 +96,8 @@ function validateGpxFile(filePath, context, dirType) {
     }
 }
 
-function validateGpxFilesInDirectory(dir, context, strictMode, dirType) {
-    if (!validateDirExists(dir, context, strictMode)) return;
+function validateGpxFilesInDirectory(dir, context, dirType) {
+    if (!validateDirExists(dir, context)) return;
 
     log.info(`Validating GPX files in ${dir}...`);
     const files = fs.readdirSync(dir).filter(f => f.toLowerCase().endsWith('.gpx'));
@@ -148,8 +149,8 @@ function validateCsvFile(filePath, context) {
     }
 }
 
-function validateCsvFilesInDirectory(dir, context, strictMode) {
-    if (!validateDirExists(dir, context, strictMode)) return;
+function validateCsvFilesInDirectory(dir, context) {
+    if (!validateDirExists(dir, context)) return;
 
     log.info(`Validating CSV files in ${dir}...`);
     const files = fs.readdirSync(dir).filter(f => f.toLowerCase().endsWith('.csv'));
@@ -170,16 +171,14 @@ module.exports = async function validate(options) {
     const ANNOTATED_DIR = path.join(GPX_DIR, 'annotated');
     const CSV_DIR = path.join(ROOT_DIR, 'csv');
 
-    const strictMode = options.strict === true;
-
-    log.info(`Starting validation process... (Strict mode: ${strictMode})`);
+    log.info(`Starting validation process...`);
 
     const context = { hasErrors: false };
 
-    validateGpxFilesInDirectory(RAW_DIR, context, strictMode, 'raw');
-    validateGpxFilesInDirectory(MERGED_DIR, context, strictMode, 'merged');
-    validateGpxFilesInDirectory(ANNOTATED_DIR, context, strictMode, 'annotated');
-    validateCsvFilesInDirectory(CSV_DIR, context, strictMode);
+    validateGpxFilesInDirectory(RAW_DIR, context, 'raw');
+    validateGpxFilesInDirectory(MERGED_DIR, context, 'merged');
+    validateGpxFilesInDirectory(ANNOTATED_DIR, context, 'annotated');
+    validateCsvFilesInDirectory(CSV_DIR, context);
 
     if (context.hasErrors) {
         log.error('Validation failed. See errors above.');

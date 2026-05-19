@@ -58,13 +58,13 @@ node cli.js annotate --root ../../..
 Validates all processed GPX (`raw/`, `merged/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.
 - Checks coordinate bounds, elevations, and times.
-- Verifies CSV row structure and mountain altitude parsing.
+- Elevation `<ele>` tags are strictly required on all trackpoints. Missing or non-numeric elevation tags will result in validation failure.
+- Verifies CSV row structure and mountain altitude parsing. Note: The CSV parser fully supports reading embedded newlines within quoted fields.
 - Exits with a non-zero status code if invalid files are found.
-- Supports `--strict` mode which fails if generated directories are missing.
+- Note: The `--strict` option has been removed, as the pipeline now naturally requires elevation data and strictly checks all directories.
 
 ```sh
 node cli.js validate --root ../../..
-node cli.js validate --root ../../.. --strict
 ```
 
 #### 5. `test`

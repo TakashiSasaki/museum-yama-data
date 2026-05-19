@@ -8,7 +8,7 @@ const args = process.argv.slice(3);
 
 function printUsageAndExit(code = 1) {
     console.log(`
-Usage: node cli.js <command> --root <path> [--strict]
+Usage: node cli.js <command> --root <path>
 
 Commands:
   intake     Process ZIP and XLSX files into raw GPX and CSV.
@@ -23,13 +23,11 @@ Note: --root <path> is strictly required for intake, merge, annotate, and valida
 }
 
 function parseArgs(argsArray) {
-    const options = { root: null, strict: false };
+    const options = { root: null };
     for (let i = 0; i < argsArray.length; i++) {
         if (argsArray[i] === '--root' && i + 1 < argsArray.length) {
             options.root = path.resolve(argsArray[i + 1]);
             i++;
-        } else if (argsArray[i] === '--strict') {
-            options.strict = true;
         }
     }
     return options;
