@@ -33,8 +33,17 @@ function atomicWriteSync(filePath, content) {
  */
 function isSafePath(basePath, subPath) {
     const resolvedBase = path.resolve(basePath);
+    // Be careful with subPath, if it's an absolute path, path.resolve will ignore basePath.
+    // Instead we resolve subPath against the basePath directly, which is safe if subPath is relative.
+    // However, if subPath is absolute, path.resolve(basePath, subPath) might resolve outside basePath.
     const resolvedSub = path.resolve(basePath, subPath);
-    return resolvedSub.startsWith(resolvedBase + path.sep) || resolvedSub === resolvedBase;
+
+    // We append path.sep to resolvedBase to strictly ensure it's a child directory and not just a prefix match
+    // e.g. /base vs /base-sibling
+    if (resolvedSub === resolvedBase) return true;
+    if (resolvedSub.startsWith(resolvedBase + path.sep)) return true;
+
+    return false;
 }
 
 module.exports = {

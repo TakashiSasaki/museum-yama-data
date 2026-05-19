@@ -18,4 +18,4 @@ The GPX data and activity logs in this repository are based on the mountaineerin
 - `.agents/`: Automation skills and agent instructions.
 
 ## For Developers & AI Agents
-Please refer to **[AGENTS.md](AGENTS.md)** for detailed directory descriptions and automated skill instructions.
+Please refer to **[AGENTS.md](AGENTS.md)** for detailed directory descriptions and automated skill instructions. You can use the local `yama-data-pipeline` skill to automatically validate, intake, merge, and annotate GPX data.

@@ -109,14 +109,12 @@ module.exports = async function intake(options) {
                 const zipEntries = zip.getEntries();
                 zipEntries.forEach(entry => {
                     if (!entry.isDirectory) {
-                        const entryPath = path.normalize(entry.entryName);
-                        // Prevent path traversal
-                        if (entryPath.includes('..') || path.isAbsolute(entryPath)) {
-                            log.warn(`Skipping potentially unsafe zip entry: ${entry.entryName}`);
-                            return;
-                        }
+                        // We use `entry.entryName` exactly as is to compute the target path
+                        const targetPath = path.join(tempDir, entry.entryName);
 
-                        const targetPath = path.join(tempDir, entryPath);
+                        // Let `isSafePath` handle the rigorous checks against absolute paths
+                        // and path traversals (`../`) by ensuring the final `targetPath`
+                        // strictly resides within `tempDir`.
                         if (!isSafePath(tempDir, targetPath)) {
                             log.warn(`Skipping unsafe path: ${entry.entryName}`);
                             return;

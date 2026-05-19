@@ -1,23 +1,52 @@
 #!/usr/bin/env node
 
 const log = require('./lib/log');
+const path = require('path');
 
 const command = process.argv[2];
 const args = process.argv.slice(3);
 
+function printUsageAndExit(code = 1) {
+    console.log(`
+Usage: node cli.js <command> --root <path> [--strict]
+
+Commands:
+  intake     Process ZIP and XLSX files into raw GPX and CSV.
+  merge      Merge raw GPX files grouped by year.
+  annotate   Detect summits and annotate GPX files with waypoints.
+  validate   Validate GPX files for well-formedness and coordinates.
+  test       Run the skill test suite.
+
+Note: --root <path> is strictly required for intake, merge, annotate, and validate.
+`);
+    process.exit(code);
+}
+
 function parseArgs(argsArray) {
-    const options = { root: require('path').resolve(__dirname, '../../..') };
+    const options = { root: null, strict: false };
     for (let i = 0; i < argsArray.length; i++) {
         if (argsArray[i] === '--root' && i + 1 < argsArray.length) {
-            options.root = argsArray[i + 1];
+            options.root = path.resolve(argsArray[i + 1]);
             i++;
+        } else if (argsArray[i] === '--strict') {
+            options.strict = true;
         }
     }
     return options;
 }
 
 async function run() {
+    if (!command || command.startsWith('--')) {
+        log.error(`Unknown subcommand: ${command || '(none)'}`);
+        printUsageAndExit();
+    }
+
     const options = parseArgs(args);
+
+    if (command !== 'test' && !options.root) {
+        log.error('Error: --root <path> is required.');
+        printUsageAndExit();
+    }
 
     try {
         switch (command) {
@@ -36,21 +65,9 @@ async function run() {
             case 'test':
                 require('child_process').execSync('npm test', { stdio: 'inherit', cwd: __dirname });
                 break;
-                require('child_process').execSync('npm test', { stdio: 'inherit', cwd: __dirname });
-                break;
             default:
                 log.error(`Unknown subcommand: ${command || '(none)'}`);
-                console.log(`
-Usage: node cli.js <command> [--root <path>]
-
-Commands:
-  intake     Process ZIP and XLSX files into raw GPX and CSV.
-  merge      Merge raw GPX files grouped by year.
-  annotate   Detect summits and annotate GPX files with waypoints.
-  validate   Validate GPX files for well-formedness and coordinates.
-  test       Run the skill test suite.
-`);
-                process.exit(1);
+                printUsageAndExit();
         }
     } catch (err) {
         log.error(`Command '${command}' failed:`, err.message);

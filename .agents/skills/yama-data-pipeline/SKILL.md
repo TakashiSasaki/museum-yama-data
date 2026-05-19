@@ -18,7 +18,7 @@ npm install
 
 ## Usage
 
-The skill provides a single CLI entrypoint: `cli.js`. By default, it operates on the repository root (three levels up) but can be overridden with the `--root` flag.
+The skill provides a single CLI entrypoint: `cli.js`. The `--root <path>` flag is required for all data-processing operations.
 
 ### Commands
 
@@ -30,7 +30,7 @@ Processes new data from the root `gpx/` directory.
 - Safely handles filename collisions using SHA-256 hashes for content comparison.
 
 ```sh
-node cli.js intake
+node cli.js intake --root ../../..
 ```
 
 #### 2. `merge`
@@ -40,7 +40,7 @@ Merges raw GPX tracks in `gpx/raw/` by year.
 - Does not modify source files in `gpx/raw/`.
 
 ```sh
-node cli.js merge
+node cli.js merge --root ../../..
 ```
 
 #### 3. `annotate`
@@ -51,17 +51,20 @@ Detects peaks and annotates tracks with `<wpt>` elements.
 - Does not modify source files in `gpx/raw/`.
 
 ```sh
-node cli.js annotate
+node cli.js annotate --root ../../..
 ```
 
 #### 4. `validate`
-Validates all processed GPX files (`raw/`, `merged/`, `annotated/`).
-- Checks for well-formed XML.
-- Checks coordinate bounds (latitude/longitude).
+Validates all processed GPX (`raw/`, `merged/`, `annotated/`) and CSV files.
+- Checks for well-formed XML and geospatial elements.
+- Checks coordinate bounds, elevations, and times.
+- Verifies CSV row structure and mountain altitude parsing.
 - Exits with a non-zero status code if invalid files are found.
+- Supports `--strict` mode which fails if generated directories are missing.
 
 ```sh
-node cli.js validate
+node cli.js validate --root ../../..
+node cli.js validate --root ../../.. --strict
 ```
 
 #### 5. `test`
