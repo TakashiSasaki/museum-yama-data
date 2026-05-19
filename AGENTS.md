@@ -42,7 +42,7 @@ When new ZIP or Excel files are placed in the `gpx/` directory, ask the agent:
 
 #### Execution Command
 ```powershell
-node .agents/skills/data-intake/import_data.js [--root <path>]
+node .agents/skills/data-intake/import_data.js --root <path>
 ```
 
 ### Skill: Merge Tracks (`merge-tracks`)
