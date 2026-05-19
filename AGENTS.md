@@ -19,82 +19,33 @@ The goal is to build a web application that visualizes and analyzes GPX tracks a
 
 ## Agent Skills
 
-### Skill: Data Intake (`data-intake`)
+### Skill: Yama Data Pipeline (`yama-data-pipeline`)
 
-Processes YAMAP data files located in the `gpx/` directory.
+A consolidated CLI tool that handles local mountaineering data processing including data intake, merging, annotating, and validation.
 
-#### Purpose
-- Automatically extracts GPX files from any ZIP archives in `gpx/`.
-- Automatically converts all sheets from any `.xlsx` files in `gpx/` into individual `.csv` files.
-- **Flattening**: ZIP contents are extracted directly to `gpx/raw/`.
-- **Cleanup**: Temporary extraction folders are deleted automatically.
-- **Archiving**: Moves original ZIP and XLSX files to the `processed/` directory after successful handling.
-- **Automatically deduplicates GPX files**: Detects files with suffixes like ` (1)` and deletes them if their content matches the original via MD5 hash verification.
+#### Subcommands
 
-#### How to use
-When new ZIP or Excel files are placed in the `gpx/` directory, ask the agent:
-> "Run the data intake skill to process new files in the gpx directory."
-
-#### Implementation
-- **Script**: `.agents/skills/data-intake/import_data.js`
-- **Engine**: Node.js
-- **Dependencies**: `xlsx`, `adm-zip` (located in `.agents/skills/data-intake/node_modules`)
-
-#### Execution Command
-```powershell
-node .agents/skills/data-intake/import_data.js [--root <path>]
-```
-
-### Skill: Merge Tracks (`merge-tracks`)
-
-Consolidates multiple GPX files into larger files grouped by year for easier map visualization.
-
-#### Purpose
-- Groups individual GPX files from `gpx/raw/` into yearly archives (e.g., `2024_merged.gpx`).
-- Makes it easy to import hundreds of tracks into Google My Maps within the 10-layer limit.
-- Output is saved to `gpx/merged/`.
+- **`intake`**: Automatically extracts GPX files from ZIP archives in `gpx/` and converts Excel files to CSVs. Handles filename collisions using SHA-256 hashes and archives originals to `processed/`.
+- **`merge`**: Groups individual GPX files from `gpx/raw/` into yearly archives (e.g., `2024_merged.gpx`) for easier My Maps import. Preserves all `<trk>` elements.
+- **`annotate`**: Analyzes GPX track elevation profiles to detect summit points, matches them to CSV records, and generates new files with `<wpt>` waypoints in `gpx/annotated/`.
+- **`validate`**: Validates all processed GPX files for well-formed XML and valid coordinate bounds.
 
 #### How to use
 Ask the agent:
-> "Merge all GPX tracks by year for My Maps import."
+> "Run the yama-data-pipeline intake command to process new files."
+> "Run the yama-data-pipeline merge command."
 
 #### Implementation
-- **Script**: `.agents/skills/merge-tracks/merge_by_year.js`
+- **Directory**: `.agents/skills/yama-data-pipeline/`
 - **Engine**: Node.js
+- **Dependencies**: `@xmldom/xmldom`, `xlsx`, `adm-zip` (install via `npm install` inside the skill directory)
 
-#### Execution Command
+#### Execution Commands
 ```powershell
-node .agents/skills/merge-tracks/merge_by_year.js [--root <path>]
-```
-
-### Skill: Annotate Peaks (`annotate-peaks`)
-
-Analyzes GPX track elevation profiles to detect summit points and generates annotated GPX files.
-
-#### Purpose
-- Detects peaks using **local maxima detection** with **prominence filtering** on smoothed elevation data.
-- Matches detected peaks to known mountain names from CSV records (e.g., `csv/えひめの山_愛媛県の山.csv`).
-- Generates new GPX files with `<wpt>` (waypoint) elements marking each detected summit.
-- Original GPX files in `gpx/raw/` are **never modified**; annotated versions are saved to `gpx/annotated/`.
-
-#### Algorithm
-1. Smooth elevation data (moving average, window=5).
-2. Find local maxima (radius=10 points).
-3. Filter by prominence (≥30m).
-4. Merge nearby peaks (<100m).
-5. Assign mountain names from CSV by track name and elevation matching (±50m tolerance).
-
-#### How to use
-Ask the agent:
-> "Run the peak annotation skill to detect and label summits in GPX tracks."
-
-#### Implementation
-- **Script**: `.agents/skills/annotate-peaks/annotate_peaks.js`
-- **Engine**: Node.js (no external dependencies)
-
-#### Execution Command
-```powershell
-node .agents/skills/annotate-peaks/annotate_peaks.js [--root <path>]
+node .agents/skills/yama-data-pipeline/cli.js intake
+node .agents/skills/yama-data-pipeline/cli.js merge
+node .agents/skills/yama-data-pipeline/cli.js annotate
+node .agents/skills/yama-data-pipeline/cli.js validate
 ```
 
 ### Skill: Fetch YAMAP Data (`fetch-yamap-data`)
@@ -120,5 +71,5 @@ Ask the agent:
 - The `csv/` directory is the source of truth for activity metadata.
 - The `gpx/raw/` directory should only contain individual `.gpx` files (no subfolders). These are considered **source data** and must not be mutated.
 - The `gpx/annotated/` and `gpx/merged/` directories contain **generated artifacts**.
-- When editing scripts, utilize shared utilities under `.agents/skills/lib/` for safe file writes, XML parsing, and logging.
+
 - **Validation**: After running intake or generating new artifacts, run `npm run validate` from the repository root to ensure all GPX files are well-formed XML and contain valid location data.

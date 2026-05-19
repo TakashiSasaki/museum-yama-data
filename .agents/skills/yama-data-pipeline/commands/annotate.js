@@ -14,16 +14,7 @@ const { parseGpx, serializeGpx, extractTrackPoints, extractTrackName, appendWayp
 const { ensureDir, atomicWriteSync } = require('../lib/fs_safe');
 const log = require('../lib/log');
 
-const args = process.argv.slice(2);
-const rootArgIndex = args.indexOf('--root');
-const ROOT_DIR = (rootArgIndex !== -1 && args[rootArgIndex + 1])
-    ? path.resolve(args[rootArgIndex + 1])
-    : path.resolve(__dirname, '../../..');
 
-const GPX_DIR = path.join(ROOT_DIR, 'gpx');
-const RAW_DIR = path.join(GPX_DIR, 'raw');
-const CSV_DIR = path.join(ROOT_DIR, 'csv');
-const OUTPUT_DIR = path.join(GPX_DIR, 'annotated');
 
 const CONFIG = {
     SMOOTH_WINDOW: 5,
@@ -82,7 +73,7 @@ function parseElevation(s) {
     return parseFloat(cleaned);
 }
 
-function loadMountainDatabase() {
+function loadMountainDatabase(CSV_DIR) {
     const db = new Map();
     if (!fs.existsSync(CSV_DIR)) {
         log.warn(`CSV directory not found: ${CSV_DIR}`);
@@ -254,19 +245,25 @@ function assignPeakNames(peaks, trackName, mountainDb) {
 
 // === Main ===
 
-function main() {
+module.exports = async function annotate(options) {
+    const ROOT_DIR = path.resolve(options.root || process.cwd());
+    const GPX_DIR = path.join(ROOT_DIR, 'gpx');
+    const RAW_DIR = path.join(GPX_DIR, 'raw');
+    const CSV_DIR = path.join(ROOT_DIR, 'csv');
+    const OUTPUT_DIR = path.join(GPX_DIR, 'annotated');
+
     log.info('=== Yama Museum Peak Detection ===');
     log.info(`Root Directory: ${ROOT_DIR}`);
 
     if (!fs.existsSync(RAW_DIR)) {
         log.error(`Raw GPX directory not found: ${RAW_DIR}`);
-        process.exit(1);
+        throw new Error('Raw GPX directory not found');
     }
 
     ensureDir(OUTPUT_DIR);
 
     log.info('Loading mountain database from CSV...');
-    const mountainDb = loadMountainDatabase();
+    const mountainDb = loadMountainDatabase(CSV_DIR);
     log.info(`Loaded ${mountainDb.size} mountains from CSV.`);
 
     const gpxFiles = fs.readdirSync(RAW_DIR).filter(f =>
@@ -343,8 +340,6 @@ function main() {
     log.info(`Unnamed peaks: ${totalPeaks - totalNamed}`);
 
     if (hasErrors) {
-        process.exit(1);
+        throw new Error('Annotate completed with errors.');
     }
-}
-
-main();
+};
