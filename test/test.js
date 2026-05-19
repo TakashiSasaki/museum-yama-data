@@ -107,11 +107,15 @@ async function runTests() {
 
         let caughtCsvError = false;
         try {
-            parseCSV(`col1,col2\nval1`);
+            parseCSV(`col1,col2\nval1`, { strictColumns: true });
         } catch (e) {
             caughtCsvError = e.message.includes('expected 2');
         }
-        runAssert(caughtCsvError, 'CSV parser caught mismatched column count');
+        runAssert(caughtCsvError, 'CSV parser caught mismatched column count with strictColumns=true');
+
+        // Confirm lenient mode (default) does NOT throw on column mismatch
+        const lenientRows = parseCSV(`col1,col2\nval1`);
+        runAssert(lenientRows.length === 2, 'CSV lenient mode returns rows even on column count mismatch');
 
         console.log('--- Testing lib/fs_safe.js ---');
         runAssert(isSafePath('/foo/bar', 'baz') === true, 'Safe relative path');
@@ -160,7 +164,22 @@ async function runTests() {
         }
         runAssert(caughtCollision, 'Intake correctly threw an error due to filename collision inside ZIP');
 
-        console.log('--- Testing validate.js (Negative Cases) ---');
+        console.log('--- Testing intake cross-zip collision detection ---');
+        // Prerequisite: 'safe.txt' was placed in RAW_DIR by the 'malicious.zip' test above.
+        // A new ZIP containing any file whose basename is already present in RAW_DIR must be
+        // rejected, regardless of whether the file contents differ.
+        const crossZip = new AdmZip();
+        crossZip.addFile('safe.txt', Buffer.from('any content — basename collision is what matters'));
+        const crossZipPath = path.join(TEMP_TEST_DIR, 'gpx', 'cross_zip.zip');
+        crossZip.writeZip(crossZipPath);
+
+        let caughtCrossZipCollision = false;
+        try {
+            await intake({ root: TEMP_TEST_DIR });
+        } catch (e) {
+            caughtCrossZipCollision = e.message.includes('failed with errors');
+        }
+        runAssert(caughtCrossZipCollision, 'Intake correctly rejected cross-zip collision (same basename already in RAW_DIR)');
         const validationOptions = { root: TEMP_TEST_DIR };
 
         // Test malformed XML
