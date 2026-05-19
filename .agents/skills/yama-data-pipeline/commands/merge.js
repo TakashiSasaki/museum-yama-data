@@ -5,21 +5,17 @@ const { ensureDir, atomicWriteSync } = require('../lib/fs_safe');
 const log = require('../lib/log');
 const { DOMParser } = require('@xmldom/xmldom');
 
-const args = process.argv.slice(2);
-const rootArgIndex = args.indexOf('--root');
-const ROOT_DIR = (rootArgIndex !== -1 && args[rootArgIndex + 1])
-    ? path.resolve(args[rootArgIndex + 1])
-    : path.resolve(__dirname, '../../..');
-const GPX_DIR = path.join(ROOT_DIR, 'gpx');
-const RAW_DIR = path.join(GPX_DIR, 'raw');
-const MERGED_DIR = path.join(GPX_DIR, 'merged');
+module.exports = async function merge(options) {
+    const ROOT_DIR = path.resolve(options.root || process.cwd());
+    const GPX_DIR = path.join(ROOT_DIR, 'gpx');
+    const RAW_DIR = path.join(GPX_DIR, 'raw');
+    const MERGED_DIR = path.join(GPX_DIR, 'merged');
 
-async function mergeGpxByYear() {
     log.info(`Starting GPX merge by year in root: ${ROOT_DIR}`);
 
     if (!fs.existsSync(RAW_DIR)) {
         log.error(`Raw GPX directory not found: ${RAW_DIR}`);
-        process.exit(1);
+        throw new Error('Raw GPX directory not found');
     }
 
     ensureDir(MERGED_DIR);
@@ -87,8 +83,6 @@ async function mergeGpxByYear() {
 
     log.info('GPX merge completed.');
     if (hasErrors) {
-        process.exit(1);
+        throw new Error('Merge completed with errors.');
     }
-}
-
-mergeGpxByYear();
+};

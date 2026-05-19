@@ -4,8 +4,10 @@
   "description": "A web application for visualizing and analyzing mountaineering location data (GPX) and activity logs from the YAMAP app.",
   "main": "patch_extract.js",
   "scripts": {
-    "test": "node scripts/test.js",
-    "validate": "node scripts/validate.js"
+    "test": "cd .agents/skills/yama-data-pipeline && npm test",
+    "validate": "node .agents/skills/yama-data-pipeline/cli.js validate",
+    "skill:test": "cd .agents/skills/yama-data-pipeline && npm test",
+    "skill:validate": "node .agents/skills/yama-data-pipeline/cli.js validate"
   },
   "repository": {
     "type": "git",

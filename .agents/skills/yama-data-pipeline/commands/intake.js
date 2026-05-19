@@ -6,17 +6,6 @@ const { getFileHash } = require('../lib/hash');
 const { ensureDir, isSafePath } = require('../lib/fs_safe');
 const log = require('../lib/log');
 
-const args = process.argv.slice(2);
-const rootArgIndex = args.indexOf('--root');
-const ROOT_DIR = (rootArgIndex !== -1 && args[rootArgIndex + 1])
-    ? path.resolve(args[rootArgIndex + 1])
-    : path.resolve(__dirname, '../../..');
-
-const GPX_DIR = path.join(ROOT_DIR, 'gpx');
-const RAW_DIR = path.join(GPX_DIR, 'raw');
-const CSV_DIR = path.join(ROOT_DIR, 'csv');
-const PROCESSED_DIR = path.join(ROOT_DIR, 'processed');
-
 function moveFilesRecursive(src, dest) {
     const items = fs.readdirSync(src);
     for (const item of items) {
@@ -58,7 +47,7 @@ function handleCollisionAndMove(srcPath, destPath) {
     }
 }
 
-function deduplicateExistingGpx() {
+function deduplicateExistingGpx(RAW_DIR) {
     log.info('Scanning for duplicate GPX files in raw directory...');
     const files = fs.readdirSync(RAW_DIR).filter(f => f.toLowerCase().endsWith('.gpx'));
     
@@ -88,7 +77,13 @@ function deduplicateExistingGpx() {
     });
 }
 
-async function main() {
+module.exports = async function intake(options) {
+    const ROOT_DIR = path.resolve(options.root || process.cwd());
+    const GPX_DIR = path.join(ROOT_DIR, 'gpx');
+    const RAW_DIR = path.join(GPX_DIR, 'raw');
+    const CSV_DIR = path.join(ROOT_DIR, 'csv');
+    const PROCESSED_DIR = path.join(ROOT_DIR, 'processed');
+
     log.info(`Starting automated data intake (v3) in root: ${ROOT_DIR}`);
     let hasErrors = false;
 
@@ -175,7 +170,7 @@ async function main() {
         }
 
         // 3. Deduplicate
-        deduplicateExistingGpx();
+        deduplicateExistingGpx(RAW_DIR);
 
     } catch (err) {
         log.error('Fatal error during data intake:', err.message);
@@ -184,8 +179,6 @@ async function main() {
 
     log.info('Data intake completed.');
     if (hasErrors) {
-        process.exit(1);
+        throw new Error('Data intake failed with errors.');
     }
-}
-
-main();
+};

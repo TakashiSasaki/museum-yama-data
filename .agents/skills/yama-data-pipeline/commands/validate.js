@@ -1,26 +1,18 @@
 const fs = require('fs');
 const path = require('path');
-const ROOT_DIR = process.cwd();
-const { parseGpx, extractTrackPoints } = require(path.join(ROOT_DIR, '.agents/skills/lib/gpx'));
-const log = require(path.join(ROOT_DIR, '.agents/skills/lib/log'));
+const { parseGpx, extractTrackPoints } = require('../lib/gpx');
+const log = require('../lib/log');
 
-const GPX_DIR = path.join(ROOT_DIR, 'gpx');
-const RAW_DIR = path.join(GPX_DIR, 'raw');
-const MERGED_DIR = path.join(GPX_DIR, 'merged');
-const ANNOTATED_DIR = path.join(GPX_DIR, 'annotated');
-
-let hasErrors = false;
-
-function validateDirExists(dir) {
+function validateDirExists(dir, context) {
     if (!fs.existsSync(dir)) {
         log.error(`Required directory missing: ${dir}`);
-        hasErrors = true;
+        context.hasErrors = true;
         return false;
     }
     return true;
 }
 
-function validateGpxFile(filePath) {
+function validateGpxFile(filePath, context) {
     try {
         const content = fs.readFileSync(filePath, 'utf8');
 
@@ -30,7 +22,7 @@ function validateGpxFile(filePath) {
             doc = parseGpx(content);
         } catch (e) {
             log.error(`[Malformed XML] ${filePath}: ${e.message}`);
-            hasErrors = true;
+            context.hasErrors = true;
             return;
         }
 
@@ -41,7 +33,7 @@ function validateGpxFile(filePath) {
         for (const pt of points) {
             if (isNaN(pt.lat) || isNaN(pt.lon) || pt.lat < -90 || pt.lat > 90 || pt.lon < -180 || pt.lon > 180) {
                 log.error(`[Invalid Coordinates] ${filePath}: lat=${pt.lat}, lon=${pt.lon}`);
-                hasErrors = true;
+                context.hasErrors = true;
                 return;
             }
             validPoints++;
@@ -54,34 +46,40 @@ function validateGpxFile(filePath) {
 
     } catch (e) {
         log.error(`[Read Error] ${filePath}: ${e.message}`);
-        hasErrors = true;
+        context.hasErrors = true;
     }
 }
 
-function validateFilesInDirectory(dir) {
-    if (!validateDirExists(dir)) return;
+function validateFilesInDirectory(dir, context) {
+    if (!validateDirExists(dir, context)) return;
 
     log.info(`Validating GPX files in ${dir}...`);
     const files = fs.readdirSync(dir).filter(f => f.toLowerCase().endsWith('.gpx'));
 
     for (const file of files) {
-        validateGpxFile(path.join(dir, file));
+        validateGpxFile(path.join(dir, file), context);
     }
 }
 
-function main() {
+module.exports = async function validate(options) {
+    const ROOT_DIR = path.resolve(options.root || process.cwd());
+    const GPX_DIR = path.join(ROOT_DIR, 'gpx');
+    const RAW_DIR = path.join(GPX_DIR, 'raw');
+    const MERGED_DIR = path.join(GPX_DIR, 'merged');
+    const ANNOTATED_DIR = path.join(GPX_DIR, 'annotated');
+
     log.info('Starting validation process...');
 
-    validateFilesInDirectory(RAW_DIR);
-    validateFilesInDirectory(MERGED_DIR);
-    validateFilesInDirectory(ANNOTATED_DIR);
+    const context = { hasErrors: false };
 
-    if (hasErrors) {
+    validateFilesInDirectory(RAW_DIR, context);
+    validateFilesInDirectory(MERGED_DIR, context);
+    validateFilesInDirectory(ANNOTATED_DIR, context);
+
+    if (context.hasErrors) {
         log.error('Validation failed. See errors above.');
-        process.exit(1);
+        throw new Error('Validation failed.');
     } else {
         log.info('Validation passed successfully.');
     }
-}
-
-main();
+};
