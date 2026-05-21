@@ -25,7 +25,7 @@ A consolidated CLI tool that handles local mountaineering data processing includ
 
 #### Subcommands
 
-- **`intake`**: Automatically extracts GPX files from ZIP archives in `gpx/` and converts Excel files to CSVs. During ZIP intake, entries are flattened by basename. If two ZIP entries would map to the same basename, or if a basename already exists in `gpx/raw/`, intake fails instead of renaming. This prevents silent overwrite and ambiguous data provenance. Other operations may handle filename collisions using SHA-256 hashes and archive originals to `processed/`.
+- **`intake`**: Automatically extracts GPX files from ZIP archives in `gpx/` and converts Excel files to CSVs. During ZIP intake, entries are flattened by basename. If two ZIP entries would map to the same basename, or if a basename already exists in `gpx/raw/`, intake fails instead of renaming. This prevents silent overwrite and ambiguous data provenance. As part of intake processing, the original `.zip` and `.xlsx` inputs are archived to `processed/` after successful handling.
 - **`merge`**: Groups individual GPX files from `gpx/raw/` into yearly archives (e.g., `2024_merged.gpx`) for easier My Maps import. Preserves all `<trk>` elements.
 - **`annotate`**: Analyzes GPX track elevation profiles to detect summit points, matches them to CSV records, and generates new files with `<wpt>` waypoints in `gpx/annotated/`.
 - **`validate`**: Validates all processed GPX files for well-formed XML and valid coordinate bounds. Although GPX itself may allow trackpoints without elevation, this repository requires `<ele>` on all trackpoints because elevation profiles are used for validation and peak annotation.
