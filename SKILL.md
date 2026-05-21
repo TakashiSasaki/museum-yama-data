@@ -83,6 +83,6 @@ node cli.js test
 - `processed/`: Archives original data files after intake.
 
 ## Safety Guarantees
-- No data loss during collisions: During ZIP intake, entries are flattened by basename. If two ZIP entries would map to the same basename, or if a basename already exists in `gpx/raw/`, intake fails instead of renaming. This prevents silent overwrite and ambiguous data provenance. Other operations may safely rename duplicate names with different content.
+- No data loss during collisions: During ZIP intake, entries are flattened by basename. If two ZIP entries would map to the same basename, or if a basename already exists in `gpx/raw/`, intake fails instead of renaming. This prevents silent overwrite and ambiguous data provenance. Rename-on-collision behavior is only guaranteed for applicable non-ZIP intake/archiving flows, not for other subcommands such as `merge` or `annotate`.
 - Path traversal protection: Safe extraction ensures ZIP entries don't write outside intended directories.
 - No source modifications: `merge` and `annotate` never edit `gpx/raw/`.
