@@ -58,7 +58,7 @@ node cli.js annotate --root ../../..
 Validates all processed GPX (`raw/`, `merged/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.
 - Checks coordinate bounds, elevations, and times.
-- Elevation `<ele>` tags are strictly required on all trackpoints. Missing or non-numeric elevation tags will result in validation failure.
+- Elevation `<ele>` tags are strictly required on all trackpoints. Although GPX itself may allow trackpoints without elevation, this repository requires `<ele>` on all trackpoints because elevation profiles are used for validation and peak annotation. Missing or non-numeric elevation tags will result in validation failure.
 - Verifies CSV row structure and mountain altitude parsing. Note: The CSV parser fully supports reading embedded newlines within quoted fields.
 - Exits with a non-zero status code if invalid files are found.
 - Note: The `--strict` option has been removed, as the pipeline now naturally requires elevation data and strictly checks all directories.
@@ -83,6 +83,6 @@ node cli.js test
 - `processed/`: Archives original data files after intake.
 
 ## Safety Guarantees
-- No data loss during collisions: Duplicate names with different content are safely renamed.
+- No data loss during collisions: During ZIP intake, entries are flattened by basename. If two ZIP entries would map to the same basename, or if a basename already exists in `gpx/raw/`, intake fails instead of renaming. This prevents silent overwrite and ambiguous data provenance. Other operations may safely rename duplicate names with different content.
 - Path traversal protection: Safe extraction ensures ZIP entries don't write outside intended directories.
 - No source modifications: `merge` and `annotate` never edit `gpx/raw/`.
