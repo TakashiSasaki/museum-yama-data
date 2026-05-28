@@ -9,7 +9,7 @@ module.exports = async function merge(options) {
     const ROOT_DIR = path.resolve(options.root || process.cwd());
     const GPX_DIR = path.join(ROOT_DIR, 'gpx');
     const RAW_DIR = path.join(GPX_DIR, 'raw');
-    const MERGED_DIR = path.join(GPX_DIR, 'merged');
+    const MERGED_DIR = path.join(GPX_DIR, 'merged-by-year');
 
     log.info(`Starting GPX merge by year in root: ${ROOT_DIR}`);
 

@@ -36,7 +36,7 @@ node cli.js intake --root ../../..
 #### 2. `merge`
 Merges raw GPX tracks in `gpx/raw/` by year.
 - Preserves all `<trk>` elements using XML parsing (requires `@xmldom/xmldom`).
-- Outputs merged files to `gpx/merged/`.
+- Outputs merged files to `gpx/merged-by-year/`.
 - Does not modify source files in `gpx/raw/`.
 
 ```sh
@@ -55,7 +55,7 @@ node cli.js annotate --root ../../..
 ```
 
 #### 4. `validate`
-Validates all processed GPX (`raw/`, `merged/`, `annotated/`) and CSV files.
+Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.
 - Checks coordinate bounds, elevations, and times.
 - Elevation `<ele>` tags are strictly required on all trackpoints. Although GPX itself may allow trackpoints without elevation, this repository requires `<ele>` on all trackpoints because elevation profiles are used for validation and peak annotation. Missing or non-numeric elevation tags will result in validation failure.
@@ -98,7 +98,7 @@ node cli.js test
 ## Directory Assumptions
 
 - `gpx/raw/`: The main source of truth for individual unedited GPX tracks.
-- `gpx/merged/`: Automatically generated year-based consolidated tracks.
+- `gpx/merged-by-year/`: Automatically generated year-based consolidated tracks.
 - `gpx/annotated/`: Automatically generated GPX files with detected waypoints.
 - `csv/`: Data tables containing summit definitions and other metadata.
 - `yamap/`: Markdown records of fetched YAMAP activities containing title, date, description, etc.
