@@ -30,27 +30,6 @@
     "csv_gps_data": null,
     "agent_survey_data": null
   },
-  "高森山": {
-    "municipalities": [
-      "東温市",
-      "内子町",
-      "西予市",
-      "大洲市"
-    ],
-    "activities": [
-      "15336083",
-      "38474523",
-      "45870080",
-      "46325366"
-    ],
-    "gpx_summit_data": {
-      "lat": 33.5133814,
-      "lon": 132.7770265,
-      "ele": 825.9826876717713
-    },
-    "csv_gps_data": null,
-    "agent_survey_data": null
-  },
   "岩伽羅山": {
     "municipalities": [
       "東温市"
@@ -206,34 +185,6 @@
       "lat": 33.7351844,
       "lon": 132.7317786,
       "ele": 456.90483803547824
-    },
-    "csv_gps_data": null,
-    "agent_survey_data": null
-  },
-  "権現山": {
-    "municipalities": [
-      "伊予市",
-      "新居浜市",
-      "愛南町",
-      "伊方町",
-      "宇和島市",
-      "八幡浜市",
-      "松山市"
-    ],
-    "activities": [
-      "15569162",
-      "20769524",
-      "21864997",
-      "22062877",
-      "29739163",
-      "46132478",
-      "46572122",
-      "47381696"
-    ],
-    "gpx_summit_data": {
-      "lat": 33.8390197,
-      "lon": 132.7201785,
-      "ele": 102.87
     },
     "csv_gps_data": null,
     "agent_survey_data": null
@@ -471,25 +422,6 @@
       "reliability": "high"
     }
   },
-  "高山": {
-    "municipalities": [
-      "松山市",
-      "今治市",
-      "中島"
-    ],
-    "activities": [
-      "15773753",
-      "21589436",
-      "38537444"
-    ],
-    "gpx_summit_data": {
-      "lat": 33.9651048,
-      "lon": 132.6367544,
-      "ele": 121.16666666666667
-    },
-    "csv_gps_data": null,
-    "agent_survey_data": null
-  },
   "勝岡山": {
     "municipalities": [
       "松山市"
@@ -506,23 +438,6 @@
       "source": "国土地理院 四等三角点「勝岡」",
       "reliability": "high"
     }
-  },
-  "西山": {
-    "municipalities": [
-      "松山市",
-      "新居浜市"
-    ],
-    "activities": [
-      "15799454",
-      "34865968"
-    ],
-    "gpx_summit_data": {
-      "lat": 33.8596586,
-      "lon": 133.3188738,
-      "ele": 1425.3166666666668
-    },
-    "csv_gps_data": null,
-    "agent_survey_data": null
   },
   "岩子山": {
     "municipalities": [
@@ -668,28 +583,6 @@
     "csv_gps_data": null,
     "agent_survey_data": null
   },
-  "城山": {
-    "municipalities": [
-      "砥部町",
-      "松山市",
-      "四国中央市"
-    ],
-    "activities": [
-      "15983117",
-      "30276721",
-      "36324491"
-    ],
-    "gpx_summit_data": {
-      "lat": 34.0131319,
-      "lon": 133.5674295,
-      "ele": 60.24,
-      "estimated": true,
-      "estimated_from_gpx": "yamap_2024-12-01_14_17.gpx",
-      "elevation_diff_m": 1.76
-    },
-    "csv_gps_data": null,
-    "agent_survey_data": null
-  },
   "水梨山": {
     "municipalities": [
       "砥部町"
@@ -793,23 +686,6 @@
       "lat": 33.8245858,
       "lon": 132.8164365,
       "ele": 278.01
-    },
-    "csv_gps_data": null,
-    "agent_survey_data": null
-  },
-  "大久保山": {
-    "municipalities": [
-      "松山市",
-      "宇和島市"
-    ],
-    "activities": [
-      "16209216",
-      "16527154"
-    ],
-    "gpx_summit_data": {
-      "lat": 33.1905947,
-      "lon": 132.6094331,
-      "ele": 1155.4333072605007
     },
     "csv_gps_data": null,
     "agent_survey_data": null
@@ -1810,22 +1686,6 @@
     "csv_gps_data": null,
     "agent_survey_data": null
   },
-  "笠松山": {
-    "municipalities": [
-      "今治市",
-      "久万高原町"
-    ],
-    "activities": [
-      "19222937"
-    ],
-    "gpx_summit_data": null,
-    "csv_gps_data": {
-      "lat": 33.694307,
-      "lon": 132.89529,
-      "ele": 868
-    },
-    "agent_survey_data": null
-  },
   "北三方ヶ森": {
     "municipalities": [
       "松山市"
@@ -2170,26 +2030,6 @@
       "lat": 33.2597751,
       "lon": 132.6071981,
       "ele": 760.3519951848507
-    },
-    "csv_gps_data": null,
-    "agent_survey_data": null
-  },
-  "東山": {
-    "municipalities": [
-      "松山市",
-      "新居浜市"
-    ],
-    "activities": [
-      "21698197",
-      "20086190"
-    ],
-    "gpx_summit_data": {
-      "lat": 33.8233265,
-      "lon": 132.782545,
-      "ele": 48.473333333333336,
-      "estimated": true,
-      "estimated_from_gpx": "yamap_2022-12-31_14_13.gpx",
-      "elevation_diff_m": 0.53
     },
     "csv_gps_data": null,
     "agent_survey_data": null
@@ -2656,22 +2496,6 @@
     "csv_gps_data": null,
     "agent_survey_data": null
   },
-  "扇山": {
-    "municipalities": [
-      "砥部町",
-      "西条市"
-    ],
-    "activities": [
-      "21457449"
-    ],
-    "gpx_summit_data": null,
-    "csv_gps_data": {
-      "lat": 33.8244,
-      "lon": 133.214509,
-      "ele": 1392
-    },
-    "agent_survey_data": null
-  },
   "塔ノ峰": {
     "municipalities": [
       "今治市"
@@ -2885,23 +2709,6 @@
     "csv_gps_data": null,
     "agent_survey_data": null
   },
-  "垣生山": {
-    "municipalities": [
-      "松山市",
-      "新居浜市"
-    ],
-    "activities": [
-      "21828514",
-      "37545783"
-    ],
-    "gpx_summit_data": {
-      "lat": 33.8438046,
-      "lon": 132.7313169,
-      "ele": 67.89666666666668
-    },
-    "csv_gps_data": null,
-    "agent_survey_data": null
-  },
   "津田山": {
     "municipalities": [
       "松山市"
@@ -3037,33 +2844,6 @@
     "csv_gps_data": null,
     "agent_survey_data": null
   },
-  "大森山": {
-    "municipalities": [
-      "伊方町",
-      "四国中央市",
-      "大洲市",
-      "西条市"
-    ],
-    "activities": [
-      "22060688",
-      "43510643",
-      "46298145"
-    ],
-    "gpx_summit_data": {
-      "lat": 33.8820478,
-      "lon": 133.5542851,
-      "ele": 1398.2466666666667,
-      "estimated": true,
-      "estimated_from_gpx": "yamap_2025-10-11_06_24.gpx",
-      "elevation_diff_m": 0.75
-    },
-    "csv_gps_data": {
-      "lat": 33.782402,
-      "lon": 133.153201,
-      "ele": 1399
-    },
-    "agent_survey_data": null
-  },
   "見晴山": {
     "municipalities": [
       "伊方町"
@@ -3078,23 +2858,6 @@
       "estimated": true,
       "estimated_from_gpx": "yamap_2023-01-21_10_45.gpx",
       "elevation_diff_m": 3.31
-    },
-    "csv_gps_data": null,
-    "agent_survey_data": null
-  },
-  "遠見山": {
-    "municipalities": [
-      "伊方町",
-      "宇和島市"
-    ],
-    "activities": [
-      "22065412",
-      "45854802"
-    ],
-    "gpx_summit_data": {
-      "lat": 33.2720922,
-      "lon": 132.5543833,
-      "ele": 325.42
     },
     "csv_gps_data": null,
     "agent_survey_data": null
@@ -3986,23 +3749,6 @@
       "lat": 33.9577565,
       "lon": 133.0133542,
       "ele": 430.9866666666667
-    },
-    "csv_gps_data": null,
-    "agent_survey_data": null
-  },
-  "大黒山": {
-    "municipalities": [
-      "西条市",
-      "宇和島市"
-    ],
-    "activities": [
-      "29318444",
-      "29893880"
-    ],
-    "gpx_summit_data": {
-      "lat": 33.1093173,
-      "lon": 132.663091,
-      "ele": 1106.79
     },
     "csv_gps_data": null,
     "agent_survey_data": null
@@ -5200,22 +4946,6 @@
     "csv_gps_data": null,
     "agent_survey_data": null
   },
-  "秋葉山": {
-    "municipalities": [
-      "伊予市",
-      "大洲市"
-    ],
-    "activities": [
-      "36473567"
-    ],
-    "gpx_summit_data": null,
-    "csv_gps_data": {
-      "lat": 33.596611,
-      "lon": 132.606278,
-      "ele": 722
-    },
-    "agent_survey_data": null
-  },
   "立烏帽子山": {
     "municipalities": [
       "伊予市"
@@ -6230,29 +5960,6 @@
       "ele": 1350.0266666666666
     },
     "csv_gps_data": null,
-    "agent_survey_data": null
-  },
-  "大野山": {
-    "municipalities": [
-      "四国中央市",
-      "西予市"
-    ],
-    "activities": [
-      "39474891"
-    ],
-    "gpx_summit_data": {
-      "lat": 33.8571411,
-      "lon": 133.4532735,
-      "ele": 800.8533333333335,
-      "estimated": true,
-      "estimated_from_gpx": "yamap_2025-04-27_06_23.gpx",
-      "elevation_diff_m": 0.85
-    },
-    "csv_gps_data": {
-      "lat": 33.423639,
-      "lon": 132.552972,
-      "ele": 800
-    },
     "agent_survey_data": null
   },
   "水なし山": {
@@ -7281,23 +6988,6 @@
     "csv_gps_data": null,
     "agent_survey_data": null
   },
-  "雨乞山": {
-    "municipalities": [
-      "内子町",
-      "八幡浜市"
-    ],
-    "activities": [
-      "46899064",
-      "47548792"
-    ],
-    "gpx_summit_data": {
-      "lat": 33.5112211,
-      "lon": 132.3821763,
-      "ele": 496.59999999999997
-    },
-    "csv_gps_data": null,
-    "agent_survey_data": null
-  },
   "妙見森": {
     "municipalities": [
       "内子町"
@@ -7744,6 +7434,588 @@
       "lon": 133.06812,
       "ele": 1377
     },
+    "agent_survey_data": null
+  },
+  "権現山(松山市)": {
+    "municipalities": [
+      "松山市"
+    ],
+    "activities": [
+      "47381696"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.8390197,
+      "lon": 132.7201785,
+      "ele": 102.87
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "権現山(宇和島市・952m)": {
+    "municipalities": [
+      "宇和島市"
+    ],
+    "activities": [
+      "46572122"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "権現山(宇和島市・489m)": {
+    "municipalities": [
+      "宇和島市"
+    ],
+    "activities": [
+      "29739163"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "権現山(伊予市)": {
+    "municipalities": [
+      "伊予市",
+      "砥部町"
+    ],
+    "activities": [
+      "15569162"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "権現山(新居浜市)": {
+    "municipalities": [
+      "新居浜市",
+      "四国中央市"
+    ],
+    "activities": [
+      "20769524"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "権現山(愛南町)": {
+    "municipalities": [
+      "愛南町"
+    ],
+    "activities": [
+      "21864997"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "権現山(伊方町)": {
+    "municipalities": [
+      "伊方町"
+    ],
+    "activities": [
+      "22062877"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "権現山(八幡浜市)": {
+    "municipalities": [
+      "八幡浜市"
+    ],
+    "activities": [
+      "46132478"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "高森山(東温市)": {
+    "municipalities": [
+      "東温市",
+      "松山市"
+    ],
+    "activities": [
+      "15336083"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "高森山(内子町)": {
+    "municipalities": [
+      "内子町"
+    ],
+    "activities": [
+      "38474523"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "高森山(西予市)": {
+    "municipalities": [
+      "西予市",
+      "宇和島市"
+    ],
+    "activities": [
+      "45870080"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "高森山(大洲市)": {
+    "municipalities": [
+      "大洲市"
+    ],
+    "activities": [
+      "46325366"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.5133814,
+      "lon": 132.7770265,
+      "ele": 825.9826876717713
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "大森山(伊方町)": {
+    "municipalities": [
+      "伊方町"
+    ],
+    "activities": [
+      "22060688"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "大森山(大洲市)": {
+    "municipalities": [
+      "大洲市",
+      "内子町"
+    ],
+    "activities": [
+      "46298145"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "大森山(四国中央市)": {
+    "municipalities": [
+      "四国中央市"
+    ],
+    "activities": [
+      "43510643"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.8820478,
+      "lon": 133.5542851,
+      "ele": 1398.2466666666667,
+      "estimated": true,
+      "estimated_from_gpx": "yamap_2025-10-11_06_24.gpx",
+      "elevation_diff_m": 0.75
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "大森山(西条市)": {
+    "municipalities": [
+      "西条市"
+    ],
+    "activities": [],
+    "gpx_summit_data": null,
+    "csv_gps_data": {
+      "lat": 33.782402,
+      "lon": 133.153201,
+      "ele": 1399
+    },
+    "agent_survey_data": null
+  },
+  "城山(砥部町)": {
+    "municipalities": [
+      "砥部町"
+    ],
+    "activities": [
+      "15983117"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "城山(松山市)": {
+    "municipalities": [
+      "松山市"
+    ],
+    "activities": [
+      "30276721"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "城山(四国中央市)": {
+    "municipalities": [
+      "四国中央市"
+    ],
+    "activities": [
+      "36324491"
+    ],
+    "gpx_summit_data": {
+      "lat": 34.0131319,
+      "lon": 133.5674295,
+      "ele": 60.24,
+      "estimated": true,
+      "estimated_from_gpx": "yamap_2024-12-01_14_17.gpx",
+      "elevation_diff_m": 1.76
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "高山(松山市)": {
+    "municipalities": [
+      "松山市"
+    ],
+    "activities": [
+      "15773753"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "高山(今治市)": {
+    "municipalities": [
+      "今治市"
+    ],
+    "activities": [
+      "21589436"
+    ],
+    "gpx_summit_data": {
+      "lat": 34.1144302,
+      "lon": 132.9156361,
+      "ele": 131.66666666666666
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "高山(中島)": {
+    "municipalities": [
+      "松山市"
+    ],
+    "activities": [
+      "38537444"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.9651048,
+      "lon": 132.6367544,
+      "ele": 121.16666666666667
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "西山(松山市)": {
+    "municipalities": [
+      "松山市"
+    ],
+    "activities": [
+      "15799454"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "西山(新居浜市)": {
+    "municipalities": [
+      "新居浜市"
+    ],
+    "activities": [
+      "34865968"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.8596586,
+      "lon": 133.3188738,
+      "ele": 1425.3166666666668
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "大久保山(松山市)": {
+    "municipalities": [
+      "松山市"
+    ],
+    "activities": [
+      "16209216"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "大久保山(宇和島市)": {
+    "municipalities": [
+      "宇和島市"
+    ],
+    "activities": [
+      "16527154"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.1905947,
+      "lon": 132.6094331,
+      "ele": 1155.4333072605007
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "笠松山(今治市)": {
+    "municipalities": [
+      "今治市",
+      "西条市"
+    ],
+    "activities": [
+      "19222937"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "笠松山(久万高原町)": {
+    "municipalities": [
+      "久万高原町"
+    ],
+    "activities": [],
+    "gpx_summit_data": null,
+    "csv_gps_data": {
+      "lat": 33.694307,
+      "lon": 132.89529,
+      "ele": 868
+    },
+    "agent_survey_data": null
+  },
+  "東山(松山市)": {
+    "municipalities": [
+      "松山市"
+    ],
+    "activities": [
+      "21698197"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.8233265,
+      "lon": 132.782545,
+      "ele": 48.473333333333336,
+      "estimated": true,
+      "estimated_from_gpx": "yamap_2022-12-31_14_13.gpx",
+      "elevation_diff_m": 0.53
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "東山(新居浜市)": {
+    "municipalities": [
+      "新居浜市"
+    ],
+    "activities": [
+      "20086190"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "扇山(砥部町)": {
+    "municipalities": [
+      "砥部町"
+    ],
+    "activities": [
+      "21457449"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "扇山(西条市)": {
+    "municipalities": [
+      "西条市"
+    ],
+    "activities": [],
+    "gpx_summit_data": null,
+    "csv_gps_data": {
+      "lat": 33.8244,
+      "lon": 133.214509,
+      "ele": 1392
+    },
+    "agent_survey_data": null
+  },
+  "垣生山(松山市)": {
+    "municipalities": [
+      "松山市"
+    ],
+    "activities": [
+      "21828514"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.8438046,
+      "lon": 132.7313169,
+      "ele": 67.89666666666668
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "垣生山(新居浜市)": {
+    "municipalities": [
+      "新居浜市"
+    ],
+    "activities": [
+      "37545783"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.9892197,
+      "lon": 133.3258232,
+      "ele": 103.26298735700367
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "遠見山(伊方町)": {
+    "municipalities": [
+      "伊方町"
+    ],
+    "activities": [
+      "22065412"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "遠見山(宇和島市)": {
+    "municipalities": [
+      "宇和島市"
+    ],
+    "activities": [
+      "45854802"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.2720922,
+      "lon": 132.5543833,
+      "ele": 325.42
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "遠見山(西条市)": {
+    "municipalities": [
+      "西条市"
+    ],
+    "activities": [],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "大黒山(西条市)": {
+    "municipalities": [
+      "西条市"
+    ],
+    "activities": [
+      "29318444"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "大黒山(宇和島市)": {
+    "municipalities": [
+      "宇和島市"
+    ],
+    "activities": [
+      "29893880"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.1093173,
+      "lon": 132.663091,
+      "ele": 1106.79
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "秋葉山(伊予市)": {
+    "municipalities": [
+      "伊予市"
+    ],
+    "activities": [
+      "36473567"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "秋葉山(大洲市)": {
+    "municipalities": [
+      "大洲市"
+    ],
+    "activities": [],
+    "gpx_summit_data": null,
+    "csv_gps_data": {
+      "lat": 33.596611,
+      "lon": 132.606278,
+      "ele": 722
+    },
+    "agent_survey_data": null
+  },
+  "大野山(四国中央市)": {
+    "municipalities": [
+      "四国中央市"
+    ],
+    "activities": [
+      "39474891"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.8571411,
+      "lon": 133.4532735,
+      "ele": 800.8533333333335,
+      "estimated": true,
+      "estimated_from_gpx": "yamap_2025-04-27_06_23.gpx",
+      "elevation_diff_m": 0.85
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "大野山(西予市)": {
+    "municipalities": [
+      "西予市"
+    ],
+    "activities": [],
+    "gpx_summit_data": null,
+    "csv_gps_data": {
+      "lat": 33.423639,
+      "lon": 132.552972,
+      "ele": 800
+    },
+    "agent_survey_data": null
+  },
+  "雨乞山(内子町)": {
+    "municipalities": [
+      "内子町",
+      "大洲市"
+    ],
+    "activities": [
+      "46899064"
+    ],
+    "gpx_summit_data": null,
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "雨乞山(八幡浜市)": {
+    "municipalities": [
+      "八幡浜市"
+    ],
+    "activities": [
+      "47548792"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.5112211,
+      "lon": 132.3821763,
+      "ele": 496.59999999999997
+    },
+    "csv_gps_data": null,
     "agent_survey_data": null
   }
 }
