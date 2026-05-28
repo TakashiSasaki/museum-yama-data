@@ -1253,14 +1253,26 @@
     "csv_gps_data": null,
     "agent_survey_data": null
   },
-  "陣ヶ森": {
+  "陣ヶ森(東温市)": {
     "municipalities": [
-      "東温市",
-      "内子町"
+      "東温市"
     ],
     "activities": [
       "17142799"
     ],
+    "gpx_summit_data": {
+      "lat": 33.7260215,
+      "lon": 132.9136819,
+      "ele": 1203.3533333333332
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "陣ヶ森(内子町)": {
+    "municipalities": [
+      "内子町"
+    ],
+    "activities": [],
     "gpx_summit_data": null,
     "csv_gps_data": {
       "lat": 33.590092,
