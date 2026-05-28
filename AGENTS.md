@@ -11,7 +11,7 @@ The goal is to build a web application that visualizes and analyzes GPX tracks a
 - `gpx/`: **GPX Data Root**. New ZIP or XLSX files should be placed here before processing.
   - `raw/`: Raw `.gpx` track files extracted from ZIP archives. This is where unprocessed individual tracks live.
   - `annotated/`: GPX files with `<wpt>` waypoint elements marking detected mountain summits.
-  - `merged/`: Yearly consolidated GPX files for Google My Maps import.
+  - `merged-by-year/`: Yearly consolidated GPX files for Google My Maps import.
 - `csv/`: **Processed Records**. Contains `.csv` files extracted from Excel activity logs. Used as the primary data source for the web app.
 - `processed/`: **Archive**. Stores original `.zip` and `.xlsx` files after they have been processed by the intake skill.
 - `.agents/`: **Automation Center**. Contains repository-specific skills and configurations for AI agents.
@@ -70,6 +70,6 @@ Ask the agent:
 - Always use the **`yama-data-pipeline intake` subcommand** for new data to maintain the directory structure. It handles ZIP intake collisions strictly by failing to prevent silent overwrites.
 - The `csv/` directory is the source of truth for activity metadata.
 - The `gpx/raw/` directory should only contain individual `.gpx` files (no subfolders). These are considered **source data** and must not be mutated.
-- The `gpx/annotated/` and `gpx/merged/` directories contain **generated artifacts**.
+- The `gpx/annotated/` and `gpx/merged-by-year/` directories contain **generated artifacts**.
 
 - **Validation**: After running intake or generating new artifacts, run `npm run validate` from the repository root to ensure all GPX files are well-formed XML and contain valid location data.

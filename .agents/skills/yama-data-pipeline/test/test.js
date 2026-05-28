@@ -16,7 +16,7 @@ const SOURCE_FIXTURES_DIR = path.join(__dirname, 'fixtures');
 const TEMP_TEST_DIR = path.join(__dirname, 'temp_test_run');
 const GPX_DIR = path.join(TEMP_TEST_DIR, 'gpx');
 const RAW_DIR = path.join(GPX_DIR, 'raw');
-const MERGED_DIR = path.join(GPX_DIR, 'merged');
+const MERGED_DIR = path.join(GPX_DIR, 'merged-by-year');
 const ANNOTATED_DIR = path.join(GPX_DIR, 'annotated');
 
 function copyRecursiveSync(src, dest) {
