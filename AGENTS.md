@@ -14,6 +14,7 @@ The goal is to build a web application that visualizes and analyzes GPX tracks a
   - `merged-by-year/`: Yearly consolidated GPX files for Google My Maps import.
 - `csv/`: **Processed Records**. Contains `.csv` files extracted from Excel activity logs. Used as the primary data source for the web app.
 - `processed/`: **Archive**. Stores original `.zip` and `.xlsx` files after they have been processed by the intake skill.
+- `museum-yama-web/`: **Web Data Cache**. Stores processed JSON datasets converted from GPX and CSV sources, optimized for consumption by the front-end map and visualizer.
 - `.agents/`: **Automation Center**. Contains repository-specific skills and configurations for AI agents.
   - `skills/`: Logic for automated tasks.
 

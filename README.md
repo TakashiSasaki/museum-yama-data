@@ -15,6 +15,7 @@ The GPX data and activity logs in this repository are based on the mountaineerin
 - `gpx/merged-by-year/`: Yearly consolidated GPX files for My Maps.
 - `csv/`: Processed activity records (.csv).
 - `processed/`: Archive of original ZIP/XLSX files.
+- `museum-yama-web/`: Processed JSON datasets for the web application.
 - `.agents/`: Automation skills and agent instructions.
 
 ## For Developers & AI Agents
