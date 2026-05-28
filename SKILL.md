@@ -1,6 +1,6 @@
 ---
 name: yama-data-pipeline
-description: Consolidated skill for local mountaineering data processing including intake, merging, annotating, and validation.
+description: Consolidated skill for local mountaineering data processing including intake, merging, annotating, validation, tracking missing YAMAP files, and GPX track consistency verification.
 ---
 
 # yama-data-pipeline
@@ -67,7 +67,28 @@ Validates all processed GPX (`raw/`, `merged/`, `annotated/`) and CSV files.
 node cli.js validate --root ../../..
 ```
 
-#### 5. `test`
+#### 5. `find-missing`
+Finds YAMAP activities referenced in CSV files that do not have a corresponding Markdown file in the `yamap/` directory.
+- Reads and parses all `.csv` files under the `csv/` directory to extract YAMAP activity URLs (`https://yamap.com/activities/[ID]`).
+- Compares those IDs with the files in the `yamap/` directory (`[ID].md`).
+- Lists all missing activity IDs for easy downloading.
+
+```sh
+node cli.js find-missing --root ../../..
+```
+
+#### 6. `verify`
+Verifies consistent matching between GPX files in `gpx/annotated/` and YAMAP activity Markdown records in `yamap/`.
+- Parses dates and titles from the YAMAP markdown files.
+- Extracts names and dates from the GPX files (using the XML DOM and JST time conversion, with filename fallback).
+- Matches files based on exact, partial/substring, and date-only fallback logic.
+- Displays match counts and details of unmatched tracks.
+
+```sh
+node cli.js verify --root ../../..
+```
+
+#### 7. `test`
 Runs the internal test suite against synthetic fixtures.
 
 ```sh
@@ -80,6 +101,7 @@ node cli.js test
 - `gpx/merged/`: Automatically generated year-based consolidated tracks.
 - `gpx/annotated/`: Automatically generated GPX files with detected waypoints.
 - `csv/`: Data tables containing summit definitions and other metadata.
+- `yamap/`: Markdown records of fetched YAMAP activities containing title, date, description, etc.
 - `processed/`: Archives original data files after intake.
 
 ## Safety Guarantees
