@@ -11,7 +11,8 @@
       "lon": 132.8432176,
       "ele": 573.7066666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "観音山": {
     "municipalities": [
@@ -26,7 +27,8 @@
       "lon": 132.7904961,
       "ele": 365.7180112898549
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高森山": {
     "municipalities": [
@@ -46,7 +48,8 @@
       "lon": 132.7770265,
       "ele": 825.9826876717713
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "岩伽羅山": {
     "municipalities": [
@@ -60,7 +63,8 @@
       "lon": 132.8811963,
       "ele": 719.2533333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "衣掛山": {
     "municipalities": [
@@ -77,7 +81,8 @@
       "estimated_from_gpx": "yamap_2022-01-22_09_04.gpx",
       "elevation_diff_m": 6.54
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "吉山(吉山城址)": {
     "municipalities": [
@@ -94,7 +99,8 @@
       "estimated_from_gpx": "yamap_2022-01-22_09_04.gpx",
       "elevation_diff_m": 0.27
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "尾ノ峰": {
     "municipalities": [
@@ -108,7 +114,8 @@
       "lon": 132.785492,
       "ele": 190.94333333333336
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "新城山": {
     "municipalities": [
@@ -122,7 +129,8 @@
       "lon": 132.7813592,
       "ele": 156.4466666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "腰折山": {
     "municipalities": [
@@ -136,7 +144,8 @@
       "lon": 132.7899177,
       "ele": 206.86333333333332
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "恵良山": {
     "municipalities": [
@@ -150,7 +159,8 @@
       "lon": 132.7992645,
       "ele": 299.12666666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "皿ヶ森": {
     "municipalities": [
@@ -164,7 +174,8 @@
       "lon": 132.9413939,
       "ele": 630.2399999999999
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "経座ヶ森": {
     "municipalities": [
@@ -181,7 +192,8 @@
       "estimated_from_gpx": "yamap_2022-01-29_08_35.gpx",
       "elevation_diff_m": 3.86
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "谷上山": {
     "municipalities": [
@@ -195,7 +207,8 @@
       "lon": 132.7317786,
       "ele": 456.90483803547824
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "権現山": {
     "municipalities": [
@@ -222,7 +235,8 @@
       "lon": 132.7201785,
       "ele": 102.87
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "白滝山": {
     "municipalities": [
@@ -236,7 +250,8 @@
       "lon": 132.7563447,
       "ele": 485.20803085647475
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "障子山": {
     "municipalities": [
@@ -250,7 +265,8 @@
       "lon": 132.7652806,
       "ele": 888.5027304594954
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "伽藍山": {
     "municipalities": [
@@ -264,7 +280,8 @@
       "lon": 132.1168226,
       "ele": 413.7400702411658
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "塩ヶ森": {
     "municipalities": [
@@ -278,7 +295,8 @@
       "lon": 132.9091359,
       "ele": 522.6766666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "番駄ヶ森": {
     "municipalities": [
@@ -292,7 +310,8 @@
       "lon": 132.9019215,
       "ele": 600.8033333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "ケタ山": {
     "municipalities": [
@@ -306,7 +325,8 @@
       "lon": 132.900658,
       "ele": 643.7166666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大磨山": {
     "municipalities": [
@@ -320,7 +340,8 @@
       "lon": 132.9049612,
       "ele": 646.4833333333332
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鍵山（象ヶ森）": {
     "municipalities": [
@@ -334,7 +355,8 @@
       "lon": 132.9097454,
       "ele": 801.5633333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "天神山": {
     "municipalities": [
@@ -349,7 +371,8 @@
       "lon": 132.7614769,
       "ele": 76.83333333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "御幸寺山": {
     "municipalities": [
@@ -363,7 +386,8 @@
       "lon": 132.7695824,
       "ele": 195.11333333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "愛宕山": {
     "municipalities": [
@@ -379,7 +403,8 @@
       "lon": 132.8411558,
       "ele": 369.3233333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "常光寺山": {
     "municipalities": [
@@ -393,7 +418,8 @@
       "lon": 132.7957131,
       "ele": 104.27999999999999
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "杉立山": {
     "municipalities": [
@@ -403,7 +429,14 @@
       "15773753"
     ],
     "gpx_summit_data": null,
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": {
+      "lat": 33.86439,
+      "lon": 132.844324,
+      "ele": 668.85,
+      "source": "国土地理院 二等三角点「杉立」",
+      "reliability": "high"
+    }
   },
   "岩柄山": {
     "municipalities": [
@@ -413,7 +446,14 @@
       "15773753"
     ],
     "gpx_summit_data": null,
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": {
+      "lat": 33.88676,
+      "lon": 132.84861,
+      "ele": 507.26,
+      "source": "国土地理院 三等三角点「西山」",
+      "reliability": "high"
+    }
   },
   "高山": {
     "municipalities": [
@@ -431,7 +471,8 @@
       "lon": 132.6367544,
       "ele": 121.16666666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "勝岡山": {
     "municipalities": [
@@ -441,7 +482,14 @@
       "15773753"
     ],
     "gpx_summit_data": null,
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": {
+      "lat": 33.895202,
+      "lon": 132.716277,
+      "ele": 147.02,
+      "source": "国土地理院 四等三角点「勝岡」",
+      "reliability": "high"
+    }
   },
   "西山": {
     "municipalities": [
@@ -457,7 +505,8 @@
       "lon": 133.3188738,
       "ele": 1425.3166666666668
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "岩子山": {
     "municipalities": [
@@ -472,7 +521,8 @@
       "lon": 132.7147629,
       "ele": 110.77666666666669
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "経ヶ森": {
     "municipalities": [
@@ -486,7 +536,8 @@
       "lon": 132.7109537,
       "ele": 195.95000000000002
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "護摩ヶ森": {
     "municipalities": [
@@ -500,7 +551,8 @@
       "lon": 132.7116504,
       "ele": 168.98333333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "御岳山": {
     "municipalities": [
@@ -514,7 +566,8 @@
       "lon": 132.8711955,
       "ele": 430.59999999999997
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "石槌山": {
     "municipalities": [
@@ -531,7 +584,8 @@
       "estimated_from_gpx": "yamap_2022-02-26_07_43.gpx",
       "elevation_diff_m": 3.28
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "日王山": {
     "municipalities": [
@@ -548,7 +602,8 @@
       "estimated_from_gpx": "yamap_2022-02-27_10_22.gpx",
       "elevation_diff_m": 4.06
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "重茂山": {
     "municipalities": [
@@ -558,7 +613,14 @@
       "15918738"
     ],
     "gpx_summit_data": null,
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": {
+      "lat": 34.04,
+      "lon": 132.94,
+      "ele": 294,
+      "source": "地元観光資料 重茂城跡",
+      "reliability": "medium"
+    }
   },
   "花木山": {
     "municipalities": [
@@ -572,7 +634,8 @@
       "lon": 132.9233053,
       "ele": 50.49
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "ヌタノサコ": {
     "municipalities": [
@@ -586,7 +649,8 @@
       "lon": 132.8273765,
       "ele": 505.77666666666664
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "城山": {
     "municipalities": [
@@ -607,7 +671,8 @@
       "estimated_from_gpx": "yamap_2024-12-01_14_17.gpx",
       "elevation_diff_m": 1.76
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "水梨山": {
     "municipalities": [
@@ -621,7 +686,8 @@
       "lon": 132.7812374,
       "ele": 707.7550916004999
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "向山": {
     "municipalities": [
@@ -635,7 +701,8 @@
       "lon": 132.8062765,
       "ele": 694.2914342760145
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "稔山": {
     "municipalities": [
@@ -649,7 +716,8 @@
       "lon": 132.9700981,
       "ele": 911.0766666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "菊ヶ森": {
     "municipalities": [
@@ -665,7 +733,8 @@
       "lon": 132.9121114,
       "ele": 910.6433333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "道後山": {
     "municipalities": [
@@ -679,7 +748,8 @@
       "lon": 132.7933144,
       "ele": 221.10333333333332
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "倉谷山": {
     "municipalities": [
@@ -693,7 +763,8 @@
       "lon": 132.8256729,
       "ele": 405.40333333333336
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "芝ヶ峠": {
     "municipalities": [
@@ -707,7 +778,8 @@
       "lon": 132.8164365,
       "ele": 278.01
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大久保山": {
     "municipalities": [
@@ -723,7 +795,8 @@
       "lon": 132.6094331,
       "ele": 1155.4333072605007
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "八里ヶ峠": {
     "municipalities": [
@@ -737,7 +810,8 @@
       "lon": 132.7715271,
       "ele": 173.09
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "中坂山": {
     "municipalities": [
@@ -751,7 +825,8 @@
       "lon": 132.7569442,
       "ele": 87.11000000000001
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "室岡山": {
     "municipalities": [
@@ -768,7 +843,8 @@
       "estimated_from_gpx": "yamap_2022-03-20_07_06.gpx",
       "elevation_diff_m": 0.47
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "潮見山": {
     "municipalities": [
@@ -783,7 +859,8 @@
       "lon": 132.7626522,
       "ele": 181.12
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "明神山": {
     "municipalities": [
@@ -799,7 +876,8 @@
       "lon": 132.6731896,
       "ele": 627.2966666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "十門山(十門城址)": {
     "municipalities": [
@@ -816,7 +894,8 @@
       "estimated_from_gpx": "yamap_2022-03-25_12_12.gpx",
       "elevation_diff_m": 4.94
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "ヨソ山": {
     "municipalities": [
@@ -830,7 +909,8 @@
       "lon": 132.9293942,
       "ele": 924.7866666666665
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "忽那山": {
     "municipalities": [
@@ -844,7 +924,8 @@
       "lon": 132.7004302,
       "ele": 42.296666666666674
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鬼ヶ城山": {
     "municipalities": [
@@ -858,7 +939,8 @@
       "lon": 132.6159575,
       "ele": 1162.2731411431716
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "三本杭": {
     "municipalities": [
@@ -872,7 +954,8 @@
       "lon": 132.6355525,
       "ele": 1222.4936499541386
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "八面山": {
     "municipalities": [
@@ -886,7 +969,8 @@
       "lon": 132.6194355,
       "ele": 1167.5519282683324
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大月山": {
     "municipalities": [
@@ -900,7 +984,8 @@
       "lon": 132.8476038,
       "ele": 950.6066666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "引地山": {
     "municipalities": [
@@ -917,7 +1002,8 @@
       "estimated_from_gpx": "yamap_2022-04-15_11_52.gpx",
       "elevation_diff_m": 1.89
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "東三方ヶ森": {
     "municipalities": [
@@ -931,7 +1017,8 @@
       "lon": 132.9587422,
       "ele": 1199.216666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "甲が森": {
     "municipalities": [
@@ -945,7 +1032,8 @@
       "lon": 132.7572928,
       "ele": 456.7219376700282
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "三滝山": {
     "municipalities": [
@@ -959,7 +1047,8 @@
       "lon": 132.7969092,
       "ele": 646.7704243218062
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "雨包山": {
     "municipalities": [
@@ -973,7 +1062,8 @@
       "lon": 132.8065716,
       "ele": 1117.4867674520622
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "源氏ヶ駄場（薊野峰）": {
     "municipalities": [
@@ -987,7 +1077,8 @@
       "lon": 132.8658682,
       "ele": 1415.7321709473536
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "碁石ヶ森": {
     "municipalities": [
@@ -1001,17 +1092,26 @@
       "lon": 132.8861266,
       "ele": 1188.1187548490348
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "伊之子山": {
     "municipalities": [
-      "松山市"
+      "松山市",
+      "今治市"
     ],
     "activities": [
       "16866851"
     ],
     "gpx_summit_data": null,
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": {
+      "lat": 33.934076,
+      "lon": 132.920026,
+      "ele": 872.35,
+      "source": "国土地理院 三等三角点「伊之子谷」",
+      "reliability": "high"
+    }
   },
   "御在所山": {
     "municipalities": [
@@ -1027,7 +1127,8 @@
       "lon": 132.6335849,
       "ele": 665.1833333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "岩黒山": {
     "municipalities": [
@@ -1041,7 +1142,8 @@
       "lon": 133.1571706,
       "ele": 1749.5652002309682
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "筒上山": {
     "municipalities": [
@@ -1055,7 +1157,8 @@
       "lon": 133.160912,
       "ele": 1863.226432016608
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "手箱山": {
     "municipalities": [
@@ -1069,7 +1172,8 @@
       "lon": 133.1784766,
       "ele": 1808.4700055808014
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大川嶺": {
     "municipalities": [
@@ -1083,7 +1187,8 @@
       "lon": 132.9270238,
       "ele": 1532.1452947696732
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "笠取山": {
     "municipalities": [
@@ -1097,7 +1202,8 @@
       "lon": 132.9223115,
       "ele": 1567.7094910140197
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "ウバホド山": {
     "municipalities": [
@@ -1114,7 +1220,8 @@
       "estimated_from_gpx": "yamap_2022-05-02_09_06.gpx",
       "elevation_diff_m": 9.27
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "うなめご": {
     "municipalities": [
@@ -1128,7 +1235,8 @@
       "lon": 132.9237927,
       "ele": 1250.17
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "前々司山": {
     "municipalities": [
@@ -1142,7 +1250,8 @@
       "lon": 132.9136819,
       "ele": 1203.3533333333332
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "陣ヶ森": {
     "municipalities": [
@@ -1157,7 +1266,8 @@
       "lat": 33.590092,
       "lon": 132.709728,
       "ele": 565
-    }
+    },
+    "agent_survey_data": null
   },
   "寒川山": {
     "municipalities": [
@@ -1174,7 +1284,8 @@
       "estimated_from_gpx": "yamap_2022-05-07_07_14.gpx",
       "elevation_diff_m": 0.04
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "豊受山": {
     "municipalities": [
@@ -1188,7 +1299,8 @@
       "lon": 133.4790952,
       "ele": 1251.9766666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "赤星山": {
     "municipalities": [
@@ -1202,7 +1314,8 @@
       "lon": 133.4578173,
       "ele": 1451.0833333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "七々木山": {
     "municipalities": [
@@ -1219,7 +1332,8 @@
       "estimated_from_gpx": "yamap_2022-05-07_07_14.gpx",
       "elevation_diff_m": 6.04
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鋸山": {
     "municipalities": [
@@ -1236,7 +1350,8 @@
       "estimated_from_gpx": "yamap_2022-05-07_07_14.gpx",
       "elevation_diff_m": 2
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "翠波峰": {
     "municipalities": [
@@ -1253,7 +1368,8 @@
       "estimated_from_gpx": "yamap_2022-05-07_07_14.gpx",
       "elevation_diff_m": 0.08
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "平石山": {
     "municipalities": [
@@ -1270,7 +1386,8 @@
       "estimated_from_gpx": "yamap_2022-05-07_14_18.gpx",
       "elevation_diff_m": 3.05
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "割石東山": {
     "municipalities": [
@@ -1284,7 +1401,8 @@
       "lon": 132.9928848,
       "ele": 1076.4162189328617
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "青滝山": {
     "municipalities": [
@@ -1298,7 +1416,8 @@
       "lon": 133.0352237,
       "ele": 1301.993333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "堂ヶ森": {
     "municipalities": [
@@ -1312,7 +1431,8 @@
       "lon": 133.066955,
       "ele": 1682.5333333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "南尖峰": {
     "municipalities": [
@@ -1329,7 +1449,8 @@
       "estimated_from_gpx": "yamap_2022-05-22_08_09.gpx",
       "elevation_diff_m": 2.83
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "自念子ノ頭": {
     "municipalities": [
@@ -1343,7 +1464,8 @@
       "lon": 133.2216507,
       "ele": 1698.7424939329492
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "勝山": {
     "municipalities": [
@@ -1358,7 +1480,8 @@
       "lon": 132.8388236,
       "ele": 371.26
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "姫草": {
     "municipalities": [
@@ -1372,7 +1495,8 @@
       "lon": 132.8970608,
       "ele": 1272.03184660662
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "牛城": {
     "municipalities": [
@@ -1386,7 +1510,8 @@
       "lon": 132.9161606,
       "ele": 1345.4997959227253
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "積善山": {
     "municipalities": [
@@ -1400,7 +1525,8 @@
       "lon": 133.1474902,
       "ele": 363.7359939346231
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鉢巻山": {
     "municipalities": [
@@ -1414,7 +1540,8 @@
       "lon": 133.178604,
       "ele": 132.84324070749756
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "立石山": {
     "municipalities": [
@@ -1428,7 +1555,8 @@
       "lon": 133.1726806,
       "ele": 133.6903994266386
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鷲ヶ頭山": {
     "municipalities": [
@@ -1442,7 +1570,8 @@
       "lon": 133.0209828,
       "ele": 436.9143046126708
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "安神山": {
     "municipalities": [
@@ -1459,7 +1588,8 @@
       "estimated_from_gpx": "yamap_2022-06-20_12_02.gpx",
       "elevation_diff_m": 1.34
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "篠山": {
     "municipalities": [
@@ -1473,7 +1603,8 @@
       "lon": 132.6590657,
       "ele": 1061.6229039079428
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "横山(横山城址)": {
     "municipalities": [
@@ -1490,7 +1621,8 @@
       "estimated_from_gpx": "yamap_2022-06-29_08_48.gpx",
       "elevation_diff_m": 3.97
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鞍瀬ノ頭": {
     "municipalities": [
@@ -1504,7 +1636,8 @@
       "lon": 133.086527,
       "ele": 1879.8966666666665
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "二ノ森": {
     "municipalities": [
@@ -1518,7 +1651,8 @@
       "lon": 133.1131197,
       "ele": 1920.7933333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "面河の頭": {
     "municipalities": [
@@ -1535,7 +1669,8 @@
       "estimated_from_gpx": "yamap_2022-07-02_07_43.gpx",
       "elevation_diff_m": 1.6
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "西ノ冠岳": {
     "municipalities": [
@@ -1549,7 +1684,8 @@
       "lon": 133.093322,
       "ele": 1924.4866666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "西黒森": {
     "municipalities": [
@@ -1563,7 +1699,8 @@
       "lon": 133.2060388,
       "ele": 1850.4420465524036
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "小富士": {
     "municipalities": [
@@ -1577,7 +1714,8 @@
       "lon": 132.6714828,
       "ele": 281.5
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "龍石山": {
     "municipalities": [
@@ -1594,7 +1732,8 @@
       "estimated_from_gpx": "yamap_2022-07-14_11_15.gpx",
       "elevation_diff_m": 6.54
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "子持山": {
     "municipalities": [
@@ -1604,7 +1743,14 @@
       "18543106"
     ],
     "gpx_summit_data": null,
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": {
+      "lat": 33.855,
+      "lon": 132.717,
+      "ele": 123,
+      "source": "YAMAP 山岳DB ID 14955 (興居島)",
+      "reliability": "low"
+    }
   },
   "大峰ヶ台": {
     "municipalities": [
@@ -1618,7 +1764,8 @@
       "lon": 132.7412572,
       "ele": 117.91000000000001
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "世田山": {
     "municipalities": [
@@ -1632,7 +1779,8 @@
       "lon": 133.0397832,
       "ele": 356.6686284540569
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "笠松山": {
     "municipalities": [
@@ -1647,7 +1795,8 @@
       "lat": 33.694307,
       "lon": 132.89529,
       "ele": 868
-    }
+    },
+    "agent_survey_data": null
   },
   "北三方ヶ森": {
     "municipalities": [
@@ -1661,7 +1810,8 @@
       "lon": 132.8887705,
       "ele": 964.82
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大友山": {
     "municipalities": [
@@ -1675,7 +1825,8 @@
       "lon": 132.8072111,
       "ele": 404.05
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "湯築山": {
     "municipalities": [
@@ -1692,7 +1843,8 @@
       "estimated_from_gpx": "yamap_2022-09-07_13_28.gpx",
       "elevation_diff_m": 2.71
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "寒風山": {
     "municipalities": [
@@ -1706,7 +1858,8 @@
       "lon": 133.2616339,
       "ele": 1758.0533333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "ちち山": {
     "municipalities": [
@@ -1720,7 +1873,8 @@
       "lon": 133.2841218,
       "ele": 1850.97
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "笹ヶ峰": {
     "municipalities": [
@@ -1736,7 +1890,8 @@
       "lon": 133.6356728,
       "ele": 1024.2766666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "松軒山": {
     "municipalities": [
@@ -1753,7 +1908,8 @@
       "estimated_from_gpx": "yamap_2022-09-14_12_28.gpx",
       "elevation_diff_m": 2.52
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "三山": {
     "municipalities": [
@@ -1767,7 +1923,8 @@
       "lon": 133.2279632,
       "ele": 323.2966666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "伊勢山": {
     "municipalities": [
@@ -1781,7 +1938,8 @@
       "lon": 133.1998766,
       "ele": 52.94
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "久司山": {
     "municipalities": [
@@ -1795,7 +1953,8 @@
       "lon": 133.2061963,
       "ele": 136.67
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "石灰山": {
     "municipalities": [
@@ -1812,7 +1971,8 @@
       "estimated_from_gpx": "yamap_2022-09-15_09_20.gpx",
       "elevation_diff_m": 0.18
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "古法皇山": {
     "municipalities": [
@@ -1826,7 +1986,8 @@
       "lon": 133.2120741,
       "ele": 269.75333333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "狩江権現山": {
     "municipalities": [
@@ -1843,7 +2004,8 @@
       "estimated_from_gpx": "yamap_2022-09-20_14_24.gpx",
       "elevation_diff_m": 1.06
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "極山": {
     "municipalities": [
@@ -1857,7 +2019,8 @@
       "lon": 132.4607227,
       "ele": 559.4133333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高文殊山": {
     "municipalities": [
@@ -1871,7 +2034,8 @@
       "lon": 133.6055034,
       "ele": 227.89170104701893
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "三本榎": {
     "municipalities": [
@@ -1885,7 +2049,8 @@
       "lon": 132.9886798,
       "ele": 246.47333333333336
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鏡山": {
     "municipalities": [
@@ -1899,7 +2064,8 @@
       "lon": 132.9718171,
       "ele": 201.48000000000002
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "戸祇御前山": {
     "municipalities": [
@@ -1913,7 +2079,8 @@
       "lon": 132.7701055,
       "ele": 947.3511063301806
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "雄甲山": {
     "municipalities": [
@@ -1927,7 +2094,8 @@
       "lon": 132.799306,
       "ele": 218.9593458353185
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "雌甲山": {
     "municipalities": [
@@ -1944,7 +2112,8 @@
       "estimated_from_gpx": "yamap_2022-10-03_14_57.gpx",
       "elevation_diff_m": 11.02
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "泉ガ森": {
     "municipalities": [
@@ -1958,7 +2127,8 @@
       "lon": 132.6071981,
       "ele": 760.3519951848507
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "東山": {
     "municipalities": [
@@ -1977,7 +2147,8 @@
       "estimated_from_gpx": "yamap_2022-12-31_14_13.gpx",
       "elevation_diff_m": 0.53
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "前赤石山": {
     "municipalities": [
@@ -1991,7 +2162,8 @@
       "lon": 133.3626992,
       "ele": 1651.7766666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "黒崎山": {
     "municipalities": [
@@ -2005,7 +2177,8 @@
       "lon": 132.685607,
       "ele": 89.01666666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高戸山": {
     "municipalities": [
@@ -2019,7 +2192,8 @@
       "lon": 132.6682142,
       "ele": 112.67333333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "犬吠山": {
     "municipalities": [
@@ -2033,7 +2207,8 @@
       "lon": 132.6903824,
       "ele": 120.40666666666665
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "泰の山": {
     "municipalities": [
@@ -2047,7 +2222,8 @@
       "lon": 132.6865172,
       "ele": 111.76333333333332
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "中三方ヶ森": {
     "municipalities": [
@@ -2061,7 +2237,8 @@
       "lon": 132.9439167,
       "ele": 1212.63
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "古権現山": {
     "municipalities": [
@@ -2075,7 +2252,8 @@
       "lon": 132.945849,
       "ele": 1012.4166666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "楢原山": {
     "municipalities": [
@@ -2089,7 +2267,8 @@
       "lon": 132.9443333,
       "ele": 1037.9733333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "西港山": {
     "municipalities": [
@@ -2103,7 +2282,8 @@
       "lon": 132.7112215,
       "ele": 47.879999999999995
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大丸山": {
     "municipalities": [
@@ -2117,7 +2297,8 @@
       "lon": 132.7108146,
       "ele": 63.77666666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "港山": {
     "municipalities": [
@@ -2131,7 +2312,8 @@
       "lon": 132.7153244,
       "ele": 41.080000000000005
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "すくも山": {
     "municipalities": [
@@ -2148,7 +2330,8 @@
       "estimated_from_gpx": "yamap_2022-10-21_12_15.gpx",
       "elevation_diff_m": 1.02
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "愛ノ山": {
     "municipalities": [
@@ -2162,7 +2345,8 @@
       "lon": 133.0391092,
       "ele": 211.39459610568747
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "冨士山": {
     "municipalities": [
@@ -2176,7 +2360,8 @@
       "lon": 132.5604,
       "ele": 335.74500437341317
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "割石峠山": {
     "municipalities": [
@@ -2190,7 +2375,8 @@
       "lon": 132.9904187,
       "ele": 1059.54
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "石墨山": {
     "municipalities": [
@@ -2204,7 +2390,8 @@
       "lon": 132.9846838,
       "ele": 1437.8266666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "法師山": {
     "municipalities": [
@@ -2221,7 +2408,8 @@
       "estimated_from_gpx": "yamap_2022-10-28_06_21.gpx",
       "elevation_diff_m": 0.14
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "白猪山": {
     "municipalities": [
@@ -2238,7 +2426,8 @@
       "estimated_from_gpx": "yamap_2022-10-28_06_21.gpx",
       "elevation_diff_m": 0.18
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "梅ヶ谷山": {
     "municipalities": [
@@ -2252,7 +2441,8 @@
       "lon": 132.9534746,
       "ele": 1313.3500000000001
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "樽谷山": {
     "municipalities": [
@@ -2266,7 +2456,8 @@
       "lon": 132.9562696,
       "ele": 1252.3999999999999
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "根無山": {
     "municipalities": [
@@ -2280,7 +2471,8 @@
       "lon": 132.9624107,
       "ele": 1237.0966666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "黒岳": {
     "municipalities": [
@@ -2294,7 +2486,8 @@
       "lon": 133.4012543,
       "ele": 1626.996666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "エビラ山": {
     "municipalities": [
@@ -2308,7 +2501,8 @@
       "lon": 133.4078131,
       "ele": 1672.3333333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "二ッ岳": {
     "municipalities": [
@@ -2322,7 +2516,8 @@
       "lon": 133.4182784,
       "ele": 1664.1233333333332
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鹿島山": {
     "municipalities": [
@@ -2336,7 +2531,8 @@
       "lon": 132.7641726,
       "ele": 99.19338457582633
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "出石山": {
     "municipalities": [
@@ -2350,7 +2546,8 @@
       "lon": 132.4654448,
       "ele": 822.6353431394673
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "綱繰山": {
     "municipalities": [
@@ -2364,7 +2561,8 @@
       "lon": 133.3199199,
       "ele": 1457.99
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "獅子舞の鼻": {
     "municipalities": [
@@ -2381,7 +2579,8 @@
       "estimated_from_gpx": "yamap_2022-11-26_04_41.gpx",
       "elevation_diff_m": 6.82
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "冠山": {
     "municipalities": [
@@ -2395,7 +2594,8 @@
       "lon": 133.2937377,
       "ele": 1719.1733333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "遠ヶ森": {
     "municipalities": [
@@ -2409,7 +2609,8 @@
       "lon": 132.824108,
       "ele": 731.4733333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "扇山": {
     "municipalities": [
@@ -2424,7 +2625,8 @@
       "lat": 33.8244,
       "lon": 133.214509,
       "ele": 1392
-    }
+    },
+    "agent_survey_data": null
   },
   "塔ノ峰": {
     "municipalities": [
@@ -2441,7 +2643,8 @@
       "estimated_from_gpx": "yamap_2022-12-25_11_10.gpx",
       "elevation_diff_m": 0.03
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "海山": {
     "municipalities": [
@@ -2458,7 +2661,8 @@
       "estimated_from_gpx": "yamap_2022-12-25_11_10.gpx",
       "elevation_diff_m": 5.03
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "近見山": {
     "municipalities": [
@@ -2472,7 +2676,8 @@
       "lon": 132.9709549,
       "ele": 239.86
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "唐子山": {
     "municipalities": [
@@ -2486,7 +2691,8 @@
       "lon": 133.032579,
       "ele": 108.91779584922217
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "医王山": {
     "municipalities": [
@@ -2500,7 +2706,8 @@
       "lon": 133.0507842,
       "ele": 98.37666666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "永納山(永納山城址)": {
     "municipalities": [
@@ -2517,7 +2724,8 @@
       "estimated_from_gpx": "yamap_2022-12-25_10_09.gpx",
       "elevation_diff_m": 0.31
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "佐々久山": {
     "municipalities": [
@@ -2534,7 +2742,8 @@
       "estimated_from_gpx": "yamap_2022-12-25_10_09.gpx",
       "elevation_diff_m": 0.22
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "土亀山": {
     "municipalities": [
@@ -2551,7 +2760,8 @@
       "estimated_from_gpx": "yamap_2022-12-31_14_27.gpx",
       "elevation_diff_m": 0.19
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "天山": {
     "municipalities": [
@@ -2568,7 +2778,8 @@
       "estimated_from_gpx": "yamap_2022-12-31_15_00.gpx",
       "elevation_diff_m": 1.02
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "星岡山": {
     "municipalities": [
@@ -2582,7 +2793,8 @@
       "lon": 132.787544,
       "ele": 69.03333333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "河原樋山": {
     "municipalities": [
@@ -2596,7 +2808,8 @@
       "lon": 132.8815633,
       "ele": 860.4766666666668
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "真松嶺": {
     "municipalities": [
@@ -2610,7 +2823,8 @@
       "lon": 132.8659698,
       "ele": 538.9699999999999
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "柿王寺森": {
     "municipalities": [
@@ -2624,7 +2838,8 @@
       "lon": 132.8629961,
       "ele": 543.3533333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "垣生山": {
     "municipalities": [
@@ -2640,7 +2855,8 @@
       "lon": 132.7313169,
       "ele": 67.89666666666668
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "津田山": {
     "municipalities": [
@@ -2654,7 +2870,8 @@
       "lon": 132.731764,
       "ele": 107.46
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "弁天山": {
     "municipalities": [
@@ -2668,7 +2885,8 @@
       "lon": 132.7151969,
       "ele": 123.67
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "黒瀬山（黒瀬城址）": {
     "municipalities": [
@@ -2685,7 +2903,8 @@
       "estimated_from_gpx": "yamap_2023-01-08_14_24.gpx",
       "elevation_diff_m": 0.4
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "岡山（岡城址）": {
     "municipalities": [
@@ -2702,7 +2921,8 @@
       "estimated_from_gpx": "yamap_2023-01-08_09_18.gpx",
       "elevation_diff_m": 3.15
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鉢ヶ森（鉢ヶ森城址）": {
     "municipalities": [
@@ -2719,7 +2939,8 @@
       "estimated_from_gpx": "yamap_2023-01-08_09_18.gpx",
       "elevation_diff_m": 0.66
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "護摩ヶ森（護摩ヶ森城址）": {
     "municipalities": [
@@ -2736,7 +2957,8 @@
       "estimated_from_gpx": "yamap_2023-01-08_14_24.gpx",
       "elevation_diff_m": 0.6
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "我合山（我合城址）": {
     "municipalities": [
@@ -2753,7 +2975,8 @@
       "estimated_from_gpx": "yamap_2023-01-08_14_24.gpx",
       "elevation_diff_m": 0.55
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "由良山": {
     "municipalities": [
@@ -2767,7 +2990,8 @@
       "lon": 132.387323,
       "ele": 243.4
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大森山": {
     "municipalities": [
@@ -2793,7 +3017,8 @@
       "lat": 33.782402,
       "lon": 133.153201,
       "ele": 1399
-    }
+    },
+    "agent_survey_data": null
   },
   "見晴山": {
     "municipalities": [
@@ -2810,7 +3035,8 @@
       "estimated_from_gpx": "yamap_2023-01-21_10_45.gpx",
       "elevation_diff_m": 3.31
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "遠見山": {
     "municipalities": [
@@ -2826,7 +3052,8 @@
       "lon": 132.5543833,
       "ele": 325.42
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "石神山": {
     "municipalities": [
@@ -2840,7 +3067,8 @@
       "lon": 132.27344,
       "ele": 295.1133333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "金比羅山": {
     "municipalities": [
@@ -2854,7 +3082,8 @@
       "lon": 132.2726227,
       "ele": 225.95666666666668
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鳥越山": {
     "municipalities": [
@@ -2868,7 +3097,8 @@
       "lon": 132.758853,
       "ele": 99.92333333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "谷田山": {
     "municipalities": [
@@ -2885,7 +3115,8 @@
       "estimated_from_gpx": "yamap_2023-01-28_11_53.gpx",
       "elevation_diff_m": 17.29
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "金毘羅山": {
     "municipalities": [
@@ -2899,7 +3130,8 @@
       "lon": 132.7535894,
       "ele": 58.70666666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "佐古田山": {
     "municipalities": [
@@ -2913,7 +3145,8 @@
       "lon": 132.7646371,
       "ele": 59.99333333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "古城山": {
     "municipalities": [
@@ -2930,7 +3163,8 @@
       "estimated_from_gpx": "yamap_2023-01-28_14_27.gpx",
       "elevation_diff_m": 4.29
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "尾崎山": {
     "municipalities": [
@@ -2944,7 +3178,8 @@
       "lon": 132.7837316,
       "ele": 253.17333333333332
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "宝ヶ峯": {
     "municipalities": [
@@ -2958,7 +3193,8 @@
       "lon": 132.8126367,
       "ele": 278.9166666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "淡路ヶ峠": {
     "municipalities": [
@@ -2975,7 +3211,8 @@
       "estimated_from_gpx": "yamap_2023-03-05_11_09.gpx",
       "elevation_diff_m": 0.79
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "福見山": {
     "municipalities": [
@@ -2989,7 +3226,8 @@
       "lon": 132.9018403,
       "ele": 1048.2366666666665
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "明神ヶ森": {
     "municipalities": [
@@ -3003,7 +3241,8 @@
       "lon": 132.9178729,
       "ele": 1212.2866666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "南三方ヶ森": {
     "municipalities": [
@@ -3017,7 +3256,8 @@
       "lon": 132.9247864,
       "ele": 1147.7433333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "魚谷森": {
     "municipalities": [
@@ -3034,7 +3274,8 @@
       "estimated_from_gpx": "yamap_2023-03-11_06_08.gpx",
       "elevation_diff_m": 3.91
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "左谷ノ森": {
     "municipalities": [
@@ -3048,7 +3289,8 @@
       "lon": 132.9242667,
       "ele": 927.37
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "真城ヶ台": {
     "municipalities": [
@@ -3062,7 +3304,8 @@
       "lon": 132.8569052,
       "ele": 583.6133333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "千羽ヶ岳": {
     "municipalities": [
@@ -3076,7 +3319,8 @@
       "lon": 132.9832873,
       "ele": 406.43
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "皿ヶ嶺": {
     "municipalities": [
@@ -3090,7 +3334,8 @@
       "lon": 132.8951897,
       "ele": 1277.043085490437
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "えんとつ山": {
     "municipalities": [
@@ -3107,7 +3352,8 @@
       "estimated_from_gpx": "yamap_2023-03-29_05_31.gpx",
       "elevation_diff_m": 0.15
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "生子山": {
     "municipalities": [
@@ -3124,7 +3370,8 @@
       "estimated_from_gpx": "yamap_2023-03-29_05_31.gpx",
       "elevation_diff_m": 1.15
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "犬返": {
     "municipalities": [
@@ -3138,7 +3385,8 @@
       "lon": 133.3174422,
       "ele": 571.1733333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "種子川山": {
     "municipalities": [
@@ -3155,7 +3403,8 @@
       "estimated_from_gpx": "yamap_2023-03-29_05_31.gpx",
       "elevation_diff_m": 3.92
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "西赤石山": {
     "municipalities": [
@@ -3169,7 +3418,8 @@
       "lon": 133.3399899,
       "ele": 1621.9866666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "物住頭": {
     "municipalities": [
@@ -3183,7 +3433,8 @@
       "lon": 133.3538898,
       "ele": 1631.9833333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "上兜山": {
     "municipalities": [
@@ -3200,7 +3451,8 @@
       "estimated_from_gpx": "yamap_2023-03-29_05_31.gpx",
       "elevation_diff_m": 1.85
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "下兜山": {
     "municipalities": [
@@ -3214,7 +3466,8 @@
       "lon": 133.3586627,
       "ele": 1239.3733333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "黒森山": {
     "municipalities": [
@@ -3230,7 +3483,8 @@
       "lon": 133.2686747,
       "ele": 1666.7
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "餓鬼ヶ森": {
     "municipalities": [
@@ -3244,7 +3498,8 @@
       "lon": 132.9052102,
       "ele": 950.8066666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "船野山": {
     "municipalities": [
@@ -3258,7 +3513,8 @@
       "lon": 132.9547814,
       "ele": 452.99666666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "木久ヶ森": {
     "municipalities": [
@@ -3275,7 +3531,8 @@
       "estimated_from_gpx": "yamap_2023-04-18_10_53.gpx",
       "elevation_diff_m": 5.5
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "黒滝山": {
     "municipalities": [
@@ -3289,7 +3546,8 @@
       "lon": 132.9949732,
       "ele": 811.0092135228584
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "奥之城山": {
     "municipalities": [
@@ -3303,7 +3561,8 @@
       "lon": 132.8306597,
       "ele": 414.2866666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "天狗岳": {
     "municipalities": [
@@ -3317,7 +3576,8 @@
       "lon": 133.1152818,
       "ele": 1979.1701508543217
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "石鎚山": {
     "municipalities": [
@@ -3331,7 +3591,8 @@
       "lon": 133.1135435,
       "ele": 1967.3733333333332
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "善神山": {
     "municipalities": [
@@ -3345,7 +3606,8 @@
       "lon": 132.9184402,
       "ele": 1089.5833333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "前善神山": {
     "municipalities": [
@@ -3362,7 +3624,8 @@
       "estimated_from_gpx": "yamap_2023-05-27_09_55.gpx",
       "elevation_diff_m": 0.64
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "五葉が森": {
     "municipalities": [
@@ -3376,7 +3639,8 @@
       "lon": 132.9785604,
       "ele": 837.212880782981
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "冠岳": {
     "municipalities": [
@@ -3390,7 +3654,8 @@
       "lon": 133.1156537,
       "ele": 1375.6266666666668
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "東赤石山": {
     "municipalities": [
@@ -3407,7 +3672,8 @@
       "estimated_from_gpx": "yamap_2022-10-08_06_12.gpx",
       "elevation_diff_m": 10.87
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "八巻山": {
     "municipalities": [
@@ -3421,7 +3687,8 @@
       "lon": 133.3737015,
       "ele": 1699.1266666666668
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "ベツソ山": {
     "municipalities": [
@@ -3438,7 +3705,8 @@
       "estimated_from_gpx": "yamap_2023-10-13_10_02.gpx",
       "elevation_diff_m": 2.67
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "歯朶谷山": {
     "municipalities": [
@@ -3452,7 +3720,8 @@
       "lon": 132.7329923,
       "ele": 313.21999999999997
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "丸山": {
     "municipalities": [
@@ -3471,7 +3740,8 @@
       "estimated_from_gpx": "yamap_2026-05-06_07_28.gpx",
       "elevation_diff_m": 5.98
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "二ノ岳": {
     "municipalities": [
@@ -3485,7 +3755,8 @@
       "lon": 133.154101,
       "ele": 1152.69
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高森": {
     "municipalities": [
@@ -3499,7 +3770,8 @@
       "lon": 133.1757371,
       "ele": 1351.1733333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "四辻ノ森": {
     "municipalities": [
@@ -3513,7 +3785,8 @@
       "lon": 133.0393458,
       "ele": 1206.9212487152886
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "三光ノ辻山": {
     "municipalities": [
@@ -3527,7 +3800,8 @@
       "lon": 133.0432584,
       "ele": 1215.0715256104047
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "瀬戸黒森": {
     "municipalities": [
@@ -3541,7 +3815,8 @@
       "lon": 132.6373234,
       "ele": 972.6666666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "羽子山": {
     "municipalities": [
@@ -3555,7 +3830,8 @@
       "lon": 132.6396303,
       "ele": 725.5
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "観音森": {
     "municipalities": [
@@ -3569,7 +3845,8 @@
       "lon": 132.6236886,
       "ele": 806.4699999999999
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "三森": {
     "municipalities": [
@@ -3583,7 +3860,8 @@
       "lon": 132.624637,
       "ele": 864.3133333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "総津権現山": {
     "municipalities": [
@@ -3597,7 +3875,8 @@
       "lon": 132.7905473,
       "ele": 437.40333333333336
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "秦皇山": {
     "municipalities": [
@@ -3614,7 +3893,8 @@
       "estimated_from_gpx": "yamap_2023-12-17_09_45.gpx",
       "elevation_diff_m": 2.78
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "平岡山(平岡城址)": {
     "municipalities": [
@@ -3631,7 +3911,8 @@
       "estimated_from_gpx": "yamap_2023-12-17_10_30.gpx",
       "elevation_diff_m": 3.8
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "竜門山": {
     "municipalities": [
@@ -3645,7 +3926,8 @@
       "lon": 133.0133542,
       "ele": 430.9866666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大黒山": {
     "municipalities": [
@@ -3661,7 +3943,8 @@
       "lon": 132.663091,
       "ele": 1106.79
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大空山": {
     "municipalities": [
@@ -3675,7 +3958,8 @@
       "lon": 132.9964757,
       "ele": 348.28333333333336
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "御串山": {
     "municipalities": [
@@ -3689,7 +3973,8 @@
       "lon": 132.9890515,
       "ele": 62.803333333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "宝股山": {
     "municipalities": [
@@ -3703,7 +3988,8 @@
       "lon": 133.0867989,
       "ele": 300.6033333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "開山": {
     "municipalities": [
@@ -3720,7 +4006,8 @@
       "estimated_from_gpx": "yamap_2024-01-27_14_28.gpx",
       "elevation_diff_m": 5.24
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鳥屋ヶ森": {
     "municipalities": [
@@ -3734,7 +4021,8 @@
       "lon": 132.5212462,
       "ele": 319.6933333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "熊ガ峰": {
     "municipalities": [
@@ -3748,7 +4036,8 @@
       "lon": 132.5213654,
       "ele": 340.53999999999996
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "譲ヶ葉森": {
     "municipalities": [
@@ -3762,7 +4051,8 @@
       "lon": 132.6207282,
       "ele": 1021.9555481598042
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "郭公岳": {
     "municipalities": [
@@ -3776,7 +4066,8 @@
       "lon": 132.6584283,
       "ele": 1010
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "東高月山": {
     "municipalities": [
@@ -3790,7 +4081,8 @@
       "lon": 132.6419476,
       "ele": 1191.8999999999999
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高月山": {
     "municipalities": [
@@ -3804,7 +4096,8 @@
       "lon": 132.6346403,
       "ele": 1224.2266666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "櫨ヶ森": {
     "municipalities": [
@@ -3818,7 +4111,8 @@
       "lon": 132.6251485,
       "ele": 1062.8166666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "毛山": {
     "municipalities": [
@@ -3832,7 +4126,8 @@
       "lon": 132.6082692,
       "ele": 1090.3964691990484
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "白石山": {
     "municipalities": [
@@ -3846,7 +4141,8 @@
       "lon": 132.5866268,
       "ele": 651.8438770113412
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "観音岳": {
     "municipalities": [
@@ -3860,7 +4156,8 @@
       "lon": 132.5322872,
       "ele": 780.6233333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "音無山": {
     "municipalities": [
@@ -3874,7 +4171,8 @@
       "lon": 132.6235455,
       "ele": 845.57
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "天ガ森": {
     "municipalities": [
@@ -3888,7 +4186,8 @@
       "lon": 132.5317791,
       "ele": 343.7659610142553
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "夫婦山": {
     "municipalities": [
@@ -3902,7 +4201,8 @@
       "lon": 132.788188,
       "ele": 385.21553569431927
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "白山": {
     "municipalities": [
@@ -3916,7 +4216,8 @@
       "lon": 132.7922499,
       "ele": 332.31718344424
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "国見山": {
     "municipalities": [
@@ -3930,7 +4231,8 @@
       "lon": 132.8034521,
       "ele": 376.3033333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "御勧請山": {
     "municipalities": [
@@ -3944,7 +4246,8 @@
       "lon": 132.7980997,
       "ele": 336.02549564153543
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "トギ": {
     "municipalities": [
@@ -3958,7 +4261,8 @@
       "lon": 132.4593069,
       "ele": 391.45205218380346
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "張木山": {
     "municipalities": [
@@ -3972,7 +4276,8 @@
       "lon": 132.4596426,
       "ele": 477.8922286451063
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高手山": {
     "municipalities": [
@@ -3989,7 +4294,8 @@
       "estimated_from_gpx": "yamap_2024-03-16_13_58.gpx",
       "elevation_diff_m": 4.34
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "斎藤山": {
     "municipalities": [
@@ -4003,7 +4309,8 @@
       "lon": 132.4784739,
       "ele": 472.13310176947385
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "御祝山": {
     "municipalities": [
@@ -4020,7 +4327,8 @@
       "estimated_from_gpx": "yamap_2024-03-30_07_11.gpx",
       "elevation_diff_m": 1.68
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "横ノ森": {
     "municipalities": [
@@ -4034,7 +4342,8 @@
       "lon": 132.6371878,
       "ele": 1201.04
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "小屋ヶ森": {
     "municipalities": [
@@ -4051,7 +4360,8 @@
       "estimated_from_gpx": "yamap_2024-03-30_07_11.gpx",
       "elevation_diff_m": 2.47
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "串ヶ森": {
     "municipalities": [
@@ -4065,7 +4375,8 @@
       "lon": 132.6401559,
       "ele": 1160.4399999999998
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "目黒鳥屋": {
     "municipalities": [
@@ -4082,7 +4393,8 @@
       "estimated_from_gpx": "yamap_2024-03-30_07_11.gpx",
       "elevation_diff_m": 3.44
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "長尾森": {
     "municipalities": [
@@ -4099,7 +4411,8 @@
       "estimated_from_gpx": "yamap_2024-03-30_07_11.gpx",
       "elevation_diff_m": 0.13
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "二箆山": {
     "municipalities": [
@@ -4113,7 +4426,8 @@
       "lon": 133.0520358,
       "ele": 1158.3666666666668
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "西雑誌山": {
     "municipalities": [
@@ -4127,7 +4441,8 @@
       "lon": 133.0786503,
       "ele": 1338.5933333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "気多山": {
     "municipalities": [
@@ -4141,7 +4456,8 @@
       "lon": 133.0732035,
       "ele": 1212.5233333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "八辻ノ峰": {
     "municipalities": [
@@ -4158,7 +4474,8 @@
       "estimated_from_gpx": "yamap_2024-04-20_05_43.gpx",
       "elevation_diff_m": 14.84
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "五代ヶ森": {
     "municipalities": [
@@ -4172,7 +4489,8 @@
       "lon": 133.0832761,
       "ele": 1709.1566666666668
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "桂ヶ森": {
     "municipalities": [
@@ -4186,7 +4504,8 @@
       "lon": 132.8578473,
       "ele": 1220.0333333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "狼ヶ城山": {
     "municipalities": [
@@ -4200,7 +4519,8 @@
       "lon": 132.9111904,
       "ele": 1376.7700000000002
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "日浦嶺": {
     "municipalities": [
@@ -4214,7 +4534,8 @@
       "lon": 132.8486131,
       "ele": 900.0566666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "打越山": {
     "municipalities": [
@@ -4228,7 +4549,8 @@
       "lon": 132.8524765,
       "ele": 854.2033333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "面河山": {
     "municipalities": [
@@ -4242,7 +4564,8 @@
       "lon": 133.1115977,
       "ele": 1519.8633333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "丸笹山": {
     "municipalities": [
@@ -4256,7 +4579,8 @@
       "lon": 133.1457476,
       "ele": 1567.1366666666665
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "丸滝山": {
     "municipalities": [
@@ -4270,7 +4594,8 @@
       "lon": 133.1513298,
       "ele": 1542.9666666666665
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "名石山": {
     "municipalities": [
@@ -4284,7 +4609,8 @@
       "lon": 132.8186843,
       "ele": 289.7633333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "青刈山": {
     "municipalities": [
@@ -4294,7 +4620,14 @@
       "31912430"
     ],
     "gpx_summit_data": null,
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": {
+      "lat": 34.280222,
+      "lon": 133.017222,
+      "ele": 342,
+      "source": "YAMAP 山岳DB ID 23951 (大三島)",
+      "reliability": "medium"
+    }
   },
   "椿山": {
     "municipalities": [
@@ -4308,7 +4641,8 @@
       "lon": 133.1399924,
       "ele": 1600.17
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "沓掛山": {
     "municipalities": [
@@ -4322,7 +4656,8 @@
       "lon": 133.2701244,
       "ele": 1690.4033333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "二反山": {
     "municipalities": [
@@ -4336,7 +4671,8 @@
       "lon": 133.0100334,
       "ele": 392.00666666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "平家平": {
     "municipalities": [
@@ -4350,7 +4686,8 @@
       "lon": 133.3260701,
       "ele": 1691.2766666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "薬師山": {
     "municipalities": [
@@ -4364,7 +4701,8 @@
       "lon": 132.9686491,
       "ele": 429.98333333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "子持権現山": {
     "municipalities": [
@@ -4378,7 +4716,8 @@
       "lon": 133.1879064,
       "ele": 1661.57
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "男山": {
     "municipalities": [
@@ -4395,7 +4734,8 @@
       "estimated_from_gpx": "yamap_2026-05-02_09_29.gpx",
       "elevation_diff_m": 0.85
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "瓶ヶ森": {
     "municipalities": [
@@ -4409,7 +4749,8 @@
       "lon": 133.1932944,
       "ele": 1892.6599999999999
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "宅並山": {
     "municipalities": [
@@ -4423,7 +4764,8 @@
       "lon": 132.7676241,
       "ele": 191.34803656971437
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "岩屋山": {
     "municipalities": [
@@ -4437,7 +4779,8 @@
       "lon": 132.974538,
       "ele": 769.7933333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高縄山": {
     "municipalities": [
@@ -4451,7 +4794,8 @@
       "lon": 132.8499533,
       "ele": 981.3100000000001
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "伊予富士": {
     "municipalities": [
@@ -4465,7 +4809,8 @@
       "lon": 133.2475791,
       "ele": 1746.743333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "中津山(明神山)": {
     "municipalities": [
@@ -4482,7 +4827,8 @@
       "estimated_from_gpx": "yamap_2024-09-23_07_35.gpx",
       "elevation_diff_m": 1.47
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "猿越山": {
     "municipalities": [
@@ -4496,7 +4842,8 @@
       "lon": 133.0545216,
       "ele": 1432.5666666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "銅山峰": {
     "municipalities": [
@@ -4513,7 +4860,8 @@
       "estimated_from_gpx": "yamap_2024-10-05_06_40.gpx",
       "elevation_diff_m": 1.21
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "三の森": {
     "municipalities": [
@@ -4530,7 +4878,8 @@
       "estimated_from_gpx": "yamap_2024-10-05_06_40.gpx",
       "elevation_diff_m": 1.19
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "二の森": {
     "municipalities": [
@@ -4547,7 +4896,8 @@
       "estimated_from_gpx": "yamap_2024-10-05_06_40.gpx",
       "elevation_diff_m": 0.22
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "一の森": {
     "municipalities": [
@@ -4561,7 +4911,8 @@
       "lon": 133.3116827,
       "ele": 831.0900000000001
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "三ッ足山": {
     "municipalities": [
@@ -4575,7 +4926,8 @@
       "lon": 133.6139166,
       "ele": 1096.6433333333332
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "カガマシ山": {
     "municipalities": [
@@ -4589,7 +4941,8 @@
       "lon": 133.6037486,
       "ele": 1340.51
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "橡尾山": {
     "municipalities": [
@@ -4603,7 +4956,8 @@
       "lon": 133.6269198,
       "ele": 1220.8566666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "ハネズル山": {
     "municipalities": [
@@ -4617,7 +4971,8 @@
       "lon": 133.4510092,
       "ele": 1291.8700000000001
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "天堤山": {
     "municipalities": [
@@ -4631,7 +4986,8 @@
       "lon": 133.4945751,
       "ele": 1134.8500000000001
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "五郎丸": {
     "municipalities": [
@@ -4645,7 +5001,8 @@
       "lon": 133.6441984,
       "ele": 589.3233333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高丸": {
     "municipalities": [
@@ -4659,7 +5016,8 @@
       "lon": 133.6616846,
       "ele": 585.22
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "金見山": {
     "municipalities": [
@@ -4676,7 +5034,8 @@
       "estimated_from_gpx": "yamap_2024-12-01_06_40.gpx",
       "elevation_diff_m": 3.47
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "木峰": {
     "municipalities": [
@@ -4690,7 +5049,8 @@
       "lon": 133.6793921,
       "ele": 591.7966666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "天狗森": {
     "municipalities": [
@@ -4707,7 +5067,8 @@
       "estimated_from_gpx": "yamap_2024-12-01_06_40.gpx",
       "elevation_diff_m": 4.07
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "唐谷山": {
     "municipalities": [
@@ -4724,7 +5085,8 @@
       "estimated_from_gpx": "yamap_2024-12-01_06_40.gpx",
       "elevation_diff_m": 3.55
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "龍王山": {
     "municipalities": [
@@ -4741,7 +5103,8 @@
       "estimated_from_gpx": "yamap_2024-12-01_06_40.gpx",
       "elevation_diff_m": 1
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大谷山": {
     "municipalities": [
@@ -4755,7 +5118,8 @@
       "lon": 133.6297572,
       "ele": 503.24333333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "本尊山": {
     "municipalities": [
@@ -4772,7 +5136,8 @@
       "estimated_from_gpx": "yamap_2024-12-08_06_59.gpx",
       "elevation_diff_m": 8.38
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "秋葉山": {
     "municipalities": [
@@ -4787,7 +5152,8 @@
       "lat": 33.596611,
       "lon": 132.606278,
       "ele": 722
-    }
+    },
+    "agent_survey_data": null
   },
   "立烏帽子山": {
     "municipalities": [
@@ -4801,7 +5167,8 @@
       "lon": 132.6669514,
       "ele": 530.1166666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "陣が森": {
     "municipalities": [
@@ -4815,7 +5182,8 @@
       "lon": 132.8891658,
       "ele": 532.4466666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "岩が森": {
     "municipalities": [
@@ -4829,7 +5197,8 @@
       "lon": 132.8701408,
       "ele": 418.54333333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "スクモ塚": {
     "municipalities": [
@@ -4843,7 +5212,8 @@
       "lon": 132.8482925,
       "ele": 279.05333333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高萩山": {
     "municipalities": [
@@ -4857,7 +5227,8 @@
       "lon": 132.8339632,
       "ele": 352.79
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "長者森": {
     "municipalities": [
@@ -4871,7 +5242,8 @@
       "lon": 132.8450021,
       "ele": 290.3833333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "八倉山": {
     "municipalities": [
@@ -4885,7 +5257,8 @@
       "lon": 132.7722765,
       "ele": 251.46333333333337
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "行道山": {
     "municipalities": [
@@ -4902,7 +5275,8 @@
       "estimated_from_gpx": "yamap_2024-12-22_06_34.gpx",
       "elevation_diff_m": 0.03
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "水晶ヶ森": {
     "municipalities": [
@@ -4916,7 +5290,8 @@
       "lon": 132.7571571,
       "ele": 401.8633333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "笹ヶ平山": {
     "municipalities": [
@@ -4930,7 +5305,8 @@
       "lon": 132.7506238,
       "ele": 260.1933333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "壺神山": {
     "municipalities": [
@@ -4944,7 +5320,8 @@
       "lon": 132.5543754,
       "ele": 984.3464928489406
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "滝山": {
     "municipalities": [
@@ -4958,7 +5335,8 @@
       "lon": 132.5447284,
       "ele": 733.0708946789382
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "足山": {
     "municipalities": [
@@ -4972,7 +5350,8 @@
       "lon": 132.5364783,
       "ele": 646.4861527563789
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "皿が森": {
     "municipalities": [
@@ -4986,7 +5365,8 @@
       "lon": 132.5168274,
       "ele": 626.9591280717788
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "尉之山": {
     "municipalities": [
@@ -5000,7 +5380,8 @@
       "lon": 132.8469734,
       "ele": 397.0566666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "小山岳": {
     "municipalities": [
@@ -5014,7 +5395,8 @@
       "lon": 132.8499505,
       "ele": 430.1766666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "松葉山（松葉城址）": {
     "municipalities": [
@@ -5028,7 +5410,8 @@
       "lon": 132.5110871,
       "ele": 400.06
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "烏殿": {
     "municipalities": [
@@ -5042,7 +5425,8 @@
       "lon": 132.5180668,
       "ele": 583.88
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "御篠山": {
     "municipalities": [
@@ -5056,7 +5440,8 @@
       "lon": 132.5153141,
       "ele": 387.82666666666665
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "天が森": {
     "municipalities": [
@@ -5073,7 +5458,8 @@
       "estimated_from_gpx": "yamap_2025-01-26_07_09.gpx",
       "elevation_diff_m": 0.73
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "浄心山": {
     "municipalities": [
@@ -5087,7 +5473,8 @@
       "lon": 132.4487801,
       "ele": 791.270282533162
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "銅が鳴": {
     "municipalities": [
@@ -5101,7 +5488,8 @@
       "lon": 132.4288807,
       "ele": 782.4408357907463
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "弥八山": {
     "municipalities": [
@@ -5115,7 +5503,8 @@
       "lon": 133.5919989,
       "ele": 261.15000000000003
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "西の山": {
     "municipalities": [
@@ -5129,7 +5518,8 @@
       "lon": 133.3976892,
       "ele": 250.30998537053583
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "北山": {
     "municipalities": [
@@ -5143,7 +5533,8 @@
       "lon": 133.4034525,
       "ele": 237.66666666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "金子山": {
     "municipalities": [
@@ -5157,7 +5548,8 @@
       "lon": 133.2748429,
       "ele": 148.30058041636374
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "八堂山": {
     "municipalities": [
@@ -5171,7 +5563,8 @@
       "lon": 133.1980477,
       "ele": 191.83333333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "亀老山": {
     "municipalities": [
@@ -5188,7 +5581,8 @@
       "estimated_from_gpx": "yamap_2023-06-18_10_45.gpx",
       "elevation_diff_m": 0.43
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "カレイ山": {
     "municipalities": [
@@ -5205,7 +5599,8 @@
       "estimated_from_gpx": "yamap_2025-02-09_07_31.gpx",
       "elevation_diff_m": 2.09
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "念仏山": {
     "municipalities": [
@@ -5219,7 +5614,8 @@
       "lon": 133.0532069,
       "ele": 374.65000000000003
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大頭山": {
     "municipalities": [
@@ -5233,7 +5629,8 @@
       "lon": 133.047568,
       "ele": 260.3866666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高取山": {
     "municipalities": [
@@ -5247,7 +5644,8 @@
       "lon": 133.0770866,
       "ele": 235.75333333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "八幡山": {
     "municipalities": [
@@ -5261,7 +5659,8 @@
       "lon": 133.0475658,
       "ele": 211.73666666666668
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "要害山": {
     "municipalities": [
@@ -5275,7 +5674,8 @@
       "lon": 132.7570186,
       "ele": 92.21
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高穴山": {
     "municipalities": [
@@ -5289,7 +5689,8 @@
       "lon": 132.8113157,
       "ele": 282.46000000000004
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高仙山": {
     "municipalities": [
@@ -5303,7 +5704,8 @@
       "lon": 132.8753902,
       "ele": 240.99666666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "霊仙山": {
     "municipalities": [
@@ -5317,7 +5719,8 @@
       "lon": 133.0203144,
       "ele": 152.43333333333337
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "若いもん山": {
     "municipalities": [
@@ -5334,7 +5737,8 @@
       "estimated_from_gpx": "yamap_2025-02-24_09_04.gpx",
       "elevation_diff_m": 2.44
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "無宗天山": {
     "municipalities": [
@@ -5348,7 +5752,8 @@
       "lon": 132.8923059,
       "ele": 311.96
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "綱付山": {
     "municipalities": [
@@ -5362,7 +5767,8 @@
       "lon": 133.1174852,
       "ele": 516.7233333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "幻城上城": {
     "municipalities": [
@@ -5376,7 +5782,8 @@
       "lon": 133.106705,
       "ele": 477.85999999999996
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "幻城下城": {
     "municipalities": [
@@ -5390,7 +5797,8 @@
       "lon": 133.1037524,
       "ele": 243.64333333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "階上山": {
     "municipalities": [
@@ -5404,7 +5812,8 @@
       "lon": 132.7609047,
       "ele": 893.9066666666668
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "姫政山": {
     "municipalities": [
@@ -5418,7 +5827,8 @@
       "lon": 133.047895,
       "ele": 268.5833333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "館山": {
     "municipalities": [
@@ -5432,7 +5842,8 @@
       "lon": 133.0210613,
       "ele": 218.65
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大登山": {
     "municipalities": [
@@ -5446,7 +5857,8 @@
       "lon": 132.6716242,
       "ele": 362.42333333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "泰ノ山": {
     "municipalities": [
@@ -5460,7 +5872,8 @@
       "lon": 132.6073111,
       "ele": 288.9433333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大里山": {
     "municipalities": [
@@ -5474,7 +5887,8 @@
       "lon": 132.6270439,
       "ele": 282.75666666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "北ヶ森": {
     "municipalities": [
@@ -5488,7 +5902,8 @@
       "lon": 132.8271198,
       "ele": 1008.4066666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高土の峰": {
     "municipalities": [
@@ -5505,7 +5920,8 @@
       "estimated_from_gpx": "yamap_2025-03-23_11_12.gpx",
       "elevation_diff_m": 5.18
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "竜王山": {
     "municipalities": [
@@ -5519,7 +5935,8 @@
       "lon": 132.7088906,
       "ele": 459.07666666666665
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "岳山": {
     "municipalities": [
@@ -5533,7 +5950,8 @@
       "lon": 132.7240857,
       "ele": 622.8707379152734
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "一ヶ森": {
     "municipalities": [
@@ -5547,7 +5965,8 @@
       "lon": 132.7168465,
       "ele": 605.2468947172716
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "愛の森": {
     "municipalities": [
@@ -5564,7 +5983,8 @@
       "estimated_from_gpx": "yamap_2025-03-30_07_01.gpx",
       "elevation_diff_m": 6.92
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "京の森": {
     "municipalities": [
@@ -5581,7 +6001,8 @@
       "estimated_from_gpx": "yamap_2025-03-30_12_56.gpx",
       "elevation_diff_m": 0.53
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大迫山": {
     "municipalities": [
@@ -5595,7 +6016,8 @@
       "lon": 132.6868759,
       "ele": 572.4394591518229
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "船山": {
     "municipalities": [
@@ -5605,7 +6027,14 @@
       "38848795"
     ],
     "gpx_summit_data": null,
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": {
+      "lat": 33.698172,
+      "lon": 132.886403,
+      "ele": 910.02,
+      "source": "国土地理院 三等三角点「船山」",
+      "reliability": "high"
+    }
   },
   "コクゾ峰": {
     "municipalities": [
@@ -5619,7 +6048,8 @@
       "lon": 132.7781689,
       "ele": 822.6366666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "加塚山": {
     "municipalities": [
@@ -5633,7 +6063,8 @@
       "lon": 132.6290592,
       "ele": 1069.8255484698216
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "新谷神南山": {
     "municipalities": [
@@ -5647,7 +6078,8 @@
       "lon": 132.6057323,
       "ele": 649.24
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "五十崎神南山": {
     "municipalities": [
@@ -5661,7 +6093,8 @@
       "lon": 132.6333302,
       "ele": 708.9699999999999
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "笠成山": {
     "municipalities": [
@@ -5675,7 +6108,8 @@
       "lon": 132.7915875,
       "ele": 711
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "小屋山": {
     "municipalities": [
@@ -5689,7 +6123,8 @@
       "lon": 132.8649354,
       "ele": 1341.5
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "丸石山": {
     "municipalities": [
@@ -5703,7 +6138,8 @@
       "lon": 132.8660449,
       "ele": 1297.49
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "野地峰": {
     "municipalities": [
@@ -5717,7 +6153,8 @@
       "lon": 133.4735407,
       "ele": 1270.3933333333332
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "黒岩山": {
     "municipalities": [
@@ -5731,7 +6168,8 @@
       "lon": 133.4864513,
       "ele": 1350.0266666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大野山": {
     "municipalities": [
@@ -5753,7 +6191,8 @@
       "lat": 33.423639,
       "lon": 132.552972,
       "ele": 800
-    }
+    },
+    "agent_survey_data": null
   },
   "水なし山": {
     "municipalities": [
@@ -5767,7 +6206,8 @@
       "lon": 132.9213872,
       "ele": 1403.506666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "貝渚山": {
     "municipalities": [
@@ -5784,7 +6224,8 @@
       "estimated_from_gpx": "yamap_2025-06-21_08_53.gpx",
       "elevation_diff_m": 1.42
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "谷崎山": {
     "municipalities": [
@@ -5798,7 +6239,8 @@
       "lon": 133.2473801,
       "ele": 1210.7966666666669
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "東黒森": {
     "municipalities": [
@@ -5812,7 +6254,8 @@
       "lon": 133.2367653,
       "ele": 1731.0666666666668
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "伊吹山": {
     "municipalities": [
@@ -5826,7 +6269,8 @@
       "lon": 133.1769575,
       "ele": 1506.6639933943752
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "小牛城": {
     "municipalities": [
@@ -5840,7 +6284,8 @@
       "lon": 132.9365377,
       "ele": 1141.42
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "正木ノ森": {
     "municipalities": [
@@ -5854,7 +6299,8 @@
       "lon": 133.0130292,
       "ele": 1363.1366666666665
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "五段城": {
     "municipalities": [
@@ -5868,7 +6314,8 @@
       "lon": 132.9862432,
       "ele": 1452.0633333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "天狗ノ森": {
     "municipalities": [
@@ -5882,7 +6329,8 @@
       "lon": 133.0152222,
       "ele": 1479.58
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鶴ノ子ノ頭": {
     "municipalities": [
@@ -5896,7 +6344,8 @@
       "lon": 133.1358584,
       "ele": 1647.683322091346
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "千秋寺山": {
     "municipalities": [
@@ -5913,7 +6362,8 @@
       "estimated_from_gpx": "yamap_2022-02-15_10_36.gpx",
       "elevation_diff_m": 1.7
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "黒川山": {
     "municipalities": [
@@ -5927,7 +6377,8 @@
       "lon": 133.1208698,
       "ele": 1354.6866666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "前社ヶ森": {
     "municipalities": [
@@ -5944,7 +6395,8 @@
       "estimated_from_gpx": "yamap_2025-09-21_08_53.gpx",
       "elevation_diff_m": 4.44
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "剣山": {
     "municipalities": [
@@ -5958,7 +6410,8 @@
       "lon": 133.1209272,
       "ele": 1627.0833333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "東光森山": {
     "municipalities": [
@@ -5972,7 +6425,8 @@
       "lon": 133.4152863,
       "ele": 1480.9266666666665
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "別子山": {
     "municipalities": [
@@ -5986,7 +6440,8 @@
       "lon": 133.4313475,
       "ele": 1369.4399999999998
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "三ッ森山": {
     "municipalities": [
@@ -6000,7 +6455,8 @@
       "lon": 133.3567357,
       "ele": 1423.7
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大座礼山": {
     "municipalities": [
@@ -6014,7 +6470,8 @@
       "lon": 133.3941804,
       "ele": 1586.6333333333332
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "三つ足山": {
     "municipalities": [
@@ -6028,7 +6485,8 @@
       "lon": 133.5827925,
       "ele": 1445.6433333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "佐々連尾山": {
     "municipalities": [
@@ -6042,7 +6500,8 @@
       "lon": 133.544002,
       "ele": 1426.5633333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "東ノ冠岳": {
     "municipalities": [
@@ -6059,7 +6518,8 @@
       "estimated_from_gpx": "yamap_2022-07-02_07_43.gpx",
       "elevation_diff_m": 0.79
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大峰": {
     "municipalities": [
@@ -6073,7 +6533,8 @@
       "lon": 132.330294,
       "ele": 362.5859909540507
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "堂堂山": {
     "municipalities": [
@@ -6087,7 +6548,8 @@
       "lon": 132.3547022,
       "ele": 408.84971455495605
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "堂所山": {
     "municipalities": [
@@ -6101,7 +6563,8 @@
       "lon": 132.4528183,
       "ele": 592.0266666666666
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "天満山": {
     "municipalities": [
@@ -6118,7 +6581,8 @@
       "estimated_from_gpx": "yamap_2022-10-08_06_12.gpx",
       "elevation_diff_m": 0.6
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "霧立山": {
     "municipalities": [
@@ -6132,7 +6596,8 @@
       "lon": 132.9014493,
       "ele": 1106.7248732843473
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "地蔵山": {
     "municipalities": [
@@ -6146,7 +6611,8 @@
       "lon": 132.8936817,
       "ele": 1139.8423907433491
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "天道ヶ頭": {
     "municipalities": [
@@ -6160,7 +6626,8 @@
       "lon": 132.9850803,
       "ele": 507.77
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "根太山": {
     "municipalities": [
@@ -6174,7 +6641,8 @@
       "lon": 132.5826447,
       "ele": 285.99333333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "紅葉山": {
     "municipalities": [
@@ -6188,7 +6656,8 @@
       "lon": 132.5614224,
       "ele": 371.28
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "梁瀬山": {
     "municipalities": [
@@ -6202,7 +6671,8 @@
       "lon": 132.5575289,
       "ele": 373.03999999999996
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "池ノ城山": {
     "municipalities": [
@@ -6216,7 +6686,8 @@
       "lon": 132.8006087,
       "ele": 599.1233333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "峠ヶ森": {
     "municipalities": [
@@ -6230,7 +6701,8 @@
       "lon": 132.4477537,
       "ele": 217.52368147012137
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "雨森山": {
     "municipalities": [
@@ -6244,7 +6716,8 @@
       "lon": 132.4865753,
       "ele": 312.2633333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高雄山": {
     "municipalities": [
@@ -6258,7 +6731,8 @@
       "lon": 132.6809369,
       "ele": 382.21000000000004
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "陣が森岳": {
     "municipalities": [
@@ -6272,7 +6746,8 @@
       "lon": 132.6808191,
       "ele": 620.0533333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "黒岩岳": {
     "municipalities": [
@@ -6286,7 +6761,8 @@
       "lon": 132.6895797,
       "ele": 694.3566666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大判山": {
     "municipalities": [
@@ -6300,7 +6776,8 @@
       "lon": 132.5594513,
       "ele": 791.2866666666665
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "竜王の峰": {
     "municipalities": [
@@ -6314,7 +6791,8 @@
       "lon": 132.4815915,
       "ele": 542.5079186549784
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "船ヶ迫岳": {
     "municipalities": [
@@ -6328,7 +6806,8 @@
       "lon": 132.6564373,
       "ele": 676.61
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鎌倉山": {
     "municipalities": [
@@ -6342,7 +6821,8 @@
       "lon": 132.6529617,
       "ele": 669.23
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "槇ノ山": {
     "municipalities": [
@@ -6356,7 +6836,8 @@
       "lon": 132.5564232,
       "ele": 433.24
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "牛の峰": {
     "municipalities": [
@@ -6370,7 +6851,8 @@
       "lon": 132.4754911,
       "ele": 681.2333333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "尻高峰": {
     "municipalities": [
@@ -6387,7 +6869,8 @@
       "estimated_from_gpx": "yamap_2026-02-07_07_21.gpx",
       "elevation_diff_m": 0.23
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鞍掛山": {
     "municipalities": [
@@ -6401,7 +6884,8 @@
       "lon": 132.4618686,
       "ele": 624.4499999999999
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大畑山": {
     "municipalities": [
@@ -6415,7 +6899,8 @@
       "lon": 132.482212,
       "ele": 642.6
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "飯之山": {
     "municipalities": [
@@ -6432,7 +6917,8 @@
       "estimated_from_gpx": "yamap_2026-02-14_08_22.gpx",
       "elevation_diff_m": 16.1
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "町木山": {
     "municipalities": [
@@ -6446,7 +6932,8 @@
       "lon": 132.7817668,
       "ele": 993.1336935716172
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "寒台山": {
     "municipalities": [
@@ -6460,7 +6947,8 @@
       "lon": 132.7754857,
       "ele": 904.780552530514
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鎧掛山": {
     "municipalities": [
@@ -6474,7 +6962,8 @@
       "lon": 132.7604222,
       "ele": 836.1037770875326
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "花見山": {
     "municipalities": [
@@ -6491,7 +6980,8 @@
       "estimated_from_gpx": "yamap_2026-02-23_14_06.gpx",
       "elevation_diff_m": 7.16
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "剣ノ山": {
     "municipalities": [
@@ -6505,7 +6995,8 @@
       "lon": 133.6780358,
       "ele": 1110.4433333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "三傍示山": {
     "municipalities": [
@@ -6519,7 +7010,8 @@
       "lon": 133.660917,
       "ele": 1152.4499999999998
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "塩塚峰": {
     "municipalities": [
@@ -6533,7 +7025,8 @@
       "lon": 133.6903613,
       "ele": 1012.1166666666668
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "登議城山": {
     "municipalities": [
@@ -6547,7 +7040,8 @@
       "lon": 132.798511,
       "ele": 649.16
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "笠松山東峰": {
     "municipalities": [
@@ -6564,7 +7058,8 @@
       "estimated_from_gpx": "yamap_2026-03-06_09_00.gpx",
       "elevation_diff_m": 4.29
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "尻割山": {
     "municipalities": [
@@ -6581,7 +7076,8 @@
       "estimated_from_gpx": "yamap_2026-03-07_09_28.gpx",
       "elevation_diff_m": 1.18
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "四本松": {
     "municipalities": [
@@ -6598,7 +7094,8 @@
       "estimated_from_gpx": "yamap_2026-03-07_09_28.gpx",
       "elevation_diff_m": 1.27
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "呉石山": {
     "municipalities": [
@@ -6612,7 +7109,8 @@
       "lon": 133.6468525,
       "ele": 833.5256703454279
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "峰畑山": {
     "municipalities": [
@@ -6626,7 +7124,8 @@
       "lon": 133.681909,
       "ele": 753.8057910293684
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "白木山": {
     "municipalities": [
@@ -6640,7 +7139,8 @@
       "lon": 133.5857961,
       "ele": 617.3566666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "軽ノ山": {
     "municipalities": [
@@ -6654,7 +7154,8 @@
       "lon": 132.768519,
       "ele": 165.84333333333333
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "野津子山": {
     "municipalities": [
@@ -6671,7 +7172,8 @@
       "estimated_from_gpx": "yamap_2026-03-11_10_35.gpx",
       "elevation_diff_m": 21.84
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "長山": {
     "municipalities": [
@@ -6685,7 +7187,8 @@
       "lon": 132.8359236,
       "ele": 939.7329137961616
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "高研山": {
     "municipalities": [
@@ -6699,7 +7202,8 @@
       "lon": 132.8609245,
       "ele": 1065.780524285452
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "大ノ森": {
     "municipalities": [
@@ -6713,7 +7217,8 @@
       "lon": 133.056812,
       "ele": 1317.4533333333331
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "雨乞山": {
     "municipalities": [
@@ -6729,7 +7234,8 @@
       "lon": 132.3821763,
       "ele": 496.59999999999997
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "妙見森": {
     "municipalities": [
@@ -6743,7 +7249,8 @@
       "lon": 132.8429594,
       "ele": 1296.6768919465774
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "笹峠山": {
     "municipalities": [
@@ -6757,7 +7264,8 @@
       "lon": 132.8012664,
       "ele": 967.0418485014342
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "雨霧山": {
     "municipalities": [
@@ -6771,7 +7279,8 @@
       "lon": 132.8679548,
       "ele": 1235.86
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "三郷の辻": {
     "municipalities": [
@@ -6785,7 +7294,8 @@
       "lon": 132.8369828,
       "ele": 926.7733333333334
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "鼻欠山": {
     "municipalities": [
@@ -6799,7 +7309,8 @@
       "lon": 132.5041115,
       "ele": 459.0429986192042
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "面木山": {
     "municipalities": [
@@ -6813,7 +7324,8 @@
       "lon": 133.0127568,
       "ele": 981.2133333333335
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "黒森": {
     "municipalities": [
@@ -6827,7 +7339,8 @@
       "lon": 133.0173655,
       "ele": 890.1266666666667
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "台ヶ森": {
     "municipalities": [
@@ -6844,7 +7357,8 @@
       "estimated_from_gpx": "yamap_2026-05-02_09_29.gpx",
       "elevation_diff_m": 5.53
     },
-    "csv_gps_data": null
+    "csv_gps_data": null,
+    "agent_survey_data": null
   },
   "うつむき山": {
     "municipalities": [
@@ -6856,7 +7370,8 @@
       "lat": 33.568889,
       "lon": 132.755111,
       "ele": 535
-    }
+    },
+    "agent_survey_data": null
   },
   "妙見山": {
     "municipalities": [
@@ -6868,7 +7383,8 @@
       "lat": 33.559167,
       "lon": 132.600056,
       "ele": 535
-    }
+    },
+    "agent_survey_data": null
   },
   "鉢が森": {
     "municipalities": [
@@ -6880,7 +7396,8 @@
       "lat": 33.399236,
       "lon": 132.615513,
       "ele": 552
-    }
+    },
+    "agent_survey_data": null
   },
   "高山寺山": {
     "municipalities": [
@@ -6892,7 +7409,8 @@
       "lat": 33.522925,
       "lon": 132.510191,
       "ele": 561
-    }
+    },
+    "agent_survey_data": null
   },
   "牛ヶ首": {
     "municipalities": [
@@ -6904,7 +7422,8 @@
       "lat": 33.92209,
       "lon": 133.35514,
       "ele": 584
-    }
+    },
+    "agent_survey_data": null
   },
   "三石山": {
     "municipalities": [
@@ -6916,7 +7435,8 @@
       "lat": 33.568778,
       "lon": 132.856417,
       "ele": 616
-    }
+    },
+    "agent_survey_data": null
   },
   "感応寺山": {
     "municipalities": [
@@ -6928,7 +7448,8 @@
       "lat": 33.561222,
       "lon": 132.579639,
       "ele": 688
-    }
+    },
+    "agent_survey_data": null
   },
   "水無権現": {
     "municipalities": [
@@ -6940,7 +7461,8 @@
       "lat": 33.612515,
       "lon": 132.72112,
       "ele": 703
-    }
+    },
+    "agent_survey_data": null
   },
   "黒山": {
     "municipalities": [
@@ -6952,7 +7474,8 @@
       "lat": 33.638972,
       "lon": 132.610639,
       "ele": 729
-    }
+    },
+    "agent_survey_data": null
   },
   "棟山": {
     "municipalities": [
@@ -6964,7 +7487,8 @@
       "lat": 33.622639,
       "lon": 132.6035,
       "ele": 808
-    }
+    },
+    "agent_survey_data": null
   },
   "星ヶ森": {
     "municipalities": [
@@ -6976,7 +7500,8 @@
       "lat": 33.835478,
       "lon": 133.107797,
       "ele": 820
-    }
+    },
+    "agent_survey_data": null
   },
   "草屋敷": {
     "municipalities": [
@@ -6988,7 +7513,8 @@
       "lat": 33.606248,
       "lon": 132.614092,
       "ele": 824
-    }
+    },
+    "agent_survey_data": null
   },
   "大熊山": {
     "municipalities": [
@@ -7000,7 +7526,8 @@
       "lat": 33.767056,
       "lon": 132.938056,
       "ele": 856
-    }
+    },
+    "agent_survey_data": null
   },
   "蒲山": {
     "municipalities": [
@@ -7012,7 +7539,8 @@
       "lat": 33.645583,
       "lon": 132.76275,
       "ele": 873
-    }
+    },
+    "agent_survey_data": null
   },
   "牛ノ峯": {
     "municipalities": [
@@ -7024,7 +7552,8 @@
       "lat": 33.656753,
       "lon": 132.649133,
       "ele": 895
-    }
+    },
+    "agent_survey_data": null
   },
   "小森": {
     "municipalities": [
@@ -7036,7 +7565,8 @@
       "lat": 33.791278,
       "lon": 133.154833,
       "ele": 932
-    }
+    },
+    "agent_survey_data": null
   },
   "辻ヶ峰": {
     "municipalities": [
@@ -7048,7 +7578,8 @@
       "lat": 33.891811,
       "lon": 133.292249,
       "ele": 957
-    }
+    },
+    "agent_survey_data": null
   },
   "常住": {
     "municipalities": [
@@ -7060,7 +7591,8 @@
       "lat": 33.781833,
       "lon": 133.169194,
       "ele": 984
-    }
+    },
+    "agent_survey_data": null
   },
   "熊鷹山": {
     "municipalities": [
@@ -7072,7 +7604,8 @@
       "lat": 33.910568,
       "lon": 133.401798,
       "ele": 1095
-    }
+    },
+    "agent_survey_data": null
   },
   "櫛ヶ峰": {
     "municipalities": [
@@ -7084,7 +7617,8 @@
       "lat": 33.867577,
       "lon": 133.222072,
       "ele": 1112
-    }
+    },
+    "agent_survey_data": null
   },
   "大旗山": {
     "municipalities": [
@@ -7096,7 +7630,8 @@
       "lat": 33.507467,
       "lon": 132.828131,
       "ele": 1184
-    }
+    },
+    "agent_survey_data": null
   },
   "兵庫山": {
     "municipalities": [
@@ -7108,7 +7643,8 @@
       "lat": 33.84801,
       "lon": 133.50827,
       "ele": 1303
-    }
+    },
+    "agent_survey_data": null
   },
   "生之越": {
     "municipalities": [
@@ -7120,7 +7656,8 @@
       "lat": 33.466177,
       "lon": 132.958796,
       "ele": 1310
-    }
+    },
+    "agent_survey_data": null
   },
   "玉取山": {
     "municipalities": [
@@ -7132,7 +7669,8 @@
       "lat": 33.863523,
       "lon": 133.526051,
       "ele": 1330
-    }
+    },
+    "agent_survey_data": null
   },
   "三ヶ森": {
     "municipalities": [
@@ -7144,6 +7682,7 @@
       "lat": 33.803672,
       "lon": 133.06812,
       "ele": 1377
-    }
+    },
+    "agent_survey_data": null
   }
 }
