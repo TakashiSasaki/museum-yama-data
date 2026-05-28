@@ -259,6 +259,35 @@ async function runTests() {
         }
         fs.unlinkSync(badEleGpxPath);
 
+        // 5. Test find-missing and verify subcommands
+        console.log('--- Testing find-missing and verify subcommands ---');
+        const mockCsvDir = path.join(TEMP_TEST_DIR, 'csv');
+        const mockYamapDir = path.join(TEMP_TEST_DIR, 'yamap');
+        const mockAnnotatedDir = path.join(TEMP_TEST_DIR, 'gpx', 'annotated');
+
+        if (!fs.existsSync(mockCsvDir)) fs.mkdirSync(mockCsvDir, { recursive: true });
+        if (!fs.existsSync(mockYamapDir)) fs.mkdirSync(mockYamapDir, { recursive: true });
+        if (!fs.existsSync(mockAnnotatedDir)) fs.mkdirSync(mockAnnotatedDir, { recursive: true });
+
+        // Write a mock CSV that references YAMAP activity URLs
+        fs.writeFileSync(path.join(mockCsvDir, 'activities_mock.csv'), 'Name,Link\nMount Fuji,https://yamap.com/activities/123456\nMount Aso,https://yamap.com/activities/789012', 'utf8');
+
+        // Write only one mock Markdown file in yamap (123456.md) - so 789012 is missing
+        fs.writeFileSync(path.join(mockYamapDir, '123456.md'), '# Activity 123456\n- **Title**: Mount Fuji Hike\n- **Date**: 2024年05月20日\n', 'utf8');
+
+        // Write a mock GPX in annotated folder
+        fs.writeFileSync(path.join(mockAnnotatedDir, 'yamap_2024-05-20_08_00.gpx'), '<?xml version="1.0" encoding="UTF-8"?><gpx><trk><name>Mount Fuji Hike</name><trkseg><trkpt lat="35.36" lon="138.73"><ele>3776</ele><time>2024-05-19T23:00:00Z</time></trkpt></trkseg></trk></gpx>', 'utf8');
+
+        // Run find-missing via CLI
+        console.log('Running node cli.js find-missing...');
+        runCommand(`node cli.js find-missing --root "${TEMP_TEST_DIR}"`);
+        runAssert(true, 'find-missing CLI executed successfully');
+
+        // Run verify via CLI
+        console.log('Running node cli.js verify...');
+        runCommand(`node cli.js verify --root "${TEMP_TEST_DIR}"`);
+        runAssert(true, 'verify CLI executed successfully');
+
     } finally {
         if (fs.existsSync(TEMP_TEST_DIR)) fs.rmSync(TEMP_TEST_DIR, { recursive: true, force: true });
     }

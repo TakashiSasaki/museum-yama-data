@@ -11,13 +11,15 @@ function printUsageAndExit(code = 1) {
 Usage: node cli.js <command> --root <path>
 
 Commands:
-  intake     Process ZIP and XLSX files into raw GPX and CSV.
-  merge      Merge raw GPX files grouped by year.
-  annotate   Detect summits and annotate GPX files with waypoints.
-  validate   Validate GPX files for well-formedness and coordinates.
-  test       Run the skill test suite.
+  intake        Process ZIP and XLSX files into raw GPX and CSV.
+  merge         Merge raw GPX files grouped by year.
+  annotate      Detect summits and annotate GPX files with waypoints.
+  validate      Validate GPX files for well-formedness and coordinates.
+  find-missing  Find YAMAP activities in CSV files missing corresponding MD files.
+  verify        Verify consistency between GPX files and YAMAP MD records.
+  test          Run the skill test suite.
 
-Note: --root <path> is strictly required for intake, merge, annotate, and validate.
+Note: --root <path> is strictly required for intake, merge, annotate, validate, find-missing, and verify.
 `);
     process.exit(code);
 }
@@ -59,6 +61,12 @@ async function run() {
                 break;
             case 'validate':
                 await require('./commands/validate')(options);
+                break;
+            case 'find-missing':
+                await require('./commands/find-missing')(options);
+                break;
+            case 'verify':
+                await require('./commands/verify')(options);
                 break;
             case 'test':
                 require('child_process').execSync('npm test', { stdio: 'inherit', cwd: __dirname });
