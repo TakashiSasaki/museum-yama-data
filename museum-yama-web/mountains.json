@@ -389,13 +389,29 @@
     "csv_gps_data": null,
     "agent_survey_data": null
   },
-  "愛宕山": {
+  "愛宕山(松山市)": {
     "municipalities": [
-      "松山市",
+      "松山市"
+    ],
+    "activities": [
+      "15715627"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.8494454,
+      "lon": 132.7983769,
+      "ele": 120.8,
+      "estimated": true,
+      "estimated_from_gpx": "yamap_2022-02-16_11_57.gpx",
+      "elevation_diff_m": 5.8
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "愛宕山(内子町)": {
+    "municipalities": [
       "内子町"
     ],
     "activities": [
-      "15715627",
       "46530379"
     ],
     "gpx_summit_data": {
@@ -1888,13 +1904,29 @@
     "csv_gps_data": null,
     "agent_survey_data": null
   },
-  "笹ヶ峰": {
+  "笹ヶ峰(西条市)": {
     "municipalities": [
-      "西条市",
+      "西条市"
+    ],
+    "activities": [
+      "48114780"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.8280769,
+      "lon": 133.2743948,
+      "ele": 1856.6633333333332,
+      "estimated": true,
+      "estimated_from_gpx": "yamap_2026-05-06_07_28.gpx",
+      "elevation_diff_m": 3.3
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "笹ヶ峰(四国中央市)": {
+    "municipalities": [
       "四国中央市"
     ],
     "activities": [
-      "48114780",
       "35193395"
     ],
     "gpx_summit_data": {
@@ -3481,13 +3513,30 @@
     "csv_gps_data": null,
     "agent_survey_data": null
   },
-  "黒森山": {
+  "黒森山(松山市)": {
     "municipalities": [
       "松山市",
+      "久万高原町"
+    ],
+    "activities": [
+      "23372854"
+    ],
+    "gpx_summit_data": {
+      "lat": 33.6897024,
+      "lon": 132.8493405,
+      "ele": 1151.6,
+      "estimated": true,
+      "estimated_from_gpx": "yamap_2023-04-04_12_51.gpx",
+      "elevation_diff_m": 2.4
+    },
+    "csv_gps_data": null,
+    "agent_survey_data": null
+  },
+  "黒森山(西条市)": {
+    "municipalities": [
       "西条市"
     ],
     "activities": [
-      "23372854",
       "32377948"
     ],
     "gpx_summit_data": {
