@@ -35,9 +35,9 @@ Files in `reverse_geocoding/raw/nominatim/` (e.g., `geocoded_points_*.json`) are
 - **Target Path:** `data/01_raw/reverse_geocoding/`
 - **Future Derived Outputs:** `data/03_primary/municipalities/`, `data/04_feature/location_enrichment/`
 
-### Remaining needs decision Items
+### Remaining Pending Decisions
 
-- Even though the script is found, the schema contract, integration into the pipeline, and reuse logic (distance tolerances, boundary flagging) need full definition. It is kept as "needs decision" until the pipeline is completely defined.
+- Even though the script is found and the directory is classified as a "preserved as raw snapshot", the schema contract, integration into the pipeline, and reuse logic (distance tolerances, boundary flagging) still need full definition before derived datasets can be confidently built.
 
 ## museum-yama-web/mountains.json
 
