@@ -60,7 +60,7 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
   - `raw/`: Raw `.gpx` track files extracted from ZIP archives. This is where unprocessed individual tracks live.
   - `annotated/`: GPX files with `<wpt>` waypoint elements marking detected mountain summits.
   - `merged-by-year/`: Yearly consolidated GPX files for Google My Maps import.
-- `csv/`: **Processed Records**. Contains `.csv` files extracted from Excel activity logs. Used as the primary data source for the web app.
+- `csv/`: **Processed Records / Legacy Operational Input**. Contains `.csv` files extracted from sheets in the Excel activity log workbook. These files are currently consumed by the legacy pipeline and web-data generation flow, but for provenance purposes the primary source/archive is `processed/えひめの山.xlsx`. Treat the CSV files as Excel-derived extracted representations unless later evidence shows manual edits.
 - `processed/`: **Archive**. Stores original `.zip` and `.xlsx` files after they have been processed by the intake skill.
 - `museum-yama-web/`: **Web Data Cache**. Stores processed JSON datasets converted from GPX and CSV sources, optimized for consumption by the front-end map and visualizer.
 - `.agents/`: **Automation Center**. Contains repository-specific skills and configurations for AI agents.

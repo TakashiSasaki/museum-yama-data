@@ -12,11 +12,13 @@ The `processed/` directory was found to contain the true primary source archives
 
 These files are preserved as raw snapshots and should not be edited, nor should they be extracted directly in place.
 
-## Web Cache Artifacts & Manual Curation Risk
-The web artifact `museum-yama-web/mountains.json` is a generated web cache. However, because we do not have complete proof of its regenerability, it cannot be safely regenerated or deleted without a risk of data loss. It might contain manual curation or accumulated corrections, and is therefore classified as "needs decision."
+## JSON Data Structures
 
-## Reverse Geocoding
-JSON files inside `reverse_geocoding/` were inspected and their precise classification is pending. We do not have sufficient evidence to confidently classify them purely as source or derived data without risking the loss of manual curation. Thus, their migration status remains "needs decision" and their proposed target path is TBD.
+For detailed findings regarding JSON data structures (`reverse_geocoding/` and `museum-yama-web/mountains.json`), please see [JSON Provenance Findings](json_provenance_findings.md).
+
+In summary:
+- `reverse_geocoding/` acts as a cache/snapshot of Nominatim API responses for municipality-level location enrichment. The pipeline needs formalizing.
+- `museum-yama-web/mountains.json` is likely a web cache but remains "needs decision" because full regenerability is unproven and it may contain manual curations (such as `agent_survey_data`).
 
 ## YAMAP Logs & References
 A fetch log, `yamap_all_activity_ids.txt`, was found inside the `yamap/` directory alongside Markdown activity records. This file acts as a master reference list. Rather than migrating it with the actual `.md` activity records under `data/01_raw/yamap_markdown/`, this file will be given a separate mapping under `data/01_raw/yamap_metadata/` to maintain the semantic split.
