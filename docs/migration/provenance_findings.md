@@ -16,7 +16,16 @@ These files are preserved as raw snapshots and should not be edited, nor should 
 
 For detailed findings regarding JSON data structures (`reverse_geocoding/` and `museum-yama-web/mountains.json`), please see [JSON Provenance Findings](json_provenance_findings.md).
 
-In summary:
+## GPX Derived Artifacts
+
+Detailed policies regarding raw GPX, generated summit candidates, legacy annotations, and merged artifacts are established in the [GPX Derived Artifacts Policy](gpx_derived_artifacts_policy.md). In summary:
+- `gpx/raw/` contains original single-activity GPX files and serves as immutable source data.
+- `gpx/annotated/` contains legacy experimental annotated GPX files. Existing summit waypoint name assignments are not trusted.
+- Summit-candidate waypoint generation is a required future pipeline step, but summit name/identity resolution must be cleanly separated from candidate detection.
+- `gpx/merged-by-year/` contains yearly merged overview files for dataset browsing and Google My Maps import.
+- Both legacy outputs are preserved as evidence or useful reporting, but require formalized reproducible pipelines and validation.
+
+In summary regarding JSON Data Structures:
 - `reverse_geocoding/` acts as a cache/snapshot of Nominatim API responses for municipality-level location enrichment. The pipeline needs formalizing.
 - `museum-yama-web/mountains.json` is likely a web cache but remains "needs decision" because full regenerability is unproven and it may contain manual curations (such as `agent_survey_data`).
 
