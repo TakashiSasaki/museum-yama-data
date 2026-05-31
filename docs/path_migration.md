@@ -18,7 +18,9 @@ This document is a **planning record only**. It outlines the proposed mappings f
 | `yamap/yamap_all_activity_ids.txt` | `data/01_raw/yamap_metadata/` | Metadata / Log | No (Not yet performed) | Semantic split confirmation | None | Reference index/log for YAMAP fetch |
 | `museum-yama-web/` | `data/08_reporting/web_data/` | Generated Cache | No (Not yet performed) | Are these purely regenerable? | Pipeline validation | Target for web app. Remains 'needs decision' on manual curation. |
 | `reverse_geocoding/` | TBD | Artifact/Source | No (Not yet performed) | Is this purely source or derived? | Audit completion | Classification pending. |
-| `.agents/skills/yama-data-pipeline/test/fixtures/` | *Stays in test/fixtures* | Test Fixtures | Yes | None | None | Skill-specific test data, not project dataset |
-| `docs/` | *Remains internal documentation* | Internal Docs | Yes | None | None | Stays as Git-tracked docs |
-| `site/` | *Future GitHub Pages site* | Site Source | N/A | Setup GH pages workflow | Workflow test | TBD |
-| `scratch/` | *Disposable work area* | Disposable | N/A | Add to `.gitignore` | Ignore test | TBD |
+| `.agents/skills/yama-data-pipeline/test/fixtures/` | *Stays in test/fixtures* | Test Fixtures | Yes | None | None | Skill-specific test data, preserved as legacy reference. Kept in place and excluded from main data migration. |
+| `docs/` | *Remains internal documentation* | Internal Docs | Yes | None | None | Stays as Git-tracked docs. Canonical source of truth. |
+| `site/` | *Future GitHub Pages site* | Site Source | N/A | No workflow or site created yet. | Workflow test | Future GitHub Pages source directory. Must be updated from or traceable to `docs/`. |
+| `site/docs/directory-structure.md` | *Future GitHub Pages site* | Site Source | N/A | No workflow or site created yet. | Workflow test | Planned as the human-facing directory structure explanation. |
+| `site/docs/generated/` | *Future GitHub Pages site* | Site Source | N/A | No workflow or site created yet. | Workflow test | Planned for generated summaries derived from `docs/`. |
+| `scratch/` | *Disposable work area* | Disposable | N/A | None | None | Already treated as a disposable ignored workspace. |
