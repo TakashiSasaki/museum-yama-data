@@ -25,7 +25,7 @@ Detailed policies regarding raw GPX, generated summit candidates, legacy annotat
 - `gpx/merged-by-year/` contains yearly merged overview files for dataset browsing and Google My Maps import.
 - Both legacy outputs are preserved as evidence or useful reporting, but require formalized reproducible pipelines and validation.
 
-In summary:
+In summary regarding JSON Data Structures:
 - `reverse_geocoding/` acts as a cache/snapshot of Nominatim API responses for municipality-level location enrichment. The pipeline needs formalizing.
 - `museum-yama-web/mountains.json` is likely a web cache but remains "needs decision" because full regenerability is unproven and it may contain manual curations (such as `agent_survey_data`).
 
