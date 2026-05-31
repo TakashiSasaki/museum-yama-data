@@ -39,6 +39,17 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
   - **MUST** treat "site/" as GitHub Pages source and "docs/" as internal documentation source.
   - **SHOULD** keep truly disposable files only under "scratch/" or equivalent ignored temporary locations.
 
+## Documentation and Site Consistency Policy
+
+- `docs/` is the canonical source of truth for internal documentation.
+- `site/` will be the GitHub Pages presentation layer.
+- `site/` must not introduce independent facts that contradict `docs/`.
+- Directory roles, migration status, provenance classifications, and data classifications must be defined in `docs/` first.
+- Site pages must link to or be traceable to canonical `docs/` sources.
+- If `docs/` and `site/` disagree, `docs/` wins until corrected.
+- Future generated pages should live under `site/docs/generated/`.
+- No GitHub Pages site or workflow should be created until explicitly requested.
+
 - **Before/After Change Checklists:**
   - **Before Change:** Verify branch status. Read existing `docs/source_coverage_audit.md` and `docs/path_migration.md`. Do not start moving files unless the audit supports it.
   - **After Change:** Run `git status` to ensure accidental deletions or moves have not occurred. Check that no source files have been changed.
@@ -106,7 +117,7 @@ Ask the agent:
 
 ## Development Guidelines (Legacy)
 - Always use the **`yama-data-pipeline intake` subcommand** for new data to maintain the directory structure. It handles ZIP intake collisions strictly by failing to prevent silent overwrites.
-- The `csv/` directory is the source of truth for activity metadata.
+- The `csv/` directory is the current legacy operational input for activity metadata used by the existing pipeline. These CSV files were extracted from sheets in the Excel workbook. For provenance purposes, the primary source/archive is `processed/えひめの山.xlsx`; the CSV files are Excel-derived extracted representations unless later evidence shows manual edits.
 - The `gpx/raw/` directory should only contain individual `.gpx` files (no subfolders). These are considered **source data** and must not be mutated.
 - The `gpx/annotated/` and `gpx/merged-by-year/` directories contain **generated artifacts**.
 
