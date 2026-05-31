@@ -17,7 +17,7 @@ This document is a **planning record only**. It outlines the proposed mappings f
 | `yamap/*.md` | `data/01_raw/yamap_markdown/` | Source | No (Not yet performed) | Final directory name approval | DVC tracking | Markdown files scraped from YAMAP |
 | `yamap/yamap_all_activity_ids.txt` | `data/01_raw/yamap_metadata/` | Metadata / Log | No (Not yet performed) | Semantic split confirmation | None | Reference index/log for YAMAP fetch |
 | `museum-yama-web/` | `data/08_reporting/web_data/` | Generated Cache | No (Not yet performed) | Are these purely regenerable? | Pipeline validation | Target for web app. Remains 'needs decision' on manual curation. |
-| `reverse_geocoding/` | TBD | Artifact/Source | No (Not yet performed) | Is this purely source or derived? | Audit completion | Classification pending. |
+| `reverse_geocoding/` | `data/01_raw/reverse_geocoding/` | Cache / Snapshot | No (Not yet performed) | What is the schema contract and reuse logic? | Audit completion | Cache for municipality-level enrichment. Derived outputs go to `data/03_primary/` and `data/04_feature/`. |
 | `.agents/skills/yama-data-pipeline/test/fixtures/` | *Stays in test/fixtures* | Test Fixtures | Yes | None | None | Skill-specific test data, preserved as legacy reference. Kept in place and excluded from main data migration. |
 | `docs/` | *Remains internal documentation* | Internal Docs | Yes | None | None | Stays as Git-tracked docs. Canonical source of truth. |
 | `site/` | *Future GitHub Pages site* | Site Source | N/A | No workflow or site created yet. | Workflow test | Future GitHub Pages source directory. Must be updated from or traceable to `docs/`. |
