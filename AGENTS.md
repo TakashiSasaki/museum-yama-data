@@ -2,11 +2,48 @@
 
 This repository contains tools and data for analyzing mountaineering location data obtained from the **YAMAP** app, based on the records of **Professor Yoshitomi of Ehime University**.
 
-## Project Overview
+## Repository Purpose
 The goal is to build a web application that visualizes and analyzes GPX tracks and activity logs. 
 - **Visualization Link**: [Google My Maps](https://www.google.com/maps/d/edit?mid=1-hJRCtAmD6DF9-nMQOwftdz7v5vVTWo&usp=sharing)
+- This is a private repository used as a data workspace. The goal is to preserve work progress, build an auditable dataset, and prepare for a reproducible data pipeline.
 
-## Directory Structure
+## Human/Agent Shared Operating Contract
+
+This contract bounds the decisions and behaviors of humans and AI coding agents operating in this repository.
+
+### Rules & Responsibilities
+
+- **Data Preservation Rules:**
+  - **MUST NOT** delete, move, rename, overwrite, deduplicate, or regenerate existing data unless a source coverage audit has been completed and the migration plan explicitly covers the affected paths.
+  - **MUST** treat existing raw/source data as historical evidence. Raw data is immutable.
+  - **MUST** preserve manually curated records unless explicitly classified and mapped.
+  - **MUST** document old path to new path mappings before any future file relocation.
+  - **MUST** classify every source field or source file before migration as one of:
+    - migrated
+    - partially migrated
+    - derived only
+    - preserved as legacy reference
+    - preserved as raw snapshot
+    - intentionally discarded
+    - unmigrated gap
+    - needs decision
+  - **MUST NOT** proceed with migration if any item remains unclassified, "needs decision", or "unmigrated gap".
+  - **MUST NOT** commit plaintext credentials, cookies, API keys, browser session data, or private tokens.
+  - **MUST** ensure generated website pages do not accidentally publish sensitive or private data.
+
+- **Git vs DVC Tracking Policy:**
+  - **SHOULD** use DVC for large data, source archives, generated data, intermediate data, validation reports, and retained work outputs.
+  - **SHOULD** use Git directly for source code, configuration, documentation, small reviewable summaries, and DVC/Kedro metadata.
+
+- **Workspace Boundaries:**
+  - **MUST** treat "site/" as GitHub Pages source and "docs/" as internal documentation source.
+  - **SHOULD** keep truly disposable files only under "scratch/" or equivalent ignored temporary locations.
+
+- **Before/After Change Checklists:**
+  - **Before Change:** Verify branch status. Read existing `docs/source_coverage_audit.md` and `docs/path_migration.md`. Do not start moving files unless the audit supports it.
+  - **After Change:** Run `git status` to ensure accidental deletions or moves have not occurred. Check that no source files have been changed.
+
+## Current / Legacy Directory Structure (Pending Migration)
 
 - `gpx/`: **GPX Data Root**. New ZIP or XLSX files should be placed here before processing.
   - `raw/`: Raw `.gpx` track files extracted from ZIP archives. This is where unprocessed individual tracks live.
@@ -67,7 +104,7 @@ Ask the agent:
 - **Instructions**: `.agents/skills/fetch-yamap-data/SKILL.md`
 - **Tooling**: AI Browser Tool (Agent-internal)
 
-## Development Guidelines
+## Development Guidelines (Legacy)
 - Always use the **`yama-data-pipeline intake` subcommand** for new data to maintain the directory structure. It handles ZIP intake collisions strictly by failing to prevent silent overwrites.
 - The `csv/` directory is the source of truth for activity metadata.
 - The `gpx/raw/` directory should only contain individual `.gpx` files (no subfolders). These are considered **source data** and must not be mutated.
