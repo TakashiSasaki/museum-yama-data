@@ -38,7 +38,7 @@ This is a basic summary of files by directory and extension. Generated as part o
 
 | Extension / Type | Count |
 | --- | --- |
-| `.md` | 5 |
+| `.md` | 8 |
 
 ## Directory: `.agents/`
 
@@ -64,4 +64,5 @@ This is a basic summary of files by directory and extension. Generated as part o
 | `README.md` | Yes |
 | `AGENTS.md` | Yes |
 | `package.json` | Yes |
+| `package-lock.json` | Yes |
 | `.gitignore` | Yes |
