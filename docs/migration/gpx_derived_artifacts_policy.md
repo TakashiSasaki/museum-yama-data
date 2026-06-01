@@ -24,6 +24,8 @@ The pipeline must strictly distinguish between two conceptual steps:
    - May require correlation with YAMAP metadata, Excel/CSV records, elevation, coordinates, municipality, known mountain data, and potentially human review.
    - Some identities may remain unresolved ("needs decision").
 
+The legacy/reference detection parameters have a read-only baseline audit in `docs/migration/summit_candidate_detection_audit.md`. The audit evaluates candidate-count behavior and parameter sensitivity, but does not select final production parameters.
+
 ### Future Pipeline Artifact Paths
 Future outputs from this process should be organised as follows:
 - **future summit-candidate GPX:** `data/08_reporting/gpx/summit_candidates/`

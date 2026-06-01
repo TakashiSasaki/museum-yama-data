@@ -47,6 +47,8 @@ The legacy script performs the following steps:
 *   `MERGE_DISTANCE = 100`
 *   `ELEV_TOLERANCE = 50`
 
+The legacy/reference detection parameters have a read-only baseline audit in `docs/migration/summit_candidate_detection_audit.md`. The audit evaluates candidate-count behavior and parameter sensitivity, but does not select final production parameters.
+
 ### Important Constraints for Future Implementations
 *   **Legacy Name Assignment**: The existing `assignPeakNames()` function is legacy behavior. It attempts to map peaks to known mountain names from a CSV file. This behavior **must not** be part of the future `detect_summit_candidates` stage. Name assignment belongs solely in `resolve_mountain_identity`.
 *   **Parameter Tuning**: The current parameters are a baseline, not a final optimized policy. They require auditing and tuning, and may need to be adjusted dynamically based on route types or data quality.
