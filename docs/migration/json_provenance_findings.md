@@ -61,8 +61,8 @@ The `museum-yama-web/mountains.json` file appears to be a consolidated JSON data
 
 ### Migration Implications
 
-- **Data Role:** Potential generated web cache. However, the presence of `agent_survey_data` suggests there may be manual curation or accumulated external corrections.
+- **Data Role:** Accumulated provisional list of identified mountains acting as a web cache. It has a temporary/provisional schema. The presence of `agent_survey_data` suggests there may be valuable manual or agent-assisted curation.
 
 ### Remaining needs decision Items
 
-- **Full regeneration is not proven.** Because we cannot prove how this file is generated and whether it contains manual edits, it cannot be safely disposed of or classified. It remains strictly as "needs decision".
+- **Schema replacement and formal data model.** It is currently used as an accumulated list but should not be treated as the final semantic data model. Because its regeneration is unproven and it contains potentially valuable curation, it must be preserved as legacy evidence. Future structured datasets and resolved mountain waypoint GPX should supersede it.

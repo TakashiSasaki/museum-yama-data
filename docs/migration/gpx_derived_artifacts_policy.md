@@ -29,6 +29,12 @@ Future outputs from this process should be organised as follows:
 - **future summit-candidate GPX:** `data/08_reporting/gpx/summit_candidates/`
 - **future summit-candidate table:** `data/04_feature/summit_candidates/`
 - **future summit identity candidates:** `data/04_feature/summit_identity_candidates/`
+- **future resolved mountain waypoint GPX:** `data/08_reporting/gpx/mountain_waypoints/`
+
+### Resolved Mountain Waypoints vs. Summit Candidates
+It is essential to distinguish the outputs:
+- **Summit-candidate GPX** contains unverified candidate waypoints that represent detected peaks but lack authoritative mountain names. They should use non-semantic stable IDs (e.g., `summit-candidate-001`).
+- **Resolved mountain waypoint GPX** is the first concrete target export format. It contains identified mountains as waypoints, with authoritative names, disambiguation labels, and GPX `<extensions>` preserving identity evidence references. These are distinct datasets.
 
 ## Legacy Annotated GPX (`gpx/annotated/`)
 The existing `gpx/annotated/` directory contains outputs produced by the legacy `annotate` command. These outputs were generated manually or experimentally.
