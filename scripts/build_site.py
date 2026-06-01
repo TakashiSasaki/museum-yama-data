@@ -72,6 +72,7 @@ def get_template(title, content):
         <a href="data-catalog.html">Data Catalog</a>
         <a href="pipeline.html">Pipeline</a>
         <a href="pipeline-graph.html">Pipeline Graph</a>
+        <a href="directory-inventory.html">Directory Inventory</a>
         <a href="lineage.html">Lineage</a>
         <a href="decisions.html">Decisions</a>
     </nav>
@@ -322,6 +323,8 @@ def build_index():
     <ul>
         <li><a href="data-catalog.html">Data Catalog</a></li>
         <li><a href="pipeline.html">Pipeline Architecture</a></li>
+        <li><a href="pipeline-graph.html">Pipeline Graph</a></li>
+        <li><a href="directory-inventory.html">Directory Inventory</a></li>
         <li><a href="lineage.html">Provenance & Lineage</a></li>
         <li><a href="decisions.html">Decisions & Status</a></li>
     </ul>
@@ -480,10 +483,42 @@ def build_decisions():
         <li><strong>Website Improvements:</strong> Low-risk, incremental enhancements to the presentation layer.</li>
         <li><strong>Directory-Structure Improvements:</strong> Higher-risk changes to the underlying repository structure. This track is currently blocked. No physical data movement may occur until comprehensive source coverage and source-to-target mapping audits are complete.</li>
     </ul>
-    <p>For more details, refer to the canonical source: <code><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/museum-yama-data/docs/migration/website_and_directory_roadmap.md" target="_blank">docs/migration/website_and_directory_roadmap.md</a></code>.</p>
+    <p>For more details, refer to the canonical source: <code><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/website_and_directory_roadmap.md" target="_blank" rel="noopener noreferrer">docs/migration/website_and_directory_roadmap.md</a></code>.</p>
     """
     with open(SITE_DIR / "decisions.html", "w") as f:
         f.write(get_template("Decisions & Status", content))
+
+def build_directory_inventory():
+    content = """
+    <p>This page summarizes the current directory inventory and migration-readiness status.</p>
+
+    <p><strong>Note:</strong> Physical directory restructuring remains blocked. The source of truth for the inventory is the canonical document: <code><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/current_directory_inventory.md" target="_blank" rel="noopener noreferrer">docs/migration/current_directory_inventory.md</a></code>.</p>
+
+    <h3>Protected Directories (No Movement Yet)</h3>
+    <ul>
+        <li><code>gpx/</code> (raw, annotated, merged-by-year)</li>
+        <li><code>csv/</code></li>
+        <li><code>processed/</code></li>
+        <li><code>yamap/</code></li>
+        <li><code>reverse_geocoding/</code></li>
+        <li><code>museum-yama-web/</code></li>
+    </ul>
+
+    <h3>Clone-Complete Reproducibility</h3>
+    <p>All source data snapshots and retained legacy artifacts must be preserved. The project remains Git-primary and DVC-light. No protected data is being normalized or regenerated during this inventory phase.</p>
+
+    <h3>Migration Readiness Audit Blockers</h3>
+    <p>Movement of these protected directories may only proceed after:</p>
+    <ul>
+        <li>Every source path has a target disposition.</li>
+        <li>Every source field is classified.</li>
+        <li>No "needs decision" item remains.</li>
+        <li>No "unmigrated gap" remains.</li>
+    </ul>
+    """
+    with open(SITE_DIR / "directory-inventory.html", "w") as f:
+        f.write(get_template("Directory Inventory", content))
+
 
 if __name__ == "__main__":
     print("Building site...")
@@ -493,6 +528,7 @@ if __name__ == "__main__":
     build_data_catalog()
     build_pipeline()
     build_pipeline_graph()
+    build_directory_inventory()
     build_lineage()
     build_decisions()
     print("Done.")
