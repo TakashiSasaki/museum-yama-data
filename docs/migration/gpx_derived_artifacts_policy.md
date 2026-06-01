@@ -14,8 +14,8 @@ For each single-activity GPX file, adding summit candidate points as GPX waypoin
 The pipeline must strictly distinguish between two conceptual steps:
 1. **Summit Candidate Detection**
    - Required pipeline step.
-   - Detects candidate points from the elevation profile.
-   - Adds candidate waypoints to GPX.
+   - Detects candidate points purely from GPX-derived evidence (e.g., elevation profile, track traces).
+   - Adds unresolved candidate waypoints to GPX.
    - **Crucially:** Does not assign final authoritative summit names. Candidate waypoints should either have no name assigned or use a stable, non-semantic candidate ID (e.g., `summit-candidate-001`).
 
 2. **Summit Identity Resolution**
@@ -40,7 +40,7 @@ It is essential to distinguish the outputs:
 The existing `gpx/annotated/` directory contains outputs produced by the legacy `annotate` command. These outputs were generated manually or experimentally.
 - **Status:** Their correctness is not currently trusted.
 - **Content:** These files contain generated summit waypoints and exhibit historical summit-name assignment behavior.
-- **Policy:** Existing summit names in these annotated files must **not** be treated as authoritative final summit annotations. However, these files must be **preserved as legacy evidence** of historical work products.
+- **Policy:** Existing summit names in these annotated files must **not** be treated as authoritative final summit annotations. However, these files must be **preserved as legacy evidence** of historical work products. Future summit candidate GPX will strictly contain unresolved candidate waypoints, while final resolved mountain waypoints are exported in a separate step after identity resolution. Route geometry itself remains source evidence for candidate detection, validation, and provenance, but full route geometry is not required for the final mountain list data.
 - **Target Mapping:** `data/99_work/legacy_annotated_gpx/`
 
 ## Yearly Merged GPX (`gpx/merged-by-year/`)

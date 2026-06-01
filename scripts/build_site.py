@@ -298,6 +298,7 @@ def build_pipeline_graph():
 
     content = f"""
     <p>This graph represents the <strong>intended future pipeline structure</strong>.</p>
+    <p><em>Note: <code>detect_summit_candidates</code> produces unresolved summit candidate points from GPX-derived elevation and trace evidence only; it does not assign authoritative mountain names. <code>estimate_municipality</code> enriches those candidates with city/county/town/village-level location evidence and preserves ambiguity when multiple municipalities remain possible. <code>resolve_mountain_identity</code> performs later mountain-name and identity resolution using the accumulated evidence.</em></p>
     <ul>
         <li>The pipeline stages are placeholders or planned stages unless otherwise documented.</li>
         <li>The graph is a presentation view derived from canonical repository sources.</li>

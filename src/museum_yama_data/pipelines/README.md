@@ -19,7 +19,7 @@ This directory will eventually contain the implementation of the data pipelines 
 * **Implementation Status:** Not implemented
 
 ### `detect_summit_candidates`
-* **Purpose:** Algorithmically detects potential peaks from the elevation profiles of the GPX tracks. Assigns non-semantic candidate IDs.
+* **Purpose:** Algorithmically detects potential peaks purely from GPX-derived evidence (e.g., elevation profiles, track traces). Assigns stable non-semantic candidate IDs. **Note:** This stage must not assign mountain names or identities.
 * **Intended Inputs:** `gpx_tracks` / `gpx_trackpoints`
 * **Intended Outputs:** `summit_candidates`
 * **Implementation Status:** Not implemented
@@ -31,7 +31,7 @@ This directory will eventually contain the implementation of the data pipelines 
 * **Implementation Status:** Not implemented
 
 ### `estimate_municipality`
-* **Purpose:** Performs or maps coordinates against reverse geocoding cache to associate coordinates with municipalities/regions.
+* **Purpose:** Performs or maps coordinates against reverse geocoding cache to associate coordinates with municipalities/regions. **Note:** This stage preserves multiple municipality candidates when the point cannot be uniquely resolved, rather than forcing a single choice.
 * **Intended Inputs:** `summit_candidates`, `raw_reverse_geocoding_cache`
 * **Intended Outputs:** `location_enrichment`
 * **Implementation Status:** Not implemented

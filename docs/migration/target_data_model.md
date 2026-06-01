@@ -52,8 +52,8 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Tracking System:** DVC dependency candidate
 
 ### 8. `summit_candidates`
-* **Role:** Geolocation points representing algorithmic detections of potential summits. These are strictly unverified entities and do not have mountain identities.
-* **Primary Inputs:** `gpx_tracks` / `gpx_trackpoints` elevation profile analysis.
+* **Role:** Geolocation points representing algorithmic detections of potential summits. These are strictly unverified, unresolved candidate points produced purely from GPX evidence (elevation profiles, track traces) before identity resolution, and do not have mountain identities.
+* **Primary Inputs:** `gpx_tracks` / `gpx_trackpoints`
 * **Expected Future Layer:** `03_primary`
 * **Tracking System:** DVC dependency candidate
 
@@ -64,10 +64,17 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Tracking System:** DVC-tracked output (or dynamically generated)
 
 ### 10. `location_enrichment`
-* **Role:** Municipality and regional boundaries mapped to coordinates.
+* **Role:** Municipality evidence mapping coordinates to administrative levels up to city/county/town/village only. Does not include detailed granular address components (e.g., district, aza, block number). Preserves multiple municipality candidates when ambiguity exists.
 * **Primary Inputs:** `raw_reverse_geocoding_cache`
 * **Expected Future Layer:** `04_feature`
 * **Tracking System:** DVC dependency candidate
+
+### 10b. `summit_candidate_municipality_candidates` (Optional/Suggested)
+* **Role:** Tabular representation of municipality candidates for summit candidates, preserving ambiguity where multiple municipalities could overlap the candidate coordinate.
+* **Primary Inputs:** `location_enrichment`, `summit_candidates`
+* **Expected Future Layer:** `04_feature`
+* **Tracking System:** DVC dependency candidate
+* **Suggested Fields:** `summit_candidate_id`, `prefecture_name`, `county_name` (when needed for disambiguation), `city_town_village_name`, `municipality_display_name` (e.g., "越智郡上島町"), `rank`, `confidence`, `evidence_source`, `reverse_geocoding_record_id`, `boundary_ambiguity`, `needs_review`, `notes`.
 
 ### 11. `mountain_identity_evidence`
 * **Role:** The consolidated structured dataset recording the exact reasons, documents, and coordinates used to assign an identity to a mountain peak.

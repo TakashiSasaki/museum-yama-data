@@ -53,3 +53,18 @@
     *   `needs_review`
     *   `notes`
 *   **Data Model Implication:** Final mountain list data does not require full route/trackpoint geometry. Route data is source evidence for candidate detection, validation, and provenance. The final semantic mountain dataset should focus on resolved mountain entities, waypoints, identity evidence, and activity links, not on retaining full route geometry.
+
+### Summit Candidate Detection
+
+*   **Requirement:** The `detect_summit_candidates` stage must produce unresolved candidate points strictly using GPX-derived evidence (e.g., elevation profiles, trackpoint traces).
+*   **Legacy Context:** The existing `.agents/skills/yama-data-pipeline/commands/annotate.js` script is a legacy reference baseline.
+    *   Its algorithmic baseline (smoothing, local maxima, minimum prominence) is useful but parameters require audit and tuning.
+    *   Its legacy mountain-name assignment behavior (`assignPeakNames()`) must be explicitly excluded from candidate detection and moved to downstream identity resolution.
+    *   Legacy annotated GPX files (`gpx/annotated/`) are evidence, not authoritative truth.
+*   **Expected Output:** Unresolved candidate points with stable, non-semantic IDs. No final mountain identities or authoritative names should be assigned during this stage.
+
+### Municipality Enrichment
+
+*   **Requirement:** The `estimate_municipality` stage enriches location evidence for candidates.
+*   **Granularity:** Enrichment is required only up to the city/county/town/village level. Detailed address components (e.g., district, aza, block number) should not be used as final structured fields.
+*   **Ambiguity Preservation:** When ambiguity exists (e.g., overlapping boundaries), multiple municipality candidates must be preserved. The stage must not arbitrarily force a single municipality choice.
