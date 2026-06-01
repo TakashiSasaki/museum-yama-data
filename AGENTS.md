@@ -31,9 +31,14 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
   - **MUST NOT** commit plaintext credentials, cookies, API keys, browser session data, or private tokens.
   - **MUST** ensure generated website pages do not accidentally publish sensitive or private data.
 
-- **Git vs DVC Tracking Policy:**
-  - **SHOULD** use DVC for large data, source archives, generated data, intermediate data, validation reports, and retained work outputs.
-  - **SHOULD** use Git directly for source code, configuration, documentation, small reviewable summaries, and DVC/Kedro metadata.
+- **Storage and Reproducibility Policy:**
+  - **MUST** follow the canonical policy defined in `docs/migration/storage_reproducibility_policy.md`.
+  - **MUST** preserve a clone-complete repository state. Primary data and retained artifacts remain ordinary Git-tracked files by default.
+  - **MUST NOT** use Git LFS. It is intentionally not used because current data sizes do not require it. Do not run `git lfs` commands.
+  - **MUST** use DVC in DVC-light mode only (pipeline metadata, stage dependency tracking using Git-tracked files, and reproducibility checks).
+  - **MUST NOT** run `dvc add` on raw/source paths or retained-artifact paths by default.
+  - **MUST NOT** use DVC to silently replace Git storage for source snapshots or retained artifacts.
+  - **SHOULD** track generated outputs based on explicit per-path policy decisions.
 
 - **Workspace Boundaries:**
   - **MUST** treat `site/` as future GitHub Pages source and `docs/` as the canonical documentation and research source.
@@ -75,7 +80,7 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
 
 These agreements summarize the current planning state. The canonical details are in `docs/migration/` and `docs/source_coverage_audit.md`.
 
-- **Clone-complete policy:** The repository follows a clone-complete policy. Git LFS is intentionally not used. Primary data and retained processed artifacts should remain available after a plain Git clone.
+- **Clone-complete policy:** The repository follows a clone-complete policy. Git LFS is intentionally not used. Primary data and retained processed artifacts should remain available after a plain Git clone. See `docs/migration/storage_reproducibility_policy.md`.
 - **DVC/Kedro status:** Planning documents are now sufficient for a later task to initialize DVC/Kedro scaffolding without moving data. Actual data movement remains blocked until the source coverage audit and path migration plan explicitly cover the affected files.
   - `conf/` contains future Kedro configuration and catalog placeholders.
   - `src/museum_yama_data/` contains future Python/Kedro pipeline scaffolding.

@@ -2,7 +2,7 @@
 
 This document explains what conditions must be met before actual Data Version Control (DVC) and Kedro setup and initialization begins in the Yama Museum repository.
 
-*Note: No data movement, initialization, or scaffolding has been executed yet. This plan defines the boundaries of the future initialization task.*
+*Note: No data movement or initialization has been executed yet, though basic Python/Kedro package scaffolding exists. This plan defines the boundaries of the future initialization task.*
 
 ## 1. Prerequisites and Current Readiness
 
@@ -15,32 +15,34 @@ The foundational planning policies are in place:
 * Mountain Identity Resolution Policy (`docs/migration/mountain_identity_resolution_policy.md`)
 * Waypoint Collection Output Policy (`docs/migration/waypoint_collection_output_policy.md`)
 * Target Data Model (`docs/migration/target_data_model.md`)
+* Storage and Reproducibility Policy (`docs/migration/storage_reproducibility_policy.md`)
 
-Because the documentation is consistent, **initialization of DVC/Kedro scaffolding without data movement has been started.**
+Because the documentation is consistent, **Kedro scaffolding without data movement exists/was added.**
 
 ### Scaffolding Status (Current)
-* **DVC Initialization:** DVC was *not* initialized because the `dvc` executable was unavailable in the environment. No `.dvc/` metadata or `.dvcignore` files were created.
-* **DVC Tracking:** No actual data tracking has been performed. The first planned DVC tracking commands have been documented in `docs/migration/dvc_tracking_plan.md`.
-* **Kedro Scaffolding:** Minimal placeholder files and a Python package structure (`src/museum_yama_data/`) have been added. `conf/base/catalog.yml` was populated with placeholders mapping to current legacy paths.
-* **Data Movement:** **No data movement, deletion, or modification was performed.** The repository remains physically in its legacy layout.
+* **DVC Initialization:** DVC was *not* initialized. No `.dvc/` metadata or `.dvcignore` files were created.
+* **DVC Dependency Metadata:** No actual DVC stage metadata has been created yet. The first planned DVC dependency candidates have been documented in `docs/migration/dvc_tracking_plan.md`.
+* **Kedro Scaffolding:** Minimal placeholder files and a Python package structure (`src/museum_yama_data/`) exist. `conf/base/catalog.yml` is populated with placeholders mapping logical dataset names to current legacy paths and does not imply migration has occurred.
+* **Data Movement:** **No data movement, deletion, or modification has occurred.** The repository remains physically in its legacy layout.
+* **Git LFS:** Git LFS is not required for current data sizes and is not part of the current plan.
 
 ### Blocking Items (Needs Decision)
 There remain `needs decision` items in `docs/source_coverage_audit.md` (such as `museum-yama-web/mountains.json` and the legacy `csv/` extraction outputs).
 
-* **Impact on DVC Initialization:** These items **do not** block the initialization of the DVC tracking system or the Kedro skeleton.
+* **Impact on DVC Initialization:** These items **do not** block the initialization of DVC pipeline metadata tracking or the Kedro skeleton.
 * **Impact on Data Movement:** These items **do** block the physical migration and architectural rewriting of those specific datasets. The physical data files must not be moved or replaced until their exact status and role in the target model is finalized.
 
 ## 2. Proposed First DVC Scope
 
-- DVC initialization may still be useful later, but the immediate goal is not to move data out of Git.
-- The next DVC use should be “pipeline metadata mode” rather than raw-data tracking mode.
+- DVC is not initialized.
+- The next DVC use will be “pipeline metadata mode” rather than moving primary data out of Git.
 - Raw/source data will initially remain Git-primary.
-- DVC stage definitions, if introduced later, should use Git-tracked raw data as "deps".
+- DVC stage definitions, if introduced later, should use Git-tracked raw data as dependency declarations.
 - Generated outputs may be Git-tracked, DVC-tracked, or both only after explicit policy decision per path.
 - Git LFS is not part of the current plan.
 - The repository remains physically in legacy layout until a separate audited migration task.
 
-The first actual DVC tracking (if any) should strictly cover immutable raw/source archives and snapshot data as pipeline dependencies. DVC initialization will track these assets in their *current* locations before any directory restructuring occurs.
+The first actual DVC dependency tracking (if any) should strictly cover immutable raw/source archives and snapshot data as pipeline dependencies. A future task will initialize DVC and declare these assets as stage dependencies in their *current* locations before any directory restructuring occurs.
 
 Target scope for the first DVC run (as dependencies):
 ```text
@@ -57,7 +59,7 @@ reverse_geocoding/
 The first Kedro task will build the pipeline skeleton.
 
 Target scope for the first Kedro run:
-* Initialize the standard Kedro project skeleton.
+* Initialize the standard Kedro project skeleton (scaffolding already exists).
 * Define `catalog.yml` names mapping to the current paths of the raw datasets.
 * Create placeholder pipeline structures.
 * **Crucial limitation:** Do not rewrite processing logic (e.g., GPX parsing, annotating, reverse geocoding) during this skeleton phase. The logic rewrite is a separate, later task.
