@@ -483,7 +483,7 @@ def build_decisions():
         <li><strong>Website Improvements:</strong> Low-risk, incremental enhancements to the presentation layer.</li>
         <li><strong>Directory-Structure Improvements:</strong> Higher-risk changes to the underlying repository structure. This track is currently blocked. No physical data movement may occur until comprehensive source coverage and source-to-target mapping audits are complete.</li>
     </ul>
-    <p>For more details, refer to the canonical source: <code><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/museum-yama-data/docs/migration/website_and_directory_roadmap.md" target="_blank">docs/migration/website_and_directory_roadmap.md</a></code>.</p>
+    <p>For more details, refer to the canonical source: <code><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/website_and_directory_roadmap.md" target="_blank" rel="noopener noreferrer">docs/migration/website_and_directory_roadmap.md</a></code>.</p>
     """
     with open(SITE_DIR / "decisions.html", "w") as f:
         f.write(get_template("Decisions & Status", content))
@@ -492,7 +492,7 @@ def build_directory_inventory():
     content = """
     <p>This page summarizes the current directory inventory and migration-readiness status.</p>
 
-    <p><strong>Note:</strong> Physical directory restructuring remains blocked. The source of truth for the inventory is the canonical document: <code><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/museum-yama-data/docs/migration/current_directory_inventory.md" target="_blank">docs/migration/current_directory_inventory.md</a></code>.</p>
+    <p><strong>Note:</strong> Physical directory restructuring remains blocked. The source of truth for the inventory is the canonical document: <code><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/current_directory_inventory.md" target="_blank" rel="noopener noreferrer">docs/migration/current_directory_inventory.md</a></code>.</p>
 
     <h3>Protected Directories (No Movement Yet)</h3>
     <ul>
