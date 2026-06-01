@@ -32,9 +32,17 @@ There remain `needs decision` items in `docs/source_coverage_audit.md` (such as 
 
 ## 2. Proposed First DVC Scope
 
-The first actual data-tracking scope for DVC should strictly cover immutable raw/source archives and snapshot data. DVC initialization will track these assets in their *current* locations before any directory restructuring occurs.
+- DVC initialization may still be useful later, but the immediate goal is not to move data out of Git.
+- The next DVC use should be “pipeline metadata mode” rather than raw-data tracking mode.
+- Raw/source data will initially remain Git-primary.
+- DVC stage definitions, if introduced later, should use Git-tracked raw data as "deps".
+- Generated outputs may be Git-tracked, DVC-tracked, or both only after explicit policy decision per path.
+- Git LFS is not part of the current plan.
+- The repository remains physically in legacy layout until a separate audited migration task.
 
-Target scope for the first DVC run:
+The first actual DVC tracking (if any) should strictly cover immutable raw/source archives and snapshot data as pipeline dependencies. DVC initialization will track these assets in their *current* locations before any directory restructuring occurs.
+
+Target scope for the first DVC run (as dependencies):
 ```text
 processed/えひめの山.xlsx
 processed/GPXファイル.zip
@@ -62,11 +70,10 @@ Until the initialization phase is explicitly triggered, the following actions re
 * Do not run `kedro new`.
 * Do not move, rename, delete, or rewrite any existing data files.
 * Do not implement the `data/` directory layout.
-* Do not create the `site/` presentation layer directory or GitHub Pages workflows.
 
 ## 5. Next Recommended Task
 
-The repository is now ready for a later task to perform the first DVC tracking of immutable raw/source snapshots.
-* Ensure DVC is installed.
-* Run `dvc init`.
-* Follow the commands outlined in `docs/migration/dvc_tracking_plan.md` to track the raw files without moving them.
+The repository is now ready for a later task to perform pipeline implementation.
+* Ensure DVC is installed when needed for pipeline stage definitions.
+* Run `dvc init` when appropriate.
+* DVC should be used for pipeline stage definitions and dependency tracking, but not for moving primary data out of Git.

@@ -70,3 +70,14 @@ legacy_mountains_json:
 #
 # activity_mountain_links:
 #   # To be generated: data/03_primary/activity_mountain_links
+# provenance_entities:
+#   # Future dataset: data/04_feature/provenance/entities.*
+#
+# provenance_activities:
+#   # Future dataset: data/04_feature/provenance/activities.*
+#
+# provenance_edges:
+#   # Future dataset: data/04_feature/provenance/edges.*
+#
+# lineage_graph_exports:
+#   # Future reporting exports: GraphML / Graphology JSON / DOT

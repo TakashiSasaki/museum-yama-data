@@ -112,6 +112,20 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Expected Future Layer:** `08_reporting`
 * **Tracking System:** Git or DVC
 
+### 18. `provenance_entities`, `provenance_activities`, `provenance_edges`
+* **Role:** Tabular representation of the data lineage, entities, processes, and their relationships.
+* **Primary Inputs:** Pipeline metadata, execution logs, `mountain_identity_evidence`.
+* **Expected Future Layer:** `04_feature` (conceptual paths: `data/04_feature/provenance/*`)
+* **Tracking System:** DVC
+* **Note:** Future datasets, not yet implemented.
+
+### 19. `lineage_graph_exports`
+* **Role:** Graph format exports of the provenance data for visualization.
+* **Primary Inputs:** `provenance_entities`, `provenance_activities`, `provenance_edges`
+* **Expected Future Layer:** `08_reporting` (conceptual paths: `data/08_reporting/provenance/lineage.*`)
+* **Tracking System:** DVC
+* **Note:** Future datasets, not yet implemented.
+
 ## Summary of Core Principles
 
 1. **`mountains.json` Status:** It is a provisional legacy/web cache. It is not the final semantic model.

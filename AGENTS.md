@@ -76,13 +76,15 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
 
 These agreements summarize the current planning state. The canonical details are in `docs/migration/` and `docs/source_coverage_audit.md`.
 
+- **Clone-complete policy:** The repository follows a clone-complete policy. Git LFS is intentionally not used. Primary data and retained processed artifacts should remain available after a plain Git clone.
 - **DVC/Kedro status:** Planning documents are now sufficient for a later task to initialize DVC/Kedro scaffolding without moving data. Actual data movement remains blocked until the source coverage audit and path migration plan explicitly cover the affected files.
   - `conf/` contains future Kedro configuration and catalog placeholders.
   - `src/museum_yama_data/` contains future Python/Kedro pipeline scaffolding.
   - The scaffold does not mean that data migration has occurred.
   - Agents must still follow `docs/source_coverage_audit.md` and `docs/path_migration.md` before moving, rewriting, or regenerating data.
   - Current Kedro files are placeholders only; no implemented pipeline should be assumed.
-- **First DVC scope:** The first DVC data-tracking scope should focus on immutable raw/source snapshots in their current locations: `processed/えひめの山.xlsx`, `processed/GPXファイル.zip`, `gpx/raw/`, `yamap/*.md`, `yamap/yamap_all_activity_ids.txt`, and `reverse_geocoding/`.
+- **DVC usage policy:** DVC must not be used to remove primary data from Git by default. DVC is initially for pipeline/stage/dependency metadata and reproducibility checks. `dvc add` must not be run on raw/source or retained-artifact paths unless explicitly approved in a future task. DVC stage dependencies may refer to Git-tracked paths.
+- **Site presentation layer:** `site/` is the GitHub Pages presentation layer generated from canonical docs/configuration. The site must not become an independent source of truth. The site must not publish full raw/private data contents.
 - **First Kedro scope:** A future Kedro task may create project scaffolding, catalog names, and placeholder pipeline structures. It must not rewrite GPX parsing, annotation, reverse geocoding, or web-data logic during the scaffolding task.
 - **First concrete semantic output:** The first target export is a resolved mountain waypoint collection in GPX/XML, conceptually `data/08_reporting/gpx/mountain_waypoints/`. This should supersede the provisional semantic role of `museum-yama-web/mountains.json`.
 - **Summit candidates vs resolved mountains:** Algorithmic peak detection creates summit candidates. Resolved mountains are separate entities selected through evidence. Unresolved candidates must not be silently coerced into mountain identities.
