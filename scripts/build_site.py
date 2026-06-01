@@ -1,12 +1,68 @@
 import html
 import re
 import datetime
+import json
 from pathlib import Path
 
 SITE_DIR = Path("site")
 DOCS_DIR = Path("docs")
 CONF_DIR = Path("conf")
 SRC_DIR = Path("src/museum_yama_data")
+
+PWA_THEME_COLOR = "#1f5f3b"
+PWA_BACKGROUND_COLOR = "#f7faf7"
+
+PWA_MANIFEST = {
+    "name": "Yama Museum",
+    "short_name": "Yama Museum",
+    "description": "Documentation and data lineage overview for mountaineering GPX and YAMAP activity data.",
+    "id": "./",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": PWA_BACKGROUND_COLOR,
+    "theme_color": PWA_THEME_COLOR,
+    "prefer_related_applications": False,
+    "icons": [
+        {
+            "src": "assets/icons/yama-museum-192.svg",
+            "type": "image/svg+xml",
+            "sizes": "192x192",
+            "purpose": "any maskable",
+        },
+        {
+            "src": "assets/icons/yama-museum-512.svg",
+            "type": "image/svg+xml",
+            "sizes": "512x512",
+            "purpose": "any maskable",
+        },
+    ],
+}
+
+ICON_SVG_TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Yama Museum icon</title>
+  <desc id="desc">A stylized mountain ridge with a route line and summit marker.</desc>
+  <rect width="512" height="512" rx="96" fill="#1f5f3b"/>
+  <circle cx="390" cy="122" r="42" fill="#f6d365"/>
+  <path d="M64 372L196 152l84 140 56-88 112 168H64z" fill="#f7faf7"/>
+  <path d="M196 152l84 140 34-53 31 48c-62 18-121 18-173 0l24-135z" fill="#cfe8d8"/>
+  <path d="M108 386c52-72 112-72 164-28 46 38 92 38 132-16" fill="none" stroke="#f6d365" stroke-width="28" stroke-linecap="round"/>
+  <circle cx="403" cy="342" r="25" fill="#f6d365" stroke="#1f5f3b" stroke-width="12"/>
+</svg>
+"""
+
+def write_pwa_assets():
+    icons_dir = SITE_DIR / "assets" / "icons"
+    icons_dir.mkdir(parents=True, exist_ok=True)
+
+    with open(SITE_DIR / "manifest.webmanifest", "w") as f:
+        json.dump(PWA_MANIFEST, f, indent=2)
+        f.write("\n")
+
+    for size in (192, 512):
+        with open(icons_dir / f"yama-museum-{size}.svg", "w") as f:
+            f.write(ICON_SVG_TEMPLATE.format(size=size))
+
 
 def get_template(title, content):
     nav = """
@@ -29,6 +85,9 @@ def get_template(title, content):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} - Yama Museum</title>
+    <meta name="theme-color" content="{PWA_THEME_COLOR}">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="assets/icons/yama-museum-192.svg" type="image/svg+xml" sizes="any">
     <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -215,6 +274,7 @@ def build_decisions():
 if __name__ == "__main__":
     print("Building site...")
     SITE_DIR.mkdir(parents=True, exist_ok=True)
+    write_pwa_assets()
     build_index()
     build_data_catalog()
     build_pipeline()
