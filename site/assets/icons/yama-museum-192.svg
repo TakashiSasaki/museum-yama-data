@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Yama Museum icon</title>
+  <desc id="desc">A stylized mountain ridge with a route line and summit marker.</desc>
+  <rect width="512" height="512" rx="96" fill="#1f5f3b"/>
+  <circle cx="390" cy="122" r="42" fill="#f6d365"/>
+  <path d="M64 372L196 152l84 140 56-88 112 168H64z" fill="#f7faf7"/>
+  <path d="M196 152l84 140 34-53 31 48c-62 18-121 18-173 0l24-135z" fill="#cfe8d8"/>
+  <path d="M108 386c52-72 112-72 164-28 46 38 92 38 132-16" fill="none" stroke="#f6d365" stroke-width="28" stroke-linecap="round"/>
+  <circle cx="403" cy="342" r="25" fill="#f6d365" stroke="#1f5f3b" stroke-width="12"/>
+</svg>
