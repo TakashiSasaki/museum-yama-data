@@ -1,0 +1,55 @@
+# Source-to-Target Mapping Audit (Template)
+
+**WARNING:**
+*   This is not yet a completed source-to-target mapping audit.
+*   Physical directory restructuring remains blocked.
+*   No data movement is authorized by this document.
+*   Every current path and relevant field/artifact role must be classified before implementation.
+*   Any "needs decision", "unmigrated gap", or unclassified item blocks movement.
+
+## File/Directory Mapping
+
+| current path | current role | current classification | reproducibility role | proposed target path | proposed target disposition | physical movement proposed? | remains Git-tracked? | DVC role, if any | provenance implication | references that must be updated | validation method | rollback strategy | blocker / needs-decision status | final disposition classification |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `gpx/raw/` | Raw GPX source files | template placeholder | DVC-light source | `data/01_raw/gpx/` | template placeholder | template placeholder | Yes | DVC dependency | Immutable primary source | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+| `gpx/annotated/` | Legacy unvalidated artifacts | template placeholder | Legacy evidence | `data/99_work/` | template placeholder | template placeholder | Yes | None | Preserved as historical evidence | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+| `gpx/merged-by-year/` | Legacy reporting artifacts | template placeholder | Requires formal validation | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Needs validation | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+| `csv/` | Legacy operational input | template placeholder | Excel-derived source-equivalent CSV extracts | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Excel-derived source-equivalent CSV extracts; operational canonical tabular representation for the legacy pipeline; no manual post-processing according to user-provided provenance; validation of extraction logic still required before regeneration or migration. | template placeholder | template placeholder | template placeholder | extraction-script/equivalent-logic validation still required | needs decision |
+| `processed/` | Legacy processed-marker archive | template placeholder | Retained source snapshot archive | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Not a clean future raw-data layout | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+| `processed/えひめの山.xlsx` | Primary source workbook | template placeholder | Retained source snapshot | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Original activity log workbook | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+| `processed/GPXファイル.zip` | Primary GPX export package | template placeholder | Retained source snapshot | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Original GPX export package | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+| `yamap/` | YAMAP Markdown activities | template placeholder | Raw YAMAP activity metadata | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Raw source data | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+| `yamap/yamap_all_activity_ids.txt` | YAMAP fetch log | template placeholder | Metadata / Log | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Reference log | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+| `reverse_geocoding/` | Geocoding cache | template placeholder | Cached location enrichment | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Cached API responses | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+| `museum-yama-web/` | Web cache directory | template placeholder | Provisional cache | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Not the final semantic model | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+| `museum-yama-web/mountains.json` | Web cache artifact | template placeholder | Accumulated provisional list | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Legacy evidence; supersedable | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+| `docs/` | Internal documentation | template placeholder | Canonical source of truth | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Policies and audits | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+| `site/` | Generated site | template placeholder | GitHub Pages presentation | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Deterministic output | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+
+## Future Audit Items
+
+### GPX-to-YAMAP Activity Linking
+
+*   **Requirement:** A future pipeline stage or audit item (e.g., `link_gpx_to_yamap_activity`) is required to definitively match `gpx/raw/*.gpx` files to `yamap/*.md` activities.
+*   **Context:** Recent sampling suggests that GPX XML files may not embed the YAMAP activity ID directly. Do not assert that GPX XML contains YAMAP activity IDs unless verified by a full audit.
+*   **Evidence for Matching:**
+    *   GPX filename timestamp
+    *   GPX track start/end time
+    *   GPX track name
+    *   YAMAP Markdown activity date
+    *   YAMAP Markdown title
+    *   Distance/duration consistency where available
+*   **Expected Output:** An intermediate link dataset (e.g., `gpx_yamap_activity_links` or `activity_source_links`) that preserves confidence/evidence fields rather than silently forcing one-to-one matches.
+*   **Suggested Future Output Fields:**
+    *   `gpx_path`
+    *   `yamap_activity_id`
+    *   `yamap_markdown_path`
+    *   `match_status`
+    *   `confidence`
+    *   `evidence_fields`
+    *   `time_delta_seconds`
+    *   `title_similarity`
+    *   `distance_consistency`
+    *   `needs_review`
+    *   `notes`
+*   **Data Model Implication:** Final mountain list data does not require full route/trackpoint geometry. Route data is source evidence for candidate detection, validation, and provenance. The final semantic mountain dataset should focus on resolved mountain entities, waypoints, identity evidence, and activity links, not on retaining full route geometry.

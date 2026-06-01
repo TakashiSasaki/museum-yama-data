@@ -484,6 +484,9 @@ def build_decisions():
         <li><strong>Directory-Structure Improvements:</strong> Higher-risk changes to the underlying repository structure. This track is currently blocked. No physical data movement may occur until comprehensive source coverage and source-to-target mapping audits are complete.</li>
     </ul>
     <p>For more details, refer to the canonical source: <code><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/website_and_directory_roadmap.md" target="_blank" rel="noopener noreferrer">docs/migration/website_and_directory_roadmap.md</a></code>.</p>
+
+    <h3>Audits</h3>
+    <p>A new <a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/source_to_target_mapping_audit.md" target="_blank" rel="noopener noreferrer">source-to-target mapping audit template</a> has been added as a starting point. It is not a completed audit and does not authorize data movement.</p>
     """
     with open(SITE_DIR / "decisions.html", "w") as f:
         f.write(get_template("Decisions & Status", content))
@@ -515,6 +518,8 @@ def build_directory_inventory():
         <li>No "needs decision" item remains.</li>
         <li>No "unmigrated gap" remains.</li>
     </ul>
+
+    <p>See the <a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/source_to_target_mapping_audit.md" target="_blank" rel="noopener noreferrer">source-to-target mapping audit template</a> for ongoing planning. It is a starting point and does not authorize data movement.</p>
     """
     with open(SITE_DIR / "directory-inventory.html", "w") as f:
         f.write(get_template("Directory Inventory", content))
