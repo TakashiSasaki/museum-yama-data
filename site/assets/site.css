@@ -1,3 +1,8 @@
+html {
+    background: #f3faf5;
+    min-height: 100vh;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
@@ -5,6 +10,35 @@ body {
     margin: 0 auto;
     padding: 2rem;
     color: #333;
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f7fbf7 0%, #eef8f0 100%);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    right: clamp(-12rem, -8vw, -4rem);
+    bottom: clamp(-12rem, -8vw, -4rem);
+    width: min(72vw, 720px);
+    aspect-ratio: 1 / 1;
+    background: url("icons/yama-museum-512.svg") center / contain no-repeat;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+}
+
+nav,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+main {
+    background: rgba(255, 255, 255, 0.86);
+    padding: 2rem;
+    border-radius: 16px;
 }
 h1, h2, h3 {
     color: #2c3e50;
@@ -18,8 +52,10 @@ a:hover {
 }
 nav {
     margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
 }
 nav a {
     margin-right: 1rem;
@@ -40,11 +76,13 @@ th {
 }
 footer {
     margin-top: 3rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     font-size: 0.9rem;
     color: #666;
     text-align: center;
+    background: rgba(250, 255, 251, 0.8);
+    border-radius: 12px;
 }
 .tag {
     display: inline-block;
@@ -53,4 +91,29 @@ footer {
     background-color: #e9ecef;
     border-radius: 3px;
     margin-right: 0.5em;
+}
+
+@media screen and (max-width: 600px) {
+    body::before {
+        opacity: 0.035;
+        width: min(85vw, 400px);
+    }
+    body {
+        padding: 1rem;
+    }
+    main {
+        padding: 1rem;
+    }
+}
+
+@media print {
+    html, body {
+        background: #fff;
+    }
+    body::before {
+        display: none;
+    }
+    nav, main, footer {
+        background: transparent;
+    }
 }
