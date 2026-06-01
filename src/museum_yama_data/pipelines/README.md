@@ -12,6 +12,12 @@ This directory will eventually contain the implementation of the data pipelines 
 * **Intended Outputs:** `gpx_tracks`, `gpx_trackpoints`
 * **Implementation Status:** Not implemented
 
+### `link_gpx_to_yamap_activity`
+* **Purpose:** Matches raw GPX track files to YAMAP activity Markdown metadata using explicit evidence (filename timestamps, JST track times, and normalized track names).
+* **Intended Inputs:** `raw_gpx_activities`, `raw_yamap_activity_metadata`
+* **Intended Outputs:** `gpx_yamap_activity_links`
+* **Implementation Status:** Not implemented
+
 ### `detect_summit_candidates`
 * **Purpose:** Algorithmically detects potential peaks from the elevation profiles of the GPX tracks. Assigns non-semantic candidate IDs.
 * **Intended Inputs:** `gpx_tracks` / `gpx_trackpoints`

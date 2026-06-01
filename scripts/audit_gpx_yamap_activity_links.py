@@ -313,7 +313,7 @@ def create_candidate_row(gpx, yamap, status, notes=''):
     time_delta = ''
     if yamap and gpx.get('first_time_jst') and yamap.get('date'):
         # Attempt to parse yamap date for a rough delta
-        m = re.search(r'\d{4}-\d{2}-\d{2}|\d{4}/\d{2}/\d{2}', yamap.get('date'))
+        m = re.search(r'(\d{4})[-\/年](\d{2})[-\/月](\d{2})日?', yamap.get('date'))
         if m:
             y_date_str = f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
             try:
