@@ -1,0 +1,6 @@
+variant_id,smooth_window,peak_radius,min_prominence,merge_distance,gpx_files_scanned,total_candidates,files_with_zero_candidates,files_with_one_candidate,files_with_multiple_candidates,median_candidates_per_file,max_candidates_per_file,notes
+baseline,5,10,30,100,293,496,25,167,101,1,7,
+lower_prominence,5,10,20,100,293,583,18,155,120,1,8,
+higher_prominence,5,10,50,100,293,385,52,163,78,1,5,
+smaller_merge_distance,5,10,30,50,293,506,25,166,102,1,7,
+larger_merge_distance,5,10,30,200,293,491,25,167,101,1,7,

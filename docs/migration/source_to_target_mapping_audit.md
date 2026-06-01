@@ -58,7 +58,7 @@
 
 *   **Requirement:** The `detect_summit_candidates` stage must produce unresolved candidate points strictly using GPX-derived evidence (e.g., elevation profiles, trackpoint traces).
 *   **Legacy Context:** The existing `.agents/skills/yama-data-pipeline/commands/annotate.js` script is a legacy reference baseline.
-    *   Its algorithmic baseline (smoothing, local maxima, minimum prominence) is useful but parameters require audit and tuning.
+    *   Its algorithmic baseline (smoothing, local maxima, minimum prominence) is useful but parameters require audit and tuning. The legacy/reference detection parameters have a read-only baseline audit in `docs/migration/summit_candidate_detection_audit.md`. The audit evaluates candidate-count behavior and parameter sensitivity, but does not select final production parameters.
     *   Its legacy mountain-name assignment behavior (`assignPeakNames()`) must be explicitly excluded from candidate detection and moved to downstream identity resolution.
     *   Legacy annotated GPX files (`gpx/annotated/`) are evidence, not authoritative truth.
 *   **Expected Output:** Unresolved candidate points with stable, non-semantic IDs. No final mountain identities or authoritative names should be assigned during this stage.
