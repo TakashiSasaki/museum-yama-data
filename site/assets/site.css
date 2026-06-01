@@ -118,3 +118,51 @@ footer {
         background: transparent;
     }
 }
+
+/* Pipeline Graph Styles */
+.graph-container {
+    overflow-x: auto;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.pipeline-graph {
+    display: block;
+    margin: 0 auto;
+}
+
+.node rect {
+    stroke-width: 2;
+}
+
+.node text {
+    fill: #333;
+    pointer-events: none;
+}
+
+.node-source rect {
+    fill: #e8f5e9;
+    stroke: #81c784;
+}
+
+.node-process rect {
+    fill: #fff3e0;
+    stroke: #ffb74d;
+}
+
+.node-derived rect {
+    fill: #e3f2fd;
+    stroke: #64b5f6;
+}
+
+.node-reporting rect {
+    fill: #f3e5f5;
+    stroke: #ba68c8;
+}
+
+.edge {
+    opacity: 0.8;
+}
