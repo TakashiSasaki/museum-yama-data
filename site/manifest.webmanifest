@@ -1,0 +1,26 @@
+{
+  "name": "Yama Museum",
+  "short_name": "Yama Museum",
+  "description": "Documentation and data lineage overview for mountaineering GPX and YAMAP activity data.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7faf7",
+  "theme_color": "#1f5f3b",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "assets/icons/yama-museum-192.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/yama-museum-512.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}
