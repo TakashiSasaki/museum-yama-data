@@ -51,7 +51,6 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
 - Site pages must link to or be traceable to canonical `docs/` sources.
 - If `docs/` and `site/` disagree, `docs/` wins until corrected.
 - Future generated pages should live under `site/docs/generated/`.
-- No GitHub Pages site or workflow should be created until explicitly requested.
 
 - **Before/After Change Checklists:**
   - **Before Change:** Verify branch status. Read existing `docs/source_coverage_audit.md` and `docs/path_migration.md`. Do not start moving files unless the audit supports it.
