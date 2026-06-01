@@ -126,6 +126,12 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Tracking System:** DVC dependency candidate
 * **Note:** Future datasets, not yet implemented.
 
+### 20. `gpx_yamap_activity_links`
+* **Role:** A dataset capturing matched candidate links between raw GPX track files and YAMAP activity Markdown records based on metadata evidence.
+* **Primary Inputs:** `raw_gpx_activities`, `raw_yamap_activity_metadata`
+* **Expected Future Layer:** `02_intermediate`
+* **Tracking System:** DVC dependency candidate
+
 ## Summary of Core Principles
 
 1. **`mountains.json` Status:** It is a provisional legacy/web cache. It is not the final semantic model.

@@ -30,8 +30,8 @@
 
 ### GPX-to-YAMAP Activity Linking
 
-*   **Requirement:** A future pipeline stage or audit item (e.g., `link_gpx_to_yamap_activity`) is required to definitively match `gpx/raw/*.gpx` files to `yamap/*.md` activities.
-*   **Context:** Recent sampling suggests that GPX XML files may not embed the YAMAP activity ID directly. Do not assert that GPX XML contains YAMAP activity IDs unless verified by a full audit.
+*   **Requirement:** A future pipeline stage (e.g., `link_gpx_to_yamap_activity`) is required to definitively match `gpx/raw/*.gpx` files to `yamap/*.md` activities.
+*   **Context:** Read-only inspection across the repository verified that GPX XML files do not embed the YAMAP activity ID directly. GPX-to-YAMAP linking should therefore be implemented as an explicit pipeline stage using filename timestamps, GPX track times, track names, and YAMAP Markdown metadata.
 *   **Evidence for Matching:**
     *   GPX filename timestamp
     *   GPX track start/end time

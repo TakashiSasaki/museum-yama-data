@@ -26,6 +26,7 @@
         <p>Intended future Kedro pipelines for data processing.</p>
 <table><tr><th>Pipeline</th><th>Inputs</th><th>Outputs</th><th>Status</th></tr>
 <tr><td>parse_gpx</td><td>raw_gpx_activities</td><td>gpx_tracks, gpx_trackpoints</td><td>Not implemented</td></tr>
+<tr><td>link_gpx_to_yamap_activity</td><td>raw_gpx_activities, raw_yamap_activity_metadata</td><td>gpx_yamap_activity_links</td><td>Not implemented</td></tr>
 <tr><td>detect_summit_candidates</td><td>gpx_tracks / gpx_trackpoints</td><td>summit_candidates</td><td>Not implemented</td></tr>
 <tr><td>export_summit_candidate_gpx</td><td>summit_candidates</td><td>summit_candidate_gpx</td><td>Not implemented</td></tr>
 <tr><td>estimate_municipality</td><td>summit_candidates, raw_reverse_geocoding_cache</td><td>location_enrichment</td><td>Not implemented</td></tr>
