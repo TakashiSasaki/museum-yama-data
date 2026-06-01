@@ -7,3 +7,4 @@ geocode.log
 test_nom.json
 test_nom_en.json
 scratch/
+__pycache__/

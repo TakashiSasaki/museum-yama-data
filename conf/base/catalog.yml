@@ -1,0 +1,72 @@
+# Placeholder catalog mapping to current legacy paths.
+# These datasets refer to existing files and do not imply migration to data/ has occurred.
+
+# 1. raw_gpx_activities
+# Immutable source data containing individual YAMAP activity tracks.
+raw_gpx_activities:
+  type: partitions.PartitionedDataset
+  path: gpx/raw/
+  dataset: text.TextDataset # Placeholder type
+
+# 2. raw_activity_workbook
+# The primary activity log workbook archive.
+raw_activity_workbook:
+  type: pandas.ExcelDataset # Placeholder type
+  filepath: processed/えひめの山.xlsx
+
+# 3. raw_gpx_export_package
+# The primary GPX export package archive.
+raw_gpx_export_package:
+  type: text.TextDataset # Placeholder type
+  filepath: processed/GPXファイル.zip
+
+# 4. raw_yamap_activity_metadata
+# Fetched YAMAP metadata sources.
+raw_yamap_activity_metadata:
+  type: partitions.PartitionedDataset
+  path: yamap/
+  filename_suffix: ".md"
+  dataset: text.TextDataset # Placeholder type
+
+# 5. yamap_activity_id_index
+# Fetched YAMAP activity index source.
+yamap_activity_id_index:
+  type: text.TextDataset # Placeholder type
+  filepath: yamap/yamap_all_activity_ids.txt
+
+# 6. raw_reverse_geocoding_cache
+# Raw cache/snapshot for municipality-level location enrichment.
+raw_reverse_geocoding_cache:
+  type: partitions.PartitionedDataset
+  path: reverse_geocoding/
+  dataset: json.JSONDataset # Placeholder type
+
+# 7. curated_mountain_research_docs
+# Curated research/reference sources used for mountain identity resolution.
+curated_mountain_research_docs:
+  type: partitions.PartitionedDataset
+  path: docs/
+  filename_suffix: ".md"
+  dataset: text.TextDataset # Placeholder type
+
+# 8. legacy_mountains_json
+# Legacy provisional evidence, not the final semantic model.
+legacy_mountains_json:
+  type: json.JSONDataset # Placeholder type
+  filepath: museum-yama-web/mountains.json
+
+
+# ==============================================================================
+# FUTURE DATASETS (Not currently generated, placeholders only)
+# ==============================================================================
+# summit_candidates:
+#   # To be generated: data/03_primary/summit_candidates
+#
+# mountain_identity_evidence:
+#   # To be generated: data/04_feature/mountain_identity_evidence
+#
+# resolved_mountain_waypoint_gpx:
+#   # To be generated: data/08_reporting/gpx/mountain_waypoints
+#
+# activity_mountain_links:
+#   # To be generated: data/03_primary/activity_mountain_links
