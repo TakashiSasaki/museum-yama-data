@@ -471,7 +471,7 @@ def build_decisions():
     <h3>Pending "Needs Decision" Items</h3>
     <p>Data movement is blocked until these items are fully audited and resolved:</p>
     <ul>
-        <li><code>csv/</code>: Needs confirmation of manual edit status and missing extraction script.</li>
+        <li><code>csv/</code>: Excel-derived legacy CSV extracts; migration blocked pending validation of historical extraction script/logic.</li>
         <li><code>museum-yama-web/mountains.json</code>: Provisional legacy cache. Must not be treated as the final semantic model. Will be superseded by structured feature datasets and waypoint exports.</li>
         <li><code>gpx/annotated/</code>: Legacy unvalidated artifacts. Preserve as historical evidence.</li>
         <li><code>gpx/merged-by-year/</code>: Legacy reporting artifacts. Must be validated.</li>

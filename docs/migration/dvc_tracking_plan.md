@@ -25,7 +25,7 @@ This document defines the first planned DVC stage dependency scope.
 * No DVC remote is required for ordinary repository use.
 
 ## Dependency Exceptions & Caveats
-* `csv/` remains marked as `needs decision`. It should not be treated as a clean reproducible intermediate until manual edit status and the missing extraction script are resolved.
+* `csv/` remains marked as `needs decision`. According to user-provided provenance, there were no manual edits or post-processing; however, it should not be treated as a clean reproducible intermediate until the historical extraction script or equivalent extraction logic is validated.
 * `museum-yama-web/mountains.json` remains marked as `needs decision`. It should not be treated as the final semantic data model.
 
 ## Initial Git-Primary Dependency Candidates for DVC Stages
