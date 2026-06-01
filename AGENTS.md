@@ -36,8 +36,8 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
   - **SHOULD** use Git directly for source code, configuration, documentation, small reviewable summaries, and DVC/Kedro metadata.
 
 - **Workspace Boundaries:**
-  - **MUST** treat "site/" as GitHub Pages source and "docs/" as internal documentation source.
-  - **SHOULD** keep truly disposable files only under "scratch/" or equivalent ignored temporary locations.
+  - **MUST** treat `site/` as future GitHub Pages source and `docs/` as the canonical documentation and research source.
+  - **SHOULD** keep truly disposable files only under `scratch/` or equivalent ignored temporary locations.
 
 ## Documentation and Site Consistency Policy
 
@@ -60,14 +60,32 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
 ## Current / Legacy Directory Structure (Pending Migration)
 
 - `gpx/`: **GPX Data Root**. New ZIP or XLSX files should be placed here before processing.
-  - `raw/`: Raw `.gpx` track files extracted from ZIP archives. This is where unprocessed individual tracks live.
-  - `annotated/`: GPX files with `<wpt>` waypoint elements marking detected mountain summits.
-  - `merged-by-year/`: Yearly consolidated GPX files for Google My Maps import.
+  - `raw/`: Raw `.gpx` track files extracted from ZIP archives. This is immutable source data containing individual YAMAP activity tracks.
+  - `annotated/`: Legacy experimental GPX outputs with generated `<wpt>` waypoint elements. Existing summit names in these files are not authoritative. Preserve these files as historical work evidence, but do not treat them as validated final outputs.
+  - `merged-by-year/`: Yearly consolidated GPX overview artifacts for whole-dataset browsing and Google My Maps import. These are derived artifacts and must be validated against raw GPX before being treated as reproducible pipeline outputs.
 - `csv/`: **Processed Records / Legacy Operational Input**. Contains `.csv` files extracted from sheets in the Excel activity log workbook. These files are currently consumed by the legacy pipeline and web-data generation flow, but for provenance purposes the primary source/archive is `processed/えひめの山.xlsx`. Treat the CSV files as Excel-derived extracted representations unless later evidence shows manual edits.
-- `processed/`: **Archive**. Stores original `.zip` and `.xlsx` files after they have been processed by the intake skill.
-- `museum-yama-web/`: **Web Data Cache**. Stores processed JSON datasets converted from GPX and CSV sources, optimized for consumption by the front-end map and visualizer.
+- `processed/`: **Archive**. Stores original `.zip` and `.xlsx` files after they have been processed by the intake skill. `processed/えひめの山.xlsx` and `processed/GPXファイル.zip` are primary source archives.
+- `yamap/`: **Fetched YAMAP Metadata**. Contains Markdown snapshots and activity ID metadata fetched from YAMAP pages. Extra YAMAP metadata not referenced by GPX is acceptable and must not be deleted automatically.
+- `reverse_geocoding/`: **Reverse Geocoding Cache**. Contains reverse geocoding snapshots used for municipality-level location enrichment. Raw cache preservation is decided, but schema contract and reuse logic still require formalization.
+- `museum-yama-web/`: **Legacy Web Data Cache**. Stores provisional JSON datasets such as `mountains.json`. `mountains.json` is currently an accumulated provisional list of identified mountains and may contain valuable manual or agent-assisted curation, but it is not the final semantic data model.
+- `docs/`: **Canonical Documentation and Curated Research**. Contains policies, audits, ADRs, migration plans, and human/agent-curated research used as evidence for mountain identity resolution.
 - `.agents/`: **Automation Center**. Contains repository-specific skills and configurations for AI agents.
   - `skills/`: Logic for automated tasks.
+
+## Current Target Design Agreements
+
+These agreements summarize the current planning state. The canonical details are in `docs/migration/` and `docs/source_coverage_audit.md`.
+
+- **DVC/Kedro status:** Planning documents are now sufficient for a later task to initialize DVC/Kedro scaffolding without moving data. Actual data movement remains blocked until the source coverage audit and path migration plan explicitly cover the affected files.
+- **First DVC scope:** The first DVC data-tracking scope should focus on immutable raw/source snapshots in their current locations: `processed/えひめの山.xlsx`, `processed/GPXファイル.zip`, `gpx/raw/`, `yamap/*.md`, `yamap/yamap_all_activity_ids.txt`, and `reverse_geocoding/`.
+- **First Kedro scope:** A future Kedro task may create project scaffolding, catalog names, and placeholder pipeline structures. It must not rewrite GPX parsing, annotation, reverse geocoding, or web-data logic during the scaffolding task.
+- **First concrete semantic output:** The first target export is a resolved mountain waypoint collection in GPX/XML, conceptually `data/08_reporting/gpx/mountain_waypoints/`. This should supersede the provisional semantic role of `museum-yama-web/mountains.json`.
+- **Summit candidates vs resolved mountains:** Algorithmic peak detection creates summit candidates. Resolved mountains are separate entities selected through evidence. Unresolved candidates must not be silently coerced into mountain identities.
+- **Summit-candidate GPX vs resolved mountain waypoint GPX:** `data/08_reporting/gpx/summit_candidates/` is the future output for detected candidate waypoints without authoritative names. `data/08_reporting/gpx/mountain_waypoints/` is the future output for identified mountains as waypoints.
+- **Mountain identity provenance:** Every mountain-name decision must preserve evidence links. Evidence may come from GPX coordinates, elevation profiles, YAMAP metadata, activity titles, Excel/CSV records, reverse geocoding, `docs/` research files, and legacy `mountains.json`.
+- **Same-name mountains:** This repository mainly concerns Ehime mountains, where same-name mountains are common. Use stable internal IDs and disambiguation labels. Display names may use forms such as `山名（市町村名）`, but display names are not stable identifiers.
+- **GPX/XML extensions:** Future resolved mountain waypoint GPX may use a provisional `yama:` prefix inside `<extensions>`. Extension local names should be ASCII-safe, such as `mountain_id`, `canonical_name`, `display_name`, `identity_status`, and `evidence_ref`. The namespace URI and XML schema are not finalized.
+- **Reverse geocoding policy:** Existing reverse geocoding cache may be reused for municipality-level inference. If the nearest cached coordinate is more than 1 km away, mark the point as needing a new reverse geocoding lookup. Boundary cases must be flagged rather than silently normalized.
 
 ## Agent Skills
 
@@ -78,8 +96,8 @@ A consolidated CLI tool that handles local mountaineering data processing includ
 #### Subcommands
 
 - **`intake`**: Automatically extracts GPX files from ZIP archives in `gpx/` and converts Excel files to CSVs. During ZIP intake, entries are flattened by basename. If two ZIP entries would map to the same basename, or if a basename already exists in `gpx/raw/`, intake fails instead of renaming. This prevents silent overwrite and ambiguous data provenance. As part of intake processing, the original `.zip` and `.xlsx` inputs are archived to `processed/` after successful handling.
-- **`merge`**: Groups individual GPX files from `gpx/raw/` into yearly archives (e.g., `2024_merged.gpx`) for easier My Maps import. Preserves all `<trk>` elements.
-- **`annotate`**: Analyzes GPX track elevation profiles to detect summit points, matches them to CSV records, and generates new files with `<wpt>` waypoints in `gpx/annotated/`.
+- **`merge`**: Groups individual GPX files from `gpx/raw/` into yearly archives (e.g., `2024_merged.gpx`) for easier My Maps import. Preserves all `<trk>` elements. This is a legacy command; future merged outputs require validation against raw GPX.
+- **`annotate`**: Legacy command that analyzes GPX track elevation profiles, attempts summit matching, and generates files with `<wpt>` waypoints in `gpx/annotated/`. Its existing name assignment behavior is not authoritative. Future pipeline design separates summit-candidate detection from summit identity/name resolution.
 - **`validate`**: Validates all processed GPX files for well-formed XML and valid coordinate bounds. Although GPX itself may allow trackpoints without elevation, this repository requires `<ele>` on all trackpoints because elevation profiles are used for validation and peak annotation.
 
 #### How to use
@@ -122,6 +140,6 @@ Ask the agent:
 - Always use the **`yama-data-pipeline intake` subcommand** for new data to maintain the directory structure. It handles ZIP intake collisions strictly by failing to prevent silent overwrites.
 - The `csv/` directory is the current legacy operational input for activity metadata used by the existing pipeline. These CSV files were extracted from sheets in the Excel workbook. For provenance purposes, the primary source/archive is `processed/えひめの山.xlsx`; the CSV files are Excel-derived extracted representations unless later evidence shows manual edits.
 - The `gpx/raw/` directory should only contain individual `.gpx` files (no subfolders). These are considered **source data** and must not be mutated.
-- The `gpx/annotated/` and `gpx/merged-by-year/` directories contain **generated artifacts**.
+- The `gpx/annotated/` and `gpx/merged-by-year/` directories contain **legacy generated artifacts**. Preserve them, but do not treat them as authoritative future pipeline outputs.
 
 - **Validation**: After running intake or generating new artifacts, run `npm run validate` from the repository root to ensure all GPX files are well-formed XML and contain valid location data.
