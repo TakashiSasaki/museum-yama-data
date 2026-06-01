@@ -12,9 +12,19 @@ The `processed/` directory was found to contain the true primary source archives
 
 These files are preserved as raw snapshots and should not be edited, nor should they be extracted directly in place.
 
+## Curated Research & Target Data Model Policies
+
+Recent audits established the target framework for mountain identity resolution:
+- **Mountain Identity Resolution Policy:** Explains the same-name mountain problem, defines evidence sources, and strictly separates unresolved candidates from resolved mountains. See [Mountain Identity Resolution Policy](mountain_identity_resolution_policy.md).
+- **Waypoint Collection Output Policy:** Establishes that the first concrete semantic output target is a GPX/XML collection of resolved mountain waypoints. See [Waypoint Collection Output Policy](waypoint_collection_output_policy.md).
+- **Target Data Model:** Describes the logical design of layers in the pipeline (`01_raw`, `02_intermediate`, `03_primary`, `04_feature`, `08_reporting`). See [Target Data Model](target_data_model.md).
+- **Readiness Plan:** Outlines conditions required for bootstrapping DVC and Kedro. See [DVC and Kedro Readiness Plan](dvc_kedro_readiness_plan.md).
+
+Furthermore, some Markdown files stored in `docs/` (e.g., `same_name_16mountains.md`, `愛媛県内七山調査依頼.md`) are not merely operational notes; they are **human-curated research documents** serving as vital evidence for mountain identity resolution. They must be preserved as legacy references and not casually rewritten.
+
 ## JSON Data Structures
 
-For detailed findings regarding JSON data structures (`reverse_geocoding/` and `museum-yama-web/mountains.json`), please see [JSON Provenance Findings](json_provenance_findings.md).
+For detailed findings regarding JSON data structures (`reverse_geocoding/` and `museum-yama-web/mountains.json`), please see [JSON Provenance Findings](json_provenance_findings.md). Note that `mountains.json` is a provisional web cache and will be superseded by the structured feature datasets and resolved mountain waypoint GPX output.
 
 ## GPX Derived Artifacts
 
@@ -27,7 +37,7 @@ Detailed policies regarding raw GPX, generated summit candidates, legacy annotat
 
 In summary regarding JSON Data Structures:
 - `reverse_geocoding/` acts as a cache/snapshot of Nominatim API responses for municipality-level location enrichment. The pipeline needs formalizing.
-- `museum-yama-web/mountains.json` is likely a web cache but remains "needs decision" because full regenerability is unproven and it may contain manual curations (such as `agent_survey_data`).
+- `museum-yama-web/mountains.json` is likely a web cache but remains "needs decision" because full regenerability is unproven and it may contain manual curations. It is currently an accumulated provisional list and not the final semantic target.
 
 ## YAMAP Logs & References
 A fetch log, `yamap_all_activity_ids.txt`, was found inside the `yamap/` directory alongside Markdown activity records. This file acts as a master reference list. Rather than migrating it with the actual `.md` activity records under `data/01_raw/yamap_markdown/`, this file will be given a separate mapping under `data/01_raw/yamap_metadata/` to maintain the semantic split.

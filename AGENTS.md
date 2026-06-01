@@ -42,6 +42,9 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
 ## Documentation and Site Consistency Policy
 
 - `docs/` is the canonical source of truth for internal documentation.
+- Some files under `docs/` are also curated research/reference sources used for mountain identity resolution.
+- These curated research docs must not be deleted or rewritten casually.
+- If structured machine-readable data is later derived from them, the source document and derivation must be recorded.
 - `site/` will be the GitHub Pages presentation layer.
 - `site/` must not introduce independent facts that contradict `docs/`.
 - Directory roles, migration status, provenance classifications, and data classifications must be defined in `docs/` first.
