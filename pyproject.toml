@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "museum_yama_data"
+version = "0.1.0"
+description = "Kedro pipeline for Yama Museum data processing (scaffold)"
+authors = [{ name = "Yama Museum Team" }]
+
+[tool.setuptools.packages.find]
+where = ["src"]

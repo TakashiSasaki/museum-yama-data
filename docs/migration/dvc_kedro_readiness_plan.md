@@ -16,7 +16,13 @@ The foundational planning policies are in place:
 * Waypoint Collection Output Policy (`docs/migration/waypoint_collection_output_policy.md`)
 * Target Data Model (`docs/migration/target_data_model.md`)
 
-Because the documentation is consistent, **initialization of DVC/Kedro scaffolding without data movement can begin in a subsequent task.**
+Because the documentation is consistent, **initialization of DVC/Kedro scaffolding without data movement has been started.**
+
+### Scaffolding Status (Current)
+* **DVC Initialization:** DVC was *not* initialized because the `dvc` executable was unavailable in the environment. No `.dvc/` metadata or `.dvcignore` files were created.
+* **DVC Tracking:** No actual data tracking has been performed. The first planned DVC tracking commands have been documented in `docs/migration/dvc_tracking_plan.md`.
+* **Kedro Scaffolding:** Minimal placeholder files and a Python package structure (`src/museum_yama_data/`) have been added. `conf/base/catalog.yml` was populated with placeholders mapping to current legacy paths.
+* **Data Movement:** **No data movement, deletion, or modification was performed.** The repository remains physically in its legacy layout.
 
 ### Blocking Items (Needs Decision)
 There remain `needs decision` items in `docs/source_coverage_audit.md` (such as `museum-yama-web/mountains.json` and the legacy `csv/` extraction outputs).
@@ -57,3 +63,10 @@ Until the initialization phase is explicitly triggered, the following actions re
 * Do not move, rename, delete, or rewrite any existing data files.
 * Do not implement the `data/` directory layout.
 * Do not create the `site/` presentation layer directory or GitHub Pages workflows.
+
+## 5. Next Recommended Task
+
+The repository is now ready for a later task to perform the first DVC tracking of immutable raw/source snapshots.
+* Ensure DVC is installed.
+* Run `dvc init`.
+* Follow the commands outlined in `docs/migration/dvc_tracking_plan.md` to track the raw files without moving them.
