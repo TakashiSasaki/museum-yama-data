@@ -267,6 +267,14 @@ def build_decisions():
         <li><code>gpx/annotated/</code>: Legacy unvalidated artifacts. Preserve as historical evidence.</li>
         <li><code>gpx/merged-by-year/</code>: Legacy reporting artifacts. Must be validated.</li>
     </ul>
+
+    <h3>Two-Track Roadmap</h3>
+    <p>Future work is split into two distinct tracks:</p>
+    <ul>
+        <li><strong>Website Improvements:</strong> Low-risk, incremental enhancements to the presentation layer.</li>
+        <li><strong>Directory-Structure Improvements:</strong> Higher-risk changes to the underlying repository structure. This track is currently blocked. No physical data movement may occur until comprehensive source coverage and source-to-target mapping audits are complete.</li>
+    </ul>
+    <p>For more details, refer to the canonical source: <code><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/museum-yama-data/docs/migration/website_and_directory_roadmap.md" target="_blank">docs/migration/website_and_directory_roadmap.md</a></code>.</p>
     """
     with open(SITE_DIR / "decisions.html", "w") as f:
         f.write(get_template("Decisions & Status", content))
