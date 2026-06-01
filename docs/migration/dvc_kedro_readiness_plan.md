@@ -17,7 +17,7 @@ The foundational planning policies are in place:
 * Target Data Model (`docs/migration/target_data_model.md`)
 * Storage and Reproducibility Policy (`docs/migration/storage_reproducibility_policy.md`)
 
-Because the documentation is consistent, **initialization of Kedro scaffolding without data movement has been started.**
+Because the documentation is consistent, **Kedro scaffolding without data movement exists/was added.**
 
 ### Scaffolding Status (Current)
 * **DVC Initialization:** DVC was *not* initialized. No `.dvc/` metadata or `.dvcignore` files were created.
@@ -42,7 +42,7 @@ There remain `needs decision` items in `docs/source_coverage_audit.md` (such as 
 - Git LFS is not part of the current plan.
 - The repository remains physically in legacy layout until a separate audited migration task.
 
-The first actual DVC dependency tracking (if any) should strictly cover immutable raw/source archives and snapshot data as pipeline dependencies. DVC initialization will track these assets in their *current* locations before any directory restructuring occurs.
+The first actual DVC dependency tracking (if any) should strictly cover immutable raw/source archives and snapshot data as pipeline dependencies. A future task will initialize DVC and declare these assets as stage dependencies in their *current* locations before any directory restructuring occurs.
 
 Target scope for the first DVC run (as dependencies):
 ```text
