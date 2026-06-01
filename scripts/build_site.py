@@ -77,10 +77,12 @@ def get_template(title, content):
     </nav>
     """
     timestamp = os.environ.get("SOURCE_DATE_EPOCH")
+    date_str = ""
     if timestamp:
-        date_str = " on " + datetime.datetime.fromtimestamp(int(timestamp), datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-    else:
-        date_str = ""
+        try:
+            date_str = " on " + datetime.datetime.fromtimestamp(int(timestamp), datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+        except ValueError:
+            pass
 
     footer = f"""
     <footer>
@@ -238,7 +240,9 @@ def generate_svg_graph():
         positions[n['id']] = (x, y)
 
     svg = []
-    svg.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{svg_w}" height="{svg_h}" class="pipeline-graph" aria-label="Pipeline Graph visualization">')
+    svg.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{svg_w}" height="{svg_h}" class="pipeline-graph" role="img" aria-labelledby="pipeline-graph-title pipeline-graph-desc">')
+    svg.append('  <title id="pipeline-graph-title">Pipeline Graph</title>')
+    svg.append('  <desc id="pipeline-graph-desc">A visual representation of the intended data processing pipeline</desc>')
     svg.append('<defs>')
     svg.append('  <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">')
     svg.append('    <path d="M 0 0 L 10 5 L 0 10 z" fill="#888" />')
