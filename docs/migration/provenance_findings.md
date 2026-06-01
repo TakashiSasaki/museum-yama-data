@@ -46,7 +46,7 @@ A fetch log, `yamap_all_activity_ids.txt`, was found inside the `yamap/` directo
 Certain data files (`.csv`, `.gpx`) were discovered within the `.agents/` folder, such as `.agents/skills/yama-data-pipeline/test/fixtures/`. These have been properly identified as skill-specific test fixtures and legacy test data. They are not part of the project's primary dataset, and they will purposefully be excluded from the main data tree migration.
 
 ## GPX and YAMAP Activity ID Coverage
-Original GPX files contain YAMAP activity IDs. Metadata for those activity IDs has been scraped from YAMAP web pages and saved as Markdown snapshots in `yamap/`. However, there are likely discrepancies in coverage across the various datasets.
+Current read-only inspection did not find embedded YAMAP activity IDs in GPX XML. GPX files are linkable to YAMAP activity metadata through a dedicated matching stage. The linking stage should use filename timestamps, GPX track times, track names, and scraped YAMAP Markdown metadata. Metadata for activities has been scraped from YAMAP web pages and saved as Markdown snapshots in `yamap/`. However, there are likely discrepancies in coverage across the various datasets.
 - Extra YAMAP metadata may exist for activity IDs not present in GPX files, and that is completely acceptable.
 - Future validation pipelines must not assume that the sets of activity IDs extracted from GPX files, represented by `yamap/*.md`, listed in `yamap/yamap_all_activity_ids.txt`, and represented in Excel/CSV activity logs are identical.
 - Differences must be reported as coverage categories rather than being silently deleted or coerced. Example categories include:

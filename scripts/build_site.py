@@ -122,10 +122,12 @@ GRAPH_NODES = [
 
     # Col 2: Early Processes
     {"id": "parse_gpx", "label": "parse_gpx()", "type": "node-process", "col": 1, "row": 0},
+    {"id": "link_gpx_to_yamap_activity", "label": "link_gpx_to_yamap_activity()", "type": "node-process", "col": 1, "row": 2},
 
     # Col 3: Intermediate Datasets
     {"id": "gpx_tracks", "label": "gpx_tracks", "type": "node-derived", "col": 2, "row": 0},
     {"id": "gpx_trackpoints", "label": "gpx_trackpoints", "type": "node-derived", "col": 2, "row": 1},
+    {"id": "gpx_yamap_activity_links", "label": "gpx_yamap_activity_links", "type": "node-derived", "col": 2, "row": 2},
 
     # Col 4: Mid Processes
     {"id": "detect_summit_candidates", "label": "detect_summit_candidates()", "type": "node-process", "col": 3, "row": 0},
@@ -168,6 +170,11 @@ GRAPH_EDGES = [
     ("raw_gpx_activities", "parse_gpx"),
     ("parse_gpx", "gpx_tracks"),
     ("parse_gpx", "gpx_trackpoints"),
+
+    # link_gpx_to_yamap_activity
+    ("raw_gpx_activities", "link_gpx_to_yamap_activity"),
+    ("raw_yamap_activity_metadata", "link_gpx_to_yamap_activity"),
+    ("link_gpx_to_yamap_activity", "gpx_yamap_activity_links"),
 
     # detect_summit_candidates
     ("gpx_tracks", "detect_summit_candidates"),
