@@ -176,7 +176,7 @@ def parse_gpx(filepath):
 
 def run_audit():
     gpx_dir = "gpx/raw"
-    gpx_files = glob.glob(os.path.join(gpx_dir, "*.gpx"))
+    gpx_files = sorted(glob.glob(os.path.join(gpx_dir, "*.gpx")))
 
     if not gpx_files:
         print("No GPX files found in gpx/raw/")
