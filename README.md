@@ -17,8 +17,8 @@ The GPX data and activity logs in this repository are based on the mountaineerin
 - `gpx/raw/`: Raw track files (.gpx).
 - `gpx/annotated/`: GPX files with detected peak waypoints.
 - `gpx/merged-by-year/`: Yearly consolidated GPX files for My Maps.
-- `csv/`: Processed activity records (.csv).
-- `processed/`: Archive of original ZIP/XLSX files.
+- `csv/`: Excel-derived legacy CSV extracts.
+- `processed/`: Legacy processed-marker archive / retained source snapshot archive.
 - `museum-yama-web/`: Processed JSON datasets for the web application.
 - `.agents/`: Automation skills and agent instructions.
 

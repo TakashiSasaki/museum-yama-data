@@ -27,6 +27,7 @@ This document serves as the compact canonical reference for storage and reproduc
 * DVC remote storage must not be required for ordinary repository use at this stage.
 * `dvc add` must not be run on raw/source paths or retained-artifact paths unless explicitly approved after audit.
 * DVC must not silently replace Git storage for source snapshots or retained artifacts.
+* Note: The `processed/` directory encodes legacy workflow state (it acts as a legacy processed-marker archive and retained source snapshot archive) and should not be confused with a future target raw-data layout.
 
 ## DVC Permitted Uses
 

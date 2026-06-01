@@ -3,7 +3,7 @@
 This document captures detailed, human-readable findings from the repository source coverage audit, to supplement the structured tables in the documentation.
 
 ## Missing CSV Extraction Script
-The CSV files located in `csv/` are extracted representations generated from sheets inside an original Excel workbook. A Python script was originally used to extract the sheets into `.csv` formats. However, a repository-wide search did not find this script. As a result, the extraction process is currently irreproducible. The `csv/` files should be treated as intermediate, derived data rather than primary sources. The possibility remains that these files have been manually edited, but without further proof, they retain the `derived only` provisional classification.
+The CSV files located in `csv/` are extracted representations generated from sheets inside an original Excel workbook. A Python script was originally used to extract the sheets into `.csv` formats. However, a repository-wide search did not find this script. As a result, the extraction process is currently irreproducible. The `csv/` files should be treated as intermediate, derived data rather than primary sources. According to user-provided provenance, these files were not manually edited or post-processed after extraction. The remaining blocker is locating, reconstructing, or validating the historical extraction script or equivalent extraction logic.
 
 ## Primary Source Archives
 The `processed/` directory was found to contain the true primary source archives:
