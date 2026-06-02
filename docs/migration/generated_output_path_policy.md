@@ -8,8 +8,10 @@ This document defines the recommended policy for placing generated outputs befor
 
 *   **Source Data Paths:** (e.g., `gpx/raw/`, `yamap/*.md`, `processed/えひめの山.xlsx`)
     *   Remain Git-primary. Do not modify or run `dvc add` on these paths by default.
+    *   Note: `processed/えひめの山.xlsx` is a retained source snapshot, but `processed/` is a legacy processed-marker archive, not a modern generated-output directory.
 *   **Retained Legacy Artifacts:** (e.g., `processed/GPXファイル.zip`, `csv/`)
     *   Remain Git-primary. Preserved as historical evidence or for reuse.
+    *   Note: `processed/GPXファイル.zip` is a handled source archive / original GPX export package, not a generated output.
 *   **Documentation/Audit Preview Artifacts:** (e.g., `docs/migration/summit_candidates_skill_preview.csv`)
     *   Small, conceptually generated outputs explicitly committed to Git for human review and auditing.
     *   **Crucially:** `docs/migration/` should not be used as the canonical long-term generated-output directory.
@@ -29,10 +31,16 @@ The recommended interim root for formal generated pipeline outputs is **`artifac
 *   It can later be seamlessly reconciled with or migrated to the final `data/` layout (e.g., `data/08_reporting/`, `data/04_feature/`) once migration decisions are complete.
 *   The contents can be Git-ignored, DVC-tracked, Git-tracked, or regenerated-on-demand based on an explicit path decision.
 
-## Specific Output Path Example: First Executable DVC-light Stage
+## Specific Output Path Examples
 
+### Example 1: First Executable DVC-light Stage
 The first executable DVC-light stage candidate (see `docs/migration/dvc_first_stage_plan.md`) uses the `detect-candidates` skill.
 *   **Recommended Formal Output Path:** `artifacts/generated/summit_candidates/summit_candidates.csv`
 *   **Documentation Preview Artifact:** `docs/migration/summit_candidates_skill_preview.csv` (remains committed for human inspection)
+
+### Example 2: Resolved Mountain JSON Output
+The conceptual output of the semantic pipeline is the resolved mountain dataset (replacing the legacy `museum-yama-web/mountains.json` cache).
+*   **Recommended Conceptual Output Path:** `artifacts/generated/mountains/mountains-merged.json`
+*   **Important Constraint:** This generated semantic/reporting output belongs under this generated-output policy. It **must not** be placed under `processed/`, which is strictly a legacy handled-source archive.
 
 *Note: The physical final `data/` layout remains a separate future migration decision. Do not implement the `data/` layout or move existing files based on this policy.*
