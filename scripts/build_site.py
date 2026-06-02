@@ -496,6 +496,7 @@ def build_decisions():
     <h3>Audits</h3>
     <p>A new <a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/source_to_target_mapping_audit.md" target="_blank" rel="noopener noreferrer">source-to-target mapping audit template</a> has been added as a starting point. It is not a completed audit and does not authorize data movement.</p>
     <p>A read-only <a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/summit_candidate_detection_audit.md" target="_blank" rel="noopener noreferrer">summit candidate detection baseline audit</a> evaluates the algorithmic behavior of candidate counts, but does not select final production parameters.</p>
+    <p>A read-only <a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/summit_candidate_detection_outlier_review.md" target="_blank" rel="noopener noreferrer">summit detection outlier review</a> identifies zero-candidate, high-candidate-count, low-elevation-range, few-trackpoint, and linking-unresolved cases for later parameter tuning. It does not select production parameters and does not modify GPX files.</p>
     """
     with open(SITE_DIR / "decisions.html", "w") as f:
         f.write(get_template("Decisions & Status", content))
