@@ -94,7 +94,7 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Expected Future Layer:** `03_primary`
 * **Tracking System:** DVC dependency candidate
 * **Important Note:** Unresolved candidates and resolved mountains are distinct entities. The existing `museum-yama-web/mountains.json` is a provisional legacy web cache and does not serve as this final semantic model.
-* **Cardinality Expectation:** In the current reference state, the expected resolved mountain count is exactly 531.
+* **Cardinality Expectation:** In the current reference state, the expected resolved mountain count is exactly 501. (30 blank-"No" records from the CSV source are explicitly excluded from this authoritative set).
 
 ### 14. `resolved_mountain_waypoint_gpx`
 * **Role:** A collection of identified mountain waypoints formatted as a GPX/XML file, embedding evidence references in its extensions. This is the first concrete target export.
@@ -113,14 +113,14 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Primary Inputs:** `resolved_mountain_waypoint_gpx`, `activity_mountain_links`
 * **Expected Future Layer:** `08_reporting`
 * **Tracking System:** Git or dynamically generated
-* **Cardinality Expectation:** The future `mountains-merged.json` (or equivalent web export) should preserve the 531 top-level mountain record count unless a discrepancy is explicitly explained.
+* **Cardinality Expectation:** The future `mountains-merged.json` (or equivalent web export) should preserve the 501 top-level mountain record count unless a discrepancy is explicitly explained.
 
 ### 17. `validation_reports`
 * **Role:** Automated checks confirming the integrity of the data layers (e.g., no orphaned candidates coerced to identities without evidence, duplicate mountain names, unlinked GPX files).
 * **Primary Inputs:** Outputs across pipeline layers.
 * **Expected Future Layer:** `08_reporting`
 * **Tracking System:** Git or DVC-tracked output
-* **Cardinality Validation:** Validation reports should actively check the resolved mountain record count against the 531 invariant and report any discrepancy categories (e.g., `missing_source_row`, `duplicate_or_merged_record`).
+* **Cardinality Validation:** Validation reports should actively check the resolved mountain record count against the 501 invariant and report any discrepancy categories (e.g., `missing_source_row`, `duplicate_or_merged_record`, `excluded_from_authoritative_source`). Validation should report the count of excluded blank-"No" records separately.
 
 ### 18. `provenance_entities`, `provenance_activities`, `provenance_edges`
 * **Role:** Tabular representation of the data lineage, entities, processes, and their relationships.

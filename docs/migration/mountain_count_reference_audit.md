@@ -1,16 +1,19 @@
 # Mountain Count Reference Audit
 
 ## Purpose
-This read-only audit verifies the user-stated expected cardinality of 531 top-level mountain records against the current CSV source (`csv/えひめの山_愛媛県の山.csv`).
+This read-only audit verifies the user-stated expected cardinality of 501 top-level mountain records against the current CSV source (`csv/えひめの山_愛媛県の山.csv`).
 
 ## Counting Method
-A simple Python script using the standard `csv` library was used to iterate over the rows in `csv/えひめの山_愛媛県の山.csv`, extracting the header and counting the remaining data rows.
+A simple Python script using the standard `csv` library was used to iterate over the rows in `csv/えひめの山_愛媛県の山.csv`, extracting the header and counting the remaining data rows. We then separated the count based on whether the `No` column was blank.
 
 ## Observation
 *   **File Inspected:** `csv/えひめの山_愛媛県の山.csv`
 *   **Headers Excluded:** Yes
-*   **Data-Row Count:** 531
+*   **Total Data-Row Count:** 531
+*   **Records with non-empty "No" (Authoritative):** 501
+*   **Records with blank "No" (Excluded from authoritative set):** 30
 
 ## Conclusion / Status
-*   **Status:** `confirmed_531`
-*   **Notes:** The data-row count (excluding the header) in `csv/えひめの山_愛媛県の山.csv` is exactly 531. This confirms the user-stated expected cardinality. The future `mountains-merged.json` must therefore preserve these 531 top-level mountain records, and same-name mountains must not be inappropriately merged to artificially reduce this count.
+*   **Status:** `confirmed_501`
+*   **Notes:** The total data-row count (excluding the header) is 531. However, exactly 30 records have a blank `No` value. According to user policy, these 30 blank-"No" records are classified as `excluded_from_authoritative_source` (or `non_authoritative_blank_no_record`) and are preserved but placed out of scope for the authoritative dataset.
+*   **Invariant:** The final `mountains-merged.json` should conceptually contain the 501 top-level mountain records. Same-name mountains must not be inappropriately merged to artificially reduce this count.
