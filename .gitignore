@@ -8,3 +8,10 @@ test_nom.json
 test_nom_en.json
 scratch/
 __pycache__/
+
+# Python virtual environment and packaging/build files
+.venv/
+*.egg-info/
+.ipynb_checkpoints/
+*.pyc
+
