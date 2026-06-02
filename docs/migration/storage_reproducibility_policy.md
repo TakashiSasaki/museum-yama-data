@@ -12,7 +12,7 @@ This document serves as the compact canonical reference for storage and reproduc
 
 ## Git-Primary Storage
 
-* Raw/source data and retained legacy artifacts remain ordinary Git-tracked files by default.
+* Raw/source data and retained source snapshots remain ordinary Git-tracked files by default.
 * Current data sizes do not require Git LFS.
 
 ## Git LFS Policy
