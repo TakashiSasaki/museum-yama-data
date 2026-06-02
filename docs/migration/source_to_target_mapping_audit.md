@@ -26,6 +26,16 @@
 | `docs/` | Internal documentation | template placeholder | Canonical source of truth | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Policies and audits | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
 | `site/` | Generated site | template placeholder | GitHub Pages presentation | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Deterministic output | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
 
+## Field Mapping
+
+| source field/column | source file/table | target field | target dataset/model | role in target | notes / constraints | mapping status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `No` | `csv/えひめの山_愛媛県の山.csv` | `mountain_no` | `mountains` | Authoritative Primary Key | 501 authoritative values (`1..501`). Blank-"No" records are explicitly excluded. | migrated |
+| blank `No` row | `csv/えひめの山_愛媛県の山.csv` | N/A | `mountains` | Excluded | 30 rows preserved in source but excluded from target authoritative set. | excluded_from_authoritative_source |
+| `山名` | `csv/えひめの山_愛媛県の山.csv` | `mountain_name` | `mountains` | Label/Evidence | Must not be used as primary key. Same-name records must not be merged. | migrated |
+| `市町村・島` | `csv/えひめの山_愛媛県の山.csv` | `municipality` | `mountains` | Label/Evidence | Must not be used as primary key. | migrated |
+| Row index | `csv/えひめの山_愛媛県の山.csv` | `source_row_index` | `mountains` | Provenance | May be preserved as provenance, but must not be used as the primary key. | migrated |
+
 ## Provenance Findings
 
 The repository appears to primarily target YAMAP activities associated with user ID 2437175. This is currently a repository-level working hypothesis based on the fetch-user-activities skill example and collection workflow, not a per-activity verified fact. Current `yamap/*.md` snapshots store activity IDs and activity metadata, but do not preserve activity owner/user IDs. A future audit should verify `activity_owner_user_id` for each YAMAP activity and identify any activities from other users. See `docs/migration/provenance_findings.md`.
