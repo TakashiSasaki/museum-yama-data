@@ -1,5 +1,3 @@
-const crypto = require('crypto');
-
 const DEFAULT_SUMMIT_DETECTION_CONFIG = {
     smoothWindow: 5,
     peakRadius: 10,
