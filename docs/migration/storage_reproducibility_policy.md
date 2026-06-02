@@ -47,7 +47,10 @@ This document serves as the compact canonical reference for storage and reproduc
 
 * Generated outputs require an explicit per-path decision regarding their tracking mode.
 * No output should be moved out of Git merely because DVC exists.
-* The formal generated-output paths and tracking modes remain pending and will be documented in plans such as `docs/migration/dvc_first_stage_plan.md`.
+* The formal generated-output paths and tracking modes are defined in `docs/migration/generated_output_path_policy.md` and related plans such as `docs/migration/dvc_first_stage_plan.md`.
+* `artifacts/generated/` is the recommended interim root for formal generated pipeline outputs before final `data/` layout migration.
+* Documentation preview artifacts may remain under `docs/migration/`.
+* Source data and retained artifacts remain Git-primary. DVC-light does not imply moving source data into DVC.
 
 For clarity, differentiate between the following concepts when making output tracking decisions:
 * **Git-tracked source data:** Immutable primary input data, committed directly to Git.
