@@ -86,14 +86,23 @@ try {
 execSync(`node "${cliPath}" detect-candidates --input "${fixtureFile}" --out "${outCsvPath}" --smooth-window 1 --peak-radius 1 --min-prominence 10`, { stdio: 'pipe' });
 
 assert.ok(fs.existsSync(outCsvPath), "CSV should be created");
-const csvContent = fs.readFileSync(outCsvPath, 'utf8');
-const lines = csvContent.split('\n').filter(l => l.trim() !== '');
 
-assert.ok(lines.length > 1, "CSV should have header and at least one data row");
-assert.ok(lines[0].includes('summit_candidate_id'), "Header should contain summit_candidate_id");
-assert.ok(!lines[0].includes('name'), "Header should NOT contain mountain name");
-assert.ok(lines[1].includes('summit-candidate:'), "ID should be formatted correctly");
-assert.ok(lines[1].includes('unresolved'), "Candidate status should be unresolved");
+const { parseCSV } = require('../lib/csv');
+const csvContent = fs.readFileSync(outCsvPath, 'utf8');
+const rows = parseCSV(csvContent, { strictColumns: true });
+
+assert.ok(rows.length > 1, "CSV should have header and at least one data row");
+
+const header = rows[0];
+assert.ok(header.includes('summit_candidate_id'), "Header should contain summit_candidate_id");
+assert.ok(!header.includes('name'), "Header should NOT contain mountain name");
+
+const statusIdx = header.indexOf('candidate_status');
+assert.ok(statusIdx !== -1, "Header should contain candidate_status");
+
+const dataRow = rows[1];
+assert.ok(dataRow[0].includes('summit-candidate:'), "ID should be formatted correctly");
+assert.strictEqual(dataRow[statusIdx], 'unresolved', "Candidate status should be unresolved");
 
 // Cleanup
 fs.unlinkSync(fixtureFile);
