@@ -36,6 +36,7 @@ The repository appears to primarily target YAMAP activities associated with user
 
 *   **Requirement:** A future pipeline stage (e.g., `link_gpx_to_yamap_activity`) is required to definitively match `gpx/raw/*.gpx` files to `yamap/*.md` activities.
 *   **Context:** Read-only inspection across the repository verified that GPX XML files do not embed the YAMAP activity ID directly. GPX-to-YAMAP linking should therefore be implemented as an explicit pipeline stage using filename timestamps, GPX track times, track names, and YAMAP Markdown metadata.
+*   **Resolution of Unresolved Links:** A human-confirmed audit documented in `docs/migration/yamap_unresolved_activity_link_resolution.md` resolved a key candidate case (yamap_2022-07-10_07_25.gpx is mapped to activity 18371502) and formally accepted five files (伊之子山・左谷ノ森 on 2022-04-25, 二反山・青刈山 on 2024-05-19, 二反山 on 2024-06-14, 薬師山 on 2024-06-16, and 高縄山 on 2024-08-04) as accepted `missing_yamap_metadata` coverage gaps. These remaining files are valid source tracks and remain fully usable for summit candidate detection.
 *   **Evidence for Matching:**
     *   GPX filename timestamp
     *   GPX track start/end time

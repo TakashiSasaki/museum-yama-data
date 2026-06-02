@@ -56,12 +56,12 @@ def write_pwa_assets():
     icons_dir = SITE_DIR / "assets" / "icons"
     icons_dir.mkdir(parents=True, exist_ok=True)
 
-    with open(SITE_DIR / "manifest.webmanifest", "w") as f:
+    with open(SITE_DIR / "manifest.webmanifest", "w", encoding="utf-8") as f:
         json.dump(PWA_MANIFEST, f, indent=2)
         f.write("\n")
 
     for size in (192, 512):
-        with open(icons_dir / f"yama-museum-{size}.svg", "w") as f:
+        with open(icons_dir / f"yama-museum-{size}.svg", "w", encoding="utf-8") as f:
             f.write(ICON_SVG_TEMPLATE.format(size=size))
 
 
@@ -311,7 +311,7 @@ def build_pipeline_graph():
     </div>
     """
 
-    with open(SITE_DIR / "pipeline-graph.html", "w") as f:
+    with open(SITE_DIR / "pipeline-graph.html", "w", encoding="utf-8") as f:
         f.write(get_template("Pipeline Graph", content))
 
 
@@ -337,7 +337,7 @@ def build_index():
         <li><a href="decisions.html">Decisions & Status</a></li>
     </ul>
     """
-    with open(SITE_DIR / "index.html", "w") as f:
+    with open(SITE_DIR / "index.html", "w", encoding="utf-8") as f:
         f.write(get_template("Yama Museum Overview", content))
 
 def clean_value(val):
@@ -359,7 +359,7 @@ def build_data_catalog():
     content += "<table><tr><th>Dataset</th><th>Layer</th><th>Status/Tracking</th></tr>\n"
 
     try:
-        with open(DOCS_DIR / "migration" / "target_data_model.md", "r") as f:
+        with open(DOCS_DIR / "migration" / "target_data_model.md", "r", encoding="utf-8") as f:
             lines = f.readlines()
             current_dataset = ""
             layer = ""
@@ -390,7 +390,7 @@ def build_data_catalog():
         content += "<tr><td colspan='3'>Error parsing data model. See build logs for details.</td></tr>\n"
 
     content += "</table>\n"
-    with open(SITE_DIR / "data-catalog.html", "w") as f:
+    with open(SITE_DIR / "data-catalog.html", "w", encoding="utf-8") as f:
         f.write(get_template("Data Catalog", content))
 
 def build_pipeline():
@@ -398,7 +398,7 @@ def build_pipeline():
     content += "<table><tr><th>Pipeline</th><th>Inputs</th><th>Outputs</th><th>Status</th></tr>\n"
 
     try:
-        with open(SRC_DIR / "pipelines" / "README.md", "r") as f:
+        with open(SRC_DIR / "pipelines" / "README.md", "r", encoding="utf-8") as f:
             lines = f.readlines()
             current_pipe = ""
             inputs = ""
@@ -427,7 +427,7 @@ def build_pipeline():
         content += "<tr><td colspan='4'>Error parsing pipeline docs. See build logs for details.</td></tr>\n"
 
     content += "</table>\n"
-    with open(SITE_DIR / "pipeline.html", "w") as f:
+    with open(SITE_DIR / "pipeline.html", "w", encoding="utf-8") as f:
         f.write(get_template("Pipeline Structure", content))
 
 def build_lineage():
@@ -462,7 +462,7 @@ digraph Lineage {
 }
     </div>
     """
-    with open(SITE_DIR / "lineage.html", "w") as f:
+    with open(SITE_DIR / "lineage.html", "w", encoding="utf-8") as f:
         f.write(get_template("Lineage & Provenance", content))
 
 def build_decisions():
@@ -497,8 +497,9 @@ def build_decisions():
     <p>A new <a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/source_to_target_mapping_audit.md" target="_blank" rel="noopener noreferrer">source-to-target mapping audit template</a> has been added as a starting point. It is not a completed audit and does not authorize data movement.</p>
     <p>A read-only <a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/summit_candidate_detection_audit.md" target="_blank" rel="noopener noreferrer">summit candidate detection baseline audit</a> evaluates the algorithmic behavior of candidate counts, but does not select final production parameters.</p>
     <p>A read-only <a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/summit_candidate_detection_outlier_review.md" target="_blank" rel="noopener noreferrer">summit detection outlier review</a> identifies zero-candidate, high-candidate-count, low-elevation-range, few-trackpoint, and linking-unresolved cases for later parameter tuning. It does not select production parameters and does not modify GPX files.</p>
+    <p>A final <a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/yamap_unresolved_activity_link_resolution.md" target="_blank" rel="noopener noreferrer">GPX-to-YAMAP unresolved-link resolution report</a> records one user-confirmed existing match and five accepted YAMAP metadata coverage gaps. The unmatched GPX files remain valid source tracks for summit candidate detection.</p>
     """
-    with open(SITE_DIR / "decisions.html", "w") as f:
+    with open(SITE_DIR / "decisions.html", "w", encoding="utf-8") as f:
         f.write(get_template("Decisions & Status", content))
 
 def build_directory_inventory():
@@ -531,7 +532,7 @@ def build_directory_inventory():
 
     <p>See the <a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/source_to_target_mapping_audit.md" target="_blank" rel="noopener noreferrer">source-to-target mapping audit template</a> for ongoing planning. It is a starting point and does not authorize data movement.</p>
     """
-    with open(SITE_DIR / "directory-inventory.html", "w") as f:
+    with open(SITE_DIR / "directory-inventory.html", "w", encoding="utf-8") as f:
         f.write(get_template("Directory Inventory", content))
 
 

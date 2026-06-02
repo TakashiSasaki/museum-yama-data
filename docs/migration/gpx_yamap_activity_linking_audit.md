@@ -33,3 +33,9 @@ Matches are classified into direct matches (if any), single high-confidence matc
 
 ## Next Recommended Pipeline Stage
 Introduce an explicit pipeline stage (e.g., `link_gpx_to_yamap_activity`) that implements this candidate linking strategy, creating a separate links table rather than rewriting source files.
+
+## Human Resolution Status
+
+After the generated audit, the user confirmed one `needs_review` case as an existing valid match and accepted the remaining five unmatched GPX files as YAMAP metadata coverage gaps after manual search and `cli.js verify`.
+
+The generated candidate CSV remains a generated artifact. Human-confirmed overrides and final interpretation are recorded in `docs/migration/yamap_unresolved_activity_link_resolution.md`.

@@ -46,15 +46,22 @@ A fetch log, `yamap_all_activity_ids.txt`, was found inside the `yamap/` directo
 Certain data files (`.csv`, `.gpx`) were discovered within the `.agents/` folder, such as `.agents/skills/yama-data-pipeline/test/fixtures/`. These have been properly identified as skill-specific test fixtures and legacy test data. They are not part of the project's primary dataset, and they will purposefully be excluded from the main data tree migration.
 
 ## GPX and YAMAP Activity ID Coverage
-Current read-only inspection did not find embedded YAMAP activity IDs in GPX XML. GPX files are linkable to YAMAP activity metadata through a dedicated matching stage. The linking stage should use filename timestamps, GPX track times, track names, and scraped YAMAP Markdown metadata. Metadata for activities has been scraped from YAMAP web pages and saved as Markdown snapshots in `yamap/`. However, there are likely discrepancies in coverage across the various datasets.
-- Extra YAMAP metadata may exist for activity IDs not present in GPX files, and that is completely acceptable.
-- Future validation pipelines must not assume that the sets of activity IDs extracted from GPX files, represented by `yamap/*.md`, listed in `yamap/yamap_all_activity_ids.txt`, and represented in Excel/CSV activity logs are identical.
-- Differences must be reported as coverage categories rather than being silently deleted or coerced. Example categories include:
-  - GPX activity IDs without YAMAP metadata
-  - YAMAP metadata without matching GPX files
-  - Excel/CSV activity records without matching GPX files
-  - GPX files without matching Excel/CSV activity rows
-- No extra fetched metadata should be deleted merely because it is not referenced by a GPX file.
-## Primary Target User Hypothesis
+Current read-only inspection did not find embedded YAMAP activity IDs in GPX XML. GPX files are linkable to YAMAP activity metadata through a dedicated matching stage. The linking stage uses filename timestamps, GPX track times, track names, and scraped YAMAP Markdown metadata. Metadata for activities has been scraped from YAMAP web pages and saved as Markdown snapshots in `yamap/`.
 
-The repository appears to primarily target YAMAP activities associated with user ID 2437175. This is currently a repository-level working hypothesis based on the fetch-user-activities skill example and collection workflow, not a per-activity verified fact. Current `yamap/*.md` snapshots store activity IDs and activity metadata, but do not preserve activity owner/user IDs. A future audit should verify `activity_owner_user_id` for each YAMAP activity and identify any activities from other users.
+The five unmatched GPX files:
+- `gpx/raw/yamap_2022-04-25_11_35.gpx`
+- `gpx/raw/yamap_2024-05-19_08_47.gpx`
+- `gpx/raw/yamap_2024-06-14_06_46.gpx`
+- `gpx/raw/yamap_2024-06-16_07_27.gpx`
+- `gpx/raw/yamap_2024-08-03_20_36.gpx`
+
+have been formally resolved and accepted as **YAMAP metadata coverage gaps** (`missing_yamap_metadata`). Missing YAMAP metadata does not invalidate these files as primary source tracks. They remain fully valid and must be processed by downstream stages like `detect_summit_candidates` for elevation-profile analysis, summit candidate detection, and GPX-derived provenance evidence.
+
+- Extra YAMAP metadata may exist for activity IDs not present in GPX files, which is completely acceptable.
+- Future validation pipelines must not assume that the sets of activity IDs extracted from GPX files, represented by `yamap/*.md`, listed in `yamap/yamap_all_activity_ids.txt`, and represented in Excel/CSV activity logs are identical.
+- Differences must be reported as coverage categories rather than being silently deleted or coerced.
+
+## Primary Target User Hypothesis & Authority
+The repository primarily targets YAMAP activities associated with user ID `2437175`, who is the primary project collaborator. The GPX files were downloaded by the user under their own authority. 
+
+However, because current `yamap/*.md` snapshots do not preserve the activity owner/user ID, we cannot state that every activity belongs to user `2437175` unless per-activity owner verification exists. The `owner_user_id` verification remains a future audit item to be performed on the raw metadata.
