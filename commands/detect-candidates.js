@@ -105,6 +105,9 @@ module.exports = async function detectCandidates(options) {
                 // Track ID could be extracted from trk name, but keeping it empty or simple since not passed through extractTrackPoints in current baseline
                 const source_track_id = '';
 
+                // Escape CSV fields that might contain commas
+                const escapeCsv = (str) => str.includes(',') ? `"${str.replace(/"/g, '""')}"` : str;
+
                 rows.push([
                     id,
                     fileObj.sourceKey,
@@ -118,7 +121,7 @@ module.exports = async function detectCandidates(options) {
                     c.smoothed_ele,
                     c.prominence,
                     c.detection_method,
-                    c.detection_parameters,
+                    escapeCsv(c.detection_parameters),
                     'unresolved',
                     'false',
                     ''
