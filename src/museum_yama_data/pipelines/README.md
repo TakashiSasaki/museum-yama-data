@@ -19,10 +19,10 @@ This directory will eventually contain the implementation of the data pipelines 
 * **Implementation Status:** Not implemented
 
 ### `detect_summit_candidates`
-* **Purpose:** Algorithmically detects potential peaks purely from GPX-derived evidence (e.g., elevation profiles, track traces). Assigns stable non-semantic candidate IDs. **Note:** This stage must not assign mountain names or identities, and it is NOT blocked by missing YAMAP activity metadata (e.g. `missing_yamap_metadata` status tracks remain fully eligible for candidate detection).
+* **Purpose:** Algorithmically detects potential peaks purely from GPX-derived evidence (e.g., elevation profiles, track traces). Assigns stable non-semantic candidate IDs. **Note:** This stage must not assign mountain names or identities. Missing YAMAP metadata must not block `detect_summit_candidates`. The five GPX files accepted as YAMAP metadata coverage gaps remain valid immutable GPX source tracks and remain fully eligible for GPX parsing, elevation-profile analysis, and summit candidate detection.
 * **Intended Inputs:** `gpx_tracks` / `gpx_trackpoints`
 * **Intended Outputs:** `summit_candidates`
-* **Implementation Status:** Not implemented (Note: A portable baseline implementation `detect-candidates` exists as an agent skill command, generating unresolved candidates to aid with future experiments).
+* **Implementation Status:** Not implemented (Note: A portable baseline implementation `detect-candidates` exists as an agent skill command, generating unresolved candidates to aid with future experiments, but it is not the final Kedro pipeline implementation).
 
 ### `export_summit_candidate_gpx`
 * **Purpose:** Generates a purely geographic GPX file showing all unverified summit candidates.

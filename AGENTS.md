@@ -98,6 +98,16 @@ These agreements summarize the current planning state. The canonical details are
 - **GPX/XML extensions:** Future resolved mountain waypoint GPX may use a provisional `yama:` prefix inside `<extensions>`. Extension local names should be ASCII-safe, such as `mountain_id`, `canonical_name`, `display_name`, `identity_status`, and `evidence_ref`. The namespace URI and XML schema are not finalized.
 - **Reverse geocoding policy:** Existing reverse geocoding cache may be reused for municipality-level inference. If the nearest cached coordinate is more than 1 km away, mark the point as needing a new reverse geocoding lookup. Boundary cases must be flagged rather than silently normalized.
 
+## Agent Skill Portability Policy
+
+- Reusable data-processing tools should be implemented as agent skills under `.agents/skills/`.
+- Portable skill commands should accept explicit `--input` and `--out` paths where practical, avoiding implicit repository-root assumptions unless the command is explicitly repository-specific.
+- Reusable logic should live in skill `lib/` modules, keeping CLI wrappers thin.
+- Skill dependencies should be declared within the skill package.
+- Skill tests should use synthetic fixtures where possible.
+- Source data must not be modified unless the command is explicitly designed for that purpose.
+- **Distinction from `scripts/`**: The `scripts/` directory is reserved for repository-specific audits, site generation, migration reports, and one-off helper checks. When a tool in `scripts/` becomes reusable or pipeline-relevant, it should be considered for promotion into an agent skill.
+
 ## Agent Skills
 
 ### Skill: Yama Data Pipeline (`yama-data-pipeline`)
