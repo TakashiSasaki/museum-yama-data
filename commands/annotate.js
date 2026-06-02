@@ -13,40 +13,15 @@ const path = require('path');
 const { parseGpx, serializeGpx, extractTrackPoints, extractTrackName, appendWaypoint } = require('../lib/gpx');
 const { ensureDir, atomicWriteSync } = require('../lib/fs_safe');
 const log = require('../lib/log');
-
+const { detectSummitCandidates, DEFAULT_SUMMIT_DETECTION_CONFIG } = require('../lib/summit_detection');
 
 
 const CONFIG = {
-    SMOOTH_WINDOW: 5,
-    PEAK_RADIUS: 10,
-    MIN_PROMINENCE: 30,
-    MERGE_DISTANCE: 100,
+    ...DEFAULT_SUMMIT_DETECTION_CONFIG,
     ELEV_TOLERANCE: 50,
 };
 
 // === Utility Functions ===
-
-function haversineDistance(lat1, lon1, lat2, lon2) {
-    const R = 6371000;
-    const dLat = (lat2 - lat1) * Math.PI / 180;
-    const dLon = (lon2 - lon1) * Math.PI / 180;
-    const a = Math.sin(dLat / 2) ** 2 +
-        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-        Math.sin(dLon / 2) ** 2;
-    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-}
-
-function smooth(data, window) {
-    const half = Math.floor(window / 2);
-    return data.map((_, i) => {
-        let sum = 0, count = 0;
-        for (let j = Math.max(0, i - half); j <= Math.min(data.length - 1, i + half); j++) {
-            sum += data[j];
-            count++;
-        }
-        return sum / count;
-    });
-}
 
 function parseElevation(s) {
     if (!s) return NaN;
@@ -97,92 +72,12 @@ function loadMountainDatabase(CSV_DIR) {
 // === Peak Detection ===
 
 function detectPeaks(points) {
-    // Only use points that have a valid elevation value
-    const validPoints = points.filter(p => !isNaN(p.ele));
-
-    if (validPoints.length < 3) return [];
-
-    const elevations = validPoints.map(p => p.ele);
-
-    const smoothed = smooth(elevations, CONFIG.SMOOTH_WINDOW);
-    const candidates = [];
-    const radius = Math.min(CONFIG.PEAK_RADIUS, Math.floor(validPoints.length / 3));
-
-    for (let i = radius; i < validPoints.length - radius; i++) {
-        let isMax = true;
-        for (let j = 1; j <= radius; j++) {
-            if (smoothed[i] <= smoothed[i - j] || smoothed[i] <= smoothed[i + j]) {
-                isMax = false;
-                break;
-            }
-        }
-        if (isMax) {
-            candidates.push({ index: i, smoothedEle: smoothed[i], ...validPoints[i] });
-        }
-    }
-
-    let maxIdx = 0;
-    for (let i = 1; i < smoothed.length; i++) {
-        if (smoothed[i] > smoothed[maxIdx]) maxIdx = i;
-    }
-    const maxAlreadyIncluded = candidates.some(c => Math.abs(c.index - maxIdx) < radius);
-    if (!maxAlreadyIncluded) {
-        candidates.push({ index: maxIdx, smoothedEle: smoothed[maxIdx], ...validPoints[maxIdx] });
-    }
-
-    const peaks = [];
-    for (const candidate of candidates) {
-        const prominence = calculateProminence(smoothed, candidate.index);
-        if (prominence >= CONFIG.MIN_PROMINENCE) {
-            peaks.push({ ...candidate, prominence });
-        }
-    }
-
-    return mergeNearbyPeaks(peaks);
-}
-
-function calculateProminence(elevations, peakIdx) {
-    const peakElev = elevations[peakIdx];
-    let leftMin = peakElev;
-    let rightMin = peakElev;
-
-    for (let i = peakIdx - 1; i >= 0; i--) {
-        if (elevations[i] > peakElev) break;
-        leftMin = Math.min(leftMin, elevations[i]);
-    }
-
-    for (let i = peakIdx + 1; i < elevations.length; i++) {
-        if (elevations[i] > peakElev) break;
-        rightMin = Math.min(rightMin, elevations[i]);
-    }
-
-    const keyCol = Math.max(leftMin, rightMin);
-    return peakElev - keyCol;
-}
-
-function mergeNearbyPeaks(peaks) {
-    if (peaks.length <= 1) return peaks;
-
-    const sorted = [...peaks].sort((a, b) => b.ele - a.ele);
-    const merged = [];
-    const used = new Set();
-
-    for (const peak of sorted) {
-        if (used.has(peak.index)) continue;
-
-        for (const other of sorted) {
-            if (other.index === peak.index) continue;
-            if (used.has(other.index)) continue;
-            const dist = haversineDistance(peak.lat, peak.lon, other.lat, other.lon);
-            if (dist < CONFIG.MERGE_DISTANCE) {
-                used.add(other.index);
-            }
-        }
-
-        merged.push(peak);
-    }
-
-    return merged.sort((a, b) => a.index - b.index);
+    const candidates = detectSummitCandidates(points, CONFIG);
+    return candidates.map(c => ({
+        ...c,
+        index: c.valid_elevation_index,
+        smoothedEle: c.smoothed_ele
+    }));
 }
 
 function assignPeakNames(peaks, trackName, mountainDb) {
