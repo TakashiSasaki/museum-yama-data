@@ -15,6 +15,12 @@ assert.strictEqual(config2.smoothWindow, 7);
 assert.strictEqual(config2.minProminence, 10);
 assert.strictEqual(config2.peakRadius, DEFAULT_SUMMIT_DETECTION_CONFIG.peakRadius);
 
+const configBad = normalizeDetectionConfig({ smoothWindow: -5, peakRadius: 0, minProminence: -10, mergeDistance: 'invalid' });
+assert.strictEqual(configBad.smoothWindow, 1);
+assert.strictEqual(configBad.peakRadius, 1);
+assert.strictEqual(configBad.minProminence, 0);
+assert.strictEqual(configBad.mergeDistance, DEFAULT_SUMMIT_DETECTION_CONFIG.mergeDistance);
+
 // 2. Missing elevation handling
 const points = [
     { lat: 10, lon: 10, ele: 100 },
