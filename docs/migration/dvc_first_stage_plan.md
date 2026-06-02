@@ -9,7 +9,7 @@ The suggested first DVC-light stage candidate is a preview of the summit candida
 ### Proposed Execution Command
 
 ```sh
-node .agents/skills/yama-data-pipeline/cli.js detect-candidates --input gpx/raw --out <to-be-decided-output-path>
+node .agents/skills/yama-data-pipeline/cli.js detect-candidates --input gpx/raw --out "TO_BE_DECIDED_OUTPUT_PATH.csv"
 ```
 
 ### Stage Definition Discussion
@@ -23,7 +23,7 @@ node .agents/skills/yama-data-pipeline/cli.js detect-candidates --input gpx/raw 
     *   Currently, `docs/migration/summit_candidates_skill_preview.csv` exists as an acceptable small committed preview/audit artifact.
     *   However, it should not automatically become the canonical DVC stage output. `docs/migration/` is not ideal as a long-term generated-output directory.
     *   A future formal output path should be decided separately. The physical `data/` layout is still not to be implemented in this task.
-    *   Therefore, the first DVC stage plan uses a placeholder such as `<to-be-decided-output-path>` and explicitly records the pending output-path decision.
+    *   Therefore, the first DVC stage plan uses a placeholder such as `TO_BE_DECIDED_OUTPUT_PATH.csv` and explicitly records the pending output-path decision.
 
 ## Constraints
 
