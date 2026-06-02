@@ -81,7 +81,9 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
 These agreements summarize the current planning state. The canonical details are in `docs/migration/` and `docs/source_coverage_audit.md`.
 
 - **Clone-complete policy:** The repository follows a clone-complete policy. Git LFS is intentionally not used. Primary data and retained processed artifacts should remain available after a plain Git clone. See `docs/migration/storage_reproducibility_policy.md`.
-- **DVC/Kedro status:** Planning documents are now sufficient for a later task to initialize DVC/Kedro scaffolding without moving data. DVC-light policy is documented and the first executable DVC stage candidate is documented in `docs/migration/dvc_first_stage_plan.md`. However, DVC is not initialized yet. Actual DVC initialization requires a future explicit task and a formal generated-output path decision. Physical data movement remains blocked until the source coverage audit and path migration plan explicitly cover the affected files.
+- **DVC/Kedro status:** Planning documents are now sufficient for a later task to initialize DVC/Kedro scaffolding without moving data. DVC-light policy is documented, the first executable DVC stage candidate is documented in `docs/migration/dvc_first_stage_plan.md`, and the output policy in `docs/migration/generated_output_path_policy.md`. However, DVC is not initialized yet. Actual DVC initialization requires a future explicit task approval.
+  - Generated outputs should not be placed under `docs/migration/` unless they are small committed preview/audit artifacts. Future formal generated outputs should use the documented generated-output policy (`artifacts/generated/`).
+  - No data movement is authorized. Physical data movement remains blocked until the source coverage audit and path migration plan explicitly cover the affected files.
   - `conf/` contains future Kedro configuration and catalog placeholders.
   - `src/museum_yama_data/` contains future Python/Kedro pipeline scaffolding.
   - The scaffold does not mean that data migration has occurred.
