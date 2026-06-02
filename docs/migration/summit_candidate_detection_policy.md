@@ -32,7 +32,7 @@ The pipeline must separate the detection of unverified peak coordinates from the
 The existing script located at `.agents/skills/yama-data-pipeline/commands/annotate.js` contains a legacy peak-detection implementation. This script is useful as a reference baseline but contains behavior that must be separated in the future.
 
 ### Baseline Algorithmic Behavior
-The legacy script performs the following steps:
+The legacy script and the new portable baseline script perform the following steps:
 *   Smooths the elevation series over a window.
 *   Identifies local maxima over a defined radius.
 *   Always includes the global maximum if it wasn't already caught.
@@ -45,7 +45,9 @@ The legacy script performs the following steps:
 *   `PEAK_RADIUS = 10`
 *   `MIN_PROMINENCE = 30`
 *   `MERGE_DISTANCE = 100`
-*   `ELEV_TOLERANCE = 50`
+*   `ELEV_TOLERANCE = 50` (Used only in legacy mountain-name assignment)
+
+**Portable Implementation:** The `.agents/skills/yama-data-pipeline/cli.js detect-candidates` command provides the reusable baseline implementation for summit candidate detection experiments. It is not yet the final Kedro pipeline implementation. It outputs unresolved candidates only, uses GPX-derived evidence only, and does not assign mountain names. It processes files even if YAMAP metadata is missing.
 
 The legacy/reference detection parameters have a read-only baseline audit in `docs/migration/summit_candidate_detection_audit.md`. The audit evaluates candidate-count behavior and parameter sensitivity, but does not select final production parameters. The baseline audit has a follow-up outlier review in `docs/migration/summit_candidate_detection_outlier_review.md`, focusing on zero-candidate, high-candidate-count, low-elevation-range, few-trackpoint, and linking-unresolved cases. This review supports parameter tuning but does not select production parameters.
 
