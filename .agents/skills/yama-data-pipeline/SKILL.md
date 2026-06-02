@@ -54,7 +54,7 @@ Detects unverified summit candidates algorithmically from GPX tracks and outputs
 - Outputs unresolved candidates only; it does not assign mountain names.
 - Does not require or use CSVs, YAMAP markdown, or reverse geocoding data.
 - Does not modify input GPX files or write annotated GPX files.
-- Generates stable non-semantic `summit_candidate_id` hashes based on the input path and parameters.
+- Generates stable non-semantic `summit_candidate_id` hashes based on the GPX basename, trackpoint index, and detection parameters.
 
 ```sh
 node cli.js detect-candidates --input ../../../gpx/raw --out ../../../docs/migration/summit_candidates_skill_preview.csv
