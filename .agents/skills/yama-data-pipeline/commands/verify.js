@@ -89,6 +89,14 @@ module.exports = async function verify(options) {
                 }
             }
             
+            // Helper function to check if two ISO date strings are adjacent (within 1 day)
+            const isAdjacentDate = (d1, d2) => {
+                if (!d1 || !d2) return false;
+                const diffTime = Math.abs(new Date(d1) - new Date(d2));
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                return diffDays <= 1;
+            };
+
             // 1. Exact Match (Date + Name)
             let match = yamapRecords.find(r => r.date === gpxDate && r.title === trackName);
             
@@ -96,8 +104,13 @@ module.exports = async function verify(options) {
             if (!match) {
                 match = yamapRecords.find(r => r.date === gpxDate && (r.title.includes(trackName) || trackName.includes(r.title)));
             }
+
+            // 3. Timezone / Midnight Drift Fallback (Date within ±1 day + Name Match)
+            if (!match) {
+                match = yamapRecords.find(r => isAdjacentDate(r.date, gpxDate) && (r.title === trackName || r.title.includes(trackName) || trackName.includes(r.title)));
+            }
             
-            // 3. Last Resort Fallback Match (Date only - if there's exactly one activity on this date)
+            // 4. Last Resort Fallback Match (Date only - if there's exactly one activity on this date)
             if (!match) {
                 const dateMatches = yamapRecords.filter(r => r.date === gpxDate);
                 if (dateMatches.length === 1) {
