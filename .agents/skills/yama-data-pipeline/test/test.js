@@ -4,6 +4,9 @@ const AdmZip = require('adm-zip');
 const { execSync } = require('child_process');
 const assert = require('assert');
 
+// Run isolated test suites
+require('./test_summit_detection');
+
 // Core pipeline functionality to test
 const validate = require('../commands/validate');
 const intake = require('../commands/intake');
