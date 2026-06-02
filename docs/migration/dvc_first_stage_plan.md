@@ -8,7 +8,7 @@ The purpose of this document is to define the first executable DVC stage candida
 
 ## Current Status
 
-**DVC is not currently initialized.** This document is purely for planning purposes. No data movement has occurred, and no `dvc init` or `dvc add` commands have been executed. The formal target generated-output path remains pending.
+**DVC is not currently initialized.** This document is purely for planning purposes. No data movement has occurred, and no `dvc init` or `dvc add` commands have been executed. The formal target generated-output path is selected as `artifacts/generated/`.
 
 ## Relationship to DVC-light Policy
 
@@ -68,7 +68,7 @@ The recommended initial tracking mode for this first generated output is **regen
 *   **Git-tracked generated output:** Committed directly to the repository.
 *   **DVC-tracked generated output:** Managed by DVC and ignored by Git. *(Note: Do not imply that generated outputs must be DVC-tracked).*
 *   **Both:** DVC tracks metadata, Git tracks content.
-*   **Regenerated-on-demand:** Neither tracked by Git nor DVC cache, simply rebuilt by the pipeline when needed.
+*   **Regenerated-on-demand:** Tracked as an output in `dvc.yaml` to utilize DVC lock-state for reproducibility, but caching is disabled (`cache: false`). It is ignored by Git and rebuilt by the pipeline when needed.
 
 ## Recommended Next Decision
 
