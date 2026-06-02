@@ -2,21 +2,31 @@
 
 This document records the user-confirmed data-integrity invariants for the final resolved mountain JSON outputs and establishes discrepancy categories to guide validation.
 
-## Target Output Cardinality
+## Primary Key and Target Output Cardinality
+
+The authoritative primary key for resolved mountain records is **`mountain_no`**.
+- `mountain_no` is sourced directly from the `No` column in `csv/えひめの山_愛媛県の山.csv`.
+- Each authoritative record must have a unique non-null integer `mountain_no`.
+- The expected authoritative key set is currently `1..501`.
+- Name, municipality, GPS coordinates, elevation, or CSV row number must not be used as the authoritative primary key. (These fields may be used as evidence, labels, matching hints, or provenance, but not as the primary key).
 
 The current user-confirmed invariant for the final resolved mountain dataset is:
-**The future final resolved mountain JSON, conceptually `mountains-merged.json`, should eventually contain exactly 501 top-level mountain records.**
+**The future final resolved mountain JSON must contain exactly 501 top-level mountain records.**
 
 This expected cardinality is derived from the CSV reference set. Any difference from this count in a generated output must be explicitly reported and explained.
 
 - Unresolved summit candidates are not the same thing as resolved mountains.
 - The `museum-yama-web/mountains.json` file is a provisional legacy cache, not the final semantic model, and should not be treated as authoritative.
 
+## Legacy Filename Clarification
+
+The legacy/manual filename `mountains-merged.json` is not canonical. It was a working filename used in an earlier manual workflow where split files were merged. Future outputs may use a different filename; the reusable part is the record schema/shape. The formal future filename remains undecided.
+
 ## Source Exclusion Rule
 The original `csv/えひめの山_愛媛県の山.csv` file contains 531 data rows. However, 30 of these records have a blank `No` value. The user has decided that **records with a blank `No` value must not be used as authoritative mountain source records**.
 - These 30 blank-"No" records must not be silently used to increase the final output count to 531.
 - They are classified as `excluded_from_authoritative_source` (or `non_authoritative_blank_no_record`).
-- They must not be used as identity evidence, summit identity evidence, or source rows for `mountains-merged.json`.
+- They must not be used as identity evidence, summit identity evidence, or source rows for the future resolved mountain JSON.
 - They must not be deleted, moved, or modified, and are preserved as out of scope for the authoritative set.
 - Validation should report their count separately.
 
@@ -26,10 +36,10 @@ The original `csv/えひめの山_愛媛県の山.csv` file contains 531 data ro
 
 ## Future Path Placement
 
-The future `mountains-merged.json` is a generated semantic/reporting output, not a retained source snapshot.
+The future resolved mountain JSON is a generated semantic/reporting output, not a retained source snapshot.
 - **It must not be placed under `processed/`.**
-- A recommended short-term conceptual output path is `artifacts/generated/mountains/mountains-merged.json`.
-- The final path remains subject to a formal data layout decision, likely under a reporting/web-data layer such as `data/08_reporting/web_data/mountains-merged.json`.
+- A recommended short-term conceptual output path is `artifacts/generated/mountains/<future-resolved-mountain-json>.json` (using the legacy `mountains-merged` schema).
+- The final path remains subject to a formal data layout decision, likely under a reporting/web-data layer such as `data/08_reporting/web_data/<future-resolved-mountain-json>.json`.
 
 ## Discrepancy Categories
 
