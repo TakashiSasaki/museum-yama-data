@@ -55,3 +55,6 @@ Current read-only inspection did not find embedded YAMAP activity IDs in GPX XML
   - Excel/CSV activity records without matching GPX files
   - GPX files without matching Excel/CSV activity rows
 - No extra fetched metadata should be deleted merely because it is not referenced by a GPX file.
+## Primary Target User Hypothesis
+
+The repository appears to primarily target YAMAP activities associated with user ID 2437175. This is currently a repository-level working hypothesis based on the fetch-user-activities skill example and collection workflow, not a per-activity verified fact. Current `yamap/*.md` snapshots store activity IDs and activity metadata, but do not preserve activity owner/user IDs. A future audit should verify `activity_owner_user_id` for each YAMAP activity and identify any activities from other users.

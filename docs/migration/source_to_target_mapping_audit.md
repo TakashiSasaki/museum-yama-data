@@ -26,6 +26,10 @@
 | `docs/` | Internal documentation | template placeholder | Canonical source of truth | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Policies and audits | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
 | `site/` | Generated site | template placeholder | GitHub Pages presentation | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Deterministic output | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
 
+## Provenance Findings
+
+The repository appears to primarily target YAMAP activities associated with user ID 2437175. This is currently a repository-level working hypothesis based on the fetch-user-activities skill example and collection workflow, not a per-activity verified fact. Current `yamap/*.md` snapshots store activity IDs and activity metadata, but do not preserve activity owner/user IDs. A future audit should verify `activity_owner_user_id` for each YAMAP activity and identify any activities from other users. See `docs/migration/provenance_findings.md`.
+
 ## Future Audit Items
 
 ### GPX-to-YAMAP Activity Linking
@@ -58,7 +62,7 @@
 
 *   **Requirement:** The `detect_summit_candidates` stage must produce unresolved candidate points strictly using GPX-derived evidence (e.g., elevation profiles, trackpoint traces).
 *   **Legacy Context:** The existing `.agents/skills/yama-data-pipeline/commands/annotate.js` script is a legacy reference baseline.
-    *   Its algorithmic baseline (smoothing, local maxima, minimum prominence) is useful but parameters require audit and tuning. The legacy/reference detection parameters have a read-only baseline audit in `docs/migration/summit_candidate_detection_audit.md`. The audit evaluates candidate-count behavior and parameter sensitivity, but does not select final production parameters.
+    *   Its algorithmic baseline (smoothing, local maxima, minimum prominence) is useful but parameters require audit and tuning. The legacy/reference detection parameters have a read-only baseline audit in `docs/migration/summit_candidate_detection_audit.md`. The audit evaluates candidate-count behavior and parameter sensitivity, but does not select final production parameters. The baseline audit has a follow-up outlier review in `docs/migration/summit_candidate_detection_outlier_review.md`, focusing on zero-candidate, high-candidate-count, low-elevation-range, few-trackpoint, and linking-unresolved cases. This review supports parameter tuning but does not select production parameters.
     *   Its legacy mountain-name assignment behavior (`assignPeakNames()`) must be explicitly excluded from candidate detection and moved to downstream identity resolution.
     *   Legacy annotated GPX files (`gpx/annotated/`) are evidence, not authoritative truth.
 *   **Expected Output:** Unresolved candidate points with stable, non-semantic IDs. No final mountain identities or authoritative names should be assigned during this stage.

@@ -66,7 +66,7 @@ A detailed CSV of the parameter sensitivity is available at:
 - **Exclusion of Route Geometry**: This audit strictly evaluates parameter sensitivity without plotting or outputting candidate coordinates or route geometry to maps.
 
 ## Recommendations
-- Retain the baseline values (`min_prominence=30`, `merge_distance=100`) as a solid starting point for candidate detection logic. They appear well-balanced, yielding an average of ~1 peak per file without over-detecting noise.
+- Retain the baseline values (`min_prominence=30`, `merge_distance=100`) as a solid starting point for candidate detection logic. They appear well-balanced, yielding median 1 candidate per file and mean approximately 1.69 candidates per file under the baseline parameters, without selecting final production parameters.
 - Investigate the GPX files that returned 0 peaks or 0 valid elevation points to confirm whether the tracks are genuinely flat or if the data is malformed.
 
 ## Next Steps
