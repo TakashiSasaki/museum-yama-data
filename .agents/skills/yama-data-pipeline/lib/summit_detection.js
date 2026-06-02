@@ -142,7 +142,7 @@ function detectSummitCandidates(points, rawConfig) {
                 ...candidate,
                 prominence: prominence,
                 detection_method: 'local_maxima_with_prominence',
-                detection_parameters: `window=${config.smoothWindow},radius=${config.peakRadius},min_prominence=${config.minProminence},merge=${config.mergeDistance}`
+                detection_parameters: `window=${config.smoothWindow},radius=${radius},min_prominence=${config.minProminence},merge=${config.mergeDistance}`
             });
         }
     }
