@@ -98,11 +98,12 @@ def main():
                 outlier_categories.append("linking_unresolved")
 
             # Weak heuristic: Title candidate count mismatch
-            if title_component_count > 1 and candidate_count_default == 0:
-                outlier_categories.append("title_candidate_count_mismatch")
-            elif candidate_count_default > title_component_count + 3:
-                # E.g. if title says "Mt A" (1) and we found 5 peaks, maybe over detection
-                outlier_categories.append("title_candidate_count_mismatch")
+            if title_component_source != "none":
+                if title_component_count > 1 and candidate_count_default == 0:
+                    outlier_categories.append("title_candidate_count_mismatch")
+                elif candidate_count_default > title_component_count + 3:
+                    # E.g. if title says "Mt A" (1) and we found 5 peaks, maybe over detection
+                    outlier_categories.append("title_candidate_count_mismatch")
 
             if outlier_categories:
                 outlier_category = "|".join(outlier_categories)

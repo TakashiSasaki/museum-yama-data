@@ -20,15 +20,15 @@
 | `processed/GPXファイル.zip` | Primary GPX export package | template placeholder | Retained source snapshot | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Original GPX export package | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
 | `yamap/` | YAMAP Markdown activities | template placeholder | Raw YAMAP activity metadata | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Raw source data | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
 | `yamap/yamap_all_activity_ids.txt` | YAMAP fetch log | template placeholder | Metadata / Log | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Reference log | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
-
-## Provenance Findings
-
-The repository appears to primarily target YAMAP activities associated with user ID 2437175. This is currently a repository-level working hypothesis based on the fetch-user-activities skill example and collection workflow, not a per-activity verified fact. Current `yamap/*.md` snapshots store activity IDs and activity metadata, but do not preserve activity owner/user IDs. A future audit should verify `activity_owner_user_id` for each YAMAP activity and identify any activities from other users. See `docs/migration/provenance_findings.md`.
 | `reverse_geocoding/` | Geocoding cache | template placeholder | Cached location enrichment | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Cached API responses | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
 | `museum-yama-web/` | Web cache directory | template placeholder | Provisional cache | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Not the final semantic model | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
 | `museum-yama-web/mountains.json` | Web cache artifact | template placeholder | Accumulated provisional list | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Legacy evidence; supersedable | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
 | `docs/` | Internal documentation | template placeholder | Canonical source of truth | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Policies and audits | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
 | `site/` | Generated site | template placeholder | GitHub Pages presentation | template placeholder | template placeholder | template placeholder | template placeholder | template placeholder | Deterministic output | template placeholder | template placeholder | template placeholder | needs decision | needs decision |
+
+## Provenance Findings
+
+The repository appears to primarily target YAMAP activities associated with user ID 2437175. This is currently a repository-level working hypothesis based on the fetch-user-activities skill example and collection workflow, not a per-activity verified fact. Current `yamap/*.md` snapshots store activity IDs and activity metadata, but do not preserve activity owner/user IDs. A future audit should verify `activity_owner_user_id` for each YAMAP activity and identify any activities from other users. See `docs/migration/provenance_findings.md`.
 
 ## Future Audit Items
 
