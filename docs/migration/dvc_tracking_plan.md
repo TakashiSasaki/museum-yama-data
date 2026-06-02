@@ -30,7 +30,9 @@ This document defines the first planned DVC stage dependency scope.
 
 ## Initial Git-Primary Dependency Candidates for DVC Stages
 
-The current goal is to document DVC roles as dependency candidates. This document does not authorize `dvc add` on raw/source data. The listed paths remain Git-primary. No DVC remote is required for ordinary repository use. No data migration or data movement has occurred.
+The current goal is to document DVC roles as dependency candidates, *not* as DVC-tracked outputs and *not* as the executable stage itself. For the conceptual first executable DVC-light stage that will consume these dependencies, please see `docs/migration/dvc_first_stage_plan.md`.
+
+This document does not authorize `dvc add` on raw/source data. The listed paths remain Git-primary. No DVC remote is required for ordinary repository use. No data migration or data movement has occurred.
 
 ### 1. `processed/えひめの山.xlsx`
 * **Reason for dependency declaration:** It is the primary activity workbook archive.

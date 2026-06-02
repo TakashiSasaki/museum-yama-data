@@ -21,8 +21,8 @@ Because the documentation is consistent, **Kedro scaffolding without data moveme
 
 ### Scaffolding Status (Current)
 * **DVC Initialization:** DVC was *not* initialized. No `.dvc/` metadata or `.dvcignore` files were created.
-* **DVC Dependency Metadata:** No actual DVC stage metadata has been created yet. The first planned DVC dependency candidates have been documented in `docs/migration/dvc_tracking_plan.md`.
-* **Kedro Scaffolding:** Minimal placeholder files and a Python package structure (`src/museum_yama_data/`) exist. `conf/base/catalog.yml` is populated with placeholders mapping logical dataset names to current legacy paths and does not imply migration has occurred.
+* **DVC Dependency Metadata:** No actual DVC stage metadata has been created yet. The first planned DVC dependency candidates have been documented in `docs/migration/dvc_tracking_plan.md`. The conceptual first executable DVC stage candidate is documented in `docs/migration/dvc_first_stage_plan.md`.
+* **Kedro Scaffolding:** Minimal placeholder files and a Python package structure (`src/museum_yama_data/`) exist. `conf/base/catalog.yml` is populated with placeholders mapping logical dataset names to current legacy paths and does not imply migration has occurred. The actual Kedro pipeline implementation remains a separate future task.
 * **Data Movement:** **No data movement, deletion, or modification has occurred.** The repository remains physically in its legacy layout.
 * **Git LFS:** Git LFS is not required for current data sizes and is not part of the current plan.
 
@@ -75,7 +75,8 @@ Until the initialization phase is explicitly triggered, the following actions re
 
 ## 5. Next Recommended Task
 
-The repository is now ready for a later task to perform pipeline implementation.
+The repository is conceptually ready for a future task to perform DVC initialization *once the formal generated-output path decision is made* (see `docs/migration/dvc_first_stage_plan.md`).
 * Ensure DVC is installed when needed for pipeline stage definitions.
-* Run `dvc init` when appropriate.
+* Run `dvc init` only after explicit task approval.
 * DVC should be used for pipeline stage definitions and dependency tracking, but not for moving primary data out of Git.
+* Physical data movement and implementation of the `data/` layout remain separate tasks.

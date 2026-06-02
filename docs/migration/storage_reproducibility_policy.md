@@ -45,8 +45,17 @@ This document serves as the compact canonical reference for storage and reproduc
 
 ## Generated Outputs Policy
 
-* Generated outputs may be Git-tracked, DVC-tracked, both, or dynamically generated only after an explicit per-path decision.
+* Generated outputs require an explicit per-path decision regarding their tracking mode.
 * No output should be moved out of Git merely because DVC exists.
+* The formal generated-output paths and tracking modes remain pending and will be documented in plans such as `docs/migration/dvc_first_stage_plan.md`.
+
+For clarity, differentiate between the following concepts when making output tracking decisions:
+* **Git-tracked source data:** Immutable primary input data, committed directly to Git.
+* **Git-primary retained artifacts:** Historically generated legacy artifacts preserved in Git as evidence or for reuse.
+* **DVC stage dependencies:** Inputs to a DVC stage, often Git-tracked source data or retained artifacts.
+* **DVC-tracked generated outputs:** Formal outputs of a DVC stage, managed by DVC, generating `.dvc` or lock metadata (not necessarily Git-tracked).
+* **Git-tracked generated preview/audit artifacts:** Small, conceptually generated outputs explicitly committed to Git for human review and auditing (e.g., `docs/migration/summit_candidates_skill_preview.csv`), not acting as the canonical DVC stage output.
+* **Regenerated-on-demand outputs:** Data generated dynamically by the pipeline and deliberately ignored by both Git and DVC caches.
 
 ## Directory Restructuring Gate
 
