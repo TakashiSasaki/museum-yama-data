@@ -18,7 +18,10 @@ npm install
 
 ## Usage
 
-The skill provides a single CLI entrypoint: `cli.js`. The `--root <path>` flag is required for all data-processing operations.
+The skill provides a single CLI entrypoint: `cli.js`.
+
+Legacy repository-layout commands require `--root`: `intake`, `merge`, `annotate`, `validate`, `find-missing`, and `verify`.
+The portable `detect-candidates` command does not require `--root`; it requires `--input` and `--out`.
 
 ### Commands
 
@@ -44,11 +47,12 @@ node cli.js merge --root ../../..
 ```
 
 #### 3. `detect-candidates` (Portable)
-Detects unverified summit candidates algorithmically from GPX tracks and outputs them as a CSV, using only GPX-derived evidence.
+Detects unverified summit candidates algorithmically from GPX tracks and outputs them as a CSV, using only GPX-derived evidence. **Note: This is the preferred modern command for summit candidate detection.**
 - Accepts either a single GPX file or a directory containing GPX files via `--input`.
+- Does not recursively scan subdirectories unless a future option is added.
 - Writes unresolved candidates to the specified `--out` CSV file.
-- Does not assign mountain names.
-- Does not require CSVs, YAMAP markdown, or reverse geocoding data.
+- Outputs unresolved candidates only; it does not assign mountain names.
+- Does not require or use CSVs, YAMAP markdown, or reverse geocoding data.
 - Does not modify input GPX files or write annotated GPX files.
 - Generates stable non-semantic `summit_candidate_id` hashes based on the input path and parameters.
 
@@ -58,7 +62,7 @@ node cli.js detect-candidates --input ./test/fixtures/sample.gpx --out ./tmp/can
 ```
 
 #### 3b. `annotate` (Legacy)
-Detects peaks and annotates tracks with `<wpt>` elements. **Note: This command contains legacy mountain-name assignment logic and writes to `gpx/annotated/`. The portable `detect-candidates` command is the preferred modern alternative for detection.**
+Detects peaks and annotates tracks with `<wpt>` elements. **Note: This command is legacy because it assigns mountain names and writes annotated GPX. The portable `detect-candidates` command is the preferred modern alternative for detection.**
 - Reads files from `gpx/raw/`.
 - Uses mountain databases in `csv/` to map detected elevations to known peaks.
 - Outputs annotated files to `gpx/annotated/`.

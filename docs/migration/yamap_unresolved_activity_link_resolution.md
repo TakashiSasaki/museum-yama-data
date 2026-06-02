@@ -49,9 +49,9 @@ The five accepted coverage gaps are:
 No placeholder `yamap/<activity_id>.md` files should be created for these files.
 
 ## Interpretation for Pipeline Processing & Downstream Impacts
-- **Immutable Source Status**: These five GPX files remain completely valid, immutable source tracks.
-- **Summit Candidate Detection**: Downstream pipelines (e.g., `detect_summit_candidates`) **must not** treat missing YAMAP metadata as a reason to skip these tracks. They remain fully usable for trackpoint extraction, elevation profiling, and peak detection.
-- **Enrichment Nullability**: YAMAP metadata enrichment is optional/nullable in the target data model. Pipelines performing Joins based on YAMAP activity IDs should gracefully treat these as empty or null rather than failing.
+- **Immutable Source Status**: These five GPX files are accepted YAMAP metadata coverage gaps. They remain valid immutable GPX source tracks and remain eligible for GPX parsing, elevation-profile analysis, and summit candidate detection.
+- **Summit Candidate Detection**: Missing YAMAP metadata must not block `detect_summit_candidates`. They remain fully usable for trackpoint extraction, elevation profiling, and peak detection.
+- **Enrichment Nullability**: Only YAMAP activity metadata enrichment and YAMAP activity ID based joins should treat their activity link as missing or null.
 
 ## Safety Notes
 - Do not modify, move, or rename the raw GPX source files.

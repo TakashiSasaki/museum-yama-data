@@ -55,7 +55,7 @@ The five unmatched GPX files:
 - `gpx/raw/yamap_2024-06-16_07_27.gpx`
 - `gpx/raw/yamap_2024-08-03_20_36.gpx`
 
-have been formally resolved and accepted as **YAMAP metadata coverage gaps** (`missing_yamap_metadata`). Missing YAMAP metadata does not invalidate these files as primary source tracks. They remain fully valid and must be processed by downstream stages like `detect_summit_candidates` for elevation-profile analysis, summit candidate detection, and GPX-derived provenance evidence.
+have been formally resolved and accepted as **YAMAP metadata coverage gaps** (`missing_yamap_metadata`). Missing YAMAP metadata does not invalidate these files as primary source tracks. They remain valid immutable GPX source tracks and remain fully eligible for GPX parsing, elevation-profile analysis, and summit candidate detection. Missing YAMAP metadata must not block `detect_summit_candidates`. Only YAMAP activity metadata enrichment and YAMAP activity ID based joins should treat their activity link as missing or null.
 
 - Extra YAMAP metadata may exist for activity IDs not present in GPX files, which is completely acceptable.
 - Future validation pipelines must not assume that the sets of activity IDs extracted from GPX files, represented by `yamap/*.md`, listed in `yamap/yamap_all_activity_ids.txt`, and represented in Excel/CSV activity logs are identical.

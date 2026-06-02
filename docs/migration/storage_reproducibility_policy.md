@@ -7,6 +7,7 @@ This document serves as the compact canonical reference for storage and reproduc
 ## Clone-Complete Reproducibility
 
 * A fresh Git clone should contain primary/source snapshots, retained artifacts, documentation, configuration, and pipeline code required to understand, rerun, and validate the pipeline.
+* **Agent Skill Portability Policy (Conceptual):** To maintain reproducibility and support DVC-light pipeline execution, reusable data-processing tools should be implemented as agent skills in `.agents/skills/`. Portable skill commands must accept explicit input/output paths (e.g., `--input`, `--out`) and avoid hardcoded repository root paths. The `scripts/` directory is reserved for repository-specific audits, site generation, or one-off tasks. Pipeline-relevant logic from `scripts/` should eventually be promoted into portable agent skills.
 * No ordinary user should need an unconfigured DVC remote, object store, private local path, Git LFS object download, or undocumented cache to understand or reproduce the intended pipeline state.
 
 ## Git-Primary Storage

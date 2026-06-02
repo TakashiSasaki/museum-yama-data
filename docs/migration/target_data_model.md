@@ -52,7 +52,7 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Tracking System:** DVC dependency candidate
 
 ### 8. `summit_candidates`
-* **Role:** Geolocation points representing algorithmic detections of potential summits. These are strictly unverified, unresolved candidate points produced purely from GPX evidence (elevation profiles, track traces) before identity resolution, and do not have mountain identities.
+* **Role:** Geolocation points representing algorithmic detections of potential summits. These are strictly unverified, unresolved candidate points produced purely from GPX evidence (elevation profiles, track traces) before identity resolution, and do not have mountain identities. Missing YAMAP metadata must not block the detection of summit candidates.
 * **Primary Inputs:** `gpx_tracks` / `gpx_trackpoints`
 * **Expected Future Layer:** `03_primary`
 * **Tracking System:** DVC dependency candidate
