@@ -39,9 +39,6 @@ validate-mountain-sources Options:
   --legacy-summit-coordinates <path> Optional. Path to legacy mountain_summit_coordinates.json.
   --web-mountains <path>            Optional. Path to legacy web mountains.json.
   --out <path>                      Required. Path to output validation report markdown file.
-  --peak-radius <num>       Optional. Radius for local maxima detection (default 10).
-  --min-prominence <num>    Optional. Minimum prominence in meters (default 30).
-  --merge-distance <num>    Optional. Distance in meters to merge nearby peaks (default 100).
 `);
     process.exit(code);
 }
