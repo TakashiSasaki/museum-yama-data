@@ -4,7 +4,7 @@ A web application for visualizing and analyzing mountaineering location data (GP
 
 ## Website
 The GitHub Actions deployment is published at:
-**[museum-yama-data.moukaeritai.work](https://museum-yama-data.moukaeritai.work/)**
+**[takashisasaki.github.io/museum-yama-data](https://takashisasaki.github.io/museum-yama-data/)**
 
 ## Interactive Map
 You can view the consolidated mountaineering traces and points on our official Google My Maps:
