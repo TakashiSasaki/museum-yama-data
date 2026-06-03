@@ -27,7 +27,7 @@ Physical renaming, deletion, or migration of the `processed/` directory remains 
 
 During audits and inventories, files found in `processed/` (or related directories) should be classified using the following terms:
 
-- **`retained_source_snapshot`**: An original source workbook, original ZIP export package, or other original input archive (e.g., `processed/GPXファイル.zip`, `processed/えひめの山.xlsx`).
+- **`retained_source_snapshot`**: An original source workbook, original ZIP export package, or other original input archive (e.g., `data/01_raw/provider_received/yoshitomi/2026-05-12/GPXファイル.zip`, `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx`).
 - **`legacy_processed_marker`**: A file moved aside to mark it as already handled in the old workflow.
 - **`misplaced_generated_output`**: A file that appears to be a data-processing result and does not belong conceptually under `processed/` (or another protected source-centric directory).
 - **`needs_decision`**: A file whose producer, origin, or role is unclear.

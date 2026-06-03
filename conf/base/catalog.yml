@@ -12,13 +12,13 @@ raw_gpx_activities:
 # The primary activity log workbook archive.
 raw_activity_workbook:
   type: pandas.ExcelDataset # Placeholder type
-  filepath: processed/えひめの山.xlsx
+  filepath: data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx
 
 # 3. raw_gpx_export_package
 # The primary GPX export package archive.
 raw_gpx_export_package:
   type: text.TextDataset # Placeholder type
-  filepath: processed/GPXファイル.zip
+  filepath: data/01_raw/provider_received/yoshitomi/2026-05-12/GPXファイル.zip
 
 # 4. raw_yamap_activity_metadata
 # Fetched YAMAP metadata sources.
