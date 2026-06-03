@@ -12,7 +12,6 @@ Usage: node cli.js <command> [options]
 
 Commands:
   intake            Portable GPX archive extraction. Extracts GPX files from a ZIP archive into an explicit directory.
-  extract-excel-sheets Portable Excel sheet extraction. Extracts worksheets from an XLSX into CSV files.
   merge             Merge raw GPX files grouped by year.
   annotate          (Legacy) Detect summits, assign names, and annotate GPX files.
   validate          Validate GPX files for well-formedness and coordinates.
@@ -28,11 +27,6 @@ Global Options:
 
 intake Options:
   --input <path>            Required. Path to input ZIP archive.
-  --out-dir <path>          Required. Path to output directory.
-  --report <path>           Optional. Path to output markdown report file.
-
-extract-excel-sheets Options:
-  --input <path>            Required. Path to input XLSX workbook.
   --out-dir <path>          Required. Path to output directory.
   --report <path>           Optional. Path to output markdown report file.
 
@@ -134,13 +128,6 @@ async function run() {
         }
     }
 
-    if (command === 'extract-excel-sheets') {
-        if (!options.input || !options.outDir) {
-            log.error(`Error: --input and --out-dir are required for 'extract-excel-sheets'.`);
-            printUsageAndExit();
-        }
-    }
-
     if (command === 'intake') {
         if (!options.input || !options.outDir) {
             log.error(`Error: --input and --out-dir are required for 'intake'.`);
@@ -166,9 +153,6 @@ async function run() {
         switch (command) {
             case 'intake':
                 await require('./commands/intake')(options);
-                break;
-            case 'extract-excel-sheets':
-                await require('./commands/extract-excel-sheets')(options);
                 break;
             case 'merge':
                 await require('./commands/merge')(options);
