@@ -15,6 +15,7 @@ Therefore, `processed/` contains **retained source snapshots** and **handled sou
 The name "processed" is misleading in the context of a modern data pipeline, as it implies "data that has been processed to create an output." However, in this repository, `processed/` was strictly meant to hold *already-handled source inputs*.
 
 - **`processed/` must not be used as the destination for newly generated pipeline outputs.**
+- **`processed/` must not be used as the destination for newly received source files.** Future provider-received raw files belong in `data/01_raw/provider_received/`.
 - Future generated outputs (such as resolved mountain JSON) belong under the generated-output path policy (e.g., `artifacts/generated/`), not under `processed/`.
 - Existing generated-looking JSON files under `processed/` (e.g., `mountain_merged.json`, `mountain_link_mapping.json`, `mountain_summit_coordinates.json`) are legacy/misplaced artifacts that require audit. They may be preserved as historical evidence or schema references, but `processed/` remains forbidden as a destination for new generated outputs. For details, see [Legacy Resolved Mountain JSON Schema Audit](legacy_resolved_mountain_json_schema_audit.md).
 

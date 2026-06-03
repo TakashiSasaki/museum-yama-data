@@ -8,6 +8,7 @@ This document is a **planning record only**. It outlines the proposed mappings f
 
 | Old Path | Proposed New Path | Data Role | Movement Safe Now? | Blocking Questions | Required Validation | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
+| `data/01_raw/provider_received/` | `data/01_raw/provider_received/` | Source | N/A (Newly Created) | None | None | Minimal new intake path for future provider-received raw source files. Not for legacy data migration. |
 | `gpx/raw/` | `data/01_raw/gpx/yamap/` | Source | No (Not yet performed) | Needs Kedro setup confirmation | DVC initialization | Raw track files |
 | `gpx/annotated/` | `data/99_work/legacy_annotated_gpx/` | Generated | No (Not yet performed) | Pipeline recreation steps | Pipeline validation | Legacy experimental unvalidated annotated GPX files. Preserve as historical work evidence. |
 | *future summit-candidate GPX* | `data/08_reporting/gpx/summit_candidates/` | Generated | N/A | Pipeline to be created | Pipeline validation | Future validated pipeline output containing detected summit candidates without authoritative name assignments. |

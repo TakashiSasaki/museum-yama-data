@@ -2,6 +2,12 @@
 
 This is a basic summary of files by directory and extension. Generated as part of the initial repository restructuring preparation.
 
+## Directory: `data/01_raw/provider_received/`
+
+| Extension / Type | Count |
+| --- | --- |
+| `.md` (README only) | 1 |
+
 ## Directory: `gpx/`
 
 | Extension / Type | Count |

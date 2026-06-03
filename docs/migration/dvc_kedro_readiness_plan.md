@@ -72,6 +72,7 @@ Until the initialization phase is explicitly triggered, the following actions re
 * Do not run `kedro new`.
 * Do not move, rename, delete, or rewrite any existing data files.
 * Do not implement the `data/` directory layout.
+* Exception: `data/01_raw/provider_received/` is the minimal new intake path for future provider-received raw source files.
 
 ## 5. Next Recommended Task
 
