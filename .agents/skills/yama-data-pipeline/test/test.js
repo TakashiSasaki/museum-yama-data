@@ -232,6 +232,9 @@ async function runTests() {
         runCommand(`node cli.js verify --root "${TEMP_TEST_DIR}"`);
         runAssert(true, 'verify CLI executed successfully');
 
+        console.log('--- Testing extract-excel-sheets ---');
+        await require('./test_excel_sheet_extraction.js')();
+
         console.log('--- Testing validate-provider-received ---');
         const PRV_DIR = path.join(TEMP_TEST_DIR, 'data', '01_raw', 'provider_received');
         const PRM_DIR = path.join(TEMP_TEST_DIR, 'docs', 'migration', 'provider_received_manifests');
