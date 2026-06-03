@@ -16,9 +16,17 @@ function extractGpxArchive(inputZipPath, outDir) {
         throw new Error(`Input ZIP does not exist: ${inputZipPath}`);
     }
 
-    // Try to ensure outDir exists
+    // Try to ensure outDir exists and is a writable directory
     if (!fs.existsSync(outDir)) {
         fs.mkdirSync(outDir, { recursive: true });
+    } else if (!fs.statSync(outDir).isDirectory()) {
+        throw new Error(`Output path exists but is not a directory: ${outDir}`);
+    }
+
+    try {
+        fs.accessSync(outDir, fs.constants.W_OK);
+    } catch (e) {
+        throw new Error(`Output directory is not writable: ${outDir}`);
     }
 
     const zip = new AdmZip(inputZipPath);
@@ -87,10 +95,20 @@ function extractGpxArchive(inputZipPath, outDir) {
             stagedFiles.push({ stagePath, baseName });
         }
 
-        // 2. Move to outDir
+        // 2. Move to outDir (with EXDEV fallback)
         for (const { entry, baseName, outPath } of selectedEntries) {
              const stagePath = path.join(stagingDir, baseName);
-             fs.renameSync(stagePath, outPath);
+             try {
+                 fs.renameSync(stagePath, outPath);
+             } catch (renameErr) {
+                 if (renameErr.code === 'EXDEV') {
+                     // Cross-device link fallback
+                     fs.copyFileSync(stagePath, outPath);
+                     fs.unlinkSync(stagePath);
+                 } else {
+                     throw renameErr;
+                 }
+             }
              movedPaths.push(outPath);
         }
 
