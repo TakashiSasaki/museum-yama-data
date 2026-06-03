@@ -123,14 +123,14 @@ A consolidated CLI tool that handles local mountaineering data processing includ
 
 #### Subcommands
 
-- **`intake`**: Automatically extracts GPX files from ZIP archives in `gpx/` and converts Excel files to CSVs. During ZIP intake, entries are flattened by basename. If two ZIP entries would map to the same basename, or if a basename already exists in `gpx/raw/`, intake fails instead of renaming. This prevents silent overwrite and ambiguous data provenance. As part of intake processing, the original `.zip` and `.xlsx` inputs are archived to `processed/` after successful handling.
+- **`intake`**: Portable GPX archive extraction command. Safely extracts GPX files from a ZIP archive into an explicit directory using `--input` and `--out-dir`. It extracts only `.gpx` entries, ignores directories and other file types, flattens internal ZIP paths, and fails on duplicate flattened basenames or existing output collisions without renaming. The extraction is all-or-nothing. Note: The historical workflow used `intake` to also convert Excel files to CSV and move files to `processed/`, but this is no longer part of current `intake` behavior.
 - **`merge`**: Groups individual GPX files from `gpx/raw/` into yearly archives (e.g., `2024_merged.gpx`) for easier My Maps import. Preserves all `<trk>` elements. This is a legacy command; future merged outputs require validation against raw GPX.
 - **`annotate`**: Legacy command that analyzes GPX track elevation profiles, attempts summit matching, and generates files with `<wpt>` waypoints in `gpx/annotated/`. Its existing name assignment behavior is not authoritative. Future pipeline design separates summit-candidate detection from summit identity/name resolution.
 - **`validate`**: Validates all processed GPX files for well-formed XML and valid coordinate bounds. Although GPX itself may allow trackpoints without elevation, this repository requires `<ele>` on all trackpoints because elevation profiles are used for validation and peak annotation.
 
 #### How to use
 Ask the agent:
-> "Run the yama-data-pipeline intake subcommand to process new files."
+> "Run the yama-data-pipeline intake subcommand to process the new ZIP file from data/01_raw/provider_received/ to data/01_raw/gpx/."
 > "Run the yama-data-pipeline merge subcommand."
 
 #### Implementation
@@ -140,7 +140,7 @@ Ask the agent:
 
 #### Execution Commands
 ```powershell
-node .agents/skills/yama-data-pipeline/cli.js intake --root .
+node .agents/skills/yama-data-pipeline/cli.js intake --input data/01_raw/provider_received/yoshitomi/<date>/GPXファイル.zip --out-dir data/01_raw/gpx/yoshitomi/<date> --report docs/migration/intake_report.md
 node .agents/skills/yama-data-pipeline/cli.js merge --root .
 node .agents/skills/yama-data-pipeline/cli.js annotate --root .
 node .agents/skills/yama-data-pipeline/cli.js validate --root .
@@ -165,8 +165,8 @@ Ask the agent:
 - **Tooling**: AI Browser Tool (Agent-internal)
 
 ## Development Guidelines (Legacy)
-- Always use the **`yama-data-pipeline intake` subcommand** for new data to maintain the directory structure. It handles ZIP intake collisions strictly by failing to prevent silent overwrites.
-- The `csv/` directory is the current legacy operational input for activity metadata used by the existing pipeline. These CSV files are direct script-generated extracts from four sheets in `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx`. For provenance purposes, `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx` is the retained source snapshot / primary source workbook. The CSV files are Excel-derived legacy CSV extracts; they were not manually edited or post-processed according to user-provided provenance. Full reproducibility requires validating the historical extraction script or equivalent extraction logic.
+- The portable `yama-data-pipeline intake` subcommand handles new GPX ZIP archives by extracting them to an explicit output directory. It strictly handles collisions by failing to prevent silent overwrites, ensuring an all-or-nothing atomic extraction.
+- The `csv/` directory is the current legacy operational input for activity metadata used by the existing pipeline. These CSV files are direct script-generated extracts from four sheets in `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx`. For provenance purposes, `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx` is the retained source snapshot / primary source workbook. The CSV files are Excel-derived legacy CSV extracts; they were not manually edited or post-processed according to user-provided provenance. Historically, this extraction was performed by the old `intake` command. Full reproducibility requires validating the historical extraction script or equivalent extraction logic.
 - The `gpx/raw/` directory should only contain individual `.gpx` files (no subfolders). These are considered **source data** and must not be mutated.
 - The `gpx/annotated/` and `gpx/merged-by-year/` directories contain **legacy generated artifacts**. Preserve them, but do not treat them as authoritative future pipeline outputs.
 

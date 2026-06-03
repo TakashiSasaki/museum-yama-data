@@ -46,7 +46,7 @@ The `<received_date>` indicates the date the project received the file and must 
 
 ## Relationship to `processed/`
 
-The old workflow `processed/` directory remains a legacy processed-marker/handled-source archive. It must not be used for new source intake. `processed/` relies on moving files to denote "handled" status, which is antithetical to the immutable design of `provider_received/`.
+The old workflow `processed/` directory remains a legacy processed-marker/handled-source archive. It must not be used for new source intake. The historical pipeline relied on moving files to `processed/` to denote a "handled" status; the modern `intake` command does not modify source files or move them to `processed/`.
 
 ## Relationship to `artifacts/generated/`
 
