@@ -42,6 +42,6 @@ The first executable DVC-light stage candidate (see `docs/migration/dvc_first_st
 The conceptual output of the semantic pipeline is the resolved mountain dataset (replacing the legacy `museum-yama-web/mountains.json` cache).
 *   **Recommended Conceptual Output Path:** `artifacts/generated/mountains/<future-resolved-mountain-json>.json`
 *   **Important Constraint:** This generated semantic/reporting output belongs under this generated-output policy. It **must not** be placed under `processed/`, which is strictly a legacy handled-source archive.
-*   **Filename Note:** `mountains-merged.json` was a legacy/manual working filename used in an earlier workflow. It is not the canonical future filename. The schema/record shape from it may be reused, but the formal filename for the future output is currently undecided.
+*   **Filename Note:** `mountains-merged.json` was a legacy/manual working filename used in an earlier workflow. It is not the canonical future filename. The schema/record shape from it may be reused, but the formal filename for the future output is currently undecided. For details on schema reuse, refer to [Legacy Resolved Mountain JSON Schema Audit](legacy_resolved_mountain_json_schema_audit.md). The future generated output must not go under `processed/`.
 
 *Note: The physical final `data/` layout remains a separate future migration decision. Do not implement the `data/` layout or move existing files based on this policy.*
