@@ -28,12 +28,18 @@ module.exports = async function validateProviderReceivedCmd(options) {
 
         const result = await validateProviderReceived(inputPath, manifestDir, repoRoot);
 
-        // Make paths repo-relative if possible
+        // Make paths repo-relative if they are within the repo root
         if (result.input_path && repoRoot) {
-             result.input_path = path.relative(repoRoot, result.input_path).replace(/\\/g, '/');
+             const relPath = path.relative(repoRoot, result.input_path).replace(/\\/g, '/');
+             if (!relPath.startsWith('..')) {
+                 result.input_path = relPath;
+             }
         }
         if (result.manifest_dir && repoRoot) {
-             result.manifest_dir = path.relative(repoRoot, result.manifest_dir).replace(/\\/g, '/');
+             const relPath = path.relative(repoRoot, result.manifest_dir).replace(/\\/g, '/');
+             if (!relPath.startsWith('..')) {
+                 result.manifest_dir = relPath;
+             }
         }
 
         const report = generateReport(result);
