@@ -30,7 +30,7 @@ The legacy JSON files use the field name `No` as the identifier (sourced from th
 
 ## Schema Reuse Decision
 - **Filename Status**: The legacy filename `mountains-merged.json` or `mountain_merged.json` is not canonical. The future filename remains undecided.
-- **Schema Adaptability**: The future resolved mountain JSON may reuse the legacy record shape (e.g., from `processed/mountain_merged.json`). However, it **must** adapt the legacy `No` field to `mountain_no` and must satisfy the `mountain_no` primary-key invariant and the 501-record authoritative count.
+- **Schema Adaptability**: The future resolved mountain JSON may reuse the legacy record shape (e.g., from `processed/mountain_merged.json`). However, it **must** adapt the legacy `No` field to `mountain_no` and must satisfy the `mountain_no` primary-key invariant and the 501-record authoritative count. The target schema contract is documented in the [Resolved Mountain JSON Schema Contract](resolved_mountain_json_schema_contract.md), and current source status can be found in the [Mountain Source Validation Report](mountain_source_validation_report.md).
 - **Path Policy**: The legacy data contents under `processed/` are read-only schema/evidence references. The `processed/` directory is strictly forbidden as a destination for new generated outputs.
 
 ## Known Blockers & Recommendations
