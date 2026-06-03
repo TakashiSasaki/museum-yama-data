@@ -292,6 +292,69 @@ async function runTests() {
         runCommand(`node cli.js verify --root "${TEMP_TEST_DIR}"`);
         runAssert(true, 'verify CLI executed successfully');
 
+        console.log('--- Testing validate-provider-received ---');
+        const PRV_DIR = path.join(TEMP_TEST_DIR, 'data', '01_raw', 'provider_received');
+        const PRM_DIR = path.join(TEMP_TEST_DIR, 'docs', 'migration', 'provider_received_manifests');
+        const PR_OUT = path.join(TEMP_TEST_DIR, 'docs', 'migration', 'provider_received_inventory_report.md');
+
+        fs.mkdirSync(PRV_DIR, { recursive: true });
+        fs.mkdirSync(PRM_DIR, { recursive: true });
+
+        // Empty dir test
+        runCommand(`node cli.js validate-provider-received --input "${PRV_DIR}" --manifest-dir "${PRM_DIR}" --out "${PR_OUT}"`);
+        let report = fs.readFileSync(PR_OUT, 'utf8');
+        runAssert(report.includes('**overall_status**: PASS'), 'overall_status is PASS for empty directory');
+
+        // Setup valid files and layout
+        const providerSlug = 'test_provider';
+        const receivedDate = '2024-05-20';
+        const fileContent = 'test data';
+        const providerDir = path.join(PRV_DIR, providerSlug, receivedDate);
+        fs.mkdirSync(providerDir, { recursive: true });
+        const filePath = path.join(providerDir, 'data.txt');
+        fs.writeFileSync(filePath, fileContent);
+
+        const hashSum = require('crypto').createHash('sha256');
+        hashSum.update(fileContent);
+        const checksum = hashSum.digest('hex');
+
+        // Missing manifest test
+        runCommand(`node cli.js validate-provider-received --input "${PRV_DIR}" --manifest-dir "${PRM_DIR}" --out "${PR_OUT}"`);
+        report = fs.readFileSync(PR_OUT, 'utf8');
+        runAssert(report.includes('**overall_status**: PASS_WITH_WARNINGS'), 'WARN when manifest is missing for provider file');
+        runAssert(report.includes('Provider file lacks manifest entry'), 'Correct warning for missing manifest entry');
+
+        // Valid manifest test
+        const manifestContent = `
+manifest_id: 123
+provider_slug: test_provider
+stored_files:
+  - original_filename: data.txt
+    stored_path: data/01_raw/provider_received/test_provider/2024-05-20/data.txt
+    checksum: ${checksum}
+`;
+        fs.writeFileSync(path.join(PRM_DIR, 'test_provider__2024-05-20__manifest.md'), manifestContent);
+        runCommand(`node cli.js validate-provider-received --input "${PRV_DIR}" --manifest-dir "${PRM_DIR}" --out "${PR_OUT}"`);
+        report = fs.readFileSync(PR_OUT, 'utf8');
+        runAssert(report.includes('**overall_status**: PASS'), 'PASS when manifest matches');
+        runAssert(report.includes('Manifest coverage is complete for all files'), 'Manifest coverage is complete message');
+
+        // Checksum mismatch test
+        fs.writeFileSync(filePath, 'modified data');
+        runCommand(`node cli.js validate-provider-received --input "${PRV_DIR}" --manifest-dir "${PRM_DIR}" --out "${PR_OUT}"`);
+        report = fs.readFileSync(PR_OUT, 'utf8');
+        runAssert(report.includes('**overall_status**: FAIL'), 'FAIL when checksum mismatches');
+        runAssert(report.includes('Checksum mismatch for'), 'Checksum mismatch message');
+
+        // Invalid slug / date test
+        const badProviderDir = path.join(PRV_DIR, 'bad_slug!', '2024_05_20');
+        fs.mkdirSync(badProviderDir, { recursive: true });
+        fs.writeFileSync(path.join(badProviderDir, 'data.txt'), 'data');
+        runCommand(`node cli.js validate-provider-received --input "${PRV_DIR}" --manifest-dir "${PRM_DIR}" --out "${PR_OUT}"`);
+        report = fs.readFileSync(PR_OUT, 'utf8');
+        runAssert(report.includes('Invalid provider slug: bad_slug!'), 'Detected invalid provider slug');
+        runAssert(report.includes('Invalid received date: 2024_05_20'), 'Detected invalid received date');
+
     } finally {
         if (fs.existsSync(TEMP_TEST_DIR)) fs.rmSync(TEMP_TEST_DIR, { recursive: true, force: true });
     }

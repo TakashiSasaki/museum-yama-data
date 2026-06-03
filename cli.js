@@ -20,6 +20,7 @@ Commands:
   test              Run the skill test suite.
   detect-candidates Detect summits without assigning names, output to CSV.
   validate-mountain-sources Validates the current CSV and legacy JSON artifacts against schema invariants.
+  validate-provider-received Audits the provider-received raw source intake area and generates a report.
 
 Global Options:
   --root <path>     Strictly required for legacy commands: intake, merge, annotate, validate, find-missing, verify.
@@ -39,6 +40,11 @@ validate-mountain-sources Options:
   --legacy-summit-coordinates <path> Optional. Path to legacy mountain_summit_coordinates.json.
   --web-mountains <path>            Optional. Path to legacy web mountains.json.
   --out <path>                      Required. Path to output validation report markdown file.
+
+validate-provider-received Options:
+  --input <path>                    Required. Path to provider_received directory.
+  --out <path>                      Required. Path to output report markdown file.
+  --manifest-dir <path>             Optional. Path to directory containing manifest files.
 `);
     process.exit(code);
 }
@@ -79,6 +85,8 @@ function parseArgs(argsArray) {
             options.legacySummitCoordinates = argsArray[++i];
         } else if (arg === '--web-mountains' && i + 1 < argsArray.length) {
             options.webMountains = argsArray[++i];
+        } else if (arg === '--manifest-dir' && i + 1 < argsArray.length) {
+            options.manifestDir = argsArray[++i];
         }
     }
     return options;
@@ -118,6 +126,13 @@ async function run() {
         }
     }
 
+    if (command === 'validate-provider-received') {
+        if (!options.input || !options.out) {
+            log.error(`Error: --input and --out are required for 'validate-provider-received'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -143,6 +158,9 @@ async function run() {
                 break;
             case 'validate-mountain-sources':
                 await require('./commands/validate-mountain-sources')(options);
+                break;
+            case 'validate-provider-received':
+                await require('./commands/validate-provider-received')(options);
                 break;
             case 'test':
                 require('child_process').execSync('npm test', { stdio: 'inherit', cwd: __dirname });
