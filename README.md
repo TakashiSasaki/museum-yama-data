@@ -25,5 +25,5 @@ The GPX data and activity logs in this repository are based on the mountaineerin
 
 ## For Developers & AI Agents
 Please refer to **[AGENTS.md](AGENTS.md)** for detailed directory descriptions and automated skill instructions.
-You can use the local `yama-data-pipeline` skill located at `.agents/skills/yama-data-pipeline/` to automatically validate, intake, merge, and annotate GPX data.
+You can use the local `yama-data-pipeline` skill located at `.agents/skills/yama-data-pipeline/` to automatically validate, intake, merge, and annotate GPX data. Agent skills are automatically published as subtree branches (`skills/<skill-name>`) for cross-repository submodule reuse. See [Agent Skill Subtree Branch Workflow](docs/migration/agent_skill_subtree_branch_workflow.md).
 Detailed operational rules and CLI references can be found in `AGENTS.md` and `.agents/skills/yama-data-pipeline/SKILL.md`.

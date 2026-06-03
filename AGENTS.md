@@ -108,6 +108,7 @@ These agreements summarize the current planning state. The canonical details are
 ## Agent Skill Portability Policy
 
 - Reusable data-processing tools should be implemented as agent skills under `.agents/skills/`.
+- **Skill Publishing Workflow:** Reusable agent skills in this repository are published to dedicated Git branches (e.g., `skills/yama-data-pipeline`) via the `.github/workflows/publish-agent-skills.yml` GitHub Actions workflow. These branches project the subtree of the skill, allowing other repositories to consume them as submodules. See `docs/migration/agent_skill_subtree_branch_workflow.md` for details. Do not edit `skills/<skill-name>` branches directly.
 - Portable skill commands should accept explicit `--input` and `--out` paths where practical, avoiding implicit repository-root assumptions unless the command is explicitly repository-specific.
 - Reusable logic should live in skill `lib/` modules, keeping CLI wrappers thin.
 - Skill dependencies should be declared within the skill package.

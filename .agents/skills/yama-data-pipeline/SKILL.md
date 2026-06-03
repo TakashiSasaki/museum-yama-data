@@ -25,6 +25,9 @@ The portable commands (`intake`, `detect-candidates`, `validate-mountain-sources
 
 ### Commands
 
+*   `intake`: Portable GPX archive extraction.
+*   `extract-excel-sheets`: Portable Excel sheet extraction.
+
 #### 1. `intake` (Portable)
 Portable GPX archive extraction command. Safely extracts GPX files from a ZIP archive into an explicit directory.
 - Requires `--input` (path to input ZIP archive) and `--out-dir` (path to output directory).
