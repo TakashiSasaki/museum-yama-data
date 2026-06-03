@@ -6,7 +6,7 @@ const https = require('https');
 const args = process.argv.slice(2);
 let inputPaths = [];
 let outArg = null;
-    let originalOutArg = null;
+let originalOutArg = null;
 let limit = 100;
 let allTrkpt = false;
 let requestInterval = 2500; // default 2.5s
@@ -40,7 +40,7 @@ if (requestInterval < 1000) {
 }
 
 if (inputPaths.length === 0 || !outArg) {
-    console.error("Usage: node reverse_geocode_points.js --input <path1> [<path2> ...] --out <output_path> [--limit <num>] [--all-trkpt] [--interval <ms>]");
+    console.error("Usage: node reverse_geocode_points.js --input <path1> [<path2> ...] --out <output_dir_or_json> [--limit <num>] [--all-trkpt] [--interval <ms>]");
     process.exit(1);
 }
 
@@ -178,7 +178,21 @@ function fetchGeocode(lat, lon, lang) {
     });
 }
 
-// extractAddressInfo removed
+function pointKey(pt) {
+    const lat = pt.source_point ? pt.source_point.lat : pt.lat;
+    const lon = pt.source_point ? pt.source_point.lon : pt.lon;
+    return `${lat},${lon}`;
+}
+
+function outputIsJsonFile(outputPath) {
+    return path.extname(outputPath).toLowerCase() === '.json';
+}
+
+function collectJsonFiles(dirPath) {
+    return fs.readdirSync(dirPath)
+        .filter(file => file.toLowerCase().endsWith('.json'))
+        .map(file => path.join(dirPath, file));
+}
 
 async function main() {
     console.log("Reading data...");
@@ -227,32 +241,34 @@ async function main() {
 
     console.log(`Total points collected: ${points.length}`);
 
-    // Load existing results based on whether outArg is a directory or file
+    // Load existing results based on whether outArg is a directory or file.
+    // Extensionless output paths are treated as directories so portable callers can
+    // pass paths such as data/01_raw/reverse_geocoding/raw/nominatim without
+    // pre-creating the directory.
     let results = [];
     const processedSet = new Set();
     let outputFile = outArg;
 
-    const isDirectoryIntent = originalOutArg.endsWith('/') || originalOutArg.endsWith('\\') || (fs.existsSync(outArg) && fs.statSync(outArg).isDirectory());
+    const isDirectoryIntent =
+        originalOutArg.endsWith('/') ||
+        originalOutArg.endsWith('\\') ||
+        (fs.existsSync(outArg) && fs.statSync(outArg).isDirectory()) ||
+        !outputIsJsonFile(outArg);
 
     if (isDirectoryIntent) {
         if (!fs.existsSync(outArg)) {
-            console.error(`Error: Output directory does not exist: ${outArg}`);
-            process.exit(1);
+            fs.mkdirSync(outArg, { recursive: true });
         }
-        const files = fs.readdirSync(outArg);
-        for (const file of files) {
-            if (file.toLowerCase().endsWith('.json')) {
-                try {
-                    const existingContent = fs.readFileSync(path.join(outArg, file), 'utf-8');
-                    const json = JSON.parse(existingContent);
-                    for (const pt of json) {
-                        const lat = pt.source_point ? pt.source_point.lat : pt.lat;
-                        const lon = pt.source_point ? pt.source_point.lon : pt.lon;
-                        processedSet.add(`${lat},${lon}`);
-                    }
-                } catch (e) {
-                    console.warn(`Warning: Could not parse existing output file ${file}.`);
+
+        for (const filePath of collectJsonFiles(outArg)) {
+            try {
+                const existingContent = fs.readFileSync(filePath, 'utf-8');
+                const json = JSON.parse(existingContent);
+                for (const pt of json) {
+                    processedSet.add(pointKey(pt));
                 }
+            } catch (e) {
+                console.warn(`Warning: Could not parse existing output file ${path.basename(filePath)}.`);
             }
         }
         console.log(`Loaded existing results from directory. Previously processed unique points: ${processedSet.size}.`);
@@ -262,14 +278,17 @@ async function main() {
         outputFile = path.join(outArg, `geocoded_points_${timestamp}.json`);
         results = []; // Ensure results are empty when outputting to a directory so we only save new points
     } else {
+        const outputParent = path.dirname(outArg);
+        if (!fs.existsSync(outputParent)) {
+            fs.mkdirSync(outputParent, { recursive: true });
+        }
+
         if (fs.existsSync(outArg)) {
             try {
                 const existingContent = fs.readFileSync(outArg, 'utf-8');
                 results = JSON.parse(existingContent);
                 for (const pt of results) {
-                    const lat = pt.source_point ? pt.source_point.lat : pt.lat;
-                    const lon = pt.source_point ? pt.source_point.lon : pt.lon;
-                    processedSet.add(`${lat},${lon}`);
+                    processedSet.add(pointKey(pt));
                 }
                 console.log(`Loaded ${results.length} existing results from ${outArg}. Previously processed unique points: ${processedSet.size}.`);
             } catch (e) {
