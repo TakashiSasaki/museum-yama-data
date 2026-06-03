@@ -7,6 +7,7 @@ const assert = require('assert');
 // Run isolated test suites
 require('./test_summit_detection');
 require('./test_validate_mountain_sources');
+require('./test_intake');
 
 // Core pipeline functionality to test
 const validate = require('../commands/validate');
@@ -81,20 +82,6 @@ async function runTests() {
         // 3. Test validate
         runCommand(`node cli.js validate --root "${TEMP_TEST_DIR}"`);
 
-        // 4. Test intake deduplication
-        const originalFile = path.join(RAW_DIR, 'yamap_2024-01-01_08_00.gpx');
-        const exactDupFile = path.join(RAW_DIR, 'yamap_2024-01-01_08_00 (1).gpx');
-        const differentContentDupFile = path.join(RAW_DIR, 'yamap_2024-02-15_10_00 (1).gpx');
-
-        fs.copyFileSync(originalFile, exactDupFile);
-        fs.writeFileSync(differentContentDupFile, '<?xml version="1.0"?><gpx></gpx>');
-
-        runCommand(`node cli.js intake --root "${TEMP_TEST_DIR}"`);
-
-        runAssert(!fs.existsSync(exactDupFile), 'Exact duplicate should be deleted');
-        runAssert(!fs.existsSync(differentContentDupFile), 'Different content duplicate should be renamed');
-
-
         console.log('--- Starting Unit and Safety Tests ---');
 
         console.log('--- Testing lib/csv.js ---');
@@ -138,54 +125,7 @@ async function runTests() {
             runAssert(e.message.includes('XML Error') || e.message.includes('Opening and ending tag mismatch') || e.message.includes('unclosed'), 'Caught XML parsing error');
         }
 
-        console.log('--- Testing intake zip traversal prevention ---');
-        const maliciousZip = new AdmZip();
-        maliciousZip.addFile('safe.txt', Buffer.from('safe'));
-        maliciousZip.addFile('../unsafe.txt', Buffer.from('unsafe'));
-        maliciousZip.addFile('nested/nested_safe.txt', Buffer.from('nested safe'));
-        const zipPath = path.join(TEMP_TEST_DIR, 'gpx', 'malicious.zip');
-        maliciousZip.writeZip(zipPath);
-
-        await intake({ root: TEMP_TEST_DIR });
-
-        runAssert(fs.existsSync(path.join(RAW_DIR, 'safe.txt')), 'Safe file extracted');
-        runAssert(fs.existsSync(path.join(RAW_DIR, 'nested_safe.txt')), 'Nested safe file extracted in flat structure');
-        runAssert(!fs.existsSync(path.join(RAW_DIR, '..', 'unsafe.txt')), 'Unsafe file was NOT extracted into raw/..');
-        runAssert(!fs.existsSync(path.join(TEMP_TEST_DIR, 'gpx', 'unsafe.txt')), 'Unsafe file did not escape temp directory');
-
-        console.log('--- Testing intake zip collision detection ---');
-        const collisionZip = new AdmZip();
-        collisionZip.addFile('dir1/collision.txt', Buffer.from('file1'));
-        collisionZip.addFile('dir2/collision.txt', Buffer.from('file2'));
-        const collisionZipPath = path.join(TEMP_TEST_DIR, 'gpx', 'collision.zip');
-        collisionZip.writeZip(collisionZipPath);
-
-        let caughtCollision = false;
-        try {
-            await intake({ root: TEMP_TEST_DIR });
-        } catch (e) {
-            caughtCollision = e.message.includes('failed with errors');
-        }
-        runAssert(caughtCollision, 'Intake correctly threw an error due to filename collision inside ZIP');
-
-        console.log('--- Testing intake cross-zip collision detection ---');
-        // Prerequisite: 'safe.txt' was placed in RAW_DIR by the 'malicious.zip' test above.
-        // A new ZIP containing any file whose basename is already present in RAW_DIR must be
-        // rejected, regardless of whether the file contents differ.
-        const crossZip = new AdmZip();
-        crossZip.addFile('safe.txt', Buffer.from('any content — basename collision is what matters'));
-        const crossZipPath = path.join(TEMP_TEST_DIR, 'gpx', 'cross_zip.zip');
-        crossZip.writeZip(crossZipPath);
-
-        let caughtCrossZipCollision = false;
-        try {
-            await intake({ root: TEMP_TEST_DIR });
-        } catch (e) {
-            caughtCrossZipCollision = e.message.includes('failed with errors');
-        }
-        runAssert(caughtCrossZipCollision, 'Intake correctly rejected cross-zip collision (same basename already in RAW_DIR)');
         const validationOptions = { root: TEMP_TEST_DIR };
-
         // Test malformed XML
         const badGpxPath = path.join(RAW_DIR, 'bad_xml.gpx');
         fs.writeFileSync(badGpxPath, '<gpx><bad>', 'utf8');

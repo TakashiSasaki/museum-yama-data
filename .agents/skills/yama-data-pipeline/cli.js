@@ -11,7 +11,7 @@ function printUsageAndExit(code = 1) {
 Usage: node cli.js <command> [options]
 
 Commands:
-  intake            Process ZIP and XLSX files into raw GPX and CSV.
+  intake            Portable GPX archive extraction. Extracts GPX files from a ZIP archive into an explicit directory.
   merge             Merge raw GPX files grouped by year.
   annotate          (Legacy) Detect summits, assign names, and annotate GPX files.
   validate          Validate GPX files for well-formedness and coordinates.
@@ -23,7 +23,12 @@ Commands:
   validate-provider-received Audits the provider-received raw source intake area and generates a report.
 
 Global Options:
-  --root <path>     Strictly required for legacy commands: intake, merge, annotate, validate, find-missing, verify.
+  --root <path>     Strictly required for legacy commands: merge, annotate, validate, find-missing, verify.
+
+intake Options:
+  --input <path>            Required. Path to input ZIP archive.
+  --out-dir <path>          Required. Path to output directory.
+  --report <path>           Optional. Path to output markdown report file.
 
 detect-candidates Options:
   --input <path>            Required. Path to single GPX file or directory containing GPX files.
@@ -57,6 +62,10 @@ function parseArgs(argsArray) {
             options.root = path.resolve(argsArray[++i]);
         } else if (arg === '--input' && i + 1 < argsArray.length) {
             options.input = argsArray[++i];
+        } else if (arg === '--out-dir' && i + 1 < argsArray.length) {
+            options.outDir = argsArray[++i];
+        } else if (arg === '--report' && i + 1 < argsArray.length) {
+            options.report = argsArray[++i];
         } else if (arg === '--out' && i + 1 < argsArray.length) {
             options.out = argsArray[++i];
         } else if (arg === '--smooth-window' && i + 1 < argsArray.length) {
@@ -106,7 +115,7 @@ async function run() {
         printUsageAndExit();
     }
 
-    const legacyCommands = ['intake', 'merge', 'annotate', 'validate', 'find-missing', 'verify'];
+    const legacyCommands = ['merge', 'annotate', 'validate', 'find-missing', 'verify'];
     if (legacyCommands.includes(command) && !options.root) {
         log.error(`Error: --root <path> is required for command '${command}'.`);
         printUsageAndExit();
@@ -115,6 +124,13 @@ async function run() {
     if (command === 'detect-candidates') {
         if (!options.input || !options.out) {
             log.error(`Error: --input and --out are required for 'detect-candidates'.`);
+            printUsageAndExit();
+        }
+    }
+
+    if (command === 'intake') {
+        if (!options.input || !options.outDir) {
+            log.error(`Error: --input and --out-dir are required for 'intake'.`);
             printUsageAndExit();
         }
     }
