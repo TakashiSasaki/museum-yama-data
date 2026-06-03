@@ -19,6 +19,7 @@ Commands:
   verify            Verify consistency between GPX files and YAMAP MD records.
   test              Run the skill test suite.
   detect-candidates Detect summits without assigning names, output to CSV.
+  validate-mountain-sources Validates the current CSV and legacy JSON artifacts against schema invariants.
 
 Global Options:
   --root <path>     Strictly required for legacy commands: intake, merge, annotate, validate, find-missing, verify.
@@ -27,6 +28,17 @@ detect-candidates Options:
   --input <path>            Required. Path to single GPX file or directory containing GPX files.
   --out <path>              Required. Path to output CSV file.
   --smooth-window <num>     Optional. Window size for elevation smoothing (default 5).
+  --peak-radius <num>       Optional. Radius for local maxima detection (default 10).
+  --min-prominence <num>    Optional. Minimum prominence in meters (default 30).
+  --merge-distance <num>    Optional. Distance in meters to merge nearby peaks (default 100).
+
+validate-mountain-sources Options:
+  --csv <path>                      Required. Path to source CSV file.
+  --legacy-merged <path>            Optional. Path to legacy mountain_merged.json.
+  --legacy-link-mapping <path>      Optional. Path to legacy mountain_link_mapping.json.
+  --legacy-summit-coordinates <path> Optional. Path to legacy mountain_summit_coordinates.json.
+  --web-mountains <path>            Optional. Path to legacy web mountains.json.
+  --out <path>                      Required. Path to output validation report markdown file.
   --peak-radius <num>       Optional. Radius for local maxima detection (default 10).
   --min-prominence <num>    Optional. Minimum prominence in meters (default 30).
   --merge-distance <num>    Optional. Distance in meters to merge nearby peaks (default 100).
@@ -60,6 +72,16 @@ function parseArgs(argsArray) {
             const val = Number(argsArray[++i]);
             if (isNaN(val)) throw new Error('--merge-distance must be a number');
             options.mergeDistance = val;
+        } else if (arg === '--csv' && i + 1 < argsArray.length) {
+            options.csv = argsArray[++i];
+        } else if (arg === '--legacy-merged' && i + 1 < argsArray.length) {
+            options.legacyMerged = argsArray[++i];
+        } else if (arg === '--legacy-link-mapping' && i + 1 < argsArray.length) {
+            options.legacyLinkMapping = argsArray[++i];
+        } else if (arg === '--legacy-summit-coordinates' && i + 1 < argsArray.length) {
+            options.legacySummitCoordinates = argsArray[++i];
+        } else if (arg === '--web-mountains' && i + 1 < argsArray.length) {
+            options.webMountains = argsArray[++i];
         }
     }
     return options;
@@ -92,6 +114,13 @@ async function run() {
         }
     }
 
+    if (command === 'validate-mountain-sources') {
+        if (!options.csv || !options.out) {
+            log.error(`Error: --csv and --out are required for 'validate-mountain-sources'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -114,6 +143,9 @@ async function run() {
                 break;
             case 'detect-candidates':
                 await require('./commands/detect-candidates')(options);
+                break;
+            case 'validate-mountain-sources':
+                await require('./commands/validate-mountain-sources')(options);
                 break;
             case 'test':
                 require('child_process').execSync('npm test', { stdio: 'inherit', cwd: __dirname });

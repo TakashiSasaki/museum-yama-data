@@ -18,6 +18,7 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
   - **MUST** treat existing raw/source data as historical evidence. Raw data is immutable.
   - **MUST** preserve manually curated records unless explicitly classified and mapped.
   - **MUST** document old path to new path mappings before any future file relocation.
+  - **Resolved Mountain JSON Schema**: The authoritative primary key is `mountain_no`. The future output filename is undecided, and no generated resolved JSON exists yet. See `docs/migration/resolved_mountain_json_schema_contract.md` and `docs/migration/mountain_source_validation_report.md` for the canonical schema references and validation report.
   - **MUST** classify every source field or source file before migration as one of:
     - migrated
     - partially migrated

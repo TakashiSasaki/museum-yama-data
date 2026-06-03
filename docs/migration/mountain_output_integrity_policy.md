@@ -20,7 +20,7 @@ This expected cardinality is derived from the CSV reference set. Any difference 
 
 ## Legacy Filename Clarification
 
-The legacy/manual filename `mountains-merged.json` is not canonical. It was a working filename used in an earlier manual workflow where split files were merged. Future outputs may use a different filename; the reusable part is the record schema/shape. The formal future filename remains undecided.
+The legacy/manual filename `mountains-merged.json` is not canonical. It was a working filename used in an earlier manual workflow where split files were merged. Future outputs may use a different filename; the reusable part is the record schema/shape. The formal future filename remains undecided. For the official target shape, see the [Resolved Mountain JSON Schema Contract](resolved_mountain_json_schema_contract.md). For current validation state, see the [Mountain Source Validation Report](mountain_source_validation_report.md).
 
 ## Source Exclusion Rule
 The original `csv/えひめの山_愛媛県の山.csv` file contains 531 data rows. However, 30 of these records have a blank `No` value. The user has decided that **records with a blank `No` value must not be used as authoritative mountain source records**.
