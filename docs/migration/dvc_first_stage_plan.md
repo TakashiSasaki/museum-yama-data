@@ -21,7 +21,7 @@ This plan strictly adheres to the repository's DVC-light policy:
 ## Relationship to `dvc_tracking_plan.md`
 
 This document (`dvc_first_stage_plan.md`) proposes the first *executable DVC-light stage*.
-The existing `dvc_tracking_plan.md` document lists *Git-primary dependency candidates* (such as `gpx/raw/` and `processed/えひめの山.xlsx`).
+The existing `dvc_tracking_plan.md` document lists *Git-primary dependency candidates* (such as `gpx/raw/` and `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx`).
 The two documents are complementary: `dvc_tracking_plan.md` identifies the inputs, while this document identifies the first process that will consume those inputs under DVC management.
 
 ## Conceptual Candidate: `detect_summit_candidates_preview`

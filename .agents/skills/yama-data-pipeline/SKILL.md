@@ -85,6 +85,22 @@ node cli.js validate-mountain-sources \
   --out ../../../docs/migration/mountain_source_validation_report.md
 ```
 
+#### 4b. `validate-provider-received` (Portable)
+Audits the provider-received raw source intake area and generates an inventory report.
+- Requires `--input` (path to provider_received directory) and `--out` (path to output report markdown file).
+- Optionally accepts `--manifest-dir` (path to directory containing manifest files).
+- Checks directory layout constraints (`<provider_slug>/<received_date>/<original_filename>`).
+- Calculates checksums and verifies them against manifests if provided.
+- Generates a markdown report summarizing the findings.
+- Exits successfully (0) even if warnings or validation failures are found, but throws on hard execution errors like missing input paths.
+
+```sh
+node cli.js validate-provider-received \
+  --input ../../../data/01_raw/provider_received \
+  --manifest-dir ../../../docs/migration/provider_received_manifests \
+  --out ../../../docs/migration/provider_received_inventory_report.md
+```
+
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.
