@@ -20,20 +20,27 @@ npm install
 
 The skill provides a single CLI entrypoint: `cli.js`.
 
-Legacy repository-layout commands require `--root`: `intake`, `merge`, `annotate`, `validate`, `find-missing`, and `verify`.
-The portable `detect-candidates` command does not require `--root`; it requires `--input` and `--out`.
+Legacy repository-layout commands require `--root`: `merge`, `annotate`, `validate`, `find-missing`, and `verify`.
+The portable commands (`intake`, `detect-candidates`, `validate-mountain-sources`, `validate-provider-received`) do not require `--root` and instead take explicit input and output paths.
 
 ### Commands
 
-#### 1. `intake`
-Processes new data from the root `gpx/` directory.
-- Extracts GPX files from ZIP archives into `gpx/raw/`.
-- Converts Excel files to CSVs in `csv/`.
-- Moves processed source files into `processed/`.
-- Safely handles filename collisions using SHA-256 hashes for content comparison.
+#### 1. `intake` (Portable)
+Portable GPX archive extraction command. Safely extracts GPX files from a ZIP archive into an explicit directory.
+- Requires `--input` (path to input ZIP archive) and `--out-dir` (path to output directory).
+- Optionally accepts `--report` (path to output markdown report file).
+- Extracts only `.gpx` entries from the archive and ignores other files (e.g. XLSX) and directories.
+- Flattens internal ZIP paths by basename. Duplicate flattened GPX basenames are fatal.
+- Output filename collisions are fatal. It never renames or overwrites existing files.
+- Extraction is all-or-nothing (atomic). On any failure, no partial output remains in the output directory.
+- Does not move source files to `processed/` or create CSV files.
+- For repository conventions, Yoshitomi outputs should be routed to `data/01_raw/gpx/yoshitomi/<date>/`.
 
 ```sh
-node cli.js intake --root ../../..
+node cli.js intake \
+  --input ../../../data/01_raw/provider_received/yoshitomi/1980-01-01/GPXファイル.zip \
+  --out-dir ../../../data/01_raw/gpx/yoshitomi/1980-01-01 \
+  --report ../../../docs/migration/yoshitomi_gpx_archive_extraction_report.md
 ```
 
 #### 2. `merge`
@@ -149,9 +156,9 @@ node cli.js test
 - `gpx/annotated/`: Automatically generated GPX files with detected waypoints.
 - `csv/`: Data tables containing summit definitions and other metadata.
 - `yamap/`: Markdown records of fetched YAMAP activities containing title, date, description, etc.
-- `processed/`: Archives original data files after intake.
+- `processed/`: Historical archive containing original files processed by the old workflow.
 
 ## Safety Guarantees
-- No data loss during collisions: During ZIP intake, entries are flattened by basename. If two ZIP entries would map to the same basename, or if a basename already exists in `gpx/raw/`, intake fails instead of renaming. This prevents silent overwrite and ambiguous data provenance. Rename-on-collision behavior is only guaranteed for applicable non-ZIP intake/archiving flows, not for other subcommands such as `merge` or `annotate`.
+- No data loss during collisions: During ZIP `intake`, entries are flattened by basename. If two ZIP entries would map to the same basename, or if a basename already exists in the target directory, `intake` fails instead of renaming. This prevents silent overwrite and ambiguous data provenance. `intake` is an all-or-nothing portable command.
 - Path traversal protection: Safe extraction ensures ZIP entries don't write outside intended directories.
 - No source modifications: `merge` and `annotate` never edit `gpx/raw/`.
