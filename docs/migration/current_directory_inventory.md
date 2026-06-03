@@ -6,6 +6,7 @@
 
 | Current path | Current role | Classification | Reproducibility role | Pipeline relevance | Movement status | Required before movement | Notes |
 |---|---|---|---|---|---|---|---|
+| `data/01_raw/provider_received/` | New Intake | preserved as raw snapshot | Must be preserved | Input | new path; newly created | N/A | Minimal new intake path for future provider-received raw source files. Does not authorize moving existing data. |
 | `gpx/raw/` | Source | primary source snapshot | Must be preserved | Input | protected; no movement | Source coverage audit, Source-to-target mapping audit | Must not be physically moved yet, nor normalized or regenerated in this task. |
 | `gpx/annotated/` | Legacy artifact | derived legacy evidence | Must be preserved | Legacy output | protected; no movement | Source coverage audit, Source-to-target mapping audit | Must not be physically moved yet, nor normalized or regenerated in this task. |
 | `gpx/merged-by-year/` | Legacy artifact | legacy reporting artifact | Must be preserved | Legacy output | protected; no movement | Source coverage audit, Source-to-target mapping audit | Must not be physically moved yet, nor normalized or regenerated in this task. |

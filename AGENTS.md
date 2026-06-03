@@ -84,6 +84,7 @@ These agreements summarize the current planning state. The canonical details are
 - **Clone-complete policy:** The repository follows a clone-complete policy. Git LFS is intentionally not used. Primary data and retained processed artifacts should remain available after a plain Git clone. See `docs/migration/storage_reproducibility_policy.md`.
 - **DVC/Kedro status:** Planning documents are now sufficient for a later task to initialize DVC/Kedro scaffolding without moving data. DVC-light policy is documented, the first executable DVC stage candidate is documented in `docs/migration/dvc_first_stage_plan.md`, and the output policy in `docs/migration/generated_output_path_policy.md`. However, DVC is not initialized yet. Actual DVC initialization requires a future explicit task approval.
   - Generated outputs should not be placed under `docs/migration/` unless they are small committed preview/audit artifacts. Future formal generated outputs should use the documented generated-output policy (`artifacts/generated/`).
+  - `data/01_raw/provider_received/` is the minimal new intake path for future provider-received raw source files. It does not authorize moving existing data.
   - No data movement is authorized. Physical data movement remains blocked until the source coverage audit and path migration plan explicitly cover the affected files.
   - `conf/` contains future Kedro configuration and catalog placeholders.
   - `src/museum_yama_data/` contains future Python/Kedro pipeline scaffolding.

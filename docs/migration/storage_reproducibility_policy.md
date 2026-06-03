@@ -13,6 +13,7 @@ This document serves as the compact canonical reference for storage and reproduc
 ## Git-Primary Storage
 
 * Raw/source data and retained source snapshots remain ordinary Git-tracked files by default.
+* `data/01_raw/provider_received/` is the minimal new intake path for future provider-received raw source files. Existing data must not be moved here.
 * Current data sizes do not require Git LFS.
 
 ## Git LFS Policy

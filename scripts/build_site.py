@@ -495,6 +495,7 @@ def build_decisions():
 
     <h3>Recent Policies & Planning</h3>
     <ul>
+        <li><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/provider_received_source_intake_policy.md" target="_blank" rel="noopener noreferrer">Provider Received Source Intake Policy</a>: Defines the minimal intake area for future received source files.</li>
         <li><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/storage_reproducibility_policy.md" target="_blank" rel="noopener noreferrer">Agent Skill Portability Policy</a>: Defines requirements for reusable pipeline tools and commands.</li>
         <li><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/generated_output_path_policy.md" target="_blank" rel="noopener noreferrer">Generated Output Path Policy</a>: Recommends <code>artifacts/generated/</code> as the interim root for generated outputs.</li>
         <li><a href="https://github.com/TakashiSasaki/museum-yama-data/blob/HEAD/docs/migration/processed_directory_semantics.md" target="_blank" rel="noopener noreferrer">Processed Directory Semantics Policy</a>: Clarifies that <code>processed/</code> is a legacy handled-source archive, not for new outputs.</li>
