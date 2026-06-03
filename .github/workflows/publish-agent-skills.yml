@@ -1,0 +1,126 @@
+name: Publish agent skills
+
+on:
+  workflow_dispatch:
+    inputs:
+      skill:
+        description: "Skill name to publish, or 'all'"
+        required: false
+        default: "all"
+        type: string
+      dry_run:
+        description: "Print actions without pushing branches"
+        required: false
+        default: false
+        type: boolean
+  push:
+    branches:
+      - museum-yama-data
+    paths:
+      - ".agents/skills/**"
+      - ".github/workflows/publish-agent-skills.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  publish-skills:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Publish Skills
+        run: |
+          set -euo pipefail
+
+          echo "Starting publish-agent-skills workflow..."
+
+          # Use event inputs if manually triggered, otherwise defaults
+          SKILL_INPUT="${{ github.event.inputs.skill || 'all' }}"
+          DRY_RUN="${{ github.event.inputs.dry_run || 'false' }}"
+
+          echo "Requested skill(s): ${SKILL_INPUT}"
+          echo "Dry run: ${DRY_RUN}"
+
+          # Check for branch exactly named "skills"
+          if git ls-remote --heads origin refs/heads/skills | grep -q "refs/heads/skills$"; then
+            echo "ERROR: A branch named exactly 'skills' exists on the remote. This conflicts with 'skills/<skill-name>' paths."
+            exit 1
+          fi
+          if git show-ref --quiet refs/heads/skills; then
+            echo "ERROR: A local branch named exactly 'skills' exists. This conflicts with 'skills/<skill-name>' paths."
+            exit 1
+          fi
+
+          SKILLS_DIR=".agents/skills"
+
+          if [ ! -d "$SKILLS_DIR" ]; then
+            echo "No $SKILLS_DIR directory found."
+            exit 0
+          fi
+
+          # Discover skills
+          declare -a SKILL_LIST=()
+
+          if [ "$SKILL_INPUT" = "all" ]; then
+            for skill_dir in "$SKILLS_DIR"/*; do
+              if [ -f "$skill_dir/SKILL.md" ]; then
+                SKILL_LIST+=("$(basename "$skill_dir")")
+              fi
+            done
+          else
+            if [ -f "$SKILLS_DIR/$SKILL_INPUT/SKILL.md" ]; then
+              SKILL_LIST+=("$SKILL_INPUT")
+            else
+              echo "ERROR: Skill '$SKILL_INPUT' not found or missing SKILL.md."
+              exit 1
+            fi
+          fi
+
+          if [ ${#SKILL_LIST[@]} -eq 0 ]; then
+            echo "No valid skills found to publish."
+            exit 0
+          fi
+
+          echo "Discovered skills to process: ${SKILL_LIST[*]}"
+
+          for skill in "${SKILL_LIST[@]}"; do
+            # Validate skill name
+            if [[ ! "$skill" =~ ^[A-Za-z0-9._-]+$ ]]; then
+              echo "ERROR: Invalid skill name '$skill'. Must match ^[A-Za-z0-9._-]+$"
+              exit 1
+            fi
+
+            BRANCH_NAME="skills/${skill}"
+            PREFIX="${SKILLS_DIR}/${skill}"
+
+            echo "----------------------------------------"
+            echo "Processing skill: $skill"
+            echo "Source prefix: $PREFIX"
+            echo "Target branch: $BRANCH_NAME"
+
+            # Remove local branch if it already exists to ensure a clean split
+            git branch -D "$BRANCH_NAME" 2>/dev/null || true
+
+            # Create subtree split
+            echo "Running git subtree split..."
+            git subtree split --prefix="$PREFIX" -b "$BRANCH_NAME"
+
+            if [ "$DRY_RUN" = "true" ]; then
+              echo "[DRY RUN] Would push: git push origin $BRANCH_NAME:$BRANCH_NAME --force-with-lease"
+            else
+              echo "Pushing branch..."
+              git push origin "$BRANCH_NAME:$BRANCH_NAME" --force-with-lease
+            fi
+          done
+
+          echo "----------------------------------------"
+          echo "Workflow completed successfully."
