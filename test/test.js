@@ -6,6 +6,7 @@ const assert = require('assert');
 
 // Run isolated test suites
 require('./test_summit_detection');
+require('./test_validate_mountain_sources');
 
 // Core pipeline functionality to test
 const validate = require('../commands/validate');

@@ -72,7 +72,20 @@ Detects peaks and annotates tracks with `<wpt>` elements. **Note: This command i
 node cli.js annotate --root ../../..
 ```
 
-#### 4. `validate`
+#### 4. `validate-mountain-sources` (Portable)
+Validates the current CSV and legacy JSON artifacts against schema invariants.
+- Requires `--csv` (path to source CSV) and `--out` (path to output validation report markdown file).
+- Optionally accepts paths to legacy JSON artifacts for schema reference: `--legacy-merged`, `--legacy-link-mapping`, `--legacy-summit-coordinates`, `--web-mountains`.
+- Reports status and structural findings into the specified markdown file without throwing on validation issues (only throws on hard IO or arg parsing errors).
+
+```sh
+node cli.js validate-mountain-sources \
+  --csv ../../../csv/えひめの山_愛媛県の山.csv \
+  --legacy-merged ../../../processed/mountain_merged.json \
+  --out ../../../docs/migration/mountain_source_validation_report.md
+```
+
+#### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.
 - Checks coordinate bounds, elevations, and times.
@@ -85,7 +98,7 @@ Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV fi
 node cli.js validate --root ../../..
 ```
 
-#### 5. `find-missing`
+#### 6. `find-missing`
 Finds YAMAP activities referenced in CSV files that do not have a corresponding Markdown file in the `yamap/` directory.
 - Reads and parses all `.csv` files under the `csv/` directory to extract YAMAP activity URLs (`https://yamap.com/activities/[ID]`).
 - Compares those IDs with the files in the `yamap/` directory (`[ID].md`).
@@ -95,7 +108,7 @@ Finds YAMAP activities referenced in CSV files that do not have a corresponding 
 node cli.js find-missing --root ../../..
 ```
 
-#### 6. `verify`
+#### 7. `verify`
 Verifies consistent matching between GPX files in `gpx/annotated/` and YAMAP activity Markdown records in `yamap/`.
 - Parses dates and titles from the YAMAP markdown files.
 - Extracts names and dates from the GPX files (using the XML DOM and JST time conversion, with filename fallback).
@@ -106,7 +119,7 @@ Verifies consistent matching between GPX files in `gpx/annotated/` and YAMAP act
 node cli.js verify --root ../../..
 ```
 
-#### 7. `test`
+#### 8. `test`
 Runs the internal test suite against synthetic fixtures.
 
 ```sh
