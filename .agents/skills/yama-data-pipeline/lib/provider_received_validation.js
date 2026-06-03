@@ -22,11 +22,14 @@ function walkSync(dir, filelist = []) {
     return filelist;
 }
 
-function calculateChecksum(filePath) {
-    const fileBuffer = fs.readFileSync(filePath);
-    const hashSum = crypto.createHash('sha256');
-    hashSum.update(fileBuffer);
-    return hashSum.digest('hex');
+async function calculateChecksum(filePath) {
+    return new Promise((resolve, reject) => {
+        const hash = crypto.createHash('sha256');
+        const stream = fs.createReadStream(filePath);
+        stream.on('error', err => reject(err));
+        stream.on('data', chunk => hash.update(chunk));
+        stream.on('end', () => resolve(hash.digest('hex')));
+    });
 }
 
 function parseManifest(filePath) {
@@ -41,7 +44,7 @@ function parseManifest(filePath) {
     }
 }
 
-function validateProviderReceived(inputPath, manifestDir) {
+async function validateProviderReceived(inputPath, manifestDir, repoRoot) {
     const findings = [];
     const stats = {
         provider_file_count: 0,
@@ -118,12 +121,14 @@ function validateProviderReceived(inputPath, manifestDir) {
 
     let manifestCheckSkipped = false;
     let manifestData = [];
+    let manifestDirExists = false;
 
     if (!manifestDir) {
         manifestCheckSkipped = true;
     } else if (!fs.existsSync(manifestDir)) {
         findings.push({ status: 'WARN', message: `Manifest directory missing: ${manifestDir}` });
     } else {
+        manifestDirExists = true;
         const manifestFiles = walkSync(manifestDir).filter(f => f.endsWith('.md') && !f.endsWith('README.md'));
         stats.manifests_found = manifestFiles.length;
 
@@ -136,11 +141,28 @@ function validateProviderReceived(inputPath, manifestDir) {
             }
         }
 
+        // Create an O(1) lookup structure for manifests
+        const manifestMap = new Map();
+        for (const m of manifestData) {
+             const key = m.stored_path.replace(/\\/g, '/');
+             manifestMap.set(key, m);
+        }
+
         // Cross-reference files with manifests
         for (const relativePath of scanResult.files) {
-            // we expect stored_path to end with relativePath, or be an exact match if relative path includes base
             const fullPath = path.join(inputPath, relativePath).replace(/\\/g, '/');
-            const match = manifestData.find(m => m.stored_path.replace(/\\/g, '/').endsWith(relativePath));
+
+            // Expected manifest key depends on how stored_path is stored (usually relative to repo root)
+            // If repoRoot is provided, compute the repo-relative path to look it up precisely.
+            let match = null;
+            if (repoRoot) {
+                const repoRelativePath = path.relative(repoRoot, fullPath).replace(/\\/g, '/');
+                match = manifestMap.get(repoRelativePath);
+            }
+            if (!match) {
+                // Fallback linear scan using endsWith if repoRoot resolution didn't map precisely
+                match = manifestData.find(m => m.stored_path.replace(/\\/g, '/').endsWith(relativePath));
+            }
 
             if (!match) {
                 findings.push({ status: 'WARN', message: `Provider file lacks manifest entry: ${relativePath}` });
@@ -148,7 +170,7 @@ function validateProviderReceived(inputPath, manifestDir) {
                 stats.unmatched_files++;
             } else {
                 // Verify checksum
-                const checksum = calculateChecksum(fullPath);
+                const checksum = await calculateChecksum(fullPath);
                 if (match.checksum && match.checksum !== checksum) {
                     findings.push({ status: 'FAIL', message: `Checksum mismatch for ${relativePath}. Expected ${match.checksum}, got ${checksum}` });
                     stats.checksum_mismatch_count++;
@@ -189,6 +211,7 @@ function validateProviderReceived(inputPath, manifestDir) {
         input_path: inputPath,
         manifest_dir: manifestDir || null,
         manifest_check_skipped: manifestCheckSkipped,
+        manifest_dir_exists: manifestDirExists,
         stats,
         scanResult,
         findings
@@ -225,7 +248,7 @@ function generateReport(result) {
     if (result.manifest_check_skipped) {
         lines.push('- Manifest validation was not requested (no `--manifest-dir` provided).');
     } else {
-        lines.push(`- **manifest directory status**: ${fs.existsSync(result.manifest_dir) ? 'Exists' : 'Missing'}`);
+        lines.push(`- **manifest directory status**: ${result.manifest_dir_exists ? 'Exists' : 'Missing'}`);
         lines.push(`- **manifest files found**: ${result.stats.manifests_found}`);
         lines.push(`- **unmatched files**: ${result.stats.unmatched_files}`);
         lines.push(`- **unmatched manifest entries**: ${result.stats.unmatched_manifest_entries}`);

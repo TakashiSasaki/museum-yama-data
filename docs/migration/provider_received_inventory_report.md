@@ -2,8 +2,8 @@
 
 ## Summary
 - **overall_status**: PASS
-- **input_path**: /app/data/01_raw/provider_received
-- **manifest_dir**: /app/docs/migration/provider_received_manifests
+- **input_path**: data/01_raw/provider_received
+- **manifest_dir**: docs/migration/provider_received_manifests
 - **provider_file_count**: 2
 - **provider_directory_count**: 2
 - **missing_manifest_count**: 0

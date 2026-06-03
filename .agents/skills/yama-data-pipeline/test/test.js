@@ -341,7 +341,13 @@ stored_files:
 
         // Checksum mismatch test
         fs.writeFileSync(filePath, 'modified data');
-        runCommand(`node cli.js validate-provider-received --input "${PRV_DIR}" --manifest-dir "${PRM_DIR}" --out "${PR_OUT}"`);
+        let caughtMismatchError = false;
+        try {
+            runCommand(`node cli.js validate-provider-received --input "${PRV_DIR}" --manifest-dir "${PRM_DIR}" --out "${PR_OUT}"`);
+        } catch (e) {
+            caughtMismatchError = true;
+        }
+        runAssert(caughtMismatchError, 'CLI correctly returns non-zero exit code on FAIL');
         report = fs.readFileSync(PR_OUT, 'utf8');
         runAssert(report.includes('**overall_status**: FAIL'), 'FAIL when checksum mismatches');
         runAssert(report.includes('Checksum mismatch for'), 'Checksum mismatch message');
@@ -350,6 +356,9 @@ stored_files:
         const badProviderDir = path.join(PRV_DIR, 'bad_slug!', '2024_05_20');
         fs.mkdirSync(badProviderDir, { recursive: true });
         fs.writeFileSync(path.join(badProviderDir, 'data.txt'), 'data');
+        // This will issue warnings but not a FAIL status from validation code, though the checksum mismatch in the test above made the overall status FAIL.
+        // Let's fix the modified data so it goes back to passing overall status to avoid an error code
+        fs.writeFileSync(filePath, fileContent);
         runCommand(`node cli.js validate-provider-received --input "${PRV_DIR}" --manifest-dir "${PRM_DIR}" --out "${PR_OUT}"`);
         report = fs.readFileSync(PR_OUT, 'utf8');
         runAssert(report.includes('Invalid provider slug: bad_slug!'), 'Detected invalid provider slug');

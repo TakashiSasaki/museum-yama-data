@@ -23,7 +23,25 @@ module.exports = async function validateProviderReceivedCmd(options) {
     }
 
     try {
-        const result = validateProviderReceived(inputPath, manifestDir);
+        // Assume repo root is 3 levels up from this script (e.g. .agents/skills/yama-data-pipeline/commands/)
+        const repoRoot = path.resolve(__dirname, '../../../..');
+
+        const result = await validateProviderReceived(inputPath, manifestDir, repoRoot);
+
+        // Make paths repo-relative if they are within the repo root
+        if (result.input_path && repoRoot) {
+             const relPath = path.relative(repoRoot, result.input_path).replace(/\\/g, '/');
+             if (!relPath.startsWith('..')) {
+                 result.input_path = relPath;
+             }
+        }
+        if (result.manifest_dir && repoRoot) {
+             const relPath = path.relative(repoRoot, result.manifest_dir).replace(/\\/g, '/');
+             if (!relPath.startsWith('..')) {
+                 result.manifest_dir = relPath;
+             }
+        }
+
         const report = generateReport(result);
 
         const outDir = path.dirname(outPath);
@@ -34,7 +52,11 @@ module.exports = async function validateProviderReceivedCmd(options) {
         fs.writeFileSync(outPath, report, 'utf8');
         log.info(`Provider received inventory report written to ${options.out}`);
 
-        // Return normally, as standard intake findings are reported, not hard failures
+        if (result.overall_status === 'FAIL') {
+             log.error('Validation resulted in FAIL status. Check the report.');
+             process.exit(1);
+        }
+
     } catch (err) {
         log.error(`Unexpected error during validate-provider-received: ${err.message}`);
         console.error(err);
