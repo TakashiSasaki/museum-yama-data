@@ -1,0 +1,19 @@
+{
+  "stage": "yamap_activity_index",
+  "stage_version": "0.1.0",
+  "git_commit": "26f04bff24c048a121a9b1bbfaee22f2d08acf80",
+  "created_at": "2026-06-04T03:44:40.438Z",
+  "inputs": [
+    "data/01_raw/yamap_markdown"
+  ],
+  "outputs": [
+    "data/02_intermediate/activity_linking/yamap_activity_index/yamap_activity_index.jsonl"
+  ],
+  "summary": {
+    "total_yamap_files": 434,
+    "parsed_yamap_count": 414,
+    "unparsed_yamap_count": 20
+  },
+  "checksum_algorithm": "sha256",
+  "source_files_modified": false
+}

@@ -88,7 +88,24 @@ node cli.js generate-summit-candidate-gpx \
   --manifest "data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json"
 ```
 
-#### 3c. `annotate` (Legacy)
+#### 3c. `link-gpx-yamap-by-date` (Portable)
+Links GPX tracks to YAMAP activity Markdown records using timezone-aware datetimes.
+- Resolves raw GPX filename datetimes under both JST and UTC-to-JST conversions to explicitly handle calendar date boundary offsets.
+- Generates file indexes, candidate links, review queues (CSV/Markdown), and status reports.
+- Creating final canonical links in `data/03_primary/` is out of scope for this command.
+- Requires `--gpx-dir`, `--yamap-dir`, `--out-dir`, `--intermediate-dir`, `--review-dir`, and `--report`.
+
+```sh
+node cli.js link-gpx-yamap-by-date \
+  --gpx-dir "data/01_raw/gpx/2026-05-12" \
+  --yamap-dir "data/01_raw/yamap_markdown" \
+  --out-dir "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12" \
+  --intermediate-dir "data/02_intermediate/activity_linking" \
+  --review-dir "data/08_reporting/activity_linking/gpx_yamap_review_queue/2026-05-12" \
+  --report "docs/migration/gpx_yamap_date_linking_report.md"
+```
+
+#### 3d. `annotate` (Legacy)
 Detects peaks and annotates tracks with `<wpt>` elements. **Note: This command is legacy because it assigns mountain names and writes annotated GPX. The portable `detect-candidates` command is the preferred modern alternative for detection.**
 - Reads files from `gpx/raw/`.
 - Uses mountain databases in `csv/` to map detected elevations to known peaks.
