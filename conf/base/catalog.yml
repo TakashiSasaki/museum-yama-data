@@ -38,7 +38,7 @@ yamap_activity_id_index:
 # Raw cache/snapshot for municipality-level location enrichment.
 raw_reverse_geocoding_cache:
   type: partitions.PartitionedDataset
-  path: reverse_geocoding/
+  path: data/01_raw/reverse_geocoding/
   dataset: json.JSONDataset # Placeholder type
 
 # 7. curated_mountain_research_docs

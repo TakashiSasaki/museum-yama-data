@@ -2,11 +2,11 @@
 
 ## Scope
 
-This document focuses on the provenance, schemas, and migration status of the JSON data structures within the repository, specifically `reverse_geocoding/` and `museum-yama-web/mountains.json`.
+This document focuses on the provenance, schemas, and migration status of the JSON data structures within the repository, specifically `data/01_raw/reverse_geocoding/` (formerly `reverse_geocoding/`) and `museum-yama-web/mountains.json`.
 
-## reverse_geocoding/
+## data/01_raw/reverse_geocoding/
 
-The `reverse_geocoding/` directory serves as a reverse geocoding result cache or external source snapshot for municipality-level location enrichment.
+The `data/01_raw/reverse_geocoding/` directory serves as a reverse geocoding result cache or external source snapshot for municipality-level location enrichment.
 
 The project needs prefecture and municipality names from key latitude/longitude points. Exact address-level precision is not required. Existing reverse geocoding results may be reused to infer municipalities for nearby coordinates, because small coordinate differences (such as 500 m to 1 km) usually do not change the municipality. However, municipal or prefectural boundary cases must be flagged rather than silently normalized.
 
@@ -14,7 +14,7 @@ Future derived outputs (e.g., `data/03_primary/municipalities/` or `data/04_feat
 
 ### Schema / Field-Path Summary
 
-Files in `reverse_geocoding/raw/nominatim/` (e.g., `geocoded_points_*.json`) are JSON arrays containing objects with the following structure:
+Files in `data/01_raw/reverse_geocoding/raw/nominatim/` (e.g., `geocoded_points_*.json`) are JSON arrays containing objects with the following structure:
 
 - **Top-level JSON type:** Array of Objects
 - **Representative top-level keys:**

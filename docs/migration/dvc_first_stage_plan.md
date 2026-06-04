@@ -97,7 +97,7 @@ The following remain explicitly prohibited during the current planning phase (an
 *   Creating `.dvc/`, `.dvcignore`, `dvc.yaml`, or `dvc.lock`.
 *   Running `git lfs install` or `git lfs track`.
 *   Implementing Kedro pipelines (`kedro new`).
-*   Modifying, moving, renaming, deleting, normalizing, or format-converting any protected data in `gpx/`, `csv/`, `processed/`, `yamap/`, `reverse_geocoding/`, or `museum-yama-web/`.
+*   Modifying, moving, renaming, deleting, normalizing, or format-converting any protected data in `gpx/`, `csv/`, `processed/`, `yamap/`, `data/01_raw/reverse_geocoding/`, or `museum-yama-web/`.
 
 ## Validation Expectations for a Future DVC Task
 
