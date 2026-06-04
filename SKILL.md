@@ -19,7 +19,7 @@ node .agents/skills/reverse-geocode-points/reverse_geocode_points.js --input <pa
 
 **Example:**
 ```bash
-node .agents/skills/reverse-geocode-points/reverse_geocode_points.js --input gpx/all_unique_summits.gpx gpx/raw/ --out reverse_geocoding/raw/nominatim --limit 100
+node .agents/skills/reverse-geocode-points/reverse_geocode_points.js --input gpx/all_unique_summits.gpx gpx/raw/ --out data/01_raw/reverse_geocoding/raw/nominatim --limit 100
 ```
 
 ### 2. Extract Fields
@@ -32,7 +32,7 @@ node .agents/skills/reverse-geocode-points/extract_address_from_raw.js --input <
 
 **Example:**
 ```bash
-node .agents/skills/reverse-geocode-points/extract_address_from_raw.js --input reverse_geocoding/raw/nominatim --out reverse_geocoding/extracted/nominatim
+node .agents/skills/reverse-geocode-points/extract_address_from_raw.js --input data/01_raw/reverse_geocoding/raw/nominatim --out data/02_intermediate/reverse_geocoding/extracted/nominatim
 ```
 
 ### 3. Project to Vocabularies
@@ -45,7 +45,7 @@ node .agents/skills/reverse-geocode-points/project_address_vocabularies.js --inp
 
 **Example:**
 ```bash
-node .agents/skills/reverse-geocode-points/project_address_vocabularies.js --input reverse_geocoding/extracted/nominatim --out reverse_geocoding/derived/address_projection
+node .agents/skills/reverse-geocode-points/project_address_vocabularies.js --input data/02_intermediate/reverse_geocoding/extracted/nominatim --out data/03_primary/reverse_geocoding/derived/address_projection
 ```
 
 ## Important Note regarding Nominatim API Data Accuracy
