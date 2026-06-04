@@ -24,6 +24,7 @@ Commands:
   link-gpx-yamap-by-date Link GPX tracks to YAMAP MD files using timezone-aware datetimes.
   validate-mountain-sources Validates the current CSV and legacy JSON artifacts against schema invariants.
   validate-provider-received Audits the provider-received raw source intake area and generates a report.
+  complete-mountain-source-no Complete blank No values in a mountain source CSV.
 
 Global Options:
   --root <path>     Strictly required for legacy commands: merge, annotate, validate, find-missing, verify.
@@ -76,6 +77,12 @@ validate-provider-received Options:
   --input <path>                    Required. Path to provider_received directory.
   --out <path>                      Required. Path to output report markdown file.
   --manifest-dir <path>             Optional. Path to directory containing manifest files.
+
+complete-mountain-source-no Options:
+  --input <path>                    Required. Path to extracted mountain source CSV.
+  --out <path>                      Required. Path to output completed CSV.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
 `);
     process.exit(code);
 }
@@ -206,6 +213,13 @@ async function run() {
         }
     }
 
+    if (command === 'complete-mountain-source-no') {
+        if (!options.input || !options.out || !options.manifest || !options.report) {
+            log.error(`Error: --input, --out, --manifest, and --report are required for 'complete-mountain-source-no'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -243,6 +257,9 @@ async function run() {
                 break;
             case 'validate-provider-received':
                 await require('./commands/validate-provider-received')(options);
+                break;
+            case 'complete-mountain-source-no':
+                await require('./commands/complete-mountain-source-no')(options);
                 break;
             case 'test':
                 require('child_process').execSync('npm test', { stdio: 'inherit', cwd: __dirname });
