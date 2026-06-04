@@ -15,7 +15,7 @@ This document provides a read-only audit of the existing legacy resolved-mountai
 - **`processed/mountain_summit_coordinates.json`**: JSON Array (531 items).
 
 **Crucial Invariant**: 531 legacy JSON items does **not** mean 531 authoritative records.
-- The current authoritative source set is exactly 501 records with a non-empty (integer) CSV `No`.
+- Under the previous policy, the authoritative source set was exactly 501 records with a non-empty (integer) CSV `No`. The current policy accepts all 531 rows.
 - In the inspected `processed/*.json` files, exactly 501 records have an integer `No` field, and 30 records have a `null` `No` field.
 - The 30 blank/`null`-"No" records were historically excluded, but under the new policy they are included and assigned provisional IDs using the physical CSV row number.
 - **`museum-yama-web/mountains.json`**: JSON Object (Mapping) keyed by mountain name (523 keys).
@@ -24,14 +24,14 @@ This document provides a read-only audit of the existing legacy resolved-mountai
 The legacy JSON files use the field name `No` as the identifier (sourced from the CSV).
 - **Equivalent to `mountain_no`?**: None of the files contain a field literally named `mountain_no`. They use `No`.
 - **Primary Key Invariant**: The future resolved mountain JSON must use `mountain_no` as the authoritative primary key. `mountain_no` must be a unique non-null integer.
-- The legacy `No` field provides the schema source for the future `mountain_no` field (for the 1..501 authoritative records). This is a field adaptation, not a new synthetic ID.
+- The legacy `No` field provides the schema source for the future `mountain_no` field (for the 1..501 records). Blank `No` records (503..532) receive provisional numbers. This is a field adaptation, not a randomly generated synthetic ID.
 - Mountain name, municipality, coordinates, elevation, or row index must not become the primary key.
 - `museum-yama-web/mountains.json` uses the mountain name as the key. Because of this, it is provisional legacy cache/evidence only and must not define the future primary key design.
 
 ## Schema Reuse Decision
 - **Filename Status**: The legacy filename `mountains-merged.json` or `mountain_merged.json` is not canonical. The future filename remains undecided.
-- **Schema Adaptability**: The future resolved mountain JSON may reuse the legacy record shape (e.g., from `processed/mountain_merged.json`). However, it **must** adapt the legacy `No` field to `mountain_no` and must satisfy the `mountain_no` primary-key invariant and the 501-record authoritative count. The target schema contract is documented in the [Resolved Mountain JSON Schema Contract](resolved_mountain_json_schema_contract.md), and current source status can be found in the [Mountain Source Validation Report](mountain_source_validation_report.md).
+- **Schema Adaptability**: The future resolved mountain JSON may reuse the legacy record shape (e.g., from `processed/mountain_merged.json`). However, it **must** adapt the legacy `No` field to `mountain_no` and must satisfy the `mountain_no` primary-key invariant for all 531 accepted records. The target schema contract is documented in the [Resolved Mountain JSON Schema Contract](resolved_mountain_json_schema_contract.md), and current source status can be found in the [Mountain Source Validation Report](mountain_source_validation_report.md).
 - **Path Policy**: The legacy data contents under `processed/` are read-only schema/evidence references. The `processed/` directory is strictly forbidden as a destination for new generated outputs.
 
 ## Known Blockers & Recommendations
-- **Future Task Recommendation**: When implementing the future pipeline, ensure the output shape enforces `mountain_no` (derived from the authoritative non-empty `No` values) and strictly outputs the 501 validated records, omitting the 30 supplementary ones. Choose a deliberate, non-legacy filename and store it in an appropriate `artifacts/generated/` subdirectory (once explicitly authorized to create it).
+- **Future Task Recommendation**: When implementing the future pipeline, ensure the output shape enforces `mountain_no` (derived from non-empty `No` values and physical row numbers) and strictly outputs all 531 validated records. Choose a deliberate, non-legacy filename and store it in an appropriate `artifacts/generated/` subdirectory (once explicitly authorized to create it).

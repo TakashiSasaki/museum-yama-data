@@ -36,7 +36,7 @@
 | source field/column | source file/table | target field | target dataset/model | role in target | notes / constraints | mapping status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | `No` | `愛媛県の山.csv` | `csv_no` | `accepted_mountain_source_rows` | Original ID | migrated as `csv_no`; used directly to derive `mountain_no` when non-empty; blank values are not preserved as blank `mountain_no` in accepted output | migrated |
-| CSV physical row number | `愛媛県の山.csv` | `source_row_no` | `accepted_mountain_source_rows` | Provenance | derived only; used to derive `mountain_no` for blank-No rows; preserved as `source_row_no` | derived only |
+| CSV physical row number | `愛媛県の山.csv` | `source_row_no` | `accepted_mountain_source_rows` | Provenance | derived only; used to derive `mountain_no` for blank-No rows; preserved as `source_row_no` | derived_only |
 | effective `mountain_no` | (derived) | `mountain_no` | `accepted_mountain_source_rows` | Derived Accepted Key | non-null integer required for every accepted row; uniqueness required; duplicates fatal | derived/migrated |
 | `GPS` | `愛媛県の山.csv` | `gps_raw` | `accepted_mountain_source_rows` | Raw coordinate evidence | migrated as `gps_raw` raw coordinate evidence; parsed latitude/longitude are future derived fields; original value must be preserved | migrated |
 | `山名` | `愛媛県の山.csv` | `mountain_name` | `accepted_mountain_source_rows` | Source mountain name | migrated as source mountain name | migrated |
