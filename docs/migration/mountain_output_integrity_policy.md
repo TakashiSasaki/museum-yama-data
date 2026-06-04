@@ -4,16 +4,18 @@ This document records the user-confirmed data-integrity invariants for the final
 
 ## Primary Key and Target Output Cardinality
 
-The authoritative primary key for resolved mountain records is **`mountain_no`**.
-- `mountain_no` is sourced directly from the `No` column in `csv/えひめの山_愛媛県の山.csv`.
-- Each authoritative record must have a unique non-null integer `mountain_no`.
-- The expected authoritative key set is currently `1..501`.
-- Name, municipality, GPS coordinates, elevation, or CSV row number must not be used as the authoritative primary key. (These fields may be used as evidence, labels, matching hints, or provenance, but not as the primary key).
+The unified effective primary key for resolved mountain records is **`mountain_no`**.
+- For rows with a non-empty CSV `No` column, `mountain_no` is the integer value of `No`.
+- For rows with a blank CSV `No` column, `mountain_no` is the physical CSV row number (counting the header as row 1).
+- Each mountain record must have a unique non-null integer `mountain_no`.
+- The expected effective key set is currently `1..501` plus `503..532` (`502` is absent/reserved).
+- The fields `mountain_no_source` and `mountain_no_status` are required.
+- Name, municipality, GPS coordinates, elevation, or arbitrary zero-based row indices must not be used as the primary key. (These fields may be used as evidence, labels, matching hints, or provenance).
 
 The current user-confirmed invariant for the final resolved mountain dataset is:
-**The future final resolved mountain JSON must contain exactly 501 top-level mountain records.**
+**The future final resolved mountain JSON is expected to contain exactly 531 top-level mountain records.**
 
-This expected cardinality is derived from the CSV reference set. Any difference from this count in a generated output must be explicitly reported and explained.
+This expected cardinality is derived from the full CSV reference set. Any difference from this count in a generated output must be explicitly reported and explained.
 
 - Unresolved summit candidates are not the same thing as resolved mountains.
 - The `museum-yama-web/mountains.json` file is a provisional legacy cache, not the final semantic model, and should not be treated as authoritative.
@@ -22,13 +24,11 @@ This expected cardinality is derived from the CSV reference set. Any difference 
 
 The legacy/manual filename `mountains-merged.json` is not canonical. It was a working filename used in an earlier manual workflow where split files were merged. Future outputs may use a different filename; the reusable part is the record schema/shape. The formal future filename remains undecided. For the official target shape, see the [Resolved Mountain JSON Schema Contract](resolved_mountain_json_schema_contract.md). For current validation state, see the [Mountain Source Validation Report](mountain_source_validation_report.md).
 
-## Source Exclusion Rule
-The original `csv/えひめの山_愛媛県の山.csv` file contains 531 data rows. However, 30 of these records have a blank `No` value. The user has decided that **records with a blank `No` value must not be used as authoritative mountain source records**.
-- These 30 blank-"No" records must not be silently used to increase the final output count to 531.
-- They are classified as `excluded_from_authoritative_source` (or `non_authoritative_blank_no_record`).
-- They must not be used as identity evidence, summit identity evidence, or source rows for the future resolved mountain JSON.
-- They must not be deleted, moved, or modified, and are preserved as out of scope for the authoritative set.
-- Validation should report their count separately.
+## Provisional Records and Coordinate Evidence Inclusion
+The original `csv/えひめの山_愛媛県の山.csv` file contains 531 data rows. The 30 records with a blank `No` value are now explicitly **included** in the authoritative source set as provisional rows.
+- They are classified with `mountain_no_status` = `provisional_csv_row_no`.
+- Their original coordinate data from the CSV `GPS` column must be rigorously preserved as source coordinate evidence (e.g., `coordinate_source` = `csv_existing_gps`, `coordinate_status` = `csv_provided_unverified`).
+- Unresolved summit coordinates must be represented explicitly rather than dropping the rows.
 
 ## Same-Name Mountain Disambiguation
 
@@ -43,7 +43,7 @@ The future resolved mountain JSON is a generated semantic/reporting output, not 
 
 ## Discrepancy Categories
 
-If a future pipeline output differs from the expected 501 records, the pipeline's validation report should categorize the discrepancies using the following labels:
+If a future pipeline output differs from the expected 531 records, the pipeline's validation report should categorize the discrepancies using the following labels:
 
 - **`missing_source_row`**: A record that was present in the source but failed to be emitted in the output.
 - **`duplicate_or_merged_record`**: A record that was erroneously duplicated or inappropriately combined (such as same-name merging).
@@ -52,5 +52,3 @@ If a future pipeline output differs from the expected 501 records, the pipeline'
 - **`unresolved_identity_record`**: A detected summit candidate that could not be mapped to an authoritative mountain identity.
 - **`schema_or_normalization_difference`**: An apparent count difference caused by how a nested or unstructured field was normalized or modeled.
 - **`needs_human_decision`**: A discrepancy that cannot be automatically resolved and requires explicit user review.
-
-- **`excluded_from_authoritative_source`**: A record present in the source file but explicitly ignored by policy (e.g., blank `No` value in the CSV).
