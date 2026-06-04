@@ -531,7 +531,7 @@ def build_directory_inventory():
         <li><code>csv/</code></li>
         <li><code>processed/</code></li>
         <li><code>yamap/</code></li>
-        <li><code>reverse_geocoding/</code></li>
+        <li><code>data/01_raw/reverse_geocoding/</code></li>
         <li><code>museum-yama-web/</code></li>
     </ul>
 

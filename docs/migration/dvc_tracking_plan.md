@@ -83,11 +83,11 @@ This document does not authorize `dvc add` on raw/source data. The listed paths 
 
   *(Note: Might be declared as a dependency as part of the `yamap/` directory depending on execution).*
 
-### 6. `reverse_geocoding/`
+### 6. `data/01_raw/reverse_geocoding/`
 * **Reason for dependency declaration:** Raw cache and snapshots for municipality-level location enrichment.
 * **Source coverage audit classification:** Git-primary source/snapshot data
 * **DVC role:** dependency candidate, not DVC-tracked output
-* **Current path:** `reverse_geocoding/`
+* **Current path:** `data/01_raw/reverse_geocoding/`
 * **Future conceptual target path:** `data/01_raw/reverse_geocoding/`
 * **Timing:** Should be added as a dependency *before* physical migration.
 * **Blocks:** The future schema/reuse logic needs decision, but adding the current raw snapshot cache as a dependency is unblocked.

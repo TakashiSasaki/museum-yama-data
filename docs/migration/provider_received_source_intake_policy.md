@@ -66,6 +66,6 @@ Future deposits into this directory should be accompanied by metadata tracking u
 
 ## Explicit Non-Goals
 
-* This policy does not authorize moving existing files from `gpx/`, `csv/`, `processed/`, `yamap/`, `reverse_geocoding/`, or `museum-yama-web/` into `data/01_raw/provider_received/`.
+* This policy does not authorize moving existing files from `gpx/`, `csv/`, `processed/`, `yamap/`, `data/01_raw/reverse_geocoding/`, or `museum-yama-web/` into `data/01_raw/provider_received/`.
 * This policy does not establish full `data/` layout layers (e.g., `02_intermediate/`, `03_primary/`).
 * This policy does not initiate DVC tracking or Git LFS tracking.
