@@ -20,6 +20,7 @@ Commands:
   verify            Verify consistency between GPX files and YAMAP MD records.
   test              Run the skill test suite.
   detect-candidates Detect summits without assigning names, output to CSV.
+  generate-summit-candidate-gpx Generate a valid summit-candidate GPX file for each source GPX file.
   validate-mountain-sources Validates the current CSV and legacy JSON artifacts against schema invariants.
   validate-provider-received Audits the provider-received raw source intake area and generates a report.
 
@@ -39,6 +40,16 @@ extract-excel-sheets Options:
 detect-candidates Options:
   --input <path>            Required. Path to single GPX file or directory containing GPX files.
   --out <path>              Required. Path to output CSV file.
+  --smooth-window <num>     Optional. Window size for elevation smoothing (default 5).
+  --peak-radius <num>       Optional. Radius for local maxima detection (default 10).
+  --min-prominence <num>    Optional. Minimum prominence in meters (default 30).
+  --merge-distance <num>    Optional. Distance in meters to merge nearby peaks (default 100).
+
+generate-summit-candidate-gpx Options:
+  --input <path>            Required. Path to single GPX file or directory containing GPX files.
+  --out-dir <path>          Required. Path to output directory.
+  --report <path>           Required. Path to output markdown report file.
+  --manifest <path>         Required. Path to output manifest.json.
   --smooth-window <num>     Optional. Window size for elevation smoothing (default 5).
   --peak-radius <num>       Optional. Radius for local maxima detection (default 10).
   --min-prominence <num>    Optional. Minimum prominence in meters (default 30).
@@ -72,6 +83,8 @@ function parseArgs(argsArray) {
             options.outDir = argsArray[++i];
         } else if (arg === '--report' && i + 1 < argsArray.length) {
             options.report = argsArray[++i];
+        } else if (arg === '--manifest' && i + 1 < argsArray.length) {
+            options.manifest = argsArray[++i];
         } else if (arg === '--out' && i + 1 < argsArray.length) {
             options.out = argsArray[++i];
         } else if (arg === '--smooth-window' && i + 1 < argsArray.length) {
@@ -134,6 +147,13 @@ async function run() {
         }
     }
 
+    if (command === 'generate-summit-candidate-gpx') {
+        if (!options.input || !options.outDir || !options.report || !options.manifest) {
+            log.error(`Error: --input, --out-dir, --report, and --manifest are required for 'generate-summit-candidate-gpx'.`);
+            printUsageAndExit();
+        }
+    }
+
     if (command === 'extract-excel-sheets') {
         if (!options.input || !options.outDir) {
             log.error(`Error: --input and --out-dir are required for 'extract-excel-sheets'.`);
@@ -187,6 +207,9 @@ async function run() {
                 break;
             case 'detect-candidates':
                 await require('./commands/detect-candidates')(options);
+                break;
+            case 'generate-summit-candidate-gpx':
+                await require('./commands/generate-summit-candidate-gpx')(options);
                 break;
             case 'validate-mountain-sources':
                 await require('./commands/validate-mountain-sources')(options);
