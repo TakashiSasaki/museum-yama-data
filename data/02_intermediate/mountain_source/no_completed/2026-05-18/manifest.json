@@ -1,0 +1,37 @@
+{
+  "stage": "complete_mountain_source_no",
+  "stage_version": "0.1.0",
+  "git_commit": "e70c13076ea3b40bd16596a9fc0a13a1daf00811",
+  "created_at": "2026-06-04T07:35:41.998Z",
+  "input": {
+    "path": "data/02_intermediate/activity_logs/csv_extracted/2026-05-18/愛媛県の山.csv",
+    "sha256": "dd0f1088e8e96edadb11c999480ed1f328b712b23128b0e364a9536e9183aa22"
+  },
+  "outputs": [
+    {
+      "path": "data/02_intermediate/mountain_source/no_completed/2026-05-18/ehime_mountain_source_rows_no_completed.csv",
+      "sha256": "182e5c723fd288aedcf623243a7564fdcbdae36c4dfb56a7af0aab36ef1cc226",
+      "role": "no_completed_intermediate_mountain_source_rows"
+    }
+  ],
+  "checksum_algorithm": "sha256",
+  "summary": {
+    "input_data_rows": 531,
+    "output_data_rows": 531,
+    "source_non_empty_no_count": 501,
+    "source_blank_no_count": 30,
+    "source_non_empty_no_range": "1..501",
+    "source_non_empty_no_unique": true,
+    "source_non_empty_no_contiguous_from_1": true,
+    "max_existing_no": 501,
+    "blank_no_fill_rule": "sequence_fill_after_max_csv_no",
+    "blank_no_fill_values": "502..531",
+    "completed_mountain_no_count": 531,
+    "completed_mountain_no_unique": true,
+    "completed_key_set": "1..531",
+    "has_502_after_completion": true,
+    "gps_column_preserved": true,
+    "gps_raw_column_written": true,
+    "source_files_modified": false
+  }
+}

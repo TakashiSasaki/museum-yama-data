@@ -21,7 +21,7 @@ npm install
 The skill provides a single CLI entrypoint: `cli.js`.
 
 Legacy repository-layout commands require `--root`: `merge`, `annotate`, `validate`, `find-missing`, and `verify`.
-The portable commands (`intake`, `detect-candidates`, `validate-mountain-sources`, `validate-provider-received`) do not require `--root` and instead take explicit input and output paths.
+The portable commands (`intake`, `detect-candidates`, `validate-mountain-sources`, `validate-provider-received`, `complete-mountain-source-no`) do not require `--root` and instead take explicit input and output paths.
 
 ### Commands
 
@@ -143,6 +143,21 @@ node cli.js validate-provider-received \
   --input ../../../data/01_raw/provider_received \
   --manifest-dir ../../../docs/migration/provider_received_manifests \
   --out ../../../docs/migration/provider_received_inventory_report.md
+```
+
+#### 4c. `complete-mountain-source-no` (Portable)
+Completes blank No values in a mountain source CSV file.
+- Requires `--input` (path to extracted mountain source CSV).
+- Requires `--out` (path to output completed CSV).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report markdown).
+
+```sh
+node cli.js complete-mountain-source-no \
+  --input data/02_intermediate/activity_logs/csv_extracted/2026-05-18/愛媛県の山.csv \
+  --out data/02_intermediate/mountain_source/no_completed/2026-05-18/ehime_mountain_source_rows_no_completed.csv \
+  --manifest data/02_intermediate/mountain_source/no_completed/2026-05-18/manifest.json \
+  --report docs/migration/mountain_source_no_completion_report.md
 ```
 
 #### 5. `validate` (Legacy)

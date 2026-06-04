@@ -1,0 +1,27 @@
+# Mountain Source No-Completion Report
+
+- **Branch and HEAD commit**: `museum-yama-data` (`e70c13076ea3b40bd16596a9fc0a13a1daf00811`)
+- **Input CSV path**: `data/02_intermediate/activity_logs/csv_extracted/2026-05-18/愛媛県の山.csv`
+- **Output CSV path**: `data/02_intermediate/mountain_source/no_completed/2026-05-18/ehime_mountain_source_rows_no_completed.csv`
+- **Manifest path**: `data/02_intermediate/mountain_source/no_completed/2026-05-18/manifest.json`
+- **Command used**: `complete-mountain-source-no`
+- **Input SHA-256**: `dd0f1088e8e96edadb11c999480ed1f328b712b23128b0e364a9536e9183aa22`
+- **Output SHA-256**: `182e5c723fd288aedcf623243a7564fdcbdae36c4dfb56a7af0aab36ef1cc226`
+- **Total input/output row count**: `531`
+- **Non-empty source No count**: `501`
+- **Blank source No count**: `30`
+- **Blank source No physical row numbers**: `503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532`
+- **Existing source No validation result**:
+  - Integer: `Yes`
+  - Unique: `Yes`
+  - Contiguous from 1: `Yes`
+- **max_existing_no**: `501`
+- **Fill values assigned to blank source No rows**: `502..531`
+- **Final effective key set**: `1..531`
+- **Uniqueness validation result**: `Unique (Yes)`
+- **GPS preservation result**: `GPS column preserved and copied to gps_raw`
+- **Source file modification status**: `Not modified (Yes)`
+- **Validation commands run**:
+  - `npm test`
+- **Known limitations**: This is an intermediate No-completion dataset, not yet the final accepted primary mountain source table.
+- **Next steps**: Run downstream coordinates verification and schema checks.

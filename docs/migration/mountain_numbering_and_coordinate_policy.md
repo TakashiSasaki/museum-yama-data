@@ -13,7 +13,7 @@ The pipeline explicitly separates the mechanical extraction of source data from 
 The mechanical extraction from `えひめの山.xlsx` produces an extracted intermediate CSV (`愛媛県の山.csv`). The extracted CSV remains unchanged and represents the source data exactly as provided. Blank `No` values remain as-is in this intermediate output.
 
 ### Stage B: Mountain Source Acceptance and Normalization
-This stage consumes the extracted CSV and produces an accepted/normalized dataset. The extracted CSV may contain blank `No` values. The accepted mountain-source dataset must not. During mountain source acceptance, blank `No` values are filled using the 1-based physical CSV row number, counting the header row as row 1. After this fill operation, every accepted row must have a non-null integer `mountain_no`. The complete `mountain_no` set must be unique. Any duplicate `mountain_no` after filling is a fatal acceptance error.
+This stage consumes the extracted CSV and produces an accepted/normalized dataset. The extracted CSV may contain blank `No` values. The accepted mountain-source dataset must not. During mountain source acceptance, blank `No` values are filled sequentially starting from `max_existing_no + 1` (`502..531`). After this fill operation, every accepted row must have a non-null integer `mountain_no`. The complete `mountain_no` set must be unique. Any duplicate `mountain_no` after filling is a fatal acceptance error.
 
 All 531 rows in the primary source file `愛媛県の山.csv` are formally in scope for this mountain-source acceptance and subsequent downstream summit-coordinate resolution. Downstream processing MUST use the accepted/normalized dataset, not raw extracted CSV rows with blank effective IDs.
 
@@ -25,8 +25,8 @@ Every mountain row must be assigned an effective `mountain_no`. The logic for de
 *   **`csv_no`**: The original value found in the `No` column of the CSV.
 *   **`source_row_no`**: The 1-based physical line number in the CSV file, counting the header row as row 1.
 *   **`mountain_no`**: The unified, effective primary key for the mountain record.
-*   **`mountain_no_source`**: The origin of the `mountain_no` value (e.g., `csv_no`, `csv_physical_row_number`).
-*   **`mountain_no_status`**: The classification status of the `mountain_no` value (e.g., `authoritative_csv_no`, `provisional_csv_row_no`).
+*   **`mountain_no_source`**: The origin of the `mountain_no` value (e.g., `csv_no`, `sequence_fill_after_max_csv_no`).
+*   **`mountain_no_status`**: The classification status of the `mountain_no` value (e.g., `authoritative_csv_no`, `provisional_sequence_filled_no`).
 
 ### Numbering Rules
 
@@ -36,16 +36,16 @@ Every mountain row must be assigned an effective `mountain_no`. The logic for de
 *   `mountain_no_status`: `authoritative_csv_no`
 
 **For rows with a blank CSV `No` (30 rows):**
-*   `mountain_no`: The physical CSV row number (`source_row_no`).
-*   `mountain_no_source`: `csv_physical_row_number`
-*   `mountain_no_status`: `provisional_csv_row_no`
+*   `mountain_no`: The sequence-filled value after `max_existing_no`.
+*   `mountain_no_source`: `sequence_fill_after_max_csv_no`
+*   `mountain_no_status`: `provisional_sequence_filled_no`
 *   `csv_no`: null
 
 ### Expected Key Set
 The expected set of effective `mountain_no` keys is:
-**`1..501` plus `503..532`**
+**`1..531`**
 
-*Note: The physical CSV row numbers for the blank-`No` data rows are 503 through 532. Therefore, `502` is absent/reserved. The numbering must not be compactly renumbered to fill this gap.*
+*Note: Blank source No rows receive values `502..531` sequentially in CSV row order. The number `502` is present, and there are no numbering gaps.*
 
 ## Coordinate Evidence Preservation
 

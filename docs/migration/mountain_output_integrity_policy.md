@@ -6,9 +6,9 @@ This document records the user-confirmed data-integrity invariants for the final
 
 The unified effective primary key for resolved mountain records is **`mountain_no`**.
 - For rows with a non-empty CSV `No` column, `mountain_no` is the integer value of `No`.
-- For rows with a blank CSV `No` column, `mountain_no` is the physical CSV row number (counting the header as row 1).
+- For rows with a blank CSV `No` column, `mountain_no` is the sequence-filled value after `max_existing_no`.
 - Each mountain record must have a unique non-null integer `mountain_no`.
-- The expected effective key set is currently `1..501` plus `503..532` (`502` is absent/reserved).
+- The expected effective key set is currently `1..531` (`502` is present, and there are no gaps).
 - The fields `mountain_no_source` and `mountain_no_status` are required.
 - Name, municipality, GPS coordinates, elevation, or arbitrary zero-based row indices must not be used as the primary key. (These fields may be used as evidence, labels, matching hints, or provenance).
 
@@ -26,7 +26,7 @@ The legacy/manual filename `mountains-merged.json` is not canonical. It was a wo
 
 ## Provisional Records and Coordinate Evidence Inclusion
 The original `csv/えひめの山_愛媛県の山.csv` file contains 531 data rows. The 30 records with a blank `No` value are now explicitly **included** in the authoritative source set as provisional rows.
-- They are classified with `mountain_no_status` = `provisional_csv_row_no`.
+- They are classified with `mountain_no_status` = `provisional_sequence_filled_no`.
 - Their original coordinate data from the CSV `GPS` column must be rigorously preserved as source coordinate evidence (e.g., `coordinate_source` = `csv_existing_gps`, `coordinate_status` = `csv_provided_unverified`).
 - Unresolved summit coordinates must be represented explicitly rather than dropping the rows.
 

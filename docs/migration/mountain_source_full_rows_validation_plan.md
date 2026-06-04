@@ -11,8 +11,8 @@ Future validation processes must enforce the following checks on the normalized 
     *   *Validation:* Recognize that the extracted intermediate CSV will have blank `No` values and this is expected.
 *   **`accepted_dataset_blank_mountain_no_count`**: `0`
     *   *Validation:* Ensure that after filling, no rows have a blank or missing effective `mountain_no`.
-*   **`filled_blank_no_rule`**: `csv_physical_row_number`
-    *   *Validation:* For blank `No` values, the effective `mountain_no` is filled using the physical CSV row number.
+*   **`filled_blank_no_rule`**: `sequence_fill_after_max_csv_no`
+    *   *Validation:* For blank `No` values, the effective `mountain_no` is sequence-filled after `max_existing_no`.
 *   **`filled_no_uniqueness_required`**: `true`
     *   *Validation:* Ensure that all assigned `mountain_no` values are unique across the entire dataset.
 *   **`duplicate_effective_no_is_fatal`**: `true`
@@ -28,11 +28,11 @@ The acceptance step must perform validation *after* the fill operation, not befo
 
 1. Read extracted CSV.
 2. Compute `source_row_no` for each data row.
-3. If `No` is blank, fill effective `mountain_no` from `source_row_no`.
+3. If `No` is blank, fill effective `mountain_no` using sequence-filled values starting from `max_existing_no + 1`.
 4. If `No` is non-empty, parse integer `No` as effective `mountain_no`.
 5. Check every effective `mountain_no` is integer and non-null.
 6. Check uniqueness of effective `mountain_no`.
-7. Check expected key set (`1..501` plus `503..532`).
+7. Check expected key set (`1..531`).
 8. Preserve `GPS` as `gps_raw`.
 9. Fail with a fatal error on duplicate effective `mountain_no`.
 
@@ -48,12 +48,12 @@ The acceptance step must perform validation *after* the fill operation, not befo
     *   *Validation:* Ensure that every one of the 531 rows has been assigned an effective `mountain_no`.
 *   **`effective_mountain_no_unique`**: `true`
     *   *Validation:* Ensure that all assigned `mountain_no` values are unique across the entire dataset.
-*   **`effective_mountain_no_expected_set`**: `1..501` plus `503..532`
-    *   *Validation:* Verify that the assigned `mountain_no` values perfectly match this combined range. It should flag if `502` is present, or if any values fall outside these boundaries.
+*   **`effective_mountain_no_expected_set`**: `1..531`
+    *   *Validation:* Verify that the assigned `mountain_no` values perfectly match this range.
 *   **`provisional_mountain_no_count`**: `30`
-    *   *Validation:* Ensure that exactly 30 rows have a `mountain_no_status` of `provisional_csv_row_no`.
-*   **`provisional_mountain_no_source`**: `csv_physical_row_number`
-    *   *Validation:* Verify that for all provisional rows, the `mountain_no_source` is explicitly tagged as `csv_physical_row_number`.
+    *   *Validation:* Ensure that exactly 30 rows have a `mountain_no_status` of `provisional_sequence_filled_no`.
+*   **`provisional_mountain_no_source`**: `sequence_fill_after_max_csv_no`
+    *   *Validation:* Verify that for all provisional rows, the `mountain_no_source` is explicitly tagged as `sequence_fill_after_max_csv_no`.
 *   **`csv_coordinate_fields_for_provisional_rows`**: `preserved`
     *   *Validation:* Ensure that the original `GPS` column data is retained and mapped to the appropriate coordinate evidence fields (e.g., `gps_raw`, `coordinate_source` = `csv_existing_gps`).
 
