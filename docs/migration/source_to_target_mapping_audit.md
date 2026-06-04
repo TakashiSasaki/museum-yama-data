@@ -35,11 +35,13 @@
 
 | source field/column | source file/table | target field | target dataset/model | role in target | notes / constraints | mapping status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `No` | `csv/えひめの山_愛媛県の山.csv` | `mountain_no` | `mountains` | Authoritative Primary Key | 501 authoritative values (`1..501`). Blank-"No" records are explicitly excluded. | migrated |
-| blank `No` row | `csv/えひめの山_愛媛県の山.csv` | N/A | `mountains` | Excluded | 30 rows preserved in source but excluded from target authoritative set. | excluded_from_authoritative_source |
-| `山名` | `csv/えひめの山_愛媛県の山.csv` | `mountain_name` | `mountains` | Label/Evidence | Must not be used as primary key. Same-name records must not be merged. | migrated |
-| `市町村・島` | `csv/えひめの山_愛媛県の山.csv` | `municipality` | `mountains` | Label/Evidence | Must not be used as primary key. | migrated |
-| Row index | `csv/えひめの山_愛媛県の山.csv` | `source_row_index` | `mountains` | Provenance | May be preserved as provenance, but must not be used as the primary key. | migrated |
+| `No` | `csv/えひめの山_愛媛県の山.csv` | `mountain_no` | `mountains` | Authoritative Primary Key for 501 rows | Migrated as `csv_no`; also used to derive `mountain_no` when non-empty. 501 authoritative values (`1..501`). | migrated |
+| blank `No` row | `csv/えひめの山_愛媛県の山.csv` | `mountain_no` | `mountains` | Provisional Primary Key | 30 rows now in scope. Their physical CSV row number is used to derive a provisional `mountain_no` (`503..532`). | migrated |
+| `山名` | `csv/えひめの山_愛媛県の山.csv` | `mountain_name` | `mountains` | Source mountain name | Migrated as source mountain name. Must not be used as primary key. Same-name records must not be merged. | migrated |
+| `市町村・島` | `csv/えひめの山_愛媛県の山.csv` | `municipality` | `mountains` | Source municipality text | Migrated as source municipality text. Must not be used as primary key. | migrated |
+| `GPS` | `csv/えひめの山_愛媛県の山.csv` | `gps_raw` | `mountain_summit_coordinates` | Coordinate evidence | Migrated as raw CSV coordinate evidence. Future normalization may parse this field into `csv_lat` / `csv_lon` or equivalent derived coordinate fields. The original `GPS` field value must be preserved. | migrated |
+| `標高` | `csv/えひめの山_愛媛県の山.csv` | `elevation` | `mountains` | Elevation evidence | Migrated as official/source elevation evidence. | migrated |
+| CSV physical row number | `csv/えひめの山_愛媛県の山.csv` | `source_row_no` | `mountains` | Provenance / Key derivation | Derived only; used to derive provisional `mountain_no` for blank-`No` rows. | derived_only |
 
 ## Provenance Findings
 

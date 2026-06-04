@@ -90,12 +90,22 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 
 ### 13. `mountains`
 * **Role:** The authoritative structured table of resolved mountain identities with canonical names and disambiguation metadata.
-* **Primary Inputs:** `summit_identity_candidates`
+* **Primary Inputs:** `summit_identity_candidates`, `mountain_summit_coordinates`
 * **Expected Future Layer:** `03_primary`
 * **Tracking System:** DVC dependency candidate
-* **Primary Key:** `mountain_no` (authoritative integer sourced from the CSV `No` column, currently expected to cover `1..501`).
+* **Primary Key:** `mountain_no`. This is a unified effective key. For rows with non-empty CSV `No`, it is the integer value of `No` (`1..501`). For rows with blank CSV `No`, it is the physical CSV row number (expected to be `503..532`). The key set is expected to be `1..501` plus `503..532`, with `502` absent/reserved.
+* **Required Metadata Fields:** `mountain_no_source` and `mountain_no_status` are required.
 * **Important Note:** Unresolved candidates and resolved mountains are distinct entities. The existing `museum-yama-web/mountains.json` is a provisional legacy web cache and does not serve as this final semantic model.
-* **Cardinality Expectation:** In the current reference state, the expected authoritative resolved mountain count is exactly 501. (30 blank-"No" records from the CSV source are explicitly excluded from this authoritative set and must not be included).
+* **Cardinality Expectation:** The target source set is all 531 CSV rows. The 30 blank-"No" rows receive provisional row-number-derived `mountain_no` values and are included.
+* **Coordinate Evidence:** Provisional rows already have CSV lat/lon data in the `GPS` column, and these coordinates must be preserved as evidence.
+
+### 13b. `mountain_summit_coordinates`
+* **Role:** The dataset holding the resolved summit coordinates for mountain entities, preserving coordinate provenance.
+* **Primary Inputs:** `raw_activity_workbook` (CSV extracts), `summit_candidates`, explicit human review records
+* **Expected Future Layer:** `03_primary`
+* **Tracking System:** DVC dependency candidate
+* **Key Alignment:** Maps to `mountain_no`.
+* **Important Note:** Must distinguish coordinate sources (e.g., `csv_existing_gps`, `gpx_summit_candidate`) and validation statuses. Unresolved summit coordinates must be represented explicitly rather than dropping rows.
 
 ### 14. `resolved_mountain_waypoint_gpx`
 * **Role:** A collection of identified mountain waypoints formatted as a GPX/XML file, embedding evidence references in its extensions. This is the first concrete target export.
@@ -115,20 +125,20 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Expected Future Layer:** `08_reporting`
 * **Tracking System:** Git or dynamically generated
 * **Schema Reference:** Will likely adapt the legacy schema/record shape (e.g., from `processed/mountain_merged.json`), but only after strictly satisfying the `mountain_no` primary key and 501-record validations. The legacy JSON in `processed/` is a schema reference only. The canonical future filename is undecided. For more details on adapting the schema, see [Legacy Resolved Mountain JSON Schema Audit](legacy_resolved_mountain_json_schema_audit.md). For the full schema contract and validation report, see [Resolved Mountain JSON Schema Contract](resolved_mountain_json_schema_contract.md) and [Mountain Source Validation Report](mountain_source_validation_report.md).
-* **Cardinality Expectation:** The future resolved mountain JSON web export should strictly preserve the 501 top-level mountain record count unless a discrepancy is explicitly explained.
+* **Cardinality Expectation:** The future resolved mountain JSON web export should strictly preserve the expected 531 top-level mountain record count unless a discrepancy is explicitly explained.
 
 ### 17. `validation_reports`
 * **Role:** Automated checks confirming the integrity of the data layers (e.g., no orphaned candidates coerced to identities without evidence, duplicate mountain names, unlinked GPX files).
 * **Primary Inputs:** Outputs across pipeline layers.
 * **Expected Future Layer:** `08_reporting`
 * **Tracking System:** Git or DVC-tracked output
-* **Integrity Validation:** Validation reports should actively verify key constraints and the 501 invariant. Specifically, checks should ensure:
-  - total authoritative record count is exactly 501
+* **Integrity Validation:** Validation reports should actively verify key constraints. Specifically, checks should ensure:
+  - target record count is 531
   - all records contain a `mountain_no`
-  - all `mountain_no` values are unique and cover the expected `1..501` range
-  - no blank-"No" records are erroneously included
+  - all `mountain_no` values are unique and cover the expected `1..501` plus `503..532` range
+  - `mountain_no_source` and `mountain_no_status` are populated
   - same-name records are not improperly merged solely by name
-* **Cardinality Reporting:** Report discrepancy categories (e.g., `missing_source_row`, `duplicate_or_merged_record`, `excluded_from_authoritative_source`) and explicitly report the excluded blank-"No" record count separately.
+* **Cardinality Reporting:** Report discrepancy categories (e.g., `missing_source_row`, `duplicate_or_merged_record`).
 
 ### 18. `provenance_entities`, `provenance_activities`, `provenance_edges`
 * **Role:** Tabular representation of the data lineage, entities, processes, and their relationships.
