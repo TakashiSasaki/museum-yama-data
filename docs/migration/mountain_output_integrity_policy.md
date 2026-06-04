@@ -10,7 +10,7 @@ The unified effective primary key for resolved mountain records is **`mountain_n
 - Each mountain record must have a unique non-null integer `mountain_no`.
 - The expected effective key set is currently `1..501` plus `503..532` (`502` is absent/reserved).
 - The fields `mountain_no_source` and `mountain_no_status` are required.
-- Name, municipality, GPS coordinates, elevation, or raw row indices must not be used as the primary key. (These fields may be used as evidence, labels, matching hints, or provenance).
+- Name, municipality, GPS coordinates, elevation, or arbitrary zero-based row indices must not be used as the primary key. (These fields may be used as evidence, labels, matching hints, or provenance).
 
 The current user-confirmed invariant for the final resolved mountain dataset is:
 **The future final resolved mountain JSON is expected to contain exactly 531 top-level mountain records.**
@@ -43,7 +43,7 @@ The future resolved mountain JSON is a generated semantic/reporting output, not 
 
 ## Discrepancy Categories
 
-If a future pipeline output differs from the expected 501 records, the pipeline's validation report should categorize the discrepancies using the following labels:
+If a future pipeline output differs from the expected 531 records, the pipeline's validation report should categorize the discrepancies using the following labels:
 
 - **`missing_source_row`**: A record that was present in the source but failed to be emitted in the output.
 - **`duplicate_or_merged_record`**: A record that was erroneously duplicated or inappropriately combined (such as same-name merging).
@@ -52,5 +52,3 @@ If a future pipeline output differs from the expected 501 records, the pipeline'
 - **`unresolved_identity_record`**: A detected summit candidate that could not be mapped to an authoritative mountain identity.
 - **`schema_or_normalization_difference`**: An apparent count difference caused by how a nested or unstructured field was normalized or modeled.
 - **`needs_human_decision`**: A discrepancy that cannot be automatically resolved and requires explicit user review.
-
-- **`excluded_from_authoritative_source`**: A record present in the source file but explicitly ignored by policy (e.g., blank `No` value in the CSV).
