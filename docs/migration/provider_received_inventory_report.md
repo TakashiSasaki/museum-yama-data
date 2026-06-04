@@ -13,7 +13,7 @@
 ## Intake Directory Scan
 - **documentation files ignored**: README.md
 - **provider slugs found**: yoshitomi
-- **received dates found**: 1980-01-01, 2026-05-12
+- **received dates found**: 2026-05-12, 2026-05-18
 - **files found**: 2
 
 ## Manifest Coverage

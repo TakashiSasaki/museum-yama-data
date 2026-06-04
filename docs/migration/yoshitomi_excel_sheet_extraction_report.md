@@ -2,13 +2,13 @@
 
 ## Summary
 - status: success
-- input_workbook: data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx
-- output_dir: data/02_intermediate/activity_logs/csv_extracted/yoshitomi/1980-01-01
+- input_workbook: data/01_raw/provider_received/yoshitomi/2026-05-18/えひめの山.xlsx
+- output_dir: data/02_intermediate/activity_logs/csv_extracted/yoshitomi/2026-05-18
 - sheet_count: 5
 - extracted_csv_count: 5
 
 ## Workbook
-- input path: data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx
+- input path: data/01_raw/provider_received/yoshitomi/2026-05-18/えひめの山.xlsx
 - workbook readable: true
 - sheet names discovered:
   - 愛媛県の山

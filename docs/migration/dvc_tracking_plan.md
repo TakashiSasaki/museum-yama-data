@@ -36,11 +36,11 @@ For the policy on how generated outputs are placed, see `docs/migration/generate
 
 This document does not authorize `dvc add` on raw/source data. The listed paths remain Git-primary. No DVC remote is required for ordinary repository use. No data migration or data movement has occurred.
 
-### 1. `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx`
+### 1. `data/01_raw/provider_received/yoshitomi/2026-05-18/えひめの山.xlsx`
 * **Reason for dependency declaration:** It is the primary activity workbook archive.
 * **Source coverage audit classification:** Git-primary source/snapshot data
 * **DVC role:** dependency candidate, not DVC-tracked output
-* **Current path:** `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx`
+* **Current path:** `data/01_raw/provider_received/yoshitomi/2026-05-18/えひめの山.xlsx`
 * **Future conceptual target path:** `data/01_raw/source_archives/`
 * **Timing:** Should be added as a dependency *before* physical migration.
 * **Blocks:** No `needs decision` items block adding this as a dependency.
