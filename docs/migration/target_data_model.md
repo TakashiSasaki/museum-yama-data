@@ -28,7 +28,7 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Status Notes:** Historically existed as the `csv/` legacy directory; generation script needs restoration.
 
 ### 3b. `accepted_mountain_source_rows`
-* **Role:** The normalized and accepted primary dataset for mountain source rows. Blank `No` values from the intermediate CSV are filled with the physical CSV row number to ensure every row has a non-null, unique effective `mountain_no`. Downstream resolved mountain records consume this dataset, not the raw extracted CSV directly.
+* **Role:** The normalized and accepted primary dataset for mountain source rows. Existing non-empty source `No` values must be contiguous from 1. Blank `No` values from the intermediate CSV are filled sequentially starting from `max_existing_no + 1` to ensure every row has a non-null, unique effective `mountain_no`. Downstream resolved mountain records consume this dataset, not the raw extracted CSV directly.
 * **Primary Inputs:** `excel_derived_activity_csv`
 * **Expected Future Layer:** `03_primary`
 * **Tracking System:** DVC dependency candidate
