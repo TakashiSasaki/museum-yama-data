@@ -46,7 +46,7 @@ The first actual DVC dependency tracking (if any) should strictly cover immutabl
 
 Target scope for the first DVC run (as dependencies):
 ```text
-data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx
+data/01_raw/provider_received/yoshitomi/2026-05-18/えひめの山.xlsx
 data/01_raw/provider_received/yoshitomi/2026-05-12/GPXファイル.zip
 gpx/raw/
 yamap/*.md

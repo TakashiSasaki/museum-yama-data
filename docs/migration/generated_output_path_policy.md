@@ -6,10 +6,10 @@ This document defines the recommended policy for placing generated outputs befor
 
 ## Path Classifications
 
-*   **Source Data Paths:** (e.g., `gpx/raw/`, `yamap/*.md`, `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx`)
+*   **Source Data Paths:** (e.g., `gpx/raw/`, `yamap/*.md`, `data/01_raw/provider_received/yoshitomi/2026-05-18/えひめの山.xlsx`)
     *   `data/01_raw/provider_received/` is the minimal new intake path for future provider-received raw source files. Generated outputs must not be placed here.
     *   Remain Git-primary. Do not modify or run `dvc add` on these paths by default.
-    *   Note: `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx` is a retained source snapshot, but `processed/` is a legacy processed-marker archive, not a modern generated-output directory.
+    *   Note: `data/01_raw/provider_received/yoshitomi/2026-05-18/えひめの山.xlsx` is a retained source snapshot, but `processed/` is a legacy processed-marker archive, not a modern generated-output directory.
 *   **Retained Legacy Artifacts:** (e.g., `data/01_raw/provider_received/yoshitomi/2026-05-12/GPXファイル.zip`, `csv/`)
     *   Remain Git-primary. Preserved as historical evidence or for reuse.
     *   Note: `data/01_raw/provider_received/yoshitomi/2026-05-12/GPXファイル.zip` is a handled source archive / original GPX export package, not a generated output.

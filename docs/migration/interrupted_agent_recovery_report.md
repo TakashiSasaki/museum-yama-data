@@ -12,7 +12,7 @@ Inspected the repository state to recover interrupted agent work and restore con
 
 ## Actions Taken
 1. Restored missing dependencies (`npm install` inside `.agents/skills/yama-data-pipeline/`) and ran tests successfully.
-2. Ran the `extract-excel-sheets` command using the real Yoshitomi workbook to generate the missing CSV files in `data/02_intermediate/activity_logs/csv_extracted/yoshitomi/1980-01-01/`.
+2. Ran the `extract-excel-sheets` command using the real Yoshitomi workbook to generate the missing CSV files in `data/02_intermediate/activity_logs/csv_extracted/yoshitomi/2026-05-18/`.
 3. Staged the 5 extracted CSV files to align the repository state with the extraction report.
 4. Confirmed `scripts/build_site.py` runs cleanly.
 
