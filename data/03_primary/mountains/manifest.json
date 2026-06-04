@@ -1,0 +1,50 @@
+{
+  "stage": "normalize_mountain_source_json",
+  "stage_version": "0.1.0",
+  "git_commit": "20b793323be32de7e73d87556a88dfe56d1bc03f",
+  "created_at": "2026-06-04T08:35:36.153Z",
+  "input": {
+    "path": "data/02_intermediate/mountain_source/no_completed/2026-05-18/ehime_mountain_source_rows_no_completed.csv",
+    "sha256": "182e5c723fd288aedcf623243a7564fdcbdae36c4dfb56a7af0aab36ef1cc226",
+    "role": "no_completed_intermediate_mountain_source_rows"
+  },
+  "outputs": [
+    {
+      "path": "data/03_primary/mountains/ehime_mountain_source_rows.json",
+      "sha256": "e3fcddb965e5e643d5e1c173da5d94c71da5c776c409310bd1612a3600b6c8c4",
+      "role": "normalized_primary_mountain_source_rows"
+    }
+  ],
+  "checksum_algorithm": "sha256",
+  "summary": {
+    "input_rows": 531,
+    "output_records": 531,
+    "mountain_no_unique": true,
+    "mountain_no_expected_set": "1..531",
+    "gps_parsed_count": 31,
+    "gps_null_count": 500,
+    "entry_course_true_count": 29,
+    "entry_course_false_count": 502,
+    "difficulty_rank_null_count": 30,
+    "yamap_url_present_count": 501,
+    "yamap_url_null_count": 30,
+    "ignored_source_columns": [
+      "No",
+      "登頂回数",
+      "年",
+      "シカ",
+      "月",
+      "備考",
+      "分県登山ガイド（2008）",
+      "分県登山ガイド（2016）",
+      "四国の1000m峰（2015）",
+      "四国百山",
+      "百名山",
+      "愛媛ゆうゆう山歩き",
+      "gps_raw",
+      "coordinate_source",
+      "coordinate_status"
+    ]
+  },
+  "source_files_modified": false
+}

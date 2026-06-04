@@ -44,7 +44,7 @@
 | `山名` | `愛媛県の山.csv` | `mountain_name` | `accepted_mountain_source_rows` | Source mountain name | migrated as source mountain name | migrated |
 | `市町村・島` | `愛媛県の山.csv` | `municipality` | `accepted_mountain_source_rows` | Source municipality text | migrated as source municipality text | migrated |
 | `標高` | `愛媛県の山.csv` | `elevation` | `accepted_mountain_source_rows` | Source elevation evidence | migrated as source elevation evidence | migrated |
-| Other Columns | `愛媛県の山.csv` | TBD | `accepted_mountain_source_rows` | Unclassified | all other columns not listed above currently need classification | needs decision |
+| Other Columns | 愛媛県の山.csv | N/A | accepted_mountain_source_rows | Discarded | Classified and mapped in [mountain_source_json_field_mapping.md](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/mountain_source_json_field_mapping.md) | resolved |
 
 ## Provenance Findings
 

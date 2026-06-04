@@ -160,6 +160,22 @@ node cli.js complete-mountain-source-no \
   --report docs/migration/mountain_source_no_completion_report.md
 ```
 
+#### 4d. `normalize-mountain-source-json` (Portable)
+Normalizes a No-completed mountain source CSV into structured JSON.
+- Requires `--input` (path to No-completed CSV).
+- Requires `--out` (path to output JSON).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report markdown).
+
+```sh
+node cli.js normalize-mountain-source-json \
+  --input data/02_intermediate/mountain_source/no_completed/2026-05-18/ehime_mountain_source_rows_no_completed.csv \
+  --out data/03_primary/mountains/ehime_mountain_source_rows.json \
+  --manifest data/03_primary/mountains/manifest.json \
+  --report docs/migration/mountain_source_json_normalization_report.md
+```
+
+
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.

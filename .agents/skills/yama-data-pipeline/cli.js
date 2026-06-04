@@ -25,6 +25,8 @@ Commands:
   validate-mountain-sources Validates the current CSV and legacy JSON artifacts against schema invariants.
   validate-provider-received Audits the provider-received raw source intake area and generates a report.
   complete-mountain-source-no Complete blank No values in a mountain source CSV.
+  normalize-mountain-source-json Normalize mountain source CSV to JSON.
+
 
 Global Options:
   --root <path>     Strictly required for legacy commands: merge, annotate, validate, find-missing, verify.
@@ -81,6 +83,12 @@ validate-provider-received Options:
 complete-mountain-source-no Options:
   --input <path>                    Required. Path to extracted mountain source CSV.
   --out <path>                      Required. Path to output completed CSV.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
+
+normalize-mountain-source-json Options:
+  --input <path>                    Required. Path to intermediate CSV.
+  --out <path>                      Required. Path to output normalized JSON.
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
 `);
@@ -220,6 +228,14 @@ async function run() {
         }
     }
 
+    if (command === 'normalize-mountain-source-json') {
+        if (!options.input || !options.out || !options.manifest || !options.report) {
+            log.error(`Error: --input, --out, --manifest, and --report are required for 'normalize-mountain-source-json'.`);
+            printUsageAndExit();
+        }
+    }
+
+
     try {
         switch (command) {
             case 'intake':
@@ -261,6 +277,10 @@ async function run() {
             case 'complete-mountain-source-no':
                 await require('./commands/complete-mountain-source-no')(options);
                 break;
+            case 'normalize-mountain-source-json':
+                await require('./commands/normalize-mountain-source-json')(options);
+                break;
+
             case 'test':
                 require('child_process').execSync('npm test', { stdio: 'inherit', cwd: __dirname });
                 break;

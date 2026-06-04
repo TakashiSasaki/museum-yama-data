@@ -11,6 +11,8 @@ require('./test_intake');
 require('./test_summit_candidate_gpx');
 require('./test_gpx_yamap_date_linking');
 require('./test_complete_mountain_source_no');
+require('./test_normalize_mountain_source_json');
+
 
 // Core pipeline functionality to test
 const validate = require('../commands/validate');
