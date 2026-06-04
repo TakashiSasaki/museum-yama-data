@@ -8,6 +8,7 @@ const assert = require('assert');
 require('./test_summit_detection');
 require('./test_validate_mountain_sources');
 require('./test_intake');
+require('./test_summit_candidate_gpx');
 
 // Core pipeline functionality to test
 const validate = require('../commands/validate');

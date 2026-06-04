@@ -71,7 +71,24 @@ node cli.js detect-candidates --input ../../../gpx/raw --out ../../../docs/migra
 node cli.js detect-candidates --input ./test/fixtures/sample.gpx --out ./tmp/candidates.csv
 ```
 
-#### 3b. `annotate` (Legacy)
+#### 3b. `generate-summit-candidate-gpx` (Portable)
+Generates a valid summit-candidate GPX file for each source GPX file, preserving track coordinates and adding unresolved candidate waypoints.
+- Accepts either a single GPX file or a directory containing GPX files via `--input`.
+- Writes output GPX files to `--out-dir`.
+- Requires `--report` and `--manifest` paths.
+- All-or-nothing atomicity. Target collision checks fail by default.
+- Outputs unresolved candidates only; it does not assign mountain names.
+- Restricts GPX changes to `<metadata>` updates, `<wpt>` additions, and `creator`.
+
+```sh
+node cli.js generate-summit-candidate-gpx \
+  --input "data/01_raw/gpx/2026-05-12" \
+  --out-dir "data/08_reporting/gpx/summit_candidates/2026-05-12" \
+  --report "docs/migration/summit_candidate_gpx_generation_report.md" \
+  --manifest "data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json"
+```
+
+#### 3c. `annotate` (Legacy)
 Detects peaks and annotates tracks with `<wpt>` elements. **Note: This command is legacy because it assigns mountain names and writes annotated GPX. The portable `detect-candidates` command is the preferred modern alternative for detection.**
 - Reads files from `gpx/raw/`.
 - Uses mountain databases in `csv/` to map detected elevations to known peaks.
