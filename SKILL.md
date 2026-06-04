@@ -45,7 +45,7 @@ node .agents/skills/reverse-geocode-points/project_address_vocabularies.js --inp
 
 **Example:**
 ```bash
-node .agents/skills/reverse-geocode-points/project_address_vocabularies.js --input data/02_intermediate/reverse_geocoding/extracted/nominatim --out data/03_primary/reverse_geocoding/derived/address_projection
+node .agents/skills/reverse-geocode-points/project_address_vocabularies.js --input data/02_intermediate/reverse_geocoding/extracted/nominatim --out data/03_primary/municipalities/derived/address_projection
 ```
 
 ## Important Note regarding Nominatim API Data Accuracy
