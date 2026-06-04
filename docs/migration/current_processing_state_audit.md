@@ -18,7 +18,7 @@ This document inventories and verifies the current execution state of the data-p
 * **Status**: `executed_verified`
 * **GPX ZIP source file exists?**: Yes, at `data/01_raw/as_received/2026-05-12/GPXファイル.zip` (9,790,030 bytes).
 * **Extracted GPX output directory exists?**: Yes, at `data/01_raw/gpx/2026-05-12` (historically extracted to `data/01_raw/gpx/yoshitomi/2026-05-12` and relocated to the simplified layout).
-* **Extracted GPX file count**: 312 files.
+* **Extracted GPX file count**: 293 files (after deduplicating 19 suffix copies).
 * **Execution Evidence**: [`yoshitomi_gpx_archive_intake_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/yoshitomi_gpx_archive_intake_report.md)
 
 ### 2. Excel Sheet CSV Extraction (`extract_excel_sheets`)
@@ -37,7 +37,7 @@ This document inventories and verifies the current execution state of the data-p
 * **Status**: `executed_verified`
 * **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/generate-summit-candidate-gpx.js` and registered in `cli.js`.
 * **Output directory exists?**: Yes, at `data/08_reporting/gpx/summit_candidates/2026-05-12/`.
-* **Output GPX file count**: 312 GPX files.
+* **Output GPX file count**: 293 GPX files.
 * **Manifest file exists?**: Yes, at `data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json`.
 * **Report file exists?**: Yes, at `docs/migration/summit_candidate_gpx_generation_report.md`.
 * **Execution Evidence**: [`summit_candidate_gpx_generation_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/summit_candidate_gpx_generation_report.md).

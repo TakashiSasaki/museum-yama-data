@@ -1,8 +1,8 @@
 {
   "stage": "generate_summit_candidate_gpx",
   "stage_version": "0.1.0",
-  "git_commit": "314957d0f8ae6c6ae3f3d41c07e3af3d324cb4bf",
-  "created_at": "2026-06-04T03:16:49.597Z",
+  "git_commit": "b5de3218de2e0612fbd29ed2f474b98d530369d1",
+  "created_at": "2026-06-04T03:29:52.974Z",
   "input_dir": "data/01_raw/gpx/2026-05-12",
   "output_dir": "data/08_reporting/gpx/summit_candidates/2026-05-12",
   "parameters": {
@@ -12,9 +12,9 @@
     "merge_distance": 100
   },
   "summary": {
-    "input_gpx_count": 312,
-    "output_gpx_count": 312,
-    "total_summit_candidates": 533,
+    "input_gpx_count": 293,
+    "output_gpx_count": 293,
+    "total_summit_candidates": 496,
     "zero_candidate_files": 25,
     "failed_files": 0
   },
@@ -390,27 +390,6 @@
       ]
     },
     {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2022-03-20_07_06 (1).gpx",
-      "source_gpx_sha256": "de4ea061049d83ec4662e2431f25c3e41dd4d44ad632d8fb1efd78e1787c2ce5",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2022-03-20_07_06 (1).gpx",
-      "output_gpx_sha256": "fb65826fd191879275d035775345e4e035933433611811e1e8050ed23c673f82",
-      "track_name": "大久保山・八里ヶ峠・中坂山・天神山・室岡山・潮見山",
-      "bounds": {
-        "minlat": 33.8767143,
-        "minlon": 132.7539571,
-        "maxlat": 33.8841169,
-        "maxlon": 132.7734821
-      },
-      "trackpoint_count": 427,
-      "summit_candidate_count": 4,
-      "candidate_ids": [
-        "summit-candidate:2ac6f366bb58a5b3",
-        "summit-candidate:91f51a253c518195",
-        "summit-candidate:212363ab32e627ff",
-        "summit-candidate:0f910a8396fe5ec0"
-      ]
-    },
-    {
       "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2022-03-20_07_06.gpx",
       "source_gpx_sha256": "de4ea061049d83ec4662e2431f25c3e41dd4d44ad632d8fb1efd78e1787c2ce5",
       "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2022-03-20_07_06.gpx",
@@ -526,25 +505,6 @@
       "candidate_ids": [
         "summit-candidate:9a68e7a3a97831ff",
         "summit-candidate:6ba0d3c6b0fb6b96"
-      ]
-    },
-    {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2022-04-15_11_52 (1).gpx",
-      "source_gpx_sha256": "f2c47478875090c98c9a25b750cd0741d1f9223cbc51c96a0c55baa70bef7928",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2022-04-15_11_52 (1).gpx",
-      "output_gpx_sha256": "6b12b51f14282120a3d8e15c647ea2341f8ebda9cd97a7ec625adc3e2ecc05ca",
-      "track_name": "皿ヶ嶺・引地山",
-      "bounds": {
-        "minlat": 33.7153292,
-        "minlon": 132.8739323,
-        "maxlat": 33.7279897,
-        "maxlon": 132.8960806
-      },
-      "trackpoint_count": 431,
-      "summit_candidate_count": 2,
-      "candidate_ids": [
-        "summit-candidate:158a4a0535b96310",
-        "summit-candidate:82aa8356419921c6"
       ]
     },
     {
@@ -847,42 +807,6 @@
         "summit-candidate:124ae25a51aa9a64",
         "summit-candidate:bb644412fd9a132c",
         "summit-candidate:57e8c6cb102c9500"
-      ]
-    },
-    {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2022-05-22_08_09 (1).gpx",
-      "source_gpx_sha256": "0f5d013a1a056390c644adfe6ebd15f1d7ed0e5e2e411fe33bac0c700e09c596",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2022-05-22_08_09 (1).gpx",
-      "output_gpx_sha256": "dc1b232e00bc64505b15a5d9403a5aa0be39220a2c03fba9db234f3861afd126",
-      "track_name": "石鎚山・天狗岳・南尖峰",
-      "bounds": {
-        "minlat": 33.7538007,
-        "minlon": 133.1130703,
-        "maxlat": 33.7706437,
-        "maxlon": 133.1474935
-      },
-      "trackpoint_count": 472,
-      "summit_candidate_count": 1,
-      "candidate_ids": [
-        "summit-candidate:6e5e91f841414caf"
-      ]
-    },
-    {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2022-05-22_08_09 (2).gpx",
-      "source_gpx_sha256": "0f5d013a1a056390c644adfe6ebd15f1d7ed0e5e2e411fe33bac0c700e09c596",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2022-05-22_08_09 (2).gpx",
-      "output_gpx_sha256": "2de8c4996d4f5a41a3673b5ff6ff4a195c67e11e68a4ad509bd02535f9121536",
-      "track_name": "石鎚山・天狗岳・南尖峰",
-      "bounds": {
-        "minlat": 33.7538007,
-        "minlon": 133.1130703,
-        "maxlat": 33.7706437,
-        "maxlon": 133.1474935
-      },
-      "trackpoint_count": 472,
-      "summit_candidate_count": 1,
-      "candidate_ids": [
-        "summit-candidate:9f2b83b7ef103fea"
       ]
     },
     {
@@ -1534,48 +1458,6 @@
       "summit_candidate_count": 1,
       "candidate_ids": [
         "summit-candidate:ff0e7de3b62f5ed8"
-      ]
-    },
-    {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2022-10-08_06_12 (1).gpx",
-      "source_gpx_sha256": "9e416dae129f905732748fcbbf5a3a10d24e13dff4544137bce2cc9239778a1b",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2022-10-08_06_12 (1).gpx",
-      "output_gpx_sha256": "1fc1a98035a17845886b740a879f1c54c67a0dba99a23afbfdd9b19a3eff802b",
-      "track_name": "東山・西赤石山・物住頭・前赤石山・東赤石山・八巻山",
-      "bounds": {
-        "minlat": 33.8465017,
-        "minlon": 133.3253683,
-        "maxlat": 33.8797812,
-        "maxlon": 133.3885769
-      },
-      "trackpoint_count": 902,
-      "summit_candidate_count": 4,
-      "candidate_ids": [
-        "summit-candidate:d8b97d75fedeb793",
-        "summit-candidate:9a13e803e5b3baba",
-        "summit-candidate:8c9078465b9a42ec",
-        "summit-candidate:f213d34566fe8ad6"
-      ]
-    },
-    {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2022-10-08_06_12 (2).gpx",
-      "source_gpx_sha256": "9e416dae129f905732748fcbbf5a3a10d24e13dff4544137bce2cc9239778a1b",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2022-10-08_06_12 (2).gpx",
-      "output_gpx_sha256": "306c15ac12a2fd3e92c9de6e6fd9f01758d0f57e7a8392b2214abd2d94990bcf",
-      "track_name": "東山・西赤石山・物住頭・前赤石山・東赤石山・八巻山",
-      "bounds": {
-        "minlat": 33.8465017,
-        "minlon": 133.3253683,
-        "maxlat": 33.8797812,
-        "maxlon": 133.3885769
-      },
-      "trackpoint_count": 902,
-      "summit_candidate_count": 4,
-      "candidate_ids": [
-        "summit-candidate:c0d7779f9578c51b",
-        "summit-candidate:660b8b18fa3e2283",
-        "summit-candidate:4852721f4237412f",
-        "summit-candidate:a2c26fdd4a4e95dc"
       ]
     },
     {
@@ -2294,24 +2176,6 @@
       ]
     },
     {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2023-01-28_12_19 (1).gpx",
-      "source_gpx_sha256": "da2e18ed2c57b0097f11cd6f12feac24255ae216fbdfd3be82db422bf9b7ba47",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2023-01-28_12_19 (1).gpx",
-      "output_gpx_sha256": "2e2a8767a27c22eed0e007a8af47a6f4277d36efe8719b52b0dccc154f21d7d4",
-      "track_name": "谷田山・金毘羅山",
-      "bounds": {
-        "minlat": 33.8894091,
-        "minlon": 132.750999,
-        "maxlat": 33.8940017,
-        "maxlon": 132.7557112
-      },
-      "trackpoint_count": 109,
-      "summit_candidate_count": 1,
-      "candidate_ids": [
-        "summit-candidate:89e4255e6c6bb23c"
-      ]
-    },
-    {
       "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2023-01-28_12_19.gpx",
       "source_gpx_sha256": "da2e18ed2c57b0097f11cd6f12feac24255ae216fbdfd3be82db422bf9b7ba47",
       "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2023-01-28_12_19.gpx",
@@ -2441,27 +2305,6 @@
       ]
     },
     {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2023-03-29_05_31 (1).gpx",
-      "source_gpx_sha256": "9f7005b19335ca0f59067d82ebf94a5d79d235b218705e6ea52eefe429235d93",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2023-03-29_05_31 (1).gpx",
-      "output_gpx_sha256": "5052a36ecf5ab344c8a1d28f6a276962253b6497c1b06768b121d66eea649e8a",
-      "track_name": "えんとつ山・生子山・犬返・種子川山・西赤石山・物住頭・上兜山・下兜山",
-      "bounds": {
-        "minlat": 33.8755359,
-        "minlon": 133.308552,
-        "maxlat": 33.9250358,
-        "maxlon": 133.3591666
-      },
-      "trackpoint_count": 953,
-      "summit_candidate_count": 4,
-      "candidate_ids": [
-        "summit-candidate:5ffc5006367489b9",
-        "summit-candidate:94299518298ffcfb",
-        "summit-candidate:77fc239ce136062d",
-        "summit-candidate:6412983227130151"
-      ]
-    },
-    {
       "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2023-03-29_05_31.gpx",
       "source_gpx_sha256": "9f7005b19335ca0f59067d82ebf94a5d79d235b218705e6ea52eefe429235d93",
       "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2023-03-29_05_31.gpx",
@@ -2521,24 +2364,6 @@
       ]
     },
     {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2023-04-18_06_58 (1).gpx",
-      "source_gpx_sha256": "e37f6e8627727c8c36f6be2eeb1e1d74fab208d68b9cfdb8b6a2fe3a4b24f22c",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2023-04-18_06_58 (1).gpx",
-      "output_gpx_sha256": "90e55b17b1539ec0386e256618ba0f6ba823a228eba5d124d8e66d7697211374",
-      "track_name": "船野山",
-      "bounds": {
-        "minlat": 33.7954705,
-        "minlon": 132.9446897,
-        "maxlat": 33.8052629,
-        "maxlon": 132.9554353
-      },
-      "trackpoint_count": 208,
-      "summit_candidate_count": 1,
-      "candidate_ids": [
-        "summit-candidate:ef1581333bd18e0b"
-      ]
-    },
-    {
       "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2023-04-18_06_58.gpx",
       "source_gpx_sha256": "e37f6e8627727c8c36f6be2eeb1e1d74fab208d68b9cfdb8b6a2fe3a4b24f22c",
       "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2023-04-18_06_58.gpx",
@@ -2554,42 +2379,6 @@
       "summit_candidate_count": 1,
       "candidate_ids": [
         "summit-candidate:7880c9d0de83468b"
-      ]
-    },
-    {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2023-04-18_10_53 (1).gpx",
-      "source_gpx_sha256": "6da3a37cfd1cbce7fd96ff77122a33385ab3d0ec4ce64e27ecd9a21e3cc1b9c7",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2023-04-18_10_53 (1).gpx",
-      "output_gpx_sha256": "373922ba10c002a74c806437d597312dbe5163dafa401a701599e42197351a18",
-      "track_name": "黒滝山・木久ヶ森",
-      "bounds": {
-        "minlat": 33.8937336,
-        "minlon": 132.992323,
-        "maxlat": 33.9019201,
-        "maxlon": 132.9986177
-      },
-      "trackpoint_count": 166,
-      "summit_candidate_count": 1,
-      "candidate_ids": [
-        "summit-candidate:b1ff8e6c7b88e324"
-      ]
-    },
-    {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2023-04-18_10_53 (2).gpx",
-      "source_gpx_sha256": "6da3a37cfd1cbce7fd96ff77122a33385ab3d0ec4ce64e27ecd9a21e3cc1b9c7",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2023-04-18_10_53 (2).gpx",
-      "output_gpx_sha256": "ea59140684a4d065608956afe6ed7dd16b81e2e1cfb9a0e0118037bd4296192c",
-      "track_name": "黒滝山・木久ヶ森",
-      "bounds": {
-        "minlat": 33.8937336,
-        "minlon": 132.992323,
-        "maxlat": 33.9019201,
-        "maxlon": 132.9986177
-      },
-      "trackpoint_count": 166,
-      "summit_candidate_count": 1,
-      "candidate_ids": [
-        "summit-candidate:5750faf8e1e54af3"
       ]
     },
     {
@@ -3135,24 +2924,6 @@
       ]
     },
     {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2024-03-16_13_58 (1).gpx",
-      "source_gpx_sha256": "7be852091c78875ea1312e925369918d690170fc27b000879dd2752052d0a027",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2024-03-16_13_58 (1).gpx",
-      "output_gpx_sha256": "f6911f1ba0f8427ce4cacc8214aa5f8220e8106adc9be36277c06cbbef634639",
-      "track_name": "斎藤山",
-      "bounds": {
-        "minlat": 33.58993,
-        "minlon": 132.4730081,
-        "maxlat": 33.5948313,
-        "maxlon": 132.483027
-      },
-      "trackpoint_count": 224,
-      "summit_candidate_count": 1,
-      "candidate_ids": [
-        "summit-candidate:949821e13e42aafa"
-      ]
-    },
-    {
       "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2024-03-16_13_58.gpx",
       "source_gpx_sha256": "7be852091c78875ea1312e925369918d690170fc27b000879dd2752052d0a027",
       "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2024-03-16_13_58.gpx",
@@ -3455,24 +3226,6 @@
       ]
     },
     {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2024-06-16_07_27 (1).gpx",
-      "source_gpx_sha256": "c57b6cd7e2021d2ed433b6ab03c53417a066f7c8752372c5eeba3ca48f651fff",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2024-06-16_07_27 (1).gpx",
-      "output_gpx_sha256": "452de3cd316c2253df8a379e7163fba0bcf80221634952ccfe7d24326a397049",
-      "track_name": "薬師山",
-      "bounds": {
-        "minlat": 34.2035605,
-        "minlon": 132.959931,
-        "maxlat": 34.208792,
-        "maxlon": 132.9686491
-      },
-      "trackpoint_count": 141,
-      "summit_candidate_count": 1,
-      "candidate_ids": [
-        "summit-candidate:bb95321c48aa0ba1"
-      ]
-    },
-    {
       "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2024-06-16_07_27.gpx",
       "source_gpx_sha256": "c57b6cd7e2021d2ed433b6ab03c53417a066f7c8752372c5eeba3ca48f651fff",
       "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2024-06-16_07_27.gpx",
@@ -3507,24 +3260,6 @@
       "candidate_ids": [
         "summit-candidate:df6b60d513f5518e",
         "summit-candidate:f2538b7f88e2dd06"
-      ]
-    },
-    {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2024-07-08_11_33 (1).gpx",
-      "source_gpx_sha256": "d758916561121b9c64b8086b53d7a7b9cf137816c17451fe2285a97641cbb856",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2024-07-08_11_33 (1).gpx",
-      "output_gpx_sha256": "76058f81ec8b17b7e42419ddc341e824773c762f64a2116466c73da1b24b9c31",
-      "track_name": "宅並山",
-      "bounds": {
-        "minlat": 33.919395,
-        "minlon": 132.7657456,
-        "maxlat": 33.9232144,
-        "maxlon": 132.7681738
-      },
-      "trackpoint_count": 68,
-      "summit_candidate_count": 1,
-      "candidate_ids": [
-        "summit-candidate:fbae9fd6752ccf04"
       ]
     },
     {
@@ -3755,28 +3490,6 @@
         "summit-candidate:f12898f5821b63b8",
         "summit-candidate:23316af255d30882",
         "summit-candidate:0bd3d051cdb972fd"
-      ]
-    },
-    {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2024-12-15_07_21 (1).gpx",
-      "source_gpx_sha256": "b034eb75f6bf23af8ca4edbeb0df9438174c963dff021ac0f137756adfb8d703",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2024-12-15_07_21 (1).gpx",
-      "output_gpx_sha256": "c5a5e1301ff8a46efc8c64c4c79cd970930b24a1c2f505229b45d9cc8d58519a",
-      "track_name": "陣が森・岩が森・スクモ塚・高萩山・長者森",
-      "bounds": {
-        "minlat": 33.9888699,
-        "minlon": 132.8339632,
-        "maxlat": 34.0088044,
-        "maxlon": 132.8893484
-      },
-      "trackpoint_count": 824,
-      "summit_candidate_count": 5,
-      "candidate_ids": [
-        "summit-candidate:911f3e26f80304ce",
-        "summit-candidate:e51b6c8dda5b781c",
-        "summit-candidate:d01314c9ccc3ff50",
-        "summit-candidate:48d514ead068bcfa",
-        "summit-candidate:3b5ffa3d4ad23b71"
       ]
     },
     {
@@ -4423,24 +4136,6 @@
       ]
     },
     {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2025-03-30_08_20 (1).gpx",
-      "source_gpx_sha256": "ecc867ef9d9b09d9504d214ea07c0fcb0f3d86adcd127d8c7cbc55ee017dc1ec",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2025-03-30_08_20 (1).gpx",
-      "output_gpx_sha256": "e9bfa0923f67d6a104013a394a1596526a1cc34bb34cfad4aac493a2baa700bc",
-      "track_name": "岳山",
-      "bounds": {
-        "minlat": 33.454058,
-        "minlon": 132.7229659,
-        "maxlat": 33.4554559,
-        "maxlon": 132.7258045
-      },
-      "trackpoint_count": 53,
-      "summit_candidate_count": 1,
-      "candidate_ids": [
-        "summit-candidate:2750a95837636800"
-      ]
-    },
-    {
       "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2025-03-30_08_20.gpx",
       "source_gpx_sha256": "ecc867ef9d9b09d9504d214ea07c0fcb0f3d86adcd127d8c7cbc55ee017dc1ec",
       "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2025-03-30_08_20.gpx",
@@ -4612,24 +4307,6 @@
         "summit-candidate:e93bba1998d4efb5",
         "summit-candidate:53bf856dccad5eab",
         "summit-candidate:8326f30918c16cbe"
-      ]
-    },
-    {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2025-06-21_08_53 (1).gpx",
-      "source_gpx_sha256": "ab62299bb78f1c0b0f389b73bfbf4564e2f8278c63410752d39ca42b1308157f",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2025-06-21_08_53 (1).gpx",
-      "output_gpx_sha256": "92d1c02d662eedf368836e631dd84dbc09afc74596b263342278081eaf166fb2",
-      "track_name": "貝渚山・水なし山",
-      "bounds": {
-        "minlat": 33.5337605,
-        "minlon": 132.9170058,
-        "maxlat": 33.5543863,
-        "maxlon": 132.9243329
-      },
-      "trackpoint_count": 270,
-      "summit_candidate_count": 1,
-      "candidate_ids": [
-        "summit-candidate:09b2d5845080a4df"
       ]
     },
     {
@@ -5279,24 +4956,6 @@
       ]
     },
     {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2026-02-14_08_22 (1).gpx",
-      "source_gpx_sha256": "67c3f50a160f55e3de82393e46b78c75dac87040f27d0a1ed3b1ce01fa70c17d",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2026-02-14_08_22 (1).gpx",
-      "output_gpx_sha256": "49256d7e3c751f60543ed1a303239cae0e3865ebee42d292492abcab7b85add7",
-      "track_name": "大畑山",
-      "bounds": {
-        "minlat": 33.4147371,
-        "minlon": 132.4779853,
-        "maxlat": 33.4314899,
-        "maxlon": 132.4841491
-      },
-      "trackpoint_count": 295,
-      "summit_candidate_count": 1,
-      "candidate_ids": [
-        "summit-candidate:9447d14404b990b9"
-      ]
-    },
-    {
       "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2026-02-14_08_22.gpx",
       "source_gpx_sha256": "67c3f50a160f55e3de82393e46b78c75dac87040f27d0a1ed3b1ce01fa70c17d",
       "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2026-02-14_08_22.gpx",
@@ -5791,25 +5450,6 @@
         "summit-candidate:53a6401abf71c488",
         "summit-candidate:c9e357d000632346",
         "summit-candidate:7a5ca8d918f43720"
-      ]
-    },
-    {
-      "source_gpx_path": "data/01_raw/gpx/2026-05-12/yamap_2026-05-06_07_28 (1).gpx",
-      "source_gpx_sha256": "03b44f076547f66810180494d0e091a07c4f1b8b2b550382d9f9aaed837f3f8c",
-      "output_gpx_path": "data/08_reporting/gpx/summit_candidates/2026-05-12/yamap_2026-05-06_07_28 (1).gpx",
-      "output_gpx_sha256": "1948537bbace5fee139cf35eb7883cf70828264349beda76493aa738cc4e85b8",
-      "track_name": "丸山・ちち山・笹ヶ峰",
-      "bounds": {
-        "minlat": 33.828063,
-        "minlon": 133.2581172,
-        "maxlat": 33.8406439,
-        "maxlon": 133.2843385
-      },
-      "trackpoint_count": 405,
-      "summit_candidate_count": 2,
-      "candidate_ids": [
-        "summit-candidate:757a3da55c264c23",
-        "summit-candidate:4a274867dee7c5e9"
       ]
     },
     {
