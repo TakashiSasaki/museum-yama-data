@@ -100,7 +100,7 @@ module.exports = async function (options) {
 
     if (result.status === 'failed') {
         log.error('Excel extraction failed.');
-        process.exit(1);
+        throw new Error("Excel extraction failed.");
     } else {
         log.info('Excel extraction completed successfully.');
     }
