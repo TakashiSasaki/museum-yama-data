@@ -157,7 +157,7 @@ Extracts detailed activity metadata and comments from YAMAP activity pages.
 - Captures exact dates, statistics (distance, time, elevation), and activity descriptions.
 - Leverages authenticated browser sessions to access diary entries and wildlife observations.
 - Handles page states such as Private (403) or Deleted (404) gracefully.
-- Saves output to individual Markdown files in `yamap/`.
+- Saves output to individual Markdown files in `data/01_raw/yamap_markdown/`.
 
 #### How to use
 Ask the agent:
