@@ -35,9 +35,11 @@
 
 | source field/column | source file/table | target field | target dataset/model | role in target | notes / constraints | mapping status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `No` | `愛媛県の山.csv` | `csv_no` | `accepted_mountain_source_rows` | Original ID | migrated as `csv_no`; used directly to derive `mountain_no` when non-empty; blank values are not preserved as blank `mountain_no` in accepted output | migrated |
-| CSV physical row number | `愛媛県の山.csv` | `source_row_no` | `accepted_mountain_source_rows` | Provenance | derived only; used to derive `mountain_no` for blank-No rows; preserved as `source_row_no` | derived_only |
-| effective `mountain_no` | (derived) | `mountain_no` | `accepted_mountain_source_rows` | Derived Accepted Key | non-null integer required for every accepted row; uniqueness required; duplicates fatal | derived/migrated |
+| `No` | `愛媛県の山.csv` | `csv_no` | `accepted_mountain_source_rows` | Original ID | migrated as `csv_no`; used directly as `mountain_no` when the non-empty `No` sequence validates; blank source `No` values are not preserved as blank effective `mountain_no` | migrated |
+| CSV physical row number | `愛媛県の山.csv` | `source_row_no` | `accepted_mountain_source_rows` | Provenance | derived only / provenance; preserved as `source_row_no`; no longer used as the `mountain_no` fill value | derived_only |
+| `max_existing_no` | (derived) | `max_existing_no` | `accepted_mountain_source_rows` (processing metadata) | Fill sequence base | derived only; used to determine the first sequence-filled provisional `mountain_no` | derived_only |
+| sequence-filled `mountain_no` | (derived) | `mountain_no` | `accepted_mountain_source_rows` | Derived accepted key for blank `No` rows | generated in `source_row_no` order starting at `max_existing_no + 1` | derived |
+| effective `mountain_no` | (derived) | `mountain_no` | `accepted_mountain_source_rows` | Accepted key | non-null integer required for every accepted row; uniqueness required; current expected set is `1..531` | derived/migrated |
 | `GPS` | `愛媛県の山.csv` | `gps_raw` | `accepted_mountain_source_rows` | Raw coordinate evidence | migrated as `gps_raw` raw coordinate evidence; parsed latitude/longitude are future derived fields; original value must be preserved | migrated |
 | `山名` | `愛媛県の山.csv` | `mountain_name` | `accepted_mountain_source_rows` | Source mountain name | migrated as source mountain name | migrated |
 | `市町村・島` | `愛媛県の山.csv` | `municipality` | `accepted_mountain_source_rows` | Source municipality text | migrated as source municipality text | migrated |

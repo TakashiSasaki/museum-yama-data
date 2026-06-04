@@ -100,10 +100,10 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Primary Inputs:** `summit_identity_candidates`, `mountain_summit_coordinates`
 * **Expected Future Layer:** `03_primary`
 * **Tracking System:** DVC dependency candidate
-* **Primary Key:** `mountain_no`. This is a unified effective key. For rows with non-empty CSV `No`, it is the integer value of `No` (`1..501`). For rows with blank CSV `No`, it is the physical CSV row number (expected to be `503..532`). The key set is expected to be `1..501` plus `503..532`, with `502` absent/reserved.
+* **Primary Key:** `mountain_no`. This is a unified effective key after acceptance/normalization. Existing non-empty source `No` values must be contiguous from `1` (currently `1..501`). Blank source `No` rows are filled sequentially after `max_existing_no` (currently resulting in `502..531`). The final expected key set is `1..531`. `source_row_no` is preserved as provenance, not used as the fill value.
 * **Required Metadata Fields:** `mountain_no_source` and `mountain_no_status` are required.
 * **Important Note:** Unresolved candidates and resolved mountains are distinct entities. The existing `museum-yama-web/mountains.json` is a provisional legacy web cache and does not serve as this final semantic model.
-* **Cardinality Expectation:** The target source set is all 531 CSV rows. The 30 blank-"No" rows receive provisional row-number-derived `mountain_no` values and are included.
+* **Cardinality Expectation:** The target source set is all 531 CSV rows. The 30 blank-"No" rows receive provisional sequence-filled `mountain_no` values and are included.
 * **Coordinate Evidence:** Provisional rows already have CSV lat/lon data in the `GPS` column, and these coordinates must be preserved as evidence.
 
 ### 13b. `mountain_summit_coordinates`
@@ -142,7 +142,7 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Integrity Validation:** Validation reports should actively verify key constraints. Specifically, checks should ensure:
   - target record count is 531
   - all records contain a `mountain_no`
-  - all `mountain_no` values are unique and cover the expected `1..501` plus `503..532` range
+  - all `mountain_no` values are unique and cover the expected `1..531` range
   - `mountain_no_source` and `mountain_no_status` are populated
   - same-name records are not improperly merged solely by name
 * **Cardinality Reporting:** Report discrepancy categories (e.g., `missing_source_row`, `duplicate_or_merged_record`).
