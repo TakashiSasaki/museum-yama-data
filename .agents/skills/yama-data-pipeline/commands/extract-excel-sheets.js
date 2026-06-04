@@ -100,7 +100,15 @@ module.exports = async function (options) {
 
     if (result.status === 'failed') {
         log.error('Excel extraction failed.');
-        process.exit(1);
+        let errorMsg = "Excel extraction failed.";
+        if (result.errors && result.errors.length > 0) {
+            const summary = result.errors.slice(0, 3).join('; ');
+            errorMsg += ` Reasons: ${summary}${result.errors.length > 3 ? '...' : ''}.`;
+        }
+        if (options.report) {
+            errorMsg += ` See report at ${options.report} for details.`;
+        }
+        throw new Error(errorMsg);
     } else {
         log.info('Excel extraction completed successfully.');
     }
