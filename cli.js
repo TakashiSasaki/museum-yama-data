@@ -21,6 +21,7 @@ Commands:
   test              Run the skill test suite.
   detect-candidates Detect summits without assigning names, output to CSV.
   generate-summit-candidate-gpx Generate a valid summit-candidate GPX file for each source GPX file.
+  link-gpx-yamap-by-date Link GPX tracks to YAMAP MD files using timezone-aware datetimes.
   validate-mountain-sources Validates the current CSV and legacy JSON artifacts against schema invariants.
   validate-provider-received Audits the provider-received raw source intake area and generates a report.
 
@@ -54,6 +55,14 @@ generate-summit-candidate-gpx Options:
   --peak-radius <num>       Optional. Radius for local maxima detection (default 10).
   --min-prominence <num>    Optional. Minimum prominence in meters (default 30).
   --merge-distance <num>    Optional. Distance in meters to merge nearby peaks (default 100).
+
+link-gpx-yamap-by-date Options:
+  --gpx-dir <path>          Required. Path to directory containing source GPX files.
+  --yamap-dir <path>        Required. Path to directory containing YAMAP markdown files.
+  --out-dir <path>          Required. Path to candidate links output directory.
+  --intermediate-dir <path> Required. Path to intermediate activity linking directory.
+  --review-dir <path>       Required. Path to output review queue directory.
+  --report <path>           Required. Path to output date linking report file.
 
 validate-mountain-sources Options:
   --csv <path>                      Required. Path to source CSV file.
@@ -115,6 +124,14 @@ function parseArgs(argsArray) {
             options.webMountains = argsArray[++i];
         } else if (arg === '--manifest-dir' && i + 1 < argsArray.length) {
             options.manifestDir = argsArray[++i];
+        } else if (arg === '--gpx-dir' && i + 1 < argsArray.length) {
+            options.gpxDir = argsArray[++i];
+        } else if (arg === '--yamap-dir' && i + 1 < argsArray.length) {
+            options.yamapDir = argsArray[++i];
+        } else if (arg === '--intermediate-dir' && i + 1 < argsArray.length) {
+            options.intermediateDir = argsArray[++i];
+        } else if (arg === '--review-dir' && i + 1 < argsArray.length) {
+            options.reviewDir = argsArray[++i];
         }
     }
     return options;
@@ -150,6 +167,13 @@ async function run() {
     if (command === 'generate-summit-candidate-gpx') {
         if (!options.input || !options.outDir || !options.report || !options.manifest) {
             log.error(`Error: --input, --out-dir, --report, and --manifest are required for 'generate-summit-candidate-gpx'.`);
+            printUsageAndExit();
+        }
+    }
+
+    if (command === 'link-gpx-yamap-by-date') {
+        if (!options.gpxDir || !options.yamapDir || !options.outDir || !options.intermediateDir || !options.reviewDir || !options.report) {
+            log.error(`Error: --gpx-dir, --yamap-dir, --out-dir, --intermediate-dir, --review-dir, and --report are required for 'link-gpx-yamap-by-date'.`);
             printUsageAndExit();
         }
     }
@@ -210,6 +234,9 @@ async function run() {
                 break;
             case 'generate-summit-candidate-gpx':
                 await require('./commands/generate-summit-candidate-gpx')(options);
+                break;
+            case 'link-gpx-yamap-by-date':
+                await require('./commands/link-gpx-yamap-by-date')(options);
                 break;
             case 'validate-mountain-sources':
                 await require('./commands/validate-mountain-sources')(options);

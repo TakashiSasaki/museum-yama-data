@@ -9,6 +9,7 @@ require('./test_summit_detection');
 require('./test_validate_mountain_sources');
 require('./test_intake');
 require('./test_summit_candidate_gpx');
+require('./test_gpx_yamap_date_linking');
 
 // Core pipeline functionality to test
 const validate = require('../commands/validate');
