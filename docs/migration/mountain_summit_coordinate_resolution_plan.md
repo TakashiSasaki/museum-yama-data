@@ -12,39 +12,43 @@ This document outlines the staged future workflow for resolving summit coordinat
 
 ## Staged Workflow
 
-### Stage 1: Normalize all CSV mountain source rows
-*   **Description:** Process the full set of 531 mountain rows from the CSV, assigning effective `mountain_no` values based on the numbering policy.
+### Stage 1: Excel sheet extraction
+*   **Description:** The mechanical extraction from `えひめの山.xlsx` produces an extracted intermediate CSV (`愛媛県の山.csv`). The extracted CSV retains original values, including blank `No` values.
+*   **Expected Output:** `data/02_intermediate/activity_logs/csv_extracted/.../愛媛県の山.csv`
+
+### Stage 2: Mountain source acceptance and normalization
+*   **Description:** Process the full set of 531 extracted mountain rows from the intermediate CSV. This step fills blank `No` values using the 1-based physical CSV row number to ensure every row has a non-null, unique effective `mountain_no`. It validates this uniqueness and preserves the CSV `GPS` column as raw coordinate evidence.
 *   **Expected Output:** `data/03_primary/mountains/ehime_mountain_source_rows.jsonl`
 
-### Stage 2: Preserve CSV-provided coordinates
-*   **Description:** Extract and preserve the raw coordinate evidence from the CSV `GPS` column, mapping it to the newly assigned effective `mountain_no`.
+### Stage 3: Preserve CSV-provided coordinates
+*   **Description:** Extract and preserve the raw coordinate evidence from the CSV `GPS` column (mapped during acceptance) to prepare for candidate validation.
 *   **Expected Output:** `data/03_primary/mountain_summit_coordinates/mountain_summit_coordinates_initial_from_csv.jsonl` (or equivalent future path)
 
-### Stage 3: Prepare GPX-derived summit candidates
+### Stage 4: Prepare GPX-derived summit candidates
 *   **Description:** Run peak detection algorithms on GPX tracks to generate summit candidates.
 *   **Input:** `data/01_raw/gpx/...`
 *   **Expected Output:** Summit candidate GPX / summit candidate feature dataset
 
-### Stage 4: Link GPX/YAMAP/activity evidence
+### Stage 5: Link GPX/YAMAP/activity evidence
 *   **Description:** Establish canonical links between GPX tracks and YAMAP activity records based on contextual evidence.
 *   **Input:** GPX-to-YAMAP activity candidate links / canonical links
 
-### Stage 5: Generate mountain-to-summit-candidate candidate links
+### Stage 6: Generate mountain-to-summit-candidate candidate links
 *   **Description:** Cross-reference mountain source records with detected summit candidates, utilizing activity links and other metadata to propose candidate matches.
 *   **Expected Output:** `data/04_feature/mountain_summit_candidate_links/.../candidate_links.jsonl`
 
-### Stage 6: Compare CSV coordinates against GPX summit candidates
+### Stage 7: Compare CSV coordinates against GPX summit candidates
 *   **Description:** Validate the initial CSV-provided coordinates against the geometry of matched GPX summit candidates to assess accuracy and consistency.
 *   **Expected Output:** `data/04_feature/mountain_coordinate_validation/.../csv_vs_gpx_candidate_distances.jsonl`
 
-### Stage 7: Human review
+### Stage 8: Human review
 *   **Description:** Present validation results and low-confidence candidate links for explicit human review and resolution.
 *   **Expected Output:** `data/08_reporting/mountain_summit_coordinate_review/.../review_queue.csv`
 
-### Stage 8: Produce accepted summit coordinate table
+### Stage 9: Produce accepted summit coordinate table
 *   **Description:** Compile the final, resolved summit coordinates based on validated CSV data, confirmed GPX candidates, and explicit human decisions.
 *   **Expected Output:** `data/03_primary/mountain_summit_coordinates/mountain_summit_coordinates.jsonl`
 
-### Stage 9: Reporting/export
+### Stage 10: Reporting/export
 *   **Description:** Generate final reporting artifacts, such as waypoints for maps or datasets for web applications.
 *   **Expected Output:** `data/08_reporting/gpx/mountain_waypoints/...`

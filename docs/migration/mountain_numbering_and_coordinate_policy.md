@@ -6,8 +6,16 @@ This document establishes the authoritative policy for mountain numbering and co
 ## Supersession Note
 The previous policy, which stated that only the 501 rows with non-empty `No` values were in the authoritative source set and that the 30 blank-`No` rows were excluded, is completely superseded.
 
-## Data Scope
-All 531 rows in the primary source file `愛媛県の山.csv` are now formally in scope for mountain-source normalization and summit-coordinate resolution.
+## Data Scope and Pipeline Stages
+The pipeline explicitly separates the mechanical extraction of source data from the semantic acceptance of mountain entities.
+
+### Stage A: Excel Sheet Extraction
+The mechanical extraction from `えひめの山.xlsx` produces an extracted intermediate CSV (`愛媛県の山.csv`). The extracted CSV remains unchanged and represents the source data exactly as provided. Blank `No` values remain as-is in this intermediate output.
+
+### Stage B: Mountain Source Acceptance and Normalization
+This stage consumes the extracted CSV and produces an accepted/normalized dataset. The extracted CSV may contain blank `No` values. The accepted mountain-source dataset must not. During mountain source acceptance, blank `No` values are filled using the 1-based physical CSV row number, counting the header row as row 1. After this fill operation, every accepted row must have a non-null integer `mountain_no`. The complete `mountain_no` set must be unique. Any duplicate `mountain_no` after filling is a fatal acceptance error.
+
+All 531 rows in the primary source file `愛媛県の山.csv` are formally in scope for this mountain-source acceptance and subsequent downstream summit-coordinate resolution. Downstream processing MUST use the accepted/normalized dataset, not raw extracted CSV rows with blank effective IDs.
 
 ## Field Definitions and Effective Keys
 
