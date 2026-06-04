@@ -17,7 +17,7 @@ This document outlines the staged future workflow for resolving summit coordinat
 *   **Expected Output:** `data/02_intermediate/activity_logs/csv_extracted/.../愛媛県の山.csv`
 
 ### Stage 2: Mountain source acceptance and normalization
-*   **Description:** Process the full set of 531 extracted mountain rows from the intermediate CSV. This step fills blank `No` values using the 1-based physical CSV row number to ensure every row has a non-null, unique effective `mountain_no`. It validates this uniqueness and preserves the CSV `GPS` column as raw coordinate evidence.
+*   **Description:** Process the full set of 531 extracted mountain rows from the intermediate CSV. This step validates that existing non-empty `No` values are contiguous from 1. It then fills blank `No` values sequentially starting from `max_existing_no + 1` to ensure every row has a non-null, unique effective `mountain_no`. It validates final `mountain_no` uniqueness, preserves `source_row_no`, and preserves the CSV `GPS` column as raw coordinate evidence.
 *   **Expected Output:** `data/03_primary/mountains/ehime_mountain_source_rows.jsonl`
 
 ### Stage 3: Preserve CSV-provided coordinates

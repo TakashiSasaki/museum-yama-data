@@ -17,14 +17,14 @@ This document provides a read-only audit of the existing legacy resolved-mountai
 **Crucial Invariant**: 531 legacy JSON items does **not** mean 531 authoritative records.
 - Under the previous policy, the authoritative source set was exactly 501 records with a non-empty (integer) CSV `No`. The current policy accepts all 531 rows.
 - In the inspected `processed/*.json` files, exactly 501 records have an integer `No` field, and 30 records have a `null` `No` field.
-- The 30 blank/`null`-"No" records were historically excluded, but under the new policy they are included and assigned provisional IDs using the physical CSV row number.
+- The 30 blank/`null`-"No" records were historically excluded, but under the new policy they are included and assigned provisional IDs by sequentially filling from `max_existing_no + 1`. (The intermediate historical policy using physical CSV row numbers for fill values is also superseded).
 - **`museum-yama-web/mountains.json`**: JSON Object (Mapping) keyed by mountain name (523 keys).
 
 ## Field Inventory (Legacy vs. Future)
 The legacy JSON files use the field name `No` as the identifier (sourced from the CSV).
 - **Equivalent to `mountain_no`?**: None of the files contain a field literally named `mountain_no`. They use `No`.
 - **Primary Key Invariant**: The future resolved mountain JSON must use `mountain_no` as the authoritative primary key. `mountain_no` must be a unique non-null integer.
-- The legacy `No` field provides the schema source for the future `mountain_no` field (for the 1..501 records). Blank `No` records (503..532) receive provisional numbers. This is a field adaptation, not a randomly generated synthetic ID.
+- The legacy `No` field provides the schema source for the future `mountain_no` field (for the 1..501 records). Blank `No` records receive provisional numbers via sequence filling. This is a field adaptation, not a randomly generated synthetic ID.
 - Mountain name, municipality, coordinates, elevation, or row index must not become the primary key.
 - `museum-yama-web/mountains.json` uses the mountain name as the key. Because of this, it is provisional legacy cache/evidence only and must not define the future primary key design.
 
@@ -34,4 +34,4 @@ The legacy JSON files use the field name `No` as the identifier (sourced from th
 - **Path Policy**: The legacy data contents under `processed/` are read-only schema/evidence references. The `processed/` directory is strictly forbidden as a destination for new generated outputs.
 
 ## Known Blockers & Recommendations
-- **Future Task Recommendation**: When implementing the future pipeline, ensure the output shape enforces `mountain_no` (derived from non-empty `No` values and physical row numbers) and strictly outputs all 531 validated records. Choose a deliberate, non-legacy filename and store it in an appropriate `artifacts/generated/` subdirectory (once explicitly authorized to create it).
+- **Future Task Recommendation**: When implementing the future pipeline, ensure the output shape enforces `mountain_no` (derived from non-empty `No` values and sequential fill for blank rows) and strictly outputs all 531 validated records. Choose a deliberate, non-legacy filename and store it in an appropriate `artifacts/generated/` subdirectory (once explicitly authorized to create it).

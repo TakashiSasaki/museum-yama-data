@@ -5,10 +5,10 @@ This document records the user-confirmed data-integrity invariants for the final
 ## Primary Key and Target Output Cardinality
 
 The unified effective primary key for resolved mountain records is **`mountain_no`**.
-- For rows with a non-empty CSV `No` column, `mountain_no` is the integer value of `No`.
-- For rows with a blank CSV `No` column, `mountain_no` is the sequence-filled value after `max_existing_no`.
+- For rows with a non-empty CSV `No` column, `mountain_no` is the integer value of `No` (must form a contiguous sequence from 1).
+- For rows with a blank CSV `No` column, `mountain_no` is determined by sequential fill starting from `max_existing_no + 1`.
 - Each mountain record must have a unique non-null integer `mountain_no`.
-- The expected effective key set is currently `1..531` (`502` is present, and there are no gaps).
+- The expected effective key set is `1..531`. (The historical physical CSV row number logic and 502 absence rule are superseded).
 - The fields `mountain_no_source` and `mountain_no_status` are required.
 - Name, municipality, GPS coordinates, elevation, or arbitrary zero-based row indices must not be used as the primary key. (These fields may be used as evidence, labels, matching hints, or provenance).
 

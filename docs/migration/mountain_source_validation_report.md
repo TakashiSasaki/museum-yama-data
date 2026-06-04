@@ -1,7 +1,7 @@
 # Mountain Source Validation Report
 
 > **Supersession note:**
-> This report records a historical validation run under the previous 501-only invariant. That invariant has been superseded for future target modeling. The current policy treats all 531 rows in `愛媛県の山.csv` as in scope, assigns row-number-derived provisional `mountain_no` values to the 30 blank-`No` rows, and preserves the `GPS` column as CSV-provided coordinate evidence. See `docs/migration/mountain_numbering_and_coordinate_policy.md` and `docs/migration/mountain_source_full_rows_validation_plan.md`. Future validation must additionally verify that the acceptance/normalization step fills blank `No` values and fails on duplicate effective `mountain_no` values.
+> This report records a historical validation run under the previous 501-only invariant. That invariant has been superseded for future target modeling. The subsequent policy that used physical CSV row numbers for fill values is also superseded. Future validation must verify the latest sequence-fill acceptance rule: existing non-empty `No` values must be contiguous from 1, blank source `No` rows are filled sequentially after max existing `No`, and duplicate/non-contiguous effective values are fatal. See `docs/migration/mountain_numbering_and_coordinate_policy.md` and `docs/migration/mountain_source_full_rows_validation_plan.md`.
 
 ## Summary
 - **overall_status**: PASS_WITH_WARNINGS
