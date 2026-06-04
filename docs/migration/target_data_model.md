@@ -21,11 +21,18 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Tracking System:** DVC dependency candidate
 
 ### 3. `excel_derived_activity_csv`
-* **Role:** Extracted representations of the Excel workbook logs, used for intermediate tabular processing.
+* **Role:** Extracted representations of the Excel workbook logs, used for intermediate tabular processing. This is an extracted intermediate CSV, and blank `No` values may still exist. It is not used directly for final targets; it is processed into `accepted_mountain_source_rows`.
 * **Primary Inputs:** `raw_activity_workbook`
 * **Expected Future Layer:** `02_intermediate`
 * **Tracking System:** DVC dependency candidate
 * **Status Notes:** Historically existed as the `csv/` legacy directory; generation script needs restoration.
+
+### 3b. `accepted_mountain_source_rows`
+* **Role:** The normalized and accepted primary dataset for mountain source rows. Blank `No` values from the intermediate CSV are filled with the physical CSV row number to ensure every row has a non-null, unique effective `mountain_no`. Downstream resolved mountain records consume this dataset, not the raw extracted CSV directly.
+* **Primary Inputs:** `excel_derived_activity_csv`
+* **Expected Future Layer:** `03_primary`
+* **Tracking System:** DVC dependency candidate
+* **Status Notes:** This is the strictly validated output of the mountain source acceptance and normalization stage. All coordinates from the `GPS` column are preserved as coordinate evidence.
 
 ### 4. `raw_yamap_activity_metadata`
 * **Role:** Original Markdown activity records scraped/fetched from YAMAP.

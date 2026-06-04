@@ -17,7 +17,7 @@ This document provides a read-only audit of the existing legacy resolved-mountai
 **Crucial Invariant**: 531 legacy JSON items does **not** mean 531 authoritative records.
 - The current authoritative source set is exactly 501 records with a non-empty (integer) CSV `No`.
 - In the inspected `processed/*.json` files, exactly 501 records have an integer `No` field, and 30 records have a `null` `No` field.
-- The 30 blank/`null`-"No" records are explicitly excluded from the authoritative resolved mountain dataset. Any future output derived from these legacy JSON schemas must filter or exclude these blank-"No" records, unless a future explicit decision changes this rule.
+- The 30 blank/`null`-"No" records were historically excluded, but under the new policy they are included and assigned provisional IDs using the physical CSV row number.
 - **`museum-yama-web/mountains.json`**: JSON Object (Mapping) keyed by mountain name (523 keys).
 
 ## Field Inventory (Legacy vs. Future)

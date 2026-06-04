@@ -15,5 +15,5 @@ A simple Python script using the standard `csv` library was used to iterate over
 
 ## Conclusion / Status
 *   **Status:** `confirmed_501`
-*   **Notes:** The total data-row count (excluding the header) is 531. However, exactly 30 records have a blank `No` value. According to user policy, these 30 blank-"No" records are classified as `excluded_from_authoritative_source` (or `non_authoritative_blank_no_record`) and are preserved but placed out of scope for the authoritative dataset.
+*   **Notes:** The total data-row count (excluding the header) is 531. However, exactly 30 records have a blank `No` value. According to historical policy, these 30 blank-"No" records were excluded, but under the new policy all 531 rows are in scope and blank values are filled with their physical CSV row number.
 *   **Invariant:** The final `mountains-merged.json` should conceptually contain the 501 top-level mountain records. Same-name mountains must not be inappropriately merged to artificially reduce this count.

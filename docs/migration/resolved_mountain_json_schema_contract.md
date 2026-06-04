@@ -31,7 +31,7 @@ Every field in the future resolved mountain JSON must be categorized into one of
 
 | Legacy Source Field / Concept | Future Target Field | Category | Notes |
 | :--- | :--- | :--- | :--- |
-| `No` (integer) | `mountain_no` | `required_authoritative_fields` | Unique integer, expected `1..501`. |
+| `No` (integer/derived) | `mountain_no` | `required_authoritative_fields` | Unique integer, expected `1..501` and `503..532`. |
 | `山名` / name-like | `mountain_name` or `legacy_name` | `legacy_field_mappings` | Must not be used as key. |
 | `市町村・島` / municipality-like | `municipality_label` or `location_label` | `evidence_fields` | Must not be used as key. |
 | `GPS` / coordinate-like | `gps_raw`, `csv_lat`, `csv_lon` | `evidence_fields` | Migrated as raw CSV coordinate evidence. Future parsing. Not key. |
