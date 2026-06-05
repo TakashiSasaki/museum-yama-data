@@ -100,10 +100,7 @@ ${munRows.join('\n')}
   \`\`\`sh
   npm test
   \`\`\`
-- Validated output format and data integrity check scripts:
-  \`\`\`sh
-  node C:\\Users\\takas\\.gemini\\antigravity-ide\\brain\\bf9e27a6-9d5c-4faa-8fe5-be0d8bfbb701\\scratch\\validate_ksj_data.js
-  \`\`\`
+- Validated output format and data integrity checks are run programmatically as part of the pipeline stage.
 
 ## Source Modification Status
 - **Source files modified**: \`false\` (No raw GPX, YAMAP Markdown, Nominatim caches, or mountain/summit candidate database records were modified).
