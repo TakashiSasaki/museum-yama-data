@@ -215,6 +215,36 @@ This document inventories and verifies the current execution state of the data-p
 ---
 
 
+### 15. KSJ N03 Ehime Municipality Point Lookup
+
+* **Status**: `executed_verified`
+* **Subcommand(s)**:
+  - `lookup-ehime-municipality-by-point` — implemented at `.agents/skills/yama-data-pipeline/commands/lookup-ehime-municipality-by-point.js`
+  - `lookup-ehime-municipalities-for-points` — implemented at `.agents/skills/yama-data-pipeline/commands/lookup-ehime-municipalities-for-points.js`
+  - Library: `.agents/skills/yama-data-pipeline/lib/municipality_point_lookup.js`
+* **Input N03 GeoJSON**: `data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson`
+* **Input point dataset**: `data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl`
+* **Output JSONL**: `data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl`
+* **Manifest**: `data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/manifest.json`
+* **Report**: `docs/migration/ksj_n03_ehime_summit_candidate_municipality_lookup_report.md`
+* **Audit**: `docs/migration/ksj_n03_ehime_municipality_point_lookup_audit.md`
+* **Boundary tolerance**: 20 m
+* **Execution Summary Counts**:
+  - Input point records: 496
+  - single_municipality: 362
+  - boundary_ambiguous: 122
+  - outside_prefecture: 12
+  - invalid_coordinate: 0
+* **DVC status**: not active; no DVC commands run
+* **Git LFS**: not used
+* **Source files modified**: `false`
+* **Reverse-geocoding artifacts**: retained; not deleted or modified
+* **Policy**: Reverse-geocoding outputs remain preserved as historical/contextual evidence. For future municipality-level lookup, use KSJ/N03 polygon lookup. Reverse geocoding is still useful only when street address, place names, roads, facilities, island labels, or other human-readable locality context is required.
+* **Note**: Uses point-in-polygon (ray-casting) and local-planar boundary distance approximation. No external API calls.
+
+---
+
+
 ## Action Plan Before Active DVC Initialization
 Before running `dvc init` and creating active root configuration pipelines, the following must occur:
 1. Finalize directory structures and path mapping agreements.
