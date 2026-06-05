@@ -1,0 +1,72 @@
+{
+  "stage": "extract_ksj_n03_ehime_reference_zip",
+  "stage_version": "0.1.0",
+  "created_at": "2026-06-05T08:15:50.440Z",
+  "git_commit": "712ee87b338393cb28e655df968fc98d9f905ab0",
+  "inputs": {
+    "raw_zip": "data/01_raw/reference/geospatial/ksj_administrative_area/N03/2026-01-01/N03-20260101_38_GML.zip",
+    "raw_zip_sha256": "88061f7ae784bbdd7b81f514ea904dcef853645b6d477691c1ba31091ab41dbf",
+    "role": "raw_reference_zip"
+  },
+  "outputs": [
+    {
+      "path": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML",
+      "role": "extracted_reference_files"
+    }
+  ],
+  "files": [
+    {
+      "path": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/KS-META-N03-20260101_38.xml",
+      "role": "extracted_reference_file",
+      "sha256": "a0ece2962015e6b8917aa5940296c54a187c4fde9e763f6f6def8a85cc18883c",
+      "size_bytes": 15053
+    },
+    {
+      "path": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.cpg",
+      "role": "extracted_reference_file",
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+      "size_bytes": 5
+    },
+    {
+      "path": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.dbf",
+      "role": "extracted_reference_file",
+      "sha256": "11df37be50889908985b38d4eff9aaf69cc454f65d320f84844b84501e711364",
+      "size_bytes": 888934
+    },
+    {
+      "path": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson",
+      "role": "extracted_reference_file",
+      "sha256": "16e3af28d9af3a864922869826cec6bfe55adc11d51a81fbc2a12000555adc11",
+      "size_bytes": 16841979
+    },
+    {
+      "path": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.prj",
+      "role": "extracted_reference_file",
+      "sha256": "1761bb7f37f73fd0eb043175a78403ba37ff1066299987c116fd43bbd0057eae",
+      "size_bytes": 145
+    },
+    {
+      "path": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.shp",
+      "role": "extracted_reference_file",
+      "sha256": "29d0bd728caa6d22de0f47835adc4b250f7f64e0603610f0d6409dd552031fea",
+      "size_bytes": 7486996
+    },
+    {
+      "path": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.shx",
+      "role": "extracted_reference_file",
+      "sha256": "56569350de79ec57f035feb08920794e346894e699acb815f91d815e90d1cf0d",
+      "size_bytes": 38324
+    },
+    {
+      "path": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.xml",
+      "role": "extracted_reference_file",
+      "sha256": "1dc79337a4114d3abec3900c3965eb85e3bfc785b3492e426b0312d34cb38bef",
+      "size_bytes": 17653334
+    }
+  ],
+  "checksum_algorithm": "sha256",
+  "summary": {
+    "extracted_file_count": 8,
+    "source_files_modified": false
+  }
+}
