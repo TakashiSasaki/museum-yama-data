@@ -243,6 +243,34 @@ node cli.js enrich-gpx-yamap-links-by-title \
   --report "docs/migration/gpx_yamap_title_enriched_linking_report.md"
 ```
 
+#### 4i. `generate-mountain-summit-candidate-links` (Portable)
+Generates candidate links between mountain_no records and summit candidates, incorporating name token matching, elevation offsets, distance between CSV/GPX coordinates, reverse-geocoding administrative locations, and activity linking.
+- Requires `--mountains` (path to mountains primary JSON).
+- Requires `--summit-candidates` (path to summit candidates JSONL).
+- Requires `--location-evidence` (path to location evidence JSONL).
+- Requires `--activity-links` (path to title-enriched activity links JSONL).
+- Requires `--out` (path to output candidate links JSONL).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--review-csv` (path to output review queue CSV).
+- Requires `--review-md` (path to output review queue Markdown).
+- Requires `--report` (path to output report Markdown).
+- All-or-nothing behavior: performs safety collision checks, staging directory verification, and post-write parse validations.
+- Non-goals: Does not make final identity assignments, does not generate final summit coordinates, and does not alter input datasets.
+- Review Semantics: Produces review CSV/Markdown focusing on ambiguous cases (summit candidates matched to multiple mountains) and rows requiring manual review.
+
+```sh
+node cli.js generate-mountain-summit-candidate-links \
+  --mountains "data/03_primary/mountains/ehime_mountain_source_rows.json" \
+  --summit-candidates "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl" \
+  --location-evidence "data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl" \
+  --activity-links "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl" \
+  --out "data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl" \
+  --manifest "data/04_feature/mountain_summit_candidate_links/2026-05-12/manifest.json" \
+  --review-csv "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_queue.csv" \
+  --review-md "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_queue.md" \
+  --report "docs/migration/mountain_summit_candidate_linking_report.md"
+```
+
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.

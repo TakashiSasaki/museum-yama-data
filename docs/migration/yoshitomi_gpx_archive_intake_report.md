@@ -2,8 +2,8 @@
 
 ## Summary
 - status: SUCCESS
-- input_zip: C:\Users\takas\Desktop\museum-yama-data\data\01_raw\provider_received\yoshitomi\2026-05-12\GPXファイル.zip
-- output_dir: C:\Users\takas\Desktop\museum-yama-data\data\01_raw\gpx\yoshitomi\2026-05-12
+- input_zip: data/01_raw/provider_received/yoshitomi/2026-05-12/GPXファイル.zip
+- output_dir: data/01_raw/gpx/yoshitomi/2026-05-12
 - selected_gpx_count: 312
 - extracted_gpx_count: 312
 - ignored_non_gpx_count: 0

@@ -8,20 +8,20 @@
 
 | Input | Path |
 |---|---|
-| Mountain source JSON | `C:\Users\takas\Desktop\museum-yama-data\data\03_primary\mountains\ehime_mountain_source_rows.json` |
-| Summit candidates JSONL | `C:\Users\takas\Desktop\museum-yama-data\data\03_primary\summit_candidates\2026-05-12\summit_candidates.jsonl` |
-| Location evidence JSONL | `C:\Users\takas\Desktop\museum-yama-data\data\04_feature\location_enrichment\summit_candidates\2026-05-12\summit_candidate_location_evidence.jsonl` |
-| Activity links JSONL | `C:\Users\takas\Desktop\museum-yama-data\data\04_feature\activity_linking\gpx_yamap_candidate_links\2026-05-12\title_enriched_candidate_links.jsonl` |
+| Mountain source JSON | `data/03_primary/mountains/ehime_mountain_source_rows.json` |
+| Summit candidates JSONL | `data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl` |
+| Location evidence JSONL | `data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl` |
+| Activity links JSONL | `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl` |
 
 ## Output Paths
 
 | Output | Path |
 |---|---|
-| Candidate links JSONL | `C:\Users\takas\Desktop\museum-yama-data\data\04_feature\mountain_summit_candidate_links\2026-05-12\candidate_links.jsonl` |
-| Manifest | `C:\Users\takas\Desktop\museum-yama-data\data\04_feature\mountain_summit_candidate_links\2026-05-12\manifest.json` |
-| Review queue CSV | `C:\Users\takas\Desktop\museum-yama-data\data\08_reporting\mountain_summit_candidate_review\2026-05-12\review_queue.csv` |
-| Review queue Markdown | `C:\Users\takas\Desktop\museum-yama-data\data\08_reporting\mountain_summit_candidate_review\2026-05-12\review_queue.md` |
-| Report | `C:\Users\takas\Desktop\museum-yama-data\docs\migration\mountain_summit_candidate_linking_report.md` |
+| Candidate links JSONL | `data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl` |
+| Manifest | `data/04_feature/mountain_summit_candidate_links/2026-05-12/manifest.json` |
+| Review queue CSV | `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_queue.csv` |
+| Review queue Markdown | `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_queue.md` |
+| Report | `docs/migration/mountain_summit_candidate_linking_report.md` |
 
 ## Input Record Counts
 
@@ -142,10 +142,10 @@ python -m compileall scripts src
 - CSV coordinates exist only for 31 out of 531 mountains.
 - Reverse-geocoding evidence is loose and not final identity proof.
 - Human review is required for low-confidence and ambiguous cases.
-- Mountains without candidates need additional field investigation.
+- If future runs produce mountains without candidates, they will need additional field investigation.
 
 ## Next Recommended Steps
 
 1. Open `review_queue.csv` and resolve high-priority ambiguous cases.
-2. For mountains with no candidates, investigate whether the summit was not detected (noise, prominence threshold) or whether the GPX track did not visit it.
+2. If future runs produce mountains with no candidates, investigate whether the summit was not detected (noise, prominence threshold) or whether the GPX track did not visit it.
 3. After human validation, generate a curated resolved-mountain waypoint GPX dataset.

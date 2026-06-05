@@ -13,5 +13,5 @@
 * **All-or-nothing generation used**: true
 * **Source GPX files modified**: false
 * **Validation results**: Passed self-validation checks matching track geometries, trackpoint counts, and metadata bounds.
-* **Exact manifest path**: [`manifest.json`](file:///C:/Users/takas/Desktop/museum-yama-data/data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json)
+* **Exact manifest path**: [`manifest.json`](../../data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json)
 * **Output path decision rationale**: Configured via --out-dir. Target directory is `data/08_reporting/gpx/summit_candidates/2026-05-12/` as agreed.

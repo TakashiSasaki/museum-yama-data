@@ -678,9 +678,8 @@ Use the generated CSV queue [\`review_queue.csv\`](review_queue.csv) to perform 
 ## Next Recommended Step
 
 1. Open \`review_queue.csv\` and review rows where \`needs_human_review = true\`.
-2. Prioritize mountains with \`candidate_count = 0\` (no candidate found).
-3. Check ambiguous cases where the same summit candidate appears for multiple mountains.
-4. After human validation, create a curated resolved-mountain waypoint dataset.
+2. Prioritize ambiguous mountains, shared summit candidates, low/weak confidence links, and all rows where \`needs_human_review = true\`.
+3. After human validation, create a curated resolved-mountain waypoint dataset.
 
 See the full report at [\`${reportPath}\`](${reportPath}).
 `;

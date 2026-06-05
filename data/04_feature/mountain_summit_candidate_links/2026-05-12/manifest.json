@@ -31,12 +31,12 @@
     },
     {
       "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_queue.md",
-      "sha256": "5f8c4fcf3a213ca73a18ca52897c5d5080d2cc42b9f6eabdf4ff87fae5ebf5ff",
+      "sha256": "30ba12324928302b459ec4bf8bfc3e4db0c4fd890dd5ae4d450a70a9f015d304",
       "role": "review_queue_md"
     },
     {
       "path": "docs/migration/mountain_summit_candidate_linking_report.md",
-      "sha256": "ad40d81d1bc8d1d64e1d1eb2fcad873d0333faec907e77e30d1332be6e65d3dd",
+      "sha256": "ee96f4d52e8918015a511889d42e77fa0446820e8c23713d1ba68df2e2a52d64",
       "role": "report"
     }
   ],

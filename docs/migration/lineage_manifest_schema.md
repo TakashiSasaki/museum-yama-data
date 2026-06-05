@@ -6,7 +6,7 @@ This document defines how machine-readable `manifest.json` files and human-reada
 
 ## 1. GPX Archive Extraction Lineage
 
-Recorded inside [`yoshitomi_gpx_archive_intake_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/yoshitomi_gpx_archive_intake_report.md).
+Recorded inside [`yoshitomi_gpx_archive_intake_report.md`](yoshitomi_gpx_archive_intake_report.md).
 
 ### Metadata Schema
 * **status**: Execution status (e.g. `SUCCESS`, `FAIL`).
@@ -23,7 +23,7 @@ Recorded inside [`yoshitomi_gpx_archive_intake_report.md`](file:///c:/Users/taka
 
 ## 2. Excel Sheet Extraction Lineage
 
-Recorded inside [`yoshitomi_excel_sheet_extraction_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/yoshitomi_excel_sheet_extraction_report.md).
+Recorded inside [`yoshitomi_excel_sheet_extraction_report.md`](yoshitomi_excel_sheet_extraction_report.md).
 
 ### Metadata Schema
 * **status**: Execution status (e.g. `success`, `failure`).

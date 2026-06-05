@@ -50,6 +50,12 @@ function sha256String(str) {
     return crypto.createHash('sha256').update(str, 'utf8').digest('hex');
 }
 
+function toDisplayPath(filePath) {
+    if (!filePath) return '';
+    const rel = path.relative(process.cwd(), path.resolve(filePath));
+    return rel.replace(/\\/g, '/');
+}
+
 function readJsonlFile(filePath) {
     const lines = fs.readFileSync(filePath, 'utf8').split('\n').filter(l => l.trim() !== '');
     return lines.map((line, i) => {
@@ -235,7 +241,7 @@ module.exports = async function generateMountainSummitCandidateLinksCommand(opti
 
     // ── Build review Markdown ────────────────────────────────────────────────
     log.info('Building review Markdown...');
-    const reviewMdContent = buildReviewMarkdown(stats, reviewCsvPath, reportPath);
+    const reviewMdContent = buildReviewMarkdown(stats, toDisplayPath(reviewCsvPath), toDisplayPath(reportPath));
 
     // ── Build JSONL content ──────────────────────────────────────────────────
     log.info('Serializing candidate links JSONL...');
@@ -287,8 +293,25 @@ module.exports = async function generateMountainSummitCandidateLinksCommand(opti
 
     // ── Build report ─────────────────────────────────────────────────────────
     const reportContent = buildReport({
-        gitCommit, createdAt, absIn, absOut, stats,
-        sha256Out, sha256ReviewCsv, sha256ReviewMd,
+        gitCommit,
+        createdAt,
+        displayIn: {
+            mountains: toDisplayPath(absIn.mountains),
+            summitCandidates: toDisplayPath(absIn.summitCandidates),
+            locationEvidence: toDisplayPath(absIn.locationEvidence),
+            activityLinks: toDisplayPath(absIn.activityLinks),
+        },
+        displayOut: {
+            out: toDisplayPath(absOut.out),
+            manifest: toDisplayPath(absOut.manifest),
+            reviewCsv: toDisplayPath(absOut.reviewCsv),
+            reviewMd: toDisplayPath(absOut.reviewMd),
+            report: toDisplayPath(absOut.report),
+        },
+        stats,
+        sha256Out,
+        sha256ReviewCsv,
+        sha256ReviewMd,
     });
     fs.writeFileSync(stagedReport, reportContent, 'utf8');
     const sha256Report = sha256File(stagedReport);
@@ -360,7 +383,7 @@ module.exports = async function generateMountainSummitCandidateLinksCommand(opti
     log.info(`  Needs human review: ${stats.needs_human_review_count}`);
 };
 
-function buildReport({ gitCommit, createdAt, absIn, absOut, stats, sha256Out, sha256ReviewCsv, sha256ReviewMd }) {
+function buildReport({ gitCommit, createdAt, displayIn, displayOut, stats, sha256Out, sha256ReviewCsv, sha256ReviewMd }) {
     return `# Mountain Summit Candidate Linking Report
 
 - **Branch and HEAD commit**: \`museum-yama-data\` (\`${gitCommit}\`)
@@ -371,20 +394,20 @@ function buildReport({ gitCommit, createdAt, absIn, absOut, stats, sha256Out, sh
 
 | Input | Path |
 |---|---|
-| Mountain source JSON | \`${absIn.mountains}\` |
-| Summit candidates JSONL | \`${absIn.summitCandidates}\` |
-| Location evidence JSONL | \`${absIn.locationEvidence}\` |
-| Activity links JSONL | \`${absIn.activityLinks}\` |
+| Mountain source JSON | \`${displayIn.mountains}\` |
+| Summit candidates JSONL | \`${displayIn.summitCandidates}\` |
+| Location evidence JSONL | \`${displayIn.locationEvidence}\` |
+| Activity links JSONL | \`${displayIn.activityLinks}\` |
 
 ## Output Paths
 
 | Output | Path |
 |---|---|
-| Candidate links JSONL | \`${absOut.out}\` |
-| Manifest | \`${absOut.manifest}\` |
-| Review queue CSV | \`${absOut.reviewCsv}\` |
-| Review queue Markdown | \`${absOut.reviewMd}\` |
-| Report | \`${absOut.report}\` |
+| Candidate links JSONL | \`${displayOut.out}\` |
+| Manifest | \`${displayOut.manifest}\` |
+| Review queue CSV | \`${displayOut.reviewCsv}\` |
+| Review queue Markdown | \`${displayOut.reviewMd}\` |
+| Report | \`${displayOut.report}\` |
 
 ## Input Record Counts
 
@@ -505,12 +528,12 @@ python -m compileall scripts src
 - CSV coordinates exist only for ${stats.mountain_records > 0 ? '31' : '?'} out of ${stats.mountain_records} mountains.
 - Reverse-geocoding evidence is loose and not final identity proof.
 - Human review is required for low-confidence and ambiguous cases.
-- Mountains without candidates need additional field investigation.
+- If future runs produce mountains without candidates, they will need additional field investigation.
 
 ## Next Recommended Steps
 
 1. Open \`review_queue.csv\` and resolve high-priority ambiguous cases.
-2. For mountains with no candidates, investigate whether the summit was not detected (noise, prominence threshold) or whether the GPX track did not visit it.
+2. If future runs produce mountains with no candidates, investigate whether the summit was not detected (noise, prominence threshold) or whether the GPX track did not visit it.
 3. After human validation, generate a curated resolved-mountain waypoint GPX dataset.
 `;
 }

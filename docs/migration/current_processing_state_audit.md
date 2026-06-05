@@ -19,7 +19,7 @@ This document inventories and verifies the current execution state of the data-p
 * **GPX ZIP source file exists?**: Yes, at `data/01_raw/as_received/2026-05-12/GPXファイル.zip` (9,790,030 bytes).
 * **Extracted GPX output directory exists?**: Yes, at `data/01_raw/gpx/2026-05-12` (historically extracted to `data/01_raw/gpx/yoshitomi/2026-05-12` and relocated to the simplified layout).
 * **Extracted GPX file count**: 293 files (after deduplicating 19 suffix copies).
-* **Execution Evidence**: [`yoshitomi_gpx_archive_intake_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/yoshitomi_gpx_archive_intake_report.md)
+* **Execution Evidence**: [`yoshitomi_gpx_archive_intake_report.md`](yoshitomi_gpx_archive_intake_report.md)
 
 ### 2. Excel Sheet CSV Extraction (`extract_excel_sheets`)
 * **Status**: `executed_verified`
@@ -31,7 +31,7 @@ This document inventories and verifies the current execution state of the data-p
   - `百名山.csv`
   - `PH数の推移.csv`
   - `島根県の山.csv`
-* **Execution Evidence**: [`yoshitomi_excel_sheet_extraction_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/yoshitomi_excel_sheet_extraction_report.md)
+* **Execution Evidence**: [`yoshitomi_excel_sheet_extraction_report.md`](yoshitomi_excel_sheet_extraction_report.md)
 
 ### 3. Summit Candidate GPX Generation (`generate_summit_candidate_gpx`)
 * **Status**: `executed_verified`
@@ -40,7 +40,7 @@ This document inventories and verifies the current execution state of the data-p
 * **Output GPX file count**: 293 GPX files.
 * **Manifest file exists?**: Yes, at `data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json`.
 * **Report file exists?**: Yes, at `docs/migration/summit_candidate_gpx_generation_report.md`.
-* **Execution Evidence**: [`summit_candidate_gpx_generation_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/summit_candidate_gpx_generation_report.md).
+* **Execution Evidence**: [`summit_candidate_gpx_generation_report.md`](summit_candidate_gpx_generation_report.md).
 
 ### 4. Summit Candidate Feature Extraction (`extract_summit_candidate_features`)
 * **Status**: `executed_verified`
@@ -48,7 +48,7 @@ This document inventories and verifies the current execution state of the data-p
 * **Output file exists?**: Yes, at `data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl`.
 * **Manifest file exists?**: Yes, at `data/03_primary/summit_candidates/2026-05-12/manifest.json`.
 * **Report file exists?**: Yes, at `docs/migration/summit_candidate_feature_extraction_report.md`.
-* **Execution Evidence**: [`summit_candidate_feature_extraction_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/summit_candidate_feature_extraction_report.md).
+* **Execution Evidence**: [`summit_candidate_feature_extraction_report.md`](summit_candidate_feature_extraction_report.md).
 
 ### 5. Reverse Geocoding Point Index Extraction (`extract_reverse_geocoding_point_index`)
 * **Status**: `executed_verified`
@@ -56,7 +56,7 @@ This document inventories and verifies the current execution state of the data-p
 * **Output file exists?**: Yes, at `data/02_intermediate/reverse_geocoding/extracted/nominatim/geocoded_points_index.jsonl`.
 * **Manifest file exists?**: Yes, at `data/02_intermediate/reverse_geocoding/extracted/nominatim/manifest.json`.
 * **Report file exists?**: Yes, at `docs/migration/reverse_geocoding_point_index_report.md`.
-* **Execution Evidence**: [`reverse_geocoding_point_index_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/reverse_geocoding_point_index_report.md).
+* **Execution Evidence**: [`reverse_geocoding_point_index_report.md`](reverse_geocoding_point_index_report.md).
 
 ### 6. Summit Candidate Location Evidence Enrichment (`enrich_summit_candidates_with_reverse_geocoding`)
 * **Status**: `executed_verified`
@@ -64,7 +64,7 @@ This document inventories and verifies the current execution state of the data-p
 * **Output file exists?**: Yes, at `data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl`.
 * **Manifest file exists?**: Yes, at `data/04_feature/location_enrichment/summit_candidates/2026-05-12/manifest.json`.
 * **Report file exists?**: Yes, at `docs/migration/summit_candidate_location_evidence_report.md`.
-* **Execution Evidence**: [`summit_candidate_location_evidence_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/summit_candidate_location_evidence_report.md).
+* **Execution Evidence**: [`summit_candidate_location_evidence_report.md`](summit_candidate_location_evidence_report.md).
 
 
 ---
@@ -75,7 +75,7 @@ This document inventories and verifies the current execution state of the data-p
 * **Output files exist?**: Yes, at `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/date_candidate_links.jsonl` and others.
 * **Manifest file exists?**: Yes, at `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/manifest.json`.
 * **Report file exists?**: Yes, at `docs/migration/gpx_yamap_date_linking_report.md`.
-* **Execution Evidence**: [`gpx_yamap_date_linking_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/gpx_yamap_date_linking_report.md).
+* **Execution Evidence**: [`gpx_yamap_date_linking_report.md`](gpx_yamap_date_linking_report.md).
 
 ### 8. GPX-to-YAMAP Title-Similarity Enrichment (`enrich-gpx-yamap-links-by-title`)
 * **Status**: `executed_verified`
@@ -83,7 +83,29 @@ This document inventories and verifies the current execution state of the data-p
 * **Output files exist?**: Yes, at `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl`, `data/08_reporting/activity_linking/gpx_yamap_review_queue/2026-05-12/title_enriched_review_queue.csv` and `title_enriched_review_queue.md`.
 * **Manifest file exists?**: Yes, at `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_manifest.json`.
 * **Report file exists?**: Yes, at `docs/migration/gpx_yamap_title_enriched_linking_report.md`.
-* **Execution Evidence**: [`gpx_yamap_title_enriched_linking_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/gpx_yamap_title_enriched_linking_report.md).
+* **Execution Evidence**: [`gpx_yamap_title_enriched_linking_report.md`](gpx_yamap_title_enriched_linking_report.md).
+
+### 9. Mountain-to-Summit Candidate Linking (`generate-mountain-summit-candidate-links`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/generate-mountain-summit-candidate-links.js` and registered in `cli.js`.
+* **Output files exist?**: Yes, at `data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl`, `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_queue.csv`, and `review_queue.md`.
+* **Manifest file exists?**: Yes, at `data/04_feature/mountain_summit_candidate_links/2026-05-12/manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/mountain_summit_candidate_linking_report.md`.
+* **Execution Evidence**: [`mountain_summit_candidate_linking_report.md`](mountain_summit_candidate_linking_report.md).
+* **Execution Summary Counts**:
+  - Mountain source records: 531
+  - Summit candidate records: 496
+  - Candidate link records: 11372 (11372 real links, 0 no-candidate rows)
+  - Mountains with candidates: 531
+  - Mountains without candidates: 0
+  - High confidence links: 0
+  - Medium confidence links: 1481
+  - Low confidence links: 4753
+  - Weak/none confidence links: 5138
+  - Ambiguous mountains: 531
+  - Summit candidates linked to multiple mountains: 496
+  - Needs human review: 11372
+* **Note**: This stage generates candidate links only (to be reviewed by a human validator), not final accepted summit coordinates or final resolved identities.
 
 ---
 

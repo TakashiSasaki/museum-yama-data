@@ -167,6 +167,13 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Expected Future Layer:** `02_intermediate`
 * **Tracking System:** DVC dependency candidate
 
+### 21. `mountain_summit_candidate_links`
+* **Role:** A feature-level dataset capturing the generated candidate links between mountain records (`mountain_no`) and detected summit candidates, scoring their similarity using name similarity, elevation profile differences, distance between CSV coordinates and GPX summit coordinates, reverse-geocoding administrative overlap, and activity links.
+* **Primary Inputs:** `accepted_mountain_source_rows`, `summit_candidates`, `location_enrichment` (reverse geocoding evidence), `gpx_yamap_activity_links` (title-enriched candidate activity links).
+* **Expected Future Layer:** `04_feature` (physical path: `data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl`)
+* **Tracking System:** DVC dependency candidate
+* **Status Notes:** This stage has been executed, providing candidate links and review queues to facilitate human-in-the-loop validation before final coordinate/identity resolution.
+
 ## Summary of Core Principles
 
 1. **`mountains.json` Status:** It is a provisional legacy/web cache. It is not the final semantic model.
