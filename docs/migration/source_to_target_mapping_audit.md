@@ -93,3 +93,11 @@ The repository appears to primarily target YAMAP activities associated with user
 *   **Requirement:** The `estimate_municipality` stage enriches location evidence for candidates.
 *   **Granularity:** Enrichment is required only up to the city/county/town/village level. Detailed address components (e.g., district, aza, block number) should not be used as final structured fields.
 *   **Ambiguity Preservation:** When ambiguity exists (e.g., overlapping boundaries), multiple municipality candidates must be preserved. The stage must not arbitrarily force a single municipality choice.
+
+### GPX-derived Summit Candidate & Geocoding Mapping Audits
+
+Detailed mapping audits for this stage are maintained in:
+- [Summit Candidate Feature Mapping](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/summit_candidate_feature_mapping.md)
+- [Reverse Geocoding Point Index Mapping](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/reverse_geocoding_point_index_mapping.md)
+- [Summit Candidate Location Evidence Mapping](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/summit_candidate_location_evidence_mapping.md)
+
