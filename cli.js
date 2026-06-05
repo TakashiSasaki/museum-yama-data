@@ -38,6 +38,7 @@ Commands:
   lookup-ehime-municipality-by-point   Lookup the Ehime municipality for a single lat/lon point using KSJ/N03 polygon data.
   lookup-ehime-municipalities-for-points Batch lookup of Ehime municipalities for multiple points from a JSONL or CSV file.
   generate-location-stability-review-packets Generate location-stability review packets and a human decision template.
+  generate-review-required-geographic-grounding-requests Generate review required geographic grounding requests.
 
 
 
@@ -205,6 +206,15 @@ generate-location-stability-review-packets Options:
   --decision-template <path>        Required. Path to output decision template CSV.
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
+
+generate-review-required-geographic-grounding-requests Options:
+  --mountains <path>                Required. Path to mountain source JSON.
+  --refined-links <path>            Required. Path to location-stability refined candidate links JSONL.
+  --review-dir <path>               Required. Path to location-stability compact review queue directory.
+  --feature-out-dir <path>          Required. Path to output feature directory.
+  --reporting-out-dir <path>        Required. Path to output reporting directory.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
 `);
 
     process.exit(code);
@@ -336,6 +346,10 @@ function parseArgs(argsArray) {
             options.gpxGroups = argsArray[++i];
         } else if (arg === '--summit-candidate-groups' && i + 1 < argsArray.length) {
             options.summitCandidateGroups = argsArray[++i];
+        } else if (arg === '--feature-out-dir' && i + 1 < argsArray.length) {
+            options.featureOutDir = argsArray[++i];
+        } else if (arg === '--reporting-out-dir' && i + 1 < argsArray.length) {
+            options.reportingOutDir = argsArray[++i];
         }
     }
     return options;
@@ -532,6 +546,13 @@ async function run() {
         }
     }
 
+    if (command === 'generate-review-required-geographic-grounding-requests') {
+        if (!options.mountains || !options.refinedLinks || !options.reviewDir || !options.featureOutDir || !options.reportingOutDir || !options.manifest || !options.report) {
+            log.error(`Error: --mountains, --refined-links, --review-dir, --feature-out-dir, --reporting-out-dir, --manifest, and --report are required for 'generate-review-required-geographic-grounding-requests'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -620,6 +641,9 @@ async function run() {
                 break;
             case 'generate-location-stability-review-packets':
                 await require('./commands/generate-location-stability-review-packets')(options);
+                break;
+            case 'generate-review-required-geographic-grounding-requests':
+                await require('./commands/generate-review-required-geographic-grounding-requests')(options);
                 break;
 
             case 'test':

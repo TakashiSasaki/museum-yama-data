@@ -487,6 +487,26 @@ node cli.js generate-location-stability-review-packets \
 ```
 
 
+#### `generate-review-required-geographic-grounding-requests` (Portable)
+
+Generates external geographic grounding request packets (machine JSONL and human Markdown) for mountains requiring additional geographic evidence based on location-stability queues.
+
+- Requires `--mountains`, `--refined-links`, `--review-dir`, `--feature-out-dir`, `--reporting-out-dir`, `--manifest`, `--report`.
+- Generates JSONL packets in feature-out-dir, index/packets/submission queue/summary in reporting-out-dir.
+- Fails on output collisions to prevent silent overwrites.
+
+```sh
+node cli.js generate-review-required-geographic-grounding-requests \
+  --mountains "data/03_primary/mountains/ehime_mountain_source_rows.json" \
+  --refined-links "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl" \
+  --review-dir "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review" \
+  --feature-out-dir "data/04_feature/mountain_geographic_grounding/2026-05-12" \
+  --reporting-out-dir "data/08_reporting/mountain_geographic_grounding/2026-05-12" \
+  --manifest "data/04_feature/mountain_geographic_grounding/2026-05-12/review_required_grounding_request_manifest.json" \
+  --report "docs/migration/mountain_geographic_grounding_request_packet_report.md"
+```
+
+
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.

@@ -27,6 +27,7 @@ require('./test_municipality_stability');
 require('./test_location_stability_refinement');
 require('./test_location_stability_review_queue_compression');
 require('./test_location_stability_review_packets');
+require('./test_mountain_geographic_grounding_requests');
 
 
 
