@@ -26,6 +26,7 @@ Commands:
   validate-provider-received Audits the provider-received raw source intake area and generates a report.
   complete-mountain-source-no Complete blank No values in a mountain source CSV.
   normalize-mountain-source-json Normalize mountain source CSV to JSON.
+  extract-summit-candidate-features Extract summit candidate waypoints from GPX into JSONL.
 
 
 Global Options:
@@ -91,6 +92,13 @@ normalize-mountain-source-json Options:
   --out <path>                      Required. Path to output normalized JSON.
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
+
+extract-summit-candidate-features Options:
+  --gpx-dir <path>                  Required. Path to directory containing summit-candidate GPX files.
+  --input-manifest <path>           Required. Path to input manifest.json.
+  --out <path>                      Required. Path to output JSONL.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
 `);
     process.exit(code);
 }
@@ -147,6 +155,8 @@ function parseArgs(argsArray) {
             options.intermediateDir = argsArray[++i];
         } else if (arg === '--review-dir' && i + 1 < argsArray.length) {
             options.reviewDir = argsArray[++i];
+        } else if (arg === '--input-manifest' && i + 1 < argsArray.length) {
+            options.inputManifest = argsArray[++i];
         }
     }
     return options;
@@ -235,6 +245,13 @@ async function run() {
         }
     }
 
+    if (command === 'extract-summit-candidate-features') {
+        if (!options.gpxDir || !options.inputManifest || !options.out || !options.manifest || !options.report) {
+            log.error(`Error: --gpx-dir, --input-manifest, --out, --manifest, and --report are required for 'extract-summit-candidate-features'.`);
+            printUsageAndExit();
+        }
+    }
+
 
     try {
         switch (command) {
@@ -279,6 +296,9 @@ async function run() {
                 break;
             case 'normalize-mountain-source-json':
                 await require('./commands/normalize-mountain-source-json')(options);
+                break;
+            case 'extract-summit-candidate-features':
+                await require('./commands/extract-summit-candidate-features')(options);
                 break;
 
             case 'test':

@@ -175,6 +175,24 @@ node cli.js normalize-mountain-source-json \
   --report docs/migration/mountain_source_json_normalization_report.md
 ```
 
+#### 4e. `extract-summit-candidate-features` (Portable)
+Extracts summit candidate waypoints from generated GPX files into a structured JSONL feature dataset.
+- Requires `--gpx-dir` (path to directory containing summit-candidate GPX files).
+- Requires `--input-manifest` (path to input manifest.json).
+- Requires `--out` (path to output JSONL).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report markdown).
+
+```sh
+node cli.js extract-summit-candidate-features \
+  --gpx-dir "data/08_reporting/gpx/summit_candidates/2026-05-12" \
+  --input-manifest "data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json" \
+  --out "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl" \
+  --manifest "data/03_primary/summit_candidates/2026-05-12/manifest.json" \
+  --report "docs/migration/summit_candidate_feature_extraction_report.md"
+```
+
+
 
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
