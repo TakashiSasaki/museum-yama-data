@@ -21,6 +21,7 @@ require('./test_mountain_summit_candidate_location_refinement');
 require('./test_mountain_summit_review_queue_compression');
 require('./test_mountain_summit_review_packets');
 require('./test_municipality_adjacency');
+require('./test_municipality_point_lookup');
 require('./test_no_local_absolute_paths');
 
 

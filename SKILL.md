@@ -351,6 +351,58 @@ node cli.js generate-ehime-municipality-adjacency \
   --report "docs/migration/ksj_n03_ehime_municipality_adjacency_validation_report.md"
 ```
 
+#### `lookup-ehime-municipality-by-point` (Portable)
+
+Performs a single-point KSJ/N03 municipality lookup for Ehime Prefecture using polygon containment and boundary-distance checks.
+
+- Requires `--n03-geojson` (path to intermediate N03 GeoJSON).
+- Requires `--lat` (WGS84 latitude) and `--lon` (WGS84 longitude).
+- Optional `--boundary-tolerance-m` (default: 20 m).
+- Optional `--out` path. If omitted, JSON result is printed to stdout.
+- Does not overwrite existing output files.
+- Does not call any external API.
+- Lookup statuses: `single_municipality`, `boundary_ambiguous`, `outside_prefecture`, `invalid_coordinate`.
+
+```sh
+node cli.js lookup-ehime-municipality-by-point \
+  --n03-geojson "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson" \
+  --lat 33.841624 \
+  --lon 132.765681 \
+  --boundary-tolerance-m 20 \
+  --out "data/08_reporting/location_reference/municipality_point_lookup/examples/matsuyama_city_hall_lookup.json"
+```
+
+#### `lookup-ehime-municipalities-for-points` (Portable)
+
+Performs batch KSJ/N03 municipality lookup from a JSONL or CSV input file.
+
+- Requires `--n03-geojson`, `--input`, `--out`, `--manifest`, `--report`.
+- Optional `--input-format jsonl|csv` (default: `jsonl`).
+- Optional `--id-field`, `--lat-field`, `--lon-field` field name overrides (defaults: `id`, `lat`, `lon`).
+- Optional `--boundary-tolerance-m` (default: 20 m).
+- Writes output JSONL with per-point lookup results, a stage manifest, and a human-readable report.
+- All-or-nothing atomic staging. Target collision checks fail by default.
+- Does not call any external API.
+
+Output JSONL schema includes: `source_record_id`, `lat`, `lon`, `lookup_status`, `municipality_matches`, `boundary_matches`, `primary_municipality_code`, `primary_municipality_name`, `source_dataset`, `prefecture`, `prefecture_code`, `data_reference_date`, `boundary_tolerance_m`, `notes`.
+
+```sh
+node cli.js lookup-ehime-municipalities-for-points \
+  --n03-geojson "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson" \
+  --input "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl" \
+  --input-format jsonl \
+  --id-field summit_candidate_id \
+  --lat-field lat \
+  --lon-field lon \
+  --boundary-tolerance-m 20 \
+  --out "data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl" \
+  --manifest "data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/manifest.json" \
+  --report "docs/migration/ksj_n03_ehime_summit_candidate_municipality_lookup_report.md"
+```
+
+**Policy note on reverse geocoding**: Reverse-geocoding outputs remain preserved as historical and contextual evidence. For municipality-level lookup, KSJ/N03 polygon lookup is preferred because it is authoritative, offline, and fully reproducible. Reverse geocoding remains appropriate when street address, place names, roads, facilities, island labels, or other human-readable locality context is required.
+
+
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.

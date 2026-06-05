@@ -35,6 +35,8 @@ Commands:
   generate-compact-mountain-summit-review-queues Generate compact review queues and conflict groups.
   generate-mountain-summit-review-packets Generate conflict-group review packets and a human decision template.
   generate-ehime-municipality-adjacency Validate and generate Ehime municipality land-adjacency data from KSJ/N03.
+  lookup-ehime-municipality-by-point   Lookup the Ehime municipality for a single lat/lon point using KSJ/N03 polygon data.
+  lookup-ehime-municipalities-for-points Batch lookup of Ehime municipalities for multiple points from a JSONL or CSV file.
 
 
 
@@ -171,6 +173,25 @@ generate-ehime-municipality-adjacency Options:
   --out-dir <path>                  Required. Path to output directory.
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
+
+lookup-ehime-municipality-by-point Options:
+  --n03-geojson <path>              Required. Path to intermediate N03 GeoJSON.
+  --lat <number>                    Required. WGS84 latitude of the point.
+  --lon <number>                    Required. WGS84 longitude of the point.
+  --boundary-tolerance-m <number>   Optional. Boundary tolerance in meters (default: 20).
+  --out <path>                      Optional. Path to write JSON result. If omitted, prints to stdout.
+
+lookup-ehime-municipalities-for-points Options:
+  --n03-geojson <path>              Required. Path to intermediate N03 GeoJSON.
+  --input <path>                    Required. Path to input JSONL or CSV file.
+  --input-format <jsonl|csv>        Optional. Input format: 'jsonl' or 'csv' (default: jsonl).
+  --id-field <name>                 Optional. Field name for record ID in input (default: id).
+  --lat-field <name>                Optional. Field name for latitude in input (default: lat).
+  --lon-field <name>                Optional. Field name for longitude in input (default: lon).
+  --boundary-tolerance-m <number>   Optional. Boundary tolerance in meters (default: 20).
+  --out <path>                      Required. Path to output JSONL file.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
 `);
 
     process.exit(code);
@@ -266,6 +287,22 @@ function parseArgs(argsArray) {
             options.rawManifest = argsArray[++i];
         } else if (arg === '--extracted-manifest' && i + 1 < argsArray.length) {
             options.extractedManifest = argsArray[++i];
+        } else if (arg === '--lat' && i + 1 < argsArray.length) {
+            options.lat = argsArray[++i];
+        } else if (arg === '--lon' && i + 1 < argsArray.length) {
+            options.lon = argsArray[++i];
+        } else if (arg === '--boundary-tolerance-m' && i + 1 < argsArray.length) {
+            const val = Number(argsArray[++i]);
+            if (isNaN(val)) throw new Error('--boundary-tolerance-m must be a number');
+            options.boundaryToleranceM = val;
+        } else if (arg === '--input-format' && i + 1 < argsArray.length) {
+            options.inputFormat = argsArray[++i];
+        } else if (arg === '--id-field' && i + 1 < argsArray.length) {
+            options.idField = argsArray[++i];
+        } else if (arg === '--lat-field' && i + 1 < argsArray.length) {
+            options.latField = argsArray[++i];
+        } else if (arg === '--lon-field' && i + 1 < argsArray.length) {
+            options.lonField = argsArray[++i];
         }
     }
     return options;
@@ -420,6 +457,20 @@ async function run() {
         }
     }
 
+    if (command === 'lookup-ehime-municipality-by-point') {
+        if (!options.n03Geojson || options.lat === undefined || options.lon === undefined) {
+            log.error(`Error: --n03-geojson, --lat, and --lon are required for 'lookup-ehime-municipality-by-point'.`);
+            printUsageAndExit();
+        }
+    }
+
+    if (command === 'lookup-ehime-municipalities-for-points') {
+        if (!options.n03Geojson || !options.input || !options.out || !options.manifest || !options.report) {
+            log.error(`Error: --n03-geojson, --input, --out, --manifest, and --report are required for 'lookup-ehime-municipalities-for-points'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -490,6 +541,12 @@ async function run() {
                 break;
             case 'generate-ehime-municipality-adjacency':
                 await require('./commands/generate-ehime-municipality-adjacency')(options);
+                break;
+            case 'lookup-ehime-municipality-by-point':
+                await require('./commands/lookup-ehime-municipality-by-point')(options);
+                break;
+            case 'lookup-ehime-municipalities-for-points':
+                await require('./commands/lookup-ehime-municipalities-for-points')(options);
                 break;
 
             case 'test':
