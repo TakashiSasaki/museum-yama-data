@@ -1,0 +1,47 @@
+{
+  "stage": "classify_summit_candidate_municipality_stability",
+  "stage_version": "0.1.0",
+  "created_at": "2026-06-05T10:45:01.295Z",
+  "git_commit": "1c0355f58259a8ece52390ef0de757dd5fd7aa02",
+  "inputs": {
+    "n03_geojson": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson",
+    "n03_geojson_sha256": "16e3af28d9af3a864922869826cec6bfe55adc11d51a81fbc2a12000555adc11",
+    "summit_candidates": "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl",
+    "summit_candidates_sha256": "93ba6398263fc722f77c15dcf3384ff1d93bc6669b8daba7bacc5cd8edb8b260",
+    "point_lookup": "data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl",
+    "point_lookup_sha256": "676622263833d7c0bec001478ccb290f4d090be3c7035705db6d8a60f4ac69bb"
+  },
+  "outputs": [
+    {
+      "path": "data/04_feature/location_reference/municipality_point_lookup_stability/summit_candidates/2026-05-12/summit_candidate_municipality_stability.jsonl",
+      "sha256": "bf32cde7984585dee79199b732174728cfc4c15e82c9bef91f59a928311278b8",
+      "role": "municipality_point_lookup_stability_jsonl"
+    },
+    {
+      "path": "docs/migration/ksj_n03_ehime_summit_candidate_municipality_stability_report.md",
+      "sha256": "67a9c2a5cf59c894f805a4ec9a04bd73818b64fe377adc460a1572c411d7f727",
+      "role": "report"
+    }
+  ],
+  "parameters": {
+    "offset_m": 1000,
+    "boundary_tolerance_m": 20,
+    "stable_interior_threshold_m": 1000
+  },
+  "summary": {
+    "input_summit_candidate_records": 496,
+    "input_point_lookup_records": 496,
+    "output_stability_records": 496,
+    "stable_interior": 204,
+    "stable_cardinal_1km_same": 20,
+    "near_boundary": 138,
+    "offset_inconsistent": 0,
+    "boundary_ambiguous": 122,
+    "outside_prefecture": 12,
+    "invalid_coordinate": 0,
+    "all_cardinal_1km_same": 224,
+    "distance_stable_interior": 204,
+    "source_files_modified": false
+  },
+  "checksum_algorithm": "sha256"
+}

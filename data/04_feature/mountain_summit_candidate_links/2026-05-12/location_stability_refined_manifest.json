@@ -1,0 +1,53 @@
+{
+  "stage": "refine_mountain_summit_candidate_links_by_location_stability",
+  "stage_version": "0.1.0",
+  "created_at": "2026-06-05T10:45:06.754Z",
+  "git_commit": "1c0355f58259a8ece52390ef0de757dd5fd7aa02",
+  "inputs": {
+    "candidate_links": "data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl",
+    "candidate_links_sha256": "2c486812af113eb3679c5455a154b1ad56f2fac7803322d2ee4f5833623b0964",
+    "mountains": "data/03_primary/mountains/ehime_mountain_source_rows.json",
+    "mountains_sha256": "e3fcddb965e5e643d5e1c173da5d94c71da5c776c409310bd1612a3600b6c8c4",
+    "municipality_adjacency": "data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_adjacency.json",
+    "municipality_adjacency_sha256": "b389848e976532d983aa4f9a99db30a605ffaad6fce95a9c8d817fa55de0f988",
+    "municipality_stability": "data/04_feature/location_reference/municipality_point_lookup_stability/summit_candidates/2026-05-12/summit_candidate_municipality_stability.jsonl",
+    "municipality_stability_sha256": "bf32cde7984585dee79199b732174728cfc4c15e82c9bef91f59a928311278b8"
+  },
+  "outputs": [
+    {
+      "path": "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl",
+      "sha256": "a3e4ea54c296599cc908d2903aff79f125bb3dcb63abba310b7f132757bbb125",
+      "role": "refined_candidate_links_jsonl"
+    },
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_refined_review_queue.csv",
+      "sha256": "f5801a1afc6d430cff475eee947c34648c95585031b7464cb3cb3d84a2b4726f",
+      "role": "review_csv"
+    },
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_refined_review_queue.md",
+      "sha256": "6dd32fb26a62cb9503e29f671b72f02077c1223926bd9dcdcbe91f1a5016027e",
+      "role": "review_md"
+    },
+    {
+      "path": "docs/migration/mountain_summit_candidate_location_stability_refinement_report.md",
+      "sha256": "425d4552808af6cbb14f85ba034afd7ab21c69305f275283fff46ab286c42477",
+      "role": "report"
+    }
+  ],
+  "summary": {
+    "input_candidate_link_records": 11372,
+    "output_refined_candidate_link_records": 11372,
+    "mountain_records": 531,
+    "municipality_stability_records": 496,
+    "location_strong_match": 2155,
+    "boundary_plausible": 635,
+    "municipality_incompatible_strong": 2647,
+    "adjacent_but_deep_inside": 1155,
+    "location_uncertain_keep": 3878,
+    "missing_location_evidence": 902,
+    "deprioritized_by_location_stability": 6933,
+    "source_files_modified": false
+  },
+  "checksum_algorithm": "sha256"
+}

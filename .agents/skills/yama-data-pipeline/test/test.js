@@ -23,6 +23,9 @@ require('./test_mountain_summit_review_packets');
 require('./test_municipality_adjacency');
 require('./test_municipality_point_lookup');
 require('./test_no_local_absolute_paths');
+require('./test_municipality_stability');
+require('./test_location_stability_refinement');
+require('./test_location_stability_review_queue_compression');
 
 
 

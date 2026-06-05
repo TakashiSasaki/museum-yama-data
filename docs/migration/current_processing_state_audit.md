@@ -245,6 +245,102 @@ This document inventories and verifies the current execution state of the data-p
 ---
 
 
+### 16. Summit Candidate Municipality Stability Classification
+
+* **Status**: `executed_verified`
+* **Subcommand(s)**:
+  - `classify-summit-candidate-municipality-stability` — implemented at `.agents/skills/yama-data-pipeline/commands/classify-summit-candidate-municipality-stability.js`
+  - Library: `.agents/skills/yama-data-pipeline/lib/municipality_stability.js`
+* **Input N03 GeoJSON**: `data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson`
+* **Input point lookup**: `data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl`
+* **Input summit candidates**: `data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl`
+* **Output JSONL**: `data/04_feature/location_reference/municipality_point_lookup_stability/summit_candidates/2026-05-12/summit_candidate_municipality_stability.jsonl`
+* **Manifest**: `data/04_feature/location_reference/municipality_point_lookup_stability/summit_candidates/2026-05-12/manifest.json`
+* **Report**: `docs/migration/ksj_n03_ehime_summit_candidate_municipality_stability_report.md`
+* **Audit**: `docs/migration/ksj_n03_ehime_municipality_stability_audit.md`
+* **Parameters**:
+  - Offset distance: 1000 m
+  - Boundary tolerance: 20 m
+  - Stable interior threshold: 1000 m
+* **Execution Summary Counts**:
+  - Input candidate records: 496
+  - stable_interior: 204
+  - stable_cardinal_1km_same: 20
+  - near_boundary: 138
+  - offset_inconsistent: 0
+  - boundary_ambiguous: 122
+  - outside_prefecture: 12
+  - invalid_coordinate: 0
+  - all_cardinal_1km_same: 224
+  - distance_stable_interior: 204
+* **DVC status**: not active; no DVC commands run
+* **Git LFS**: not used
+* **Source files modified**: `false`
+* **Reverse-geocoding artifacts**: retained; not deleted or modified
+* **Note**: Classifies the geographic stability of each candidate relative to municipality boundaries by evaluating 1 km offsets in the four cardinal directions. No external API calls.
+
+---
+
+
+### 17. Location-Stability Refinement of Mountain-Summit Candidate Links
+
+* **Status**: `executed_verified`
+* **Subcommand(s)**:
+  - `refine-mountain-summit-candidate-links-by-location-stability` — implemented at `.agents/skills/yama-data-pipeline/commands/refine-mountain-summit-candidate-links-by-location-stability.js`
+  - Library: `.agents/skills/yama-data-pipeline/lib/location_stability_refinement.js`
+* **Input candidate links**: `data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl`
+* **Input mountains**: `data/03_primary/mountains/ehime_mountain_source_rows.json`
+* **Input municipality adjacency**: `data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_adjacency.json`
+* **Input municipality stability**: `data/04_feature/location_reference/municipality_point_lookup_stability/summit_candidates/2026-05-12/summit_candidate_municipality_stability.jsonl`
+* **Output JSONL**: `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl`
+* **Review CSV**: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_refined_review_queue.csv`
+* **Review MD**: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_refined_review_queue.md`
+* **Manifest**: `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_manifest.json`
+* **Report**: `docs/migration/mountain_summit_candidate_location_stability_refinement_report.md`
+* **Execution Summary Counts**:
+  - Input candidate links: 11372
+  - Output refined links: 11372
+  - location_strong_match: 2155
+  - boundary_plausible: 635
+  - municipality_incompatible_strong: 2647
+  - adjacent_but_deep_inside: 1155
+  - location_uncertain_keep: 3878
+  - missing_location_evidence: 902
+  - deprioritized_by_location_stability: 6933
+* **DVC status**: not active; no DVC commands run
+* **Git LFS**: not used
+* **Source files modified**: `false`
+* **Reverse-geocoding artifacts**: retained; not deleted or modified
+* **Note**: Refines the candidates' scores and ranks by comparing the mountain's expected municipality with the candidate's stability status and topological land adjacency. Existing Nominatim-based Stage 10 outputs are fully preserved.
+
+---
+
+
+### 18. Location-Stability Compact Review Queue Generation
+
+* **Status**: `executed_verified`
+* **Subcommand(s)**:
+  - `generate-location-stability-compact-review-queues` — implemented at `.agents/skills/yama-data-pipeline/commands/generate-location-stability-compact-review-queues.js`
+  - Library: `.agents/skills/yama-data-pipeline/lib/location_stability_review_queue_compression.js`
+* **Input refined links**: `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl`
+* **Output directory**: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/`
+* **Manifest**: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/manifest.json`
+* **Report**: `docs/migration/mountain_summit_candidate_location_stability_review_queue_report.md`
+* **Execution Summary Counts**:
+  - Top-1 queue rows: 531
+  - Top-3 queue rows: 1593
+  - Conflict queue rows: 4301
+  - GPX groups: 268
+  - Summit candidate conflict rows: 496
+* **DVC status**: not active; no DVC commands run
+* **Git LFS**: not used
+* **Source files modified**: `false`
+* **Reverse-geocoding artifacts**: retained; not deleted or modified
+* **Note**: Regenerates compact review queues using the location-stability refinement bucket classifications. Non-compatible links are deprioritized. Existing compact review queues are preserved.
+
+---
+
+
 ## Action Plan Before Active DVC Initialization
 Before running `dvc init` and creating active root configuration pipelines, the following must occur:
 1. Finalize directory structures and path mapping agreements.

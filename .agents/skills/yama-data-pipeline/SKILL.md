@@ -403,6 +403,67 @@ node cli.js lookup-ehime-municipalities-for-points \
 **Policy note on reverse geocoding**: Reverse-geocoding outputs remain preserved as historical and contextual evidence. For municipality-level lookup, KSJ/N03 polygon lookup is preferred because it is authoritative, offline, and fully reproducible. Reverse geocoding remains appropriate when street address, place names, roads, facilities, island labels, or other human-readable locality context is required.
 
 
+#### `classify-summit-candidate-municipality-stability` (Portable)
+
+Classifies the administrative municipality stability of summit candidates using a 1 km neighborhood lookup around the center coordinate.
+
+- Requires `--n03-geojson`, `--summit-candidates`, `--point-lookup`, `--out`, `--manifest`, `--report`.
+- Optional `--offset-m` (default: 1000).
+- Optional `--boundary-tolerance-m` (default: 20).
+- Optional `--stable-interior-threshold-m` (default: 1000).
+- Classifies candidate points into stability categories: `stable_interior`, `stable_cardinal_1km_same`, `near_boundary`, `offset_inconsistent`, `boundary_ambiguous`, `outside_prefecture`, `invalid_coordinate`.
+- Does not modify input files or call external APIs.
+
+```sh
+node cli.js classify-summit-candidate-municipality-stability \
+  --n03-geojson "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson" \
+  --summit-candidates "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl" \
+  --point-lookup "data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl" \
+  --offset-m 1000 \
+  --boundary-tolerance-m 20 \
+  --stable-interior-threshold-m 1000 \
+  --out "data/04_feature/location_reference/municipality_point_lookup_stability/summit_candidates/2026-05-12/summit_candidate_municipality_stability.jsonl" \
+  --manifest "data/04_feature/location_reference/municipality_point_lookup_stability/summit_candidates/2026-05-12/manifest.json" \
+  --report "docs/migration/ksj_n03_ehime_summit_candidate_municipality_stability_report.md"
+```
+
+#### `refine-mountain-summit-candidate-links-by-location-stability` (Portable)
+
+Refines mountain-to-summit candidate links using the municipality stability classifications and adjacency constraints.
+
+- Requires `--candidate-links`, `--mountains`, `--municipality-adjacency`, `--municipality-stability`, `--out`, `--manifest`, `--review-csv`, `--review-md`, `--report`.
+- Computes location stability bucket: `location_strong_match`, `boundary_plausible`, `adjacent_but_deep_inside`, `municipality_incompatible_strong`, `location_uncertain_keep`, `missing_location_evidence`.
+- Re-ranks candidates, calculates adjusted scores, and evaluates review priorities.
+
+```sh
+node cli.js refine-mountain-summit-candidate-links-by-location-stability \
+  --candidate-links "data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl" \
+  --mountains "data/03_primary/mountains/ehime_mountain_source_rows.json" \
+  --municipality-adjacency "data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_adjacency.json" \
+  --municipality-stability "data/04_feature/location_reference/municipality_point_lookup_stability/summit_candidates/2026-05-12/summit_candidate_municipality_stability.jsonl" \
+  --out "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl" \
+  --manifest "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_manifest.json" \
+  --review-csv "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_refined_review_queue.csv" \
+  --review-md "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_refined_review_queue.md" \
+  --report "docs/migration/mountain_summit_candidate_location_stability_refinement_report.md"
+```
+
+#### `generate-location-stability-compact-review-queues` (Portable)
+
+Generates compact review queues and conflict-group reports based on location-stability refined links.
+
+- Requires `--refined-links`, `--out-dir`, `--manifest`, `--report`.
+- Segregates high-priority review items, close alternatives, and location warning conflicts, while deprioritizing incompatible matches.
+
+```sh
+node cli.js generate-location-stability-compact-review-queues \
+  --refined-links "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl" \
+  --out-dir "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review" \
+  --manifest "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/manifest.json" \
+  --report "docs/migration/mountain_summit_candidate_location_stability_review_queue_report.md"
+```
+
+
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.

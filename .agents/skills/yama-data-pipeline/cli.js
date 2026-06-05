@@ -303,6 +303,16 @@ function parseArgs(argsArray) {
             options.latField = argsArray[++i];
         } else if (arg === '--lon-field' && i + 1 < argsArray.length) {
             options.lonField = argsArray[++i];
+        } else if (arg === '--point-lookup' && i + 1 < argsArray.length) {
+            options.pointLookup = argsArray[++i];
+        } else if (arg === '--offset-m' && i + 1 < argsArray.length) {
+            options.offsetM = Number(argsArray[++i]);
+        } else if (arg === '--stable-interior-threshold-m' && i + 1 < argsArray.length) {
+            options.stableInteriorThresholdM = Number(argsArray[++i]);
+        } else if (arg === '--municipality-stability' && i + 1 < argsArray.length) {
+            options.municipalityStability = argsArray[++i];
+        } else if (arg === '--municipality-adjacency' && i + 1 < argsArray.length) {
+            options.municipalityAdjacency = argsArray[++i];
         }
     }
     return options;
@@ -471,6 +481,27 @@ async function run() {
         }
     }
 
+    if (command === 'classify-summit-candidate-municipality-stability') {
+        if (!options.n03Geojson || !options.summitCandidates || !options.pointLookup || !options.out || !options.manifest || !options.report) {
+            log.error(`Error: --n03-geojson, --summit-candidates, --point-lookup, --out, --manifest, and --report are required for 'classify-summit-candidate-municipality-stability'.`);
+            printUsageAndExit();
+        }
+    }
+
+    if (command === 'refine-mountain-summit-candidate-links-by-location-stability') {
+        if (!options.candidateLinks || !options.mountains || !options.municipalityAdjacency || !options.municipalityStability || !options.out || !options.manifest || !options.reviewCsv || !options.reviewMd || !options.report) {
+            log.error(`Error: --candidate-links, --mountains, --municipality-adjacency, --municipality-stability, --out, --manifest, --review-csv, --review-md, and --report are required for 'refine-mountain-summit-candidate-links-by-location-stability'.`);
+            printUsageAndExit();
+        }
+    }
+
+    if (command === 'generate-location-stability-compact-review-queues') {
+        if (!options.refinedLinks || !options.outDir || !options.manifest || !options.report) {
+            log.error(`Error: --refined-links, --out-dir, --manifest, and --report are required for 'generate-location-stability-compact-review-queues'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -547,6 +578,15 @@ async function run() {
                 break;
             case 'lookup-ehime-municipalities-for-points':
                 await require('./commands/lookup-ehime-municipalities-for-points')(options);
+                break;
+            case 'classify-summit-candidate-municipality-stability':
+                await require('./commands/classify-summit-candidate-municipality-stability')(options);
+                break;
+            case 'refine-mountain-summit-candidate-links-by-location-stability':
+                await require('./commands/refine-mountain-summit-candidate-links-by-location-stability')(options);
+                break;
+            case 'generate-location-stability-compact-review-queues':
+                await require('./commands/generate-location-stability-compact-review-queues')(options);
                 break;
 
             case 'test':
