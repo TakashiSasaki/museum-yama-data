@@ -53,6 +53,10 @@ This document outlines the staged future workflow for resolving summit coordinat
 *   **Description:** Use detailed municipality and island reverse-geocoding information to refine, re-rank, and prioritize candidate links. This step assigns review priorities and filters the links into a reduced review queue.
 *   **Expected Output:** `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_candidate_links.jsonl`, `location_refined_manifest.json`, and review files.
 
+### Stage 6c: Compress mountain-to-summit candidate review queues (Executed)
+*   **Description:** Group and compress location-refined candidate links into compact Top-1, Top-3, and Conflict-focused review queues. Generate GPX-group and summit-conflict reports to facilitate ridge traverse and candidate overlap review.
+*   **Expected Output:** `data/08_reporting/mountain_summit_candidate_review/2026-05-12/` containing `compact_review_queue_top1.csv`, `compact_review_queue_top3.csv`, `compact_review_queue_conflicts.csv`, `conflict_groups_by_gpx.csv`, `conflict_groups_by_summit_candidate.csv`, `compact_review_summary.md`, and `compact_review_manifest.json`.
+
 ### Stage 7: Compare CSV coordinates against GPX summit candidates
 *   **Description:** Validate the initial CSV-provided coordinates against the geometry of matched GPX summit candidates to assess accuracy and consistency.
 *   **Expected Output:** `data/04_feature/mountain_coordinate_validation/.../csv_vs_gpx_candidate_distances.jsonl`

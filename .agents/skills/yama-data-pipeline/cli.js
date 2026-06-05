@@ -32,6 +32,7 @@ Commands:
   enrich-gpx-yamap-links-by-title Enrich GPX-YAMAP candidate links with title similarity features.
   generate-mountain-summit-candidate-links Generate candidate links between mountain records and summit candidates.
   refine-mountain-summit-candidate-links-by-location Refine candidate links using municipality/island geocoding evidence.
+  generate-compact-mountain-summit-review-queues Generate compact review queues and conflict groups.
 
 
 
@@ -147,6 +148,12 @@ refine-mountain-summit-candidate-links-by-location Options:
   --review-csv <path>               Required. Path to output review queue CSV.
   --review-md <path>                Required. Path to output review queue Markdown.
   --report <path>                   Required. Path to output report markdown.
+
+generate-compact-mountain-summit-review-queues Options:
+  --refined-links <path>            Required. Path to location-refined candidate links JSONL.
+  --out-dir <path>                  Required. Path to output directory.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
 `);
 
     process.exit(code);
@@ -232,6 +239,8 @@ function parseArgs(argsArray) {
             options.reviewMd = argsArray[++i];
         } else if (arg === '--candidate-links' && i + 1 < argsArray.length) {
             options.candidateLinks = argsArray[++i];
+        } else if (arg === '--refined-links' && i + 1 < argsArray.length) {
+            options.refinedLinks = argsArray[++i];
         }
     }
     return options;
@@ -365,6 +374,13 @@ async function run() {
         }
     }
 
+    if (command === 'generate-compact-mountain-summit-review-queues') {
+        if (!options.refinedLinks || !options.outDir || !options.manifest || !options.report) {
+            log.error(`Error: --refined-links, --out-dir, --manifest, and --report are required for 'generate-compact-mountain-summit-review-queues'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -426,6 +442,9 @@ async function run() {
                 break;
             case 'refine-mountain-summit-candidate-links-by-location':
                 await require('./commands/refine-mountain-summit-candidate-links-by-location')(options);
+                break;
+            case 'generate-compact-mountain-summit-review-queues':
+                await require('./commands/generate-compact-mountain-summit-review-queues')(options);
                 break;
 
             case 'test':

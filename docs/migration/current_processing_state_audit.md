@@ -131,6 +131,29 @@ This document inventories and verifies the current execution state of the data-p
   - Deprioritized links: 30
 * **Note**: This stage refines the candidate links using detailed Nominatim municipality/island information to prioritize and re-rank them, producing a reduced review queue. It does not generate final coordinates or resolve identities.
 
+### 11. Mountain Summit Candidate Review Queue Compression (`generate-compact-mountain-summit-review-queues`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/generate-compact-mountain-summit-review-queues.js` and registered in `cli.js`.
+* **Output files exist?**: Yes, at:
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_queue_top1.csv`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_queue_top3.csv`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_queue_conflicts.csv`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/conflict_groups_by_gpx.csv`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/conflict_groups_by_summit_candidate.csv`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_summary.md`
+* **Manifest file exists?**: Yes, at `data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/mountain_summit_candidate_review_queue_compression_report.md`.
+* **Execution Evidence**: [`mountain_summit_candidate_review_queue_compression_report.md`](mountain_summit_candidate_review_queue_compression_report.md).
+* **Execution Summary Counts**:
+  - Input location-refined candidate link records: 11,372
+  - Top-1 review queue rows: 531
+  - Top-3 review queue rows: 1,593
+  - Conflict-only prioritized queue rows: 5,747
+  - GPX groups (traverses): 268
+  - Summit candidate conflict groups: 496
+  - Score gap threshold: 0.03
+* **Note**: This stage compresses the location-refined mountain-to-summit candidate links into compact review queues and conflict-group reports to reduce human review workload. It does not resolve links automatically or create final coordinates.
+
 ---
 
 

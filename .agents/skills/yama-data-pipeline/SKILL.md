@@ -296,6 +296,23 @@ node cli.js refine-mountain-summit-candidate-links-by-location \
   --review-md "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_refined_review_queue.md" \
   --report "docs/migration/mountain_summit_candidate_location_refinement_report.md"
 ```
+
+#### 4k. `generate-compact-mountain-summit-review-queues` (Portable)
+Generates compact review queues and conflict-group reports from the location-refined candidate links.
+- Requires `--refined-links` (path to location-refined candidate links JSONL).
+- Requires `--out-dir` (path to output directory).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report Markdown).
+- Performs safety checks, row count validation (exactly 531 rows in Top-1), and relative path verification.
+
+```sh
+node cli.js generate-compact-mountain-summit-review-queues \
+  --refined-links "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_candidate_links.jsonl" \
+  --out-dir "data/08_reporting/mountain_summit_candidate_review/2026-05-12" \
+  --manifest "data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_manifest.json" \
+  --report "docs/migration/mountain_summit_candidate_review_queue_compression_report.md"
+```
+
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.

@@ -18,6 +18,8 @@ require('./test_summit_candidate_location_evidence');
 require('./test_gpx_yamap_title_linking');
 require('./test_mountain_summit_candidate_linking');
 require('./test_mountain_summit_candidate_location_refinement');
+require('./test_mountain_summit_review_queue_compression');
+
 
 
 
