@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 403
-- **Mountain Name**: undefined
+- **Mountain Name**: 船山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 久万高原町
 - **Municipality**: 久万高原町
@@ -86,10 +86,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 403) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "船山" (No. 403) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 船山
 - Official Elevation: 910m
 - Source Municipality/Island: 久万高原町
 - Known CSV Coordinates: (None, None)
@@ -140,7 +140,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e793f83b8a4fd86f on yamap_2022-04-25_11_35.gpx is linked to: #44 稔山, #58 ヨソ山, #64 大月山, #72 伊之子山, #73 御在所山, #133 戸祇御前山, #214 左谷ノ森, #227 菊ヶ森, #228 餓鬼ヶ森, #298 日浦嶺, #387 階上山, #403 船山, #480 権現山, #486 長山, #491 笹峠山, #493 三郷の辻, #498 黒森, #521 小森, #522 辻ヶ峰
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "船山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

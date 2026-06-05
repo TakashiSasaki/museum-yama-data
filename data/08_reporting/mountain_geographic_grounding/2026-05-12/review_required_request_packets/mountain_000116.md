@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 116
-- **Mountain Name**: undefined
+- **Mountain Name**: 北三方ヶ森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -82,10 +82,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 116) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "北三方ヶ森" (No. 116) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 北三方ヶ森
 - Official Elevation: 978m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -132,7 +132,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:f59e1ba73617c383 on yamap_2025-04-06_08_48.gpx is linked to: #65 引地山, #87 鋸山, #116 北三方ヶ森, #144 古権現山, #213 魚谷森, #248 瀬戸黒森, #265 譲ヶ葉森, #266 郭公岳, #285 御祝山, #316 高縄山, #328 笹ヶ峰, #395 北ヶ森, #405 加塚山, #468 町木山, #478 尻割山, #497 面木山, #523 常住
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "北三方ヶ森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

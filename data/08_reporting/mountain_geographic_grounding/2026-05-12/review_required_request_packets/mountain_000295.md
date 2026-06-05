@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 295
-- **Mountain Name**: undefined
+- **Mountain Name**: 五代ヶ森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 久万高原町
 - **Municipality**: 久万高原町
@@ -83,10 +83,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 295) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "五代ヶ森" (No. 295) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 五代ヶ森
 - Official Elevation: 1711m
 - Source Municipality/Island: 久万高原町
 - Known CSV Coordinates: (None, None)
@@ -134,7 +134,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:ccaadb71f8ae2bd1 on yamap_2022-07-10_07_25.gpx is linked to: #92 堂ヶ森, #94 自念子ノ頭, #109 西黒森, #167 冠山, #239 東赤石山, #240 八巻山, #294 八辻ノ峰, #295 五代ヶ森, #307 沓掛山, #309 平家平, #312 男山, #313 瓶ヶ森, #417 東黒森, #498 黒森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "五代ヶ森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

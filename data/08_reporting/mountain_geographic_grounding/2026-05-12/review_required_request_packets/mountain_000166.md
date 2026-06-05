@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 166
-- **Mountain Name**: undefined
+- **Mountain Name**: 獅子舞の鼻
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 新居浜市
 - **Municipality**: 新居浜市
@@ -80,10 +80,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 166) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "獅子舞の鼻" (No. 166) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 獅子舞の鼻
 - Official Elevation: 1482m
 - Source Municipality/Island: 新居浜市
 - Known CSV Coordinates: (None, None)
@@ -128,7 +128,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:eb3b108c5d508377 on yamap_2024-09-23_07_35.gpx is linked to: #55 明神山, #79 ウバホド山, #85 赤星山, #153 石墨山, #165 綱繰山, #166 獅子舞の鼻, #318 中津山(明神山), #319 猿越山, #343 明神山, #421 五段城, #422 天狗ノ森, #428 東光森山, #432 三つ足山, #433 大森山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "獅子舞の鼻".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

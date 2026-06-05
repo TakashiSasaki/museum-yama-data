@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 477
-- **Mountain Name**: undefined
+- **Mountain Name**: 笠松山東峰
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 今治市
 - **Municipality**: 今治市
@@ -89,10 +89,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 477) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "笠松山東峰" (No. 477) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 笠松山東峰
 - Official Elevation: 327m
 - Source Municipality/Island: 今治市
 - Known CSV Coordinates: (None, None)
@@ -146,7 +146,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:f0a03b36c279ddd3 on yamap_2024-12-15_07_21.gpx is linked to: #98 積善山, #114 世田山, #115 笠松山, #123 三山, #190 黒瀬山（黒瀬城址）, #191 岡山（岡城址）, #193 護摩ヶ森（護摩ヶ森城址）, #194 我合山（我合城址）, #198 権現山, #257 大空山, #262 熊ガ峰, #274 天ガ森, #276 白山, #277 観音山, #278 国見山, #280 御勧請山, #283 高手山, #304 青刈山, #344 陣が森, #345 岩が森, #346 スクモ塚, #347 高萩山, #348 長者森, #350 行道山, #374 念仏山, #391 大登山, #436 大峰, #444 紅葉山, #445 梁瀬山, #465 権現山, #476 愛宕山, #477 笠松山東峰
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "笠松山東峰".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

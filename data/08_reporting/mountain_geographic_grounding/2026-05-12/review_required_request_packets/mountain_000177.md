@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 177
-- **Mountain Name**: undefined
+- **Mountain Name**: 佐々久山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西条市
 - **Municipality**: 西条市
@@ -85,10 +85,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 177) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "佐々久山" (No. 177) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 佐々久山
 - Official Elevation: 56m
 - Source Municipality/Island: 西条市
 - Known CSV Coordinates: (None, None)
@@ -138,7 +138,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:ea18d38abe59ed57 on yamap_2023-01-06_11_33.gpx is linked to: #32 岩子山, #39 花木山, #52 天神山, #53 室岡山, #59 忽那山, #118 湯築山, #124 伊勢山, #139 黒崎山, #146 西港山, #147 大丸山, #148 港山, #149 すくも山, #177 佐々久山, #178 土亀山, #179 天山, #181 星岡山, #185 岩子山, #186 垣生山, #187 津田山, #188 弁天山, #203 谷田山, #204 金毘羅山, #205 佐古田山, #258 御串山, #339 城山, #369 垣生山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "佐々久山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

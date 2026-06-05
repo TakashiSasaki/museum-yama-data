@@ -1,8 +1,8 @@
 {
   "stage": "generate-review-required-geographic-grounding-requests",
   "version": "1.0.0",
-  "git_commit": "716e4b0206aa6ce03c237c2bd2c6e2cdaed7ecae",
-  "created_at": "2026-06-05T11:59:20.879Z",
+  "git_commit": "c3ee0d111b3c1f5401228ab2ce480af92e38a1f1",
+  "created_at": "2026-06-05T12:27:26.698Z",
   "checksum_algorithm": "sha256",
   "inputs": {
     "mountains": {
@@ -37,19 +37,19 @@
   "outputs": {
     "packets": {
       "path": "data/04_feature/mountain_geographic_grounding/2026-05-12/review_required_grounding_request_packets.jsonl",
-      "sha256": "f2c8d25d0a2a67aa46e8dfab8f3a9890256c4288716cbb2121d819b0f7b7aff2"
+      "sha256": "858c5f50ff792a333b44aae8192bbe9dd6a15c4264a3baa8c692172392ca989a"
     },
     "selection": {
       "path": "data/04_feature/mountain_geographic_grounding/2026-05-12/review_required_grounding_request_selection.jsonl",
-      "sha256": "47a6747bbcd2c53288c6712238af0accd0a29fb1b0d6377ad331c2fad74dc24d"
+      "sha256": "3ea9e854a539daa7be789e2f688e67861d430cc6193ce8585a5961619f68225c"
     },
     "submission_queue": {
       "path": "data/08_reporting/mountain_geographic_grounding/2026-05-12/review_required_grounding_submission_queue.csv",
-      "sha256": "a43e0b34a4b407e1975497f09064ec35877d19d9920c60b10a56ac8697949daa"
+      "sha256": "75d1290b419ab1ebddd838d64c3770130bbcb8f119391c5ad75af5591ef7a499"
     },
     "index": {
       "path": "data/08_reporting/mountain_geographic_grounding/2026-05-12/review_required_request_packets/index.md",
-      "sha256": "89cf4e0f42a974f7cd7170a31808a26cd9068a31807f16b5fbc1e29ac8349741"
+      "sha256": "9810a82adc0f02d69d3d98acedf8686f2c181ba831d8026a717edd690620df94"
     },
     "summary": {
       "path": "data/08_reporting/mountain_geographic_grounding/2026-05-12/review_required_grounding_summary.md",

@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 128
-- **Mountain Name**: undefined
+- **Mountain Name**: 狩江権現山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西予市
 - **Municipality**: 西予市
@@ -96,10 +96,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 128) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "狩江権現山" (No. 128) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 狩江権現山
 - Official Elevation: 464m
 - Source Municipality/Island: 西予市
 - Known CSV Coordinates: (None, None)
@@ -160,7 +160,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:f108570a8e33ce90 on yamap_2023-12-17_07_11.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #17 伽藍山, #29 高山, #30 勝岡山, #35 御岳山, #47 倉谷山, #67 甲が森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #159 権現山, #189 権現山, #192 鉢ヶ森（鉢ヶ森城址）, #198 権現山, #216 千羽ヶ岳, #229 船野山, #232 奥之城山, #252 総津権現山, #253 秦皇山, #254 平岡山(平岡城址), #255 竜門山, #263 権現山, #284 斎藤山, #310 薬師山, #337 龍王山, #345 岩が森, #358 小山岳, #360 松葉山（松葉城址）, #397 竜王山, #400 愛の森, #457 槇ノ山, #465 権現山, #480 権現山, #494 権現山, #496 鼻欠山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "狩江権現山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

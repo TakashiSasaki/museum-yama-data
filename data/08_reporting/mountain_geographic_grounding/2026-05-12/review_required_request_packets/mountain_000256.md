@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 256
-- **Mountain Name**: undefined
+- **Mountain Name**: 大黒山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西条市
 - **Municipality**: 西条市
@@ -94,10 +94,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 256) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "大黒山" (No. 256) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 大黒山
 - Official Elevation: 321m
 - Source Municipality/Island: 西条市
 - Known CSV Coordinates: (None, None)
@@ -156,7 +156,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:fd13fabb918486e6 on yamap_2024-01-27_08_01.gpx is linked to: #98 積善山, #114 世田山, #115 笠松山, #123 三山, #151 冨士山, #190 黒瀬山（黒瀬城址）, #191 岡山（岡城址）, #194 我合山（我合城址）, #198 権現山, #256 大黒山, #257 大空山, #258 御串山, #259 宝股山, #260 開山, #261 鳥屋ヶ森, #262 熊ガ峰, #274 天ガ森, #276 白山, #277 観音山, #280 御勧請山, #304 青刈山, #310 薬師山, #347 高萩山, #350 行道山, #391 大登山, #436 大峰, #444 紅葉山, #445 梁瀬山, #458 遠見山, #464 飯之山, #465 権現山, #476 愛宕山, #477 笠松山東峰
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "大黒山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

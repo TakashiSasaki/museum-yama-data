@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 510
-- **Mountain Name**: undefined
+- **Mountain Name**: 水無権現
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 内子町
 - **Municipality**: 内子町
@@ -79,10 +79,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 510) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "水無権現" (No. 510) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 水無権現
 - Official Elevation: 703m
 - Source Municipality/Island: 内子町
 - Known CSV Coordinates: (33.612515, 132.72112)
@@ -125,7 +125,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e7ae682a07af2e10 on yamap_2022-01-22_09_04.gpx is linked to: #3 高森山, #4 岩伽羅山, #5 衣掛山, #6 吉山(吉山城址), #12 経座ヶ森, #42 水梨山, #168 遠ヶ森, #245 高森, #249 羽子山, #354 滝山, #390 高森山, #407 五十崎神南山, #408 笠成山, #452 黒岩岳, #459 高森山, #466 大森山, #467 高森山, #479 四本松, #482 峰畑山, #510 水無権現, #511 秋葉山, #512 黒山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "水無権現".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

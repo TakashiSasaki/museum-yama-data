@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 86
-- **Mountain Name**: undefined
+- **Mountain Name**: 七々木山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 四国中央市
 - **Municipality**: 四国中央市
@@ -87,10 +87,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 86) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "七々木山" (No. 86) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 七々木山
 - Official Elevation: 1145m
 - Source Municipality/Island: 四国中央市
 - Known CSV Coordinates: (None, None)
@@ -142,7 +142,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:ad2256a1bfd3ef78 on yamap_2023-11-11_07_17.gpx is linked to: #60 鬼ヶ城山, #62 八面山, #63 大久保山, #71 碁石ヶ森, #86 七々木山, #212 南三方ヶ森, #226 黒森山, #244 二ノ岳, #246 四辻ノ森, #247 三光ノ辻山, #267 東高月山, #287 小屋ヶ森, #288 串ヶ森, #289 目黒鳥屋, #290 長尾森, #291 二箆山, #322 三の森, #330 天堤山, #419 小牛城, #473 三傍示山, #526 大旗山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "七々木山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 208
-- **Mountain Name**: undefined
+- **Mountain Name**: 宝ヶ峯
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -95,10 +95,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 208) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "宝ヶ峯" (No. 208) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 宝ヶ峯
 - Official Elevation: 284m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -158,7 +158,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:dba931625b34d9ac on yamap_2023-10-13_10_02.gpx is linked to: #10 恵良山, #38 重茂山, #114 世田山, #123 三山, #151 冨士山, #190 黒瀬山（黒瀬城址）, #196 大森山, #200 石神山, #208 宝ヶ峯, #219 生子山, #241 ベツソ山, #242 歯朶谷山, #256 大黒山, #259 宝股山, #261 鳥屋ヶ森, #262 熊ガ峰, #274 天ガ森, #276 白山, #280 御勧請山, #303 名石山, #304 青刈山, #348 長者森, #372 亀老山, #379 高穴山, #383 無宗天山, #390 高森山, #393 泰ノ山, #394 大里山, #443 根太山, #448 雨森山, #458 遠見山, #464 飯之山, #477 笠松山東峰
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "宝ヶ峯".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

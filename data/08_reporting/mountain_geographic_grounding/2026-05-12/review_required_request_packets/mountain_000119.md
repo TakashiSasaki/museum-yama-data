@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 119
-- **Mountain Name**: undefined
+- **Mountain Name**: 寒風山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西条市
 - **Municipality**: 西条市
@@ -74,10 +74,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 119) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "寒風山" (No. 119) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 寒風山
 - Official Elevation: 1762m
 - Source Municipality/Island: 西条市
 - Known CSV Coordinates: (None, None)
@@ -116,7 +116,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:6f70c7d3c27fe164 on yamap_2024-09-14_07_46.gpx is linked to: #74 岩黒山, #119 寒風山, #167 冠山, #294 八辻ノ峰, #317 伊予富士, #417 東黒森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "寒風山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

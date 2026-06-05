@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 188
-- **Mountain Name**: undefined
+- **Mountain Name**: 弁天山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -95,10 +95,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 188) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "弁天山" (No. 188) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 弁天山
 - Official Elevation: 130m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -158,7 +158,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:a92a94d8b5e0fb90 on yamap_2022-06-20_12_02.gpx is linked to: #8 新城山, #24 御幸寺山, #31 西山, #32 岩子山, #34 護摩ヶ森, #45 菊ヶ森, #49 大久保山, #50 八里ヶ峠, #55 明神山, #95 勝山, #99 鉢巻山, #100 立石山, #101 鷲ヶ頭山, #102 安神山, #113 大峰ヶ台, #125 久司山, #170 高山, #171 塔ノ峰, #172 海山, #176 永納山(永納山城址), #188 弁天山, #199 遠見山, #218 えんとつ山, #260 開山, #370 金子山, #381 霊仙山, #382 若いもん山, #392 高山, #424 千秋寺山, #484 軽ノ山, #485 野津子山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "弁天山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

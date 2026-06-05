@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 214
-- **Mountain Name**: undefined
+- **Mountain Name**: 左谷ノ森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -91,10 +91,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 214) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "左谷ノ森" (No. 214) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 左谷ノ森
 - Official Elevation: 932m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -150,7 +150,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e8b129f70e703be5 on yamap_2026-03-07_11_08.gpx is linked to: #14 権現山, #58 ヨソ山, #64 大月山, #116 北三方ヶ森, #128 狩江権現山, #133 戸祇御前山, #144 古権現山, #159 権現山, #189 権現山, #198 権現山, #214 左谷ノ森, #228 餓鬼ヶ森, #248 瀬戸黒森, #252 総津権現山, #263 権現山, #311 子持権現山, #353 壺神山, #465 権現山, #478 尻割山, #479 四本松, #480 権現山, #486 長山, #491 笹峠山, #493 三郷の辻, #494 権現山, #521 小森, #522 辻ヶ峰
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "左谷ノ森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

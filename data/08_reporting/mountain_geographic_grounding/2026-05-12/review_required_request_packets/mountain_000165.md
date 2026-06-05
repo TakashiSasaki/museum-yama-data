@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 165
-- **Mountain Name**: undefined
+- **Mountain Name**: 綱繰山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 新居浜市
 - **Municipality**: 新居浜市
@@ -84,10 +84,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 165) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "綱繰山" (No. 165) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 綱繰山
 - Official Elevation: 1466m
 - Source Municipality/Island: 新居浜市
 - Known CSV Coordinates: (None, None)
@@ -136,7 +136,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:db51ae1b2be57eea on yamap_2022-05-07_07_14.gpx is linked to: #83 寒川山, #84 豊受山, #85 赤星山, #86 七々木山, #87 鋸山, #88 翠波峰, #89 平石山, #153 石墨山, #165 綱繰山, #319 猿越山, #321 西山, #415 貝渚山, #421 五段城, #430 三ッ森山, #432 三つ足山, #433 大森山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "綱繰山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

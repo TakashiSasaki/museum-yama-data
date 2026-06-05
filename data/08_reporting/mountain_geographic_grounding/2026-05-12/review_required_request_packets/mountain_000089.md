@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 89
-- **Mountain Name**: undefined
+- **Mountain Name**: 平石山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 四国中央市
 - **Municipality**: 四国中央市
@@ -86,10 +86,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 89) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "平石山" (No. 89) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 平石山
 - Official Elevation: 826m
 - Source Municipality/Island: 四国中央市
 - Known CSV Coordinates: (None, None)
@@ -140,7 +140,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:c2491268ea5645b7 on yamap_2022-02-11_08_26.gpx is linked to: #18 塩ヶ森, #19 番駄ヶ森, #20 ケタ山, #21 大磨山, #22 鍵山（象ヶ森）, #83 寒川山, #89 平石山, #164 出石山, #231 黒滝山, #250 観音森, #272 観音岳, #315 岩屋山, #364 浄心山, #396 高土の峰, #404 コクゾ峰, #453 大判山, #467 高森山, #470 鎧掛山, #481 呉石山, #513 大野山, #514 棟山, #515 星ヶ森, #516 草屋敷
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "平石山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

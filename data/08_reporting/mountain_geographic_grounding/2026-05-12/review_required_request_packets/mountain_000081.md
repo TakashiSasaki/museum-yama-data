@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 81
-- **Mountain Name**: undefined
+- **Mountain Name**: 前々司山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 東温市
 - **Municipality**: 東温市
@@ -88,10 +88,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 81) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "前々司山" (No. 81) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 前々司山
 - Official Elevation: 1253m
 - Source Municipality/Island: 東温市
 - Known CSV Coordinates: (None, None)
@@ -144,7 +144,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:dc456a72b89d4d52 on yamap_2022-06-16_16_00.gpx is linked to: #80 うなめご, #81 前々司山, #84 豊受山, #96 姫草, #97 牛城, #157 樽谷山, #217 皿ヶ嶺, #329 ハネズル山, #411 野地峰, #419 小牛城, #492 雨霧山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "前々司山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

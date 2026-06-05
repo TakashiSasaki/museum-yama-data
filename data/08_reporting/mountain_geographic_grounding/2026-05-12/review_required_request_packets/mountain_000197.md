@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 197
-- **Mountain Name**: undefined
+- **Mountain Name**: 見晴山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 伊方町
 - **Municipality**: 伊方町
@@ -102,10 +102,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 197) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "見晴山" (No. 197) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 見晴山
 - Official Elevation: 395m
 - Source Municipality/Island: 伊方町
 - Known CSV Coordinates: (None, None)
@@ -172,7 +172,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:bdf43111ae9de6ae on yamap_2024-06-14_06_46.gpx is linked to: #17 伽藍山, #47 倉谷山, #98 積善山, #117 大友山, #193 護摩ヶ森（護摩ヶ森城址）, #197 見晴山, #198 権現山, #216 千羽ヶ岳, #229 船野山, #232 奥之城山, #254 平岡山(平岡城址), #275 夫婦山, #278 国見山, #281 トギ, #283 高手山, #308 二反山, #345 岩が森, #350 行道山, #351 水晶ヶ森, #357 尉之山, #359 勝山, #360 松葉山（松葉城址）, #362 御篠山, #363 天が森, #374 念仏山, #391 大登山, #437 堂堂山, #444 紅葉山, #445 梁瀬山, #450 高雄山, #465 権現山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "見晴山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

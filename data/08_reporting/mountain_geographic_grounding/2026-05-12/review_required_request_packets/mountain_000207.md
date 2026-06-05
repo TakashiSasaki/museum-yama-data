@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 207
-- **Mountain Name**: undefined
+- **Mountain Name**: 尾崎山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -99,10 +99,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 207) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "尾崎山" (No. 207) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 尾崎山
 - Official Elevation: 260m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -166,7 +166,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:d5b708b4d3aa86a0 on yamap_2022-12-25_11_41.gpx is linked to: #6 吉山(吉山城址), #9 腰折山, #29 高山, #36 石槌山, #46 道後山, #56 潮見山, #102 安神山, #126 石灰山, #130 高文殊山, #131 三本榎, #132 鏡山, #134 雄甲山, #170 高山, #171 塔ノ峰, #172 海山, #173 近見山, #174 唐子山, #175 医王山, #176 永納山(永納山城址), #177 佐々久山, #195 由良山, #207 尾崎山, #241 ベツソ山, #279 城山, #349 八倉山, #352 笹ヶ平山, #366 弥八山, #367 西の山, #368 北山, #373 カレイ山, #375 大頭山, #376 高取山, #377 八幡山, #380 高仙山, #386 幻城下城, #389 館山, #392 高山, #505 高山寺山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "尾崎山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

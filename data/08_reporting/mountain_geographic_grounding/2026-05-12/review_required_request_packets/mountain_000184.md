@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 184
-- **Mountain Name**: undefined
+- **Mountain Name**: 柿王寺森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -81,10 +81,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 184) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "柿王寺森" (No. 184) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 柿王寺森
 - Official Elevation: 545m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -130,7 +130,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:f19fd681c4c84753 on yamap_2025-02-28_07_34.gpx is linked to: #2 観音山, #15 白滝山, #18 塩ヶ森, #28 岩柄山, #40 ヌタノサコ, #184 柿王寺森, #189 権現山, #221 種子川山, #263 権現山, #335 天狗森, #338 大谷山, #342 立烏帽子山, #344 陣が森, #384 綱付山, #385 幻城上城, #386 幻城下城, #401 京の森, #442 天道ヶ頭, #454 竜王の峰, #495 雨乞山, #502 うつむき山, #503 妙見山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "柿王寺森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

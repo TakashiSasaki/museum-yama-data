@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 97
-- **Mountain Name**: undefined
+- **Mountain Name**: 牛城
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西予市
 - **Municipality**: 西予市
@@ -87,10 +87,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 97) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "牛城" (No. 97) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 牛城
 - Official Elevation: 1342m
 - Source Municipality/Island: 西予市
 - Known CSV Coordinates: (None, None)
@@ -142,7 +142,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:a61fd78e4e062683 on yamap_2023-10-22_06_44.gpx is linked to: #97 牛城, #238 冠岳, #244 二ノ岳, #245 高森, #292 西雑誌山, #297 狼ヶ城山, #326 カガマシ山, #409 小屋山, #412 黒岩山, #420 正木ノ森, #425 黒川山, #429 別子山, #439 天満山, #530 三ヶ森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "牛城".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

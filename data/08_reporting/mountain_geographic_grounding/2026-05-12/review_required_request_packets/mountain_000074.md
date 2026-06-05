@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 74
-- **Mountain Name**: undefined
+- **Mountain Name**: 岩黒山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 久万高原町
 - **Municipality**: 久万高原町
@@ -77,10 +77,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 74) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "岩黒山" (No. 74) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 岩黒山
 - Official Elevation: 1746m
 - Source Municipality/Island: 久万高原町
 - Known CSV Coordinates: (None, None)
@@ -122,7 +122,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:c9e357d000632346 on yamap_2026-05-02_09_29.gpx is linked to: #74 岩黒山, #119 寒風山, #167 冠山, #239 東赤石山, #294 八辻ノ峰, #295 五代ヶ森, #312 男山, #313 瓶ヶ森, #317 伊予富士, #417 東黒森, #499 台ヶ森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "岩黒山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

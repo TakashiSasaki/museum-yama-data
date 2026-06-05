@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 34
-- **Mountain Name**: undefined
+- **Mountain Name**: 護摩ヶ森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -90,10 +90,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 34) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "護摩ヶ森" (No. 34) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 護摩ヶ森
 - Official Elevation: 170m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -148,7 +148,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:bf9808bbf86d5d73 on yamap_2025-01-30_14_42.gpx is linked to: #7 尾ノ峰, #9 腰折山, #23 天神山, #24 御幸寺山, #31 西山, #32 岩子山, #33 経ヶ森, #34 護摩ヶ森, #49 大久保山, #50 八里ヶ峠, #56 潮見山, #122 松軒山, #126 石灰山, #130 高文殊山, #132 鏡山, #135 雌甲山, #150 愛ノ山, #169 扇山, #186 垣生山, #201 金比羅山, #206 古城山, #314 宅並山, #340 本尊山, #366 弥八山, #367 西の山, #368 北山, #369 垣生山, #370 金子山, #371 八堂山, #377 八幡山, #447 峠ヶ森, #484 軽ノ山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "護摩ヶ森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

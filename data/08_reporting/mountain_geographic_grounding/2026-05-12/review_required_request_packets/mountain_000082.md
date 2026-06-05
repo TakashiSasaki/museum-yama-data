@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 82
-- **Mountain Name**: undefined
+- **Mountain Name**: 陣ヶ森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 東温市
 - **Municipality**: 東温市
@@ -89,10 +89,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 82) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "陣ヶ森" (No. 82) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 陣ヶ森
 - Official Elevation: 1207m
 - Source Municipality/Island: 東温市
 - Known CSV Coordinates: (None, None)
@@ -146,7 +146,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:ee9d736a090185dd on yamap_2022-04-22_17_29.gpx is linked to: #62 八面山, #67 甲が森, #68 三滝山, #69 雨包山, #70 源氏ヶ駄場（薊野峰）, #71 碁石ヶ森, #82 陣ヶ森, #155 白猪山, #211 明神ヶ森, #246 四辻ノ森, #247 三光ノ辻山, #267 東高月山, #286 横ノ森, #287 小屋ヶ森, #288 串ヶ森, #290 長尾森, #291 二箆山, #293 気多山, #354 滝山, #416 谷崎山, #489 雨乞山, #526 大旗山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "陣ヶ森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

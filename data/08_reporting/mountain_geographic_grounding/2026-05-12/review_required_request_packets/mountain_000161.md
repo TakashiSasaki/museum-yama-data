@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 161
-- **Mountain Name**: undefined
+- **Mountain Name**: エビラ山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 新居浜市
 - **Municipality**: 新居浜市
@@ -81,10 +81,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 161) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "エビラ山" (No. 161) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: エビラ山
 - Official Elevation: 1673m
 - Source Municipality/Island: 新居浜市
 - Known CSV Coordinates: (None, None)
@@ -130,7 +130,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:df6b60d513f5518e on yamap_2024-07-06_10_01.gpx is linked to: #14 権現山, #92 堂ヶ森, #138 前赤石山, #159 権現山, #160 黒岳, #161 エビラ山, #162 二ッ岳, #189 権現山, #198 権現山, #223 物住頭, #263 権現山, #306 黒森山, #307 沓掛山, #311 子持権現山, #312 男山, #313 瓶ヶ森, #423 鶴ノ子ノ頭, #465 権現山, #480 権現山, #494 権現山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "エビラ山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

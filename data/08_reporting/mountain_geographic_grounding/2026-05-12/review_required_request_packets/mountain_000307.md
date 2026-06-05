@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 307
-- **Mountain Name**: undefined
+- **Mountain Name**: 沓掛山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西条市
 - **Municipality**: 西条市
@@ -81,10 +81,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 307) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "沓掛山" (No. 307) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 沓掛山
 - Official Elevation: 1691m
 - Source Municipality/Island: 西条市
 - Known CSV Coordinates: (None, None)
@@ -130,7 +130,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:ccaadb71f8ae2bd1 on yamap_2022-07-10_07_25.gpx is linked to: #92 堂ヶ森, #94 自念子ノ頭, #109 西黒森, #167 冠山, #239 東赤石山, #240 八巻山, #294 八辻ノ峰, #295 五代ヶ森, #307 沓掛山, #309 平家平, #312 男山, #313 瓶ヶ森, #417 東黒森, #498 黒森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "沓掛山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

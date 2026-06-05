@@ -394,8 +394,7 @@ This document inventories and verifies the current execution state of the data-p
   - Submission queue rows: 366
 * **DVC status**: not active; no DVC commands run
 * **Git LFS**: not used
-* **Source files modified**: `false`
-* **Note**: This stage identifies mountains requiring external geographic grounding support based on location stability queues and compiles machine-readable and human-readable request packets. It does not call the external agent, create raw external responses, or fill final coordinate/decision layers.
+* **Note**: This stage identifies mountains requiring external geographic grounding support based on location stability queues and compiles machine-readable and human-readable request packets. It does not call the external agent, create raw external responses, or fill final coordinate/decision layers. Stage 20 was regenerated after fixing primary mountain name mapping from `name` to Stage 20 `mountain_name` outputs. No source data was modified.
 
 ---
 

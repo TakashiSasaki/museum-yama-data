@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 209
-- **Mountain Name**: undefined
+- **Mountain Name**: 淡路ヶ峠
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -97,10 +97,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 209) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "淡路ヶ峠" (No. 209) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 淡路ヶ峠
 - Official Elevation: 273m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -162,7 +162,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:bcc05b721653749f on yamap_2024-12-15_07_21.gpx is linked to: #6 吉山(吉山城址), #10 恵良山, #38 重茂山, #48 芝ヶ峠, #102 安神山, #110 小富士, #127 古法皇山, #151 冨士山, #196 大森山, #200 石神山, #208 宝ヶ峯, #209 淡路ヶ峠, #219 生子山, #241 ベツソ山, #242 歯朶谷山, #259 宝股山, #303 名石山, #344 陣が森, #345 岩が森, #346 スクモ塚, #347 高萩山, #348 長者森, #352 笹ヶ平山, #366 弥八山, #372 亀老山, #375 大頭山, #379 高穴山, #383 無宗天山, #388 姫政山, #390 高森山, #393 泰ノ山, #394 大里山, #443 根太山, #448 雨森山, #464 飯之山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "淡路ヶ峠".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

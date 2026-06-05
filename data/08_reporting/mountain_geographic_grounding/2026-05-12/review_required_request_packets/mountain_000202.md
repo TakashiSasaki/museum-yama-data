@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 202
-- **Mountain Name**: undefined
+- **Mountain Name**: 鳥越山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -92,10 +92,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 202) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "鳥越山" (No. 202) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 鳥越山
 - Official Elevation: 100m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -152,7 +152,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:71f4bbfe52f75585 on yamap_2022-12-25_12_44.gpx is linked to: #25 愛宕山, #26 常光寺山, #29 高山, #37 日王山, #51 中坂山, #54 潮見山, #95 勝山, #112 子持山, #140 高戸山, #141 犬吠山, #142 泰の山, #163 鹿島山, #170 高山, #171 塔ノ峰, #172 海山, #173 近見山, #174 唐子山, #175 医王山, #176 永納山(永納山城址), #177 佐々久山, #185 岩子山, #186 垣生山, #187 津田山, #188 弁天山, #199 遠見山, #202 鳥越山, #218 えんとつ山, #369 垣生山, #378 要害山, #382 若いもん山, #392 高山, #494 権現山, #505 高山寺山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "鳥越山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

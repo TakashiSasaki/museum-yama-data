@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 226
-- **Mountain Name**: undefined
+- **Mountain Name**: 黒森山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -85,10 +85,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 226) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "黒森山" (No. 226) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 黒森山
 - Official Elevation: 1154m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -138,7 +138,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:f54f44da226a4a15 on yamap_2024-10-20_11_05.gpx is linked to: #60 鬼ヶ城山, #63 大久保山, #69 雨包山, #86 七々木山, #212 南三方ヶ森, #226 黒森山, #244 二ノ岳, #264 大黒山, #288 串ヶ森, #289 目黒鳥屋, #322 三の森, #329 ハネズル山, #330 天堤山, #419 小牛城, #441 地蔵山, #472 剣ノ山, #473 三傍示山, #525 櫛ヶ峰
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "黒森山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

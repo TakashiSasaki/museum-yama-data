@@ -1,8 +1,8 @@
 # Mountain Geographic Grounding Request Packet Report
 
-- **Branch and HEAD commit**: `museum-yama-data` (`716e4b0206aa6ce03c237c2bd2c6e2cdaed7ecae`)
+- **Branch and HEAD commit**: `museum-yama-data` (`c3ee0d111b3c1f5401228ab2ce480af92e38a1f1`)
 - **Command used**: `generate-review-required-geographic-grounding-requests`
-- **Created at**: `2026-06-05T11:59:20.879Z`
+- **Created at**: `2026-06-05T12:27:26.698Z`
 - **Mapping Document**: `docs/migration/mountain_geographic_grounding_request_packet_mapping.md`
 
 ## Input Files
@@ -56,7 +56,7 @@
 All generated JSONL request packets contain structured metadata including:
 - `grounding_request_id`: unique request hash
 - `mountain_no`: source mountain ID
-- `mountain_name`: source mountain name
+- `mountain_name`: source mountain name (mapped primarily from the `name` field in `ehime_mountain_source_rows.json`, with `mountain_name` used only as a compatibility fallback)
 - `selection`: reasons and source buckets
 - `source_mountain`: original source properties (coordinates, elevation, municipality)
 - `top1_candidate`: details of suggest top-1 summit candidate

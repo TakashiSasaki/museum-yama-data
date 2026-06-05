@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 153
-- **Mountain Name**: undefined
+- **Mountain Name**: 石墨山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 東温市
 - **Municipality**: 東温市
@@ -88,10 +88,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 153) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "石墨山" (No. 153) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 石墨山
 - Official Elevation: 1456m
 - Source Municipality/Island: 東温市
 - Known CSV Coordinates: (None, None)
@@ -144,7 +144,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:a80dd0489247a839 on yamap_2025-10-11_06_24.gpx is linked to: #85 赤星山, #153 石墨山, #165 綱繰山, #196 大森山, #319 猿越山, #321 西山, #355 足山, #415 貝渚山, #421 五段城, #430 三ッ森山, #432 三つ足山, #433 大森山, #434 佐々連尾山, #466 大森山, #501 大森山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "石墨山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 152
-- **Mountain Name**: undefined
+- **Mountain Name**: 割石峠山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 東温市
 - **Municipality**: 東温市
@@ -89,10 +89,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 152) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "割石峠山" (No. 152) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 割石峠山
 - Official Elevation: 1037m
 - Source Municipality/Island: 東温市
 - Known CSV Coordinates: (None, None)
@@ -146,7 +146,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:dedadc05e5f6d5d5 on yamap_2025-03-23_11_12.gpx is linked to: #65 引地山, #87 鋸山, #144 古権現山, #152 割石峠山, #213 魚谷森, #265 譲ヶ葉森, #266 郭公岳, #285 御祝山, #316 高縄山, #328 笹ヶ峰, #395 北ヶ森, #396 高土の峰, #468 町木山, #478 尻割山, #497 面木山, #523 常住
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "割石峠山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

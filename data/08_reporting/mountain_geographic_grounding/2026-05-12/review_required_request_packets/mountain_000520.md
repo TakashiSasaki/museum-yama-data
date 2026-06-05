@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 520
-- **Mountain Name**: undefined
+- **Mountain Name**: 牛ノ峯
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 内子町
 - **Municipality**: 内子町
@@ -82,10 +82,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 520) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "牛ノ峯" (No. 520) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 牛ノ峯
 - Official Elevation: 895m
 - Source Municipality/Island: 内子町
 - Known CSV Coordinates: (33.656753, 132.649133)
@@ -131,7 +131,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:d1269170b687c5bc on yamap_2022-03-09_10_20.gpx is linked to: #16 障子山, #44 稔山, #72 伊之子山, #88 翠波峰, #182 河原樋山, #251 三森, #253 秦皇山, #273 音無山, #298 日浦嶺, #299 打越山, #387 階上山, #469 寒台山, #498 黒森, #517 大熊山, #518 笠松山, #519 蒲山, #520 牛ノ峯
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "牛ノ峯".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

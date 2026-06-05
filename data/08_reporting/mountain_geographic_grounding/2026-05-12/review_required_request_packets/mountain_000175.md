@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 175
-- **Mountain Name**: undefined
+- **Mountain Name**: 医王山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西条市
 - **Municipality**: 西条市
@@ -91,10 +91,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 175) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "医王山" (No. 175) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 医王山
 - Official Elevation: 100m
 - Source Municipality/Island: 西条市
 - Known CSV Coordinates: (None, None)
@@ -150,7 +150,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:d9391b001d4bc442 on yamap_2022-02-16_11_57.gpx is linked to: #25 愛宕山, #26 常光寺山, #37 日王山, #51 中坂山, #54 潮見山, #95 勝山, #99 鉢巻山, #100 立石山, #112 子持山, #113 大峰ヶ台, #125 久司山, #140 高戸山, #141 犬吠山, #142 泰の山, #163 鹿島山, #170 高山, #171 塔ノ峰, #174 唐子山, #175 医王山, #176 永納山(永納山城址), #185 岩子山, #186 垣生山, #187 津田山, #188 弁天山, #199 遠見山, #202 鳥越山, #218 えんとつ山, #260 開山, #369 垣生山, #370 金子山, #378 要害山, #382 若いもん山, #392 高山, #476 愛宕山, #485 野津子山, #494 権現山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "医王山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 488
-- **Mountain Name**: undefined
+- **Mountain Name**: 大ノ森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 久万高原町
 - **Municipality**: 久万高原町
@@ -79,10 +79,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 488) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "大ノ森" (No. 488) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 大ノ森
 - Official Elevation: 1320m
 - Source Municipality/Island: 久万高原町
 - Known CSV Coordinates: (None, None)
@@ -126,7 +126,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e4172c5503fdcc89 on yamap_2024-04-07_06_45.gpx is linked to: #97 牛城, #154 法師山, #156 梅ヶ谷山, #245 高森, #291 二箆山, #292 西雑誌山, #320 銅山峰, #326 カガマシ山, #409 小屋山, #410 丸石山, #412 黒岩山, #420 正木ノ森, #425 黒川山, #439 天満山, #488 大ノ森, #490 妙見森, #528 生之越, #529 玉取山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "大ノ森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

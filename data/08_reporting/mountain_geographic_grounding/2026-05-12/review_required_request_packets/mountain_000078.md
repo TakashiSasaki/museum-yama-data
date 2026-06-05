@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 78
-- **Mountain Name**: undefined
+- **Mountain Name**: 笠取山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 久万高原町
 - **Municipality**: 久万高原町
@@ -76,10 +76,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 78) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "笠取山" (No. 78) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 笠取山
 - Official Elevation: 1562m
 - Source Municipality/Island: 久万高原町
 - Known CSV Coordinates: (None, None)
@@ -120,7 +120,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:cf97b8470d2ed1d7 on yamap_2022-11-05_04_38.gpx is linked to: #14 権現山, #78 笠取山, #159 権現山, #160 黒岳, #161 エビラ山, #162 二ッ岳, #189 権現山, #198 権現山, #224 上兜山, #263 権現山, #302 丸滝山, #305 椿山, #426 前社ヶ森, #431 大座礼山, #465 権現山, #480 権現山, #494 権現山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "笠取山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

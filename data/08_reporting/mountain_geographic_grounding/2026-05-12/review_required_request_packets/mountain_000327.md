@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 327
-- **Mountain Name**: undefined
+- **Mountain Name**: 橡尾山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 四国中央市
 - **Municipality**: 四国中央市
@@ -95,10 +95,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 327) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "橡尾山" (No. 327) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 橡尾山
 - Official Elevation: 1222m
 - Source Municipality/Island: 四国中央市
 - Known CSV Coordinates: (None, None)
@@ -158,7 +158,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e7e4429a39f6359f on yamap_2022-05-05_13_29.gpx is linked to: #61 三本杭, #66 東三方ヶ森, #80 うなめご, #81 前々司山, #82 陣ヶ森, #84 豊受山, #96 姫草, #143 中三方ヶ森, #157 樽谷山, #158 根無山, #217 皿ヶ嶺, #225 下兜山, #268 高月山, #296 桂ヶ森, #327 橡尾山, #411 野地峰, #492 雨霧山, #506 陣ヶ森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "橡尾山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

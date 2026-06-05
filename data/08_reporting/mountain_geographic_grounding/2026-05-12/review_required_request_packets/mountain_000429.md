@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 429
-- **Mountain Name**: undefined
+- **Mountain Name**: 別子山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 新居浜市
 - **Municipality**: 新居浜市
@@ -85,10 +85,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 429) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "別子山" (No. 429) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 別子山
 - Official Elevation: 1374m
 - Source Municipality/Island: 新居浜市
 - Known CSV Coordinates: (None, None)
@@ -138,7 +138,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e93bba1998d4efb5 on yamap_2025-04-27_06_23.gpx is linked to: #97 牛城, #238 冠岳, #245 高森, #292 西雑誌山, #297 狼ヶ城山, #320 銅山峰, #326 カガマシ山, #409 小屋山, #410 丸石山, #411 野地峰, #412 黒岩山, #413 大野山, #420 正木ノ森, #425 黒川山, #429 別子山, #439 天満山, #490 妙見森, #513 大野山, #529 玉取山, #530 三ヶ森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "別子山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

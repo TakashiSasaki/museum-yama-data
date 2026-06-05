@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 527
-- **Mountain Name**: undefined
+- **Mountain Name**: 兵庫山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 四国中央市
 - **Municipality**: 四国中央市
@@ -76,10 +76,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 527) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "兵庫山" (No. 527) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 兵庫山
 - Official Elevation: 1303m
 - Source Municipality/Island: 四国中央市
 - Known CSV Coordinates: (33.84801, 133.50827)
@@ -119,7 +119,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:ea6bebee79234da7 on yamap_2022-05-05_13_29.gpx is linked to: #80 うなめご, #81 前々司山, #82 陣ヶ森, #84 豊受山, #91 青滝山, #96 姫草, #157 樽谷山, #217 皿ヶ嶺, #329 ハネズル山, #411 野地峰, #506 陣ヶ森, #527 兵庫山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "兵庫山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

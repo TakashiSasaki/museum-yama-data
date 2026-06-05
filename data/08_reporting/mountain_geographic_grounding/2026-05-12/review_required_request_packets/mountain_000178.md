@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 178
-- **Mountain Name**: undefined
+- **Mountain Name**: 土亀山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -81,10 +81,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 178) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "土亀山" (No. 178) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 土亀山
 - Official Elevation: 50m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -130,7 +130,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:02d59cd1260af017 on yamap_2024-01-27_10_11.gpx is linked to: #39 花木山, #52 天神山, #53 室岡山, #59 忽那山, #118 湯築山, #124 伊勢山, #139 黒崎山, #146 西港山, #147 大丸山, #148 港山, #149 すくも山, #177 佐々久山, #178 土亀山, #179 天山, #181 星岡山, #203 谷田山, #204 金毘羅山, #205 佐古田山, #257 大空山, #258 御串山, #259 宝股山, #260 開山, #310 薬師山, #339 城山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "土亀山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

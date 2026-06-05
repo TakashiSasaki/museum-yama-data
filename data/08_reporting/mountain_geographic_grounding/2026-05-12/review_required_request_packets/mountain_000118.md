@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 118
-- **Mountain Name**: undefined
+- **Mountain Name**: 湯築山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -87,10 +87,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 118) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "湯築山" (No. 118) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 湯築山
 - Official Elevation: 71m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -142,7 +142,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:fbd725fc8006e2c8 on yamap_2022-02-28_13_13.gpx is linked to: #38 重茂山, #39 花木山, #52 天神山, #53 室岡山, #59 忽那山, #111 龍石山, #118 湯築山, #124 伊勢山, #139 黒崎山, #146 西港山, #147 大丸山, #148 港山, #149 すくも山, #177 佐々久山, #178 土亀山, #179 天山, #181 星岡山, #203 谷田山, #204 金毘羅山, #205 佐古田山, #258 御串山, #339 城山, #471 花見山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "湯築山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

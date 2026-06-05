@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 530
-- **Mountain Name**: undefined
+- **Mountain Name**: 三ヶ森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西条市
 - **Municipality**: 西条市
@@ -81,10 +81,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 530) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "三ヶ森" (No. 530) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 三ヶ森
 - Official Elevation: 1377m
 - Source Municipality/Island: 西条市
 - Known CSV Coordinates: (33.803672, 133.06812)
@@ -129,7 +129,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e93bba1998d4efb5 on yamap_2025-04-27_06_23.gpx is linked to: #97 牛城, #238 冠岳, #245 高森, #292 西雑誌山, #297 狼ヶ城山, #320 銅山峰, #326 カガマシ山, #409 小屋山, #410 丸石山, #411 野地峰, #412 黒岩山, #413 大野山, #420 正木ノ森, #425 黒川山, #429 別子山, #439 天満山, #490 妙見森, #513 大野山, #529 玉取山, #530 三ヶ森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "三ヶ森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

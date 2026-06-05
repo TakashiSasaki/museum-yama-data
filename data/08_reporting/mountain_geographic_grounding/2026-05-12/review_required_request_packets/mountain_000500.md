@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 500
-- **Mountain Name**: undefined
+- **Mountain Name**: 丸山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西条市
 - **Municipality**: 西条市
@@ -80,10 +80,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 500) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "丸山" (No. 500) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 丸山
 - Official Elevation: 1547m
 - Source Municipality/Island: 西条市
 - Known CSV Coordinates: (None, None)
@@ -128,7 +128,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:5ec5a611be375a53 on yamap_2024-05-11_07_45.gpx is linked to: #78 笠取山, #159 権現山, #224 上兜山, #301 丸笹山, #302 丸滝山, #305 椿山, #318 中津山(明神山), #354 滝山, #426 前社ヶ森, #431 大座礼山, #500 丸山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "丸山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

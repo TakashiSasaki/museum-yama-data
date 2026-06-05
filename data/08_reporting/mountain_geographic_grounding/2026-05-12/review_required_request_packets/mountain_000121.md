@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 121
-- **Mountain Name**: undefined
+- **Mountain Name**: 笹ヶ峰
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西条市
 - **Municipality**: 西条市
@@ -82,10 +82,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 121) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "笹ヶ峰" (No. 121) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 笹ヶ峰
 - Official Elevation: 1860m
 - Source Municipality/Island: 西条市
 - Known CSV Coordinates: (None, None)
@@ -132,7 +132,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:f09a1f754bcb761e on yamap_2022-07-10_07_25.gpx is linked to: #75 筒上山, #107 面河の頭, #109 西黒森, #120 ちち山, #121 笹ヶ峰, #312 男山, #313 瓶ヶ森, #498 黒森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "笹ヶ峰".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 507
-- **Mountain Name**: undefined
+- **Mountain Name**: 牛ヶ首
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 新居浜市
 - **Municipality**: 新居浜市
@@ -82,10 +82,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 507) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "牛ヶ首" (No. 507) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 牛ヶ首
 - Official Elevation: 584m
 - Source Municipality/Island: 新居浜市
 - Known CSV Coordinates: (33.92209, 133.35514)
@@ -131,7 +131,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:f028aab45221cee6 on yamap_2025-12-20_07_28.gpx is linked to: #1 関ヶ森, #19 番駄ヶ森, #41 城山, #215 真城ヶ台, #220 犬返, #243 丸山, #279 城山, #331 五郎丸, #332 高丸, #333 金見山, #334 木峰, #339 城山, #356 皿が森, #361 烏殿, #398 岳山, #399 一ヶ森, #438 堂所山, #446 池ノ城山, #451 陣が森岳, #462 鞍掛山, #483 白木山, #507 牛ヶ首, #508 三石山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "牛ヶ首".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

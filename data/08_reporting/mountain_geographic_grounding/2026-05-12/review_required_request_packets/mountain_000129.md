@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 129
-- **Mountain Name**: undefined
+- **Mountain Name**: 極山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西予市
 - **Municipality**: 西予市
@@ -80,10 +80,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 129) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "極山" (No. 129) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 極山
 - Official Elevation: 561m
 - Source Municipality/Island: 西予市
 - Known CSV Coordinates: (None, None)
@@ -128,7 +128,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:f2aae42aff3dea24 on yamap_2023-01-03_07_36.gpx is linked to: #2 観音山, #18 塩ヶ森, #40 ヌタノサコ, #129 極山, #182 河原樋山, #183 真松嶺, #184 柿王寺森, #210 福見山, #221 種子川山, #335 天狗森, #342 立烏帽子山, #344 陣が森, #384 綱付山, #401 京の森, #402 大迫山, #454 竜王の峰, #461 尻高峰, #502 うつむき山, #503 妙見山, #504 鉢が森, #505 高山寺山, #506 陣ヶ森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "極山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

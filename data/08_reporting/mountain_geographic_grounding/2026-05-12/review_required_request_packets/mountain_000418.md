@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 418
-- **Mountain Name**: undefined
+- **Mountain Name**: 伊吹山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西条市
 - **Municipality**: 西条市
@@ -76,10 +76,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 418) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "伊吹山" (No. 418) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 伊吹山
 - Official Elevation: 1503m
 - Source Municipality/Island: 西条市
 - Known CSV Coordinates: (None, None)
@@ -120,7 +120,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:6358c7fb40ce841e on yamap_2025-09-27_06_52.gpx is linked to: #79 ウバホド山, #85 赤星山, #153 石墨山, #165 綱繰山, #166 獅子舞の鼻, #418 伊吹山, #421 五段城, #422 天狗ノ森, #428 東光森山, #429 別子山, #432 三つ足山, #499 台ヶ森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "伊吹山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

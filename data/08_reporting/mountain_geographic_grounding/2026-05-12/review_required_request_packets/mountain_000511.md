@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 511
-- **Mountain Name**: undefined
+- **Mountain Name**: 秋葉山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 大洲市
 - **Municipality**: 大洲市
@@ -82,10 +82,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 511) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "秋葉山" (No. 511) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 秋葉山
 - Official Elevation: 722m
 - Source Municipality/Island: 大洲市
 - Known CSV Coordinates: (33.596611, 132.606278)
@@ -131,7 +131,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:cf1e11202c4f4280 on yamap_2022-03-05_09_44.gpx is linked to: #3 高森山, #4 岩伽羅山, #27 杉立山, #41 城山, #42 水梨山, #43 向山, #57 十門山(十門城址), #279 城山, #339 城山, #355 足山, #407 五十崎神南山, #408 笠成山, #449 御在所山, #452 黒岩岳, #456 鎌倉山, #479 四本松, #509 感応寺山, #510 水無権現, #511 秋葉山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "秋葉山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

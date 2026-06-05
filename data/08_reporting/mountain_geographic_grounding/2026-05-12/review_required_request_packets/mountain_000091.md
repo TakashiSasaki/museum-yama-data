@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 91
-- **Mountain Name**: undefined
+- **Mountain Name**: 青滝山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 久万高原町
 - **Municipality**: 久万高原町
@@ -81,10 +81,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 91) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "青滝山" (No. 91) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 青滝山
 - Official Elevation: 1303m
 - Source Municipality/Island: 久万高原町
 - Known CSV Coordinates: (None, None)
@@ -130,7 +130,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e2c08955f9275289 on yamap_2024-10-20_06_42.gpx is linked to: #80 うなめご, #91 青滝山, #96 姫草, #154 法師山, #156 梅ヶ谷山, #217 皿ヶ嶺, #329 ハネズル山, #330 天堤山, #411 野地峰, #488 大ノ森, #527 兵庫山, #528 生之越
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "青滝山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

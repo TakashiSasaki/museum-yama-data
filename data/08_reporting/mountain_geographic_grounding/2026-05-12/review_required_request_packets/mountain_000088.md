@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 88
-- **Mountain Name**: undefined
+- **Mountain Name**: 翠波峰
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 四国中央市
 - **Municipality**: 四国中央市
@@ -84,10 +84,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 88) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "翠波峰" (No. 88) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 翠波峰
 - Official Elevation: 891m
 - Source Municipality/Island: 四国中央市
 - Known CSV Coordinates: (None, None)
@@ -136,7 +136,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:f7593239fa7bdcc9 on yamap_2023-11-19_06_46.gpx is linked to: #16 障子山, #72 伊之子山, #88 翠波峰, #182 河原樋山, #237 五葉が森, #248 瀬戸黒森, #249 羽子山, #250 観音森, #251 三森, #253 秦皇山, #273 音無山, #299 打越山, #498 黒森, #517 大熊山, #518 笠松山, #519 蒲山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "翠波峰".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

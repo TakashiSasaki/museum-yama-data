@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 76
-- **Mountain Name**: undefined
+- **Mountain Name**: 手箱山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 久万高原町
 - **Municipality**: 久万高原町
@@ -71,10 +71,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 76) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "手箱山" (No. 76) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 手箱山
 - Official Elevation: 1806m
 - Source Municipality/Island: 久万高原町
 - Known CSV Coordinates: (None, None)
@@ -110,7 +110,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:d13554ef3debca9d on yamap_2022-04-30_08_30.gpx is linked to: #74 岩黒山, #75 筒上山, #76 手箱山, #160 黒岳, #162 二ッ岳, #222 西赤石山, #223 物住頭, #423 鶴ノ子ノ頭, #427 剣山, #512 黒山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "手箱山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

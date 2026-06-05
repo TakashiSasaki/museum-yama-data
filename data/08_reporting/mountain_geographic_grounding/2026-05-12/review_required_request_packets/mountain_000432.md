@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 432
-- **Mountain Name**: undefined
+- **Mountain Name**: 三つ足山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 四国中央市
 - **Municipality**: 四国中央市
@@ -86,10 +86,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 432) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "三つ足山" (No. 432) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 三つ足山
 - Official Elevation: 1452m
 - Source Municipality/Island: 四国中央市
 - Known CSV Coordinates: (None, None)
@@ -140,7 +140,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:a557f14fb032a808 on yamap_2022-11-26_04_41.gpx is linked to: #31 西山, #70 源氏ヶ駄場（薊野峰）, #85 赤星山, #165 綱繰山, #166 獅子舞の鼻, #167 冠山, #309 平家平, #319 猿越山, #320 銅山峰, #321 西山, #413 大野山, #414 水なし山, #415 貝渚山, #430 三ッ森山, #432 三つ足山, #433 大森山, #434 佐々連尾山, #501 大森山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "三つ足山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 77
-- **Mountain Name**: undefined
+- **Mountain Name**: 大川嶺
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 久万高原町
 - **Municipality**: 久万高原町
@@ -74,10 +74,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 77) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "大川嶺" (No. 77) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 大川嶺
 - Official Elevation: 1525m
 - Source Municipality/Island: 久万高原町
 - Known CSV Coordinates: (None, None)
@@ -116,7 +116,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e79e77da4bfd1f13 on yamap_2025-07-06_12_03.gpx is linked to: #77 大川嶺, #79 ウバホド山, #166 獅子舞の鼻, #300 面河山, #301 丸笹山, #416 谷崎山, #417 東黒森, #418 伊吹山, #422 天狗ノ森, #428 東光森山, #498 黒森, #499 台ヶ森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "大川嶺".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 509
-- **Mountain Name**: undefined
+- **Mountain Name**: 感応寺山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 大洲市
 - **Municipality**: 大洲市
@@ -78,10 +78,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 509) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "感応寺山" (No. 509) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 感応寺山
 - Official Elevation: 688m
 - Source Municipality/Island: 大洲市
 - Known CSV Coordinates: (33.561222, 132.579639)
@@ -123,7 +123,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:ce7fc6697696cde7 on yamap_2026-01-25_07_43.gpx is linked to: #4 岩伽羅山, #20 ケタ山, #21 大磨山, #27 杉立山, #43 向山, #57 十門山(十門城址), #68 三滝山, #271 白石山, #355 足山, #406 新谷神南山, #449 御在所山, #452 黒岩岳, #455 船ヶ迫岳, #456 鎌倉山, #460 牛の峰, #463 大畑山, #475 登議城山, #509 感応寺山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "感応寺山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

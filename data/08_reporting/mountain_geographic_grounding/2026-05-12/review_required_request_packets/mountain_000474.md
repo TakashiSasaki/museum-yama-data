@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 474
-- **Mountain Name**: undefined
+- **Mountain Name**: 塩塚峰
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 四国中央市
 - **Municipality**: 四国中央市
@@ -84,10 +84,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 474) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "塩塚峰" (No. 474) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 塩塚峰
 - Official Elevation: 1043m
 - Source Municipality/Island: 四国中央市
 - Known CSV Coordinates: (None, None)
@@ -136,7 +136,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:cdd4a9ba931c816e on yamap_2025-04-06_08_48.gpx is linked to: #90 割石東山, #103 篠山, #145 楢原山, #210 福見山, #235 善神山, #236 前善神山, #269 櫨ヶ森, #270 毛山, #323 二の森, #405 加塚山, #440 霧立山, #474 塩塚峰, #487 高研山, #524 熊鷹山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "塩塚峰".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

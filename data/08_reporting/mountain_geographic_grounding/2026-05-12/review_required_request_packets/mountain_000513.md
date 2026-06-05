@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 513
-- **Mountain Name**: undefined
+- **Mountain Name**: 大野山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西予市
 - **Municipality**: 西予市
@@ -84,10 +84,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 513) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "大野山" (No. 513) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 大野山
 - Official Elevation: 800m
 - Source Municipality/Island: 西予市
 - Known CSV Coordinates: (33.423639, 132.552972)
@@ -135,7 +135,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:f55ffb534aa2ae4c on yamap_2026-02-22_07_32.gpx is linked to: #3 高森山, #22 鍵山（象ヶ森）, #83 寒川山, #89 平石山, #164 出石山, #196 大森山, #231 黒滝山, #237 五葉が森, #245 高森, #273 音無山, #324 一の森, #390 高森山, #404 コクゾ峰, #433 大森山, #453 大判山, #459 高森山, #466 大森山, #467 高森山, #468 町木山, #469 寒台山, #470 鎧掛山, #481 呉石山, #501 大森山, #513 大野山, #514 棟山, #515 星ヶ森, #516 草屋敷
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "大野山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 114
-- **Mountain Name**: undefined
+- **Mountain Name**: 世田山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 今治市
 - **Municipality**: 今治市
@@ -93,10 +93,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 114) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "世田山" (No. 114) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 世田山
 - Official Elevation: 339m
 - Source Municipality/Island: 今治市
 - Known CSV Coordinates: (None, None)
@@ -154,7 +154,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:fcfb64bccceb89d4 on yamap_2026-01-31_07_40.gpx is linked to: #3 高森山, #98 積善山, #114 世田山, #115 笠松山, #190 黒瀬山（黒瀬城址）, #191 岡山（岡城址）, #193 護摩ヶ森（護摩ヶ森城址）, #194 我合山（我合城址）, #197 見晴山, #198 権現山, #199 遠見山, #245 高森, #257 大空山, #262 熊ガ峰, #275 夫婦山, #277 観音山, #278 国見山, #281 トギ, #283 高手山, #304 青刈山, #308 二反山, #347 高萩山, #350 行道山, #357 尉之山, #359 勝山, #362 御篠山, #363 天が森, #374 念仏山, #390 高森山, #391 大登山, #436 大峰, #444 紅葉山, #445 梁瀬山, #450 高雄山, #457 槇ノ山, #458 遠見山, #459 高森山, #465 権現山, #467 高森山, #476 愛宕山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "世田山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

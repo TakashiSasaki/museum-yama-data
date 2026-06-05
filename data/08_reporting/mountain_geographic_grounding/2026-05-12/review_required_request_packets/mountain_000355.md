@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 355
-- **Mountain Name**: undefined
+- **Mountain Name**: 足山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 大洲市
 - **Municipality**: 大洲市
@@ -92,10 +92,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 355) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "足山" (No. 355) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 足山
 - Official Elevation: 675m
 - Source Municipality/Island: 大洲市
 - Known CSV Coordinates: (None, None)
@@ -152,7 +152,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:da65a16f23740e83 on yamap_2022-04-22_12_22.gpx is linked to: #11 皿ヶ森, #20 ケタ山, #21 大磨山, #27 杉立山, #67 甲が森, #68 三滝山, #69 雨包山, #70 源氏ヶ駄場（薊野峰）, #71 碁石ヶ森, #243 丸山, #271 白石山, #341 秋葉山, #343 明神山, #354 滝山, #355 足山, #406 新谷神南山, #449 御在所山, #451 陣が森岳, #455 船ヶ迫岳, #459 高森山, #460 牛の峰, #462 鞍掛山, #463 大畑山, #475 登議城山, #483 白木山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "足山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

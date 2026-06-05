@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 459
-- **Mountain Name**: undefined
+- **Mountain Name**: 高森山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西予市
 - **Municipality**: 西予市
@@ -100,10 +100,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 459) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "高森山" (No. 459) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 高森山
 - Official Elevation: 634m
 - Source Municipality/Island: 西予市
 - Known CSV Coordinates: (None, None)
@@ -168,7 +168,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:ac8e3853fbbf0c6f on yamap_2024-03-03_06_23.gpx is linked to: #11 皿ヶ森, #20 ケタ山, #21 大磨山, #27 杉立山, #68 三滝山, #243 丸山, #271 白石山, #272 観音岳, #273 音無山, #274 天ガ森, #341 秋葉山, #343 明神山, #355 足山, #406 新谷神南山, #449 御在所山, #455 船ヶ迫岳, #456 鎌倉山, #459 高森山, #460 牛の峰, #462 鞍掛山, #463 大畑山, #475 登議城山, #483 白木山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "高森山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

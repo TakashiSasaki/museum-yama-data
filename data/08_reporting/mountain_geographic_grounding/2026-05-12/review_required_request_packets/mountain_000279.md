@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 279
-- **Mountain Name**: undefined
+- **Mountain Name**: 城山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 松山市
 - **Municipality**: 松山市
@@ -122,10 +122,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 279) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "城山" (No. 279) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 城山
 - Official Elevation: 244m
 - Source Municipality/Island: 松山市
 - Known CSV Coordinates: (None, None)
@@ -212,7 +212,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e7b64a377534c79e on yamap_2026-01-04_11_16.gpx is linked to: #7 尾ノ峰, #9 腰折山, #23 天神山, #33 経ヶ森, #46 道後山, #56 潮見山, #122 松軒山, #126 石灰山, #130 高文殊山, #132 鏡山, #134 雄甲山, #135 雌甲山, #150 愛ノ山, #169 扇山, #173 近見山, #201 金比羅山, #206 古城山, #279 城山, #314 宅並山, #367 西の山, #368 北山, #371 八堂山, #373 カレイ山, #377 八幡山, #386 幻城下城, #389 館山, #447 峠ヶ森, #448 雨森山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "城山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 504
-- **Mountain Name**: undefined
+- **Mountain Name**: 鉢が森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西予市
 - **Municipality**: 西予市
@@ -77,10 +77,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 504) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "鉢が森" (No. 504) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 鉢が森
 - Official Elevation: 552m
 - Source Municipality/Island: 西予市
 - Known CSV Coordinates: (33.399236, 132.615513)
@@ -121,7 +121,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:f12898f5821b63b8 on yamap_2024-12-08_06_59.gpx is linked to: #2 観音山, #15 白滝山, #18 塩ヶ森, #28 岩柄山, #40 ヌタノサコ, #55 明神山, #183 真松嶺, #184 柿王寺森, #221 種子川山, #318 中津山(明神山), #335 天狗森, #338 大谷山, #340 本尊山, #341 秋葉山, #342 立烏帽子山, #343 明神山, #344 陣が森, #384 綱付山, #401 京の森, #402 大迫山, #442 天道ヶ頭, #454 竜王の峰, #502 うつむき山, #503 妙見山, #504 鉢が森, #511 秋葉山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "鉢が森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

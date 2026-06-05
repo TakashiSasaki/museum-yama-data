@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 480
-- **Mountain Name**: undefined
+- **Mountain Name**: 権現山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 宇和島市
 - **Municipality**: 宇和島市
@@ -119,10 +119,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 480) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "権現山" (No. 480) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 権現山
 - Official Elevation: 952m
 - Source Municipality/Island: 宇和島市
 - Known CSV Coordinates: (None, None)
@@ -206,7 +206,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:96e5be71880efe52 on yamap_2024-08-03_20_36.gpx is linked to: #64 大月山, #116 北三方ヶ森, #144 古権現山, #213 魚谷森, #228 餓鬼ヶ森, #248 瀬戸黒森, #285 御祝山, #316 高縄山, #353 壺神山, #468 町木山, #478 尻割山, #480 権現山, #491 笹峠山, #497 面木山, #522 辻ヶ峰, #523 常住
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "権現山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

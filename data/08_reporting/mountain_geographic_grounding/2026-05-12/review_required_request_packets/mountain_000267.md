@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 267
-- **Mountain Name**: undefined
+- **Mountain Name**: 東高月山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 宇和島市
 - **Municipality**: 宇和島市
@@ -88,10 +88,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 267) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "東高月山" (No. 267) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 東高月山
 - Official Elevation: 1181m
 - Source Municipality/Island: 宇和島市
 - Known CSV Coordinates: (None, None)
@@ -144,7 +144,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e084389cc60ad329 on yamap_2022-05-05_13_29.gpx is linked to: #61 三本杭, #66 東三方ヶ森, #71 碁石ヶ森, #80 うなめご, #81 前々司山, #82 陣ヶ森, #143 中三方ヶ森, #155 白猪山, #211 明神ヶ森, #246 四辻ノ森, #247 三光ノ辻山, #267 東高月山, #268 高月山, #286 横ノ森, #287 小屋ヶ森, #290 長尾森, #293 気多山, #296 桂ヶ森, #327 橡尾山, #416 谷崎山, #489 雨乞山, #506 陣ヶ森, #526 大旗山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "東高月山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 517
-- **Mountain Name**: undefined
+- **Mountain Name**: 大熊山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 東温市
 - **Municipality**: 東温市
@@ -80,10 +80,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 517) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "大熊山" (No. 517) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 大熊山
 - Official Elevation: 856m
 - Source Municipality/Island: 東温市
 - Known CSV Coordinates: (33.767056, 132.938056)
@@ -127,7 +127,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:97e45d6eab227d56 on yamap_2024-03-03_10_00.gpx is linked to: #72 伊之子山, #83 寒川山, #89 平石山, #182 河原樋山, #237 五葉が森, #251 三森, #253 秦皇山, #271 白石山, #272 観音岳, #273 音無山, #274 天ガ森, #299 打越山, #324 一の森, #404 コクゾ峰, #467 高森山, #481 呉石山, #515 星ヶ森, #516 草屋敷, #517 大熊山, #518 笠松山, #519 蒲山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "大熊山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

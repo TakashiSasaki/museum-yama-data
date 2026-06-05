@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 106
-- **Mountain Name**: undefined
+- **Mountain Name**: 二ノ森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 久万高原町
 - **Municipality**: 久万高原町
@@ -70,10 +70,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 106) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "二ノ森" (No. 106) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 二ノ森
 - Official Elevation: 1930m
 - Source Municipality/Island: 久万高原町
 - Known CSV Coordinates: (None, None)
@@ -108,7 +108,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:846b096132c533d6 on yamap_2022-07-02_07_43.gpx is linked to: #75 筒上山, #105 鞍瀬ノ頭, #106 二ノ森, #107 面河の頭, #108 西ノ冠岳, #109 西黒森, #120 ちち山, #121 笹ヶ峰, #234 石鎚山, #238 冠岳, #313 瓶ヶ森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "二ノ森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 282
-- **Mountain Name**: undefined
+- **Mountain Name**: 張木山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 大洲市
 - **Municipality**: 大洲市
@@ -82,10 +82,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 282) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "張木山" (No. 282) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 張木山
 - Official Elevation: 468m
 - Source Municipality/Island: 大洲市
 - Known CSV Coordinates: (None, None)
@@ -132,7 +132,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:edd15dad4a862cba on yamap_2022-03-05_09_44.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #15 白滝山, #28 岩柄山, #29 高山, #30 勝岡山, #41 城山, #42 水梨山, #43 向山, #67 甲が森, #104 横山(横山城址), #128 狩江権現山, #189 権現山, #263 権現山, #279 城山, #282 張木山, #284 斎藤山, #336 唐谷山, #337 龍王山, #338 大谷山, #339 城山, #385 幻城上城, #397 竜王山, #400 愛の森, #495 雨乞山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "張木山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

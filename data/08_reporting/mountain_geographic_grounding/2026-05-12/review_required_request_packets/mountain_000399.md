@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 399
-- **Mountain Name**: undefined
+- **Mountain Name**: 一ヶ森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 大洲市
 - **Municipality**: 大洲市
@@ -88,10 +88,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 399) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "一ヶ森" (No. 399) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 一ヶ森
 - Official Elevation: 597m
 - Source Municipality/Island: 大洲市
 - Known CSV Coordinates: (None, None)
@@ -144,7 +144,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:d71483d289d0c575 on yamap_2025-01-24_13_34.gpx is linked to: #1 関ヶ森, #19 番駄ヶ森, #41 城山, #103 篠山, #129 極山, #215 真城ヶ台, #220 犬返, #331 五郎丸, #332 高丸, #333 金見山, #334 木峰, #356 皿が森, #360 松葉山（松葉城址）, #361 烏殿, #362 御篠山, #398 岳山, #399 一ヶ森, #402 大迫山, #438 堂所山, #446 池ノ城山, #461 尻高峰, #505 高山寺山, #506 陣ヶ森, #507 牛ヶ首
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "一ヶ森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

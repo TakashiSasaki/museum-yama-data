@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 196
-- **Mountain Name**: undefined
+- **Mountain Name**: 大森山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 伊方町
 - **Municipality**: 伊方町
@@ -102,10 +102,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 196) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "大森山" (No. 196) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 大森山
 - Official Elevation: 291m
 - Source Municipality/Island: 伊方町
 - Known CSV Coordinates: (None, None)
@@ -172,7 +172,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:ef6730fa259856ec on yamap_2024-02-10_07_09.gpx is linked to: #10 恵良山, #14 権現山, #38 重茂山, #114 世田山, #123 三山, #128 狩江権現山, #144 古権現山, #151 冨士山, #159 権現山, #189 権現山, #190 黒瀬山（黒瀬城址）, #196 大森山, #198 権現山, #200 石神山, #219 生子山, #242 歯朶谷山, #252 総津権現山, #256 大黒山, #259 宝股山, #261 鳥屋ヶ森, #262 熊ガ峰, #263 権現山, #274 天ガ森, #276 白山, #280 御勧請山, #303 名石山, #304 青刈山, #311 子持権現山, #348 長者森, #372 亀老山, #379 高穴山, #383 無宗天山, #390 高森山, #394 大里山, #443 根太山, #448 雨森山, #458 遠見山, #464 飯之山, #465 権現山, #477 笠松山東峰, #480 権現山, #494 権現山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "大森山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

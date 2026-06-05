@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 269
-- **Mountain Name**: undefined
+- **Mountain Name**: 櫨ヶ森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 宇和島市
 - **Municipality**: 宇和島市
@@ -84,10 +84,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 269) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "櫨ヶ森" (No. 269) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 櫨ヶ森
 - Official Elevation: 1064m
 - Source Municipality/Island: 宇和島市
 - Known CSV Coordinates: (None, None)
@@ -136,7 +136,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:c7ac7ff98cacc074 on yamap_2022-10-16_10_19.gpx is linked to: #14 権現山, #65 引地山, #87 鋸山, #103 篠山, #143 中三方ヶ森, #144 古権現山, #145 楢原山, #152 割石峠山, #159 権現山, #189 権現山, #198 権現山, #210 福見山, #263 権現山, #265 譲ヶ葉森, #266 郭公岳, #269 櫨ヶ森, #323 二の森, #328 笹ヶ峰, #395 北ヶ森, #405 加塚山, #465 権現山, #474 塩塚峰, #480 権現山, #487 高研山, #494 権現山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "櫨ヶ森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

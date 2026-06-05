@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 512
-- **Mountain Name**: undefined
+- **Mountain Name**: 黒山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 内子町
 - **Municipality**: 内子町
@@ -88,10 +88,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 512) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "黒山" (No. 512) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 黒山
 - Official Elevation: 729m
 - Source Municipality/Island: 内子町
 - Known CSV Coordinates: (33.638972, 132.610639)
@@ -143,7 +143,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:eb031d650d8e9a7a on yamap_2026-03-08_08_05.gpx is linked to: #3 高森山, #12 経座ヶ森, #42 水梨山, #136 泉ガ森, #168 遠ヶ森, #230 木久ヶ森, #249 羽子山, #250 観音森, #272 観音岳, #354 滝山, #364 浄心山, #365 銅が鳴, #466 大森山, #481 呉石山, #482 峰畑山, #483 白木山, #512 黒山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "黒山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

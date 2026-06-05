@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 107
-- **Mountain Name**: undefined
+- **Mountain Name**: 面河の頭
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 久万高原町
 - **Municipality**: 久万高原町
@@ -79,10 +79,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 107) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "面河の頭" (No. 107) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 面河の頭
 - Official Elevation: 1866m
 - Source Municipality/Island: 久万高原町
 - Known CSV Coordinates: (None, None)
@@ -126,7 +126,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:f09a1f754bcb761e on yamap_2022-07-10_07_25.gpx is linked to: #75 筒上山, #107 面河の頭, #109 西黒森, #120 ちち山, #121 笹ヶ峰, #312 男山, #313 瓶ヶ森, #498 黒森
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "面河の頭".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

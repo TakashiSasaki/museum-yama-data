@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 521
-- **Mountain Name**: undefined
+- **Mountain Name**: 小森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西条市
 - **Municipality**: 西条市
@@ -88,10 +88,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 521) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "小森" (No. 521) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 小森
 - Official Elevation: 932m
 - Source Municipality/Island: 西条市
 - Known CSV Coordinates: (33.791278, 133.154833)
@@ -143,7 +143,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:15c71a530dcecd2e on yamap_2022-04-25_11_35.gpx is linked to: #44 稔山, #58 ヨソ山, #64 大月山, #72 伊之子山, #73 御在所山, #133 戸祇御前山, #214 左谷ノ森, #227 菊ヶ森, #228 餓鬼ヶ森, #353 壺神山, #480 権現山, #486 長山, #491 笹峠山, #493 三郷の辻, #521 小森, #522 辻ヶ峰
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "小森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

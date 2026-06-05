@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 531
-- **Mountain Name**: undefined
+- **Mountain Name**: 扇山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西条市
 - **Municipality**: 西条市
@@ -81,10 +81,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 531) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "扇山" (No. 531) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 扇山
 - Official Elevation: 1392m
 - Source Municipality/Island: 西条市
 - Known CSV Coordinates: (33.8244, 133.214509)
@@ -129,7 +129,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e85b9bd32eb5e6f1 on yamap_2022-04-22_16_48.gpx is linked to: #67 甲が森, #68 三滝山, #69 雨包山, #70 源氏ヶ駄場（薊野峰）, #71 碁石ヶ森, #137 東山, #180 東山, #319 猿越山, #321 西山, #354 滝山, #413 大野山, #414 水なし山, #415 貝渚山, #430 三ッ森山, #433 大森山, #434 佐々連尾山, #501 大森山, #531 扇山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "扇山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

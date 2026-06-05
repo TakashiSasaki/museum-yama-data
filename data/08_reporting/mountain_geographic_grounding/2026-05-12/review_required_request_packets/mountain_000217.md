@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 217
-- **Mountain Name**: undefined
+- **Mountain Name**: 皿ヶ嶺
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 東温市
 - **Municipality**: 東温市
@@ -85,10 +85,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 217) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "皿ヶ嶺" (No. 217) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 皿ヶ嶺
 - Official Elevation: 1278m
 - Source Municipality/Island: 東温市
 - Known CSV Coordinates: (None, None)
@@ -138,7 +138,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:ec2a95521eaac250 on yamap_2024-04-07_06_45.gpx is linked to: #61 三本杭, #66 東三方ヶ森, #81 前々司山, #84 豊受山, #96 姫草, #143 中三方ヶ森, #157 樽谷山, #158 根無山, #217 皿ヶ嶺, #225 下兜山, #268 高月山, #291 二箆山, #292 西雑誌山, #296 桂ヶ森, #411 野地峰, #492 雨霧山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "皿ヶ嶺".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

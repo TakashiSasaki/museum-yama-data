@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 233
-- **Mountain Name**: undefined
+- **Mountain Name**: 天狗岳
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 久万高原町
 - **Municipality**: 久万高原町
@@ -70,10 +70,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 233) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "天狗岳" (No. 233) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 天狗岳
 - Official Elevation: 1982m
 - Source Municipality/Island: 久万高原町
 - Known CSV Coordinates: (None, None)
@@ -108,7 +108,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:88555c5557efeb46 on yamap_2022-09-24_08_33.gpx is linked to: #93 南尖峰, #233 天狗岳, #234 石鎚山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "天狗岳".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

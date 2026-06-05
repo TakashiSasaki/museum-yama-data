@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 446
-- **Mountain Name**: undefined
+- **Mountain Name**: 池ノ城山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 内子町
 - **Municipality**: 内子町
@@ -85,10 +85,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 446) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "池ノ城山" (No. 446) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 池ノ城山
 - Official Elevation: 589m
 - Source Municipality/Island: 内子町
 - Known CSV Coordinates: (None, None)
@@ -138,7 +138,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:ef5127a689eaf48a on yamap_2022-09-20_14_24.gpx is linked to: #14 権現山, #128 狩江権現山, #129 極山, #159 権現山, #183 真松嶺, #184 柿王寺森, #189 権現山, #198 権現山, #215 真城ヶ台, #220 犬返, #221 種子川山, #263 権現山, #332 高丸, #335 天狗森, #342 立烏帽子山, #344 陣が森, #361 烏殿, #401 京の森, #402 大迫山, #446 池ノ城山, #454 竜王の峰, #461 尻高峰, #465 権現山, #480 権現山, #494 権現山, #502 うつむき山, #503 妙見山, #504 鉢が森, #505 高山寺山, #506 陣ヶ森, #507 牛ヶ首
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "池ノ城山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

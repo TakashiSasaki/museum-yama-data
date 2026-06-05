@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 508
-- **Mountain Name**: undefined
+- **Mountain Name**: 三石山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 内子町
 - **Municipality**: 内子町
@@ -88,10 +88,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 508) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "三石山" (No. 508) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 三石山
 - Official Elevation: 616m
 - Source Municipality/Island: 内子町
 - Known CSV Coordinates: (33.568778, 132.856417)
@@ -143,7 +143,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:edac81b361bdc70c on yamap_2024-12-01_06_40.gpx is linked to: #1 関ヶ森, #8 新城山, #19 番駄ヶ森, #41 城山, #60 鬼ヶ城山, #206 古城山, #215 真城ヶ台, #220 犬返, #232 奥之城山, #279 城山, #297 狼ヶ城山, #331 五郎丸, #332 高丸, #333 金見山, #334 木峰, #335 天狗森, #336 唐谷山, #337 龍王山, #338 大谷山, #339 城山, #356 皿が森, #361 烏殿, #398 岳山, #399 一ヶ森, #438 堂所山, #446 池ノ城山, #451 陣が森岳, #461 尻高峰, #475 登議城山, #506 陣ヶ森, #507 牛ヶ首, #508 三石山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "三石山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 230
-- **Mountain Name**: undefined
+- **Mountain Name**: 木久ヶ森
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 西条市
 - **Municipality**: 西条市
@@ -81,10 +81,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 230) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "木久ヶ森" (No. 230) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 木久ヶ森
 - Official Elevation: 752m
 - Source Municipality/Island: 西条市
 - Known CSV Coordinates: (None, None)
@@ -130,7 +130,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:c9156b7eea77a1b0 on yamap_2024-07-28_15_53.gpx is linked to: #136 泉ガ森, #230 木久ヶ森, #250 観音森, #272 観音岳, #315 岩屋山, #364 浄心山, #365 銅が鳴, #396 高土の峰, #453 大判山, #470 鎧掛山, #482 峰畑山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "木久ヶ森".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

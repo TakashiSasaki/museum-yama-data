@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 473
-- **Mountain Name**: undefined
+- **Mountain Name**: 三傍示山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 四国中央市
 - **Municipality**: 四国中央市
@@ -87,10 +87,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 473) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "三傍示山" (No. 473) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 三傍示山
 - Official Elevation: 1157m
 - Source Municipality/Island: 四国中央市
 - Known CSV Coordinates: (None, None)
@@ -142,7 +142,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:ba78489e4d448645 on yamap_2025-08-15_10_51.gpx is linked to: #60 鬼ヶ城山, #62 八面山, #63 大久保山, #86 七々木山, #97 牛城, #212 南三方ヶ森, #226 黒森山, #244 二ノ岳, #288 串ヶ森, #289 目黒鳥屋, #291 二箆山, #322 三の森, #330 天堤山, #419 小牛城, #420 正木ノ森, #421 五段城, #422 天狗ノ森, #441 地蔵山, #473 三傍示山, #525 櫛ヶ峰
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "三傍示山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

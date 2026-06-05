@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 141
-- **Mountain Name**: undefined
+- **Mountain Name**: 犬吠山
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 興居島
 - **Municipality**: N/A
@@ -93,10 +93,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 141) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "犬吠山" (No. 141) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 犬吠山
 - Official Elevation: 124m
 - Source Municipality/Island: 興居島
 - Known CSV Coordinates: (None, None)
@@ -154,7 +154,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:e4fbd033b13d73ce on yamap_2022-11-07_12_37.gpx is linked to: #25 愛宕山, #26 常光寺山, #37 日王山, #51 中坂山, #54 潮見山, #112 子持山, #118 湯築山, #140 高戸山, #141 犬吠山, #142 泰の山, #147 大丸山, #163 鹿島山, #174 唐子山, #175 医王山, #181 星岡山, #185 岩子山, #186 垣生山, #187 津田山, #202 鳥越山, #203 谷田山, #205 佐古田山, #218 えんとつ山, #369 垣生山, #378 要害山, #382 若いもん山, #494 権現山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "犬吠山".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 

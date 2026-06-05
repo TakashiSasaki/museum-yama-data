@@ -2,7 +2,7 @@
 
 ## Target mountain
 - **Mountain No**: 516
-- **Mountain Name**: undefined
+- **Mountain Name**: 草屋敷
 - **Prefecture**: Ehime Prefecture
 - **Municipality / Island**: 大洲市
 - **Municipality**: 大洲市
@@ -82,10 +82,10 @@ Mountain shares candidates with other mountains:
 
 ## Task for geographic grounding agent
 ```text
-You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "undefined" (No. 516) in Ehime Prefecture, Japan.
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "草屋敷" (No. 516) in Ehime Prefecture, Japan.
 
 Official Mountain Details:
-- Name: undefined
+- Name: 草屋敷
 - Official Elevation: 824m
 - Source Municipality/Island: 大洲市
 - Known CSV Coordinates: (33.606248, 132.614092)
@@ -131,7 +131,7 @@ Mountain shares candidates with other mountains:
 - Candidate summit-candidate:fecfbf815fc6d5a7 on yamap_2024-10-14_04_48.gpx is linked to: #72 伊之子山, #83 寒川山, #89 平石山, #121 笹ヶ峰, #182 河原樋山, #237 五葉が森, #251 三森, #253 秦皇山, #273 音無山, #299 打越山, #324 一の森, #325 三ッ足山, #326 カガマシ山, #327 橡尾山, #328 笹ヶ峰, #355 足山, #404 コクゾ峰, #467 高森山, #481 呉石山, #515 星ヶ森, #516 草屋敷, #517 大熊山, #518 笠松山, #519 蒲山
 
 Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
-1. The true summit coordinates of "undefined".
+1. The true summit coordinates of "草屋敷".
 2. Which, if any, of the GPX summit candidates represents the true summit.
 3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
 
