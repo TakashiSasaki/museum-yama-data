@@ -42,7 +42,16 @@ This document inventories and verifies the current execution state of the data-p
 * **Report file exists?**: Yes, at `docs/migration/summit_candidate_gpx_generation_report.md`.
 * **Execution Evidence**: [`summit_candidate_gpx_generation_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/summit_candidate_gpx_generation_report.md).
 
+### 4. Summit Candidate Feature Extraction (`extract_summit_candidate_features`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/extract-summit-candidate-features.js` and registered in `cli.js`.
+* **Output file exists?**: Yes, at `data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl`.
+* **Manifest file exists?**: Yes, at `data/03_primary/summit_candidates/2026-05-12/manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/summit_candidate_feature_extraction_report.md`.
+* **Execution Evidence**: [`summit_candidate_feature_extraction_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/summit_candidate_feature_extraction_report.md).
+
 ---
+
 
 ## Action Plan Before Active DVC Initialization
 Before running `dvc init` and creating active root configuration pipelines, the following must occur:

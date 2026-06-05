@@ -18,16 +18,17 @@ This document outlines the staged future workflow for resolving summit coordinat
 
 ### Stage 2: Mountain source acceptance and normalization
 *   **Description:** Process the full set of 531 extracted mountain rows from the intermediate CSV. This step validates that existing non-empty `No` values are contiguous from 1. It then fills blank `No` values sequentially starting from `max_existing_no + 1` to ensure every row has a non-null, unique effective `mountain_no`. It validates final `mountain_no` uniqueness, preserves `source_row_no`, and preserves the CSV `GPS` column as raw coordinate evidence.
-*   **Expected Output:** `data/03_primary/mountains/ehime_mountain_source_rows.jsonl`
+*   **Expected Output:** `data/03_primary/mountains/ehime_mountain_source_rows.json`
 
 ### Stage 3: Preserve CSV-provided coordinates
 *   **Description:** Extract and preserve the raw coordinate evidence from the CSV `GPS` column (mapped during acceptance) to prepare for candidate validation.
 *   **Expected Output:** `data/03_primary/mountain_summit_coordinates/mountain_summit_coordinates_initial_from_csv.jsonl` (or equivalent future path)
 
 ### Stage 4: Prepare GPX-derived summit candidates
-*   **Description:** Run peak detection algorithms on GPX tracks to generate summit candidates.
+*   **Description:** Run peak detection algorithms on GPX tracks to generate summit-candidate GPX files, and then perform summit candidate feature extraction to produce a structured unresolved feature dataset. This feature extraction step is strictly separate from reverse-geocoding enrichment and mountain identity resolution.
 *   **Input:** `data/01_raw/gpx/...`
-*   **Expected Output:** Summit candidate GPX / summit candidate feature dataset
+*   **Expected Output:** Summit candidate GPX files, and the unresolved feature dataset `data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl`
+
 
 ### Stage 5: Link GPX/YAMAP/activity evidence
 *   **Description:** Establish canonical links between GPX tracks and YAMAP activity records based on contextual evidence.

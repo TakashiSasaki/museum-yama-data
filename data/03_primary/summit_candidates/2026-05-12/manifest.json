@@ -1,0 +1,27 @@
+{
+  "stage": "extract_summit_candidate_features",
+  "stage_version": "0.1.0",
+  "git_commit": "2b4bddd1d7c52da887bbd970bbee9e32fde34ade",
+  "created_at": "2026-06-05T00:32:25.841Z",
+  "input": {
+    "gpx_dir": "data/08_reporting/gpx/summit_candidates/2026-05-12",
+    "manifest": "data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json",
+    "manifest_sha256": "cc67e1f9d90dd1176bb82ad7757db1a8dcd54f724d553228d7ec75eaf7fe9159"
+  },
+  "outputs": [
+    {
+      "path": "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl",
+      "sha256": "93ba6398263fc722f77c15dcf3384ff1d93bc6669b8daba7bacc5cd8edb8b260",
+      "role": "primary_unresolved_summit_candidates"
+    }
+  ],
+  "checksum_algorithm": "sha256",
+  "summary": {
+    "input_summit_candidate_gpx_count": 293,
+    "output_candidate_records": 496,
+    "zero_candidate_gpx_count": 25,
+    "candidate_ids_unique": true,
+    "lat_lon_valid": true,
+    "source_files_modified": false
+  }
+}

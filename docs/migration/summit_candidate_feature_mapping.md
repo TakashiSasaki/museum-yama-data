@@ -4,23 +4,27 @@ This document details the source-to-target field mapping classifications for the
 
 ## Field Classifications
 
-| Source Field / Attribute | Target Field | Classification | Reason / Notes |
+| Source Field / Attribute / File | Target Field | Classification | Reason / Notes |
 | :--- | :--- | :--- | :--- |
-| `source_gpx_path` | `source_gpx_path` | `migrated` | Preserved from manifest record. |
-| `source_gpx_sha256` | `source_gpx_sha256` | `migrated` | Preserved from manifest record. |
-| `output_gpx_path` | `summit_candidate_gpx_path` | `migrated` | Preserved from manifest record. |
-| `output_gpx_sha256` | `summit_candidate_gpx_sha256` | `migrated` | Preserved from manifest record. |
-| `track_name` | `track_name` | `migrated` | Preserved from manifest record. |
-| `bounds` | `manifest_bounds` | `migrated` | Preserved from manifest bounds. |
-| `trackpoint_count` | `manifest_trackpoint_count` | `migrated` | Preserved from manifest record. |
-| `summit_candidate_count` | N/A | `derived only` | Verified against extracted count. |
-| `candidate_ids` | `summit_candidate_id` | `migrated` | Used as ID fallback if not in waypoint. |
-| `<wpt>` `lat` | `lat` | `migrated` | Parsed to float. |
-| `<wpt>` `lon` | `lon` | `migrated` | Parsed to float. |
-| `<wpt>` `<ele>` | `ele_m` | `migrated` | Parsed to float or null. |
-| `<wpt>` `<name>` | `waypoint_name` | `migrated` | Preserved; also parsed for `summit_candidate_id`. |
-| `<wpt>` `<desc>` | `waypoint_desc` | `migrated` | Preserved as raw description. |
-| `<wpt>` `<extensions>` `yama:candidate_status` | `candidate_status` | `migrated` | Preserved. Defaults to `unresolved`. |
-| `<wpt>` `<extensions>` `yama:detection_method` | `detection_stage` | `derived only` | Sets detection stage context. |
-| `<wpt>` `<extensions>` `yama:detection_parameters` | `detection_parameters` | `migrated` | Preserved. |
-| zero-candidate files | N/A | `derived only` | Summarized in validation report. |
+| source raw GPX path | `source_gpx_path` | `migrated` | Preserved from manifest file record. |
+| source raw GPX checksum | `source_gpx_sha256` | `migrated` | Preserved from manifest file record. |
+| summit-candidate GPX path | `summit_candidate_gpx_path` | `migrated` | Preserved from manifest file record. |
+| summit-candidate GPX checksum | `summit_candidate_gpx_sha256` | `migrated` | Preserved from manifest file record. |
+| manifest stage | `detection_stage` | `migrated` | Preserved from input manifest root `stage`. |
+| manifest detection parameters | `detection_parameters` | `migrated` | Preserved from input manifest root `parameters`. |
+| manifest source_gpx_path | `source_gpx_path` | `migrated` | Preserved from manifest file record. |
+| manifest output_gpx_path | `summit_candidate_gpx_path` | `migrated` | Preserved from manifest file record. |
+| manifest track_name | `track_name` | `migrated` | Preserved from manifest file record. |
+| manifest bounds | `manifest_bounds` | `migrated` | Preserved from manifest bounds. |
+| manifest trackpoint_count | `manifest_trackpoint_count` | `migrated` | Preserved from manifest file record. |
+| manifest summit_candidate_count | N/A | `derived only` | Count of candidates in this GPX, verified against count in JSONL. |
+| manifest candidate_ids | `summit_candidate_id` | `migrated` | Fallback ID array mapped sequentially to waypoints if name is missing candidate ID. |
+| GPX waypoint lat | `lat` | `migrated` | Parsed to float from `<wpt>` lat attribute. |
+| GPX waypoint lon | `lon` | `migrated` | Parsed to float from `<wpt>` lon attribute. |
+| GPX waypoint ele | `ele_m` | `migrated` | Parsed to float from `<wpt> <ele>` element (or null if missing/unparseable). |
+| GPX waypoint name | `waypoint_name` | `migrated` | Preserved; also parsed to extract the `summit_candidate_id`. |
+| GPX waypoint desc | `waypoint_desc` | `migrated` | Preserved as raw description. |
+| GPX waypoint extensions, if present | N/A | `derived only` | Used to inspect individual waypoint-level detection parameters and attributes. |
+| zero-candidate GPX files | N/A | `derived only` | Accounted for in output manifest and validation report. |
+| failed GPX files, if present | N/A | `derived only` | Count of failed files, verified as 0 in this stage. |
+
