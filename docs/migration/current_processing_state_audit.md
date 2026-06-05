@@ -66,8 +66,26 @@ This document inventories and verifies the current execution state of the data-p
 * **Report file exists?**: Yes, at `docs/migration/summit_candidate_location_evidence_report.md`.
 * **Execution Evidence**: [`summit_candidate_location_evidence_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/summit_candidate_location_evidence_report.md).
 
+
 ---
 
+### 7. GPX-to-YAMAP Date Linking (`link-gpx-yamap-by-date`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/link-gpx-yamap-by-date.js` and registered in `cli.js`.
+* **Output files exist?**: Yes, at `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/date_candidate_links.jsonl` and others.
+* **Manifest file exists?**: Yes, at `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/gpx_yamap_date_linking_report.md`.
+* **Execution Evidence**: [`gpx_yamap_date_linking_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/gpx_yamap_date_linking_report.md).
+
+### 8. GPX-to-YAMAP Title-Similarity Enrichment (`enrich-gpx-yamap-links-by-title`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/enrich-gpx-yamap-links-by-title.js` and registered in `cli.js`.
+* **Output files exist?**: Yes, at `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl`, `data/08_reporting/activity_linking/gpx_yamap_review_queue/2026-05-12/title_enriched_review_queue.csv` and `title_enriched_review_queue.md`.
+* **Manifest file exists?**: Yes, at `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/gpx_yamap_title_enriched_linking_report.md`.
+* **Execution Evidence**: [`gpx_yamap_title_enriched_linking_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/gpx_yamap_title_enriched_linking_report.md).
+
+---
 
 ## Action Plan Before Active DVC Initialization
 Before running `dvc init` and creating active root configuration pipelines, the following must occur:

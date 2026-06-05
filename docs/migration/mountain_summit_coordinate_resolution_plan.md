@@ -42,8 +42,8 @@ This document outlines the staged future workflow for resolving summit coordinat
 *   **Expected Output:** `data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl`
 
 ### Stage 5: Link GPX/YAMAP/activity evidence
-*   **Description:** Establish canonical links between GPX tracks and YAMAP activity records based on contextual evidence.
-*   **Input:** GPX-to-YAMAP activity candidate links / canonical links
+*   **Description:** Establish candidate links between GPX tracks and YAMAP activity records based on dates, times, and Japanese-safe title similarity features (exact match, token Jaccard overlap, and token containment). Propose the best match and flag ambiguities for manual review.
+*   **Expected Output:** Enriched candidate links `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl` and review queue files.
 
 ### Stage 6: Generate mountain-to-summit-candidate candidate links
 *   **Description:** Cross-reference mountain source records with detected summit candidates, utilizing activity links and other metadata to propose candidate matches.

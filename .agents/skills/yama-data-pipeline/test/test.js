@@ -15,6 +15,7 @@ require('./test_normalize_mountain_source_json');
 require('./test_summit_candidate_features');
 require('./test_reverse_geocoding_point_index');
 require('./test_summit_candidate_location_evidence');
+require('./test_gpx_yamap_title_linking');
 
 
 

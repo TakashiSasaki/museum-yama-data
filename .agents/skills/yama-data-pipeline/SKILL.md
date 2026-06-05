@@ -226,9 +226,22 @@ node cli.js enrich-summit-candidates-with-reverse-geocoding \
   --radius-m 1000
 ```
 
+#### 4h. `enrich-gpx-yamap-links-by-title` (Portable)
+Enriches GPX-YAMAP date candidate links with Japanese-safe title similarity features (exact matching, Jaccard token overlap, substring containment), proposes the best candidate, and creates review queues.
+- Requires `--date-links` (path to date-only candidate links JSONL).
+- Requires `--gpx-manifest` (path to GPX manifest JSON).
+- Requires `--out-dir` (path to output directory).
+- Requires `--review-dir` (path to output review queue directory).
+- Requires `--report` (path to output report markdown file).
 
-
-
+```sh
+node cli.js enrich-gpx-yamap-links-by-title \
+  --date-links "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/date_candidate_links.jsonl" \
+  --gpx-manifest "data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json" \
+  --out-dir "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12" \
+  --review-dir "data/08_reporting/activity_linking/gpx_yamap_review_queue/2026-05-12" \
+  --report "docs/migration/gpx_yamap_title_enriched_linking_report.md"
+```
 
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.

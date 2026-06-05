@@ -29,6 +29,7 @@ Commands:
   extract-summit-candidate-features Extract summit candidate waypoints from GPX into JSONL.
   extract-reverse-geocoding-point-index Extract raw Nominatim cache files into a point index JSONL.
   enrich-summit-candidates-with-reverse-geocoding Enrich summit candidates with reverse geocoding point evidence.
+  enrich-gpx-yamap-links-by-title Enrich GPX-YAMAP candidate links with title similarity features.
 
 
 Global Options:
@@ -115,6 +116,13 @@ enrich-summit-candidates-with-reverse-geocoding Options:
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
   --radius-m <num>                  Optional. Search radius in meters (default 1000).
+
+enrich-gpx-yamap-links-by-title Options:
+  --date-links <path>               Required. Path to date-only candidate links JSONL.
+  --gpx-manifest <path>             Required. Path to GPX manifest JSON.
+  --out-dir <path>                  Required. Path to output directory.
+  --review-dir <path>               Required. Path to output review queue directory.
+  --report <path>                   Required. Path to output report markdown file.
 `);
     process.exit(code);
 }
@@ -183,6 +191,10 @@ function parseArgs(argsArray) {
             const val = Number(argsArray[++i]);
             if (isNaN(val)) throw new Error('--radius-m must be a number');
             options.radiusM = val;
+        } else if (arg === '--date-links' && i + 1 < argsArray.length) {
+            options.dateLinks = argsArray[++i];
+        } else if (arg === '--gpx-manifest' && i + 1 < argsArray.length) {
+            options.gpxManifest = argsArray[++i];
         }
     }
     return options;
@@ -292,6 +304,13 @@ async function run() {
         }
     }
 
+    if (command === 'enrich-gpx-yamap-links-by-title') {
+        if (!options.dateLinks || !options.gpxManifest || !options.outDir || !options.reviewDir || !options.report) {
+            log.error(`Error: --date-links, --gpx-manifest, --out-dir, --review-dir, and --report are required for 'enrich-gpx-yamap-links-by-title'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -344,6 +363,9 @@ async function run() {
                 break;
             case 'enrich-summit-candidates-with-reverse-geocoding':
                 await require('./commands/enrich-summit-candidates-with-reverse-geocoding')(options);
+                break;
+            case 'enrich-gpx-yamap-links-by-title':
+                await require('./commands/enrich-gpx-yamap-links-by-title')(options);
                 break;
 
             case 'test':

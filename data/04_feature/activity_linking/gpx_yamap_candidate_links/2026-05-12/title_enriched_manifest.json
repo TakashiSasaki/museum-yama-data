@@ -1,0 +1,32 @@
+{
+  "stage": "enrich_gpx_yamap_links_by_title",
+  "stage_version": "0.1.0",
+  "git_commit": "fe9ecb045c879abc7a6445a3c497a3891c59daa9",
+  "created_at": "2026-06-05T02:39:33.999Z",
+  "inputs": {
+    "date_links": "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/date_candidate_links.jsonl",
+    "date_links_sha256": "d2db82de789030d80516952d7e41611816c9077d2ad32741da2ba1a63a7d5e14",
+    "gpx_manifest": "data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json",
+    "gpx_manifest_sha256": "cc67e1f9d90dd1176bb82ad7757db1a8dcd54f724d553228d7ec75eaf7fe9159"
+  },
+  "outputs": [
+    {
+      "path": "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl",
+      "sha256": "f5fd7829db49e05d627292cf046aa8cfcb6af7fa40c04f65d04577aeda28b802",
+      "role": "title_enriched_candidate_links"
+    }
+  ],
+  "checksum_algorithm": "sha256",
+  "summary": {
+    "total_records": 293,
+    "no_date_candidate": 5,
+    "single_high_confidence_candidate": 128,
+    "single_medium_confidence_candidate": 0,
+    "no_title_evidence": 0,
+    "multiple_candidates_ambiguous": 1,
+    "multiple_candidates_ranked": 159,
+    "gpx_datetime_unparsed": 0,
+    "needs_review_count": 19,
+    "source_files_modified": false
+  }
+}
