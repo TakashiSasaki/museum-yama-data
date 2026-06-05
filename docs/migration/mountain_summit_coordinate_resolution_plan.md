@@ -33,7 +33,13 @@ This document outlines the staged future workflow for resolving summit coordinat
 *   **Description:** Process the raw Nominatim JSON cache responses stored in `data/01_raw/reverse_geocoding/raw/nominatim` and extract them into a point index JSONL file. This prepares administrative boundary and island evidence for nearest-neighbor lookups. Note that reverse geocoding provides supplementary location evidence only, and does not serve as final identity proof.
 *   **Expected Output:** `data/02_intermediate/reverse_geocoding/extracted/nominatim/geocoded_points_index.jsonl`
 
-
+### Stage 4c: Enrich summit candidates with reverse-geocoding location evidence
+*   **Description:** Join the unresolved summit candidates with the reverse-geocoding point index by nearest-neighbor lookup within a search radius (e.g. 1000m). This stage derives municipality/county/city/town/village/island/local candidates for each summit.
+*   **Notes:**
+    - Reverse-geocoding location evidence is a loose hint and not final identity proof.
+    - Island evidence and municipality/county/city evidence are kept separately.
+    - Administrative borders are ambiguous near summits; this stage preserves all candidates for later linking logic.
+*   **Expected Output:** `data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl`
 
 ### Stage 5: Link GPX/YAMAP/activity evidence
 *   **Description:** Establish canonical links between GPX tracks and YAMAP activity records based on contextual evidence.

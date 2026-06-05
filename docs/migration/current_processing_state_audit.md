@@ -58,6 +58,14 @@ This document inventories and verifies the current execution state of the data-p
 * **Report file exists?**: Yes, at `docs/migration/reverse_geocoding_point_index_report.md`.
 * **Execution Evidence**: [`reverse_geocoding_point_index_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/reverse_geocoding_point_index_report.md).
 
+### 6. Summit Candidate Location Evidence Enrichment (`enrich_summit_candidates_with_reverse_geocoding`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/enrich-summit-candidates-with-reverse-geocoding.js` and registered in `cli.js`.
+* **Output file exists?**: Yes, at `data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl`.
+* **Manifest file exists?**: Yes, at `data/04_feature/location_enrichment/summit_candidates/2026-05-12/manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/summit_candidate_location_evidence_report.md`.
+* **Execution Evidence**: [`summit_candidate_location_evidence_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/summit_candidate_location_evidence_report.md).
+
 ---
 
 

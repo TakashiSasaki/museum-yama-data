@@ -28,6 +28,7 @@ Commands:
   normalize-mountain-source-json Normalize mountain source CSV to JSON.
   extract-summit-candidate-features Extract summit candidate waypoints from GPX into JSONL.
   extract-reverse-geocoding-point-index Extract raw Nominatim cache files into a point index JSONL.
+  enrich-summit-candidates-with-reverse-geocoding Enrich summit candidates with reverse geocoding point evidence.
 
 
 Global Options:
@@ -106,6 +107,14 @@ extract-reverse-geocoding-point-index Options:
   --out <path>                      Required. Path to output index JSONL.
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
+
+enrich-summit-candidates-with-reverse-geocoding Options:
+  --summit-candidates <path>        Required. Path to summit candidates JSONL.
+  --geocoded-points <path>          Required. Path to geocoded points index JSONL.
+  --out <path>                      Required. Path to output enriched JSONL.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
+  --radius-m <num>                  Optional. Search radius in meters (default 1000).
 `);
     process.exit(code);
 }
@@ -166,6 +175,14 @@ function parseArgs(argsArray) {
             options.inputManifest = argsArray[++i];
         } else if (arg === '--input-dir' && i + 1 < argsArray.length) {
             options.inputDir = argsArray[++i];
+        } else if (arg === '--summit-candidates' && i + 1 < argsArray.length) {
+            options.summitCandidates = argsArray[++i];
+        } else if (arg === '--geocoded-points' && i + 1 < argsArray.length) {
+            options.geocodedPoints = argsArray[++i];
+        } else if (arg === '--radius-m' && i + 1 < argsArray.length) {
+            const val = Number(argsArray[++i]);
+            if (isNaN(val)) throw new Error('--radius-m must be a number');
+            options.radiusM = val;
         }
     }
     return options;
@@ -268,6 +285,12 @@ async function run() {
         }
     }
 
+    if (command === 'enrich-summit-candidates-with-reverse-geocoding') {
+        if (!options.summitCandidates || !options.geocodedPoints || !options.out || !options.manifest || !options.report) {
+            log.error(`Error: --summit-candidates, --geocoded-points, --out, --manifest, and --report are required for 'enrich-summit-candidates-with-reverse-geocoding'.`);
+            printUsageAndExit();
+        }
+    }
 
     try {
         switch (command) {
@@ -318,6 +341,9 @@ async function run() {
                 break;
             case 'extract-reverse-geocoding-point-index':
                 await require('./commands/extract-reverse-geocoding-point-index')(options);
+                break;
+            case 'enrich-summit-candidates-with-reverse-geocoding':
+                await require('./commands/enrich-summit-candidates-with-reverse-geocoding')(options);
                 break;
 
             case 'test':

@@ -207,6 +207,26 @@ node cli.js extract-reverse-geocoding-point-index \
   --report "docs/migration/reverse_geocoding_point_index_report.md"
 ```
 
+#### 4g. `enrich-summit-candidates-with-reverse-geocoding` (Portable)
+Enriches summit candidates with nearby reverse geocoding point evidence.
+- Requires `--summit-candidates` (path to summit_candidates.jsonl).
+- Requires `--geocoded-points` (path to geocoded_points_index.jsonl).
+- Requires `--out` (path to output enriched JSONL).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report markdown).
+- Optionally accepts `--radius-m` (default 1000).
+
+```sh
+node cli.js enrich-summit-candidates-with-reverse-geocoding \
+  --summit-candidates "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl" \
+  --geocoded-points "data/02_intermediate/reverse_geocoding/extracted/nominatim/geocoded_points_index.jsonl" \
+  --out "data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl" \
+  --manifest "data/04_feature/location_enrichment/summit_candidates/2026-05-12/manifest.json" \
+  --report "docs/migration/summit_candidate_location_evidence_report.md" \
+  --radius-m 1000
+```
+
+
 
 
 
