@@ -175,6 +175,43 @@ This document inventories and verifies the current execution state of the data-p
   - Initial pending_review decisions: 531
 * **Note**: This stage transforms compact review queues into individual markdown packets and generates a prefilled human decision template. It does not make final decisions or coordinates.
 
+### 13. KSJ N03 Ehime Administrative Area Reference Data Ingestion
+* **Status**: `executed_verified`
+* **Raw ZIP path**: `data/01_raw/reference/geospatial/ksj_administrative_area/N03/2026-01-01/N03-20260101_38_GML.zip`
+* **Raw ZIP manifest path**: `data/01_raw/reference/geospatial/ksj_administrative_area/N03/2026-01-01/manifest.json`
+* **Extracted directory path**: `data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/`
+* **Extracted manifest path**: `data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/manifest.json`
+* **Audit path**: `docs/migration/ksj_n03_ehime_reference_data_ingestion_audit.md`
+* **Report path**: `docs/migration/ksj_n03_ehime_reference_data_ingestion_report.md`
+* **Raw ZIP SHA-256**: `88061f7ae784bbdd7b81f514ea904dcef853645b6d477691c1ba31091ab41dbf`
+* **Raw ZIP size**: `12542884` bytes
+* **Extracted file count**: `8`
+* **DVC status**: not active; no DVC commands run
+* **Git LFS**: not used
+* **Source files modified**: `false`
+* **Note**: Ingests Kokudo Suchi Joho (MLIT) N03 administrative area ZIP data for Ehime Prefecture.
+
+### 14. Ehime Municipality Land-Adjacency Reference Generation (`generate-ehime-municipality-adjacency`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/generate-ehime-municipality-adjacency.js` and registered in `cli.js`.
+* **Output files exist?**: Yes, at:
+  - `data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_adjacency.json`
+  - `data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_adjacency_pair_validation.csv`
+  - `data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_land_adjacency_edges.csv`
+* **Manifest file exists?**: Yes, at `data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/ksj_n03_ehime_municipality_adjacency_validation_report.md`.
+* **Execution Evidence**: [`ksj_n03_ehime_municipality_adjacency_validation_report.md`](ksj_n03_ehime_municipality_adjacency_validation_report.md).
+* **Execution Summary Counts**:
+  - Municipality count: 20
+  - Pair count: 190
+  - Confirmed land-boundary pairs: 33
+  - Point-contact-only pairs: 0
+  - Not-adjacent pairs: 157
+* **DVC status**: not active; no DVC commands run
+* **Git LFS**: not used
+* **Source files modified**: `false`
+* **Note**: Generates and validates topological land adjacency for the 20 municipalities in Ehime Prefecture.
+
 ---
 
 

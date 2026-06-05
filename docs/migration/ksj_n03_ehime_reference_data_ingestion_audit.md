@@ -1,6 +1,6 @@
 # KSJ N03 Ehime Reference Data Ingestion Audit
 
-This document inventories and classifies all paths and datasets involved in the ingestion of the Kokudo Chiriin (MLIT) KSJ administrative area reference data for Ehime Prefecture (Prefecture Code 38, reference date 2026-01-01).
+This document inventories and classifies all paths and datasets involved in the ingestion of the MLIT KSJ (国土数値情報) administrative area reference data for Ehime Prefecture (Prefecture Code 38, reference date 2026-01-01).
 
 ## Path Classifications
 

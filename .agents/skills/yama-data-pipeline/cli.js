@@ -34,6 +34,7 @@ Commands:
   refine-mountain-summit-candidate-links-by-location Refine candidate links using municipality/island geocoding evidence.
   generate-compact-mountain-summit-review-queues Generate compact review queues and conflict groups.
   generate-mountain-summit-review-packets Generate conflict-group review packets and a human decision template.
+  generate-ehime-municipality-adjacency Validate and generate Ehime municipality land-adjacency data from KSJ/N03.
 
 
 
@@ -162,6 +163,14 @@ generate-mountain-summit-review-packets Options:
   --decision-template <path>        Required. Path to output decision template CSV.
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
+
+generate-ehime-municipality-adjacency Options:
+  --n03-geojson <path>              Required. Path to intermediate GeoJSON.
+  --raw-manifest <path>             Required. Path to raw manifest JSON.
+  --extracted-manifest <path>        Required. Path to extracted manifest JSON.
+  --out-dir <path>                  Required. Path to output directory.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
 `);
 
     process.exit(code);
@@ -251,6 +260,12 @@ function parseArgs(argsArray) {
             options.refinedLinks = argsArray[++i];
         } else if (arg === '--decision-template' && i + 1 < argsArray.length) {
             options.decisionTemplate = argsArray[++i];
+        } else if (arg === '--n03-geojson' && i + 1 < argsArray.length) {
+            options.n03Geojson = argsArray[++i];
+        } else if (arg === '--raw-manifest' && i + 1 < argsArray.length) {
+            options.rawManifest = argsArray[++i];
+        } else if (arg === '--extracted-manifest' && i + 1 < argsArray.length) {
+            options.extractedManifest = argsArray[++i];
         }
     }
     return options;
@@ -398,6 +413,13 @@ async function run() {
         }
     }
 
+    if (command === 'generate-ehime-municipality-adjacency') {
+        if (!options.n03Geojson || !options.rawManifest || !options.extractedManifest || !options.outDir || !options.manifest || !options.report) {
+            log.error(`Error: --n03-geojson, --raw-manifest, --extracted-manifest, --out-dir, --manifest, and --report are required for 'generate-ehime-municipality-adjacency'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -465,6 +487,9 @@ async function run() {
                 break;
             case 'generate-mountain-summit-review-packets':
                 await require('./commands/generate-mountain-summit-review-packets')(options);
+                break;
+            case 'generate-ehime-municipality-adjacency':
+                await require('./commands/generate-ehime-municipality-adjacency')(options);
                 break;
 
             case 'test':

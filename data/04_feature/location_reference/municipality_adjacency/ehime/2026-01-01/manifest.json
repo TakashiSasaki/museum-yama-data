@@ -1,0 +1,43 @@
+{
+  "stage": "generate_ehime_municipality_adjacency",
+  "stage_version": "0.1.0",
+  "created_at": "2026-06-05T08:32:28.200Z",
+  "git_commit": "0ec38c8a5009a6f7ed2974bd68a377916338dc50",
+  "inputs": {
+    "n03_geojson": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson",
+    "n03_geojson_sha256": "16e3af28d9af3a864922869826cec6bfe55adc11d51a81fbc2a12000555adc11",
+    "raw_manifest": "data/01_raw/reference/geospatial/ksj_administrative_area/N03/2026-01-01/manifest.json",
+    "extracted_manifest": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/manifest.json"
+  },
+  "outputs": [
+    {
+      "path": "data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_adjacency.json",
+      "sha256": "b389848e976532d983aa4f9a99db30a605ffaad6fce95a9c8d817fa55de0f988",
+      "role": "municipality_adjacency_json"
+    },
+    {
+      "path": "data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_adjacency_pair_validation.csv",
+      "sha256": "e1448c5142c16eb2d484adc2fe09c26db36a5cd1bad402be85f4ee24ac8389d4",
+      "role": "pair_validation_csv"
+    },
+    {
+      "path": "data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_land_adjacency_edges.csv",
+      "sha256": "40d32615441a63fcdb84c9b727fe0dbf59691568648bdf972eafe769bd6e3c96",
+      "role": "land_adjacency_edges_csv"
+    },
+    {
+      "path": "docs/migration/ksj_n03_ehime_municipality_adjacency_validation_report.md",
+      "sha256": "d8a972496cd0812d42767e10eae17ff3138a832a1298891cc72e8fc9aba3f7f8",
+      "role": "report"
+    }
+  ],
+  "checksum_algorithm": "sha256",
+  "summary": {
+    "municipality_count": 20,
+    "pair_count": 190,
+    "confirmed_land_boundary_pairs": 33,
+    "point_contact_only_pairs": 0,
+    "not_adjacent_pairs": 157,
+    "source_files_modified": false
+  }
+}

@@ -331,6 +331,26 @@ node cli.js generate-mountain-summit-review-packets \
   --report "docs/migration/mountain_summit_candidate_review_packet_report.md"
 ```
 
+#### 4m. `generate-ehime-municipality-adjacency` (Portable)
+Validates and generates topological land-adjacency data for the 20 municipalities in Ehime Prefecture from intermediate N03 GeoJSON data.
+- Requires `--n03-geojson` (path to intermediate GeoJSON file).
+- Requires `--raw-manifest` (path to raw ingestion manifest).
+- Requires `--extracted-manifest` (path to intermediate extracted manifest).
+- Requires `--out-dir` (path to output directory).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report markdown).
+- Performs all-or-nothing temporary staging, output collision prevention, data validation, and relative path checks.
+
+```sh
+node cli.js generate-ehime-municipality-adjacency \
+  --n03-geojson "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson" \
+  --raw-manifest "data/01_raw/reference/geospatial/ksj_administrative_area/N03/2026-01-01/manifest.json" \
+  --extracted-manifest "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/manifest.json" \
+  --out-dir "data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01" \
+  --manifest "data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/manifest.json" \
+  --report "docs/migration/ksj_n03_ehime_municipality_adjacency_validation_report.md"
+```
+
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.
