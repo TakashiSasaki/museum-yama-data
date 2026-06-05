@@ -27,6 +27,7 @@ Commands:
   complete-mountain-source-no Complete blank No values in a mountain source CSV.
   normalize-mountain-source-json Normalize mountain source CSV to JSON.
   extract-summit-candidate-features Extract summit candidate waypoints from GPX into JSONL.
+  extract-reverse-geocoding-point-index Extract raw Nominatim cache files into a point index JSONL.
 
 
 Global Options:
@@ -99,6 +100,12 @@ extract-summit-candidate-features Options:
   --out <path>                      Required. Path to output JSONL.
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
+
+extract-reverse-geocoding-point-index Options:
+  --input-dir <path>                Required. Path to directory containing raw Nominatim JSON cache files.
+  --out <path>                      Required. Path to output index JSONL.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
 `);
     process.exit(code);
 }
@@ -157,6 +164,8 @@ function parseArgs(argsArray) {
             options.reviewDir = argsArray[++i];
         } else if (arg === '--input-manifest' && i + 1 < argsArray.length) {
             options.inputManifest = argsArray[++i];
+        } else if (arg === '--input-dir' && i + 1 < argsArray.length) {
+            options.inputDir = argsArray[++i];
         }
     }
     return options;
@@ -252,6 +261,13 @@ async function run() {
         }
     }
 
+    if (command === 'extract-reverse-geocoding-point-index') {
+        if (!options.inputDir || !options.out || !options.manifest || !options.report) {
+            log.error(`Error: --input-dir, --out, --manifest, and --report are required for 'extract-reverse-geocoding-point-index'.`);
+            printUsageAndExit();
+        }
+    }
+
 
     try {
         switch (command) {
@@ -299,6 +315,9 @@ async function run() {
                 break;
             case 'extract-summit-candidate-features':
                 await require('./commands/extract-summit-candidate-features')(options);
+                break;
+            case 'extract-reverse-geocoding-point-index':
+                await require('./commands/extract-reverse-geocoding-point-index')(options);
                 break;
 
             case 'test':

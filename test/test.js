@@ -13,6 +13,8 @@ require('./test_gpx_yamap_date_linking');
 require('./test_complete_mountain_source_no');
 require('./test_normalize_mountain_source_json');
 require('./test_summit_candidate_features');
+require('./test_reverse_geocoding_point_index');
+
 
 
 
