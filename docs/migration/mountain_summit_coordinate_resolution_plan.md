@@ -49,6 +49,10 @@ This document outlines the staged future workflow for resolving summit coordinat
 *   **Description:** Cross-reference mountain source records with detected summit candidates, utilizing activity links and other metadata to propose candidate matches.
 *   **Expected Output:** `data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl`, `manifest.json`, and review files.
 
+### Stage 6b: Refine mountain-to-summit-candidate candidate links by location (Executed)
+*   **Description:** Use detailed municipality and island reverse-geocoding information to refine, re-rank, and prioritize candidate links. This step assigns review priorities and filters the links into a reduced review queue.
+*   **Expected Output:** `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_candidate_links.jsonl`, `location_refined_manifest.json`, and review files.
+
 ### Stage 7: Compare CSV coordinates against GPX summit candidates
 *   **Description:** Validate the initial CSV-provided coordinates against the geometry of matched GPX summit candidates to assess accuracy and consistency.
 *   **Expected Output:** `data/04_feature/mountain_coordinate_validation/.../csv_vs_gpx_candidate_distances.jsonl`

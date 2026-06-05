@@ -107,7 +107,32 @@ This document inventories and verifies the current execution state of the data-p
   - Needs human review: 11372
 * **Note**: This stage generates candidate links only (to be reviewed by a human validator), not final accepted summit coordinates or final resolved identities.
 
+
+### 10. Mountain Summit Candidate Location Refinement (`refine-mountain-summit-candidate-links-by-location`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/refine-mountain-summit-candidate-links-by-location.js` and registered in `cli.js`.
+* **Output files exist?**: Yes, at `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_candidate_links.jsonl`, `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_refined_review_queue.csv`, and `location_refined_review_queue.md`.
+* **Manifest file exists?**: Yes, at `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/mountain_summit_candidate_location_refinement_report.md`.
+* **Execution Evidence**: [`mountain_summit_candidate_location_refinement_report.md`](mountain_summit_candidate_location_refinement_report.md).
+* **Execution Summary Counts**:
+  - Input candidate link records: 11,372
+  - Output refined candidate link records: 11,372
+  - Review queue rows: 9,732
+  - Exact municipality matches: 2,608
+  - Island text matches: 100
+  - Local text matches: 43
+  - Weak admin matches: 7
+  - Boundary tolerated mismatches: 8,614
+  - Top-1 per mountain coverage: 531 / 531
+  - High review priority links: 9,516
+  - Medium review priority links: 588
+  - Low review priority links: 1,238
+  - Deprioritized links: 30
+* **Note**: This stage refines the candidate links using detailed Nominatim municipality/island information to prioritize and re-rank them, producing a reduced review queue. It does not generate final coordinates or resolve identities.
+
 ---
+
 
 ## Action Plan Before Active DVC Initialization
 Before running `dvc init` and creating active root configuration pipelines, the following must occur:

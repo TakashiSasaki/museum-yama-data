@@ -31,6 +31,7 @@ Commands:
   enrich-summit-candidates-with-reverse-geocoding Enrich summit candidates with reverse geocoding point evidence.
   enrich-gpx-yamap-links-by-title Enrich GPX-YAMAP candidate links with title similarity features.
   generate-mountain-summit-candidate-links Generate candidate links between mountain records and summit candidates.
+  refine-mountain-summit-candidate-links-by-location Refine candidate links using municipality/island geocoding evidence.
 
 
 
@@ -136,6 +137,16 @@ generate-mountain-summit-candidate-links Options:
   --review-csv <path>               Required. Path to output review queue CSV.
   --review-md <path>                Required. Path to output review queue Markdown.
   --report <path>                   Required. Path to output report markdown.
+
+refine-mountain-summit-candidate-links-by-location Options:
+  --mountains <path>                Required. Path to mountain source JSON.
+  --candidate-links <path>          Required. Path to candidate links JSONL.
+  --location-evidence <path>        Required. Path to location evidence JSONL.
+  --out <path>                      Required. Path to output candidate links JSONL.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --review-csv <path>               Required. Path to output review queue CSV.
+  --review-md <path>                Required. Path to output review queue Markdown.
+  --report <path>                   Required. Path to output report markdown.
 `);
 
     process.exit(code);
@@ -219,6 +230,8 @@ function parseArgs(argsArray) {
             options.reviewCsv = argsArray[++i];
         } else if (arg === '--review-md' && i + 1 < argsArray.length) {
             options.reviewMd = argsArray[++i];
+        } else if (arg === '--candidate-links' && i + 1 < argsArray.length) {
+            options.candidateLinks = argsArray[++i];
         }
     }
     return options;
@@ -344,6 +357,14 @@ async function run() {
         }
     }
 
+    if (command === 'refine-mountain-summit-candidate-links-by-location') {
+        if (!options.mountains || !options.candidateLinks || !options.locationEvidence ||
+            !options.out || !options.manifest || !options.reviewCsv || !options.reviewMd || !options.report) {
+            log.error(`Error: --mountains, --candidate-links, --location-evidence, --out, --manifest, --review-csv, --review-md, and --report are required for 'refine-mountain-summit-candidate-links-by-location'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -402,6 +423,9 @@ async function run() {
                 break;
             case 'generate-mountain-summit-candidate-links':
                 await require('./commands/generate-mountain-summit-candidate-links')(options);
+                break;
+            case 'refine-mountain-summit-candidate-links-by-location':
+                await require('./commands/refine-mountain-summit-candidate-links-by-location')(options);
                 break;
 
             case 'test':
