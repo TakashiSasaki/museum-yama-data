@@ -271,6 +271,31 @@ node cli.js generate-mountain-summit-candidate-links \
   --report "docs/migration/mountain_summit_candidate_linking_report.md"
 ```
 
+#### 4j. `refine-mountain-summit-candidate-links-by-location` (Portable)
+Refines existing candidate links using detailed reverse-geocoding municipality/island evidence, re-ranks them, and produces a prioritized review queue.
+- Requires `--mountains` (path to mountain source JSON).
+- Requires `--candidate-links` (path to candidate links JSONL).
+- Requires `--location-evidence` (path to location evidence JSONL).
+- Requires `--out` (path to output candidate links JSONL).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--review-csv` (path to output review queue CSV).
+- Requires `--review-md` (path to output review queue Markdown).
+- Requires `--report` (path to output report Markdown).
+- Re-scores candidates using: `location_refined_candidate_score = 0.85 * combined_candidate_score + 0.15 * location_refinement_score`.
+- Re-ranks candidates within both mountain and summit candidate scopes.
+- Classifies review priority as `high`, `medium`, `low`, or `deprioritized`.
+
+```sh
+node cli.js refine-mountain-summit-candidate-links-by-location \
+  --mountains "data/03_primary/mountains/ehime_mountain_source_rows.json" \
+  --candidate-links "data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl" \
+  --location-evidence "data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl" \
+  --out "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_candidate_links.jsonl" \
+  --manifest "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_manifest.json" \
+  --review-csv "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_refined_review_queue.csv" \
+  --review-md "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_refined_review_queue.md" \
+  --report "docs/migration/mountain_summit_candidate_location_refinement_report.md"
+```
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.
