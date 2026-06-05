@@ -464,6 +464,29 @@ node cli.js generate-location-stability-compact-review-queues \
 ```
 
 
+#### `generate-location-stability-review-packets` (Portable)
+
+Generates location-stability review packets and a human decision template from compact review queues.
+
+- Requires `--top1`, `--top3`, `--conflicts`, `--gpx-groups`, `--summit-candidate-groups`, `--refined-links`, `--out-dir`, `--decision-template`, `--manifest`, `--report`.
+- Creates markdown packets for GPX groups, summit candidate conflict groups, and individual mountains inside the output directory.
+- Populates the decision template with 531 mountain records in a pending review state.
+
+```sh
+node cli.js generate-location-stability-review-packets \
+  --top1 "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_top1.csv" \
+  --top3 "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_top3.csv" \
+  --conflicts "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_conflicts.csv" \
+  --gpx-groups "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/conflict_groups_by_gpx.csv" \
+  --summit-candidate-groups "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/conflict_groups_by_summit_candidate.csv" \
+  --refined-links "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl" \
+  --out-dir "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_packets" \
+  --decision-template "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_decisions_template.csv" \
+  --manifest "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_packet_manifest.json" \
+  --report "docs/migration/mountain_summit_candidate_location_stability_review_packet_report.md"
+```
+
+
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.

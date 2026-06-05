@@ -26,6 +26,7 @@ require('./test_no_local_absolute_paths');
 require('./test_municipality_stability');
 require('./test_location_stability_refinement');
 require('./test_location_stability_review_queue_compression');
+require('./test_location_stability_review_packets');
 
 
 

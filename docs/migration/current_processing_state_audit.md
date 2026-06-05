@@ -341,6 +341,44 @@ This document inventories and verifies the current execution state of the data-p
 ---
 
 
+### 19. Location-Stability Review Packets and Decision Template Generation
+
+* **Status**: `executed_verified`
+* **Subcommand(s)**:
+  - `generate-location-stability-review-packets` — implemented at `.agents/skills/yama-data-pipeline/commands/generate-location-stability-review-packets.js`
+  - Library: `.agents/skills/yama-data-pipeline/lib/location_stability_review_packets.js`
+* **Input paths**:
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_top1.csv`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_top3.csv`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_conflicts.csv`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/conflict_groups_by_gpx.csv`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/conflict_groups_by_summit_candidate.csv`
+  - `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl`
+* **Output directory**: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_packets/`
+* **Decision template CSV**: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_decisions_template.csv`
+* **Manifest**: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_packet_manifest.json`
+* **Report**: `docs/migration/mountain_summit_candidate_location_stability_review_packet_report.md`
+* **Execution Summary Counts**:
+  - Top-1 queue rows: 531
+  - Top-3 queue rows: 1593
+  - Conflict queue rows: 4301
+  - GPX group rows: 268
+  - Summit candidate group rows: 496
+  - Decision template rows: 531
+  - Initial pending review decisions: 531
+  - Accepted candidate prefilled count: 0
+  - GPX group packet count: 268
+  - Summit candidate packet count: 496
+  - Mountain packet count: 531
+* **DVC status**: not active; no DVC commands run
+* **Git LFS**: not used
+* **Source files modified**: `false`
+* **Existing Stage 12 outputs overwritten**: `false`
+* **Note**: This stage creates human review artifacts and decision templates based on location-stability queues. No final accepted summit coordinates or automatic candidates are accepted.
+
+---
+
+
 ## Action Plan Before Active DVC Initialization
 Before running `dvc init` and creating active root configuration pipelines, the following must occur:
 1. Finalize directory structures and path mapping agreements.
