@@ -37,6 +37,7 @@ Commands:
   generate-ehime-municipality-adjacency Validate and generate Ehime municipality land-adjacency data from KSJ/N03.
   lookup-ehime-municipality-by-point   Lookup the Ehime municipality for a single lat/lon point using KSJ/N03 polygon data.
   lookup-ehime-municipalities-for-points Batch lookup of Ehime municipalities for multiple points from a JSONL or CSV file.
+  generate-location-stability-review-packets Generate location-stability review packets and a human decision template.
 
 
 
@@ -192,6 +193,18 @@ lookup-ehime-municipalities-for-points Options:
   --out <path>                      Required. Path to output JSONL file.
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
+
+generate-location-stability-review-packets Options:
+  --top1 <path>                     Required. Path to top1 compact review queue.
+  --top3 <path>                     Required. Path to top3 compact review queue.
+  --conflicts <path>                Required. Path to conflicts compact review queue.
+  --gpx-groups <path>               Required. Path to GPX conflict groups CSV.
+  --summit-candidate-groups <path>  Required. Path to summit candidate conflict groups CSV.
+  --refined-links <path>            Required. Path to location-stability refined candidate links JSONL.
+  --out-dir <path>                  Required. Path to output directory for packets.
+  --decision-template <path>        Required. Path to output decision template CSV.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
 `);
 
     process.exit(code);
@@ -313,6 +326,16 @@ function parseArgs(argsArray) {
             options.municipalityStability = argsArray[++i];
         } else if (arg === '--municipality-adjacency' && i + 1 < argsArray.length) {
             options.municipalityAdjacency = argsArray[++i];
+        } else if (arg === '--top1' && i + 1 < argsArray.length) {
+            options.top1 = argsArray[++i];
+        } else if (arg === '--top3' && i + 1 < argsArray.length) {
+            options.top3 = argsArray[++i];
+        } else if (arg === '--conflicts' && i + 1 < argsArray.length) {
+            options.conflicts = argsArray[++i];
+        } else if (arg === '--gpx-groups' && i + 1 < argsArray.length) {
+            options.gpxGroups = argsArray[++i];
+        } else if (arg === '--summit-candidate-groups' && i + 1 < argsArray.length) {
+            options.summitCandidateGroups = argsArray[++i];
         }
     }
     return options;
@@ -502,6 +525,13 @@ async function run() {
         }
     }
 
+    if (command === 'generate-location-stability-review-packets') {
+        if (!options.top1 || !options.top3 || !options.conflicts || !options.gpxGroups || !options.summitCandidateGroups || !options.refinedLinks || !options.outDir || !options.decisionTemplate || !options.manifest || !options.report) {
+            log.error(`Error: --top1, --top3, --conflicts, --gpx-groups, --summit-candidate-groups, --refined-links, --out-dir, --decision-template, --manifest, and --report are required for 'generate-location-stability-review-packets'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -587,6 +617,9 @@ async function run() {
                 break;
             case 'generate-location-stability-compact-review-queues':
                 await require('./commands/generate-location-stability-compact-review-queues')(options);
+                break;
+            case 'generate-location-stability-review-packets':
+                await require('./commands/generate-location-stability-review-packets')(options);
                 break;
 
             case 'test':
