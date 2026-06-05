@@ -154,6 +154,27 @@ This document inventories and verifies the current execution state of the data-p
   - Score gap threshold: 0.03
 * **Note**: This stage compresses the location-refined mountain-to-summit candidate links into compact review queues and conflict-group reports to reduce human review workload. It does not resolve links automatically or create final coordinates.
 
+### 12. Mountain Summit Candidate Review Packets and Decision Template Generation (`generate-mountain-summit-review-packets`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/generate-mountain-summit-review-packets.js` and registered in `cli.js`.
+* **Output files exist?**: Yes, at:
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_decisions_template.csv`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/index.md`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/gpx_groups/*.md`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/summit_candidate_groups/*.md`
+* **Manifest file exists?**: Yes, at `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packet_manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/mountain_summit_candidate_review_packet_report.md`.
+* **Execution Evidence**: [`mountain_summit_candidate_review_packet_report.md`](mountain_summit_candidate_review_packet_report.md).
+* **Execution Summary Counts**:
+  - GPX group input rows: 268
+  - Summit candidate conflict input rows: 496
+  - Top-1 queue rows: 531
+  - Generated GPX group packets: 268
+  - Generated summit candidate packets: 496
+  - Decision template rows: 531
+  - Initial pending_review decisions: 531
+* **Note**: This stage transforms compact review queues into individual markdown packets and generates a prefilled human decision template. It does not make final decisions or coordinates.
+
 ---
 
 

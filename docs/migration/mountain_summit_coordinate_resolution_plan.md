@@ -61,9 +61,9 @@ This document outlines the staged future workflow for resolving summit coordinat
 *   **Description:** Validate the initial CSV-provided coordinates against the geometry of matched GPX summit candidates to assess accuracy and consistency.
 *   **Expected Output:** `data/04_feature/mountain_coordinate_validation/.../csv_vs_gpx_candidate_distances.jsonl`
 
-### Stage 8: Human review
-*   **Description:** Present validation results and low-confidence candidate links for explicit human review and resolution.
-*   **Expected Output:** `data/08_reporting/mountain_summit_coordinate_review/.../review_queue.csv`
+### Stage 8: Human review (Executed)
+*   **Description:** Generate conflict-group review packets (GPX traverse groups and summit conflicts) and a human decision template to prepare for manual validation.
+*   **Expected Output:** `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/` and `review_decisions_template.csv`.
 
 ### Stage 9: Produce accepted summit coordinate table
 *   **Description:** Compile the final, resolved summit coordinates based on validated CSV data, confirmed GPX candidates, and explicit human decisions.

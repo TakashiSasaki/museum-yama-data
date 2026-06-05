@@ -174,6 +174,13 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Tracking System:** DVC dependency candidate
 * **Status Notes:** This stage has been executed, providing candidate links and review queues to facilitate human-in-the-loop validation before final coordinate/identity resolution.
 
+### 22. `mountain_summit_candidate_review_packets`
+* **Role:** Markdown review packets grouping contested links and candidate ridge traverses by GPX track file and summit conflicts to facilitate human review, along with a prefilled review decisions template.
+* **Primary Inputs:** `mountain_summit_candidate_links` (location-refined candidate links and conflict queues).
+* **Expected Future Layer:** `08_reporting` (physical path: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/` and `review_decisions_template.csv`)
+* **Tracking System:** DVC dependency candidate / Git-tracked outputs
+* **Status Notes:** This stage has been executed, generating structured, readable review aids and a decision template. It does not resolve mountain identities or generate coordinates automatically.
+
 ## Summary of Core Principles
 
 1. **`mountains.json` Status:** It is a provisional legacy/web cache. It is not the final semantic model.

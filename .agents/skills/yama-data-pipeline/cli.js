@@ -33,6 +33,7 @@ Commands:
   generate-mountain-summit-candidate-links Generate candidate links between mountain records and summit candidates.
   refine-mountain-summit-candidate-links-by-location Refine candidate links using municipality/island geocoding evidence.
   generate-compact-mountain-summit-review-queues Generate compact review queues and conflict groups.
+  generate-mountain-summit-review-packets Generate conflict-group review packets and a human decision template.
 
 
 
@@ -154,6 +155,13 @@ generate-compact-mountain-summit-review-queues Options:
   --out-dir <path>                  Required. Path to output directory.
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
+
+generate-mountain-summit-review-packets Options:
+  --review-dir <path>               Required. Path to compact review queue directory.
+  --out-dir <path>                  Required. Path to output directory for packets.
+  --decision-template <path>        Required. Path to output decision template CSV.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
 `);
 
     process.exit(code);
@@ -241,6 +249,8 @@ function parseArgs(argsArray) {
             options.candidateLinks = argsArray[++i];
         } else if (arg === '--refined-links' && i + 1 < argsArray.length) {
             options.refinedLinks = argsArray[++i];
+        } else if (arg === '--decision-template' && i + 1 < argsArray.length) {
+            options.decisionTemplate = argsArray[++i];
         }
     }
     return options;
@@ -381,6 +391,13 @@ async function run() {
         }
     }
 
+    if (command === 'generate-mountain-summit-review-packets') {
+        if (!options.reviewDir || !options.outDir || !options.decisionTemplate || !options.manifest || !options.report) {
+            log.error(`Error: --review-dir, --out-dir, --decision-template, --manifest, and --report are required for 'generate-mountain-summit-review-packets'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -445,6 +462,9 @@ async function run() {
                 break;
             case 'generate-compact-mountain-summit-review-queues':
                 await require('./commands/generate-compact-mountain-summit-review-queues')(options);
+                break;
+            case 'generate-mountain-summit-review-packets':
+                await require('./commands/generate-mountain-summit-review-packets')(options);
                 break;
 
             case 'test':
