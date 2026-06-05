@@ -1,0 +1,80 @@
+{
+  "stage": "generate_mountain_summit_candidate_links",
+  "stage_version": "0.1.0",
+  "git_commit": "957efed813d30ecc26981b0256e32b4c248a23af",
+  "created_at": "2026-06-05T03:25:41.244Z",
+  "inputs": {
+    "mountains": "data/03_primary/mountains/ehime_mountain_source_rows.json",
+    "mountains_sha256": "e3fcddb965e5e643d5e1c173da5d94c71da5c776c409310bd1612a3600b6c8c4",
+    "summit_candidates": "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl",
+    "summit_candidates_sha256": "93ba6398263fc722f77c15dcf3384ff1d93bc6669b8daba7bacc5cd8edb8b260",
+    "location_evidence": "data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl",
+    "location_evidence_sha256": "79bef4fb7ef3fc7757b427004989239bf7caa902ec6f3835cad57b1223217c6d",
+    "activity_links": "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl",
+    "activity_links_sha256": "f5fd7829db49e05d627292cf046aa8cfcb6af7fa40c04f65d04577aeda28b802"
+  },
+  "outputs": [
+    {
+      "path": "data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl",
+      "sha256": "2c486812af113eb3679c5455a154b1ad56f2fac7803322d2ee4f5833623b0964",
+      "role": "candidate_links_jsonl"
+    },
+    {
+      "path": "data/04_feature/mountain_summit_candidate_links/2026-05-12/manifest.json",
+      "sha256": null,
+      "role": "manifest"
+    },
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_queue.csv",
+      "sha256": "b019586ed3873e78b1f5af72cd1031418072903d61ce29acf43ca95d2674cf86",
+      "role": "review_queue_csv"
+    },
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_queue.md",
+      "sha256": "5f8c4fcf3a213ca73a18ca52897c5d5080d2cc42b9f6eabdf4ff87fae5ebf5ff",
+      "role": "review_queue_md"
+    },
+    {
+      "path": "docs/migration/mountain_summit_candidate_linking_report.md",
+      "sha256": "ad40d81d1bc8d1d64e1d1eb2fcad873d0333faec907e77e30d1332be6e65d3dd",
+      "role": "report"
+    }
+  ],
+  "checksum_algorithm": "sha256",
+  "parameters": {
+    "weights": {
+      "name": 0.35,
+      "elevation": 0.2,
+      "csv_coordinate": 0.2,
+      "location": 0.1,
+      "activity_link": 0.15
+    },
+    "elevation_tiers_m": [
+      10,
+      30,
+      50
+    ],
+    "coord_tiers_m": [
+      100,
+      300,
+      1000
+    ]
+  },
+  "summary": {
+    "mountain_records": 531,
+    "summit_candidate_records": 496,
+    "location_evidence_records": 496,
+    "activity_link_records": 293,
+    "candidate_link_records": 11372,
+    "mountains_with_candidates": 531,
+    "mountains_without_candidates": 0,
+    "high_confidence_links": 0,
+    "medium_confidence_links": 1481,
+    "low_confidence_links": 4753,
+    "weak_none_confidence_links": 5138,
+    "ambiguous_mountains": 531,
+    "summit_candidates_linked_to_multiple_mountains": 496,
+    "needs_human_review_count": 11372,
+    "source_files_modified": false
+  }
+}

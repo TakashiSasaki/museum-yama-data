@@ -85,17 +85,17 @@ Every source field from the input datasets is classified here to ensure full tra
 | `gpx_sha256` | N/A | `intentionally discarded` | Checksum not needed in candidate links. |
 | `gpx_track_name` | N/A | `preserved as raw snapshot` | Track name mapped via summit candidate records. |
 | `candidate_dates_jst` | N/A | `intentionally discarded` | Inferred calendar dates. |
-| `timezone_ambiguity` | N/A | `intentionally discarded` | Timezone metadata. |
-| `timezone_sensitive` | N/A | `derived only` | Used to flag timezone sensitive activity link review code. |
-| `date_match_status` | N/A | `intentionally discarded` | Date match code. |
-| `date_candidate_count` | N/A | `intentionally discarded` | Number of date candidates. |
+| `timezone_ambiguity` | N/A | `derived only` | Used to derive evidence.activity_link.timezone_ambiguity and review_reason_codes. |
+| `timezone_sensitive` | N/A | `derived only` | Used to derive evidence.activity_link.timezone_sensitive and review reason timezone_sensitive_activity_link. |
+| `date_match_status` | N/A | `intentionally discarded` | Date match code; superseded by enriched_match_status at this stage. |
+| `date_candidate_count` | N/A | `derived only` | Used to derive activity-link ambiguity evidence and review flags. |
 | `title_enriched_candidate_activities` | `yamap_activity_candidates` | `derived only` | Summarized list of candidate YAMAP activities. |
 | `best_candidate` | `best_yamap_activity_candidate` | `derived only` | The proposed highest confidence YAMAP activity (may be null). |
-| `enriched_match_status` | N/A | `intentionally discarded` | Title-link match status. |
-| `enriched_confidence` | N/A | `intentionally discarded` | Title-link confidence. |
-| `combined_activity_link_score` | N/A | `intentionally discarded` | Title-link combined score. |
-| `needs_review` | N/A | `intentionally discarded` | Title-link review flag. |
-| `review_reason_codes` | N/A | `intentionally discarded` | Title-link reason codes. |
+| `enriched_match_status` | N/A | `derived only` | Used to derive evidence.activity_link.match_status. |
+| `enriched_confidence` | N/A | `derived only` | Used to derive evidence.activity_link.confidence and the activity_link_score tier. |
+| `combined_activity_link_score` | N/A | `derived only` | Used to derive evidence.activity_link.score and contributes to combined_candidate_score. |
+| `needs_review` | N/A | `derived only` | Used to derive evidence.activity_link.needs_review and needs_human_review. |
+| `review_reason_codes` | N/A | `derived only` | Used to derive evidence.activity_link.review_reason_codes and final review_reason_codes. |
 
 ### Derived / Target Fields
 

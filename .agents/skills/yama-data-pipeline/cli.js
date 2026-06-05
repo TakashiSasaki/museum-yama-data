@@ -30,6 +30,8 @@ Commands:
   extract-reverse-geocoding-point-index Extract raw Nominatim cache files into a point index JSONL.
   enrich-summit-candidates-with-reverse-geocoding Enrich summit candidates with reverse geocoding point evidence.
   enrich-gpx-yamap-links-by-title Enrich GPX-YAMAP candidate links with title similarity features.
+  generate-mountain-summit-candidate-links Generate candidate links between mountain records and summit candidates.
+
 
 
 Global Options:
@@ -123,7 +125,19 @@ enrich-gpx-yamap-links-by-title Options:
   --out-dir <path>                  Required. Path to output directory.
   --review-dir <path>               Required. Path to output review queue directory.
   --report <path>                   Required. Path to output report markdown file.
+
+generate-mountain-summit-candidate-links Options:
+  --mountains <path>                Required. Path to mountain source JSON.
+  --summit-candidates <path>        Required. Path to summit candidates JSONL.
+  --location-evidence <path>        Required. Path to location evidence JSONL.
+  --activity-links <path>           Required. Path to title-enriched activity links JSONL.
+  --out <path>                      Required. Path to output candidate links JSONL.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --review-csv <path>               Required. Path to output review queue CSV.
+  --review-md <path>                Required. Path to output review queue Markdown.
+  --report <path>                   Required. Path to output report markdown.
 `);
+
     process.exit(code);
 }
 
@@ -195,10 +209,21 @@ function parseArgs(argsArray) {
             options.dateLinks = argsArray[++i];
         } else if (arg === '--gpx-manifest' && i + 1 < argsArray.length) {
             options.gpxManifest = argsArray[++i];
+        } else if (arg === '--mountains' && i + 1 < argsArray.length) {
+            options.mountains = argsArray[++i];
+        } else if (arg === '--location-evidence' && i + 1 < argsArray.length) {
+            options.locationEvidence = argsArray[++i];
+        } else if (arg === '--activity-links' && i + 1 < argsArray.length) {
+            options.activityLinks = argsArray[++i];
+        } else if (arg === '--review-csv' && i + 1 < argsArray.length) {
+            options.reviewCsv = argsArray[++i];
+        } else if (arg === '--review-md' && i + 1 < argsArray.length) {
+            options.reviewMd = argsArray[++i];
         }
     }
     return options;
 }
+
 
 async function run() {
     if (!command || command.startsWith('--')) {
@@ -311,6 +336,14 @@ async function run() {
         }
     }
 
+    if (command === 'generate-mountain-summit-candidate-links') {
+        if (!options.mountains || !options.summitCandidates || !options.locationEvidence || !options.activityLinks ||
+            !options.out || !options.manifest || !options.reviewCsv || !options.reviewMd || !options.report) {
+            log.error(`Error: --mountains, --summit-candidates, --location-evidence, --activity-links, --out, --manifest, --review-csv, --review-md, and --report are required for 'generate-mountain-summit-candidate-links'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -366,6 +399,9 @@ async function run() {
                 break;
             case 'enrich-gpx-yamap-links-by-title':
                 await require('./commands/enrich-gpx-yamap-links-by-title')(options);
+                break;
+            case 'generate-mountain-summit-candidate-links':
+                await require('./commands/generate-mountain-summit-candidate-links')(options);
                 break;
 
             case 'test':
