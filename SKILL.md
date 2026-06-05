@@ -34,7 +34,7 @@ node .agents/skills/merge-summits/merge_summits.js <path1> <path2> ... [--output
 ### Examples
 - Process a single folder and output to desktop:
   ```powershell
-  node .agents/skills/merge-summits/merge_summits.js gpx/annotated --output C:\Users\takas\Desktop\all_peaks.gpx
+  node .agents/skills/merge-summits/merge_summits.js gpx/annotated --output all_peaks.gpx
   ```
 - Process specific files and a folder together:
   ```powershell
