@@ -1,0 +1,71 @@
+{
+  "stage": "extract_reverse_geocoding_point_index",
+  "stage_version": "0.1.0",
+  "git_commit": "0c19646788c4791d8b35421f1059524836d019d6",
+  "created_at": "2026-06-05T00:40:18.573Z",
+  "input": {
+    "input_dir": "data/01_raw/reverse_geocoding/raw/nominatim",
+    "file_count": 7,
+    "files": [
+      {
+        "path": "data/01_raw/reverse_geocoding/raw/nominatim/geocoded_points_2026-05-16T08-01-46-058Z.json",
+        "sha256": "b20e718f7c78192f38ee55b1b369460ad9df445748b3aebae4bde8a8b6991381",
+        "record_count": 50
+      },
+      {
+        "path": "data/01_raw/reverse_geocoding/raw/nominatim/geocoded_points_2026-05-16T08-22-14-402Z.json",
+        "sha256": "6cfae9ac3fb38303e1d4a165ac6e96bc3a21f0ebb6ba96b111a385c00f89160d",
+        "record_count": 50
+      },
+      {
+        "path": "data/01_raw/reverse_geocoding/raw/nominatim/geocoded_points_2026-05-16T08-57-27-013Z.json",
+        "sha256": "e2643fe5ddb9e5297e0ba09de9ad842ef9fc311bcb91cf123f45d0a151b7c7df",
+        "record_count": 100
+      },
+      {
+        "path": "data/01_raw/reverse_geocoding/raw/nominatim/geocoded_points_2026-05-16T09-43-14-144Z.json",
+        "sha256": "55984450cac6a44087d80ace0993a4a283db750df57cf7221f317e51731652d8",
+        "record_count": 100
+      },
+      {
+        "path": "data/01_raw/reverse_geocoding/raw/nominatim/geocoded_points_2026-05-16T10-37-52-045Z.json",
+        "sha256": "a9ab9af2c480b3ea70e740738ced2c7e85e1c9ed50e59eedc4e4847a281875d3",
+        "record_count": 100
+      },
+      {
+        "path": "data/01_raw/reverse_geocoding/raw/nominatim/geocoded_points_2026-05-16T11-53-20-168Z.json",
+        "sha256": "b8e8af446e0b68e3d43dbbc15b5746ca13d5ebaca513dcc43813f4b6b8f36894",
+        "record_count": 100
+      },
+      {
+        "path": "data/01_raw/reverse_geocoding/raw/nominatim/geocoded_points_2026-05-16T13-18-23-445Z.json",
+        "sha256": "17d9791e02f7f6004928e15f19a3ca8dc157b958d4230846fdf31c6f94d9d410",
+        "record_count": 77
+      }
+    ]
+  },
+  "outputs": [
+    {
+      "path": "data/02_intermediate/reverse_geocoding/extracted/nominatim/geocoded_points_index.jsonl",
+      "sha256": "9f0eadf6dfcd0a63b6f6ea0473234f58db3082aecf2ab5918d8dd988f82303c0",
+      "role": "extracted_reverse_geocoding_point_index"
+    }
+  ],
+  "checksum_algorithm": "sha256",
+  "summary": {
+    "raw_file_count": 7,
+    "raw_records_total": 577,
+    "output_records": 577,
+    "records_with_valid_coordinates": 577,
+    "records_without_valid_coordinates": 0,
+    "unique_geocoded_point_ids": true,
+    "prefecture_present_count": 577,
+    "county_present_count": 177,
+    "city_present_count": 577,
+    "town_present_count": 157,
+    "village_present_count": 4,
+    "island_present_count": 0,
+    "local_present_count": 385,
+    "source_files_modified": false
+  }
+}

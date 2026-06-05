@@ -192,6 +192,22 @@ node cli.js extract-summit-candidate-features \
   --report "docs/migration/summit_candidate_feature_extraction_report.md"
 ```
 
+#### 4f. `extract-reverse-geocoding-point-index` (Portable)
+Extracts raw Nominatim JSON cache responses into an intermediate geocoded point index JSONL dataset.
+- Requires `--input-dir` (path to directory containing raw Nominatim JSON cache files).
+- Requires `--out` (path to output JSONL).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report markdown).
+
+```sh
+node cli.js extract-reverse-geocoding-point-index \
+  --input-dir "data/01_raw/reverse_geocoding/raw/nominatim" \
+  --out "data/02_intermediate/reverse_geocoding/extracted/nominatim/geocoded_points_index.jsonl" \
+  --manifest "data/02_intermediate/reverse_geocoding/extracted/nominatim/manifest.json" \
+  --report "docs/migration/reverse_geocoding_point_index_report.md"
+```
+
+
 
 
 #### 5. `validate` (Legacy)

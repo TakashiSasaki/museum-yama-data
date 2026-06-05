@@ -1,6 +1,6 @@
 # Current Processing State Audit
 
-This document inventories and verifies the current execution state of the data-processing steps in this repository as of commit `64e52d6` (feat: generate summit candidate waypoint GPX files).
+This document inventories and verifies the current execution state of the data-processing steps in this repository.
 
 ## DVC Setup Audit
 * **Does `.dvc/` exist?**: `False`
@@ -49,6 +49,14 @@ This document inventories and verifies the current execution state of the data-p
 * **Manifest file exists?**: Yes, at `data/03_primary/summit_candidates/2026-05-12/manifest.json`.
 * **Report file exists?**: Yes, at `docs/migration/summit_candidate_feature_extraction_report.md`.
 * **Execution Evidence**: [`summit_candidate_feature_extraction_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/summit_candidate_feature_extraction_report.md).
+
+### 5. Reverse Geocoding Point Index Extraction (`extract_reverse_geocoding_point_index`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/extract-reverse-geocoding-point-index.js` and registered in `cli.js`.
+* **Output file exists?**: Yes, at `data/02_intermediate/reverse_geocoding/extracted/nominatim/geocoded_points_index.jsonl`.
+* **Manifest file exists?**: Yes, at `data/02_intermediate/reverse_geocoding/extracted/nominatim/manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/reverse_geocoding_point_index_report.md`.
+* **Execution Evidence**: [`reverse_geocoding_point_index_report.md`](file:///c:/Users/takas/Desktop/museum-yama-data/docs/migration/reverse_geocoding_point_index_report.md).
 
 ---
 
