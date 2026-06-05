@@ -15,7 +15,7 @@ console.log('--- Testing mountain_geographic_grounding_requests ---');
 function mockMountain(no, name) {
     return {
         mountain_no: no,
-        mountain_name: name,
+        name: name,
         source_row_no: no + 1,
         location: { municipality_or_island: '松山市', municipality: '松山市', island: '' },
         coordinates: { lat: 33.8 + no * 0.01, lon: 132.8 + no * 0.01 },
@@ -198,6 +198,23 @@ function mockCsvRow(mNo, cId, overrides = {}) {
     assert.strictEqual(queueRow.submission_status, 'pending', 'Submission status initialized to pending');
     assert.strictEqual(queueRow.submitted_at, '', 'Submitted_at initialized to blank');
     assert.strictEqual(queueRow.raw_response_id, '', 'Raw_response_id initialized to blank');
+
+    // Additional assertions for mountain name fix
+    assert.strictEqual(selectionLog.mountain_name, 'Selected Mountain A', 'Selection log should have correct name');
+    assert.strictEqual(queueRow.mountain_name, 'Selected Mountain A', 'Queue row should have correct name');
+    assert.ok(result.indexMdContent.includes('Selected Mountain A'), 'Index markdown should contain correct name');
+    assert.ok(packet.external_agent_task.prompt_text.includes('Selected Mountain A'), 'Prompt text should contain correct name');
+    assert.ok(!packet.external_agent_task.prompt_text.includes('undefined'), 'Prompt text should not contain undefined');
+    assert.ok(!md.includes('undefined'), 'Markdown packet should not contain undefined');
+
+    // Test fallbacks for mountain name resolution
+    const { getMountainName } = require('../lib/mountain_geographic_grounding_requests');
+    assert.strictEqual(getMountainName({ name: 'NameA' }), 'NameA');
+    assert.strictEqual(getMountainName({ mountain_name: 'NameB' }), 'NameB');
+    assert.strictEqual(getMountainName({}, { name: 'NameC' }), 'NameC');
+    assert.strictEqual(getMountainName({}, { mountain_name: 'NameD' }), 'NameD');
+    assert.strictEqual(getMountainName({}), 'UNKNOWN_MOUNTAIN_NAME');
+    assert.strictEqual(getMountainName({ name: '  ' }, { name: 'NameE' }), 'NameE');
 }
 
 console.log('✅ PASS: test_mountain_geographic_grounding_requests unit tests passed.');
