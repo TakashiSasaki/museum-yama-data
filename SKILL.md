@@ -313,6 +313,24 @@ node cli.js generate-compact-mountain-summit-review-queues \
   --report "docs/migration/mountain_summit_candidate_review_queue_compression_report.md"
 ```
 
+#### 4l. `generate-mountain-summit-review-packets` (Portable)
+Generates conflict-group review packets (GPX traverse groups and summit conflicts) and a human decision template from the compact review queues.
+- Requires `--review-dir` (path to compact review queue directory).
+- Requires `--out-dir` (path to output directory for packets).
+- Requires `--decision-template` (path to output decision template CSV).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report Markdown).
+- Performs all-or-nothing staging checks, row count validation (exactly 531 rows), index link checks, and relative path verification.
+
+```sh
+node cli.js generate-mountain-summit-review-packets \
+  --review-dir "data/08_reporting/mountain_summit_candidate_review/2026-05-12" \
+  --out-dir "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets" \
+  --decision-template "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_decisions_template.csv" \
+  --manifest "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packet_manifest.json" \
+  --report "docs/migration/mountain_summit_candidate_review_packet_report.md"
+```
+
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.
