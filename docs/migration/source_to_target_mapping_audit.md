@@ -112,4 +112,5 @@ Detailed mapping audits for this stage are maintained in:
 - [Summit Candidate Feature Mapping](summit_candidate_feature_mapping.md)
 - [Reverse Geocoding Point Index Mapping](reverse_geocoding_point_index_mapping.md)
 - [Summit Candidate Location Evidence Mapping](summit_candidate_location_evidence_mapping.md)
+- [Mountain Geographic Grounding Request Packet Mapping](mountain_geographic_grounding_request_packet_mapping.md)
 

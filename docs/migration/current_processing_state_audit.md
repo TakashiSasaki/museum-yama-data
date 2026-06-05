@@ -369,6 +369,37 @@ This document inventories and verifies the current execution state of the data-p
 
 ---
 
+
+### 20. Geographic Grounding Request Preparation Stage
+
+* **Status**: `executed_verified`
+* **Subcommand(s)**:
+  - `generate-review-required-geographic-grounding-requests` — implemented at `.agents/skills/yama-data-pipeline/commands/generate-review-required-geographic-grounding-requests.js`
+  - Library: `.agents/skills/yama-data-pipeline/lib/mountain_geographic_grounding_requests.js`
+* **Input paths**:
+  - `data/03_primary/mountains/ehime_mountain_source_rows.json`
+  - `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/` (top1, top3, conflicts, GPX group and summit candidate conflict CSVs)
+* **Output directories**:
+  - `data/04_feature/mountain_geographic_grounding/2026-05-12/` (request packets JSONL, selection log JSONL)
+  - `data/08_reporting/mountain_geographic_grounding/2026-05-12/` (Markdown packets, submission queue CSV, summary Markdown)
+* **Manifest**: `data/04_feature/mountain_geographic_grounding/2026-05-12/review_required_grounding_request_manifest.json`
+* **Report**: `docs/migration/mountain_geographic_grounding_request_packet_report.md`
+* **Execution Summary Counts**:
+  - Selected mountains: 366
+  - Excluded mountains: 165
+  - Machine request packets: 366
+  - Selection log records: 366
+  - Markdown packets: 366
+  - Submission queue rows: 366
+* **DVC status**: not active; no DVC commands run
+* **Git LFS**: not used
+* **Source files modified**: `false`
+* **Note**: This stage identifies mountains requiring external geographic grounding support based on location stability queues and compiles machine-readable and human-readable request packets. It does not call the external agent, create raw external responses, or fill final coordinate/decision layers.
+
+---
+
+
 ## Current Human Review Entry Points
 
 Human reviewers should use only the location-stability review artifacts:
