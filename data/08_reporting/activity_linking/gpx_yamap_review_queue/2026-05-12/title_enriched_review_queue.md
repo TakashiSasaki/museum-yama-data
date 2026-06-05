@@ -12,4 +12,4 @@
   - `gpx_datetime_unparsed`: 0
 
 ## Next Recommended Step
-Use the generated CSV queue [`title_enriched_review_queue.csv`](file:///C:\Users\takas\Desktop\museum-yama-data\data\08_reporting\activity_linking\gpx_yamap_review_queue\2026-05-12\title_enriched_review_queue.csv) to perform the manual validation of activities with low confidence or ties.
+Use the generated CSV queue [`title_enriched_review_queue.csv`](title_enriched_review_queue.csv) to perform the manual validation of activities with low confidence or ties.

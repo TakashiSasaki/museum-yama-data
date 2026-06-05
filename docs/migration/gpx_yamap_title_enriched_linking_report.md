@@ -3,8 +3,8 @@
 - **Branch and HEAD commit**: `museum-yama-data` (`fe9ecb045c879abc7a6445a3c497a3891c59daa9`)
 - **Input date links path**: `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/date_candidate_links.jsonl`
 - **Input GPX manifest path**: `data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json`
-- **Output JSONL path**: `C:\Users\takas\Desktop\museum-yama-data\data\04_feature\activity_linking\gpx_yamap_candidate_links\2026-05-12\title_enriched_candidate_links.jsonl`
-- **Output manifest path**: `C:\Users\takas\Desktop\museum-yama-data\data\04_feature\activity_linking\gpx_yamap_candidate_links\2026-05-12\title_enriched_manifest.json`
+- **Output JSONL path**: `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl`
+- **Output manifest path**: `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_manifest.json`
 - **Command used**: `enrich-gpx-yamap-links-by-title`
 - **Record counts**:
   - Date Links records input: `293`

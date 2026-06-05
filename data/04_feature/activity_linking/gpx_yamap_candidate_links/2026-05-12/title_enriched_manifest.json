@@ -14,6 +14,16 @@
       "path": "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl",
       "sha256": "f5fd7829db49e05d627292cf046aa8cfcb6af7fa40c04f65d04577aeda28b802",
       "role": "title_enriched_candidate_links"
+    },
+    {
+      "path": "data/08_reporting/activity_linking/gpx_yamap_review_queue/2026-05-12/title_enriched_review_queue.csv",
+      "sha256": "8806b812e862e9726e608c525d41f303f1995e781f52b330b4d84b8504c5ba67",
+      "role": "title_enriched_review_queue_csv"
+    },
+    {
+      "path": "data/08_reporting/activity_linking/gpx_yamap_review_queue/2026-05-12/title_enriched_review_queue.md",
+      "sha256": "a914dc31e0272b399002df6f3967e860d01562e359a348ecfce01962001233d7",
+      "role": "title_enriched_review_queue_md"
     }
   ],
   "checksum_algorithm": "sha256",

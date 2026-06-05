@@ -16,11 +16,11 @@ Every source field from the input datasets is classified here to ensure full tra
 | `mountain_no_source` | N/A | `intentionally discarded` | Internal normalization metadata. |
 | `mountain_no_status` | N/A | `intentionally discarded` | Internal normalization metadata. |
 | `name` | `mountain_name` | `migrated` | Canonical mountain name. |
-| `location` | N/A | `intentionally discarded` | Mapped via municipality/island fields. |
-| `location.municipality_or_island` | N/A | `intentionally discarded` | Mapped in location checks. |
-| `location.municipality` | N/A | `intentionally discarded` | Mapped in location checks. |
-| `location.island` | N/A | `intentionally discarded` | Mapped in location checks. |
-| `coordinates` | N/A | `intentionally discarded` | Mapped via coordinates.lat/lon fields. |
+| `location` | N/A | `derived only` | Container object; sub-fields used in location evidence overlap checks. |
+| `location.municipality_or_island` | N/A | `derived only` | Used in location evidence overlap check against geocoded candidates. |
+| `location.municipality` | N/A | `derived only` | Used in location evidence overlap check against geocoded candidates. |
+| `location.island` | N/A | `derived only` | Used in location evidence overlap check against geocoded candidates. |
+| `coordinates` | N/A | `derived only` | Container object; sub-fields used for CSV-coordinate distance evidence. |
 | `coordinates.lat` | `mountain_csv_lat` | `migrated` | Latitude from CSV source (may be null). |
 | `coordinates.lon` | `mountain_csv_lon` | `migrated` | Longitude from CSV source (may be null). |
 | `coordinates.raw` | N/A | `intentionally discarded` | Unparsed coordinate string. |
