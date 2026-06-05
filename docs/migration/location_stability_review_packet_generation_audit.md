@@ -10,8 +10,8 @@ All inputs and output fields for these new stages (Stage 19) are classified belo
 
 | Field/Path | Primary Role | Ingestion Classification | Notes |
 |---|---|---|---|
-| `mountain_no` in [compact_review_queue_top1.csv](file:///data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_top1.csv) | Mountain key | `preserved as raw snapshot` | Input from Stage 18. |
-| `mountain_name` in [compact_review_queue_top1.csv](file:///data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_top1.csv) | Mountain name | `preserved as raw snapshot` | Input from Stage 18. |
+| `mountain_no` in `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_top1.csv` | Mountain key | `preserved as raw snapshot` | Input from Stage 18. |
+| `mountain_name` in `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_top1.csv` | Mountain name | `preserved as raw snapshot` | Input from Stage 18. |
 | `summit_candidate_id` in compact queues | Suggested candidate ID | `preserved as raw snapshot` | Input from Stage 18. |
 | `source_gpx_basename` in compact queues | GPX filename | `preserved as raw snapshot` | Input from Stage 18. |
 | `track_name` in compact queues | Track name | `preserved as raw snapshot` | Input from Stage 18. |
@@ -23,8 +23,8 @@ All inputs and output fields for these new stages (Stage 19) are classified belo
 | `matched_terms` in compact queues | Municipality relation | `preserved as raw snapshot` | Maps to `municipality_relation` (Stage 17 evidence). |
 | `nearest_display_name` in compact queues | Candidate municipality | `preserved as raw snapshot` | Maps to `candidate_center_municipality` (Stage 17 evidence). |
 | `review_reason_codes` / `notes` in compact queues | Diagnostics and notes | `preserved as raw snapshot` | Input from Stage 18. |
-| `candidate_lat` / `candidate_lon` in [location_stability_refined_candidate_links.jsonl](file:///data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl) | Coordinate coordinates | `preserved as raw snapshot` | Location stability coordinates input. |
-| `evidence.location_stability` fields in [location_stability_refined_candidate_links.jsonl](file:///data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl) | Detailed stability features | `preserved as raw snapshot` | Includes `all_cardinal_1km_same`, `distance_stable_interior`, `center_distance_to_boundary_m`, `candidate_municipality_stability`. |
+| `candidate_lat` / `candidate_lon` in `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl` | Coordinate coordinates | `preserved as raw snapshot` | Location stability coordinates input. |
+| `evidence.location_stability` fields in `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl` | Detailed stability features | `preserved as raw snapshot` | Includes `all_cardinal_1km_same`, `distance_stable_interior`, `center_distance_to_boundary_m`, `candidate_municipality_stability`. |
 
 ### 2. New Decision Template Fields (Stage 19 CSV Outputs)
 

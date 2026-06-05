@@ -132,48 +132,39 @@ This document inventories and verifies the current execution state of the data-p
 * **Note**: This stage refines the candidate links using detailed Nominatim municipality/island information to prioritize and re-rank them, producing a reduced review queue. It does not generate final coordinates or resolve identities.
 
 ### 11. Mountain Summit Candidate Review Queue Compression (`generate-compact-mountain-summit-review-queues`)
-* **Status**: `executed_verified`
-* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/generate-compact-mountain-summit-review-queues.js` and registered in `cli.js`.
-* **Output files exist?**: Yes, at:
+
+* **Status**: `superseded_deleted`
+* **Superseded by**: Stage 18 `generate-location-stability-compact-review-queues`
+* **Deletion reason**: Outputs were generated under the previous Nominatim-based review criteria. Human review had not started. The files were intentionally removed to keep the repository focused on the current location-stability review workflow.
+* **Deleted outputs**:
   - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_queue_top1.csv`
   - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_queue_top3.csv`
   - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_queue_conflicts.csv`
   - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/conflict_groups_by_gpx.csv`
   - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/conflict_groups_by_summit_candidate.csv`
   - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_summary.md`
-* **Manifest file exists?**: Yes, at `data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_manifest.json`.
-* **Report file exists?**: Yes, at `docs/migration/mountain_summit_candidate_review_queue_compression_report.md`.
-* **Execution Evidence**: [`mountain_summit_candidate_review_queue_compression_report.md`](mountain_summit_candidate_review_queue_compression_report.md).
-* **Execution Summary Counts**:
-  - Input location-refined candidate link records: 11,372
-  - Top-1 review queue rows: 531
-  - Top-3 review queue rows: 1,593
-  - Conflict-only prioritized queue rows: 5,747
-  - GPX groups (traverses): 268
-  - Summit candidate conflict groups: 496
-  - Score gap threshold: 0.03
-* **Note**: This stage compresses the location-refined mountain-to-summit candidate links into compact review queues and conflict-group reports to reduce human review workload. It does not resolve links automatically or create final coordinates.
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_manifest.json`
+  - `docs/migration/mountain_summit_candidate_review_queue_compression_report.md`
+* **Preserved upstream feature artifacts**:
+  - `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_candidate_links.jsonl`
+  - `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_manifest.json`
+* **Replacement outputs**:
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/`
 
 ### 12. Mountain Summit Candidate Review Packets and Decision Template Generation (`generate-mountain-summit-review-packets`)
-* **Status**: `executed_verified`
-* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/generate-mountain-summit-review-packets.js` and registered in `cli.js`.
-* **Output files exist?**: Yes, at:
+
+* **Status**: `superseded_deleted`
+* **Superseded by**: Stage 19 `generate-location-stability-review-packets`
+* **Deletion reason**: Outputs were generated under the previous review criteria. Human review had not started. The files were intentionally removed to avoid maintaining two competing review packet sets.
+* **Deleted outputs**:
   - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_decisions_template.csv`
-  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/index.md`
-  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/gpx_groups/*.md`
-  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/summit_candidate_groups/*.md`
-* **Manifest file exists?**: Yes, at `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packet_manifest.json`.
-* **Report file exists?**: Yes, at `docs/migration/mountain_summit_candidate_review_packet_report.md`.
-* **Execution Evidence**: [`mountain_summit_candidate_review_packet_report.md`](mountain_summit_candidate_review_packet_report.md).
-* **Execution Summary Counts**:
-  - GPX group input rows: 268
-  - Summit candidate conflict input rows: 496
-  - Top-1 queue rows: 531
-  - Generated GPX group packets: 268
-  - Generated summit candidate packets: 496
-  - Decision template rows: 531
-  - Initial pending_review decisions: 531
-* **Note**: This stage transforms compact review queues into individual markdown packets and generates a prefilled human decision template. It does not make final decisions or coordinates.
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packet_manifest.json`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/`
+  - `docs/migration/mountain_summit_candidate_review_packet_report.md`
+* **Replacement outputs**:
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_decisions_template.csv`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_packets/`
+  - `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_packet_manifest.json`
 
 ### 13. KSJ N03 Ehime Administrative Area Reference Data Ingestion
 * **Status**: `executed_verified`
@@ -375,6 +366,17 @@ This document inventories and verifies the current execution state of the data-p
 * **Source files modified**: `false`
 * **Existing Stage 12 outputs overwritten**: `false`
 * **Note**: This stage creates human review artifacts and decision templates based on location-stability queues. No final accepted summit coordinates or automatic candidates are accepted.
+
+---
+
+## Current Human Review Entry Points
+
+Human reviewers should use only the location-stability review artifacts:
+
+- Review index: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_packets/index.md`
+- Decision template: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_decisions_template.csv`
+
+The old Stage 11/12 review artifacts were intentionally deleted before review began.
 
 ---
 

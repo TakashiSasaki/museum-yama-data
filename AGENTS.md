@@ -59,7 +59,7 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
 - Future generated pages should live under `site/docs/generated/`.
 
 - **Before/After Change Checklists:**
-  - **Before Change:** Verify branch status. Read existing `docs/source_coverage_audit.md` and `docs/path_migration.md`. Do not start moving files unless the audit supports it. For reproducible step execution and current processing state audits, refer to [Reproducible Processing Runbook](file:///docs/migration/reproducible_processing_runbook.md) and [Current Processing State Audit](file:///docs/migration/current_processing_state_audit.md).
+  - **Before Change:** Verify branch status. Read existing `docs/source_coverage_audit.md` and `docs/path_migration.md`. Do not start moving files unless the audit supports it. For reproducible step execution and current processing state audits, refer to [Reproducible Processing Runbook](docs/migration/reproducible_processing_runbook.md) and [Current Processing State Audit](docs/migration/current_processing_state_audit.md).
   - **After Change:** Run `git status` to ensure accidental deletions or moves have not occurred. Check that no source files have been changed.
 
 ## Current / Legacy Directory Structure (Pending Migration)

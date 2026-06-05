@@ -10,16 +10,16 @@ All inputs and output fields for these new stages (Stage 16, 17, and 18) are cla
 
 | Field/Path | Primary Role | Ingestion Classification | Notes |
 |---|---|---|---|
-| `summit_candidate_id` in [summit_candidates.jsonl](file:///data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl) | Summit candidate ID | `preserved as raw snapshot` | Immutable primary key for summit candidates. |
-| `lat` / `lon` in [summit_candidates.jsonl](file:///data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl) | Summit candidate coordinate | `preserved as raw snapshot` | Input coordinates for stability spatial lookup. |
-| `lookup_status` in [summit_candidate_municipality_lookup.jsonl](file:///data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl) | Center point lookup status | `preserved as raw snapshot` | Primary lookup result at center. |
-| `municipality_matches` in [summit_candidate_municipality_lookup.jsonl](file:///data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl) | Center point matches and distance | `preserved as raw snapshot` | Containment and distance-to-boundary metrics at center. |
-| Geometry in [N03-20260101_38.geojson](file:///data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson) | MLIT administrative area polygons | `preserved as raw snapshot` | Geospatial boundaries used for ray-casting point-in-polygon and distance checks. |
-| Adjacency map in [municipality_adjacency.json](file:///data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_adjacency.json) | Topographic land adjacency | `preserved as raw snapshot` | Set of adjacent municipalities in Ehime. |
-| `municipality` in [ehime_mountain_source_rows.json](file:///data/03_primary/mountains/ehime_mountain_source_rows.json) | Mountain source municipality name | `preserved as raw snapshot` | Expected location of the mountain from source. |
-| `mountain_no` in [candidate_links.jsonl](file:///data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl) | Mountain reference key | `preserved as raw snapshot` | Links to mountain row. |
-| `summit_candidate_id` in [candidate_links.jsonl](file:///data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl) | Summit candidate key | `preserved as raw snapshot` | Links to summit candidate row. |
-| `score` / `rank` / `review` fields in [candidate_links.jsonl](file:///data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl) | Broad candidate link scores | `preserved as raw snapshot` | Input features for confidence and ranking before refinement. |
+| `summit_candidate_id` in `data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl` | Summit candidate ID | `preserved as raw snapshot` | Immutable primary key for summit candidates. |
+| `lat` / `lon` in `data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl` | Summit candidate coordinate | `preserved as raw snapshot` | Input coordinates for stability spatial lookup. |
+| `lookup_status` in `data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl` | Center point lookup status | `preserved as raw snapshot` | Primary lookup result at center. |
+| `municipality_matches` in `data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl` | Center point matches and distance | `preserved as raw snapshot` | Containment and distance-to-boundary metrics at center. |
+| Geometry in `data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson` | MLIT administrative area polygons | `preserved as raw snapshot` | Geospatial boundaries used for ray-casting point-in-polygon and distance checks. |
+| Adjacency map in `data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_adjacency.json` | Topographic land adjacency | `preserved as raw snapshot` | Set of adjacent municipalities in Ehime. |
+| `municipality` in `data/03_primary/mountains/ehime_mountain_source_rows.json` | Mountain source municipality name | `preserved as raw snapshot` | Expected location of the mountain from source. |
+| `mountain_no` in `data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl` | Mountain reference key | `preserved as raw snapshot` | Links to mountain row. |
+| `summit_candidate_id` in `data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl` | Summit candidate key | `preserved as raw snapshot` | Links to summit candidate row. |
+| `score` / `rank` / `review` fields in `data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl` | Broad candidate link scores | `preserved as raw snapshot` | Input features for confidence and ranking before refinement. |
 
 ### 2. New Stability Classification Fields (Stage 16 Outputs)
 
