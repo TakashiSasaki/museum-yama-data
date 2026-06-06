@@ -40,6 +40,9 @@ Commands:
   generate-location-stability-review-packets Generate location-stability review packets and a human decision template.
   generate-review-required-geographic-grounding-requests Generate review required geographic grounding requests.
   refine-mountain-summit-candidate-links-by-grounding Refine candidate links using external geographic grounding evidence.
+  normalize-grounding-responses          Normalize raw Gemini grounding responses into a reference index.
+  generate-grounding-assisted-summit-candidate-links Generate candidate links with grounding-early spatial search.
+  generate-grounding-assisted-review-queues Generate review queues from grounding-assisted candidate links.
 
 
 
@@ -225,6 +228,30 @@ refine-mountain-summit-candidate-links-by-grounding Options:
   --review-csv <path>               Required. Path to output review queue CSV.
   --review-md <path>                Required. Path to output review queue Markdown.
   --report <path>                   Required. Path to output report markdown.
+
+normalize-grounding-responses Options:
+  --mountains <path>                Required. Path to mountain source JSON.
+  --grounding-responses <path>      Required. Path to raw grounding responses JSON.
+  --out <path>                      Required. Path to output grounding reference index JSONL.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
+
+generate-grounding-assisted-summit-candidate-links Options:
+  --mountains <path>                Required. Path to mountain source JSON.
+  --summit-candidates <path>        Required. Path to summit candidates JSONL.
+  --grounding-reference <path>      Required. Path to grounding reference index JSONL.
+  --location-evidence <path>        Required. Path to location evidence JSONL.
+  --activity-links <path>           Required. Path to activity links JSONL.
+  --out <path>                      Required. Path to output candidate links JSONL.
+  --pruned-log <path>               Required. Path to output pruned candidate log JSONL.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
+
+generate-grounding-assisted-review-queues Options:
+  --candidate-links <path>          Required. Path to grounding-assisted candidate links JSONL.
+  --out-dir <path>                  Required. Path to output review directory.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
 `);
 
     process.exit(code);
@@ -362,6 +389,16 @@ function parseArgs(argsArray) {
             options.reportingOutDir = argsArray[++i];
         } else if (arg === '--grounding-responses' && i + 1 < argsArray.length) {
             options.groundingResponses = argsArray[++i];
+        } else if (arg === '--summit-candidates' && i + 1 < argsArray.length) {
+            options.summitCandidates = argsArray[++i];
+        } else if (arg === '--grounding-reference' && i + 1 < argsArray.length) {
+            options.groundingReference = argsArray[++i];
+        } else if (arg === '--location-evidence' && i + 1 < argsArray.length) {
+            options.locationEvidence = argsArray[++i];
+        } else if (arg === '--activity-links' && i + 1 < argsArray.length) {
+            options.activityLinks = argsArray[++i];
+        } else if (arg === '--pruned-log' && i + 1 < argsArray.length) {
+            options.prunedLog = argsArray[++i];
         }
     }
     return options;
@@ -572,6 +609,27 @@ async function run() {
         }
     }
 
+    if (command === 'normalize-grounding-responses') {
+        if (!options.mountains || !options.groundingResponses || !options.out || !options.manifest || !options.report) {
+            log.error(`Error: --mountains, --grounding-responses, --out, --manifest, and --report are required for 'normalize-grounding-responses'.`);
+            printUsageAndExit();
+        }
+    }
+
+    if (command === 'generate-grounding-assisted-summit-candidate-links') {
+        if (!options.mountains || !options.summitCandidates || !options.groundingReference || !options.locationEvidence || !options.activityLinks || !options.out || !options.prunedLog || !options.manifest || !options.report) {
+            log.error(`Error: --mountains, --summit-candidates, --grounding-reference, --location-evidence, --activity-links, --out, --pruned-log, --manifest, and --report are required for 'generate-grounding-assisted-summit-candidate-links'.`);
+            printUsageAndExit();
+        }
+    }
+
+    if (command === 'generate-grounding-assisted-review-queues') {
+        if (!options.candidateLinks || !options.outDir || !options.manifest || !options.report) {
+            log.error(`Error: --candidate-links, --out-dir, --manifest, and --report are required for 'generate-grounding-assisted-review-queues'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -666,6 +724,15 @@ async function run() {
                 break;
             case 'refine-mountain-summit-candidate-links-by-grounding':
                 await require('./commands/refine-mountain-summit-candidate-links-by-grounding')(options);
+                break;
+            case 'normalize-grounding-responses':
+                await require('./commands/normalize-grounding-responses')(options);
+                break;
+            case 'generate-grounding-assisted-summit-candidate-links':
+                await require('./commands/generate-grounding-assisted-summit-candidate-links')(options);
+                break;
+            case 'generate-grounding-assisted-review-queues':
+                await require('./commands/generate-grounding-assisted-review-queues')(options);
                 break;
 
             case 'test':
