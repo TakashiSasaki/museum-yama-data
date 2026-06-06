@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "stage21_supported_top_candidate_agrees": 0,
+    "stage21_supported_top_candidate_disagrees": 44,
+    "stage21_supported_candidate_missing_from_stage23": 58,
+    "stage21_supported_candidate_present_but_not_top": 0,
+    "stage21_supported_but_no_candidate_marker": 0,
+    "stage21_supported_but_coordinate_conflict": 0,
+    "stage21_supported_but_close_alternatives": 0,
+    "stage21_supported_but_grounding_contradicted": 0,
+    "stage21_not_supported_no_grounding": 0,
+    "stage21_not_supported_insufficient_evidence": 253,
+    "stage21_not_supported_conflict": 0
+  },
+  "summary": {
+    "total_mountains": 531,
+    "stage21_supported_and_active_in_stage25": 0,
+    "stage21_supported_agrees_with_stage23_top": 0,
+    "stage21_candidate_missing": 58,
+    "coordinate_conflict_cases": 0,
+    "potential_v3_deferrals": 11
+  }
+}

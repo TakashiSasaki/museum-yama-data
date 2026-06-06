@@ -1,0 +1,21 @@
+{
+  "summary": {
+    "total_mountains": 531,
+    "total_candidate_links": 6079,
+    "baseline_stage9_candidate_links": 11372,
+    "stage23_candidate_links": 6079,
+    "candidate_link_reduction_from_stage9": 5293,
+    "stage24_auto_supported_mountains": 1,
+    "stage24_review_required_mountains": 530,
+    "stage26_auto_supported_mountains": 1,
+    "stage26_review_deferred_mountains": 11,
+    "stage26_map_check_recommended_mountains": 0,
+    "stage26_immediate_review_required_mountains": 519,
+    "stage26_conflict_mountains": 38,
+    "stage26_no_candidate_mountains": 0,
+    "stage26_stage21_stage23_disagreements": 5,
+    "stage26_stage21_candidate_missing": 0,
+    "coverage_gap": 0,
+    "source_files_modified": false
+  }
+}
