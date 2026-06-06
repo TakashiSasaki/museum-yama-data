@@ -12,9 +12,20 @@ function readJsonl(filePath) {
 }
 
 function readCsv(filePath) {
-    const { parseCsv } = require('../lib/csv');
+    const { parseCSV } = require('../lib/csv');
     const content = fs.readFileSync(filePath, 'utf8');
-    return parseCsv(content, { hasHeader: true });
+    const rows = parseCSV(content);
+    if (rows.length === 0) return [];
+    const headers = rows[0];
+    const data = [];
+    for (let i = 1; i < rows.length; i++) {
+        const obj = {};
+        for (let j = 0; j < headers.length; j++) {
+            obj[headers[j]] = rows[i][j];
+        }
+        data.push(obj);
+    }
+    return data;
 }
 
 function formatCsv(records, columns) {
