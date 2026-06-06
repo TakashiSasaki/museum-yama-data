@@ -2,6 +2,10 @@
 
 ## 1. Context
 
+**Current Status Note:** This audit was prepared against pre-reconciliation HEAD `627c379...`. The documentation reconciliation was merged as `e24d47f...`. The audit findings describe the state corrected by that reconciliation commit.
+
+Latest HEAD checked for this follow-up: `627c379` (In this instance, the environment was checked against this commit, maintaining the original context).
+
 - **Branch checked**: `museum-yama-data`
 - **HEAD commit checked**: `627c379 Stage 22-24: Grounding-assisted reprocessing of mountain-summit candidate pipeline`
 
@@ -125,3 +129,11 @@ The following file paths still appear in text searches, but they have been revie
 *   **`data/01_raw/provider_received`**: Retained in policies and skill tests (e.g., `validate-provider-received`) as the accepted intake directory for *future* provider drops.
 *   **`review_decisions_template.csv` / `review_packets/`**: Retained in structural mapping documentation (`mountain_summit_candidate_review_packet_mapping.md`) and marked as "Historical/Superseded" in resolution plans.
 *   **`compact_review_queue_top1.csv`**: Retained in reports documenting its cleanup (`obsolete_review_artifact_cleanup_report.md`).
+
+## 8. Validation
+
+The following validation commands were run to ensure safety and structural integrity:
+
+- `npm test`: Ran from `.agents/skills/yama-data-pipeline/`. (Status: Passed successfully after dependencies were installed).
+- `python -m compileall scripts src`: (Status: Passed successfully).
+- `git status --short`: Verified only targeted documentation files were modified, and no data artifacts were affected.

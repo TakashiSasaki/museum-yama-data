@@ -7,8 +7,8 @@ This document defines the recommended policy for placing generated outputs befor
 ## Scope Clarification
 
 This document was originally written before the `data/` layered structure (`data/02_intermediate`, `data/03_primary`, `data/04_feature`, `data/08_reporting`) was populated.
-*   `artifacts/generated/` is a future DVC-light formal generated-output recommendation.
-*   It does not retroactively invalidate existing Git-tracked data-layer outputs. Executed stage outputs under `data/` are currently accepted repository artifacts.
+*   Existing executed pipeline outputs under `data/` are accepted Git-tracked repository artifacts.
+*   This policy is primarily about future formal DVC-light generated-output placement (such as `artifacts/generated/`) and should not be read as requiring relocation of already executed data-layer outputs.
 *   `docs/migration/` must still not become the long-term generated-output directory.
 
 ## Path Classifications
