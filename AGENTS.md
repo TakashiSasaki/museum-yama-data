@@ -122,19 +122,31 @@ These agreements summarize the current planning state. The canonical details are
 
 ### Skill: Yama Data Pipeline (`yama-data-pipeline`)
 
-A consolidated CLI tool that handles local mountaineering data processing including data intake, merging, annotating, and validation.
+A consolidated CLI tool that handles local mountaineering data processing.
 
-#### Subcommands
+**Note:** The authoritative full command list is documented in `.agents/skills/yama-data-pipeline/SKILL.md` and accessible via `node .agents/skills/yama-data-pipeline/cli.js <command> --help`.
 
-- **`intake`**: Portable GPX archive extraction command. Safely extracts GPX files from a ZIP archive into an explicit directory using `--input` and `--out-dir`. It extracts only `.gpx` entries, ignores directories and other file types, flattens internal ZIP paths, and fails on duplicate flattened basenames or existing output collisions without renaming. The extraction is all-or-nothing. Note: The historical workflow used `intake` to also convert Excel files to CSV and move files to `processed/`, but this is no longer part of current `intake` behavior.
-- **`merge`**: Groups individual GPX files from `gpx/raw/` into yearly archives (e.g., `2024_merged.gpx`) for easier My Maps import. Preserves all `<trk>` elements. This is a legacy command; future merged outputs require validation against raw GPX.
-- **`annotate`**: Legacy command that analyzes GPX track elevation profiles, attempts summit matching, and generates files with `<wpt>` waypoints in `gpx/annotated/`. Its existing name assignment behavior is not authoritative. Future pipeline design separates summit-candidate detection from summit identity/name resolution.
-- **`validate`**: Validates all processed GPX files for well-formed XML and valid coordinate bounds. Although GPX itself may allow trackpoints without elevation, this repository requires `<ele>` on all trackpoints because elevation profiles are used for validation and peak annotation.
+#### Subcommands / Categories
+
+The pipeline currently supports high-level command categories including:
+- **Intake/Extraction**: `intake`, `extract-excel-sheets`
+- **Summit Candidate Generation**: `generate-summit-candidate-gpx`, `extract-summit-candidate-features`, `detect-candidates`
+- **GPX/YAMAP Linking**: `link-gpx-yamap-by-date`, `enrich-gpx-yamap-links-by-title`
+- **Location Enrichment**: `extract-reverse-geocoding-point-index`, `enrich-summit-candidates-with-reverse-geocoding`, `lookup-ehime-municipality-by-point`
+- **Mountain-to-Summit Candidate Linking**: `generate-mountain-summit-candidate-links`
+- **Location-Stability Refinement**: `refine-mountain-summit-candidate-links-by-location-stability`, `generate-location-stability-compact-review-queues`, `generate-location-stability-review-packets`
+- **Geographic Grounding**: `generate-review-required-geographic-grounding-requests`, `normalize-grounding-responses`, `refine-mountain-summit-candidate-links-by-grounding`
+- **Grounding-Assisted Candidate Link Generation**: `generate-grounding-assisted-summit-candidate-links`
+- **Grounding-Assisted Review Queues**: `generate-grounding-assisted-review-queues`
+- **Legacy Commands**:
+  - **`merge`**: Groups individual GPX files into yearly archives. Future merged outputs require validation against raw GPX.
+  - **`annotate`**: Legacy command that analyzes GPX track elevation profiles. Its existing name assignment behavior is not authoritative.
+  - **`validate`**: Validates all processed GPX files for well-formed XML and valid coordinate bounds.
 
 #### How to use
 Ask the agent:
 > "Run the yama-data-pipeline intake subcommand to process the new ZIP file from data/01_raw/as_received/ to data/01_raw/gpx/."
-> "Run the yama-data-pipeline merge subcommand."
+> "Run the yama-data-pipeline generate-grounding-assisted-review-queues subcommand."
 
 #### Implementation
 - **Directory**: `.agents/skills/yama-data-pipeline/`

@@ -488,6 +488,15 @@ This document inventories and verifies the current execution state of the data-p
 ---
 
 
+## Current Interpretation and Review Workflow Note
+
+The pipeline currently exhibits a tension between two late-stage optimizations:
+*   **Stage 21** produced stronger review-burden reduction on the full 11,372-link universe (reducing review-required mountains down to 280).
+*   **Stages 22–24** reduced the raw candidate-link volume significantly to 6,079 (Stage 23) but, because of stricter automatic-support thresholds, Stage 24 left 530 mountains review-required.
+*   **Stage 25 (Review Reduction v2)** is the next intended improvement. It is planned to combine Stage 23's reduced candidate universe with Stage 21's priority/support logic.
+
+Until Stage 25 exists, reviewers should not assume Stage 24 alone solves the human review burden.
+
 ## Current Human Review Entry Points
 
 Human reviewers should use the grounding-assisted review artifacts (Stage 24) as the latest entry point:
