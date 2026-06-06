@@ -2,7 +2,7 @@
 
 This document outlines the high-level target data model for the future DVC and Kedro pipeline in the Yama Museum repository. It describes intended logical datasets rather than physical implementation files.
 
-*Note: No physical directories or data files for this model have been created yet.*
+*Note: This document represents a logical target model. Several physical datasets now exist as Git-tracked pipeline outputs in `data/02_intermediate`, `data/03_primary`, `data/04_feature`, and `data/08_reporting`. However, some future semantic outputs, such as final resolved summit coordinates, still do not exist.*
 
 ## Dataset Overview
 
@@ -174,12 +174,33 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Tracking System:** DVC dependency candidate
 * **Status Notes:** This stage has been executed, providing candidate links and review queues to facilitate human-in-the-loop validation before final coordinate/identity resolution.
 
-### 22. `mountain_summit_candidate_review_packets`
+### 22. `mountain_summit_candidate_review_packets` (Historical/Superseded)
 * **Role:** Markdown review packets grouping contested links and candidate ridge traverses by GPX track file and summit conflicts to facilitate human review, along with a prefilled review decisions template.
 * **Primary Inputs:** `mountain_summit_candidate_links` (location-refined candidate links and conflict queues).
-* **Expected Future Layer:** `08_reporting` (physical path: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/` and `review_decisions_template.csv`)
+* **Expected Future Layer:** `08_reporting` (historical physical path: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/` and `review_decisions_template.csv`)
 * **Tracking System:** DVC dependency candidate / Git-tracked outputs
-* **Status Notes:** This stage has been executed, generating structured, readable review aids and a decision template. It does not resolve mountain identities or generate coordinates automatically.
+* **Status Notes:** These paths are historical and were deleted/superseded. Use location-stability or grounding-assisted artifacts instead.
+
+### 23. `mountain_geographic_grounding_reference`
+* **Role:** Normalized external geographic grounding coordinate reference points for mountains that required external geographic verification.
+* **Primary Inputs:** Raw external grounding responses, `accepted_mountain_source_rows`.
+* **Expected Future Layer:** `04_feature`
+* **Tracking System:** DVC dependency candidate
+
+### 24. `grounding_refined_candidate_links` (Stage 21 Baseline)
+* **Role:** Candidate links projected with grounding responses as auxiliary evidence to reduce human review burden, without aggressively pruning the candidate universe.
+* **Primary Inputs:** `mountain_summit_candidate_links` (location-stability refined), `mountain_geographic_grounding_reference`.
+* **Expected Future Layer:** `04_feature`
+
+### 25. `grounding_assisted_candidate_links` (Stage 23)
+* **Role:** A heavily pruned subset of candidate links utilizing strict geographic grounding tolerances to remove completely spurious candidate rows.
+* **Primary Inputs:** `summit_candidates`, `accepted_mountain_source_rows`, `mountain_geographic_grounding_reference`.
+* **Expected Future Layer:** `04_feature`
+
+### 26. `grounding_assisted_review_queues` (Stage 24)
+* **Role:** Reporting artifacts grouping the `grounding_assisted_candidate_links` into action-oriented human-review tasks.
+* **Primary Inputs:** `grounding_assisted_candidate_links`.
+* **Expected Future Layer:** `08_reporting`
 
 ## Summary of Core Principles
 

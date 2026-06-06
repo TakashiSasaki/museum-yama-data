@@ -1,11 +1,15 @@
 # Source-to-Target Mapping Audit (Template)
 
 **WARNING:**
-*   This is not yet a completed source-to-target mapping audit.
-*   Physical directory restructuring remains blocked.
-*   No data movement is authorized by this document.
+*   This is not yet a completed global source-to-target mapping audit.
+*   Physical directory restructuring remains blocked by this template.
+*   **Current Status Note:** This document is a global physical source-to-target migration audit template. It does not supersede stage-specific mapping audits (which are permitted to complete for generating new data layers).
+*   For executed stage-level mapping audits, see:
+    *   `docs/migration/mountain_summit_candidate_linking_mapping.md`
+    *   `docs/migration/grounding_assisted_reprocessing_source_mapping.md`
+*   No physical legacy data movement is authorized by this document.
 *   Every current path and relevant field/artifact role must be classified before implementation.
-*   Any "needs decision", "unmigrated gap", or unclassified item blocks movement.
+*   Any "needs decision", "unmigrated gap", or unclassified item blocks global movement.
 
 ## File/Directory Mapping
 

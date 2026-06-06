@@ -53,22 +53,48 @@ This document outlines the staged future workflow for resolving summit coordinat
 *   **Description:** Use detailed municipality and island reverse-geocoding information to refine, re-rank, and prioritize candidate links. This step assigns review priorities and filters the links into a reduced review queue.
 *   **Expected Output:** `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_candidate_links.jsonl`, `location_refined_manifest.json`, and review files.
 
-### Stage 6c: Compress mountain-to-summit candidate review queues (Executed)
+### Stage 6c: Compress mountain-to-summit candidate review queues (Historical/Superseded)
 *   **Description:** Group and compress location-refined candidate links into compact Top-1, Top-3, and Conflict-focused review queues. Generate GPX-group and summit-conflict reports to facilitate ridge traverse and candidate overlap review.
 *   **Expected Output:** `data/08_reporting/mountain_summit_candidate_review/2026-05-12/` containing `compact_review_queue_top1.csv`, `compact_review_queue_top3.csv`, `compact_review_queue_conflicts.csv`, `conflict_groups_by_gpx.csv`, `conflict_groups_by_summit_candidate.csv`, `compact_review_summary.md`, and `compact_review_manifest.json`.
+*   **Note:** These old artifacts were deleted as obsolete. Newer location-stability and grounding-assisted review artifacts exist.
 
 ### Stage 7: Compare CSV coordinates against GPX summit candidates
 *   **Description:** Validate the initial CSV-provided coordinates against the geometry of matched GPX summit candidates to assess accuracy and consistency.
 *   **Expected Output:** `data/04_feature/mountain_coordinate_validation/.../csv_vs_gpx_candidate_distances.jsonl`
 
-### Stage 8: Human review (Executed)
+### Stage 8: Human review (Historical/Superseded)
 *   **Description:** Generate conflict-group review packets (GPX traverse groups and summit conflicts) and a human decision template to prepare for manual validation.
 *   **Expected Output:** `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/` and `review_decisions_template.csv`.
+*   **Note:** These old artifacts were deleted as obsolete. Newer location-stability and grounding-assisted review artifacts exist.
 
 ### Stage 9: Produce accepted summit coordinate table
 *   **Description:** Compile the final, resolved summit coordinates based on validated CSV data, confirmed GPX candidates, and explicit human decisions.
 *   **Expected Output:** `data/03_primary/mountain_summit_coordinates/mountain_summit_coordinates.jsonl`
+*   **Note:** Final accepted summit coordinates have not yet been created.
 
 ### Stage 10: Reporting/export
 *   **Description:** Generate final reporting artifacts, such as waypoints for maps or datasets for web applications.
 *   **Expected Output:** `data/08_reporting/gpx/mountain_waypoints/...`
+
+## Current Implemented Candidate-Link and Review-Reduction Stages
+
+The following stages reflect the current pipeline alignment beyond the conceptual stages outlined above. They replace the older Nominatim-based review logic (Stages 6c and 8) with more robust structural evidence and external geographic grounding.
+
+### Stage 17 / 18 / 19: Location-Stability Refinement and Review Packets
+*   **Description:** Refines candidate links against topological municipality boundaries (KSJ N03) to filter out spurious nearby candidates. Regenerates compact review queues and structured markdown packets. This provides the retained baseline/reference point for location-based structural validity.
+*   **Key Output:** `location_stability_refined_candidate_links.jsonl`, `location_stability_review_packets/`
+
+### Stage 20: Geographic Grounding Request Preparation
+*   **Description:** Identifies mountains requiring external geographic grounding support based on location stability queues. Compiles machine-readable and human-readable request packets.
+*   **Key Output:** Request packet JSONL/Markdown under `data/04_feature/mountain_geographic_grounding/`.
+
+### Stage 21: Grounding-Based Refinement of Candidate Links
+*   **Description:** Projects raw Gemini-derived geographic grounding coordinates as auxiliary distance-based evidence onto the existing full candidate links universe.
+*   **Review Reduction Baseline:** Stage 21 produced stronger review-burden reduction on the full 11,372-link universe, reducing review-required mountains to 280.
+
+### Stage 22-24: Grounding-Assisted Reprocessing
+*   **Description:** Normalizes raw grounding responses (Stage 22), prunes completely spurious candidate links using a strict location threshold (Stage 23), and regenerates new review queues on this pruned universe (Stage 24).
+*   **Note:** This is the current generated pipeline branch. While Stage 24 successfully reduced overall candidate-link volume to 6,079, it did not substantially reduce the review-required mountain count, leaving 530 mountains review-required.
+
+### Stage 25: Grounding-Assisted Review Reduction v2 (Planned)
+*   **Description:** The next intended improvement. It aims to combine the candidate-link volume reduction of Stage 23 with the priority/review-burden reduction logic of Stage 21, resolving the remaining 530 review-required mountains.
