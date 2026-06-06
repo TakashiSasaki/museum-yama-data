@@ -399,9 +399,54 @@ This document inventories and verifies the current execution state of the data-p
 ---
 
 
+### 21. Grounding-Based Refinement of Mountain-Summit Candidate Links
+
+* **Status**: `executed_verified`
+* **Subcommand(s)**:
+  - `refine-mountain-summit-candidate-links-by-grounding` — implemented at `.agents/skills/yama-data-pipeline/commands/refine-mountain-summit-candidate-links-by-grounding.js`
+  - Library: `.agents/skills/yama-data-pipeline/lib/grounding_response_refinement.js`
+* **Input candidate links**: `data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl`
+* **Input grounding responses**: `data/01_raw/mountain_geographic_grounding/external_agent/2026-06-06/gemini_grounding_responses_raw.json`
+* **Output JSONL**: `data/04_feature/mountain_summit_candidate_links/2026-05-12/grounding_refined_candidate_links.jsonl`
+* **Review CSV**: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/grounding_refined_review_queue.csv`
+* **Review MD**: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/grounding_refined_review_queue.md`
+* **Manifest**: `data/04_feature/mountain_summit_candidate_links/2026-05-12/grounding_refined_manifest.json`
+* **Report**: `docs/migration/mountain_summit_candidate_grounding_refinement_report.md`
+* **Execution Summary Counts**:
+  - Input candidate links: 11,372
+  - Output refined links: 11,372
+  - Raw grounding records: 387
+  - Unique mountains with grounding: 337
+  - Mountains with coordinate clusters: 333
+  - Single-cluster consensus: 294
+  - Conflicting clusters: 36
+  - Grounding supported links: 7
+  - Grounding weakly supported links: 59
+  - Grounding neutral links: 4,711
+  - Grounding weakened links: 6,595
+  - Upgraded links (priority reduced): 5
+  - Downgraded links (priority increased): 1,683
+* **Review Burden Reduction**:
+  - Links needing review (high/medium): 3,002 → 1,314 (reduction: 1,688)
+  - Mountains needing review: 531 → 280 (reduction: 251)
+  - Top-1 links needing review: 527 → 253 (reduction: 274)
+* **DVC status**: not active; no DVC commands run
+* **Git LFS**: not used
+* **Source files modified**: `false`
+* **Existing Stage 17 outputs overwritten**: `false`
+* **Note**: This stage projects raw Gemini-derived geographic grounding coordinates as auxiliary distance-based evidence onto the existing candidate links. Grounding responses are consolidated by deduplication and coordinate clustering (100m radius). Candidates within 250m of the best grounding cluster are marked "supported"; those beyond 2km are "weakened". No final coordinates are generated and no candidates are automatically accepted.
+
+---
+
+
 ## Current Human Review Entry Points
 
-Human reviewers should use only the location-stability review artifacts:
+Human reviewers should use the grounding-refined review artifacts (Stage 21) as the latest entry point:
+
+- Grounding-refined review CSV: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/grounding_refined_review_queue.csv`
+- Grounding-refined review summary: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/grounding_refined_review_queue.md`
+
+The location-stability review packets (Stage 19) remain available for reference:
 
 - Review index: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_packets/index.md`
 - Decision template: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_decisions_template.csv`
