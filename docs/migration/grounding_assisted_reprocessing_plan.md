@@ -95,4 +95,4 @@ After execution:
 
 ### Stage 25: Grounding-Assisted Review Reduction v2
 **Goal:** Reduce review burden by carrying forward Stage 21 support and implementing tiered distance support.
-**Status:** Completed. Reduced active review from 530 to 520 mountains, making Stage 25 the new primary entry point. Stage 24 remains a baseline.
+**Status:** Completed. Reduced active review from 530 to 376 mountains, making Stage 25 the new primary entry point. Stage 24 remains a baseline.

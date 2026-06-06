@@ -74,4 +74,4 @@ This document outlines the staged future workflow for resolving summit coordinat
 *   **Expected Output:** `data/08_reporting/gpx/mountain_waypoints/...`
 
 ### Current Status
-Stage 25 has refined the review queues to 520 active review mountains (down from Stage 24's 530), successfully retaining the smaller Stage 23 candidate universe while applying Stage 21-inspired late projection support.
+Stage 25 has refined the review queues to 376 active review mountains (down from Stage 24's 530), successfully retaining the smaller Stage 23 candidate universe while applying Stage 21-inspired late projection support.

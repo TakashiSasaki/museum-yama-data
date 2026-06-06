@@ -494,11 +494,11 @@ This document inventories and verifies the current execution state of the data-p
 * **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/generate-grounding-assisted-review-queues-v2.js`.
 * **Output directory exists?**: Yes, at `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review_v2/`.
 * **Output files**:
-  - `immediate_review_required_mountains.csv` (520 mountains)
-  - `review_deferred_mountains.csv` (10 mountains)
+  - `immediate_review_required_mountains.csv` (376 mountains)
+  - `review_deferred_mountains.csv` (154 mountains)
   - `auto_supported_candidates.csv` (1 mountain)
   - `map_check_recommended.csv` (0 mountains)
-  - `conflict_cases.csv` (38 mountains)
+  - `conflict_cases.csv` (134 mountains)
   - `no_candidate_mountains.csv` (0 mountains)
   - `stage21_stage23_disagreements.csv` (0 mountains)
   - `immediate_review_required_candidates.csv`

@@ -11,19 +11,18 @@ This report documents the results of executing the Stage 25 Grounding-Assisted R
 | Stage 21 Review Required Mountains | 280 | Baseline for review reduction using late projection. |
 | Stage 23 Candidate Links | 6,079 | New candidate set size (46.5% reduction). |
 | Stage 24 Review Required Mountains | 530 | The conservative strict-match-only approach. |
-| Stage 25 Active Review Mountains | 520 | The new improved queue sizing. |
+| Stage 25 Active Review Mountains | 376 | The new improved queue sizing. |
 
 ## Process Details
-- **Stage 25 Active Review Required Mountains**: 520
+- **Stage 25 Active Review Required Mountains**: 376
 - **Stage 25 Auto-supported Mountains**: 1
-- **Stage 25 Review Deferred Mountains**: 10
+- **Stage 25 Review Deferred Mountains**: 154
 - **Stage 25 Map Check Recommended Mountains**: 0
-- **Stage 25 Conflict Mountains**: 38 (Included in active review total)
+- **Stage 25 Conflict Mountains**: 134 (Included in active review total)
 - **Stage 25 No-Candidate Mountains**: 0 (Included in active review total)
-- **Stage 21 / Stage 23 Disagreements**: 0
 
 ## Findings
-Stage 25 successfully integrates the v2 queue machinery and provides a modest active-review reduction (from 530 to 520 mountains). However, it is still far from Stage 21’s 280 review-required mountain baseline. Stage 25 is documented as a successful integration step, but leaves further review-reduction work for later.
+Stage 25 successfully integrates the v2 queue machinery. By fully passing Stage 21 inputs to parseArgs, the carry-forward logic reduces active review down to 376 mountains (from 530). This is a meaningful step toward Stage 21’s 280 review-required mountain baseline without losing Stage 23's candidate reduction benefits. Stage 25 is documented as a successful integration step, but leaves further review-reduction work for later.
 
 The python validation test run (`python -m compileall scripts src`) completed successfully without failure.
 

@@ -332,6 +332,10 @@ function parseArgs(argsArray) {
             options.dateLinks = argsArray[++i];
         } else if (arg === '--gpx-manifest' && i + 1 < argsArray.length) {
             options.gpxManifest = argsArray[++i];
+        } else if (arg === '--stage21-grounding-refined-links' && i + 1 < argsArray.length) {
+            options.stage21GroundingRefinedLinks = argsArray[++i];
+        } else if (arg === '--stage21-review-queue' && i + 1 < argsArray.length) {
+            options.stage21ReviewQueue = argsArray[++i];
         } else if (arg === '--mountains' && i + 1 < argsArray.length) {
             options.mountains = argsArray[++i];
         } else if (arg === '--location-evidence' && i + 1 < argsArray.length) {

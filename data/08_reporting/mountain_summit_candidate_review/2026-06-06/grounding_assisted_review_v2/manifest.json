@@ -8,12 +8,12 @@
     "stage24_auto_supported_mountains": 1,
     "stage24_review_required_mountains": 530,
     "stage25_auto_supported_mountains": 1,
-    "stage25_review_deferred_mountains": 10,
+    "stage25_review_deferred_mountains": 154,
     "stage25_map_check_recommended_mountains": 0,
-    "stage25_immediate_review_required_mountains": 520,
-    "stage25_conflict_mountains": 38,
+    "stage25_immediate_review_required_mountains": 376,
+    "stage25_conflict_mountains": 134,
     "stage25_no_candidate_mountains": 0,
-    "stage25_stage21_stage23_disagreements": 0,
+    "stage25_stage21_stage23_disagreements": 102,
     "coverage_gap": 0,
     "source_files_modified": false
   }
