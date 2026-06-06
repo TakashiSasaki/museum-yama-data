@@ -61,7 +61,7 @@ module.exports = async function generateGroundingAssistedReviewQueuesCommand(opt
         for (const link of s21Links) {
             if (!stage21Map.has(link.mountain_no)) {
                 stage21Map.set(link.mountain_no, {
-                    status: link.grounding_review_reduction_class,
+                    status: link.grounding_bucket, // Use actual Stage 21 field
                     top_candidate_id: link.summit_candidate_id
                 });
             }
