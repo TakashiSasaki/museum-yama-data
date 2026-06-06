@@ -2,8 +2,6 @@
 
 This document serves as an audit of all top-level data areas in the repository.
 
-**Current Status Note:** Some path migration has occurred, especially the simplified `as_received` layout (see `docs/migration/as_received_path_migration_audit.md`). This document remains a top-level preservation audit, not a complete current file inventory. Unresolved items block further physical layout migration, but do not block ordinary stage-level feature generation.
-
 **CRITICAL REQUIREMENT:** Any future data migration, schema change, normalization, import, backfill, or storage reorganization MUST first classify all relevant source files and fields. Migrations MUST NOT proceed if any item remains unclassified, "needs decision", or "unmigrated gap".
 
 ## Initial Audit Table

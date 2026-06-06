@@ -1,15 +1,15 @@
 # Path Migration Plan
 
-This document is a **historical planning record only**. It outlines the proposed mappings from the existing file layout to the future Kedro/DVC-managed structure at the time it was written.
+This document is a **planning record only**. It outlines the proposed mappings from the existing file layout to the future Kedro/DVC-managed structure.
 
-**WARNING / CURRENT STATUS:** This document is NOT the current path authority. Do not use this file alone as current execution guidance. The simplified raw source `as_received` layout migration has already occurred and is documented in `docs/migration/as_received_path_migration_audit.md`.
+**WARNING:** No data has been moved yet. Actual data movement will require completing the source coverage audit and formalizing this plan.
 
 ## Proposed Path Mappings
 
 | Old Path | Proposed New Path | Data Role | Movement Safe Now? | Blocking Questions | Required Validation | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
 | `data/01_raw/as_received/` | `data/01_raw/as_received/` | Source | N/A (Newly Created) | None | None | Minimal new intake path for received raw source files. Not for legacy data migration. |
-| `gpx/raw/` | `data/01_raw/gpx/yamap/` | Source | No (Not yet performed) | Needs Kedro setup confirmation | DVC initialization | Historical proposal. Current GPX source is `data/01_raw/gpx/2026-05-12/`. |
+| `gpx/raw/` | `data/01_raw/gpx/yamap/` | Source | No (Not yet performed) | Needs Kedro setup confirmation | DVC initialization | Raw track files |
 | `gpx/annotated/` | `data/99_work/legacy_annotated_gpx/` | Generated | No (Not yet performed) | Pipeline recreation steps | Pipeline validation | Legacy experimental unvalidated annotated GPX files. Preserve as historical work evidence. |
 | *future summit-candidate GPX* | `data/08_reporting/gpx/summit_candidates/` | Generated | N/A | Pipeline to be created | Pipeline validation | Future validated pipeline output containing detected summit candidates without authoritative name assignments. |
 | *future summit-candidate table* | `data/04_feature/summit_candidates/` | Generated | N/A | Pipeline to be created | Pipeline validation | Future validated tabular pipeline output of summit candidates. |
