@@ -92,3 +92,7 @@ After execution:
 - Strict matches satisfy distance ≤50m and elevation ≤10m
 - All candidate link scores are in [0, 1]
 - Source files are not modified
+
+### Stage 25: Grounding-Assisted Review Reduction v2
+**Goal:** Reduce review burden by carrying forward Stage 21 support and implementing tiered distance support.
+**Status:** Completed. Reduced active review from 530 to 376 mountains, making Stage 25 the new primary entry point. Stage 24 remains a baseline.

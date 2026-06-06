@@ -94,7 +94,8 @@ The following stages reflect the current pipeline alignment beyond the conceptua
 
 ### Stage 22-24: Grounding-Assisted Reprocessing
 *   **Description:** Normalizes raw grounding responses (Stage 22), prunes completely spurious candidate links using a strict location threshold (Stage 23), and regenerates new review queues on this pruned universe (Stage 24).
-*   **Note:** This is the current generated pipeline branch. While Stage 24 successfully reduced overall candidate-link volume to 6,079, it did not substantially reduce the review-required mountain count, leaving 530 mountains review-required.
+*   **Note:** While Stage 24 successfully reduced overall candidate-link volume to 6,079, it did not substantially reduce the review-required mountain count, leaving 530 mountains review-required.
 
-### Stage 25: Grounding-Assisted Review Reduction v2 (Planned)
-*   **Description:** The next intended improvement. It aims to combine the candidate-link volume reduction of Stage 23 with the priority/review-burden reduction logic of Stage 21, resolving the remaining 530 review-required mountains.
+### Stage 25: Grounding-Assisted Review Reduction v2
+*   **Description:** Combines the candidate-link volume reduction of Stage 23 with the priority/review-burden reduction logic of Stage 21.
+*   **Current Status:** Stage 25 has been executed and verified, refining the review queues to 376 active review mountains (down from Stage 24's 530). Stage 25 is now the recommended entry point for human review.
