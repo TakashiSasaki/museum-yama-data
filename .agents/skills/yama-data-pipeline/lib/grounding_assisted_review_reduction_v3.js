@@ -68,7 +68,7 @@ function processMountain(mountainNo, mountainData, candidates, groundingRef, sta
         if (qRow) {
              stage21ReviewStatus = qRow.grounding_refined_review_priority;
              const status = (stage21ReviewStatus || '').trim().toLowerCase();
-             if (status === 'low') {
+             if (status !== 'high' && status !== 'medium') {
                  stage21Support = true;
              }
         }
