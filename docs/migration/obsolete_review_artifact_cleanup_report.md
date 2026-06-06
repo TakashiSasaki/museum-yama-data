@@ -50,9 +50,7 @@ The following files were generated under old criteria and have been deleted usin
 
 ## Human Review Entry Points
 
-**Historical Note:** At the time of this cleanup, location-stability review packets were the current entry point. Later Stage 22-24 grounding-assisted artifacts were generated. The current review entry point must be determined from `current_processing_state_audit.md`.
-
-Human reviewers should use only these location-stability-based artifacts (at the time of writing):
+Human reviewers should use only these location-stability-based artifacts:
 
 - **Current Review Entry Point**: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_packets/index.md`
 - **Current Decision Template**: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_decisions_template.csv`

@@ -21,7 +21,7 @@ This plan strictly adheres to the repository's DVC-light policy:
 ## Relationship to `dvc_tracking_plan.md`
 
 This document (`dvc_first_stage_plan.md`) proposes the first *executable DVC-light stage*.
-The existing `dvc_tracking_plan.md` document lists *Git-primary dependency candidates* (such as `data/01_raw/gpx/2026-05-12/` (current) or `gpx/raw/` (legacy), and `data/01_raw/as_received/2026-05-18/えひめの山.xlsx`).
+The existing `dvc_tracking_plan.md` document lists *Git-primary dependency candidates* (such as `gpx/raw/` and `data/01_raw/provider_received/yoshitomi/2026-05-18/えひめの山.xlsx`).
 The two documents are complementary: `dvc_tracking_plan.md` identifies the inputs, while this document identifies the first process that will consume those inputs under DVC management.
 
 ## Conceptual Candidate: `detect_summit_candidates_preview`
@@ -34,10 +34,8 @@ This process relies purely on immutable GPX parsing and does not require complex
 
 ### Proposed Execution Command
 
-*Historical note: The initial proposal used `gpx/raw` as input. When DVC work is eventually authorized, it should use the actual current GPX source path (`data/01_raw/gpx/2026-05-12`).*
-
 ```sh
-node .agents/skills/yama-data-pipeline/cli.js detect-candidates --input data/01_raw/gpx/2026-05-12 --out artifacts/generated/summit_candidates/summit_candidates.csv
+node .agents/skills/yama-data-pipeline/cli.js detect-candidates --input gpx/raw --out artifacts/generated/summit_candidates/summit_candidates.csv
 ```
 
 *Note: `artifacts/generated/summit_candidates/summit_candidates.csv` is a planned future output path, not an executed output. Do not create that directory or file until explicitly required.*
@@ -45,7 +43,7 @@ node .agents/skills/yama-data-pipeline/cli.js detect-candidates --input data/01_
 ### Candidate Dependencies (`deps`)
 
 *   `.agents/skills/yama-data-pipeline/` (the execution logic)
-*   `data/01_raw/gpx/2026-05-12/` (the immutable source data)
+*   `gpx/raw/` (the immutable source data)
 
 ### Candidate Output-Path Decision
 
