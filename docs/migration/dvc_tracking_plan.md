@@ -5,7 +5,7 @@ This document defines the first planned DVC stage dependency scope.
 **IMPORTANT NOTE:**
 - **DVC Initialization:** DVC was *not* initialized.
 - **Data Migration:** Git-primary source snapshots may later be referenced as DVC stage dependencies *before* any physical directory reorganization. Physical data movement remains blocked until audit and path migration rules permit it.
-- **Current Status:** No actual DVC metadata generation or data movement has been performed yet. The commands and dependencies below are for future execution.
+- **Current Status:** No DVC metadata generation has been performed yet. DVC has not been initialized, and no `dvc add`, `dvc repro`, or DVC remote workflow has been executed. Some repository path migrations, including the simplified `as_received` layout, have already occurred and are documented separately in `docs/migration/as_received_path_migration_audit.md`. The commands and dependencies below are for future execution.
 - **Git LFS:** Current data sizes do not require Git LFS. Git LFS is intentionally not used.
 
 ## Clone-Complete Policy
@@ -34,7 +34,7 @@ The current goal is to document DVC roles as dependency candidates, *not* as DVC
 For the conceptual first executable DVC-light stage that will consume these dependencies, please see `docs/migration/dvc_first_stage_plan.md`.
 For the policy on how generated outputs are placed, see `docs/migration/generated_output_path_policy.md`.
 
-This document does not authorize `dvc add` on raw/source data. The listed paths remain Git-primary. No DVC remote is required for ordinary repository use. No data migration or data movement has occurred.
+This document does not authorize `dvc add` on raw/source data. The listed paths remain Git-primary. No DVC remote is required for ordinary repository use. (Note: physical path migrations like `as_received` have already occurred, but no DVC metadata generation has occurred).
 
 ### 1. `data/01_raw/as_received/2026-05-18/えひめの山.xlsx`
 * **Reason for dependency declaration:** It is the primary activity workbook archive.

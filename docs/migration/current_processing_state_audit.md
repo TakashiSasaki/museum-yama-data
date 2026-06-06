@@ -495,11 +495,11 @@ The pipeline currently exhibits a tension between two late-stage optimizations:
 *   **Stages 22–24** reduced the raw candidate-link volume significantly to 6,079 (Stage 23) but, because of stricter automatic-support thresholds, Stage 24 left 530 mountains review-required.
 *   **Stage 25 (Review Reduction v2)** is the next intended improvement. It is planned to combine Stage 23's reduced candidate universe with Stage 21's priority/support logic.
 
-Until Stage 25 exists, reviewers should not assume Stage 24 alone solves the human review burden.
+Stage 24 is the latest generated grounding-assisted review artifact set, but it is not necessarily the most efficient active manual-review queue because it leaves 530 mountains review-required. Until Stage 25 exists, use Stage 24 for the latest grounding-assisted artifact structure and Stage 21 as the review-burden-reduction baseline/reference.
 
 ## Current Human Review Entry Points
 
-Human reviewers should use the grounding-assisted review artifacts (Stage 24) as the latest entry point:
+Human reviewers should use the grounding-assisted review artifacts (Stage 24) as the latest generated entry point:
 
 - Auto-supported candidates: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/auto_supported_candidates.csv`
 - Review required mountains: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/review_required_mountains.csv`
