@@ -51,6 +51,24 @@ module.exports = async function generateGroundingAssistedReviewQueuesCommand(opt
     const candidateLinks = readJsonl(candidateLinksPath);
     log.info(`  Loaded ${candidateLinks.length} candidate links`);
 
+    // Parse Stage 21 inputs if provided (v2 queues)
+    const stage21Map = new Map();
+    if (options.stage21GroundingRefinedLinks && options.stage21ReviewQueue) {
+        log.info(`Loading Stage 21 refined links from: ${options.stage21GroundingRefinedLinks}`);
+        const s21Links = readJsonl(options.stage21GroundingRefinedLinks);
+
+        // Group by mountain_no and find the top one to carry forward its status
+        for (const link of s21Links) {
+            if (!stage21Map.has(link.mountain_no)) {
+                stage21Map.set(link.mountain_no, {
+                    status: link.grounding_review_reduction_class,
+                    top_candidate_id: link.summit_candidate_id
+                });
+            }
+        }
+        log.info(`  Loaded Stage 21 baseline statuses for ${stage21Map.size} mountains`);
+    }
+
     // Sort links per mountain by score descending
     const byMountain = new Map();
     for (const link of candidateLinks) {
@@ -77,7 +95,7 @@ module.exports = async function generateGroundingAssistedReviewQueuesCommand(opt
         groundingConflicts,
         mountainClassifications,
         reviewSummary,
-    } = generateReviewQueues(candidateLinks, totalMountains);
+    } = generateReviewQueues(candidateLinks, totalMountains, stage21Map);
 
     log.info(`  Auto-supported: ${autoSupported.length}`);
     log.info(`  Review required mountains: ${reviewRequiredMountains.length}`);
