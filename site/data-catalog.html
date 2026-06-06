@@ -27,7 +27,7 @@
 <table><tr><th>Dataset</th><th>Layer</th><th>Status/Tracking</th></tr>
 <tr><td>raw_gpx_activities</td><td>01_raw</td><td>DVC dependency candidate</td></tr>
 <tr><td>raw_activity_workbook</td><td>01_raw</td><td>DVC dependency candidate</td></tr>
-<tr><td>excel_derived_activity_csv</td><td>02_intermediate</td><td>DVC dependency candidate<br><small>Historically existed as the csv/ legacy directory; generation script needs restoration.</small></td></tr>
+<tr><td>excel_derived_activity_csv</td><td>03_primary</td><td>DVC dependency candidate<br><small>This is the strictly validated output of the mountain source acceptance and normalization stage. All coordinates from the GPS column are preserved as coordinate evidence.</small></td></tr>
 <tr><td>raw_yamap_activity_metadata</td><td>01_raw</td><td>DVC dependency candidate</td></tr>
 <tr><td>raw_reverse_geocoding_cache</td><td>01_raw</td><td>DVC dependency candidate</td></tr>
 <tr><td>curated_mountain_research_docs</td><td>Maintained in docs/ (Git-tracked), mapped as conceptual inputs to 04_feature logic.</td><td>Git</td></tr>
@@ -45,6 +45,8 @@
 <tr><td>provenance_entities</td><td>04_feature (conceptual paths: data/04_feature/provenance/*)</td><td>DVC dependency candidate<br><small>Future datasets, not yet implemented.</small></td></tr>
 <tr><td>lineage_graph_exports</td><td>08_reporting (conceptual paths: data/08_reporting/provenance/lineage.*)</td><td>DVC dependency candidate<br><small>Future datasets, not yet implemented.</small></td></tr>
 <tr><td>gpx_yamap_activity_links</td><td>02_intermediate</td><td>DVC dependency candidate</td></tr>
+<tr><td>mountain_summit_candidate_links</td><td>04_feature (physical path: data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl)</td><td>DVC dependency candidate<br><small>This stage has been executed, providing candidate links and review queues to facilitate human-in-the-loop validation before final coordinate/identity resolution.</small></td></tr>
+<tr><td>mountain_summit_candidate_review_packets</td><td>08_reporting (physical path: data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/ and review_decisions_template.csv)</td><td>DVC dependency candidate / Git-tracked outputs<br><small>This stage has been executed, generating structured, readable review aids and a decision template. It does not resolve mountain identities or generate coordinates automatically.</small></td></tr>
 </table>
 
     </main>

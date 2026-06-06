@@ -90,9 +90,9 @@ These agreements summarize the current planning state. The canonical details are
   - No data movement is authorized. Physical data movement remains blocked until the source coverage audit and path migration plan explicitly cover the affected files.
   - `conf/` contains future Kedro configuration and catalog placeholders.
   - `src/museum_yama_data/` contains future Python/Kedro pipeline scaffolding.
-  - The scaffold does not mean that data migration has occurred.
+  - The scaffold does not mean that all data migration has occurred.
   - Agents must still follow `docs/source_coverage_audit.md` and `docs/path_migration.md` before moving, rewriting, or regenerating data.
-  - Current Kedro files are placeholders only; no implemented pipeline should be assumed.
+  - Kedro directories like `data/02_intermediate/`, `data/03_primary/`, `data/04_feature/`, and `data/08_reporting/` have been created and are populated with intermediate data, although this may contradict older migration planning documents.
 - **DVC usage policy:** DVC must not be used to remove primary data from Git by default. DVC is initially for pipeline/stage/dependency metadata and reproducibility checks. `dvc add` must not be run on raw/source or retained-artifact paths unless explicitly approved in a future task. DVC stage dependencies may refer to Git-tracked paths.
 - **Site presentation layer:** `site/` is the GitHub Pages presentation layer generated from canonical docs/configuration. The site must not become an independent source of truth. The site must not publish full raw/private data contents.
 - **First Kedro scope:** A future Kedro task may create project scaffolding, catalog names, and placeholder pipeline structures. It must not rewrite GPX parsing, annotation, reverse geocoding, or web-data logic during the scaffolding task.
@@ -133,7 +133,7 @@ A consolidated CLI tool that handles local mountaineering data processing includ
 
 #### How to use
 Ask the agent:
-> "Run the yama-data-pipeline intake subcommand to process the new ZIP file from data/01_raw/provider_received/ to data/01_raw/gpx/."
+> "Run the yama-data-pipeline intake subcommand to process the new ZIP file from data/01_raw/as_received/ to data/01_raw/gpx/."
 > "Run the yama-data-pipeline merge subcommand."
 
 #### Implementation
