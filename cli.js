@@ -43,6 +43,7 @@ Commands:
   normalize-grounding-responses          Normalize raw Gemini grounding responses into a reference index.
   generate-grounding-assisted-summit-candidate-links Generate candidate links with grounding-early spatial search.
   generate-grounding-assisted-review-queues Generate review queues from grounding-assisted candidate links.
+  generate-grounding-assisted-review-queues-v2 Generate review queues v2 from grounding-assisted candidate links.
 
 
 
@@ -248,6 +249,12 @@ generate-grounding-assisted-summit-candidate-links Options:
   --report <path>                   Required. Path to output report markdown.
 
 generate-grounding-assisted-review-queues Options:
+  --candidate-links <path>              Path to generated grounding assisted candidate links JSONL.
+  --out-dir <path>                      Directory to write output CSVs.
+  --manifest <path>                     Path to output manifest JSON.
+  --report <path>                       Path to output summary Markdown.
+
+generate-grounding-assisted-review-queues-v2 Options:
   --candidate-links <path>          Required. Path to grounding-assisted candidate links JSONL.
   --out-dir <path>                  Required. Path to output review directory.
   --manifest <path>                 Required. Path to output manifest JSON.
@@ -623,6 +630,13 @@ async function run() {
         }
     }
 
+
+    if (command === 'generate-grounding-assisted-review-queues-v2') {
+        if (!options.candidateLinks || !options.groundingReference || !options.mountains || !options.outDir || !options.manifest || !options.report) {
+            log.error(`Error: --candidate-links, --grounding-reference, --mountains, --out-dir, --manifest, and --report are required for 'generate-grounding-assisted-review-queues-v2'.`);
+            printUsageAndExit();
+        }
+    }
     if (command === 'generate-grounding-assisted-review-queues') {
         if (!options.candidateLinks || !options.outDir || !options.manifest || !options.report) {
             log.error(`Error: --candidate-links, --out-dir, --manifest, and --report are required for 'generate-grounding-assisted-review-queues'.`);
@@ -734,6 +748,10 @@ async function run() {
             case 'generate-grounding-assisted-review-queues':
                 await require('./commands/generate-grounding-assisted-review-queues')(options);
                 break;
+            case 'generate-grounding-assisted-review-queues-v2':
+                await require('./commands/generate-grounding-assisted-review-queues-v2')(options);
+                break;
+
 
             case 'test':
                 require('child_process').execSync('npm test', { stdio: 'inherit', cwd: __dirname });
