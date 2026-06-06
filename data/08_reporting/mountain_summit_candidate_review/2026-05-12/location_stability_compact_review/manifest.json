@@ -1,0 +1,81 @@
+{
+  "stage": "generate_location_stability_compact_review_queues",
+  "stage_version": "0.1.0",
+  "git_commit": "1c0355f58259a8ece52390ef0de757dd5fd7aa02",
+  "created_at": "2026-06-05T10:45:12.798Z",
+  "inputs": {
+    "refined_links": "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl",
+    "refined_links_sha256": "a3e4ea54c296599cc908d2903aff79f125bb3dcb63abba310b7f132757bbb125"
+  },
+  "outputs": [
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/manifest.json",
+      "sha256": null,
+      "role": "manifest"
+    },
+    {
+      "path": "docs/migration/mountain_summit_candidate_location_stability_review_queue_report.md",
+      "sha256": "4bcb093b41185905161b7bea980b9c17500f8c375f0678c973b0882744463f70",
+      "role": "report"
+    },
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_top1.csv",
+      "sha256": "593f75886b8d9c4542e58c2c7d0b5f834a6bc77809e247a7bbfcc6c74ec73a9b",
+      "role": "top1_queue_csv"
+    },
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_top3.csv",
+      "sha256": "10fbdbbdd7b91897d795e9255174e9c5616d8c98c352821cbd311737a23cc236",
+      "role": "top3_queue_csv"
+    },
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_conflicts.csv",
+      "sha256": "21ef7e6ff05b7644e9cccf8badaf7dadcc0d20af4fc99829e69fd4ad73dc71d8",
+      "role": "conflict_queue_csv"
+    },
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/conflict_groups_by_gpx.csv",
+      "sha256": "aa8d1aca5fc14f71de44c6619e2979e42d2cf28718b5651122c8eba16f84636e",
+      "role": "gpx_groups_csv"
+    },
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/conflict_groups_by_summit_candidate.csv",
+      "sha256": "99a251185f29164d08bdb35eaffadccea804afab5873980e5dc953762ab71086",
+      "role": "summit_candidate_conflicts_csv"
+    },
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_summary.md",
+      "sha256": "9c14559b51e2d5b314d01501bb4554424c7e9f2568e7ac67f76745099e963fb5",
+      "role": "summary_markdown"
+    }
+  ],
+  "checksum_algorithm": "sha256",
+  "parameters": {
+    "small_score_gap_threshold": 0.03
+  },
+  "summary": {
+    "input_refined_link_records": 11372,
+    "mountain_count": 531,
+    "summit_candidate_count": 496,
+    "top1_queue_rows": 531,
+    "top3_queue_rows": 1593,
+    "conflict_queue_rows": 4301,
+    "gpx_group_rows": 268,
+    "summit_candidate_conflict_rows": 496,
+    "review_bucket_counts": {
+      "accept_candidate_after_map_check": 232,
+      "low_priority": 1383,
+      "deprioritized": 5456,
+      "check_location_warning": 1277,
+      "resolve_conflict": 2865,
+      "check_close_alternatives": 159
+    },
+    "compact_review_priority_counts": {
+      "medium": 232,
+      "low": 6839,
+      "high": 4301
+    },
+    "small_score_gap_threshold": 0.03,
+    "source_files_modified": false
+  }
+}

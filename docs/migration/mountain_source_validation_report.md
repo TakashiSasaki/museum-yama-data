@@ -1,5 +1,8 @@
 # Mountain Source Validation Report
 
+> **Supersession note:**
+> This report records a historical validation run under the previous 501-only invariant. That invariant has been superseded for future target modeling. The subsequent policy that used physical CSV row numbers for fill values is also superseded. Future validation must verify the latest sequence-fill acceptance rule: existing non-empty `No` values must be contiguous from 1, blank source `No` rows are filled sequentially after max existing `No`, and duplicate/non-contiguous effective values are fatal. See `docs/migration/mountain_numbering_and_coordinate_policy.md` and `docs/migration/mountain_source_full_rows_validation_plan.md`.
+
 ## Summary
 - **overall_status**: PASS_WITH_WARNINGS
 - **generated_by_command**: validate-mountain-sources
@@ -61,4 +64,4 @@
 - **whether CSV authoritative invariant is satisfied**: Yes
 - **whether legacy No can be adapted to mountain_no**: Yes, by adapting non-empty legacy No.
 - **whether blank/null No records are excluded**: Yes, they are present but logically excluded from authoritative count.
-- **blockers before canonical resolved JSON generation**: Field classifications for legacy references and sources must be fully decided ('needs_decision', etc). Canonical output cannot be generated until this is completed.
+- **blockers before canonical resolved JSON generation**: Field classifications for legacy references and sources must be fully decided ('needs_decision', etc). Canonical output cannot be generated until this is completed. *(Note: see supersession note above regarding the 501-only invariant)*.

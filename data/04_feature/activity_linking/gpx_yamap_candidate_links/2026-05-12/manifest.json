@@ -1,0 +1,23 @@
+{
+  "stage": "generate_date_candidate_links",
+  "stage_version": "0.1.0",
+  "git_commit": "26f04bff24c048a121a9b1bbfaee22f2d08acf80",
+  "created_at": "2026-06-04T03:44:40.505Z",
+  "inputs": [
+    "data/02_intermediate/activity_linking/gpx_filename_index/2026-05-12/gpx_filename_index.jsonl",
+    "data/02_intermediate/activity_linking/yamap_activity_index/yamap_activity_index.jsonl"
+  ],
+  "outputs": [
+    "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/date_candidate_links.jsonl"
+  ],
+  "summary": {
+    "total_gpx_files": 293,
+    "single_date_candidate": 128,
+    "multiple_date_candidates": 160,
+    "no_date_candidate": 5,
+    "gpx_datetime_unparsed": 0,
+    "timezone_sensitive_count": 14
+  },
+  "checksum_algorithm": "sha256",
+  "source_files_modified": false
+}

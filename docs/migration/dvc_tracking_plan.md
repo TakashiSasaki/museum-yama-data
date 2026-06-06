@@ -5,7 +5,7 @@ This document defines the first planned DVC stage dependency scope.
 **IMPORTANT NOTE:**
 - **DVC Initialization:** DVC was *not* initialized.
 - **Data Migration:** Git-primary source snapshots may later be referenced as DVC stage dependencies *before* any physical directory reorganization. Physical data movement remains blocked until audit and path migration rules permit it.
-- **Current Status:** No actual DVC metadata generation or data movement has been performed yet. The commands and dependencies below are for future execution.
+- **Current Status:** No DVC metadata generation has been performed yet. DVC has not been initialized, and no `dvc add`, `dvc repro`, or DVC remote workflow has been executed. Some repository path migrations, including the simplified `as_received` layout, have already occurred and are documented separately in `docs/migration/as_received_path_migration_audit.md`. The commands and dependencies below are for future execution.
 - **Git LFS:** Current data sizes do not require Git LFS. Git LFS is intentionally not used.
 
 ## Clone-Complete Policy
@@ -34,34 +34,34 @@ The current goal is to document DVC roles as dependency candidates, *not* as DVC
 For the conceptual first executable DVC-light stage that will consume these dependencies, please see `docs/migration/dvc_first_stage_plan.md`.
 For the policy on how generated outputs are placed, see `docs/migration/generated_output_path_policy.md`.
 
-This document does not authorize `dvc add` on raw/source data. The listed paths remain Git-primary. No DVC remote is required for ordinary repository use. No data migration or data movement has occurred.
+This document does not authorize `dvc add` on raw/source data. The listed paths remain Git-primary. No DVC remote is required for ordinary repository use. (Note: physical path migrations like `as_received` have already occurred, but no DVC metadata generation has occurred).
 
-### 1. `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx`
+### 1. `data/01_raw/as_received/2026-05-18/えひめの山.xlsx`
 * **Reason for dependency declaration:** It is the primary activity workbook archive.
 * **Source coverage audit classification:** Git-primary source/snapshot data
 * **DVC role:** dependency candidate, not DVC-tracked output
-* **Current path:** `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx`
+* **Current path:** `data/01_raw/as_received/2026-05-18/えひめの山.xlsx` (formerly `provider_received/yoshitomi/...`)
 * **Future conceptual target path:** `data/01_raw/source_archives/`
-* **Timing:** Should be added as a dependency *before* physical migration.
+* **Timing:** Should be added as a dependency.
 * **Blocks:** No `needs decision` items block adding this as a dependency.
 
-### 2. `data/01_raw/provider_received/yoshitomi/2026-05-12/GPXファイル.zip`
+### 2. `data/01_raw/as_received/2026-05-12/GPXファイル.zip`
 * **Reason for dependency declaration:** It is the primary GPX export package archive.
 * **Source coverage audit classification:** Git-primary source/snapshot data
 * **DVC role:** dependency candidate, not DVC-tracked output
-* **Current path:** `data/01_raw/provider_received/yoshitomi/2026-05-12/GPXファイル.zip`
+* **Current path:** `data/01_raw/as_received/2026-05-12/GPXファイル.zip` (formerly `provider_received/yoshitomi/...`)
 * **Future conceptual target path:** `data/01_raw/source_archives/`
-* **Timing:** Should be added as a dependency *before* physical migration.
+* **Timing:** Should be added as a dependency.
 * **Blocks:** No `needs decision` items block adding this as a dependency.
 
-### 3. `gpx/raw/`
+### 3. `data/01_raw/gpx/2026-05-12/` (Current) and `gpx/raw/` (Legacy)
 * **Reason for dependency declaration:** Immutable source data containing individual extracted YAMAP GPX track files.
 * **Source coverage audit classification:** needs decision (Note: the decision applies to its exact target path, not its status as immutable raw data, which is confirmed).
 * **DVC role:** dependency candidate, not DVC-tracked output
-* **Current path:** `gpx/raw/`
-* **Future conceptual target path:** `data/01_raw/gpx/yamap/`
-* **Timing:** Should be added as a dependency *before* physical migration.
-* **Blocks:** While its final target path needs a decision, adding the immutable source folder as a dependency in place is safe.
+* **Current path:** `data/01_raw/gpx/2026-05-12/` is the current target path. The historical path `gpx/raw/` may still be referenced in old plans.
+* **Future conceptual target path:** `data/01_raw/gpx/2026-05-12/`
+* **Timing:** Should be added as a dependency.
+* **Blocks:** Adding the immutable source folder as a dependency is safe.
 
 ### 4. `yamap/*.md` (All Yamap Markdown Files)
 * **Reason for dependency declaration:** Fetched external source snapshots (activity metadata).
@@ -83,11 +83,11 @@ This document does not authorize `dvc add` on raw/source data. The listed paths 
 
   *(Note: Might be declared as a dependency as part of the `yamap/` directory depending on execution).*
 
-### 6. `reverse_geocoding/`
+### 6. `data/01_raw/reverse_geocoding/`
 * **Reason for dependency declaration:** Raw cache and snapshots for municipality-level location enrichment.
 * **Source coverage audit classification:** Git-primary source/snapshot data
 * **DVC role:** dependency candidate, not DVC-tracked output
-* **Current path:** `reverse_geocoding/`
+* **Current path:** `data/01_raw/reverse_geocoding/`
 * **Future conceptual target path:** `data/01_raw/reverse_geocoding/`
 * **Timing:** Should be added as a dependency *before* physical migration.
 * **Blocks:** The future schema/reuse logic needs decision, but adding the current raw snapshot cache as a dependency is unblocked.

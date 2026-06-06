@@ -1,0 +1,60 @@
+stages:
+  extract_gpx_archive:
+    cmd: >
+      node .agents/skills/yama-data-pipeline/cli.js intake
+      --input data/01_raw/as_received/2026-05-12/GPXファイル.zip
+      --out-dir data/01_raw/gpx/2026-05-12
+      --report docs/migration/yoshitomi_gpx_archive_intake_report.md
+    deps:
+      - data/01_raw/as_received/2026-05-12/GPXファイル.zip
+      - .agents/skills/yama-data-pipeline/cli.js
+      - .agents/skills/yama-data-pipeline/commands/intake.js
+    outs:
+      - data/01_raw/gpx/2026-05-12:
+          cache: false
+      - docs/migration/yoshitomi_gpx_archive_intake_report.md:
+          cache: false
+
+  extract_excel_sheets:
+    cmd: >
+      node .agents/skills/yama-data-pipeline/cli.js extract-excel-sheets
+      --input data/01_raw/as_received/2026-05-18/えひめの山.xlsx
+      --out-dir data/02_intermediate/activity_logs/csv_extracted/2026-05-18
+      --report docs/migration/yoshitomi_excel_sheet_extraction_report.md
+    deps:
+      - data/01_raw/as_received/2026-05-18/えひめの山.xlsx
+      - .agents/skills/yama-data-pipeline/cli.js
+      - .agents/skills/yama-data-pipeline/commands/extract-excel-sheets.js
+    outs:
+      - data/02_intermediate/activity_logs/csv_extracted/2026-05-18:
+          cache: false
+      - docs/migration/yoshitomi_excel_sheet_extraction_report.md:
+          cache: false
+
+  generate_summit_candidate_gpx:
+    cmd: >
+      node .agents/skills/yama-data-pipeline/cli.js generate-summit-candidate-gpx
+      --input data/01_raw/gpx/2026-05-12
+      --out-dir data/08_reporting/gpx/summit_candidates/2026-05-12
+      --report docs/migration/summit_candidate_gpx_generation_report.md
+      --manifest data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json
+      --smooth-window ${summit_detection.smooth_window}
+      --peak-radius ${summit_detection.peak_radius}
+      --min-prominence ${summit_detection.min_prominence}
+      --merge-distance ${summit_detection.merge_distance}
+    deps:
+      - data/01_raw/gpx/2026-05-12
+      - .agents/skills/yama-data-pipeline/cli.js
+      - .agents/skills/yama-data-pipeline/commands/generate-summit-candidate-gpx.js
+      - .agents/skills/yama-data-pipeline/lib/gpx.js
+      - .agents/skills/yama-data-pipeline/lib/summit_detection.js
+    params:
+      - summit_detection.smooth_window
+      - summit_detection.peak_radius
+      - summit_detection.min_prominence
+      - summit_detection.merge_distance
+    outs:
+      - data/08_reporting/gpx/summit_candidates/2026-05-12:
+          cache: false
+      - docs/migration/summit_candidate_gpx_generation_report.md:
+          cache: false

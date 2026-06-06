@@ -21,7 +21,7 @@ npm install
 The skill provides a single CLI entrypoint: `cli.js`.
 
 Legacy repository-layout commands require `--root`: `merge`, `annotate`, `validate`, `find-missing`, and `verify`.
-The portable commands (`intake`, `detect-candidates`, `validate-mountain-sources`, `validate-provider-received`) do not require `--root` and instead take explicit input and output paths.
+The portable commands (`intake`, `detect-candidates`, `validate-mountain-sources`, `validate-provider-received`, `complete-mountain-source-no`) do not require `--root` and instead take explicit input and output paths.
 
 ### Commands
 
@@ -71,7 +71,41 @@ node cli.js detect-candidates --input ../../../gpx/raw --out ../../../docs/migra
 node cli.js detect-candidates --input ./test/fixtures/sample.gpx --out ./tmp/candidates.csv
 ```
 
-#### 3b. `annotate` (Legacy)
+#### 3b. `generate-summit-candidate-gpx` (Portable)
+Generates a valid summit-candidate GPX file for each source GPX file, preserving track coordinates and adding unresolved candidate waypoints.
+- Accepts either a single GPX file or a directory containing GPX files via `--input`.
+- Writes output GPX files to `--out-dir`.
+- Requires `--report` and `--manifest` paths.
+- All-or-nothing atomicity. Target collision checks fail by default.
+- Outputs unresolved candidates only; it does not assign mountain names.
+- Restricts GPX changes to `<metadata>` updates, `<wpt>` additions, and `creator`.
+
+```sh
+node cli.js generate-summit-candidate-gpx \
+  --input "data/01_raw/gpx/2026-05-12" \
+  --out-dir "data/08_reporting/gpx/summit_candidates/2026-05-12" \
+  --report "docs/migration/summit_candidate_gpx_generation_report.md" \
+  --manifest "data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json"
+```
+
+#### 3c. `link-gpx-yamap-by-date` (Portable)
+Links GPX tracks to YAMAP activity Markdown records using timezone-aware datetimes.
+- Resolves raw GPX filename datetimes under both JST and UTC-to-JST conversions to explicitly handle calendar date boundary offsets.
+- Generates file indexes, candidate links, review queues (CSV/Markdown), and status reports.
+- Creating final canonical links in `data/03_primary/` is out of scope for this command.
+- Requires `--gpx-dir`, `--yamap-dir`, `--out-dir`, `--intermediate-dir`, `--review-dir`, and `--report`.
+
+```sh
+node cli.js link-gpx-yamap-by-date \
+  --gpx-dir "data/01_raw/gpx/2026-05-12" \
+  --yamap-dir "data/01_raw/yamap_markdown" \
+  --out-dir "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12" \
+  --intermediate-dir "data/02_intermediate/activity_linking" \
+  --review-dir "data/08_reporting/activity_linking/gpx_yamap_review_queue/2026-05-12" \
+  --report "docs/migration/gpx_yamap_date_linking_report.md"
+```
+
+#### 3d. `annotate` (Legacy)
 Detects peaks and annotates tracks with `<wpt>` elements. **Note: This command is legacy because it assigns mountain names and writes annotated GPX. The portable `detect-candidates` command is the preferred modern alternative for detection.**
 - Reads files from `gpx/raw/`.
 - Uses mountain databases in `csv/` to map detected elevations to known peaks.
@@ -109,6 +143,434 @@ node cli.js validate-provider-received \
   --input ../../../data/01_raw/provider_received \
   --manifest-dir ../../../docs/migration/provider_received_manifests \
   --out ../../../docs/migration/provider_received_inventory_report.md
+```
+
+#### 4c. `complete-mountain-source-no` (Portable)
+Completes blank No values in a mountain source CSV file.
+- Requires `--input` (path to extracted mountain source CSV).
+- Requires `--out` (path to output completed CSV).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report markdown).
+
+```sh
+node cli.js complete-mountain-source-no \
+  --input data/02_intermediate/activity_logs/csv_extracted/2026-05-18/愛媛県の山.csv \
+  --out data/02_intermediate/mountain_source/no_completed/2026-05-18/ehime_mountain_source_rows_no_completed.csv \
+  --manifest data/02_intermediate/mountain_source/no_completed/2026-05-18/manifest.json \
+  --report docs/migration/mountain_source_no_completion_report.md
+```
+
+#### 4d. `normalize-mountain-source-json` (Portable)
+Normalizes a No-completed mountain source CSV into structured JSON.
+- Requires `--input` (path to No-completed CSV).
+- Requires `--out` (path to output JSON).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report markdown).
+
+```sh
+node cli.js normalize-mountain-source-json \
+  --input data/02_intermediate/mountain_source/no_completed/2026-05-18/ehime_mountain_source_rows_no_completed.csv \
+  --out data/03_primary/mountains/ehime_mountain_source_rows.json \
+  --manifest data/03_primary/mountains/manifest.json \
+  --report docs/migration/mountain_source_json_normalization_report.md
+```
+
+#### 4e. `extract-summit-candidate-features` (Portable)
+Extracts summit candidate waypoints from generated GPX files into a structured JSONL feature dataset.
+- Requires `--gpx-dir` (path to directory containing summit-candidate GPX files).
+- Requires `--input-manifest` (path to input manifest.json).
+- Requires `--out` (path to output JSONL).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report markdown).
+
+```sh
+node cli.js extract-summit-candidate-features \
+  --gpx-dir "data/08_reporting/gpx/summit_candidates/2026-05-12" \
+  --input-manifest "data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json" \
+  --out "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl" \
+  --manifest "data/03_primary/summit_candidates/2026-05-12/manifest.json" \
+  --report "docs/migration/summit_candidate_feature_extraction_report.md"
+```
+
+#### 4f. `extract-reverse-geocoding-point-index` (Portable)
+Extracts raw Nominatim JSON cache responses into an intermediate geocoded point index JSONL dataset.
+- Requires `--input-dir` (path to directory containing raw Nominatim JSON cache files).
+- Requires `--out` (path to output JSONL).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report markdown).
+
+```sh
+node cli.js extract-reverse-geocoding-point-index \
+  --input-dir "data/01_raw/reverse_geocoding/raw/nominatim" \
+  --out "data/02_intermediate/reverse_geocoding/extracted/nominatim/geocoded_points_index.jsonl" \
+  --manifest "data/02_intermediate/reverse_geocoding/extracted/nominatim/manifest.json" \
+  --report "docs/migration/reverse_geocoding_point_index_report.md"
+```
+
+#### 4g. `enrich-summit-candidates-with-reverse-geocoding` (Portable)
+Enriches summit candidates with nearby reverse geocoding point evidence.
+- Requires `--summit-candidates` (path to summit_candidates.jsonl).
+- Requires `--geocoded-points` (path to geocoded_points_index.jsonl).
+- Requires `--out` (path to output enriched JSONL).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report markdown).
+- Optionally accepts `--radius-m` (default 1000).
+
+```sh
+node cli.js enrich-summit-candidates-with-reverse-geocoding \
+  --summit-candidates "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl" \
+  --geocoded-points "data/02_intermediate/reverse_geocoding/extracted/nominatim/geocoded_points_index.jsonl" \
+  --out "data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl" \
+  --manifest "data/04_feature/location_enrichment/summit_candidates/2026-05-12/manifest.json" \
+  --report "docs/migration/summit_candidate_location_evidence_report.md" \
+  --radius-m 1000
+```
+
+#### 4h. `enrich-gpx-yamap-links-by-title` (Portable)
+Enriches GPX-YAMAP date candidate links with Japanese-safe title similarity features (exact matching, Jaccard token overlap, substring containment), proposes the best candidate, and creates review queues.
+- Requires `--date-links` (path to date-only candidate links JSONL).
+- Requires `--gpx-manifest` (path to GPX manifest JSON).
+- Requires `--out-dir` (path to output directory).
+- Requires `--review-dir` (path to output review queue directory).
+- Requires `--report` (path to output report markdown file).
+
+```sh
+node cli.js enrich-gpx-yamap-links-by-title \
+  --date-links "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/date_candidate_links.jsonl" \
+  --gpx-manifest "data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json" \
+  --out-dir "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12" \
+  --review-dir "data/08_reporting/activity_linking/gpx_yamap_review_queue/2026-05-12" \
+  --report "docs/migration/gpx_yamap_title_enriched_linking_report.md"
+```
+
+#### 4i. `generate-mountain-summit-candidate-links` (Portable)
+Generates candidate links between mountain_no records and summit candidates, incorporating name token matching, elevation offsets, distance between CSV/GPX coordinates, reverse-geocoding administrative locations, and activity linking.
+- Requires `--mountains` (path to mountains primary JSON).
+- Requires `--summit-candidates` (path to summit candidates JSONL).
+- Requires `--location-evidence` (path to location evidence JSONL).
+- Requires `--activity-links` (path to title-enriched activity links JSONL).
+- Requires `--out` (path to output candidate links JSONL).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--review-csv` (path to output review queue CSV).
+- Requires `--review-md` (path to output review queue Markdown).
+- Requires `--report` (path to output report Markdown).
+- All-or-nothing behavior: performs safety collision checks, staging directory verification, and post-write parse validations.
+- Non-goals: Does not make final identity assignments, does not generate final summit coordinates, and does not alter input datasets.
+- Review Semantics: Produces review CSV/Markdown focusing on ambiguous cases (summit candidates matched to multiple mountains) and rows requiring manual review.
+
+```sh
+node cli.js generate-mountain-summit-candidate-links \
+  --mountains "data/03_primary/mountains/ehime_mountain_source_rows.json" \
+  --summit-candidates "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl" \
+  --location-evidence "data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl" \
+  --activity-links "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl" \
+  --out "data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl" \
+  --manifest "data/04_feature/mountain_summit_candidate_links/2026-05-12/manifest.json" \
+  --review-csv "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_queue.csv" \
+  --review-md "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_queue.md" \
+  --report "docs/migration/mountain_summit_candidate_linking_report.md"
+```
+
+#### 4j. `refine-mountain-summit-candidate-links-by-location` (Portable)
+Refines existing candidate links using detailed reverse-geocoding municipality/island evidence, re-ranks them, and produces a prioritized review queue.
+- Requires `--mountains` (path to mountain source JSON).
+- Requires `--candidate-links` (path to candidate links JSONL).
+- Requires `--location-evidence` (path to location evidence JSONL).
+- Requires `--out` (path to output candidate links JSONL).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--review-csv` (path to output review queue CSV).
+- Requires `--review-md` (path to output review queue Markdown).
+- Requires `--report` (path to output report Markdown).
+- Re-scores candidates using: `location_refined_candidate_score = 0.85 * combined_candidate_score + 0.15 * location_refinement_score`.
+- Re-ranks candidates within both mountain and summit candidate scopes.
+- Classifies review priority as `high`, `medium`, `low`, or `deprioritized`.
+
+```sh
+node cli.js refine-mountain-summit-candidate-links-by-location \
+  --mountains "data/03_primary/mountains/ehime_mountain_source_rows.json" \
+  --candidate-links "data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl" \
+  --location-evidence "data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl" \
+  --out "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_candidate_links.jsonl" \
+  --manifest "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_manifest.json" \
+  --review-csv "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_refined_review_queue.csv" \
+  --review-md "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_refined_review_queue.md" \
+  --report "docs/migration/mountain_summit_candidate_location_refinement_report.md"
+```
+
+#### 4k. `generate-compact-mountain-summit-review-queues` (Portable)
+Generates compact review queues and conflict-group reports from the location-refined candidate links.
+- Requires `--refined-links` (path to location-refined candidate links JSONL).
+- Requires `--out-dir` (path to output directory).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report Markdown).
+- Performs safety checks, row count validation (exactly 531 rows in Top-1), and relative path verification.
+
+```sh
+node cli.js generate-compact-mountain-summit-review-queues \
+  --refined-links "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_candidate_links.jsonl" \
+  --out-dir "data/08_reporting/mountain_summit_candidate_review/2026-05-12" \
+  --manifest "data/08_reporting/mountain_summit_candidate_review/2026-05-12/compact_review_manifest.json" \
+  --report "docs/migration/mountain_summit_candidate_review_queue_compression_report.md"
+```
+
+#### 4l. `generate-mountain-summit-review-packets` (Portable)
+Generates conflict-group review packets (GPX traverse groups and summit conflicts) and a human decision template from the compact review queues.
+- Requires `--review-dir` (path to compact review queue directory).
+- Requires `--out-dir` (path to output directory for packets).
+- Requires `--decision-template` (path to output decision template CSV).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report Markdown).
+- Performs all-or-nothing staging checks, row count validation (exactly 531 rows), index link checks, and relative path verification.
+
+```sh
+node cli.js generate-mountain-summit-review-packets \
+  --review-dir "data/08_reporting/mountain_summit_candidate_review/2026-05-12" \
+  --out-dir "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets" \
+  --decision-template "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_decisions_template.csv" \
+  --manifest "data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packet_manifest.json" \
+  --report "docs/migration/mountain_summit_candidate_review_packet_report.md"
+```
+
+#### 4m. `generate-ehime-municipality-adjacency` (Portable)
+Validates and generates topological land-adjacency data for the 20 municipalities in Ehime Prefecture from intermediate N03 GeoJSON data.
+- Requires `--n03-geojson` (path to intermediate GeoJSON file).
+- Requires `--raw-manifest` (path to raw ingestion manifest).
+- Requires `--extracted-manifest` (path to intermediate extracted manifest).
+- Requires `--out-dir` (path to output directory).
+- Requires `--manifest` (path to output manifest JSON).
+- Requires `--report` (path to output report markdown).
+- Performs all-or-nothing temporary staging, output collision prevention, data validation, and relative path checks.
+
+```sh
+node cli.js generate-ehime-municipality-adjacency \
+  --n03-geojson "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson" \
+  --raw-manifest "data/01_raw/reference/geospatial/ksj_administrative_area/N03/2026-01-01/manifest.json" \
+  --extracted-manifest "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/manifest.json" \
+  --out-dir "data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01" \
+  --manifest "data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/manifest.json" \
+  --report "docs/migration/ksj_n03_ehime_municipality_adjacency_validation_report.md"
+```
+
+#### `lookup-ehime-municipality-by-point` (Portable)
+
+Performs a single-point KSJ/N03 municipality lookup for Ehime Prefecture using polygon containment and boundary-distance checks.
+
+- Requires `--n03-geojson` (path to intermediate N03 GeoJSON).
+- Requires `--lat` (WGS84 latitude) and `--lon` (WGS84 longitude).
+- Optional `--boundary-tolerance-m` (default: 20 m).
+- Optional `--out` path. If omitted, JSON result is printed to stdout.
+- Does not overwrite existing output files.
+- Does not call any external API.
+- Lookup statuses: `single_municipality`, `boundary_ambiguous`, `outside_prefecture`, `invalid_coordinate`.
+
+```sh
+node cli.js lookup-ehime-municipality-by-point \
+  --n03-geojson "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson" \
+  --lat 33.841624 \
+  --lon 132.765681 \
+  --boundary-tolerance-m 20 \
+  --out "data/08_reporting/location_reference/municipality_point_lookup/examples/matsuyama_city_hall_lookup.json"
+```
+
+#### `lookup-ehime-municipalities-for-points` (Portable)
+
+Performs batch KSJ/N03 municipality lookup from a JSONL or CSV input file.
+
+- Requires `--n03-geojson`, `--input`, `--out`, `--manifest`, `--report`.
+- Optional `--input-format jsonl|csv` (default: `jsonl`).
+- Optional `--id-field`, `--lat-field`, `--lon-field` field name overrides (defaults: `id`, `lat`, `lon`).
+- Optional `--boundary-tolerance-m` (default: 20 m).
+- Writes output JSONL with per-point lookup results, a stage manifest, and a human-readable report.
+- All-or-nothing atomic staging. Target collision checks fail by default.
+- Does not call any external API.
+
+Output JSONL schema includes: `source_record_id`, `lat`, `lon`, `lookup_status`, `municipality_matches`, `boundary_matches`, `primary_municipality_code`, `primary_municipality_name`, `source_dataset`, `prefecture`, `prefecture_code`, `data_reference_date`, `boundary_tolerance_m`, `notes`.
+
+```sh
+node cli.js lookup-ehime-municipalities-for-points \
+  --n03-geojson "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson" \
+  --input "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl" \
+  --input-format jsonl \
+  --id-field summit_candidate_id \
+  --lat-field lat \
+  --lon-field lon \
+  --boundary-tolerance-m 20 \
+  --out "data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl" \
+  --manifest "data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/manifest.json" \
+  --report "docs/migration/ksj_n03_ehime_summit_candidate_municipality_lookup_report.md"
+```
+
+**Policy note on reverse geocoding**: Reverse-geocoding outputs remain preserved as historical and contextual evidence. For municipality-level lookup, KSJ/N03 polygon lookup is preferred because it is authoritative, offline, and fully reproducible. Reverse geocoding remains appropriate when street address, place names, roads, facilities, island labels, or other human-readable locality context is required.
+
+
+#### `classify-summit-candidate-municipality-stability` (Portable)
+
+Classifies the administrative municipality stability of summit candidates using a 1 km neighborhood lookup around the center coordinate.
+
+- Requires `--n03-geojson`, `--summit-candidates`, `--point-lookup`, `--out`, `--manifest`, `--report`.
+- Optional `--offset-m` (default: 1000).
+- Optional `--boundary-tolerance-m` (default: 20).
+- Optional `--stable-interior-threshold-m` (default: 1000).
+- Classifies candidate points into stability categories: `stable_interior`, `stable_cardinal_1km_same`, `near_boundary`, `offset_inconsistent`, `boundary_ambiguous`, `outside_prefecture`, `invalid_coordinate`.
+- Does not modify input files or call external APIs.
+
+```sh
+node cli.js classify-summit-candidate-municipality-stability \
+  --n03-geojson "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson" \
+  --summit-candidates "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl" \
+  --point-lookup "data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl" \
+  --offset-m 1000 \
+  --boundary-tolerance-m 20 \
+  --stable-interior-threshold-m 1000 \
+  --out "data/04_feature/location_reference/municipality_point_lookup_stability/summit_candidates/2026-05-12/summit_candidate_municipality_stability.jsonl" \
+  --manifest "data/04_feature/location_reference/municipality_point_lookup_stability/summit_candidates/2026-05-12/manifest.json" \
+  --report "docs/migration/ksj_n03_ehime_summit_candidate_municipality_stability_report.md"
+```
+
+#### `refine-mountain-summit-candidate-links-by-location-stability` (Portable)
+
+Refines mountain-to-summit candidate links using the municipality stability classifications and adjacency constraints.
+
+- Requires `--candidate-links`, `--mountains`, `--municipality-adjacency`, `--municipality-stability`, `--out`, `--manifest`, `--review-csv`, `--review-md`, `--report`.
+- Computes location stability bucket: `location_strong_match`, `boundary_plausible`, `adjacent_but_deep_inside`, `municipality_incompatible_strong`, `location_uncertain_keep`, `missing_location_evidence`.
+- Re-ranks candidates, calculates adjusted scores, and evaluates review priorities.
+
+```sh
+node cli.js refine-mountain-summit-candidate-links-by-location-stability \
+  --candidate-links "data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl" \
+  --mountains "data/03_primary/mountains/ehime_mountain_source_rows.json" \
+  --municipality-adjacency "data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_adjacency.json" \
+  --municipality-stability "data/04_feature/location_reference/municipality_point_lookup_stability/summit_candidates/2026-05-12/summit_candidate_municipality_stability.jsonl" \
+  --out "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl" \
+  --manifest "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_manifest.json" \
+  --review-csv "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_refined_review_queue.csv" \
+  --review-md "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_refined_review_queue.md" \
+  --report "docs/migration/mountain_summit_candidate_location_stability_refinement_report.md"
+```
+
+#### `generate-location-stability-compact-review-queues` (Portable)
+
+Generates compact review queues and conflict-group reports based on location-stability refined links.
+
+- Requires `--refined-links`, `--out-dir`, `--manifest`, `--report`.
+- Segregates high-priority review items, close alternatives, and location warning conflicts, while deprioritizing incompatible matches.
+
+```sh
+node cli.js generate-location-stability-compact-review-queues \
+  --refined-links "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl" \
+  --out-dir "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review" \
+  --manifest "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/manifest.json" \
+  --report "docs/migration/mountain_summit_candidate_location_stability_review_queue_report.md"
+```
+
+
+#### `generate-location-stability-review-packets` (Portable)
+
+Generates location-stability review packets and a human decision template from compact review queues.
+
+- Requires `--top1`, `--top3`, `--conflicts`, `--gpx-groups`, `--summit-candidate-groups`, `--refined-links`, `--out-dir`, `--decision-template`, `--manifest`, `--report`.
+- Creates markdown packets for GPX groups, summit candidate conflict groups, and individual mountains inside the output directory.
+- Populates the decision template with 531 mountain records in a pending review state.
+
+```sh
+node cli.js generate-location-stability-review-packets \
+  --top1 "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_top1.csv" \
+  --top3 "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_top3.csv" \
+  --conflicts "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/compact_review_queue_conflicts.csv" \
+  --gpx-groups "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/conflict_groups_by_gpx.csv" \
+  --summit-candidate-groups "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review/conflict_groups_by_summit_candidate.csv" \
+  --refined-links "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl" \
+  --out-dir "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_packets" \
+  --decision-template "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_decisions_template.csv" \
+  --manifest "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_packet_manifest.json" \
+  --report "docs/migration/mountain_summit_candidate_location_stability_review_packet_report.md"
+```
+
+
+#### `generate-review-required-geographic-grounding-requests` (Portable)
+
+Generates external geographic grounding request packets (machine JSONL and human Markdown) for mountains requiring additional geographic evidence based on location-stability queues.
+
+- Requires `--mountains`, `--refined-links`, `--review-dir`, `--feature-out-dir`, `--reporting-out-dir`, `--manifest`, `--report`.
+- Generates JSONL packets in feature-out-dir, index/packets/submission queue/summary in reporting-out-dir.
+- Fails on output collisions to prevent silent overwrites.
+
+```sh
+node cli.js generate-review-required-geographic-grounding-requests \
+  --mountains "data/03_primary/mountains/ehime_mountain_source_rows.json" \
+  --refined-links "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl" \
+  --review-dir "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_compact_review" \
+  --feature-out-dir "data/04_feature/mountain_geographic_grounding/2026-05-12" \
+  --reporting-out-dir "data/08_reporting/mountain_geographic_grounding/2026-05-12" \
+  --manifest "data/04_feature/mountain_geographic_grounding/2026-05-12/review_required_grounding_request_manifest.json" \
+  --report "docs/migration/mountain_geographic_grounding_request_packet_report.md"
+```
+
+#### `refine-mountain-summit-candidate-links-by-grounding` (Portable)
+Projects raw Gemini-derived geographic grounding coordinates as auxiliary distance-based evidence onto the existing full candidate links universe.
+- Requires `--candidate-links` (location-stability refined links JSONL), `--grounding-responses` (raw grounding responses JSON), `--out` (output JSONL).
+- Also requires `--manifest` (manifest output), `--review-csv` (review queue CSV), `--review-md` (review queue MD), and `--report` (markdown report).
+- Non-goals: Does not create final canonical mountain coordinates or links. Treats Gemini grounding as auxiliary evidence only. Does not overwrite Stage 17 outputs.
+- Note: Missing Gemini grounding coordinates are allowed and treated as unavailable evidence, not fatal errors. This provides the Stage 21 baseline for review-burden reduction.
+
+```sh
+node cli.js refine-mountain-summit-candidate-links-by-grounding \
+  --candidate-links data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl \
+  --grounding-responses data/01_raw/mountain_geographic_grounding/external_agent/2026-06-06/gemini_grounding_responses_raw.json \
+  --out data/04_feature/mountain_summit_candidate_links/2026-05-12/grounding_refined_candidate_links.jsonl \
+  --manifest data/04_feature/mountain_summit_candidate_links/2026-05-12/grounding_refined_manifest.json \
+  --review-csv data/08_reporting/mountain_summit_candidate_review/2026-05-12/grounding_refined_review_queue.csv \
+  --review-md data/08_reporting/mountain_summit_candidate_review/2026-05-12/grounding_refined_review_queue.md \
+  --report docs/migration/mountain_summit_candidate_grounding_refinement_report.md
+```
+
+#### `normalize-grounding-responses` (Portable)
+Normalizes external raw geographic grounding coordinate reference points for mountains that required external verification.
+- Requires `--mountains` (mountain source JSON), `--grounding-responses` (raw grounding responses JSON).
+- Requires `--out` (grounding reference index JSONL), `--manifest` (manifest JSON output), `--report` (markdown report).
+- Non-goals: Does not resolve final mountain identities. Does not modify raw/source data. Missing Gemini `grounded_lat/lon` is allowed.
+
+```sh
+node cli.js normalize-grounding-responses \
+  --mountains data/03_primary/mountains/ehime_mountain_source_rows.json \
+  --grounding-responses data/01_raw/mountain_geographic_grounding/external_agent/2026-06-06/gemini_grounding_responses_raw.json \
+  --out data/04_feature/mountain_geographic_grounding/2026-06-06/grounding_reference_index.jsonl \
+  --manifest data/04_feature/mountain_geographic_grounding/2026-06-06/grounding_reference_manifest.json \
+  --report docs/migration/grounding_reference_index_report.md
+```
+
+#### `generate-grounding-assisted-summit-candidate-links` (Portable)
+Generates a heavily pruned subset of candidate links utilizing strict geographic grounding tolerances to remove spurious candidate rows.
+- Requires `--mountains`, `--summit-candidates`, `--grounding-reference`, `--location-evidence`, `--activity-links`.
+- Requires `--out` (candidate links JSONL), `--pruned-log` (pruned candidate log JSONL).
+- Requires `--manifest` (manifest output) and `--report` (markdown report).
+- Non-goals: Does not create final accepted mountain-to-summit identity links. Does not overwrite previous Stage 9-24 artifacts. Does not call external APIs.
+
+```sh
+node cli.js generate-grounding-assisted-summit-candidate-links \
+  --mountains data/03_primary/mountains/ehime_mountain_source_rows.json \
+  --summit-candidates data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl \
+  --grounding-reference data/04_feature/mountain_geographic_grounding/2026-06-06/grounding_reference_index.jsonl \
+  --location-evidence data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl \
+  --activity-links data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl \
+  --out data/04_feature/mountain_summit_candidate_links/2026-06-06/grounding_assisted_candidate_links.jsonl \
+  --pruned-log data/04_feature/mountain_summit_candidate_links/2026-06-06/grounding_assisted_pruned_candidate_log.jsonl \
+  --manifest data/04_feature/mountain_summit_candidate_links/2026-06-06/grounding_assisted_candidate_links_manifest.json \
+  --report docs/migration/grounding_assisted_candidate_link_generation_report.md
+```
+
+#### `generate-grounding-assisted-review-queues` (Portable)
+Generates action-oriented human review tasks grouping the heavily pruned grounding-assisted candidate links.
+- Requires `--candidate-links` (grounding-assisted links JSONL), `--out-dir` (review directory), `--manifest`, and `--report`.
+- Non-goals: Does not create final canonical coordinates. Does not modify raw/source data.
+- **Current Limitation Note:** Stage 24 currently produces a significantly reduced candidate universe but leaves 530 mountains review-required. Stage 25 is planned to combine Stage 23's reduced candidate universe with Stage 21's review-burden reduction logic.
+
+```sh
+node cli.js generate-grounding-assisted-review-queues \
+  --candidate-links data/04_feature/mountain_summit_candidate_links/2026-06-06/grounding_assisted_candidate_links.jsonl \
+  --out-dir data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review \
+  --manifest data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/manifest.json \
+  --report docs/migration/grounding_assisted_review_queue_report.md
 ```
 
 #### 5. `validate` (Legacy)

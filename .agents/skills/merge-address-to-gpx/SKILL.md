@@ -30,7 +30,7 @@ node .agents/skills/merge-address-to-gpx/merge_address.js --gpx <input.gpx> --js
 ### Parameters
 
 *   `--gpx`: The path to the source GPX file (e.g., `gpx/all_unique_summits.gpx`).
-*   `--json-dir`: The directory containing the output JSON files from the reverse geocoding step (e.g., `reverse_geocoding/`). The script will load and combine all `.json` files in this directory.
+*   `--json-dir`: The directory containing the output JSON files from the reverse geocoding step (e.g., `data/01_raw/reverse_geocoding/raw/nominatim/`). The script will load and combine all `.json` files in this directory.
 *   `--out`: The path where the new GPX file should be saved (e.g., `gpx/all_unique_summits_with_address.gpx`). The original GPX file will not be overwritten.
 
 ### Example Output

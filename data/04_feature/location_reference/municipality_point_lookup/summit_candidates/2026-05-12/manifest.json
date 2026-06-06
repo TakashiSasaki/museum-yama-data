@@ -1,0 +1,40 @@
+{
+  "stage": "lookup_ehime_municipalities_for_points",
+  "stage_version": "0.1.0",
+  "created_at": "2026-06-05T09:54:50.384Z",
+  "git_commit": "3636bc4e287de862b90223ceea728523ccb9909e",
+  "inputs": {
+    "n03_geojson": "data/02_intermediate/reference/geospatial/ksj_administrative_area/N03/2026-01-01/extracted/N03-20260101_38_GML/N03-20260101_38.geojson",
+    "n03_geojson_sha256": "16e3af28d9af3a864922869826cec6bfe55adc11d51a81fbc2a12000555adc11",
+    "points_input": "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl",
+    "points_input_sha256": "93ba6398263fc722f77c15dcf3384ff1d93bc6669b8daba7bacc5cd8edb8b260"
+  },
+  "outputs": [
+    {
+      "path": "data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl",
+      "sha256": "676622263833d7c0bec001478ccb290f4d090be3c7035705db6d8a60f4ac69bb",
+      "role": "municipality_point_lookup_jsonl"
+    },
+    {
+      "path": "docs/migration/ksj_n03_ehime_summit_candidate_municipality_lookup_report.md",
+      "sha256": "3a65a97aab8e905db465eb5c464ea5225e14d8f7f1ae8bece9d9ba32cd47c521",
+      "role": "report"
+    }
+  ],
+  "parameters": {
+    "boundary_tolerance_m": 20,
+    "input_format": "jsonl",
+    "id_field": "summit_candidate_id",
+    "lat_field": "lat",
+    "lon_field": "lon"
+  },
+  "summary": {
+    "input_point_records": 496,
+    "single_municipality": 362,
+    "boundary_ambiguous": 122,
+    "outside_prefecture": 12,
+    "invalid_coordinate": 0,
+    "source_files_modified": false
+  },
+  "checksum_algorithm": "sha256"
+}

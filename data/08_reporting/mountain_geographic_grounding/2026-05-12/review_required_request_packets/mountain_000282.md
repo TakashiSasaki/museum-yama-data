@@ -1,0 +1,214 @@
+# Geographic grounding request: mountain_000282
+
+## Target mountain
+- **Mountain No**: 282
+- **Mountain Name**: 張木山
+- **Prefecture**: Ehime Prefecture
+- **Municipality / Island**: 大洲市
+- **Municipality**: 大洲市
+- **Island**: N/A
+- **Official Elevation**: 468 m
+- **Known CSV Coordinates**: (N/A, N/A)
+- **YAMAP URL**: [YAMAP Page](https://yamap.com/activities/30377402)
+
+## Why this mountain was selected
+- **Selection Reason Codes**: `review_bucket_resolve_conflict, compact_review_priority_high, compact_reason_shared_candidate, prio_reason_shared_top, prio_reason_top_ambiguous`
+- **Review Buckets Involved**: `resolve_conflict, check_close_alternatives, check_location_warning`
+- **Compact Review Priorities**: `high`
+
+### Conflict/Warning Summary:
+Mountain shares candidates with other mountains:
+- Candidate summit-candidate:3c28b6ebd5a97155 on yamap_2024-03-16_13_58.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #29 高山, #30 勝岡山, #67 甲が森, #104 横山(横山城址), #128 狩江権現山, #189 権現山, #263 権現山, #281 トギ, #282 張木山, #283 高手山, #284 斎藤山, #336 唐谷山, #337 龍王山, #385 幻城上城, #397 竜王山, #400 愛の森, #495 雨乞山, #496 鼻欠山
+- Candidate summit-candidate:b49681fa67b2b53e on yamap_2024-03-16_09_21.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #15 白滝山, #28 岩柄山, #29 高山, #30 勝岡山, #67 甲が森, #104 横山(横山城址), #128 狩江権現山, #189 権現山, #263 権現山, #281 トギ, #282 張木山, #283 高手山, #284 斎藤山, #336 唐谷山, #337 龍王山, #338 大谷山, #385 幻城上城, #397 竜王山, #400 愛の森, #495 雨乞山
+- Candidate summit-candidate:e75e04c2fbe61c2f on yamap_2024-03-16_09_21.gpx is linked to: #17 伽藍山, #47 倉谷山, #98 積善山, #117 大友山, #193 護摩ヶ森（護摩ヶ森城址）, #197 見晴山, #198 権現山, #216 千羽ヶ岳, #229 船野山, #232 奥之城山, #254 平岡山(平岡城址), #275 夫婦山, #278 国見山, #281 トギ, #282 張木山, #283 高手山, #284 斎藤山, #308 二反山, #345 岩が森, #350 行道山, #351 水晶ヶ森, #357 尉之山, #359 勝山, #360 松葉山（松葉城址）, #362 御篠山, #363 天が森, #374 念仏山, #391 大登山, #437 堂堂山, #444 紅葉山, #445 梁瀬山, #450 高雄山, #465 権現山
+- Candidate summit-candidate:62d2811f5d1a9f29 on yamap_2025-03-30_07_01.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #29 高山, #30 勝岡山, #35 御岳山, #67 甲が森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #192 鉢ヶ森（鉢ヶ森城址）, #252 総津権現山, #255 竜門山, #263 権現山, #282 張木山, #284 斎藤山, #310 薬師山, #336 唐谷山, #337 龍王山, #358 小山岳, #385 幻城上城, #397 竜王山, #398 岳山, #399 一ヶ森, #400 愛の森, #401 京の森, #402 大迫山, #457 槇ノ山, #496 鼻欠山
+- Candidate summit-candidate:9e86644a708cb211 on yamap_2026-04-19_10_27.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #29 高山, #30 勝岡山, #35 御岳山, #67 甲が森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #192 鉢ヶ森（鉢ヶ森城址）, #252 総津権現山, #255 竜門山, #263 権現山, #282 張木山, #284 斎藤山, #310 薬師山, #336 唐谷山, #337 龍王山, #358 小山岳, #385 幻城上城, #397 竜王山, #400 愛の森, #457 槇ノ山, #489 雨乞山, #495 雨乞山, #496 鼻欠山
+- Candidate summit-candidate:e4f762179d85915d on yamap_2025-02-28_07_34.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #15 白滝山, #28 岩柄山, #29 高山, #30 勝岡山, #67 甲が森, #104 横山(横山城址), #128 狩江権現山, #189 権現山, #263 権現山, #282 張木山, #284 斎藤山, #336 唐谷山, #337 龍王山, #338 大谷山, #384 綱付山, #385 幻城上城, #386 幻城下城, #397 竜王山, #400 愛の森, #495 雨乞山
+- Candidate summit-candidate:0eff3d1ea2b48d73 on yamap_2022-02-06_08_26.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #15 白滝山, #16 障子山, #29 高山, #30 勝岡山, #35 御岳山, #67 甲が森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #159 権現山, #189 権現山, #192 鉢ヶ森（鉢ヶ森城址）, #198 権現山, #252 総津権現山, #255 竜門山, #263 権現山, #282 張木山, #284 斎藤山, #310 薬師山, #336 唐谷山, #337 龍王山, #354 滝山, #358 小山岳, #385 幻城上城, #397 竜王山, #400 愛の森, #457 槇ノ山, #465 権現山, #480 権現山, #494 権現山, #496 鼻欠山
+- Candidate summit-candidate:2c817617699a0a45 on yamap_2022-02-06_08_26.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #15 白滝山, #16 障子山, #28 岩柄山, #29 高山, #40 ヌタノサコ, #128 狩江権現山, #159 権現山, #189 権現山, #198 権現山, #263 権現山, #282 張木山, #284 斎藤山, #336 唐谷山, #338 大谷山, #354 滝山, #385 幻城上城, #397 竜王山, #400 愛の森, #442 天道ヶ頭, #465 権現山, #480 権現山, #494 権現山, #495 雨乞山
+- Candidate summit-candidate:32bb5e7e1071e808 on yamap_2023-01-08_09_18.gpx is linked to: #2 観音山, #14 権現山, #15 白滝山, #18 塩ヶ森, #28 岩柄山, #34 護摩ヶ森, #40 ヌタノサコ, #128 狩江権現山, #144 古権現山, #159 権現山, #189 権現山, #190 黒瀬山（黒瀬城址）, #191 岡山（岡城址）, #192 鉢ヶ森（鉢ヶ森城址）, #193 護摩ヶ森（護摩ヶ森城址）, #194 我合山（我合城址）, #198 権現山, #252 総津権現山, #263 権現山, #282 張木山, #311 子持権現山, #336 唐谷山, #338 大谷山, #384 綱付山, #385 幻城上城, #442 天道ヶ頭, #465 権現山, #480 権現山, #494 権現山, #495 雨乞山
+- Candidate summit-candidate:43911aa413390192 on yamap_2022-06-29_08_48.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #29 高山, #30 勝岡山, #35 御岳山, #47 倉谷山, #67 甲が森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #192 鉢ヶ森（鉢ヶ森城址）, #232 奥之城山, #252 総津権現山, #255 竜門山, #282 張木山, #284 斎藤山, #310 薬師山, #337 龍王山, #358 小山岳, #385 幻城上城, #397 竜王山, #400 愛の森, #457 槇ノ山, #496 鼻欠山
+- Candidate summit-candidate:50d68ea03af3c4ff on yamap_2022-04-22_11_13.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #29 高山, #30 勝岡山, #35 御岳山, #67 甲が森, #68 三滝山, #69 雨包山, #70 源氏ヶ駄場（薊野峰）, #71 碁石ヶ森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #192 鉢ヶ森（鉢ヶ森城址）, #252 総津権現山, #255 竜門山, #282 張木山, #284 斎藤山, #310 薬師山, #336 唐谷山, #337 龍王山, #354 滝山, #358 小山岳, #385 幻城上城, #397 竜王山, #400 愛の森, #457 槇ノ山, #496 鼻欠山
+- Candidate summit-candidate:7880c9d0de83468b on yamap_2023-04-18_06_58.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #29 高山, #30 勝岡山, #35 御岳山, #67 甲が森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #192 鉢ヶ森（鉢ヶ森城址）, #229 船野山, #230 木久ヶ森, #231 黒滝山, #252 総津権現山, #255 竜門山, #282 張木山, #284 斎藤山, #310 薬師山, #337 龍王山, #358 小山岳, #385 幻城上城, #397 竜王山, #400 愛の森, #457 槇ノ山, #496 鼻欠山
+- Candidate summit-candidate:cb62a56e70cedbce on yamap_2022-01-15_08_17.gpx is linked to: #1 関ヶ森, #2 観音山, #14 権現山, #15 白滝山, #28 岩柄山, #40 ヌタノサコ, #47 倉谷山, #48 芝ヶ峠, #189 権現山, #263 権現山, #277 観音山, #282 張木山, #336 唐谷山, #338 大谷山, #384 綱付山, #385 幻城上城, #400 愛の森, #442 天道ヶ頭, #495 雨乞山
+- Candidate summit-candidate:d0d3096d540f375e on yamap_2026-04-19_07_43.gpx is linked to: #2 観音山, #14 権現山, #15 白滝山, #18 塩ヶ森, #28 岩柄山, #40 ヌタノサコ, #189 権現山, #263 権現山, #282 張木山, #336 唐谷山, #338 大谷山, #384 綱付山, #385 幻城上城, #442 天道ヶ頭, #489 雨乞山, #495 雨乞山, #496 鼻欠山
+- Candidate summit-candidate:edd15dad4a862cba on yamap_2022-03-05_09_44.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #15 白滝山, #28 岩柄山, #29 高山, #30 勝岡山, #41 城山, #42 水梨山, #43 向山, #67 甲が森, #104 横山(横山城址), #128 狩江権現山, #189 権現山, #263 権現山, #279 城山, #282 張木山, #284 斎藤山, #336 唐谷山, #337 龍王山, #338 大谷山, #339 城山, #385 幻城上城, #397 竜王山, #400 愛の森, #495 雨乞山
+
+## Existing project context
+
+### Top-1 Suggested Candidate: `summit-candidate:3c28b6ebd5a97155`
+- **GPX Basename**: `yamap_2024-03-16_13_58.gpx`
+- **Track Name**: 斎藤山
+- **Coordinates**: (33.5944697, 132.4784739)
+- **Elevation**: 472.13310176947385m (Diff: 4.13m)
+- **Stability Level**: `location_strong_match`
+- **Municipality Match Status**: `same_municipality`
+- **Nearest Geocoded Place**: 大洲市
+
+
+### Alternatives Overview:
+### Alternative Candidate #1: `summit-candidate:3c28b6ebd5a97155`
+- **GPX File**: `yamap_2024-03-16_13_58.gpx`
+- **Track Name**: 斎藤山
+- **Coordinates**: (33.5944697, 132.4784739)
+- **Elevation**: 472.13310176947385m (Diff: 4.13m)
+- **Score / Rank**: Score = 0.85, Rank = 1
+- **Mutual Top-1**: true
+- **Stability Level**: `location_strong_match`
+
+### Alternative Candidate #2: `summit-candidate:b49681fa67b2b53e`
+- **GPX File**: `yamap_2024-03-16_09_21.gpx`
+- **Track Name**: トギ・張木山・高手山
+- **Coordinates**: (33.5634523, 132.4596426)
+- **Elevation**: 477.8922286451063m (Diff: 9.89m)
+- **Score / Rank**: Score = 0.85, Rank = 2
+- **Mutual Top-1**: false
+- **Stability Level**: `location_strong_match`
+
+### Alternative Candidate #3: `summit-candidate:e75e04c2fbe61c2f`
+- **GPX File**: `yamap_2024-03-16_09_21.gpx`
+- **Track Name**: トギ・張木山・高手山
+- **Coordinates**: (33.5806252, 132.4593069)
+- **Elevation**: 391.45205218380346m (Diff: 76.55m)
+- **Score / Rank**: Score = 0.67, Rank = 3
+- **Mutual Top-1**: false
+- **Stability Level**: `location_strong_match`
+
+## Known ambiguity
+- **Shared summit candidate conflicts**: Yes
+- **Close alternatives**: Yes
+- **Location warning**: Yes
+- **Boundary ambiguity**: No
+
+## Task for geographic grounding agent
+```text
+You are a geographic grounding agent. Your task is to verify and resolve the correct geographic location of mountain "張木山" (No. 282) in Ehime Prefecture, Japan.
+
+Official Mountain Details:
+- Name: 張木山
+- Official Elevation: 468m
+- Source Municipality/Island: 大洲市
+- Known CSV Coordinates: (None, None)
+- YAMAP URL: https://yamap.com/activities/30377402
+
+Existing Summit Candidate matches in GPX track files:
+Candidate #1: summit-candidate:3c28b6ebd5a97155
+  Coordinates: (33.5944697, 132.4784739)
+  GPX Track: yamap_2024-03-16_13_58.gpx ("斎藤山")
+  Elevation: 472.13310176947385m (Diff from target: 4.13m)
+  Score: 0.85, Rank: 1, Mutual Top-1: true
+  Stability level: location_strong_match
+
+Candidate #2: summit-candidate:b49681fa67b2b53e
+  Coordinates: (33.5634523, 132.4596426)
+  GPX Track: yamap_2024-03-16_09_21.gpx ("トギ・張木山・高手山")
+  Elevation: 477.8922286451063m (Diff from target: 9.89m)
+  Score: 0.85, Rank: 2, Mutual Top-1: false
+  Stability level: location_strong_match
+
+Candidate #3: summit-candidate:e75e04c2fbe61c2f
+  Coordinates: (33.5806252, 132.4593069)
+  GPX Track: yamap_2024-03-16_09_21.gpx ("トギ・張木山・高手山")
+  Elevation: 391.45205218380346m (Diff from target: 76.55m)
+  Score: 0.67, Rank: 3, Mutual Top-1: false
+  Stability level: location_strong_match
+
+Conflicts & Ambiguity Context:
+Mountain shares candidates with other mountains:
+- Candidate summit-candidate:3c28b6ebd5a97155 on yamap_2024-03-16_13_58.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #29 高山, #30 勝岡山, #67 甲が森, #104 横山(横山城址), #128 狩江権現山, #189 権現山, #263 権現山, #281 トギ, #282 張木山, #283 高手山, #284 斎藤山, #336 唐谷山, #337 龍王山, #385 幻城上城, #397 竜王山, #400 愛の森, #495 雨乞山, #496 鼻欠山
+- Candidate summit-candidate:b49681fa67b2b53e on yamap_2024-03-16_09_21.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #15 白滝山, #28 岩柄山, #29 高山, #30 勝岡山, #67 甲が森, #104 横山(横山城址), #128 狩江権現山, #189 権現山, #263 権現山, #281 トギ, #282 張木山, #283 高手山, #284 斎藤山, #336 唐谷山, #337 龍王山, #338 大谷山, #385 幻城上城, #397 竜王山, #400 愛の森, #495 雨乞山
+- Candidate summit-candidate:e75e04c2fbe61c2f on yamap_2024-03-16_09_21.gpx is linked to: #17 伽藍山, #47 倉谷山, #98 積善山, #117 大友山, #193 護摩ヶ森（護摩ヶ森城址）, #197 見晴山, #198 権現山, #216 千羽ヶ岳, #229 船野山, #232 奥之城山, #254 平岡山(平岡城址), #275 夫婦山, #278 国見山, #281 トギ, #282 張木山, #283 高手山, #284 斎藤山, #308 二反山, #345 岩が森, #350 行道山, #351 水晶ヶ森, #357 尉之山, #359 勝山, #360 松葉山（松葉城址）, #362 御篠山, #363 天が森, #374 念仏山, #391 大登山, #437 堂堂山, #444 紅葉山, #445 梁瀬山, #450 高雄山, #465 権現山
+- Candidate summit-candidate:62d2811f5d1a9f29 on yamap_2025-03-30_07_01.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #29 高山, #30 勝岡山, #35 御岳山, #67 甲が森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #192 鉢ヶ森（鉢ヶ森城址）, #252 総津権現山, #255 竜門山, #263 権現山, #282 張木山, #284 斎藤山, #310 薬師山, #336 唐谷山, #337 龍王山, #358 小山岳, #385 幻城上城, #397 竜王山, #398 岳山, #399 一ヶ森, #400 愛の森, #401 京の森, #402 大迫山, #457 槇ノ山, #496 鼻欠山
+- Candidate summit-candidate:9e86644a708cb211 on yamap_2026-04-19_10_27.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #29 高山, #30 勝岡山, #35 御岳山, #67 甲が森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #192 鉢ヶ森（鉢ヶ森城址）, #252 総津権現山, #255 竜門山, #263 権現山, #282 張木山, #284 斎藤山, #310 薬師山, #336 唐谷山, #337 龍王山, #358 小山岳, #385 幻城上城, #397 竜王山, #400 愛の森, #457 槇ノ山, #489 雨乞山, #495 雨乞山, #496 鼻欠山
+- Candidate summit-candidate:e4f762179d85915d on yamap_2025-02-28_07_34.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #15 白滝山, #28 岩柄山, #29 高山, #30 勝岡山, #67 甲が森, #104 横山(横山城址), #128 狩江権現山, #189 権現山, #263 権現山, #282 張木山, #284 斎藤山, #336 唐谷山, #337 龍王山, #338 大谷山, #384 綱付山, #385 幻城上城, #386 幻城下城, #397 竜王山, #400 愛の森, #495 雨乞山
+- Candidate summit-candidate:0eff3d1ea2b48d73 on yamap_2022-02-06_08_26.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #15 白滝山, #16 障子山, #29 高山, #30 勝岡山, #35 御岳山, #67 甲が森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #159 権現山, #189 権現山, #192 鉢ヶ森（鉢ヶ森城址）, #198 権現山, #252 総津権現山, #255 竜門山, #263 権現山, #282 張木山, #284 斎藤山, #310 薬師山, #336 唐谷山, #337 龍王山, #354 滝山, #358 小山岳, #385 幻城上城, #397 竜王山, #400 愛の森, #457 槇ノ山, #465 権現山, #480 権現山, #494 権現山, #496 鼻欠山
+- Candidate summit-candidate:2c817617699a0a45 on yamap_2022-02-06_08_26.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #15 白滝山, #16 障子山, #28 岩柄山, #29 高山, #40 ヌタノサコ, #128 狩江権現山, #159 権現山, #189 権現山, #198 権現山, #263 権現山, #282 張木山, #284 斎藤山, #336 唐谷山, #338 大谷山, #354 滝山, #385 幻城上城, #397 竜王山, #400 愛の森, #442 天道ヶ頭, #465 権現山, #480 権現山, #494 権現山, #495 雨乞山
+- Candidate summit-candidate:32bb5e7e1071e808 on yamap_2023-01-08_09_18.gpx is linked to: #2 観音山, #14 権現山, #15 白滝山, #18 塩ヶ森, #28 岩柄山, #34 護摩ヶ森, #40 ヌタノサコ, #128 狩江権現山, #144 古権現山, #159 権現山, #189 権現山, #190 黒瀬山（黒瀬城址）, #191 岡山（岡城址）, #192 鉢ヶ森（鉢ヶ森城址）, #193 護摩ヶ森（護摩ヶ森城址）, #194 我合山（我合城址）, #198 権現山, #252 総津権現山, #263 権現山, #282 張木山, #311 子持権現山, #336 唐谷山, #338 大谷山, #384 綱付山, #385 幻城上城, #442 天道ヶ頭, #465 権現山, #480 権現山, #494 権現山, #495 雨乞山
+- Candidate summit-candidate:43911aa413390192 on yamap_2022-06-29_08_48.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #29 高山, #30 勝岡山, #35 御岳山, #47 倉谷山, #67 甲が森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #192 鉢ヶ森（鉢ヶ森城址）, #232 奥之城山, #252 総津権現山, #255 竜門山, #282 張木山, #284 斎藤山, #310 薬師山, #337 龍王山, #358 小山岳, #385 幻城上城, #397 竜王山, #400 愛の森, #457 槇ノ山, #496 鼻欠山
+- Candidate summit-candidate:50d68ea03af3c4ff on yamap_2022-04-22_11_13.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #29 高山, #30 勝岡山, #35 御岳山, #67 甲が森, #68 三滝山, #69 雨包山, #70 源氏ヶ駄場（薊野峰）, #71 碁石ヶ森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #192 鉢ヶ森（鉢ヶ森城址）, #252 総津権現山, #255 竜門山, #282 張木山, #284 斎藤山, #310 薬師山, #336 唐谷山, #337 龍王山, #354 滝山, #358 小山岳, #385 幻城上城, #397 竜王山, #400 愛の森, #457 槇ノ山, #496 鼻欠山
+- Candidate summit-candidate:7880c9d0de83468b on yamap_2023-04-18_06_58.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #29 高山, #30 勝岡山, #35 御岳山, #67 甲が森, #101 鷲ヶ頭山, #104 横山(横山城址), #128 狩江権現山, #192 鉢ヶ森（鉢ヶ森城址）, #229 船野山, #230 木久ヶ森, #231 黒滝山, #252 総津権現山, #255 竜門山, #282 張木山, #284 斎藤山, #310 薬師山, #337 龍王山, #358 小山岳, #385 幻城上城, #397 竜王山, #400 愛の森, #457 槇ノ山, #496 鼻欠山
+- Candidate summit-candidate:cb62a56e70cedbce on yamap_2022-01-15_08_17.gpx is linked to: #1 関ヶ森, #2 観音山, #14 権現山, #15 白滝山, #28 岩柄山, #40 ヌタノサコ, #47 倉谷山, #48 芝ヶ峠, #189 権現山, #263 権現山, #277 観音山, #282 張木山, #336 唐谷山, #338 大谷山, #384 綱付山, #385 幻城上城, #400 愛の森, #442 天道ヶ頭, #495 雨乞山
+- Candidate summit-candidate:d0d3096d540f375e on yamap_2026-04-19_07_43.gpx is linked to: #2 観音山, #14 権現山, #15 白滝山, #18 塩ヶ森, #28 岩柄山, #40 ヌタノサコ, #189 権現山, #263 権現山, #282 張木山, #336 唐谷山, #338 大谷山, #384 綱付山, #385 幻城上城, #442 天道ヶ頭, #489 雨乞山, #495 雨乞山, #496 鼻欠山
+- Candidate summit-candidate:edd15dad4a862cba on yamap_2022-03-05_09_44.gpx is linked to: #5 衣掛山, #13 谷上山, #14 権現山, #15 白滝山, #28 岩柄山, #29 高山, #30 勝岡山, #41 城山, #42 水梨山, #43 向山, #67 甲が森, #104 横山(横山城址), #128 狩江権現山, #189 権現山, #263 権現山, #279 城山, #282 張木山, #284 斎藤山, #336 唐谷山, #337 龍王山, #338 大谷山, #339 城山, #385 幻城上城, #397 竜王山, #400 愛の森, #495 雨乞山
+
+Please search geographical references (such as YAMAP diary entries, GSI maps, or other Ehime mountain databases) to determine:
+1. The true summit coordinates of "張木山".
+2. Which, if any, of the GPX summit candidates represents the true summit.
+3. If no candidate matches, or if evidence is insufficient, classify the status accordingly.
+
+Your output must be JSON ONLY matching the requested schema. Do not guess coordinates when evidence is insufficient.
+```
+
+## Requested output format
+JSON schema only:
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GeographicGroundingResult",
+  "type": "object",
+  "properties": {
+    "mountain_no": {
+      "type": "integer"
+    },
+    "mountain_name": {
+      "type": "string"
+    },
+    "grounding_status": {
+      "type": "string",
+      "enum": [
+        "grounded_verified",
+        "grounded_plausible_alternative",
+        "ambiguous_homonymous",
+        "insufficient_evidence",
+        "no_candidate_matches"
+      ]
+    },
+    "grounded_lat": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "grounded_lon": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "grounded_elevation_m": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "grounded_municipality": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "confidence_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "explanation": {
+      "type": "string"
+    },
+    "evidence_links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "mountain_no",
+    "mountain_name",
+    "grounding_status",
+    "confidence_score",
+    "explanation",
+    "evidence_links"
+  ]
+}
+```

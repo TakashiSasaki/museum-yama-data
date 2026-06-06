@@ -1,0 +1,31 @@
+# GPX to YAMAP Title Similarity Enrichment Report
+
+- **Branch and HEAD commit**: `museum-yama-data` (`fe9ecb045c879abc7a6445a3c497a3891c59daa9`)
+- **Input date links path**: `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/date_candidate_links.jsonl`
+- **Input GPX manifest path**: `data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json`
+- **Output JSONL path**: `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl`
+- **Output manifest path**: `data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_manifest.json`
+- **Command used**: `enrich-gpx-yamap-links-by-title`
+- **Record counts**:
+  - Date Links records input: `293`
+  - Enriched records output: `293`
+  - Need manual review count: `19`
+- **Match Status Distribution**:
+  - `single_high_confidence_candidate`: 128
+  - `single_medium_confidence_candidate`: 0
+  - `no_title_evidence`: 0
+  - `multiple_candidates_ambiguous`: 1
+  - `multiple_candidates_ranked`: 159
+  - `no_date_candidate`: 5
+  - `gpx_datetime_unparsed`: 0
+- **Review Reasons Triggered**:
+  - `missing_gpx_track_name`: 0
+  - `no_title_match`: 0
+  - `weak_title_match`: 0
+  - `title_tie`: 1
+  - `ambiguous_best_candidate`: 0
+  - `multiple_date_candidates`: 1
+  - `timezone_sensitive`: 14
+- **SHA-256 Checksum Policy**: SHA-256 is used for output file integrity and is stored in `title_enriched_manifest.json`.
+- **Statement on source files**: Source GPX, YAMAP Markdown files, and input datasets were not modified.
+- **Verification status**: Checked via `npm test` and post-execution script checks.

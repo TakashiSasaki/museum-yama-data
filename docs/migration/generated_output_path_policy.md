@@ -4,22 +4,29 @@
 
 This document defines the recommended policy for placing generated outputs before the final physical `data/` directory layout is fully implemented. It clarifies the distinction between source data, retained legacy artifacts, documentation preview artifacts, and future generated pipeline outputs.
 
+## Scope Clarification
+
+This document was originally written before the `data/` layered structure (`data/02_intermediate`, `data/03_primary`, `data/04_feature`, `data/08_reporting`) was populated.
+*   Existing executed pipeline outputs under `data/` are accepted Git-tracked repository artifacts.
+*   This policy is primarily about future formal DVC-light generated-output placement (such as `artifacts/generated/`) and should not be read as requiring relocation of already executed data-layer outputs.
+*   `docs/migration/` must still not become the long-term generated-output directory.
+
 ## Path Classifications
 
-*   **Source Data Paths:** (e.g., `gpx/raw/`, `yamap/*.md`, `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx`)
-    *   `data/01_raw/provider_received/` is the minimal new intake path for future provider-received raw source files. Generated outputs must not be placed here.
+*   **Source Data Paths:** (e.g., `data/01_raw/gpx/2026-05-12/`, `data/01_raw/yamap_markdown/`, `data/01_raw/as_received/2026-05-18/えひめの山.xlsx`)
+    *   `data/01_raw/as_received/` is the minimal new intake path for future received raw source files. Generated outputs must not be placed here.
     *   Remain Git-primary. Do not modify or run `dvc add` on these paths by default.
-    *   Note: `data/01_raw/provider_received/yoshitomi/1980-01-01/えひめの山.xlsx` is a retained source snapshot, but `processed/` is a legacy processed-marker archive, not a modern generated-output directory.
-*   **Retained Legacy Artifacts:** (e.g., `data/01_raw/provider_received/yoshitomi/2026-05-12/GPXファイル.zip`, `csv/`)
+    *   Note: `data/01_raw/as_received/2026-05-18/えひめの山.xlsx` is a retained source snapshot, but `processed/` is a legacy processed-marker archive, not a modern generated-output directory.
+*   **Retained Legacy Artifacts:** (e.g., `data/01_raw/as_received/2026-05-12/GPXファイル.zip`, `csv/`)
     *   Remain Git-primary. Preserved as historical evidence or for reuse.
-    *   Note: `data/01_raw/provider_received/yoshitomi/2026-05-12/GPXファイル.zip` is a handled source archive / original GPX export package, not a generated output.
+    *   Note: `data/01_raw/as_received/2026-05-12/GPXファイル.zip` is a handled source archive / original GPX export package, not a generated output.
 *   **Documentation/Audit Preview Artifacts:** (e.g., `docs/migration/summit_candidates_skill_preview.csv`)
     *   Small, conceptually generated outputs explicitly committed to Git for human review and auditing.
     *   **Crucially:** `docs/migration/` should not be used as the canonical long-term generated-output directory.
 *   **Disposable Scratch Outputs:** (e.g., `scratch/` or similar ignored temporary locations)
     *   May be used for disposable local experiments.
 *   **Formal Generated Pipeline Outputs:** (e.g., outputs of a DVC-light stage)
-    *   Must use a dedicated generated-output root distinct from source data and documentation.
+    *   Must use a dedicated generated-output root (like `data/04_feature/` or `artifacts/generated/`) distinct from source data and documentation.
 
 ## Recommended Generated-Output Root: `artifacts/generated/`
 

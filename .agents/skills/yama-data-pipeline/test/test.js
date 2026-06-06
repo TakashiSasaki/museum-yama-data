@@ -8,6 +8,32 @@ const assert = require('assert');
 require('./test_summit_detection');
 require('./test_validate_mountain_sources');
 require('./test_intake');
+require('./test_summit_candidate_gpx');
+require('./test_gpx_yamap_date_linking');
+require('./test_complete_mountain_source_no');
+require('./test_normalize_mountain_source_json');
+require('./test_summit_candidate_features');
+require('./test_reverse_geocoding_point_index');
+require('./test_summit_candidate_location_evidence');
+require('./test_gpx_yamap_title_linking');
+require('./test_mountain_summit_candidate_linking');
+require('./test_mountain_summit_candidate_location_refinement');
+require('./test_mountain_summit_review_queue_compression');
+require('./test_mountain_summit_review_packets');
+require('./test_municipality_adjacency');
+require('./test_municipality_point_lookup');
+require('./test_no_local_absolute_paths');
+require('./test_municipality_stability');
+require('./test_location_stability_refinement');
+require('./test_location_stability_review_queue_compression');
+require('./test_location_stability_review_packets');
+require('./test_mountain_geographic_grounding_requests');
+require('./test_grounding_assisted_linking');
+
+
+
+
+
 
 // Core pipeline functionality to test
 const validate = require('../commands/validate');

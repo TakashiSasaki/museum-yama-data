@@ -60,8 +60,9 @@ The following directories are strictly protected and MUST NOT be deleted, moved,
 - `gpx/`
 - `csv/`
 - `processed/`
-- `yamap/`
-- `reverse_geocoding/`
+- `data/01_raw/yamap_markdown/`
+- `data/01_raw/yamap_metadata/`
+- `data/01_raw/reverse_geocoding/`
 - `museum-yama-web/`
 
 Additionally, `museum-yama-web/mountains.json` must not be modified.

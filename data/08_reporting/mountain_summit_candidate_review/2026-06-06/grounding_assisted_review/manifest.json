@@ -1,0 +1,42 @@
+{
+  "stage": 24,
+  "stage_name": "generate-grounding-assisted-review-queues",
+  "created_at": "2026-06-06T10:07:51.568Z",
+  "git_commit": "552ce11303fed6af58c2c4f3b810d7addbf949b8",
+  "inputs": {
+    "candidate_links": {
+      "path": "data/04_feature/mountain_summit_candidate_links/2026-06-06/grounding_assisted_candidate_links.jsonl",
+      "record_count": 6079
+    }
+  },
+  "outputs": {
+    "auto_supported": {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/auto_supported_candidates.csv",
+      "record_count": 1
+    },
+    "review_required_mountains": {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/review_required_mountains.csv",
+      "record_count": 530
+    },
+    "review_required_candidates": {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/review_required_candidates.csv",
+      "record_count": 6078
+    },
+    "grounding_conflicts": {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/grounding_conflicts.csv",
+      "record_count": 38
+    },
+    "summary": {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/summary.md"
+    }
+  },
+  "review_summary": {
+    "total_mountains": 531,
+    "mountains_covered": 531,
+    "auto_supported_count": 1,
+    "review_required_count": 530,
+    "grounding_conflict_count": 38,
+    "review_candidate_links": 6078,
+    "coverage_gap": 0
+  }
+}

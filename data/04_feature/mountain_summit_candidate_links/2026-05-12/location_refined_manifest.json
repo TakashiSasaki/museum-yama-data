@@ -1,0 +1,68 @@
+{
+  "stage": "refine_mountain_summit_candidate_links_by_location",
+  "stage_version": "0.1.0",
+  "git_commit": "7755a384ad7d31e3ad6b6c7791615fe66479a915",
+  "created_at": "2026-06-05T06:34:14.872Z",
+  "inputs": {
+    "mountains": "data/03_primary/mountains/ehime_mountain_source_rows.json",
+    "mountains_sha256": "e3fcddb965e5e643d5e1c173da5d94c71da5c776c409310bd1612a3600b6c8c4",
+    "candidate_links": "data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl",
+    "candidate_links_sha256": "2c486812af113eb3679c5455a154b1ad56f2fac7803322d2ee4f5833623b0964",
+    "location_evidence": "data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl",
+    "location_evidence_sha256": "79bef4fb7ef3fc7757b427004989239bf7caa902ec6f3835cad57b1223217c6d"
+  },
+  "outputs": [
+    {
+      "path": "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_candidate_links.jsonl",
+      "sha256": "f907a66f6a0b632ebc782b680e4ad7de1d46364282e5d4fb22945d919320a9c7",
+      "role": "location_refined_candidate_links_jsonl"
+    },
+    {
+      "path": "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_refined_manifest.json",
+      "sha256": null,
+      "role": "manifest"
+    },
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_refined_review_queue.csv",
+      "sha256": "6fd7bf1c9b392881bdb22d72dbd297371611d08a1dc84879be195d6a954e0721",
+      "role": "review_queue_csv"
+    },
+    {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_refined_review_queue.md",
+      "sha256": "755ac055ccbf429502dc36df1d025020a388439bf38cad29787fae238c73b9c1",
+      "role": "review_queue_md"
+    },
+    {
+      "path": "docs/migration/mountain_summit_candidate_location_refinement_report.md",
+      "sha256": "4e2d89cc5ed0e7a0a82a6225f4b8157b1e01b949d8eb0854afba6a6782a65291",
+      "role": "report"
+    }
+  ],
+  "checksum_algorithm": "sha256",
+  "parameters": {
+    "weights": {
+      "original_score": 0.85,
+      "location_refinement_score": 0.15
+    }
+  },
+  "summary": {
+    "input_candidate_link_records": 11372,
+    "output_refined_candidate_link_records": 11372,
+    "mountain_records": 531,
+    "location_evidence_records": 496,
+    "review_queue_rows": 9732,
+    "exact_municipality_match_count": 2608,
+    "nearby_municipality_match_count": 0,
+    "island_text_match_count": 100,
+    "local_text_match_count": 43,
+    "weak_admin_match_count": 7,
+    "boundary_tolerated_mismatch_count": 8614,
+    "unavailable_location_count": 0,
+    "high_review_priority_count": 9516,
+    "medium_review_priority_count": 588,
+    "low_review_priority_count": 1238,
+    "deprioritized_count": 30,
+    "top_1_per_mountain_coverage": 531,
+    "source_files_modified": false
+  }
+}

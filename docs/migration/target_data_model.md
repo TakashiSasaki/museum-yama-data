@@ -2,7 +2,7 @@
 
 This document outlines the high-level target data model for the future DVC and Kedro pipeline in the Yama Museum repository. It describes intended logical datasets rather than physical implementation files.
 
-*Note: No physical directories or data files for this model have been created yet.*
+*Note: This document represents a logical target model. Several physical datasets now exist as Git-tracked pipeline outputs in `data/02_intermediate`, `data/03_primary`, `data/04_feature`, and `data/08_reporting`. However, some future semantic outputs, such as final resolved summit coordinates, still do not exist.*
 
 ## Dataset Overview
 
@@ -21,11 +21,18 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Tracking System:** DVC dependency candidate
 
 ### 3. `excel_derived_activity_csv`
-* **Role:** Extracted representations of the Excel workbook logs, used for intermediate tabular processing.
+* **Role:** Extracted representations of the Excel workbook logs, used for intermediate tabular processing. This is an extracted intermediate CSV, and blank `No` values may still exist. It is not used directly for final targets; it is processed into `accepted_mountain_source_rows`.
 * **Primary Inputs:** `raw_activity_workbook`
 * **Expected Future Layer:** `02_intermediate`
 * **Tracking System:** DVC dependency candidate
 * **Status Notes:** Historically existed as the `csv/` legacy directory; generation script needs restoration.
+
+### 3b. `accepted_mountain_source_rows`
+* **Role:** The normalized and accepted primary dataset for mountain source rows. Existing non-empty source `No` values must be contiguous from 1. Blank `No` values from the intermediate CSV are filled sequentially starting from `max_existing_no + 1` to ensure every row has a non-null, unique effective `mountain_no`. Downstream resolved mountain records consume this dataset, not the raw extracted CSV directly.
+* **Primary Inputs:** `excel_derived_activity_csv`
+* **Expected Future Layer:** `03_primary`
+* **Tracking System:** DVC dependency candidate
+* **Status Notes:** This is the strictly validated output of the mountain source acceptance and normalization stage. All coordinates from the `GPS` column are preserved as coordinate evidence.
 
 ### 4. `raw_yamap_activity_metadata`
 * **Role:** Original Markdown activity records scraped/fetched from YAMAP.
@@ -90,12 +97,22 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 
 ### 13. `mountains`
 * **Role:** The authoritative structured table of resolved mountain identities with canonical names and disambiguation metadata.
-* **Primary Inputs:** `summit_identity_candidates`
+* **Primary Inputs:** `summit_identity_candidates`, `mountain_summit_coordinates`
 * **Expected Future Layer:** `03_primary`
 * **Tracking System:** DVC dependency candidate
-* **Primary Key:** `mountain_no` (authoritative integer sourced from the CSV `No` column, currently expected to cover `1..501`).
+* **Primary Key:** `mountain_no`. This is a unified effective key after acceptance/normalization. Existing non-empty source `No` values must be contiguous from `1` (currently `1..501`). Blank source `No` rows are filled sequentially after `max_existing_no` (currently resulting in `502..531`). The final expected key set is `1..531`. `source_row_no` is preserved as provenance, not used as the fill value.
+* **Required Metadata Fields:** `mountain_no_source` and `mountain_no_status` are required.
 * **Important Note:** Unresolved candidates and resolved mountains are distinct entities. The existing `museum-yama-web/mountains.json` is a provisional legacy web cache and does not serve as this final semantic model.
-* **Cardinality Expectation:** In the current reference state, the expected authoritative resolved mountain count is exactly 501. (30 blank-"No" records from the CSV source are explicitly excluded from this authoritative set and must not be included).
+* **Cardinality Expectation:** The target source set is all 531 CSV rows. The 30 blank-"No" rows receive provisional sequence-filled `mountain_no` values and are included.
+* **Coordinate Evidence:** Provisional rows already have CSV lat/lon data in the `GPS` column, and these coordinates must be preserved as evidence.
+
+### 13b. `mountain_summit_coordinates`
+* **Role:** The dataset holding the resolved summit coordinates for mountain entities, preserving coordinate provenance.
+* **Primary Inputs:** `raw_activity_workbook` (CSV extracts), `summit_candidates`, explicit human review records
+* **Expected Future Layer:** `03_primary`
+* **Tracking System:** DVC dependency candidate
+* **Key Alignment:** Maps to `mountain_no`.
+* **Important Note:** Must distinguish coordinate sources (e.g., `csv_existing_gps`, `gpx_summit_candidate`) and validation statuses. Unresolved summit coordinates must be represented explicitly rather than dropping rows.
 
 ### 14. `resolved_mountain_waypoint_gpx`
 * **Role:** A collection of identified mountain waypoints formatted as a GPX/XML file, embedding evidence references in its extensions. This is the first concrete target export.
@@ -114,21 +131,21 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Primary Inputs:** `resolved_mountain_waypoint_gpx`, `activity_mountain_links`
 * **Expected Future Layer:** `08_reporting`
 * **Tracking System:** Git or dynamically generated
-* **Schema Reference:** Will likely adapt the legacy schema/record shape (e.g., from `processed/mountain_merged.json`), but only after strictly satisfying the `mountain_no` primary key and 501-record validations. The legacy JSON in `processed/` is a schema reference only. The canonical future filename is undecided. For more details on adapting the schema, see [Legacy Resolved Mountain JSON Schema Audit](legacy_resolved_mountain_json_schema_audit.md). For the full schema contract and validation report, see [Resolved Mountain JSON Schema Contract](resolved_mountain_json_schema_contract.md) and [Mountain Source Validation Report](mountain_source_validation_report.md).
-* **Cardinality Expectation:** The future resolved mountain JSON web export should strictly preserve the 501 top-level mountain record count unless a discrepancy is explicitly explained.
+* **Schema Reference:** Will likely adapt the legacy schema/record shape (e.g., from `processed/mountain_merged.json`), but only after strictly satisfying the `mountain_no` primary key and 531-record validations. The legacy JSON in `processed/` is a schema reference only. The canonical future filename is undecided. For more details on adapting the schema, see [Legacy Resolved Mountain JSON Schema Audit](legacy_resolved_mountain_json_schema_audit.md). For the full schema contract and validation report, see [Resolved Mountain JSON Schema Contract](resolved_mountain_json_schema_contract.md) and [Mountain Source Validation Report](mountain_source_validation_report.md).
+* **Cardinality Expectation:** The future resolved mountain JSON web export should strictly preserve the expected 531 top-level mountain record count unless a discrepancy is explicitly explained.
 
 ### 17. `validation_reports`
 * **Role:** Automated checks confirming the integrity of the data layers (e.g., no orphaned candidates coerced to identities without evidence, duplicate mountain names, unlinked GPX files).
 * **Primary Inputs:** Outputs across pipeline layers.
 * **Expected Future Layer:** `08_reporting`
 * **Tracking System:** Git or DVC-tracked output
-* **Integrity Validation:** Validation reports should actively verify key constraints and the 501 invariant. Specifically, checks should ensure:
-  - total authoritative record count is exactly 501
+* **Integrity Validation:** Validation reports should actively verify key constraints. Specifically, checks should ensure:
+  - target record count is 531
   - all records contain a `mountain_no`
-  - all `mountain_no` values are unique and cover the expected `1..501` range
-  - no blank-"No" records are erroneously included
+  - all `mountain_no` values are unique and cover the expected `1..531` range
+  - `mountain_no_source` and `mountain_no_status` are populated
   - same-name records are not improperly merged solely by name
-* **Cardinality Reporting:** Report discrepancy categories (e.g., `missing_source_row`, `duplicate_or_merged_record`, `excluded_from_authoritative_source`) and explicitly report the excluded blank-"No" record count separately.
+* **Cardinality Reporting:** Report discrepancy categories (e.g., `missing_source_row`, `duplicate_or_merged_record`).
 
 ### 18. `provenance_entities`, `provenance_activities`, `provenance_edges`
 * **Role:** Tabular representation of the data lineage, entities, processes, and their relationships.
@@ -149,6 +166,41 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 * **Primary Inputs:** `raw_gpx_activities`, `raw_yamap_activity_metadata`
 * **Expected Future Layer:** `02_intermediate`
 * **Tracking System:** DVC dependency candidate
+
+### 21. `mountain_summit_candidate_links`
+* **Role:** A feature-level dataset capturing the generated candidate links between mountain records (`mountain_no`) and detected summit candidates, scoring their similarity using name similarity, elevation profile differences, distance between CSV coordinates and GPX summit coordinates, reverse-geocoding administrative overlap, and activity links.
+* **Primary Inputs:** `accepted_mountain_source_rows`, `summit_candidates`, `location_enrichment` (reverse geocoding evidence), `gpx_yamap_activity_links` (title-enriched candidate activity links).
+* **Expected Future Layer:** `04_feature` (physical path: `data/04_feature/mountain_summit_candidate_links/2026-05-12/candidate_links.jsonl`)
+* **Tracking System:** DVC dependency candidate
+* **Status Notes:** This stage has been executed, providing candidate links and review queues to facilitate human-in-the-loop validation before final coordinate/identity resolution.
+
+### 22. `mountain_summit_candidate_review_packets` (Historical/Superseded)
+* **Role:** Markdown review packets grouping contested links and candidate ridge traverses by GPX track file and summit conflicts to facilitate human review, along with a prefilled review decisions template.
+* **Primary Inputs:** `mountain_summit_candidate_links` (location-refined candidate links and conflict queues).
+* **Expected Future Layer:** `08_reporting` (historical physical path: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/review_packets/` and `review_decisions_template.csv`)
+* **Tracking System:** DVC dependency candidate / Git-tracked outputs
+* **Status Notes:** These paths are historical and were deleted/superseded. Use location-stability or grounding-assisted artifacts instead.
+
+### 23. `mountain_geographic_grounding_reference`
+* **Role:** Normalized external geographic grounding coordinate reference points for mountains that required external geographic verification.
+* **Primary Inputs:** Raw external grounding responses, `accepted_mountain_source_rows`.
+* **Expected Future Layer:** `04_feature`
+* **Tracking System:** DVC dependency candidate
+
+### 24. `grounding_refined_candidate_links` (Stage 21 Baseline)
+* **Role:** Candidate links projected with grounding responses as auxiliary evidence to reduce human review burden, without aggressively pruning the candidate universe.
+* **Primary Inputs:** `mountain_summit_candidate_links` (location-stability refined), `mountain_geographic_grounding_reference`.
+* **Expected Future Layer:** `04_feature`
+
+### 25. `grounding_assisted_candidate_links` (Stage 23)
+* **Role:** A heavily pruned subset of candidate links utilizing strict geographic grounding tolerances to remove completely spurious candidate rows.
+* **Primary Inputs:** `summit_candidates`, `accepted_mountain_source_rows`, `mountain_geographic_grounding_reference`.
+* **Expected Future Layer:** `04_feature`
+
+### 26. `grounding_assisted_review_queues` (Stage 24)
+* **Role:** Reporting artifacts grouping the `grounding_assisted_candidate_links` into action-oriented human-review tasks.
+* **Primary Inputs:** `grounding_assisted_candidate_links`.
+* **Expected Future Layer:** `08_reporting`
 
 ## Summary of Core Principles
 

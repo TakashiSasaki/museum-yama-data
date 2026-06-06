@@ -24,7 +24,7 @@ Furthermore, some Markdown files stored in `docs/` (e.g., `same_name_16mountains
 
 ## JSON Data Structures
 
-For detailed findings regarding JSON data structures (`reverse_geocoding/` and `museum-yama-web/mountains.json`), please see [JSON Provenance Findings](json_provenance_findings.md). Note that `mountains.json` is a provisional web cache and will be superseded by the structured feature datasets and resolved mountain waypoint GPX output.
+For detailed findings regarding JSON data structures (`data/01_raw/reverse_geocoding/` and `museum-yama-web/mountains.json`), please see [JSON Provenance Findings](json_provenance_findings.md). Note that `mountains.json` is a provisional web cache and will be superseded by the structured feature datasets and resolved mountain waypoint GPX output.
 
 ## GPX Derived Artifacts
 
@@ -36,7 +36,7 @@ Detailed policies regarding raw GPX, generated summit candidates, legacy annotat
 - Both legacy outputs are preserved as evidence or useful reporting, but require formalized reproducible pipelines and validation.
 
 In summary regarding JSON Data Structures:
-- `reverse_geocoding/` acts as a cache/snapshot of Nominatim API responses for municipality-level location enrichment. The pipeline needs formalizing.
+- `data/01_raw/reverse_geocoding/` acts as a cache/snapshot of Nominatim API responses for municipality-level location enrichment. The pipeline needs formalizing.
 - `museum-yama-web/mountains.json` is likely a web cache but remains "needs decision" because full regenerability is unproven and it may contain manual curations. It is currently an accumulated provisional list and not the final semantic target.
 
 ## YAMAP Logs & References

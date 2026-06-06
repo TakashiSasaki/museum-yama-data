@@ -1,0 +1,64 @@
+{
+  "stage": 21,
+  "stage_name": "refine-mountain-summit-candidate-links-by-grounding",
+  "created_at": "2026-06-06T09:28:40.996Z",
+  "git_commit": "5dd0544eebd8f765caba716c23cf5d91dc76ca63",
+  "inputs": {
+    "candidate_links": {
+      "path": "data/04_feature/mountain_summit_candidate_links/2026-05-12/location_stability_refined_candidate_links.jsonl",
+      "sha256": "a3e4ea54c296599cc908d2903aff79f125bb3dcb63abba310b7f132757bbb125",
+      "record_count": 11372
+    },
+    "grounding_responses": {
+      "path": "data/01_raw/mountain_geographic_grounding/external_agent/2026-06-06/gemini_grounding_responses_raw.json",
+      "sha256": "d842ab1b88d0beaa9b2d2fc81101ffffe0177bdfb5bc2cc2509ccd7e6a662638",
+      "record_count": 387
+    }
+  },
+  "outputs": {
+    "refined_links": {
+      "path": "data/04_feature/mountain_summit_candidate_links/2026-05-12/grounding_refined_candidate_links.jsonl",
+      "sha256": "570e75aebe906bcb21d7f4cf59168471f9c2b047953e125c219f95d4753cda52",
+      "record_count": 11372
+    },
+    "review_csv": {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/grounding_refined_review_queue.csv"
+    },
+    "review_md": {
+      "path": "data/08_reporting/mountain_summit_candidate_review/2026-05-12/grounding_refined_review_queue.md"
+    }
+  },
+  "summary": {
+    "total_input": 11372,
+    "total_output": 11372,
+    "mountains_with_grounding": 333,
+    "mountains_without_grounding": 198,
+    "grounding_supported": 7,
+    "grounding_weakly_supported": 59,
+    "grounding_neutral": 4711,
+    "grounding_weakened": 6595,
+    "upgraded_from_deprioritized": 5,
+    "downgraded_by_grounding": 1683,
+    "consolidation": {
+      "rawRecordCount": 387,
+      "uniqueMountainCount": 337,
+      "withCoordinates": 333,
+      "withoutCoordinates": 4,
+      "singleCluster": 294,
+      "weakClose": 1,
+      "weakModerate": 2,
+      "conflicting": 36
+    },
+    "burden_reduction": {
+      "link_review_before": 3002,
+      "link_review_after": 1314,
+      "link_review_reduction": 1688,
+      "mountain_review_before": 531,
+      "mountain_review_after": 280,
+      "mountain_review_reduction": 251,
+      "top1_review_before": 527,
+      "top1_review_after": 253,
+      "top1_review_reduction": 274
+    }
+  }
+}

@@ -1,0 +1,37 @@
+# Mountain Source JSON Normalization Report
+
+- **Branch and HEAD commit**: `museum-yama-data` (`20b793323be32de7e73d87556a88dfe56d1bc03f`)
+- **Input CSV path**: `data/02_intermediate/mountain_source/no_completed/2026-05-18/ehime_mountain_source_rows_no_completed.csv`
+- **Output JSON path**: `data/03_primary/mountains/ehime_mountain_source_rows.json`
+- **Manifest path**: `data/03_primary/mountains/manifest.json`
+- **Command used**: `normalize-mountain-source-json`
+- **Input SHA-256**: `182e5c723fd288aedcf623243a7564fdcbdae36c4dfb56a7af0aab36ef1cc226`
+- **Output SHA-256**: `e3fcddb965e5e643d5e1c173da5d94c71da5c776c409310bd1612a3600b6c8c4`
+- **Total input row count**: `531`
+- **Total output record count**: `531`
+- **mountain_no unique**: `Yes`
+- **mountain_no expected set (1..531)**: `Yes`
+- **GPS parse counts**:
+  - Parsed successfully: `31`
+  - Null/empty: `500`
+- **Entry-course recommendation boolean mapping**:
+  - `true` (recommended): `29`
+  - `false` (not recommended): `502`
+- **Difficulty rank null count**: `30`
+- **YAMAP URL counts**:
+  - Present: `501`
+  - Null/absent: `30`
+- **Location field mapping**:
+  - municipality_or_island: Raw value from `市町村・島` column.
+  - municipality: Value if not ending in `島`.
+  - island: Value if ending in `島`.
+- **Ignored source columns classification**:
+  - Columns: `No, 登頂回数, 年, シカ, 月, 備考, 分県登山ガイド（2008）, 分県登山ガイド（2016）, 四国の1000m峰（2015）, 四国百山, 百名山, 愛媛ゆうゆう山歩き, gps_raw, coordinate_source, coordinate_status`
+  - Classification: `intentionally discarded`
+  - Reason: Not currently used for analysis or visualization in the normalized mountain source JSON. The original source values remain preserved in the upstream CSV and in the No-completed intermediate CSV.
+- **Source CSV modification status**: `Not modified (Yes)`
+- **Validation checks**:
+  - Array type check: `Passed`
+  - Key uniqueness and range check: `Passed`
+  - Coordinate bounds check: `Passed`
+  - Type checking for fields: `Passed`

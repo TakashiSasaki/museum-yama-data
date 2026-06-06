@@ -1,0 +1,5 @@
+summit_detection:
+  smooth_window: 5
+  peak_radius: 10
+  min_prominence: 30
+  merge_distance: 100
