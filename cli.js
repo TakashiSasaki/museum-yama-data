@@ -39,6 +39,7 @@ Commands:
   lookup-ehime-municipalities-for-points Batch lookup of Ehime municipalities for multiple points from a JSONL or CSV file.
   generate-location-stability-review-packets Generate location-stability review packets and a human decision template.
   generate-review-required-geographic-grounding-requests Generate review required geographic grounding requests.
+  refine-mountain-summit-candidate-links-by-grounding Refine candidate links using external geographic grounding evidence.
 
 
 
@@ -215,6 +216,15 @@ generate-review-required-geographic-grounding-requests Options:
   --reporting-out-dir <path>        Required. Path to output reporting directory.
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
+
+refine-mountain-summit-candidate-links-by-grounding Options:
+  --candidate-links <path>          Required. Path to location-stability refined candidate links JSONL.
+  --grounding-responses <path>      Required. Path to raw grounding responses JSON.
+  --out <path>                      Required. Path to output grounding-refined candidate links JSONL.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --review-csv <path>               Required. Path to output review queue CSV.
+  --review-md <path>                Required. Path to output review queue Markdown.
+  --report <path>                   Required. Path to output report markdown.
 `);
 
     process.exit(code);
@@ -350,6 +360,8 @@ function parseArgs(argsArray) {
             options.featureOutDir = argsArray[++i];
         } else if (arg === '--reporting-out-dir' && i + 1 < argsArray.length) {
             options.reportingOutDir = argsArray[++i];
+        } else if (arg === '--grounding-responses' && i + 1 < argsArray.length) {
+            options.groundingResponses = argsArray[++i];
         }
     }
     return options;
@@ -553,6 +565,13 @@ async function run() {
         }
     }
 
+    if (command === 'refine-mountain-summit-candidate-links-by-grounding') {
+        if (!options.candidateLinks || !options.groundingResponses || !options.out || !options.manifest || !options.reviewCsv || !options.reviewMd || !options.report) {
+            log.error(`Error: --candidate-links, --grounding-responses, --out, --manifest, --review-csv, --review-md, and --report are required for 'refine-mountain-summit-candidate-links-by-grounding'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -644,6 +663,9 @@ async function run() {
                 break;
             case 'generate-review-required-geographic-grounding-requests':
                 await require('./commands/generate-review-required-geographic-grounding-requests')(options);
+                break;
+            case 'refine-mountain-summit-candidate-links-by-grounding':
+                await require('./commands/refine-mountain-summit-candidate-links-by-grounding')(options);
                 break;
 
             case 'test':
