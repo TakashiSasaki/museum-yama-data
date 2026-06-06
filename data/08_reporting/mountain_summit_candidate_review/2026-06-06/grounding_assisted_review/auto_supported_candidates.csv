@@ -1,0 +1,2 @@
+mountain_no,mountain_name,summit_candidate_id,grounding_assisted_candidate_score,grounding_distance_m,grounding_elevation_diff_m,candidate_lat,candidate_lon,candidate_ele_m,mountain_elevation_m,grounding_match_status,grounding_review_reduction_class,track_name
+3,高森山,summit-candidate:e7ae682a07af2e10,0.995,0,4.9,33.8423734,132.8811963,719.2533333333334,724,strict_grounding_match,auto_supported_strict_grounding_match,高森山・岩伽羅山・衣掛山・吉山(吉山城址)

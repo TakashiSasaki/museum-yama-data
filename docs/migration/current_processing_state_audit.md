@@ -438,18 +438,67 @@ This document inventories and verifies the current execution state of the data-p
 
 ---
 
+### 22. Normalize Grounding Responses (`normalize-grounding-responses`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/normalize-grounding-responses.js`.
+* **Output file exists?**: Yes, at `data/04_feature/mountain_geographic_grounding/2026-06-06/grounding_reference_index.jsonl`.
+* **Manifest file exists?**: Yes, at `data/04_feature/mountain_geographic_grounding/2026-06-06/grounding_reference_manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/grounding_reference_index_report.md`.
+* **Key metrics**:
+  - Total mountains: 531
+  - Mountains with grounding: 337, usable coordinates: 333
+  - Coordinate conflicts: 38, single cluster: 295
+  - Insufficient evidence: 4
+* **Source files modified**: `false`
+
+### 23. Grounding-Assisted Summit Candidate Link Generation (`generate-grounding-assisted-summit-candidate-links`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/generate-grounding-assisted-summit-candidate-links.js`.
+* **Output file exists?**: Yes, at `data/04_feature/mountain_summit_candidate_links/2026-06-06/grounding_assisted_candidate_links.jsonl`.
+* **Pruned log file exists?**: Yes, at `data/04_feature/mountain_summit_candidate_links/2026-06-06/grounding_assisted_pruned_candidate_log.jsonl`.
+* **Manifest file exists?**: Yes, at `data/04_feature/mountain_summit_candidate_links/2026-06-06/grounding_assisted_candidate_links_manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/grounding_assisted_candidate_link_generation_report.md`.
+* **Key metrics**:
+  - Total candidate links: 6,079 (baseline Stage 9: 11,372; reduction: 46.5%)
+  - Strict grounding matches: 1
+  - Mountains auto-supported: 1
+  - Mountains with no candidates: 43 (included as marker rows)
+  - Pruned far candidates: 495
+* **Source files modified**: `false`
+* **Existing Stage 9 outputs overwritten**: `false`
+
+### 24. Grounding-Assisted Review Queue Generation (`generate-grounding-assisted-review-queues`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/generate-grounding-assisted-review-queues.js`.
+* **Output directory exists?**: Yes, at `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/`.
+* **Output files**:
+  - `auto_supported_candidates.csv` (1 mountain)
+  - `review_required_mountains.csv` (530 mountains)
+  - `review_required_candidates.csv` (6,078 candidate links)
+  - `grounding_conflicts.csv` (38 mountains)
+  - `summary.md`
+* **Manifest file exists?**: Yes, at `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/manifest.json`.
+* **Report file exists?**: Yes, at `docs/migration/grounding_assisted_review_queue_report.md`.
+* **Key metrics**:
+  - All 531 mountains covered (1 auto-supported + 530 review-required)
+  - Coverage gap: 0
+* **Source files modified**: `false`
+* **Existing Stage 11-21 review outputs overwritten**: `false`
+
+---
+
 
 ## Current Human Review Entry Points
 
-Human reviewers should use the grounding-refined review artifacts (Stage 21) as the latest entry point:
+Human reviewers should use the grounding-assisted review artifacts (Stage 24) as the latest entry point:
 
-- Grounding-refined review CSV: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/grounding_refined_review_queue.csv`
-- Grounding-refined review summary: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/grounding_refined_review_queue.md`
+- Auto-supported candidates: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/auto_supported_candidates.csv`
+- Review required mountains: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/review_required_mountains.csv`
+- Review required candidates: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/review_required_candidates.csv`
+- Grounding conflicts: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/grounding_conflicts.csv`
+- Review summary: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/summary.md`
 
-The location-stability review packets (Stage 19) remain available for reference:
-
-- Review index: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_packets/index.md`
-- Decision template: `data/08_reporting/mountain_summit_candidate_review/2026-05-12/location_stability_review_decisions_template.csv`
+The prior review artifacts (Stages 11–21) remain available as legacy/baseline reference but are superseded by the grounding-assisted review artifacts.
 
 The old Stage 11/12 review artifacts were intentionally deleted before review began.
 

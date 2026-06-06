@@ -1,0 +1,58 @@
+{
+  "stage": 23,
+  "stage_name": "generate-grounding-assisted-summit-candidate-links",
+  "created_at": "2026-06-06T10:07:43.705Z",
+  "git_commit": "552ce11303fed6af58c2c4f3b810d7addbf949b8",
+  "inputs": {
+    "mountains": {
+      "path": "data/03_primary/mountains/ehime_mountain_source_rows.json",
+      "record_count": 531
+    },
+    "summit_candidates": {
+      "path": "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl",
+      "record_count": 496
+    },
+    "grounding_reference": {
+      "path": "data/04_feature/mountain_geographic_grounding/2026-06-06/grounding_reference_index.jsonl",
+      "record_count": 531
+    },
+    "location_evidence": {
+      "path": "data/04_feature/location_enrichment/summit_candidates/2026-05-12/summit_candidate_location_evidence.jsonl",
+      "record_count": 496
+    },
+    "activity_links": {
+      "path": "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl",
+      "record_count": 293
+    }
+  },
+  "outputs": {
+    "candidate_links": {
+      "path": "data/04_feature/mountain_summit_candidate_links/2026-06-06/grounding_assisted_candidate_links.jsonl",
+      "sha256": "07bd690529499d0565f62c2631625f05fd12dad112d00350c932356187562e67",
+      "record_count": 6079
+    },
+    "pruned_log": {
+      "path": "data/04_feature/mountain_summit_candidate_links/2026-06-06/grounding_assisted_pruned_candidate_log.jsonl",
+      "record_count": 495
+    }
+  },
+  "summary": {
+    "total_mountains": 531,
+    "total_summit_candidates": 496,
+    "grounded_spatial_search": 295,
+    "strict_grounding_match": 1,
+    "strong_grounding_nearby": 2,
+    "weak_grounding_nearby": 10,
+    "far_grounding_candidate": 21,
+    "grounding_contradicted_or_unrelated": 976,
+    "grounding_unavailable_fallback": 0,
+    "grounding_coordinate_conflict": 38,
+    "grounding_no_coordinate": 198,
+    "no_grounding_response": 0,
+    "total_links_generated": 6079,
+    "total_links_pruned": 495,
+    "mountains_auto_supported": 1,
+    "mountains_with_candidates": 488,
+    "mountains_without_candidates": 43
+  }
+}
