@@ -160,6 +160,15 @@ module.exports = async function (options) {
         throw new Error(`Review-deferred candidate cannot be a marker row`);
     }
 
+
+    // Output Collision Check
+    if (fs.existsSync(outDir)) {
+        const files = fs.readdirSync(outDir);
+        if (files.length > 0) {
+            throw new Error(`Output directory ${outDir} is not empty. Refusing to overwrite existing outputs.`);
+        }
+    }
+
     // Create Out Dir
     fs.mkdirSync(outDir, { recursive: true });
 
