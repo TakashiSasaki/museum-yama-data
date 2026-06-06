@@ -29,6 +29,7 @@ require('./test_location_stability_review_queue_compression');
 require('./test_location_stability_review_packets');
 require('./test_mountain_geographic_grounding_requests');
 require('./test_grounding_assisted_linking');
+require('./test_grounding_assisted_review_reduction_v2');
 
 
 

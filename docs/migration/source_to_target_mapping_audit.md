@@ -114,3 +114,5 @@ Detailed mapping audits for this stage are maintained in:
 - [Summit Candidate Location Evidence Mapping](summit_candidate_location_evidence_mapping.md)
 - [Mountain Geographic Grounding Request Packet Mapping](mountain_geographic_grounding_request_packet_mapping.md)
 
+
+- Grounding Assisted Review Reduction v2 (Stage 25) added. Input fields mapped and confirmed in `grounding_assisted_review_reduction_v2_mapping.md`.

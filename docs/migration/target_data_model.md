@@ -187,3 +187,5 @@ The datasets are structured across typical data engineering layers (`01_raw`, `0
 2. **First Export Target:** The first concrete data export target is `resolved_mountain_waypoint_gpx`.
 3. **Provenance Management:** Detailed provenance logs will live in structured datasets like `mountain_identity_evidence`. The GPX extensions will only contain summary links to this deep data.
 4. **Entity Separation:** `summit_candidates` (unresolved points) and `mountains` (resolved identities) are fundamentally different entities and are managed separately.
+
+Stage 25 output queues (`data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review_v2/`) represent the primary recommended workflow for mountain coordinate review.

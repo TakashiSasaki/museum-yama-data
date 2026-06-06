@@ -488,17 +488,42 @@ This document inventories and verifies the current execution state of the data-p
 ---
 
 
+
+### 25. Grounding-Assisted Review Reduction v2 (`generate-grounding-assisted-review-queues-v2`)
+* **Status**: `executed_verified`
+* **Subcommand exists?**: Yes, implemented at `.agents/skills/yama-data-pipeline/commands/generate-grounding-assisted-review-queues-v2.js`.
+* **Output directory exists?**: Yes, at `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review_v2/`.
+* **Output files**:
+  - `immediate_review_required_mountains.csv` (520 mountains)
+  - `review_deferred_mountains.csv` (10 mountains)
+  - `auto_supported_candidates.csv` (1 mountain)
+  - `map_check_recommended.csv` (0 mountains)
+  - `conflict_cases.csv` (38 mountains)
+  - `no_candidate_mountains.csv` (0 mountains)
+  - `stage21_stage23_disagreements.csv` (0 mountains)
+  - `immediate_review_required_candidates.csv`
+  - `review_deferred_candidates.csv`
+  - `summary.md`
+* **Manifest file exists?**: Yes, at `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review_v2/manifest.json`.
+* **Note**: Stage 25 improves over Stage 24 by deferring review for candidates strongly supported by Stage 21 or new grounding tiers. Stage 25 is now the recommended entry point for human review.
+
+---
+
 ## Current Human Review Entry Points
 
-Human reviewers should use the grounding-assisted review artifacts (Stage 24) as the latest entry point:
+Human reviewers should use the grounding-assisted review artifacts v2 (Stage 25) as the latest entry point:
 
-- Auto-supported candidates: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/auto_supported_candidates.csv`
-- Review required mountains: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/review_required_mountains.csv`
-- Review required candidates: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/review_required_candidates.csv`
-- Grounding conflicts: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/grounding_conflicts.csv`
-- Review summary: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review/summary.md`
+- Auto-supported candidates: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review_v2/auto_supported_candidates.csv`
+- Review deferred mountains: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review_v2/review_deferred_mountains.csv`
+- Immediate review required mountains: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review_v2/immediate_review_required_mountains.csv`
+- Immediate review required candidates: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review_v2/immediate_review_required_candidates.csv`
+- Conflict cases: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review_v2/conflict_cases.csv`
+- Review summary: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review_v2/summary.md`
 
-The prior review artifacts (Stages 11–21) remain available as legacy/baseline reference but are superseded by the grounding-assisted review artifacts.
+The prior review artifacts (Stages 11–24) remain available as legacy/baseline reference but are superseded by the v2 grounding-assisted review artifacts.
+
+
+
 
 The old Stage 11/12 review artifacts were intentionally deleted before review began.
 
