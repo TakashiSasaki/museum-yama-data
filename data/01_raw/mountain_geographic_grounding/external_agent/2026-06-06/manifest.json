@@ -1,0 +1,172 @@
+{
+  "stage": "ingest_external_agent_mountain_geographic_grounding_responses",
+  "stage_version": "0.1.0",
+  "git_commit_checked_before_import": "ce996474a004e57bdb48178c29477177d8f97823",
+  "created_at": "2026-06-06T07:25:50.556838Z",
+  "checksum_algorithm": "sha256",
+  "repository_target": {
+    "branch": "museum-yama-data",
+    "directory": "data/01_raw/mountain_geographic_grounding/external_agent/2026-06-06",
+    "data_file": "data/01_raw/mountain_geographic_grounding/external_agent/2026-06-06/gemini_grounding_responses_raw.json",
+    "manifest_file": "data/01_raw/mountain_geographic_grounding/external_agent/2026-06-06/manifest.json"
+  },
+  "lineage": {
+    "upstream_request_generation_manifest": {
+      "path": "data/04_feature/mountain_geographic_grounding/2026-05-12/review_required_grounding_request_manifest.json",
+      "stage": "generate-review-required-geographic-grounding-requests",
+      "git_commit": "c3ee0d111b3c1f5401228ab2ce480af92e38a1f1"
+    },
+    "upstream_machine_request_packets": {
+      "path": "data/04_feature/mountain_geographic_grounding/2026-05-12/review_required_grounding_request_packets.jsonl",
+      "sha256": "858c5f50ff792a333b44aae8192bbe9dd6a15c4264a3baa8c692172392ca989a"
+    },
+    "upstream_human_readable_request_packets": {
+      "path": "data/08_reporting/mountain_geographic_grounding/2026-05-12/review_required_request_packets",
+      "index_path": "data/08_reporting/mountain_geographic_grounding/2026-05-12/review_required_request_packets/index.md",
+      "index_sha256": "9810a82adc0f02d69d3d98acedf8686f2c181ba831d8026a717edd690620df94"
+    },
+    "grounding_agent": {
+      "agent_name": "Gemini",
+      "agent_role": "external geographic grounding agent",
+      "description": "The JSON responses in this intake were produced by grounding review-required mountain request packets with geographic information using Gemini, then pasting the resulting JSON into Google Docs.",
+      "source_of_assertion": "user statement in ChatGPT conversation on 2026-06-06"
+    },
+    "google_docs_download": {
+      "input_zip_name": "drive-download-20260606T064801Z-3-001.zip",
+      "input_zip_sha256": "ef158342606a9ed51fe08c07d7c32d5e91aefb3e213d70295f2bf51519d67fee",
+      "download_format": "Google Docs exported as Microsoft Word .docx files inside a ZIP archive",
+      "docx_file_count": 41
+    },
+    "chatgpt_extraction": {
+      "description": "Extracted text from word/document.xml inside each .docx, parsed pasted JSON blocks, normalized records embedded under JSON-Schema-like properties objects, and preserved duplicate mountain_no records.",
+      "json_blocks_parsed": 119,
+      "json_extraction_error_count": 0,
+      "post_extraction_correction": {
+        "description": "Filled missing grounded_lat and grounded_lon for mountain_no 126 石灰山 from coordinate values already present in the same response record.",
+        "mountain_no": 126,
+        "mountain_name": "石灰山",
+        "grounded_lat": 34.351111,
+        "grounded_lon": 133.226389,
+        "source_fields": [
+          "grounded_verified_lat",
+          "grounded_verified_lon"
+        ]
+      }
+    }
+  },
+  "inputs": {
+    "google_docs_zip": {
+      "name": "drive-download-20260606T064801Z-3-001.zip",
+      "sha256": "ef158342606a9ed51fe08c07d7c32d5e91aefb3e213d70295f2bf51519d67fee",
+      "file_count": 41,
+      "extension_counts": {
+        ".docx": 41
+      }
+    },
+    "upstream_request_packet_directory": "data/08_reporting/mountain_geographic_grounding/2026-05-12/review_required_request_packets",
+    "upstream_request_packet_manifest": "data/04_feature/mountain_geographic_grounding/2026-05-12/review_required_grounding_request_manifest.json"
+  },
+  "outputs": [
+    {
+      "path": "data/01_raw/mountain_geographic_grounding/external_agent/2026-06-06/gemini_grounding_responses_raw.json",
+      "sha256": "5a5cb394fdaaac4cb10b328ab2dbea8da1ca70423cd697adad90a91ea55340b8",
+      "role": "external_agent_grounding_responses_raw_json",
+      "format": "json",
+      "record_container": "array",
+      "duplicates_preserved": true
+    },
+    {
+      "path": "data/01_raw/mountain_geographic_grounding/external_agent/2026-06-06/manifest.json",
+      "sha256": null,
+      "role": "lineage_manifest",
+      "format": "json"
+    }
+  ],
+  "summary": {
+    "source_docx_files": 41,
+    "json_blocks_parsed": 119,
+    "grounding_response_records": 387,
+    "unique_mountain_no_count": 337,
+    "mountain_no_min": 3,
+    "mountain_no_max": 531,
+    "duplicate_mountain_no_count": 50,
+    "duplicate_mountain_nos": [
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      126,
+      128,
+      129,
+      132,
+      134,
+      135,
+      136,
+      137,
+      140,
+      141,
+      142,
+      147,
+      148,
+      149,
+      150,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      164,
+      165,
+      166,
+      167,
+      168,
+      170,
+      171,
+      172,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181
+    ],
+    "numeric_grounded_lat_lon_record_count": 383,
+    "lat_lon_issue_record_count": 4,
+    "lat_lon_issue_mountain_nos": [
+      51,
+      60,
+      104,
+      111
+    ],
+    "coordinate_conflict_record_count": 80,
+    "coordinate_conflict_mountain_no_count": 0,
+    "coordinate_conflict_mountain_nos": [],
+    "json_parseable": true,
+    "records_deduplicated": false,
+    "source_files_modified": false
+  },
+  "data_handling_notes": {
+    "layer": "data/01_raw",
+    "raw_snapshot_policy": "This file preserves extracted external-agent response records, including duplicate mountain_no values. It is not a canonical resolved mountain-coordinate table.",
+    "field_coverage": "All parsed fields in each extracted grounding response record are preserved in the output JSON. Extraction metadata fields prefixed with '_' are added to retain document/block provenance. No deduplication or canonical coordinate selection is performed.",
+    "known_limitations": [
+      "Records are external-agent outputs and require downstream validation before use as canonical coordinates.",
+      "Duplicate mountain_no values are intentionally preserved.",
+      "Some duplicate mountain_no records have coordinate conflicts.",
+      "mountain_no 51, 60, 104, and 111 still lack numeric grounded_lat/grounded_lon values.",
+      "The original Google Docs ZIP is not stored by this manifest; this manifest records its observed filename and SHA-256 checksum."
+    ]
+  }
+}
