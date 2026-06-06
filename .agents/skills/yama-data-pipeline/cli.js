@@ -399,6 +399,10 @@ function parseArgs(argsArray) {
             options.activityLinks = argsArray[++i];
         } else if (arg === '--pruned-log' && i + 1 < argsArray.length) {
             options.prunedLog = argsArray[++i];
+        } else if (arg === '--stage21-grounding-refined-links' && i + 1 < argsArray.length) {
+            options.stage21GroundingRefinedLinks = argsArray[++i];
+        } else if (arg === '--stage21-review-queue' && i + 1 < argsArray.length) {
+            options.stage21ReviewQueue = argsArray[++i];
         }
     }
     return options;

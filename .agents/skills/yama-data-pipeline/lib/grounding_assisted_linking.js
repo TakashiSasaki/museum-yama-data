@@ -896,7 +896,7 @@ function deriveReviewReductionClass(matchStatus, score, hasStrictMatch, isStrict
  * @param {number} totalMountains
  * @returns {Object}
  */
-function generateReviewQueues(candidateLinks, totalMountains) {
+function generateReviewQueues(candidateLinks, totalMountains, stage21Map = new Map()) {
     const autoSupported = [];
     const reviewRequiredMountains = new Map(); // mountain_no → best link
     const reviewRequiredCandidates = [];
@@ -916,7 +916,21 @@ function generateReviewQueues(candidateLinks, totalMountains) {
         const hasStrict = links.some(l => l.grounding_match_status === 'strict_grounding_match' && l.grounding_review_reduction_class === 'auto_supported_strict_grounding_match');
 
         let classification;
-        if (hasStrict) {
+
+        // Stage 21 Support Carry Forward
+        const s21 = stage21Map.get(mno);
+        if (s21 && s21.status === 'grounding_supported') {
+            classification = 'stage21_grounding_supported_deferred';
+
+            // Mark the links with stage21_review_status
+            for (const link of links) {
+                link.stage21_review_status = s21.status;
+                link.stage21_top_candidate_id = s21.top_candidate_id;
+            }
+
+            // Push to auto supported, meaning it defers manual review
+            autoSupported.push(links.find(l => l.summit_candidate_id === s21.top_candidate_id) || top);
+        } else if (hasStrict) {
             const strictLink = links.find(l => l.grounding_review_reduction_class === 'auto_supported_strict_grounding_match');
             classification = 'auto_supported_strict_grounding_match';
             autoSupported.push(strictLink);
