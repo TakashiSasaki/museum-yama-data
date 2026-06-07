@@ -1,0 +1,102 @@
+{
+  "stage": "mountain_summit_coordinate_assignment",
+  "method_id": "gemini_grounded_canonical_plus_supplemental_assignment",
+  "run_id": "2026-06-07_gemini_grounded_canonical_plus_supplemental_assignment",
+  "schema_version": "1.0.0",
+  "created_at": "2026-06-07T11:47:22.127Z",
+  "branch": "museum-yama-data",
+  "head_commit": "f59d69c4df5fea7aa1d92383b4f912f2634d52b8",
+  "inputs": [
+    {
+      "name": "mountains",
+      "sha256": "e3fcddb965e5e643d5e1c173da5d94c71da5c776c409310bd1612a3600b6c8c4"
+    },
+    {
+      "name": "canonical_summit_candidates",
+      "sha256": "93ba6398263fc722f77c15dcf3384ff1d93bc6669b8daba7bacc5cd8edb8b260"
+    },
+    {
+      "name": "supplemental_candidates",
+      "sha256": "6a388e48e6131225fcd9ee4626c3ef7b3b569afc4190adb29e1318b456caf4c5"
+    },
+    {
+      "name": "supplemental_manifest",
+      "sha256": "59362a3ee8775c9848a92586266fa62ee80a4887de4f99e45221fb71e2f321d7"
+    },
+    {
+      "name": "grounding_reference",
+      "sha256": "9da75d497463985f1f8180663837e147147fdc61982eacb26521c6589d33fffb"
+    },
+    {
+      "name": "stage28_assignments",
+      "sha256": "ada68f37767ace03f15f4db787fb9f58db7475c22c1c42fc64ef564837b5c7de"
+    },
+    {
+      "name": "stage28_candidate_support",
+      "sha256": "462c8688bc8c71d2f5916c0b9495d7b9c775daafb1efa5ceb28f4c2cd60313ea"
+    },
+    {
+      "name": "activity_links",
+      "sha256": "f5fd7829db49e05d627292cf046aa8cfcb6af7fa40c04f65d04577aeda28b802"
+    },
+    {
+      "name": "municipality_lookup",
+      "sha256": "676622263833d7c0bec001478ccb290f4d090be3c7035705db6d8a60f4ac69bb"
+    },
+    {
+      "name": "municipality_stability",
+      "sha256": "bf32cde7984585dee79199b732174728cfc4c15e82c9bef91f59a928311278b8"
+    },
+    {
+      "name": "municipality_adjacency",
+      "sha256": "b389848e976532d983aa4f9a99db30a605ffaad6fce95a9c8d817fa55de0f988"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "proposed_summit_assignments",
+      "sha256": "aca280b306a54545fa41a7c82d38cf7198fbf3a7b62503575c264f76b838edc6"
+    },
+    {
+      "name": "candidate_support_links",
+      "sha256": "200b023996074e0b41815af4fc19a3ac9bf7efbd50dbb912365e92b1aec060e3"
+    },
+    {
+      "name": "pruned_candidate_log",
+      "sha256": "5cf0b06320c7eb22e97d9f042d06159f4b83631fa82cfd2b561fd81d2548f355"
+    }
+  ],
+  "parameters": {
+    "duplicate_radius_m": 30,
+    "non_canonical_review_required": true
+  },
+  "summary": {
+    "mountain_records": 531,
+    "canonical_summit_candidate_records": 496,
+    "supplemental_candidate_records": 31,
+    "grounding_reference_records": 531,
+    "stage28_assignment_records": 531,
+    "activity_link_records": 293,
+    "assignment_records": 531,
+    "auto_supported_not_canonical_count": 0,
+    "canonical_preferred_over_duplicate_supplemental_count": 3,
+    "supplemental_fallback_review_required_count": 28,
+    "quick_review_recommended_count": 4,
+    "manual_review_required_count": 39,
+    "conflict_case_count": 45,
+    "gemini_only_coordinate_review_count": 214,
+    "no_assignment_count": 198,
+    "needs_human_review_count": 531,
+    "supplemental_proposed_count": 28,
+    "supplemental_duplicate_of_canonical_count": 3,
+    "canonical_proposed_count": 53,
+    "repository_relative_path_violations": 0,
+    "source_files_modified": false,
+    "canonical_candidates_overwritten": false,
+    "supplemental_candidates_overwritten": false,
+    "stage27_outputs_regenerated": false,
+    "stage28_outputs_regenerated": false,
+    "stage30_outputs_regenerated": false,
+    "current_review_entry_point_replaced": false
+  }
+}

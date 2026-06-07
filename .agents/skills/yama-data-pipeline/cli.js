@@ -273,6 +273,26 @@ generate-gemini-near-gpx-supplemental-candidates Options:
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
   --review-dir <path>               Required. Path to output review directory.
+
+assign-mountain-summits-canonical-plus-supplemental Options:
+  --mountains <path>                Required. Path to mountain source JSON.
+  --canonical-summit-candidates <path> Required. Path to canonical summit candidates JSONL.
+  --supplemental-candidates <path> Required. Path to supplemental candidates JSONL.
+  --supplemental-manifest <path>   Required. Path to supplemental candidate manifest JSON.
+  --grounding-reference <path>      Required. Path to grounding reference index JSONL.
+  --stage28-assignments <path>      Required. Path to Stage 28 assignments JSONL.
+  --stage28-candidate-support <path> Required. Path to Stage 28 candidate support links JSONL.
+  --activity-links <path>           Required. Path to activity links JSONL.
+  --municipality-lookup <path>      Required. Path to municipality lookup JSONL.
+  --municipality-stability <path>   Required. Path to municipality stability JSONL.
+  --municipality-adjacency <path>   Required. Path to municipality adjacency JSON.
+  --out <path>                      Required. Path to proposed summit assignments JSONL.
+  --candidate-support-out <path>    Required. Path to output candidate support links JSONL.
+  --pruned-candidate-log <path>     Required. Path to output pruned candidate log JSONL.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --review-dir <path>               Required. Path to review output directory.
+  --report <path>                   Required. Path to output report markdown.
+
 `);
 
     process.exit(code);
@@ -440,7 +460,22 @@ function parseArgs(argsArray) {
             options.summitCandidateManifest = argsArray[++i];
         } else if (arg === '--balanced-assignments' && i + 1 < argsArray.length) {
             options.balancedAssignments = argsArray[++i];
+        } else if (arg === '--canonical-summit-candidates' && i + 1 < argsArray.length) {
+            options.canonicalSummitCandidates = argsArray[++i];
+        } else if (arg === '--supplemental-candidates' && i + 1 < argsArray.length) {
+            options.supplementalCandidates = argsArray[++i];
+        } else if (arg === '--supplemental-manifest' && i + 1 < argsArray.length) {
+            options.supplementalManifest = argsArray[++i];
+        } else if (arg === '--stage28-assignments' && i + 1 < argsArray.length) {
+            options.stage28Assignments = argsArray[++i];
+        } else if (arg === '--stage28-candidate-support' && i + 1 < argsArray.length) {
+            options.stage28CandidateSupport = argsArray[++i];
+        } else if (arg === '--candidate-support-out' && i + 1 < argsArray.length) {
+            options.candidateSupportOut = argsArray[++i];
+        } else if (arg === '--pruned-candidate-log' && i + 1 < argsArray.length) {
+            options.prunedCandidateLog = argsArray[++i];
         }
+
     }
     return options;
 }
@@ -708,6 +743,19 @@ async function run() {
         }
     }
 
+    if (command === 'assign-mountain-summits-canonical-plus-supplemental') {
+        if (!options.mountains || !options.canonicalSummitCandidates || !options.supplementalCandidates ||
+            !options.supplementalManifest || !options.groundingReference || !options.stage28Assignments ||
+            !options.stage28CandidateSupport || !options.activityLinks || !options.municipalityLookup ||
+            !options.municipalityStability || !options.municipalityAdjacency || !options.out ||
+            !options.candidateSupportOut || !options.prunedCandidateLog || !options.manifest ||
+            !options.reviewDir || !options.report) {
+            log.error(`Error: --mountains, --canonical-summit-candidates, --supplemental-candidates, --supplemental-manifest, --grounding-reference, --stage28-assignments, --stage28-candidate-support, --activity-links, --municipality-lookup, --municipality-stability, --municipality-adjacency, --out, --candidate-support-out, --pruned-candidate-log, --manifest, --review-dir, and --report are required for 'assign-mountain-summits-canonical-plus-supplemental'.`);
+            printUsageAndExit();
+        }
+    }
+
+
     try {
         switch (command) {
             case 'intake':
@@ -824,6 +872,10 @@ async function run() {
             case 'generate-gemini-near-gpx-supplemental-candidates':
                 await require('./commands/generate-gemini-near-gpx-supplemental-candidates')(options);
                 break;
+            case 'assign-mountain-summits-canonical-plus-supplemental':
+                await require('./commands/assign-mountain-summits-canonical-plus-supplemental')(options);
+                break;
+
 
 
             case 'test':

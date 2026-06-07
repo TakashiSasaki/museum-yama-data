@@ -33,6 +33,8 @@ require('./test_grounding_assisted_review_reduction_v2');
 require('./test_gemini_grounded_summit_assignment');
 require('./test_gemini_grounded_balanced_summit_assignment');
 require('./test_gemini_near_gpx_supplemental_candidates');
+require('./test_canonical_plus_supplemental_assignment');
+
 
 
 

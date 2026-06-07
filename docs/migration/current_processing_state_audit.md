@@ -654,12 +654,31 @@ This document inventories and verifies the current execution state of the data-p
 
 ---
 
+### 32. Gemini-Grounded Canonical Plus Supplemental Assignment Execution
+
+* **Status**: `executed_verified`
+* **Stage**: `mountain_summit_coordinate_assignment`
+* **Method ID**: `gemini_grounded_canonical_plus_supplemental_assignment`
+* **Run ID**: `2026-06-07_gemini_grounded_canonical_plus_supplemental_assignment`
+* **Report**: `docs/migration/gemini_grounded_canonical_plus_supplemental_assignment_report.md`
+* **Feature output namespace**: `data/04_feature/mountain_summit_assignments/2026-06-07_gemini_grounded_canonical_plus_supplemental_assignment/`
+* **Review output namespace**: `data/08_reporting/mountain_summit_assignment_review/2026-06-07_gemini_grounded_canonical_plus_supplemental_assignment/`
+* **Assignment outputs generated**: true
+* **Review outputs generated**: true
+* **Current review entry point replacement**: false
+* **Canonical candidates overwritten**: false
+* **Stage 30 supplemental candidates overwritten**: false
+* **Stage 27/28 outputs regenerated**: false
+* **Note**: Supplemental candidates remain non-canonical and review-required when proposed.
+
+---
+
 
 ## Current Human Review Entry Points
 
 Current human review entry point remains Stage 25 `grounding_assisted_review_v2`.
 
-Stages 27–31 are review-planning, assignment, supplemental-candidate, and future-assignment experiments. They do not yet replace Stage 25.
+Stages 27–32 are review-planning, assignment, supplemental-candidate, and future-assignment experiments. They do not yet replace Stage 25.
 
 Human reviewers should use the grounding-assisted review artifacts v2 (Stage 25) as the latest entry point:
 
