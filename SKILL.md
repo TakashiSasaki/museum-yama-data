@@ -585,7 +585,42 @@ node cli.js generate-gemini-near-gpx-supplemental-candidates \
 
 
 
+#### 4q. `assign-mountain-summits-canonical-plus-supplemental` (Portable)
+
+Executes the Stage 31 downstream assignment experiment combining canonical summit candidates and Stage 30 supplemental candidates.
+
+- Requires `--mountains`, `--canonical-summit-candidates`, `--supplemental-candidates`, `--supplemental-manifest`, `--grounding-reference`, `--stage28-assignments`, `--stage28-candidate-support`, `--activity-links`, `--municipality-lookup`, `--municipality-stability`, `--municipality-adjacency`, `--out`, `--candidate-support-out`, `--pruned-candidate-log`, `--manifest`, `--review-dir`, and `--report`.
+- Resolves conflicts using a 30m duplicate check: if a supplemental candidate is within 30m of any canonical candidate, the canonical candidate is preferred and the review category is set to `canonical_preferred_over_duplicate_supplemental`.
+- Supplemental candidate fallback coordinates always force `needs_human_review = true` and include `supplemental_unverified` in review reason codes.
+- Writes proposed assignments JSONL, candidate support links JSONL, pruned candidate log JSONL, a stage manifest, CSV files for human review per category, and a summary Markdown report.
+- Strictly enforces repository-relative path normalization.
+- All-or-nothing check: uses `StagedWriter` to prevent partial outputs and throws error if any target file already exists.
+
+```sh
+node cli.js assign-mountain-summits-canonical-plus-supplemental \
+  --mountains "data/03_primary/mountains/ehime_mountain_source_rows.json" \
+  --canonical-summit-candidates "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl" \
+  --supplemental-candidates "data/03_primary/summit_candidates/2026-06-07_gemini_near_gpx_supplemental_candidate_expansion/supplemental_summit_candidates.jsonl" \
+  --supplemental-manifest "data/03_primary/summit_candidates/2026-06-07_gemini_near_gpx_supplemental_candidate_expansion/supplemental_summit_candidates_manifest.json" \
+  --grounding-reference "data/04_feature/mountain_geographic_grounding/2026-06-06/grounding_reference_index.jsonl" \
+  --stage28-assignments "data/04_feature/mountain_summit_assignments/2026-06-07_gemini_grounded_balanced_summit_assignment/proposed_summit_assignments.jsonl" \
+  --stage28-candidate-support "data/04_feature/mountain_summit_assignments/2026-06-07_gemini_grounded_balanced_summit_assignment/candidate_support_links.jsonl" \
+  --activity-links "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl" \
+  --municipality-lookup "data/04_feature/location_reference/municipality_point_lookup/summit_candidates/2026-05-12/summit_candidate_municipality_lookup.jsonl" \
+  --municipality-stability "data/04_feature/location_reference/municipality_point_lookup_stability/summit_candidates/2026-05-12/summit_candidate_municipality_stability.jsonl" \
+  --municipality-adjacency "data/04_feature/location_reference/municipality_adjacency/ehime/2026-01-01/municipality_adjacency.json" \
+  --out "data/04_feature/mountain_summit_assignments/2026-06-07_gemini_grounded_canonical_plus_supplemental_assignment/proposed_summit_assignments.jsonl" \
+  --candidate-support-out "data/04_feature/mountain_summit_assignments/2026-06-07_gemini_grounded_canonical_plus_supplemental_assignment/candidate_support_links.jsonl" \
+  --pruned-candidate-log "data/04_feature/mountain_summit_assignments/2026-06-07_gemini_grounded_canonical_plus_supplemental_assignment/pruned_candidate_log.jsonl" \
+  --manifest "data/04_feature/mountain_summit_assignments/2026-06-07_gemini_grounded_canonical_plus_supplemental_assignment/proposed_summit_assignments_manifest.json" \
+  --review-dir "data/08_reporting/mountain_summit_assignment_review/2026-06-07_gemini_grounded_canonical_plus_supplemental_assignment" \
+  --report "docs/migration/gemini_grounded_canonical_plus_supplemental_assignment_report.md"
+```
+
+
+
 #### 5. `validate` (Legacy)
+
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
 - Checks for well-formed XML and geospatial elements.
 - Checks coordinate bounds, elevations, and times.
