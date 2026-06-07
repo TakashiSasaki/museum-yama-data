@@ -564,11 +564,38 @@ This document inventories and verifies the current execution state of the data-p
 
 ---
 
+### 29. Summit Candidate Extraction Refinement Planning
+
+* **Status**: `analysis_complete_implementation_not_started`
+* **Stage**: `summit_candidate_extraction_refinement_planning`
+* **Recommended Method ID**: `gemini_near_gpx_supplemental_candidate_expansion`
+* **Scope**: Analysis and planning for improving summit candidate extraction and shared-candidate ambiguity after the balanced Gemini-grounded assignment run.
+* **Plan document**:
+  - `docs/migration/mountain_summit_assignment_candidate_extraction_refinement_plan.md`
+* **Progress document**:
+  - `docs/migration/gemini_near_gpx_supplemental_candidate_expansion_progress.md`
+* **Analysis outputs**:
+  - `data/08_reporting/mountain_summit_assignment_review/2026-06-07_gemini_grounded_balanced_summit_assignment/candidate_extraction_refinement_analysis/shared_candidate_deep_dive.csv`
+  - `data/08_reporting/mountain_summit_assignment_review/2026-06-07_gemini_grounded_balanced_summit_assignment/candidate_extraction_refinement_analysis/traverse_track_peak_coverage.csv`
+  - `data/08_reporting/mountain_summit_assignment_review/2026-06-07_gemini_grounded_balanced_summit_assignment/candidate_extraction_refinement_analysis/name_missing_gpx_supported_cases.csv`
+  - `data/08_reporting/mountain_summit_assignment_review/2026-06-07_gemini_grounded_balanced_summit_assignment/candidate_extraction_refinement_analysis/candidate_extraction_gap_hypotheses.csv`
+  - `data/08_reporting/mountain_summit_assignment_review/2026-06-07_gemini_grounded_balanced_summit_assignment/candidate_extraction_refinement_analysis/refinement_policy_options.csv`
+  - `data/08_reporting/mountain_summit_assignment_review/2026-06-07_gemini_grounded_balanced_summit_assignment/candidate_extraction_refinement_analysis/summary.md`
+  - `data/08_reporting/mountain_summit_assignment_review/2026-06-07_gemini_grounded_balanced_summit_assignment/candidate_extraction_refinement_analysis/manifest.json`
+* **Implementation status**: not started.
+* **Supplemental candidate outputs generated**: false.
+* **Assignment outputs regenerated**: false.
+* **Current review entry point replacement**: false.
+* **Required next step before implementation**: create a new source coverage audit and source-to-target mapping audit for raw GPX trackpoint access and supplemental candidate representation.
+* **Note**: This stage does not change the current Stage 25 human review entry point. It only records the conclusion that threshold relaxation alone is insufficient and that candidate extraction / supplemental candidate generation should be audited before implementation.
+
+---
+
 ## Current Human Review Entry Points
 
 Current human review entry point remains Stage 25 `grounding_assisted_review_v2`.
 
-The Gemini-grounded assignment method has generated verified review-planning outputs, but it does not yet replace Stage 25.
+Stages 27–29 are review-planning, assignment, and candidate-extraction-refinement experiments. They do not yet replace Stage 25.
 
 Human reviewers should use the grounding-assisted review artifacts v2 (Stage 25) as the latest entry point:
 
