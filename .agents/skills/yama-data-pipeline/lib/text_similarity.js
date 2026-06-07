@@ -84,8 +84,52 @@ function computeTitleSimilarity(title1, title2) {
     };
 }
 
+function normalizeJapaneseText(text) {
+    if (!text) return '';
+    return text.normalize('NFKC')
+        .toLowerCase()
+        .replace(/[・／/,\-–—()＋+　\s]/g, '');
+}
+
+function matchMountainNames(name1, name2) {
+    if (!name1 || !name2) return { match: false, type: 'none' };
+
+    const norm1 = normalizeJapaneseText(name1);
+    const norm2 = normalizeJapaneseText(name2);
+
+    if (!norm1 || !norm2) return { match: false, type: 'none' };
+
+    // exact normalized match
+    if (norm1 === norm2) {
+        return { match: true, type: 'exact_normalized' };
+    }
+
+    // Substring match
+    if (norm1.includes(norm2) || norm2.includes(norm1)) {
+        return { match: true, type: 'substring_normalized' };
+    }
+
+    // Suffix stripping as fallback auxiliary signal (山, 峰, 岳)
+    const stripSuffix = (t) => t.replace(/[山峰岳]$/, '');
+    const stripped1 = stripSuffix(norm1);
+    const stripped2 = stripSuffix(norm2);
+
+    if (stripped1.length >= 2 && stripped2.length >= 2) {
+         if (stripped1 === stripped2) {
+             return { match: true, type: 'suffix_stripped_exact' };
+         }
+         if (stripped1.includes(stripped2) || stripped2.includes(stripped1)) {
+             return { match: true, type: 'suffix_stripped_substring' };
+         }
+    }
+
+    return { match: false, type: 'none' };
+}
+
 module.exports = {
     normalizeText,
     tokenize,
-    computeTitleSimilarity
+    computeTitleSimilarity,
+    normalizeJapaneseText,
+    matchMountainNames
 };

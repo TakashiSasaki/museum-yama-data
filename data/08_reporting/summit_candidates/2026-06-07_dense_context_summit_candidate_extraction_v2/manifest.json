@@ -1,0 +1,40 @@
+{
+  "stage": "summit_candidate_extraction",
+  "method_id": "dense_context_summit_candidate_extraction_v2",
+  "run_id": "2026-06-07_dense_context_summit_candidate_extraction_v2",
+  "schema_version": "1.0",
+  "created_at": "2026-06-07T14:47:12.806Z",
+  "branch": "museum-yama-data",
+  "inputs": {
+    "raw_gpx": "data/01_raw/gpx/2026-05-12"
+  },
+  "outputs": {
+    "candidates": "data/03_primary/summit_candidates/2026-06-07_dense_context_summit_candidate_extraction_v2/summit_candidates.jsonl"
+  },
+  "summary": {
+    "raw_gpx_file_count": 293,
+    "raw_trackpoint_count": 80131,
+    "mountain_source_row_count": 531,
+    "canonical_candidate_count": 496,
+    "stage30_supplemental_candidate_count": 31,
+    "stage32_assignment_count": 531,
+    "output_candidate_count": 864,
+    "candidate_type_counts": {
+      "prominent_local_peak": 526,
+      "named_track_context_candidate": 296,
+      "gemini_near_trackpoint_peak": 42
+    },
+    "zero_candidate_gpx_count": 7,
+    "gpx_files_over_soft_candidate_limit": 0,
+    "new_candidates_vs_canonical_30m_count": 368,
+    "matched_existing_canonical_30m_count": 496,
+    "stage30_supplemental_recovered_30m_count": 7,
+    "stage32_supplemental_fallback_recovered_30m_count": 0,
+    "repository_relative_path_violations": 0,
+    "source_files_modified": false,
+    "canonical_candidates_overwritten": false,
+    "stage30_outputs_regenerated": false,
+    "stage32_outputs_regenerated": false,
+    "current_review_entry_point_replaced": false
+  }
+}
