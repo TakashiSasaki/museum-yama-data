@@ -15,8 +15,9 @@ function writeJsonl(filePath, records) {
     fs.writeFileSync(filePath, records.map(r => JSON.stringify(r)).join('\n') + '\n', 'utf8');
 }
 
-(async function runTests() {
+async function runTests() {
     console.log('--- Starting Gemini-Grounded Balanced Mountain Summit Assignment Unit Tests ---');
+
 
     // 1. Test Municipality Compatibility Classifier
     const mockAdjacency = {
@@ -244,4 +245,13 @@ function writeJsonl(filePath, records) {
     // Clean up
     fs.rmSync(tempDir, { recursive: true, force: true });
     console.log('All assign-mountain-summits-gemini-grounded-balanced tests passed.');
-})();
+}
+
+if (require.main === module) {
+    runTests().catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
+}
+module.exports = runTests;
+

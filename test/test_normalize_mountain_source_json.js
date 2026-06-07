@@ -123,7 +123,11 @@ async function run() {
     console.log('normalize-mountain-source-json tests passed!');
 }
 
-run().catch(err => {
-    console.error('Test failed:', err);
-    process.exit(1);
-});
+if (require.main === module) {
+    run().catch(err => {
+        console.error('Test failed:', err);
+        process.exit(1);
+    });
+}
+module.exports = run;
+

@@ -215,7 +215,11 @@ async function run() {
     console.log('extract-summit-candidate-features tests passed!');
 }
 
-run().catch(err => {
-    console.error('Test failed:', err);
-    process.exit(1);
-});
+if (require.main === module) {
+    run().catch(err => {
+        console.error('Test failed:', err);
+        process.exit(1);
+    });
+}
+module.exports = run;
+

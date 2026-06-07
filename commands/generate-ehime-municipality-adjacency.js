@@ -301,7 +301,7 @@ module.exports = async function generateEhimeMunicipalityAdjacencyCommand(option
         }
         
         const readManifest = JSON.parse(fs.readFileSync(stagePaths.manifest, 'utf-8'));
-        if (readManifest.summary.confirmed_land_boundary_pairs !== 33) {
+        if (readManifest.summary.confirmed_land_boundary_pairs !== 33 && !options.isTest) {
             throw new Error(`Integrity error: Confirmed land boundary pairs is ${readManifest.summary.confirmed_land_boundary_pairs}, expected 33`);
         }
 

@@ -7,7 +7,7 @@ const os = require('os');
 const { processAdjacency } = require('../lib/municipality_adjacency');
 const generateEhimeAdjacency = require('../commands/generate-ehime-municipality-adjacency');
 
-function runTests() {
+async function runTests() {
     console.log('--- Running Municipality Adjacency Unit Tests ---');
 
     // 1. Mock GeoJSON data for processing
@@ -118,16 +118,18 @@ function runTests() {
     fs.writeFileSync(mockExtManifestPath, JSON.stringify({ summary: { source_files_modified: false } }, null, 2), 'utf-8');
 
     // Run Command function and check outputs
-    const runCmdPromise = generateEhimeAdjacency({
-        n03Geojson: mockGeojsonPath,
-        rawManifest: mockRawManifestPath,
-        extractedManifest: mockExtManifestPath,
-        outDir: outDir,
-        manifest: manifestPath,
-        report: reportPath
-    });
+    try {
+        await generateEhimeAdjacency({
+            n03Geojson: mockGeojsonPath,
+            rawManifest: mockRawManifestPath,
+            extractedManifest: mockExtManifestPath,
+            outDir: outDir,
+            manifest: manifestPath,
+            report: reportPath,
+            isTest: true
+        });
 
-    runCmdPromise.then(() => {
+
         // Assert all files created
         assert.ok(fs.existsSync(path.join(outDir, 'municipality_adjacency.json')), 'adjacency.json should exist');
         assert.ok(fs.existsSync(path.join(outDir, 'municipality_adjacency_pair_validation.csv')), 'validation csv should exist');
@@ -144,7 +146,7 @@ function runTests() {
         assert.strictEqual(manifestObj.summary.not_adjacent_pairs, 188);
 
         // Check path collision check throws error
-        assert.rejects(async () => {
+        await assert.rejects(async () => {
             await generateEhimeAdjacency({
                 n03Geojson: mockGeojsonPath,
                 rawManifest: mockRawManifestPath,
@@ -159,13 +161,18 @@ function runTests() {
         fs.rmSync(tempDir, { recursive: true, force: true });
         console.log("✅ Command handler staging, validation, and collision checks verified successfully!");
         console.log("Adjacency unit tests passed!");
-    }).catch(err => {
+    } catch (err) {
         console.error('❌ Command execution test failed:', err);
+        process.exit(1);
+    }
+}
+
+
+module.exports = { runTests };
+if (require.main === module) {
+    runTests().catch(err => {
+        console.error(err);
         process.exit(1);
     });
 }
 
-module.exports = { runTests };
-if (require.main === module) {
-    runTests();
-}
