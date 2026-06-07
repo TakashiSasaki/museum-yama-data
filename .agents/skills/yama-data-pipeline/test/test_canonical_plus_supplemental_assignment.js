@@ -205,7 +205,15 @@ async function testPerform() {
     fs.rmSync(tempDir, { recursive: true, force: true });
 }
 
-testPerform().catch(err => {
-    console.error('❌ FAIL:', err);
-    process.exit(1);
-});
+async function runTests() {
+    await testPerform();
+}
+
+if (require.main === module) {
+    runTests().catch(err => {
+        console.error('❌ FAIL:', err);
+        process.exit(1);
+    });
+}
+module.exports = runTests;
+

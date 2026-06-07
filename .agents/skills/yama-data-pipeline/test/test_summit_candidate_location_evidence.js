@@ -210,7 +210,11 @@ async function run() {
     console.log('enrich-summit-candidates-with-reverse-geocoding tests passed!');
 }
 
-run().catch(err => {
-    console.error('Test failed:', err);
-    process.exit(1);
-});
+if (require.main === module) {
+    run().catch(err => {
+        console.error('Test failed:', err);
+        process.exit(1);
+    });
+}
+module.exports = run;
+

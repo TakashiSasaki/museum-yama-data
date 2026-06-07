@@ -234,15 +234,12 @@ async function performAssignment(inputs) {
         let evidenceGpx = null;
         let notes = '';
 
-        if (!grounding) {
-            reasonCodes.push('no_grounding_reference');
-            notes = 'No grounding reference record found for this mountain.';
-        } else if (grounding.coordinate_conflict) {
+        if (grounding && grounding.coordinate_conflict) {
             reviewCategory = 'conflict_case';
             needsReview = true;
             reasonCodes.push('gemini_coordinate_conflict');
             notes = 'Gemini grounding index indicates a coordinate conflict across raw responses. Proposing no coordinate to avoid false consensus.';
-        } else if (grounding.has_usable_coordinate) {
+        } else if (grounding && grounding.has_usable_coordinate) {
             const gLat = grounding.selected_grounding_lat;
             const gLon = grounding.selected_grounding_lon;
 
@@ -559,6 +556,10 @@ async function performAssignment(inputs) {
             }
         } else {
             // Fallback checking
+            if (!grounding) {
+                reasonCodes.push('no_grounding_reference');
+                notes = 'No grounding reference record found for this mountain.';
+            }
             let fallbackSuccess = false;
             if (csvLat && csvLon) {
                 const csvCloseCandidates = [];

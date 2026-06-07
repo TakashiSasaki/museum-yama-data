@@ -11,7 +11,7 @@ function writeJsonl(filePath, records) {
     fs.writeFileSync(filePath, records.map(r => JSON.stringify(r)).join('\n') + '\n', 'utf8');
 }
 
-(async function runTests() {
+async function runTests() {
     console.log('--- Starting Gemini-Grounded Mountain Summit Assignment Unit Tests ---');
 
     const tempDir = path.join(__dirname, 'temp_test_assignment');
@@ -19,6 +19,7 @@ function writeJsonl(filePath, records) {
         fs.rmSync(tempDir, { recursive: true, force: true });
     }
     fs.mkdirSync(tempDir, { recursive: true });
+
 
     // Mock Files Paths
     const mountainsPath = path.join(tempDir, 'mountains.json');
@@ -352,13 +353,14 @@ function writeJsonl(filePath, records) {
         // Candidate for Mountain 4: weak support (~450m distance)
         {
             summit_candidate_id: 'cand_004',
-            lat: 33.8040,
-            lon: 133.3240,
+            lat: 33.8030,
+            lon: 133.3230,
             ele_m: 1693,
             track_name: '平家平ルート',
             source_gpx_basename: 'heikedaira.gpx',
             source_gpx_path: 'gpx/raw/heikedaira.gpx'
         },
+
         // Candidate for Mountain 5: distant support (~800m distance)
         {
             summit_candidate_id: 'cand_005',
@@ -385,7 +387,7 @@ function writeJsonl(filePath, records) {
             lat: 33.8505,
             lon: 133.3005,
             ele_m: 1800,
-            track_name: '三嶺ルート',
+            track_name: '三嶺',
             source_gpx_basename: 'miune.gpx',
             source_gpx_path: 'gpx/raw/miune.gpx'
         },
@@ -652,4 +654,13 @@ function writeJsonl(filePath, records) {
     // Clean up
     fs.rmSync(tempDir, { recursive: true, force: true });
     console.log('All assign-mountain-summits-gemini-grounded tests passed.');
-})();
+}
+
+if (require.main === module) {
+    runTests().catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
+}
+module.exports = runTests;
+

@@ -80,7 +80,11 @@ async function run() {
     console.log('validate-mountain-sources tests passed!');
 }
 
-run().catch(err => {
-    console.error('Test failed:', err);
-    process.exit(1);
-});
+if (require.main === module) {
+    run().catch(err => {
+        console.error('Test failed:', err);
+        process.exit(1);
+    });
+}
+module.exports = run;
+

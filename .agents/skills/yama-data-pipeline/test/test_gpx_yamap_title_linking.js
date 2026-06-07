@@ -126,7 +126,7 @@ const reviewDir = path.join(tempDir, 'review');
 const reportPath = path.join(tempDir, 'report.md');
 
 // Run command programmatically
-(async () => {
+async function runTests() {
     await enrichCommand({
         dateLinks: mockDateLinksJsonl,
         gpxManifest: mockGpxManifest,
@@ -168,4 +168,13 @@ const reportPath = path.join(tempDir, 'report.md');
     // Clean up temp dir
     fs.rmSync(tempDir, { recursive: true, force: true });
     console.log('✅ PASS: text similarity and candidate enrichment logic');
-})();
+}
+
+if (require.main === module) {
+    runTests().catch(err => {
+        console.error('Test failed:', err);
+        process.exit(1);
+    });
+}
+module.exports = runTests;
+
