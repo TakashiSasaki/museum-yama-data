@@ -77,3 +77,16 @@ The `local_peak_like_score` estimates if the point is a local maxima within a lo
 ## 7. Next Recommended Step
 
 We recommend running a new summit assignment experiment that uses both the existing canonical candidates and these newly generated supplemental candidates to see if the assignment coverage can be safely expanded.
+
+---
+
+## 8. Post-Run Consistency Notes
+
+* **Execution Base Commit vs Committed Output Commit**: The execution base commit inspected was `cf35552`. The committed output commit is `19342e8` which contains the generated Stage 30 output files.
+* **Non-Canonical Status**: All generated supplemental candidates are non-canonical and serve as review-planning evidence only. They do not replace canonical candidates.
+* **Path Portability Issue**: Stage 30 outputs contain local Windows absolute paths inside `evidence.source_file_provenance`. These do not affect coordinate calculations. Future generators must write repository-relative paths only. Existing Stage 30 outputs are not regenerated in this cleanup.
+* **Usable Grounding Count Definitions**:
+  - `mountains_with_usable_grounding = 333` refers to records in the grounding reference with usable coordinates.
+  - Previous planning references to `295` refer to the subset in the balanced assignment context with generated proposed coordinates.
+* **Duplicate/Near-Duplicate Policy**: Future assignment experiments must handle duplicates by preferring canonical candidates when a supplemental candidate is within a duplicate radius of 30 m.
+* **Outputs Preservation**: This documentation cleanup task does not regenerate Stage 30 outputs.

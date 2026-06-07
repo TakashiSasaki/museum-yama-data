@@ -609,6 +609,7 @@ This document inventories and verifies the current execution state of the data-p
 * **Assignment outputs regenerated**: false.
 * **Current review entry point replacement**: false.
 * **Note**: All generated candidates are marked as non-canonical evidence for review planning only (`supplemental_candidate_type = supplemental_gemini_near_gpx_point`), with `needs_human_review = true`. They do not overwrite existing summit candidates and proposed assignments, and do not replace Stage 25.
+* **Post-run consistency note**: Stage 30 generated 31 non-canonical supplemental candidates. Some generated evidence provenance fields contain local absolute paths; these are provenance-only and should be normalized to repository-relative paths in future generator runs. Future assignment experiments must handle canonical/supplemental near-duplicates explicitly.
 
 ---
 

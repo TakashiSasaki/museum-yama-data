@@ -27,12 +27,20 @@
 * Recommended by:
   - `docs/migration/mountain_summit_assignment_candidate_extraction_refinement_plan.md`
 
-## Required Before Implementation
+## Completed Preconditions
 
-* Source coverage audit for raw GPX trackpoint access.
-* Source-to-target mapping audit for supplemental candidate records.
-* Explicit namespace decision for supplemental candidate outputs.
-* Confirmation that old summit candidates and assignment outputs will not be overwritten.
+* Source coverage audit for raw GPX trackpoint access: completed.
+* Source-to-target mapping audit for supplemental candidate records: completed.
+* Supplemental output namespace decision: completed.
+* Non-overwrite constraints for old summit candidates and assignment outputs: confirmed.
+
+## Remaining Work
+
+* Human review of supplemental candidates has not started.
+* Supplemental candidates have not been accepted as canonical summit coordinates.
+* A downstream assignment experiment using canonical + supplemental candidates has not started.
+* Duplicate or near-duplicate handling between canonical and supplemental candidates has not yet been implemented.
+* Repository-relative path normalization should be enforced for future generated evidence/provenance fields.
 
 ## Non-Goals
 
@@ -41,3 +49,25 @@
 * Do not overwrite existing summit candidates.
 * Do not overwrite Stage 27 or Stage 28 assignment outputs.
 * Do not replace Stage 25 review entry point.
+
+## Post-Implementation Consistency Notes
+
+### Usable Grounding Count Definitions
+
+* `mountains_with_usable_grounding = 333` in the Stage 30 manifest refers to records in the Gemini grounding reference with usable grounding coordinates.
+* Earlier planning/audit references to `295` refer to the subset represented in the balanced assignment context with generated proposed coordinates.
+* These counts use different denominators and should not be compared as the same metric.
+
+### Path Portability Note
+
+* Stage 30 outputs contain local Windows absolute paths in some `evidence.source_file_provenance` fields.
+* These fields are provenance-only and do not affect coordinate calculations.
+* Future generators must write repository-relative paths in generated JSON/JSONL evidence and manifests.
+* Existing Stage 30 generated data is not regenerated in this cleanup task.
+
+### Canonical/Supplemental Duplicate Policy
+
+* Supplemental candidates may be identical or near-identical to existing canonical summit candidates.
+* A future assignment experiment must prefer canonical candidates when the supplemental point is within a small duplicate radius of an existing canonical candidate.
+* Suggested duplicate radius for future experiments: 30 m.
+* Supplemental candidates farther from canonical candidates may be used as fallback review-planning evidence, but remain non-canonical and review-required.
