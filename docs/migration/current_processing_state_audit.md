@@ -1,5 +1,22 @@
 # Current Processing State Audit
 
+## Current Processing State Audit Scope Policy
+
+This document is the central status ledger for repository data-processing stages.
+
+It should remain an index, not a full report. Each stage entry should be concise and should record only:
+
+* status,
+* stage/method/run identity,
+* authoritative document links,
+* generated-output flags,
+* whether current human review entry point was replaced,
+* critical blockers or signoff flags.
+
+Detailed source coverage audits, source-to-target mappings, schema inventories, analysis tables, implementation reports, and long rationale sections must be kept in method-specific documents and linked from this file rather than copied into it.
+
+When adding a new stage, prefer a compact entry and link to the detailed documents.
+
 This document inventories and verifies the current execution state of the data-processing steps in this repository.
 
 ## DVC Setup Audit
@@ -613,12 +630,36 @@ This document inventories and verifies the current execution state of the data-p
 
 ---
 
+### 31. Gemini-Grounded Canonical Plus Supplemental Assignment Planning
+
+* **Status**: `planning_audit_complete_implementation_not_started`
+* **Stage**: `mountain_summit_coordinate_assignment_planning`
+* **Method ID**: `gemini_grounded_canonical_plus_supplemental_assignment`
+* **Run ID**: `2026-06-07_gemini_grounded_canonical_plus_supplemental_assignment`
+* **Scope**: Planning and audit for a future assignment experiment that uses both canonical summit candidates and Stage 30 supplemental candidates.
+* **Authoritative documents**:
+  - `docs/migration/gemini_grounded_canonical_plus_supplemental_assignment_plan.md`
+  - `docs/migration/gemini_grounded_canonical_plus_supplemental_assignment_source_coverage_audit.md`
+  - `docs/migration/gemini_grounded_canonical_plus_supplemental_assignment_source_to_target_mapping.md`
+  - `docs/migration/gemini_grounded_canonical_plus_supplemental_assignment_progress.md`
+* **Implementation status**: not started.
+* **Assignment outputs generated**: false.
+* **Review outputs generated**: false.
+* **Current review entry point replacement**: false.
+* **Mapping status**:
+  - `Unmigrated Gaps: 0`
+  - `Needs Decision: 0`
+* **Candidate policy summary**: canonical summit candidates remain preferred; Stage 30 supplemental candidates are non-canonical fallback evidence only; supplemental candidates within 30 m of canonical candidates are duplicates and canonical candidates must be preferred.
+* **Note**: This stage does not modify canonical candidates, Stage 30 supplemental candidates, Stage 27/28 assignment outputs, or Stage 25 review entry point.
+
+---
+
 
 ## Current Human Review Entry Points
 
 Current human review entry point remains Stage 25 `grounding_assisted_review_v2`.
 
-Stages 27–30 are review-planning, assignment, and candidate-extraction-refinement experiments. They do not yet replace Stage 25.
+Stages 27–31 are review-planning, assignment, supplemental-candidate, and future-assignment experiments. They do not yet replace Stage 25.
 
 Human reviewers should use the grounding-assisted review artifacts v2 (Stage 25) as the latest entry point:
 
