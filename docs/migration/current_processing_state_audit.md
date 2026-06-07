@@ -521,24 +521,25 @@ This document inventories and verifies the current execution state of the data-p
 
 ---
 
-### 27. Gemini-Grounded Mountain Summit Assignment Planning
+### 27. Gemini-Grounded Mountain Summit Assignment Execution
 
-* **Status**: `planning_audit_complete_implementation_not_started`
+* **Status**: `executed_verified`
 * **Stage**: `mountain_summit_coordinate_assignment`
 * **Method ID**: `gemini_grounded_summit_assignment`
 * **Run ID**: `2026-06-07_gemini_grounded_summit_assignment`
-* **Scope**: Documentation, source coverage audit, and source-to-target mapping for a new one-record-per-mountain proposed summit coordinate assignment method.
+* **Scope**: One-record-per-mountain proposed summit coordinate assignment method.
 * **Plan document**:
   - `docs/migration/mountain_summit_assignment_gemini_grounded_plan.md`
 * **Audit documents**:
   - `docs/migration/mountain_summit_assignment_gemini_grounded_source_coverage_audit.md`
   - `docs/migration/mountain_summit_assignment_gemini_grounded_source_to_target_mapping.md`
-* **Implementation status**: not started.
-* **Assignment outputs generated**: false.
-* **Review outputs generated**: false.
+* **Implementation status**: executed.
+* **Assignment outputs generated**: true.
+* **Review outputs generated**: true.
 * **Current review entry point replacement**: false.
 * **Previous v3 implementation attempt**: PR #93 is closed/unmerged and treated as reference-only; it is not the active implementation path for this method.
-* **Note**: This method is distinct from the older v3 candidate-linking audit and from any closed/unmerged v3 implementation PR. Existing Stage 9–25 outputs remain preserved as legacy/baseline artifacts and are not overwritten.
+* **Note**: This method is distinct from the older v3 candidate-linking audit and from any closed/unmerged v3 implementation PR. Existing Stage 9–25 outputs remain preserved as legacy/baseline artifacts and are not overwritten. Proposed assignments are generated under `data/04_feature/mountain_summit_assignments/2026-06-07_gemini_grounded_summit_assignment/` for review planning only, but do not replace Stage 25.
+
 
 ---
 

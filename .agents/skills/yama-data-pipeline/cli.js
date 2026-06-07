@@ -414,6 +414,10 @@ function parseArgs(argsArray) {
             options.stage21GroundingRefinedLinks = argsArray[++i];
         } else if (arg === '--stage21-review-queue' && i + 1 < argsArray.length) {
             options.stage21ReviewQueue = argsArray[++i];
+        } else if (arg === '--municipality-lookup' && i + 1 < argsArray.length) {
+            options.municipalityLookup = argsArray[++i];
+        } else if (arg === '--candidate-support-links' && i + 1 < argsArray.length) {
+            options.candidateSupportLinks = argsArray[++i];
         }
     }
     return options;
@@ -652,6 +656,16 @@ async function run() {
         }
     }
 
+    if (command === 'assign-mountain-summits-gemini-grounded') {
+        if (!options.mountains || !options.summitCandidates || !options.groundingReference ||
+            !options.municipalityLookup || !options.municipalityStability || !options.municipalityAdjacency ||
+            !options.out || !options.candidateSupportLinks || !options.prunedLog || !options.manifest ||
+            !options.reviewDir || !options.report) {
+            log.error(`Error: --mountains, --summit-candidates, --grounding-reference, --municipality-lookup, --municipality-stability, --municipality-adjacency, --out, --candidate-support-links, --pruned-log, --manifest, --review-dir, and --report are required for 'assign-mountain-summits-gemini-grounded'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -758,6 +772,9 @@ async function run() {
                 break;
             case 'generate-grounding-assisted-review-queues-v2':
                 await require('./commands/generate-grounding-assisted-review-queues-v2')(options);
+                break;
+            case 'assign-mountain-summits-gemini-grounded':
+                await require('./commands/assign-mountain-summits-gemini-grounded')(options);
                 break;
 
 
