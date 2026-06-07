@@ -3,10 +3,10 @@
 ## Authoritative Status
 
 * **Recommended Method ID**: `gemini_near_gpx_supplemental_candidate_expansion`
-* **Current status**: `recommended_by_analysis_audit_not_started`
+* **Current status**: `audit_complete_implementation_not_started`
 * **Implementation started?**: No
-* **Raw GPX trackpoint audit completed?**: No
-* **Source-to-target mapping completed?**: No
+* **Raw GPX trackpoint audit completed?**: Yes
+* **Source-to-target mapping completed?**: Yes
 * **Supplemental candidate outputs generated?**: No
 * **Assignment outputs regenerated?**: No
 * **Current human review entry point replaced?**: No

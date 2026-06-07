@@ -1,0 +1,10 @@
+metric,value
+total_files,293
+total_trackpoints,80131
+min_trackpoints,7
+max_trackpoints,1171
+mean_trackpoints,273.5
+median_trackpoints,186
+missing_elevation,80131
+missing_time,80131
+zero_trackpoint_files,0

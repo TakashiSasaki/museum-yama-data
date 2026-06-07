@@ -582,11 +582,13 @@ This document inventories and verifies the current execution state of the data-p
   - `data/08_reporting/mountain_summit_assignment_review/2026-06-07_gemini_grounded_balanced_summit_assignment/candidate_extraction_refinement_analysis/refinement_policy_options.csv`
   - `data/08_reporting/mountain_summit_assignment_review/2026-06-07_gemini_grounded_balanced_summit_assignment/candidate_extraction_refinement_analysis/summary.md`
   - `data/08_reporting/mountain_summit_assignment_review/2026-06-07_gemini_grounded_balanced_summit_assignment/candidate_extraction_refinement_analysis/manifest.json`
+* **Source coverage audit**: completed (see `docs/migration/gemini_near_gpx_supplemental_candidate_expansion_source_coverage_audit.md`).
+* **Source-to-target mapping audit**: completed (see `docs/migration/gemini_near_gpx_supplemental_candidate_expansion_source_to_target_mapping.md`).
 * **Implementation status**: not started.
 * **Supplemental candidate outputs generated**: false.
 * **Assignment outputs regenerated**: false.
 * **Current review entry point replacement**: false.
-* **Required next step before implementation**: create a new source coverage audit and source-to-target mapping audit for raw GPX trackpoint access and supplemental candidate representation.
+* **Next step**: implementation prompt may be prepared.
 * **Note**: This stage does not change the current Stage 25 human review entry point. It only records the conclusion that threshold relaxation alone is insufficient and that candidate extraction / supplemental candidate generation should be audited before implementation.
 
 ---

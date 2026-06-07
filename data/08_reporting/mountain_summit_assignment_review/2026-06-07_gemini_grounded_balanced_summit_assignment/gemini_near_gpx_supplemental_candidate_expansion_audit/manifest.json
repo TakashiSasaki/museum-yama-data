@@ -1,0 +1,12 @@
+{
+  "audit_namespace": "2026-06-07_gemini_grounded_balanced_summit_assignment/gemini_near_gpx_supplemental_candidate_expansion_audit",
+  "created_at": "2026-06-07T18:32:00Z",
+  "outputs": [
+    "raw_gpx_inventory.csv",
+    "raw_gpx_trackpoint_schema_samples.csv",
+    "raw_gpx_trackpoint_count_summary.csv",
+    "grounding_to_gpx_file_coverage.csv",
+    "existing_candidate_generation_provenance.csv",
+    "summary.md"
+  ]
+}

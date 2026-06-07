@@ -1,0 +1,5 @@
+element_name,attribute_name,data_type,sample_value,description
+trkpt,lat,float,33.8464981,Latitude coordinate (WGS84)
+trkpt,lon,float,132.7967931,Longitude coordinate (WGS84)
+ele,None,float,47.57,Elevation in meters (WGS84)
+time,None,string,2022-02-16T02:57:12Z,UTC timestamp in ISO 8601 format
