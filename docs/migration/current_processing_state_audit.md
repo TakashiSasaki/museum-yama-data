@@ -509,7 +509,21 @@ This document inventories and verifies the current execution state of the data-p
 
 ---
 
+### 26. Mountain-Summit Candidate Linking v3 Audit
+
+* **Status**: `audit_created_implementation_not_started`
+* **Scope**: v3 source coverage audit and source-to-target mapping audit only.
+* **Audit documents**:
+  - `docs/migration/mountain_summit_candidate_linking_v3_source_coverage_audit.md`
+  - `docs/migration/mountain_summit_candidate_linking_v3_source_to_target_mapping.md`
+* **Implementation status**: not started.
+* **Note**: Existing Stage 9–25 outputs remain preserved as legacy/baseline artifacts and are not overwritten.
+
+---
+
 ## Current Human Review Entry Points
+
+*(Note: v3 is currently audit-only and does not yet replace the current review entry point.)*
 
 Human reviewers should use the grounding-assisted review artifacts v2 (Stage 25) as the latest entry point:
 
