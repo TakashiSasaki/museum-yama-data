@@ -547,7 +547,7 @@ This document inventories and verifies the current execution state of the data-p
 
 Current human review entry point remains Stage 25 `grounding_assisted_review_v2`.
 
-The Gemini-grounded assignment method is currently planning/audit-only and does not yet replace Stage 25.
+The Gemini-grounded assignment method has generated verified review-planning outputs, but it does not yet replace Stage 25.
 
 Human reviewers should use the grounding-assisted review artifacts v2 (Stage 25) as the latest entry point:
 

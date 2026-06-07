@@ -2,7 +2,8 @@
 
 ## Execution Metadata
 * **Branch**: `museum-yama-data`
-* **HEAD Commit**: `b8c634d42bb4b17fd83da7c349d20eb14b4bfdf0`
+* **Execution Base Commit**: `b8c634d42bb4b17fd83da7c349d20eb14b4bfdf0` (The HEAD commit at which the command was executed)
+* **Outputs Committed In**: `6966f071fd56c552bcb139bfbd6e42c51d979475` (The commit containing the generated assignment outputs and report)
 * **Command Executed**: 
   ```sh
   node .agents/skills/yama-data-pipeline/cli.js assign-mountain-summits-gemini-grounded \

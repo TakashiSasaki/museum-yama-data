@@ -36,15 +36,47 @@
 * Source-to-target mapping completed.
 * `unmigrated gap` count: 0.
 * `needs decision` count: 0.
+* CLI command implemented:
+  - `.agents/skills/yama-data-pipeline/commands/assign-mountain-summits-gemini-grounded.js`
+* Assignment JSONL generated.
+* Assignment manifest generated.
+* Review CSV/Markdown generated.
+* Validation completed.
+* Old Stage 9–25 outputs were not overwritten.
+* Current human review entry point was not replaced.
 
 ## Not Yet Done
 
-* No CLI command has been implemented for this method.
-* No assignment JSONL has been generated.
-* No assignment manifest has been generated.
-* No review CSV/Markdown has been generated.
-* No current human review entry point has been replaced.
-* No old method output has been deleted or archived.
+* Generated assignments have not been human-reviewed.
+* Generated assignments have not been accepted as canonical coordinates.
+* Stage 25 `grounding_assisted_review_v2` has not been replaced as the current human review entry point.
+* Old method outputs have not been deleted or archived.
+* Downstream identity-resolution or final accepted-coordinate generation has not started.
+
+## Generated Output Summary
+
+* **Total mountains**: 531
+* **Assigned count**: 295
+* **Unassigned count**: 236
+* **Needs human review**: 531
+* **GPX-supported assignments**: 81
+* **Gemini-only assignments**: 214
+* **No-coordinate assignments**: 236
+
+### Review category counts
+
+* `auto_supported_not_canonical`: 0
+* `quick_review_recommended`: 22
+* `manual_review_required`: 31
+* `conflict_case`: 66
+* `gemini_only_coordinate_review`: 214
+* `no_assignment`: 198
+
+## Execution and Commit Metadata
+
+* **Execution base commit**: `b8c634d42bb4b17fd83da7c349d20eb14b4bfdf0`
+* **Implementation/output commit**: `6966f071fd56c552bcb139bfbd6e42c51d979475`
+* **Note**: Generated manifests may record the execution-time HEAD. The later implementation/output commit contains the committed generated outputs and documentation updates.
 
 ## Previous v3 Implementation Attempt
 
@@ -53,7 +85,7 @@
 * Merged: `false`
 * Previous v3 branch: `museum-yama-data-6980038160229133745`
 * Treatment: reference-only; not the active implementation path.
-* Note: This previous PR targeted v3 candidate-linking implementation. It is distinct from the active `gemini_grounded_summit_assignment` planning/audit path, which remains implementation-not-started.
+* Note: This previous PR targeted v3 candidate-linking implementation. It is distinct from the active `gemini_grounded_summit_assignment` planning/audit path.
 
 ## Output Namespace Reserved for Future Implementation
 
