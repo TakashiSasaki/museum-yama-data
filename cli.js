@@ -44,6 +44,7 @@ Commands:
   generate-grounding-assisted-summit-candidate-links Generate candidate links with grounding-early spatial search.
   generate-grounding-assisted-review-queues Generate review queues from grounding-assisted candidate links.
   generate-grounding-assisted-review-queues-v2 Generate review queues v2 from grounding-assisted candidate links.
+  generate-gemini-near-gpx-supplemental-candidates Generate supplemental candidates near Gemini grounding anchors.
 
 
 
@@ -259,6 +260,19 @@ generate-grounding-assisted-review-queues-v2 Options:
   --out-dir <path>                  Required. Path to output review directory.
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
+
+generate-gemini-near-gpx-supplemental-candidates Options:
+  --raw-gpx-dir <path>              Required. Path to raw GPX directory.
+  --mountains <path>                Required. Path to mountain source JSON.
+  --grounding-reference <path>      Required. Path to grounding reference index JSONL.
+  --existing-summit-candidates <path> Required. Path to existing summit candidates JSONL.
+  --summit-candidate-manifest <path> Required. Path to existing summit candidate manifest.json.
+  --balanced-assignments <path>     Required. Path to balanced proposed assignments JSONL.
+  --activity-links <path>           Required. Path to activity links JSONL.
+  --out <path>                      Required. Path to output supplemental candidates JSONL.
+  --manifest <path>                 Required. Path to output manifest JSON.
+  --report <path>                   Required. Path to output report markdown.
+  --review-dir <path>               Required. Path to output review directory.
 `);
 
     process.exit(code);
@@ -418,6 +432,14 @@ function parseArgs(argsArray) {
             options.municipalityLookup = argsArray[++i];
         } else if (arg === '--candidate-support-links' && i + 1 < argsArray.length) {
             options.candidateSupportLinks = argsArray[++i];
+        } else if (arg === '--raw-gpx-dir' && i + 1 < argsArray.length) {
+            options.rawGpxDir = argsArray[++i];
+        } else if (arg === '--existing-summit-candidates' && i + 1 < argsArray.length) {
+            options.existingSummitCandidates = argsArray[++i];
+        } else if (arg === '--summit-candidate-manifest' && i + 1 < argsArray.length) {
+            options.summitCandidateManifest = argsArray[++i];
+        } else if (arg === '--balanced-assignments' && i + 1 < argsArray.length) {
+            options.balancedAssignments = argsArray[++i];
         }
     }
     return options;
@@ -676,6 +698,16 @@ async function run() {
         }
     }
 
+    if (command === 'generate-gemini-near-gpx-supplemental-candidates') {
+        if (!options.rawGpxDir || !options.mountains || !options.groundingReference ||
+            !options.existingSummitCandidates || !options.summitCandidateManifest ||
+            !options.balancedAssignments || !options.activityLinks || !options.out ||
+            !options.manifest || !options.report || !options.reviewDir) {
+            log.error(`Error: --raw-gpx-dir, --mountains, --grounding-reference, --existing-summit-candidates, --summit-candidate-manifest, --balanced-assignments, --activity-links, --out, --manifest, --report, and --review-dir are required for 'generate-gemini-near-gpx-supplemental-candidates'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -788,6 +820,9 @@ async function run() {
                 break;
             case 'assign-mountain-summits-gemini-grounded-balanced':
                 await require('./commands/assign-mountain-summits-gemini-grounded-balanced')(options);
+                break;
+            case 'generate-gemini-near-gpx-supplemental-candidates':
+                await require('./commands/generate-gemini-near-gpx-supplemental-candidates')(options);
                 break;
 
 

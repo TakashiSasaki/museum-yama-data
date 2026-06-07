@@ -560,6 +560,30 @@ node cli.js assign-mountain-summits-gemini-grounded-balanced \
   --report "docs/migration/mountain_summit_assignment_gemini_grounded_balanced_report.md"
 ```
 
+#### 4p. `generate-gemini-near-gpx-supplemental-candidates` (Portable)
+
+Generates supplemental, non-canonical summit candidate points near Gemini grounding anchors by reading raw GPX trackpoints.
+
+- Requires `--raw-gpx-dir`, `--mountains`, `--grounding-reference`, `--existing-summit-candidates`, `--summit-candidate-manifest`, `--balanced-assignments`, `--activity-links`, `--out`, `--manifest`, `--report`, and `--review-dir`.
+- Generates supplemental candidate JSONL, a stage manifest, CSV files for human review, and a validation report.
+- All-or-nothing check: uses `StagedWriter` to prevent partial outputs and throws error if any target file already exists.
+
+```sh
+node cli.js generate-gemini-near-gpx-supplemental-candidates \
+  --raw-gpx-dir "data/01_raw/gpx/2026-05-12" \
+  --mountains "data/03_primary/mountains/ehime_mountain_source_rows.json" \
+  --grounding-reference "data/04_feature/mountain_geographic_grounding/2026-06-06/grounding_reference_index.jsonl" \
+  --existing-summit-candidates "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl" \
+  --summit-candidate-manifest "data/08_reporting/gpx/summit_candidates/2026-05-12/manifest.json" \
+  --balanced-assignments "data/04_feature/mountain_summit_assignments/2026-06-07_gemini_grounded_balanced_summit_assignment/proposed_summit_assignments.jsonl" \
+  --activity-links "data/04_feature/activity_linking/gpx_yamap_candidate_links/2026-05-12/title_enriched_candidate_links.jsonl" \
+  --out "data/03_primary/summit_candidates/2026-06-07_gemini_near_gpx_supplemental_candidate_expansion/supplemental_summit_candidates.jsonl" \
+  --manifest "data/03_primary/summit_candidates/2026-06-07_gemini_near_gpx_supplemental_candidate_expansion/supplemental_summit_candidates_manifest.json" \
+  --report "docs/migration/gemini_near_gpx_supplemental_candidate_expansion_report.md" \
+  --review-dir "data/08_reporting/summit_candidates/2026-06-07_gemini_near_gpx_supplemental_candidate_expansion"
+```
+
+
 
 #### 5. `validate` (Legacy)
 Validates all processed GPX (`raw/`, `merged-by-year/`, `annotated/`) and CSV files.
