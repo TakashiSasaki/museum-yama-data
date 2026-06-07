@@ -1,0 +1,32 @@
+{
+  "stage_name": "mountain_summit_candidate_linking_v3",
+  "stage_version": "3.0.0",
+  "branch": "museum-yama-data",
+  "created_at": "2026-06-07T03:10:17.488Z",
+  "inputs": {
+    "mountains": "data/03_primary/mountains/ehime_mountain_source_rows.json",
+    "summit_candidates": "data/03_primary/summit_candidates/2026-05-12/summit_candidates.jsonl"
+  },
+  "outputs": {
+    "links": "data/04_feature/mountain_summit_candidate_links/2026-06-07-v3/v3_candidate_links.jsonl"
+  },
+  "source_files_modified": false,
+  "existing_legacy_outputs_overwritten": false,
+  "summary": {
+    "mountain_records": 531,
+    "summit_candidate_records": 496,
+    "candidate_link_records": 1830,
+    "mountains_with_candidates": 473,
+    "mountains_without_candidates": 58,
+    "strict_grounding_candidates": 0,
+    "strong_grounding_candidates": 0,
+    "weak_grounding_candidates": 0,
+    "exploratory_grounding_candidates": 0,
+    "fallback_candidates": 473,
+    "auto_supported_not_canonical_mountains": 0,
+    "review_deferred_mountains": 0,
+    "review_required_mountains": 110,
+    "conflict_case_mountains": 363,
+    "no_candidate_mountains": 58
+  }
+}

@@ -645,6 +645,8 @@ async function run() {
             printUsageAndExit();
         }
     }
+
+
     if (command === 'generate-grounding-assisted-review-queues') {
         if (!options.candidateLinks || !options.outDir || !options.manifest || !options.report) {
             log.error(`Error: --candidate-links, --out-dir, --manifest, and --report are required for 'generate-grounding-assisted-review-queues'.`);
@@ -758,6 +760,9 @@ async function run() {
                 break;
             case 'generate-grounding-assisted-review-queues-v2':
                 await require('./commands/generate-grounding-assisted-review-queues-v2')(options);
+                break;
+            case 'generate-mountain-summit-candidate-links-v3':
+                await require('./commands/generate-mountain-summit-candidate-links-v3').handler(options);
                 break;
 
 

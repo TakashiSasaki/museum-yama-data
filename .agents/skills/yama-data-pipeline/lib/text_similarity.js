@@ -84,7 +84,62 @@ function computeTitleSimilarity(title1, title2) {
     };
 }
 
+
+function normalizeJapaneseText(text) {
+    if (!text) return "";
+    return text.normalize("NFKC")
+        .toLowerCase()
+        .replace(/[\s・／/,\、\-\–\—\(\)\+]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function calculateTokenContainment(needle, haystack) {
+    if (!needle || !haystack) return 0.0;
+
+    const needleNorm = normalizeJapaneseText(needle);
+    const haystackNorm = normalizeJapaneseText(haystack);
+
+    if (haystackNorm.includes(needleNorm)) {
+        return 1.0;
+    }
+
+    const needleTokens = needleNorm.split(' ').filter(t => t.length > 0);
+    if (needleTokens.length === 0) return 0.0;
+
+    let matchCount = 0;
+    for (const token of needleTokens) {
+        if (haystackNorm.includes(token)) {
+            matchCount++;
+        }
+    }
+    return matchCount / needleTokens.length;
+}
+
+function jaccardSimilarity(s1, s2) {
+    if (!s1 || !s2) return 0.0;
+    const norm1 = normalizeJapaneseText(s1);
+    const norm2 = normalizeJapaneseText(s2);
+
+    const set1 = new Set(norm1.split(' ').filter(t => t.length > 0));
+    const set2 = new Set(norm2.split(' ').filter(t => t.length > 0));
+
+    if (set1.size === 0 || set2.size === 0) return 0.0;
+
+    let intersection = 0;
+    for (const item of set1) {
+        if (set2.has(item)) {
+            intersection++;
+        }
+    }
+    const union = set1.size + set2.size - intersection;
+    return intersection / union;
+}
+
 module.exports = {
+    normalizeJapaneseText,
+    calculateTokenContainment,
+    jaccardSimilarity,
     normalizeText,
     tokenize,
     computeTitleSimilarity

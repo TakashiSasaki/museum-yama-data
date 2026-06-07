@@ -15,3 +15,5 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 
+data/04_feature/mountain_summit_candidate_links/2026-06-07-v3/
+data/08_reporting/mountain_summit_candidate_review/2026-06-07-v3/

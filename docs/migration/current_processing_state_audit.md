@@ -511,7 +511,7 @@ This document inventories and verifies the current execution state of the data-p
 
 ### 26. Mountain-Summit Candidate Linking v3 Audit
 
-* **Status**: `audit_created_implementation_not_started`
+* **Status**: `executed_verified`
 * **Scope**: v3 source coverage audit and source-to-target mapping audit only.
 * **Audit documents**:
   - `docs/migration/mountain_summit_candidate_linking_v3_source_coverage_audit.md`

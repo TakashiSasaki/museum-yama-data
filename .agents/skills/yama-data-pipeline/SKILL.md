@@ -25,6 +25,21 @@ The portable commands (`intake`, `detect-candidates`, `validate-mountain-sources
 
 ### Commands
 
+### `generate-mountain-summit-candidate-links-v3`
+Generates the V3 candidate links using a grounding-first, constrained fallback strategy based on the newest mapping audits.
+- `--mountains <path>`: Path to source JSON.
+- `--summit-candidates <path>`: Path to summit candidates JSONL.
+- `--activity-links <path>`: Path to title-enriched links.
+- `--grounding-reference <path>`: Path to grounding index.
+- `--municipality-lookup <path>`: Path to municipality lookup.
+- `--municipality-stability <path>`: Path to municipality stability.
+- `--municipality-adjacency <path>`: Path to municipality adjacency.
+- `--out <path>`: Output JSONL.
+- `--manifest <path>`: Output manifest.
+- `--pruned-log <path>`: Output pruned candidate log.
+- `--review-dir <path>`: Output directory for review queue CSVs.
+- `--report <path>`: Output Markdown report.
+
 *   `intake`: Portable GPX archive extraction.
 *   `extract-excel-sheets`: Portable Excel sheet extraction.
 
