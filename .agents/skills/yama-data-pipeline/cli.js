@@ -44,6 +44,8 @@ Commands:
   generate-grounding-assisted-summit-candidate-links Generate candidate links with grounding-early spatial search.
   generate-grounding-assisted-review-queues Generate review queues from grounding-assisted candidate links.
   generate-grounding-assisted-review-queues-v2 Generate review queues v2 from grounding-assisted candidate links.
+  generate-grounding-assisted-review-queues-v3 Generate review queues v3 from grounding-assisted candidate links.
+  analyze-grounding-assisted-review-reduction-gaps Analyze gaps in review reduction.
 
 
 
@@ -259,6 +261,29 @@ generate-grounding-assisted-review-queues-v2 Options:
   --out-dir <path>                  Required. Path to output review directory.
   --manifest <path>                 Required. Path to output manifest JSON.
   --report <path>                   Required. Path to output report markdown.
+
+generate-grounding-assisted-review-queues-v3 Options:
+  --stage23-candidate-links <path>        Required. Path to stage 23 candidate links.
+  --stage25-review-dir <path>             Required. Path to stage 25 review dir.
+  --stage21-grounding-refined-links <path>Required. Path to stage 21 links.
+  --stage21-review-queue <path>           Required. Path to stage 21 review queue.
+  --grounding-reference <path>            Required. Path to grounding reference index.
+  --mountains <path>                      Required. Path to mountain source JSON.
+  --diagnostics <path>                    Required. Path to diagnostics manifest.
+  --out-dir <path>                        Required. Path to output v3 directory.
+  --manifest <path>                       Required. Path to output manifest JSON.
+  --report <path>                         Required. Path to output report markdown.
+
+analyze-grounding-assisted-review-reduction-gaps Options:
+  --stage23-candidate-links <path>        Required. Path to stage 23 candidate links.
+  --stage25-review-dir <path>             Required. Path to stage 25 review dir.
+  --stage21-grounding-refined-links <path>Required. Path to stage 21 links.
+  --stage21-review-queue <path>           Required. Path to stage 21 review queue.
+  --grounding-reference <path>            Required. Path to grounding reference index.
+  --mountains <path>                      Required. Path to mountain source JSON.
+  --out-dir <path>                        Required. Path to output diagnostics directory.
+  --manifest <path>                       Required. Path to output manifest JSON.
+  --report <path>                         Required. Path to output report markdown.
 `);
 
     process.exit(code);
@@ -348,6 +373,18 @@ function parseArgs(argsArray) {
             options.reviewMd = argsArray[++i];
         } else if (arg === '--candidate-links' && i + 1 < argsArray.length) {
             options.candidateLinks = argsArray[++i];
+        } else if (arg === '--stage23-candidate-links' && i + 1 < argsArray.length) {
+            options.stage23CandidateLinks = argsArray[++i];
+        } else if (arg === '--stage25-review-dir' && i + 1 < argsArray.length) {
+            options.stage25ReviewDir = argsArray[++i];
+        } else if (arg === '--stage21-grounding-refined-links' && i + 1 < argsArray.length) {
+            options.stage21GroundingRefinedLinks = argsArray[++i];
+        } else if (arg === '--stage21-review-queue' && i + 1 < argsArray.length) {
+            options.stage21ReviewQueue = argsArray[++i];
+        } else if (arg === '--grounding-reference' && i + 1 < argsArray.length) {
+            options.groundingReference = argsArray[++i];
+        } else if (arg === '--diagnostics' && i + 1 < argsArray.length) {
+            options.diagnostics = argsArray[++i];
         } else if (arg === '--refined-links' && i + 1 < argsArray.length) {
             options.refinedLinks = argsArray[++i];
         } else if (arg === '--decision-template' && i + 1 < argsArray.length) {
@@ -645,6 +682,15 @@ async function run() {
             printUsageAndExit();
         }
     }
+    if (command === 'generate-grounding-assisted-review-queues-v3') {
+        // Validation in command.
+    }
+    if (command === 'analyze-grounding-assisted-review-reduction-gaps') {
+        if (!options.stage23CandidateLinks || !options.stage25ReviewDir || !options.stage21GroundingRefinedLinks || !options.stage21ReviewQueue || !options.groundingReference || !options.mountains || !options.outDir || !options.manifest || !options.report) {
+            log.error(`Error: missing required parameters for analyze-grounding-assisted-review-reduction-gaps`);
+            printUsageAndExit();
+        }
+    }
     if (command === 'generate-grounding-assisted-review-queues') {
         if (!options.candidateLinks || !options.outDir || !options.manifest || !options.report) {
             log.error(`Error: --candidate-links, --out-dir, --manifest, and --report are required for 'generate-grounding-assisted-review-queues'.`);
@@ -758,6 +804,12 @@ async function run() {
                 break;
             case 'generate-grounding-assisted-review-queues-v2':
                 await require('./commands/generate-grounding-assisted-review-queues-v2')(options);
+                break;
+            case 'generate-grounding-assisted-review-queues-v3':
+                await require('./commands/generate-grounding-assisted-review-queues-v3')(options);
+                break;
+            case 'analyze-grounding-assisted-review-reduction-gaps':
+                await require('./commands/analyze-grounding-assisted-review-reduction-gaps')(options);
                 break;
 
 
