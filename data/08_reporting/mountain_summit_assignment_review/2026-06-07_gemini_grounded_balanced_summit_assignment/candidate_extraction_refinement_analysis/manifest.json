@@ -1,0 +1,12 @@
+{
+  "analysis_namespace": "2026-06-07_gemini_grounded_balanced_summit_assignment/candidate_extraction_refinement_analysis",
+  "created_at": "2026-06-07T18:11:00Z",
+  "outputs": [
+    "shared_candidate_deep_dive.csv",
+    "traverse_track_peak_coverage.csv",
+    "name_missing_gpx_supported_cases.csv",
+    "candidate_extraction_gap_hypotheses.csv",
+    "refinement_policy_options.csv",
+    "summary.md"
+  ]
+}
