@@ -1,0 +1,59 @@
+{
+  "stage": 30,
+  "method_id": "gemini_near_gpx_supplemental_candidate_expansion",
+  "run_id": "2026-06-07_gemini_near_gpx_supplemental_candidate_expansion",
+  "schema_version": "1.0.0",
+  "created_at": "2026-06-07T09:44:22.096Z",
+  "branch": "museum-yama-data",
+  "head_commit": "cf35552 docs: audit supplemental candidate expansion inputs",
+  "inputs": {
+    "raw_gpx_dir": "data\\01_raw\\gpx\\2026-05-12",
+    "mountains": "data\\03_primary\\mountains\\ehime_mountain_source_rows.json",
+    "grounding_reference": "data\\04_feature\\mountain_geographic_grounding\\2026-06-06\\grounding_reference_index.jsonl",
+    "existing_summit_candidates": "data\\03_primary\\summit_candidates\\2026-05-12\\summit_candidates.jsonl",
+    "summit_candidate_manifest": "data\\08_reporting\\gpx\\summit_candidates\\2026-05-12\\manifest.json",
+    "balanced_assignments": "data\\04_feature\\mountain_summit_assignments\\2026-06-07_gemini_grounded_balanced_summit_assignment\\proposed_summit_assignments.jsonl",
+    "activity_links": "data\\04_feature\\activity_linking\\gpx_yamap_candidate_links\\2026-05-12\\title_enriched_candidate_links.jsonl"
+  },
+  "outputs": {
+    "supplemental_summit_candidates": "data\\03_primary\\summit_candidates\\2026-06-07_gemini_near_gpx_supplemental_candidate_expansion\\supplemental_summit_candidates.jsonl",
+    "supplemental_summit_candidates_manifest": "data\\03_primary\\summit_candidates\\2026-06-07_gemini_near_gpx_supplemental_candidate_expansion\\supplemental_summit_candidates_manifest.json"
+  },
+  "input_sha256": {
+    "mountains": "e3fcddb965e5e643d5e1c173da5d94c71da5c776c409310bd1612a3600b6c8c4",
+    "grounding_reference": "9da75d497463985f1f8180663837e147147fdc61982eacb26521c6589d33fffb",
+    "existing_summit_candidates": "93ba6398263fc722f77c15dcf3384ff1d93bc6669b8daba7bacc5cd8edb8b260",
+    "summit_candidate_manifest": "cc67e1f9d90dd1176bb82ad7757db1a8dcd54f724d553228d7ec75eaf7fe9159",
+    "balanced_assignments": "ada68f37767ace03f15f4db787fb9f58db7475c22c1c42fc64ef564837b5c7de",
+    "activity_links": "f5fd7829db49e05d627292cf046aa8cfcb6af7fa40c04f65d04577aeda28b802"
+  },
+  "parameters": {
+    "max_distance_gemini_to_trackpoint_m": 300,
+    "local_window_radius_m": 100,
+    "local_window_trackpoint_index_radius": 10,
+    "supplemental_candidate_type": "supplemental_gemini_near_gpx_point",
+    "supplemental_candidate_status": "unresolved",
+    "needs_human_review": true
+  },
+  "summary": {
+    "raw_gpx_file_count": 293,
+    "raw_trackpoint_count": 80131,
+    "mountains_with_usable_grounding": 333,
+    "mountains_with_linked_gpx": 81,
+    "eligible_mountains": 81,
+    "supplemental_candidate_count": 31,
+    "nearest_trackpoint_too_far_count": 50,
+    "missing_gpx_link_count": 252,
+    "missing_raw_gpx_file_count": 0,
+    "parse_error_count": 0,
+    "needs_human_review_count": 31,
+    "source_files_modified": false,
+    "existing_summit_candidates_overwritten": false,
+    "assignment_outputs_regenerated": false,
+    "current_review_entry_point_replaced": false
+  },
+  "source_files_modified": false,
+  "existing_summit_candidates_overwritten": false,
+  "assignment_outputs_regenerated": false,
+  "current_review_entry_point_replaced": false
+}

@@ -3,13 +3,24 @@
 ## Authoritative Status
 
 * **Recommended Method ID**: `gemini_near_gpx_supplemental_candidate_expansion`
-* **Current status**: `audit_complete_implementation_not_started`
-* **Implementation started?**: No
+* **Current status**: `implemented_outputs_generated_pending_review`
+* **Implementation started?**: Yes
 * **Raw GPX trackpoint audit completed?**: Yes
 * **Source-to-target mapping completed?**: Yes
-* **Supplemental candidate outputs generated?**: No
+* **Supplemental candidate outputs generated?**: Yes
 * **Assignment outputs regenerated?**: No
 * **Current human review entry point replaced?**: No
+
+## Output Summary Metrics
+
+* **Run ID**: `2026-06-07_gemini_near_gpx_supplemental_candidate_expansion`
+* **Eligible Mountains**: 81
+* **Supplemental Candidates Generated**: 31
+* **Needs Human Review**: 31 (100% of generated candidates)
+* **Nearest Trackpoint Too Far (>300m)**: 50
+* **Missing GPX link**: 252
+* **Missing raw GPX file**: 0
+* **Parse error**: 0
 
 ## Basis
 

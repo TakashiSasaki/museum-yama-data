@@ -1,0 +1,13 @@
+{
+  "run_id": "2026-06-07_gemini_near_gpx_supplemental_candidate_expansion",
+  "created_at": "2026-06-07T09:44:22.115Z",
+  "summary": {
+    "supplemental_candidate_count": 31,
+    "needs_human_review_count": 31
+  },
+  "files": {
+    "summary_csv": "supplemental_candidate_summary.csv",
+    "review_csv": "supplemental_candidate_review_required.csv",
+    "summary_md": "summary.md"
+  }
+}

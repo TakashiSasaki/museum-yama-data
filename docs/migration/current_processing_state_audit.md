@@ -593,11 +593,31 @@ This document inventories and verifies the current execution state of the data-p
 
 ---
 
+### 30. Gemini-Near GPX Supplemental Candidate Expansion Execution
+
+* **Status**: `executed_verified`
+* **Stage**: `summit_candidate_extraction_refinement_execution`
+* **Method ID**: `gemini_near_gpx_supplemental_candidate_expansion`
+* **Run ID**: `2026-06-07_gemini_near_gpx_supplemental_candidate_expansion`
+* **Scope**: Generate supplemental, non-canonical summit candidate points near Gemini grounding anchors by reading raw GPX trackpoints.
+* **Progress document**:
+  - `docs/migration/gemini_near_gpx_supplemental_candidate_expansion_progress.md`
+* **Report document**:
+  - `docs/migration/gemini_near_gpx_supplemental_candidate_expansion_report.md`
+* **Implementation status**: executed.
+* **Supplemental candidate outputs generated**: true.
+* **Assignment outputs regenerated**: false.
+* **Current review entry point replacement**: false.
+* **Note**: All generated candidates are marked as non-canonical evidence for review planning only (`supplemental_candidate_type = supplemental_gemini_near_gpx_point`), with `needs_human_review = true`. They do not overwrite existing summit candidates and proposed assignments, and do not replace Stage 25.
+
+---
+
+
 ## Current Human Review Entry Points
 
 Current human review entry point remains Stage 25 `grounding_assisted_review_v2`.
 
-Stages 27–29 are review-planning, assignment, and candidate-extraction-refinement experiments. They do not yet replace Stage 25.
+Stages 27–30 are review-planning, assignment, and candidate-extraction-refinement experiments. They do not yet replace Stage 25.
 
 Human reviewers should use the grounding-assisted review artifacts v2 (Stage 25) as the latest entry point:
 
