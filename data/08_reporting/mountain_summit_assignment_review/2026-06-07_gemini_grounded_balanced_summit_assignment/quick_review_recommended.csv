@@ -1,0 +1,9 @@
+mountain_no,mountain_name,assignment_status,review_category,proposed_lat,proposed_lon,proposed_ele_m,proposed_coordinate_source,proposed_summit_candidate_id,source_gpx_basename,distance_gemini_to_gpx_candidate_m,distance_csv_to_proposed_m,elevation_diff_csv_to_proposed_m,confidence,needs_human_review,review_reason_codes,notes
+100,立石山,assigned,quick_review_recommended,34.280645,133.1726806,133.6903994266386,gpx_summit_candidate,summit-candidate:50aa5073a99759cf,yamap_2022-06-18_14_26.gpx,331.5,,5.3,0.748,true,,
+101,鷲ヶ頭山,assigned,quick_review_recommended,34.2396526,133.0209828,436.9143046126708,gpx_summit_candidate,summit-candidate:159deb385560c198,yamap_2022-06-20_12_02.gpx,363.8,,-0.9,0.7705,true,,
+181,星岡山,assigned,quick_review_recommended,33.8164872,132.787544,69.03333333333333,gpx_summit_candidate,summit-candidate:5c9365b2a5a9c97f,yamap_2022-12-31_15_00.gpx,465.2,,6,0.816,true,,
+185,岩子山,assigned,quick_review_recommended,33.8362547,132.7147629,110.77666666666669,gpx_summit_candidate,summit-candidate:45f49d8fd831427c,yamap_2023-01-06_11_33.gpx,237,,0.2,0.8525,true,,
+194,我合山（我合城址）,assigned,quick_review_recommended,33.3556223,132.5138567,349.4466666666667,gpx_summit_candidate,summit-candidate:8a7a47d167c1aba6,yamap_2023-01-08_14_24.gpx,441.6,,0.6,0.7915,true,,
+287,小屋ヶ森,assigned,quick_review_recommended,33.1812975,132.6194355,1167.5519282683324,gpx_summit_candidate,summit-candidate:27c1036d4aa2230e,yamap_2022-04-08_09_33.gpx,435.5,,16.4,0.747,true,municipality_adjacent_warning,
+350,行道山,assigned,quick_review_recommended,33.7579255,132.7571571,401.8633333333333,gpx_summit_candidate,summit-candidate:cfd366be872f9534,yamap_2024-12-22_06_34.gpx,458.4,,-30.9,0.8105,true,,
+392,高山,assigned,quick_review_recommended,33.9769486,132.6147118,105.34333333333332,gpx_summit_candidate,summit-candidate:c9aa57cdeb1b49fa,yamap_2025-03-20_08_27.gpx,186.5,,43.7,0.797,true,,

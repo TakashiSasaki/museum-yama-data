@@ -1,0 +1,93 @@
+{
+  "stage": "mountain_summit_coordinate_assignment",
+  "method_id": "gemini_grounded_balanced_summit_assignment",
+  "run_id": "2026-06-07_gemini_grounded_balanced_summit_assignment",
+  "schema_version": "1.0.0",
+  "created_at": "2026-06-07T05:48:01.348Z",
+  "branch": "museum-yama-data",
+  "head_commit": "85eb9132bfcc5e4a9e64cbc1410142c733b2936f",
+  "inputs": [
+    {
+      "name": "mountains",
+      "sha256": "e3fcddb965e5e643d5e1c173da5d94c71da5c776c409310bd1612a3600b6c8c4"
+    },
+    {
+      "name": "summit_candidates",
+      "sha256": "93ba6398263fc722f77c15dcf3384ff1d93bc6669b8daba7bacc5cd8edb8b260"
+    },
+    {
+      "name": "grounding_reference",
+      "sha256": "9da75d497463985f1f8180663837e147147fdc61982eacb26521c6589d33fffb"
+    },
+    {
+      "name": "municipality_lookup",
+      "sha256": "676622263833d7c0bec001478ccb290f4d090be3c7035705db6d8a60f4ac69bb"
+    },
+    {
+      "name": "municipality_stability",
+      "sha256": "bf32cde7984585dee79199b732174728cfc4c15e82c9bef91f59a928311278b8"
+    },
+    {
+      "name": "municipality_adjacency",
+      "sha256": "b389848e976532d983aa4f9a99db30a605ffaad6fce95a9c8d817fa55de0f988"
+    },
+    {
+      "name": "activity_links",
+      "sha256": "f5fd7829db49e05d627292cf046aa8cfcb6af7fa40c04f65d04577aeda28b802"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "proposed_summit_assignments",
+      "sha256": "ada68f37767ace03f15f4db787fb9f58db7475c22c1c42fc64ef564837b5c7de"
+    },
+    {
+      "name": "candidate_support_links",
+      "sha256": "462c8688bc8c71d2f5916c0b9495d7b9c775daafb1efa5ceb28f4c2cd60313ea"
+    },
+    {
+      "name": "pruned_candidate_log",
+      "sha256": "c7a1716277d7974cdc773d92e17f57143a3bdf47d3d0355a11855ff76b9a34c8"
+    }
+  ],
+  "parameters": {
+    "radius_gpx_support_limit_m": 1000,
+    "scoring": {
+      "gemini_grounding_quality_weight": 0.45,
+      "gpx_candidate_spatial_support_weight": 0.25,
+      "name_compatibility_weight": 0.1,
+      "municipality_compatibility_weight": 0.1,
+      "elevation_compatibility_weight": 0.05,
+      "csv_coordinate_compatibility_weight": 0.05
+    }
+  },
+  "summary": {
+    "total_mountains": 531,
+    "assigned_count": 295,
+    "unassigned_count": 236,
+    "needs_human_review_count": 529,
+    "auto_supported_not_canonical_count": 2,
+    "quick_review_recommended_count": 8,
+    "manual_review_required_count": 59,
+    "conflict_case_count": 50,
+    "gemini_only_coordinate_review_count": 214,
+    "no_assignment_count": 198,
+    "gpx_supported_assignment_count": 81,
+    "gemini_only_assignment_count": 214,
+    "no_coordinate_assignment_count": 236,
+    "boundary_compatible_auto_supported_count": 2,
+    "activity_title_supported_count": 0,
+    "by_review_category": {
+      "auto_supported_not_canonical": 2,
+      "quick_review_recommended": 8,
+      "manual_review_required": 59,
+      "conflict_case": 50,
+      "gemini_only_coordinate_review": 214,
+      "no_assignment": 198
+    },
+    "source_files_modified": false,
+    "old_outputs_overwritten": false,
+    "previous_gemini_assignment_outputs_overwritten": false,
+    "current_review_entry_point_replaced": false
+  }
+}

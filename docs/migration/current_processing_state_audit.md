@@ -540,6 +540,27 @@ This document inventories and verifies the current execution state of the data-p
 * **Previous v3 implementation attempt**: PR #93 is closed/unmerged and treated as reference-only; it is not the active implementation path for this method.
 * **Note**: This method is distinct from the older v3 candidate-linking audit and from any closed/unmerged v3 implementation PR. Existing Stage 9–25 outputs remain preserved as legacy/baseline artifacts and are not overwritten. Proposed assignments are generated under `data/04_feature/mountain_summit_assignments/2026-06-07_gemini_grounded_summit_assignment/` for review planning only, but do not replace Stage 25.
 
+---
+
+### 28. Gemini-Grounded Balanced Mountain Summit Assignment Execution
+
+* **Status**: `executed_verified`
+* **Stage**: `mountain_summit_coordinate_assignment`
+* **Method ID**: `gemini_grounded_balanced_summit_assignment`
+* **Run ID**: `2026-06-07_gemini_grounded_balanced_summit_assignment`
+* **Scope**: One-record-per-mountain proposed summit coordinate assignment method with relaxed review rules.
+* **Progress document**:
+  - `docs/migration/mountain_summit_assignment_gemini_grounded_balanced_progress.md`
+* **Audit documents**:
+  - `docs/migration/mountain_summit_assignment_gemini_grounded_balanced_source_coverage_audit.md`
+  - `docs/migration/mountain_summit_assignment_gemini_grounded_balanced_source_to_target_mapping.md`
+* **Report document**:
+  - `docs/migration/mountain_summit_assignment_gemini_grounded_balanced_report.md`
+* **Implementation status**: executed.
+* **Assignment outputs generated**: true.
+* **Review outputs generated**: true.
+* **Current review entry point replacement**: false.
+* **Note**: This method is a less conservative alternative to `gemini_grounded_summit_assignment`, utilizing boundary-compatible municipality checks and activity-title name evidence to reduce the review burden. Existing Stage 9–25 outputs, and Stage 27 outputs, remain preserved and are not overwritten. Proposed assignments do not replace Stage 25 as the human review entry point.
 
 ---
 

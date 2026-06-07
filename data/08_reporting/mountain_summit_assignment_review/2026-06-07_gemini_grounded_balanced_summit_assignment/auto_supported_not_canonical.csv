@@ -1,0 +1,3 @@
+mountain_no,mountain_name,assignment_status,review_category,proposed_lat,proposed_lon,proposed_ele_m,proposed_coordinate_source,proposed_summit_candidate_id,source_gpx_basename,distance_gemini_to_gpx_candidate_m,distance_csv_to_proposed_m,elevation_diff_csv_to_proposed_m,confidence,needs_human_review,review_reason_codes,notes
+3,高森山,assigned,auto_supported_not_canonical,33.8423734,132.8811963,719.2533333333334,gpx_summit_candidate,summit-candidate:e7ae682a07af2e10,yamap_2022-01-22_09_04.gpx,0,,4.7,0.956,false,,
+80,うなめご,assigned,auto_supported_not_canonical,33.7306327,132.9237927,1250.17,gpx_summit_candidate,summit-candidate:e7e4429a39f6359f,yamap_2022-05-05_13_29.gpx,101.7,,33.8,0.896,false,,

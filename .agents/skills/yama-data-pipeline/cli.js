@@ -666,6 +666,16 @@ async function run() {
         }
     }
 
+    if (command === 'assign-mountain-summits-gemini-grounded-balanced') {
+        if (!options.mountains || !options.summitCandidates || !options.groundingReference ||
+            !options.municipalityLookup || !options.municipalityStability || !options.municipalityAdjacency ||
+            !options.out || !options.candidateSupportLinks || !options.prunedLog || !options.manifest ||
+            !options.reviewDir || !options.report) {
+            log.error(`Error: --mountains, --summit-candidates, --grounding-reference, --municipality-lookup, --municipality-stability, --municipality-adjacency, --out, --candidate-support-links, --pruned-log, --manifest, --review-dir, and --report are required for 'assign-mountain-summits-gemini-grounded-balanced'.`);
+            printUsageAndExit();
+        }
+    }
+
     try {
         switch (command) {
             case 'intake':
@@ -775,6 +785,9 @@ async function run() {
                 break;
             case 'assign-mountain-summits-gemini-grounded':
                 await require('./commands/assign-mountain-summits-gemini-grounded')(options);
+                break;
+            case 'assign-mountain-summits-gemini-grounded-balanced':
+                await require('./commands/assign-mountain-summits-gemini-grounded-balanced')(options);
                 break;
 
 
