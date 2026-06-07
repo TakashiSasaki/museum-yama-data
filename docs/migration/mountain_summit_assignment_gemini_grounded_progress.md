@@ -45,11 +45,12 @@
 
 ## Previous v3 Implementation Attempt
 
-* Previous v3 implementation PR: Title like `feat: implement mountain summit candidate linking v3` (exact PR number/metadata could not be verified locally and must be checked before using previous v3 work)
-* Previous v3 branch: `remotes/origin/museum-yama-data-6980038160229133745` (contains unmerged commit `d92e3fe feat: implement mountain summit candidate linking v3`)
-* State: closed/unmerged
-* Merged: false
+* Previous v3 implementation PR: `#93` — `feat: implement mountain summit candidate linking v3`
+* State: `closed`
+* Merged: `false`
+* Previous v3 branch: `museum-yama-data-6980038160229133745`
 * Treatment: reference-only; not the active implementation path.
+* Note: This previous PR targeted v3 candidate-linking implementation. It is distinct from the active `gemini_grounded_summit_assignment` planning/audit path, which remains implementation-not-started.
 
 ## Output Namespace Reserved for Future Implementation
 
