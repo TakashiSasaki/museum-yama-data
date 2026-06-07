@@ -1,0 +1,12 @@
+{
+  "analysis_namespace": "2026-06-07_gemini_grounded_balanced_summit_assignment/blocker_analysis",
+  "created_at": "2026-06-07T15:49:00Z",
+  "outputs": [
+    "gpx_supported_blockers.csv",
+    "blocker_summary.csv",
+    "auto_support_simulation.csv",
+    "activity_title_join_diagnostics.csv",
+    "candidate_sharing_diagnostics.csv",
+    "summary.md"
+  ]
+}
