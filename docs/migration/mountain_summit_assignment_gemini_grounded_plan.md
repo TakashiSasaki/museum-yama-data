@@ -4,7 +4,9 @@ This document details the plan for redoing the mountain summit coordinate assign
 
 ## 1. Branch and HEAD Commit Inspected
 * **Branch**: `museum-yama-data`
-* **HEAD Commit**: `bdfcdb2 docs: add mountain-summit candidate linking v3 audits (#92)`
+* **Audited base HEAD**: `bdfcdb2 docs: add mountain-summit candidate linking v3 audits (#92)`
+* **Documentation commit**: `006c57f docs: add documentation for gemini-grounded mountain summit assignment strategy`
+* **Latest HEAD rechecked for this documentation consistency update**: `006c57fc423c48b5dc65c67266b9b3079cbdd2fe`
 
 ## 2. Problem Statement
 The Ehime mountaineering database contains 531 CSV-derived mountain records that need to be associated with authoritative geographic coordinates. While we have collected GPX activity tracks containing peak locations (summit candidates), mapping mountains directly to these tracks using text matching or simple proximity leads to high ambiguity (same-name mountains, missing names, etc.), causing a heavy human review burden. 

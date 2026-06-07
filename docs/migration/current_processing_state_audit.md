@@ -521,9 +521,31 @@ This document inventories and verifies the current execution state of the data-p
 
 ---
 
+### 27. Gemini-Grounded Mountain Summit Assignment Planning
+
+* **Status**: `planning_audit_complete_implementation_not_started`
+* **Stage**: `mountain_summit_coordinate_assignment`
+* **Method ID**: `gemini_grounded_summit_assignment`
+* **Run ID**: `2026-06-07_gemini_grounded_summit_assignment`
+* **Scope**: Documentation, source coverage audit, and source-to-target mapping for a new one-record-per-mountain proposed summit coordinate assignment method.
+* **Plan document**:
+  - `docs/migration/mountain_summit_assignment_gemini_grounded_plan.md`
+* **Audit documents**:
+  - `docs/migration/mountain_summit_assignment_gemini_grounded_source_coverage_audit.md`
+  - `docs/migration/mountain_summit_assignment_gemini_grounded_source_to_target_mapping.md`
+* **Implementation status**: not started.
+* **Assignment outputs generated**: false.
+* **Review outputs generated**: false.
+* **Current review entry point replacement**: false.
+* **Note**: This method is distinct from the older v3 candidate-linking audit and from any closed/unmerged v3 implementation PR. Existing Stage 9–25 outputs remain preserved as legacy/baseline artifacts and are not overwritten.
+
+---
+
 ## Current Human Review Entry Points
 
-*(Note: v3 is currently audit-only and does not yet replace the current review entry point.)*
+The current human review entry point remains Stage 25 `grounding_assisted_review_v2`.
+
+The Gemini-grounded assignment method is currently planning/audit-only and does not yet replace Stage 25.
 
 Human reviewers should use the grounding-assisted review artifacts v2 (Stage 25) as the latest entry point:
 
@@ -535,9 +557,6 @@ Human reviewers should use the grounding-assisted review artifacts v2 (Stage 25)
 - Review summary: `data/08_reporting/mountain_summit_candidate_review/2026-06-06/grounding_assisted_review_v2/summary.md`
 
 The prior review artifacts (Stages 11–24) remain available as legacy/baseline reference but are superseded by the v2 grounding-assisted review artifacts.
-
-
-
 
 The old Stage 11/12 review artifacts were intentionally deleted before review began.
 

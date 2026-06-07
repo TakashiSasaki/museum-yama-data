@@ -4,7 +4,9 @@ This document records the source coverage audit for the new `gemini_grounded_sum
 
 ## 1. Branch and HEAD Commit Inspected
 * **Branch**: `museum-yama-data`
-* **HEAD Commit**: `bdfcdb2 docs: add mountain-summit candidate linking v3 audits (#92)`
+* **Audited base HEAD**: `bdfcdb2 docs: add mountain-summit candidate linking v3 audits (#92)`
+* **Documentation commit**: `006c57f docs: add documentation for gemini-grounded mountain summit assignment strategy`
+* **Latest HEAD rechecked for this documentation consistency update**: `006c57fc423c48b5dc65c67266b9b3079cbdd2fe`
 
 ## 2. Input Files Inspected & Record Counts
 The following input files were inspected for this audit:
