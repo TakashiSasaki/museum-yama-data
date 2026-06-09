@@ -31,6 +31,9 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
   - **MUST NOT** proceed with migration if any item remains unclassified, "needs decision", or "unmigrated gap".
   - **MUST NOT** commit plaintext credentials, cookies, API keys, browser session data, or private tokens.
   - **MUST** ensure generated website pages do not accidentally publish sensitive or private data.
+  - **MUST NOT** use `process.exit()` within reusable Node.js command logic or libraries. Instead, throw standard JavaScript errors (e.g., `throw new Error(...)`).
+  - **MUST** treat GPX trackpoint times ending in 'Z' as UTC and convert to JST when comparing against YAMAP Markdown or Japanese timestamps.
+  - **MUST** normalize Japanese text using NFKC, lowercase where applicable, collapse whitespace, and tokenize on common Japanese/ASCII separators (spaces, '・', '／', '/', ',', '、', '-', '–', '—', parentheses, plus signs). Short names (<= 2 characters) require strict exact matches.
 
 - **Storage and Reproducibility Policy:**
   - **MUST** follow the canonical policy defined in `docs/migration/storage_reproducibility_policy.md`.
@@ -58,6 +61,11 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
 - If `docs/` and `site/` disagree, `docs/` wins until corrected.
 - Future generated pages should live under `site/docs/generated/`.
 
+## Human Review Entry Point Policy
+
+- **Stage 25 (`grounding_assisted_review_v2`)** remains the current authoritative human review entry point.
+- Stages 27 through 32 are experimental or planning stages and do not replace Stage 25.
+
 - **Before/After Change Checklists:**
   - **Before Change:** Verify branch status. Read existing `docs/source_coverage_audit.md` and `docs/path_migration.md`. Do not start moving files unless the audit supports it. For reproducible step execution and current processing state audits, refer to [Reproducible Processing Runbook](docs/migration/reproducible_processing_runbook.md) and [Current Processing State Audit](docs/migration/current_processing_state_audit.md).
   - **After Change:** Run `git status` to ensure accidental deletions or moves have not occurred. Check that no source files have been changed.
@@ -73,6 +81,10 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
   - `reverse_geocoding/`: **Reverse Geocoding Cache**. Contains reverse geocoding snapshots used for municipality-level location enrichment. Raw cache preservation is decided, but schema contract and reuse logic still require formalization.
   - `mountain_geographic_grounding/`: Raw outputs from LLM location-grounding analyses.
   - `reference/`: Geographical/administrative reference datasets (e.g., KSJ datasets).
+- `data/02_intermediate/`: **Intermediate Data Layer**. Contains intermediate data transformations.
+- `data/03_primary/`: **Primary Data Layer**. Contains domain model data.
+- `data/04_feature/`: **Feature Data Layer**. Contains derived features and assignments.
+- `data/08_reporting/`: **Reporting Data Layer**. Contains review queues, audit reports, and human-facing outputs.
 - `gpx/`: **Legacy GPX Data Root**.
   - `raw/`: Legacy raw `.gpx` track files extracted from old ZIP archives. This is immutable source data containing individual YAMAP activity tracks.
   - `annotated/`: Legacy experimental GPX outputs with generated `<wpt>` waypoint elements. Existing summit names in these files are not authoritative. Preserve these files as historical work evidence, but do not treat them as validated final outputs.
@@ -128,11 +140,14 @@ These agreements summarize the current planning state. The canonical details are
 
 ### Skill: Yama Data Pipeline (`yama-data-pipeline`)
 
-A consolidated CLI tool that handles local mountaineering data processing including data intake, merging, annotating, and validation.
+A consolidated CLI tool that handles local mountaineering data processing including data intake, merging, annotating, and validation. It currently features over 30 subcommands for modern data pipeline tasks.
 
 #### Subcommands
 
+- **`extract-excel-sheets`**: Portable Excel sheet extraction. Extracts worksheets from an XLSX into CSV files. This replaces the historical extraction behavior inside the old `intake` command.
 - **`intake`**: Portable GPX archive extraction command. Safely extracts GPX files from a ZIP archive into an explicit directory using `--input` and `--out-dir`. It extracts only `.gpx` entries, ignores directories and other file types, flattens internal ZIP paths, and fails on duplicate flattened basenames or existing output collisions without renaming. The extraction is all-or-nothing. Note: The historical workflow used `intake` to also convert Excel files to CSV and move files to `processed/`, but this is no longer part of current `intake` behavior.
+- **`detect-candidates`**: Detects summit candidate points from raw GPX tracks without assigning semantic mountain names, outputting non-canonical summit proposals for downstream review and mapping.
+- **`assign-mountain-summits-canonical-plus-supplemental`**: Merges canonical summit candidates with supplemental (Stage 30) non-canonical candidates and produces mountain coordinate assignment proposals based on location and name/activity-title evidence.
 - **`merge`**: Groups individual GPX files from `gpx/raw/` into yearly archives (e.g., `2024_merged.gpx`) for easier My Maps import. Preserves all `<trk>` elements. This is a legacy command; future merged outputs require validation against raw GPX.
 - **`annotate`**: Legacy command that analyzes GPX track elevation profiles, attempts summit matching, and generates files with `<wpt>` waypoints in `gpx/annotated/`. Its existing name assignment behavior is not authoritative. Future pipeline design separates summit-candidate detection from summit identity/name resolution.
 - **`validate`**: Validates all processed GPX files for well-formed XML and valid coordinate bounds. Although GPX itself may allow trackpoints without elevation, this repository requires `<ele>` on all trackpoints because elevation profiles are used for validation and peak annotation.
@@ -182,7 +197,7 @@ The `.agents/skills/` directory contains several other task-specific agents:
 
 ## Development Guidelines (Legacy)
 - The portable `yama-data-pipeline intake` subcommand handles new GPX ZIP archives by extracting them to an explicit output directory. It strictly handles collisions by failing to prevent silent overwrites, ensuring an all-or-nothing atomic extraction.
-- The `csv/` directory is the current legacy operational input for activity metadata used by the existing pipeline. These CSV files are direct script-generated extracts from 6 sheets in `data/01_raw/as_received/2026-05-18/えひめの山.xlsx`. For provenance purposes, `data/01_raw/as_received/2026-05-18/えひめの山.xlsx` is the retained source snapshot / primary source workbook. The CSV files are Excel-derived legacy CSV extracts; they were not manually edited or post-processed according to user-provided provenance. Historically, this extraction was performed by the old `intake` command. Full reproducibility requires validating the historical extraction script or equivalent extraction logic.
+- The `csv/` directory is the current legacy operational input for activity metadata used by the existing pipeline. These CSV files are direct script-generated extracts from 6 sheets in `data/01_raw/as_received/2026-05-18/えひめの山.xlsx`. For provenance purposes, `data/01_raw/as_received/2026-05-18/えひめの山.xlsx` is the retained source snapshot / primary source workbook. The CSV files are Excel-derived legacy CSV extracts; they were not manually edited or post-processed according to user-provided provenance. Currently, this extraction logic is implemented via the `extract-excel-sheets` subcommand in the `yama-data-pipeline` skill, making the process fully reproducible.
 - The `gpx/raw/` directory should only contain individual `.gpx` files (no subfolders). These are considered **source data** and must not be mutated.
 - The `gpx/annotated/` and `gpx/merged-by-year/` directories contain **legacy generated artifacts**. Preserve them, but do not treat them as authoritative future pipeline outputs.
 
