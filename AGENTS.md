@@ -90,6 +90,11 @@ This contract bounds the decisions and behaviors of humans and AI coding agents 
 These agreements summarize the current planning state. The canonical details are in `docs/migration/` and `docs/source_coverage_audit.md`.
 
 - **Clone-complete policy:** The repository follows a clone-complete policy. Git LFS is intentionally not used. Primary data and retained processed artifacts should remain available after a plain Git clone. See `docs/migration/storage_reproducibility_policy.md`.
+- `data/02_intermediate/`: **Intermediate Data**. Contains extracted operational inputs, reverse geocoding extracts, and reference data derived from raw sources.
+- `data/03_primary/`: **Primary Data**. Contains domain-model validated datasets such as resolved mountains and deduplicated summit candidates.
+- `data/04_feature/`: **Feature Data**. Contains relationship artifacts such as candidate links, location enrichments, and mountain assignments.
+- `data/08_reporting/`: **Reporting Data**. Contains derived human-review queues, GPX candidate generation, and task reports.
+
 - **DVC/Kedro status:** Planning documents are now sufficient for a later task to initialize DVC/Kedro scaffolding without moving data. DVC-light policy is documented, the first executable DVC stage candidate is documented in `docs/migration/dvc_first_stage_plan.md`, and the output policy in `docs/migration/generated_output_path_policy.md`. However, DVC is not initialized yet. Actual DVC initialization requires a future explicit task approval.
   - Generated outputs should not be placed under `docs/migration/` unless they are small committed preview/audit artifacts. Future formal generated outputs should use the documented generated-output policy (`artifacts/generated/`).
   - `data/01_raw/provider_received/` is the minimal new intake path for future provider-received raw source files. Existing retained legacy intakes currently reside in `data/01_raw/as_received/`.
@@ -98,7 +103,7 @@ These agreements summarize the current planning state. The canonical details are
   - `src/museum_yama_data/` contains future Python/Kedro pipeline scaffolding.
   - The scaffold does not mean that all data migration has occurred.
   - Agents must still follow `docs/source_coverage_audit.md` and `docs/path_migration.md` before moving, rewriting, or regenerating data.
-  - Kedro directories like `data/02_intermediate/`, `data/03_primary/`, `data/04_feature/`, and `data/08_reporting/` have been created and are populated with intermediate data, although this may contradict older migration planning documents.
+  - Kedro directories like `data/02_intermediate/`, `data/03_primary/`, `data/04_feature/`, and `data/08_reporting/` have been created and are actively populated with intermediate data, although this may contradict older migration planning documents.
 - **DVC usage policy:** DVC must not be used to remove primary data from Git by default. DVC is initially for pipeline/stage/dependency metadata and reproducibility checks. `dvc add` must not be run on raw/source or retained-artifact paths unless explicitly approved in a future task. DVC stage dependencies may refer to Git-tracked paths.
 - **Site presentation layer:** `site/` is the GitHub Pages presentation layer generated from canonical docs/configuration. The site must not become an independent source of truth. The site must not publish full raw/private data contents.
 - **First Kedro scope:** A future Kedro task may create project scaffolding, catalog names, and placeholder pipeline structures. It must not rewrite GPX parsing, annotation, reverse geocoding, or web-data logic during the scaffolding task.
@@ -132,10 +137,16 @@ A consolidated CLI tool that handles local mountaineering data processing includ
 
 #### Subcommands
 
-- **`intake`**: Portable GPX archive extraction command. Safely extracts GPX files from a ZIP archive into an explicit directory using `--input` and `--out-dir`. It extracts only `.gpx` entries, ignores directories and other file types, flattens internal ZIP paths, and fails on duplicate flattened basenames or existing output collisions without renaming. The extraction is all-or-nothing. Note: The historical workflow used `intake` to also convert Excel files to CSV and move files to `processed/`, but this is no longer part of current `intake` behavior.
-- **`merge`**: Groups individual GPX files from `gpx/raw/` into yearly archives (e.g., `2024_merged.gpx`) for easier My Maps import. Preserves all `<trk>` elements. This is a legacy command; future merged outputs require validation against raw GPX.
-- **`annotate`**: Legacy command that analyzes GPX track elevation profiles, attempts summit matching, and generates files with `<wpt>` waypoints in `gpx/annotated/`. Its existing name assignment behavior is not authoritative. Future pipeline design separates summit-candidate detection from summit identity/name resolution.
-- **`validate`**: Validates all processed GPX files for well-formed XML and valid coordinate bounds. Although GPX itself may allow trackpoints without elevation, this repository requires `<ele>` on all trackpoints because elevation profiles are used for validation and peak annotation.
+The CLI tool now supports over 30 subcommands for extraction, validation, enrichment, linking, and review queue generation. Run `node .agents/skills/yama-data-pipeline/cli.js --help` for a full list. Key commands include:
+
+- **`intake`**: Portable GPX archive extraction command. Safely extracts GPX files from a ZIP archive into an explicit directory using `--input` and `--out-dir`.
+- **`extract-excel-sheets`**: Portable Excel sheet extraction. Extracts worksheets from an XLSX into CSV files.
+- **`detect-candidates`**: Detects summits from GPX tracks without assigning semantic names, outputting summit candidates to CSV.
+- **`enrich-summit-candidates-with-reverse-geocoding`**: Enriches summit candidates with structured reverse-geocoding evidence.
+- **`generate-mountain-summit-candidate-links`**: Generates candidate links between semantic mountain records and geographic summit candidates.
+- **`generate-mountain-summit-review-packets`**: Generates human-review packets and decision templates from derived review queues.
+- **`validate`**: Validates all processed GPX files for well-formed XML and valid coordinate bounds.
+- **`merge` & `annotate`**: Legacy commands for grouping GPX tracks and historically attempting summit matching. Future outputs use discrete detection/assignment steps.
 
 #### How to use
 Ask the agent:
@@ -182,7 +193,7 @@ The `.agents/skills/` directory contains several other task-specific agents:
 
 ## Development Guidelines (Legacy)
 - The portable `yama-data-pipeline intake` subcommand handles new GPX ZIP archives by extracting them to an explicit output directory. It strictly handles collisions by failing to prevent silent overwrites, ensuring an all-or-nothing atomic extraction.
-- The `csv/` directory is the current legacy operational input for activity metadata used by the existing pipeline. These CSV files are direct script-generated extracts from 6 sheets in `data/01_raw/as_received/2026-05-18/えひめの山.xlsx`. For provenance purposes, `data/01_raw/as_received/2026-05-18/えひめの山.xlsx` is the retained source snapshot / primary source workbook. The CSV files are Excel-derived legacy CSV extracts; they were not manually edited or post-processed according to user-provided provenance. Historically, this extraction was performed by the old `intake` command. Full reproducibility requires validating the historical extraction script or equivalent extraction logic.
+- The `csv/` directory is the legacy operational input for activity metadata used by the existing pipeline. These CSV files are direct script-generated extracts from sheets in `data/01_raw/as_received/2026-05-18/えひめの山.xlsx`. Historically, this extraction was performed by the old `intake` command. Modern reproducibility is achieved via the `yama-data-pipeline extract-excel-sheets` subcommand, which extracts these operational CSVs into the `data/02_intermediate/activity_logs/csv_extracted/` directory.
 - The `gpx/raw/` directory should only contain individual `.gpx` files (no subfolders). These are considered **source data** and must not be mutated.
 - The `gpx/annotated/` and `gpx/merged-by-year/` directories contain **legacy generated artifacts**. Preserve them, but do not treat them as authoritative future pipeline outputs.
 
