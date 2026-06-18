@@ -220,6 +220,38 @@ This document inventories and verifies the current execution state of the data-p
 * **Source files modified**: `false`
 * **Note**: Generates and validates topological land adjacency for the 20 municipalities in Ehime Prefecture.
 
+### 33. Dense Context Summit Candidate Extraction v2 Planning and Audit
+
+* **Status**: `planning_audit_complete`
+* **Stage**: `summit_candidate_extraction_planning`
+* **Method ID**: `dense_context_summit_candidate_extraction_v2`
+* **Run ID**: `2026-06-07_dense_context_summit_candidate_extraction_v2`
+* **Authoritative documents**:
+  - `docs/migration/dense_context_summit_candidate_extraction_v2_plan.md`
+  - `docs/migration/dense_context_summit_candidate_extraction_v2_source_coverage_audit.md`
+  - `docs/migration/dense_context_summit_candidate_extraction_v2_source_to_target_mapping.md`
+  - `docs/migration/dense_context_summit_candidate_extraction_v2_progress.md`
+* **Implementation status**: completed.
+* **Current review entry point replacement**: false.
+
+### 34. Dense Context Summit Candidate Extraction v2 Execution
+
+* **Status**: `executed_verified`
+* **Stage**: `summit_candidate_extraction`
+* **Method ID**: `dense_context_summit_candidate_extraction_v2`
+* **Run ID**: `2026-06-07_dense_context_summit_candidate_extraction_v2`
+* **Report document**:
+  - `docs/migration/dense_context_summit_candidate_extraction_v2_report.md`
+* **Primary output namespace**:
+  - `data/03_primary/summit_candidates/2026-06-07_dense_context_summit_candidate_extraction_v2/`
+* **Review/reporting output namespace**:
+  - `data/08_reporting/summit_candidates/2026-06-07_dense_context_summit_candidate_extraction_v2/`
+* **Existing canonical candidates overwritten**: false.
+* **Stage 30 outputs regenerated**: false.
+* **Stage 32 outputs regenerated**: false.
+* **Current review entry point replacement**: false.
+* **Note**: This stage creates an improved candidate set for later assignment experiments. It does not create final accepted summit coordinates.
+
 ---
 
 
@@ -678,7 +710,7 @@ This document inventories and verifies the current execution state of the data-p
 
 Current human review entry point remains Stage 25 `grounding_assisted_review_v2`.
 
-Stages 27–32 are review-planning, assignment, supplemental-candidate, and future-assignment experiments. They do not yet replace Stage 25.
+Stages 27–34 are review-planning, assignment, supplemental-candidate, and future-assignment experiments. They do not yet replace Stage 25.
 
 Human reviewers should use the grounding-assisted review artifacts v2 (Stage 25) as the latest entry point:
 

@@ -460,6 +460,18 @@ function parseArgs(argsArray) {
             options.summitCandidateManifest = argsArray[++i];
         } else if (arg === '--balanced-assignments' && i + 1 < argsArray.length) {
             options.balancedAssignments = argsArray[++i];
+        } else if (arg === '--canonical-candidates' && i + 1 < argsArray.length) {
+            options.canonicalCandidates = argsArray[++i];
+        } else if (arg === '--canonical-manifest' && i + 1 < argsArray.length) {
+            options.canonicalManifest = argsArray[++i];
+        } else if (arg === '--stage30-supplemental-candidates' && i + 1 < argsArray.length) {
+            options.stage30SupplementalCandidates = argsArray[++i];
+        } else if (arg === '--stage30-supplemental-manifest' && i + 1 < argsArray.length) {
+            options.stage30SupplementalManifest = argsArray[++i];
+        } else if (arg === '--stage32-assignments' && i + 1 < argsArray.length) {
+            options.stage32Assignments = argsArray[++i];
+        } else if (arg === '--doc-report' && i + 1 < argsArray.length) {
+            options.docReport = argsArray[++i];
         } else if (arg === '--canonical-summit-candidates' && i + 1 < argsArray.length) {
             options.canonicalSummitCandidates = argsArray[++i];
         } else if (arg === '--supplemental-candidates' && i + 1 < argsArray.length) {
@@ -504,6 +516,17 @@ async function run() {
     if (command === 'detect-candidates') {
         if (!options.input || !options.out) {
             log.error(`Error: --input and --out are required for 'detect-candidates'.`);
+            printUsageAndExit();
+        }
+    }
+
+    if (command === 'generate-dense-context-summit-candidates') {
+        if (!options.rawGpxDir || !options.mountains || !options.canonicalCandidates ||
+            !options.canonicalManifest || !options.stage30SupplementalCandidates ||
+            !options.stage30SupplementalManifest || !options.groundingReference ||
+            !options.activityLinks || !options.stage32Assignments || !options.out ||
+            !options.manifest || !options.report || !options.reviewDir || !options.docReport) {
+            log.error(`Error: missing required arguments for generate-dense-context-summit-candidates.`);
             printUsageAndExit();
         }
     }
@@ -874,6 +897,9 @@ async function run() {
                 break;
             case 'assign-mountain-summits-canonical-plus-supplemental':
                 await require('./commands/assign-mountain-summits-canonical-plus-supplemental')(options);
+                break;
+            case 'generate-dense-context-summit-candidates':
+                await require('./commands/generate-dense-context-summit-candidates')(options);
                 break;
 
 
